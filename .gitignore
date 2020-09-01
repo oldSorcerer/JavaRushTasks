@@ -7,14 +7,14 @@ target/
 .repository/
 *.iml
 *.iws
-*.jrtc
+
 
 *.class
 *.info
 *.properties
 *.jar
 
-/1.JavaSyntax/
+
 /3.JavaMultithreading/
 /4.JavaCollections/
 /5.OnlineInternship/
