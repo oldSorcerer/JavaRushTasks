@@ -1,0 +1,28 @@
+taskKey="com.javarush.task.task02.task0201"\n\nРеализуем метод print
+
+Допиши код в методе print, чтобы он выводил на экран каждую переданную в него строку 4 раза.
+Каждый раз с новой строки.
+
+Вывод на экран должен быть:
+Java is easy to learn!
+Java is easy to learn!
+Java is easy to learn!
+Java is easy to learn!
+Java is object-oriented!
+Java is object-oriented!
+Java is object-oriented!
+Java is object-oriented!
+Java is platform-independent!
+Java is platform-independent!
+Java is platform-independent!
+Java is platform-independent!
+
+
+Требования:
+1.	Программа должна выводить текст на экран.
+2.	Метод main не должен вызывать System.out.println или System.out.print.
+3.	Метод print должен выводить текст на экран.
+4.	Метод main должен вызвать метод print класса Solution ровно три раза.
+5.	Метод print должен выводить на экран переданную строку 4 раза. Каждый раз с новой строки.
+
+
