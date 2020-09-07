@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.task14.task1415"\n\nКлининговый центр
+
+В этой задаче тебе нужно:
+1. Реализовать метод cleanAllApartments().
+2. Пройтись по списку объектов из apartments:
+- для однокомнатных квартир (OneRoomApt) вызвать метод clean1Room();
+- для двухкомнатных квартир (TwoRoomApt) вызвать метод clean2Rooms();
+- для трехкомнатных квартир (ThreeRoomApt) вызвать метод clean3Rooms().
+
+
+Требования:
+1.	Метод cleanAllApartments должен принимать список аппартаметов в качестве параметра.
+2.	В методе cleanAllApartments для всех однокомнатных аппартаментов (OneRoomApt), содержащихся в списке, необходимо вызвать метод clean1Room().
+3.	В методе cleanAllApartments для всех двухкомнатных аппартаментов (TwoRoomApt), содержащихся в списке, необходимо вызвать метод clean2Rooms().
+4.	В методе cleanAllApartments для всех трехкомнатных аппартаментов (ThreeRoomApt), содержащихся в списке, необходимо вызвать метод clean3Rooms().
+5.	Классы OneRoomApt, TwoRoomApt, ThreeRoomApt должны поддерживать (реализовывать) интерфейс Apartment.
+
+
