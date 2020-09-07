@@ -1,6 +1,5 @@
 package com.javarush.task.task14.task1404;
 
-import javax.lang.model.type.TypeMirror;
 import java.io.*;
 /* 
 Коты
@@ -9,18 +8,18 @@ import java.io.*;
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-        
-        String key = rd.readLine();
 
+        while (true) {
+            String key = rd.readLine();
 
+            if (key.isEmpty())
+                break;
 
-        while (!key.isEmpty()) {
+            Cat cat = CatFactory.getCatByKey(key);
 
+            System.out.println(cat.toString());
 
         }
-
-        //cat.toString();
-        
     }
 
     static class CatFactory {
@@ -50,6 +49,7 @@ public class Solution {
             return this.name;
         }
 
+        @Override
         public String toString() {
             return "Я уличный кот " + getName();
         }
@@ -60,6 +60,7 @@ public class Solution {
             super(name);
         }
 
+        @Override
         public String toString() {
             return "Я - солидный кошак по имени " + getName();
         }
@@ -70,6 +71,7 @@ public class Solution {
             super(name);
         }
 
+        @Override
         public String toString() {
             return "Я - милая кошечка по имени " + getName();
         }
