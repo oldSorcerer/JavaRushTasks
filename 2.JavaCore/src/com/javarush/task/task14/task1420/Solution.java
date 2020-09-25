@@ -13,22 +13,17 @@ public class Solution {
 
         BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
 
-        String string;
+        int[] number = new int[2];
 
-        BigInteger bigInteger = BigInteger.valueOf(2);
-        BigInteger bigInteger2 = bigInteger.gcd(BigInteger.valueOf(5));
+        for (int i = 0; i < 2; i++) {
+            number[i] = Integer.parseInt(rd.readLine());
+        }
+        if (number[0] <= 0 || number[1] <= 0)
+            throw new Exception("test");
 
-        System.out.println(bigInteger2);
+        BigInteger bi1 = BigInteger.valueOf(number[0]);
+        BigInteger bi2 = BigInteger.valueOf(number[1]);
 
-
-//         for (int i = 0; i < 2; i++) {
-//            string = rd.readLine();
-//            int number = Integer.parseInt(string);
-//            if (number < 0)
-//                throw  new Exception("test");
-//
-//        }
-
-
+        System.out.println(bi1.gcd(bi2));
     }
 }
