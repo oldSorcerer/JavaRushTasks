@@ -1,12 +1,12 @@
-taskKey="com.javarush.task.task15.task1528"\n\nООП. Hrivna — тоже деньги
+taskKey="com.javarush.task.task15.task1528"\n\nООП. Hryvnia — тоже деньги
 
-Исправь класс Hrivna так, чтоб избежать возникновения ошибки StackOverflowError.
+Исправь класс Hryvnia так, чтоб избежать возникновения ошибки StackOverflowError.
 
 
 Требования:
-1.	Класс Hrivna должен быть потомком класса Money.
-2.	В классе Hrivna должен быть реализован метод getAmount.
-3.	Метод getAmount в классе Hrivna должен возвращать значение поля amount.
+1.	Класс Hryvnia должен быть потомком класса Money.
+2.	В классе Hryvnia должен быть реализован метод getAmount.
+3.	Метод getAmount в классе Hryvnia должен возвращать значение поля amount.
 4.	При выполнении программы не должны возникать исключения или ошибки.
 
 
