@@ -14,6 +14,22 @@ import java.util.List;
 public class Solution {
     public static List<String> lines = new ArrayList<String>();
 
+    static {
+        try {
+            BufferedReader rd = new BufferedReader(new FileReader(Statics.FILE_NAME));
+
+            while (rd.ready()) {
+                lines.add(rd.readLine());
+            }
+            rd.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println(lines);
     }
