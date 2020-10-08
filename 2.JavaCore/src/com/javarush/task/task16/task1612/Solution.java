@@ -39,9 +39,7 @@ public class Solution {
 
         private void doStep() throws InterruptedException {
             stepNumber++;
-
-
-
+            Thread.sleep(1000/owner.getSpeed());
             System.out.println(owner.getName() + " делает шаг №" + stepNumber + "!");
         }
     }
