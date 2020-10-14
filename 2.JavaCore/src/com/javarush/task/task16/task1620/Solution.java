@@ -44,12 +44,12 @@ public class Solution {
         public void run() {
             //fix 2 variables - исправь 2 переменных
             boolean isCurrentThreadInterrupted = Thread.currentThread().isInterrupted();
-            String threadName = "";
+            String threadName = Thread.currentThread().getName();
 
             try {
                 while (!isCurrentThreadInterrupted) {
 
-                    System.out.println("Объект " + sharedResource + ", нить " + Thread.currentThread().getName());
+                    System.out.println("Объект " + sharedResource + ", нить " + threadName);
                     Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
