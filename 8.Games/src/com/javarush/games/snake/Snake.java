@@ -41,4 +41,12 @@ public class Snake {
     public void move() {
 
     }
+
+    public GameObject createNewHead() {
+        return null;
+    }
+
+    public void removeTail() {
+
+    }
 }
