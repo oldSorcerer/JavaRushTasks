@@ -24,8 +24,8 @@ public class SnakeGame extends Game {
     }
     
     private void drawScene() {
-        for (int x = 0; x < WIDTH; x++)
-            for (int y = 0; y < HEIGHT; y++)
+        for (int y = 0; y < WIDTH; y++)
+            for (int x = 0; x < HEIGHT; x++)
                 setCellColor(x, y, Color.DARKSEAGREEN);
         snake.draw(this);
     }
