@@ -25,6 +25,6 @@ public class RacerGame extends Game {
     }
     
     private void drawField() {
-        
+
     }
 }
