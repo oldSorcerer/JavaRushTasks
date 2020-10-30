@@ -15,7 +15,13 @@ public class Snake {
     private Direction direction = Direction.LEFT;
 
     public void setDirection(Direction direction) {
-        this.direction = direction;
+        // тут возможно баг запомнить что нужна проверка для всех
+        // 4-х состояний left-right / right-left / up-down / down-up
+        if (this.direction.equals(Direction.LEFT) && !direction.equals(Direction.RIGHT))
+            this.direction = direction;
+        else if (this.direction.equals(Direction.UP) && !direction.equals(Direction.DOWN))
+            this.direction = direction;
+
     }
 
     public Snake(int x, int y) {
