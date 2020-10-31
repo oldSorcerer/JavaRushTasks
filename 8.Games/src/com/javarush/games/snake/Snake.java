@@ -44,12 +44,18 @@ public class Snake {
             game.setCellValueEx(snakeParts.get(i).x, snakeParts.get(i).y, Color.NONE, BODY_SIGN, color, 75);
     }
 
-    public void move() {
-        GameObject gameObject = createNewHead();
-        if (gameObject.x < 0 || gameObject.x >= SnakeGame.WIDTH || gameObject.y < 0 || gameObject.y >= SnakeGame.HEIGHT)
+    public void move(Apple apple) {
+
+        GameObject newHead = createNewHead();
+
+        if (newHead.x < 0 || newHead.x >= SnakeGame.WIDTH || newHead.y < 0 || newHead.y >= SnakeGame.HEIGHT)
             isAlive = false;
         else {
-            snakeParts.add(0, gameObject);
+            snakeParts.add(0, newHead);
+            if (newHead.x == apple.x && newHead.y == apple.y) {
+                apple.isAlive = false;
+                return;
+            }
             removeTail();
         }
     }

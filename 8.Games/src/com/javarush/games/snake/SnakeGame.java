@@ -9,6 +9,7 @@ public class SnakeGame extends Game {
     public static final int HEIGHT = 15;
     private Snake snake;
     private int turnDelay;
+    private Apple apple;
     
     private void createGame() {
         turnDelay = 300;
@@ -16,11 +17,8 @@ public class SnakeGame extends Game {
 
         Snake newSnake = new Snake(WIDTH / 2, HEIGHT / 2);
         this.snake = newSnake;
+        apple = new Apple(5,5);
         drawScene();
-       /* Apple apple = new Apple(7, 7);
-        apple.draw(this);*/
-       
-        
     }
     
     private void drawScene() {
@@ -28,6 +26,7 @@ public class SnakeGame extends Game {
             for (int y = 0; y < HEIGHT; y++)
                 setCellValueEx(x, y, Color.DARKSEAGREEN, "");
         snake.draw(this);
+        apple.draw(this);
     }
     
     @Override
@@ -39,7 +38,7 @@ public class SnakeGame extends Game {
 
     @Override
     public void onTurn(int step) {
-        snake.move();
+        snake.move(apple);
         drawScene();
     }
 
