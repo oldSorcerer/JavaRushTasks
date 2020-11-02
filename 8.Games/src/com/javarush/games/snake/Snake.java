@@ -5,12 +5,19 @@ import com.javarush.engine.cell.*;
 
 public class Snake {
 
+    private static final String HEAD_SIGN = "\uD83D\uDC7E";
+    private static final String BODY_SIGN = "\u26AB";
+
     public boolean isAlive = true;
 
     private List<GameObject> snakeParts = new ArrayList<>();
-    private static final String HEAD_SIGN = "\uD83D\uDC7E";
-    private static final String BODY_SIGN = "\u26AB";
     private Direction direction = Direction.LEFT;
+
+    public Snake(int x, int y) {
+        snakeParts.add(new GameObject(x, y));
+        snakeParts.add(new GameObject(x + 1, y));
+        snakeParts.add(new GameObject(x + 2, y));
+    }
 
     public void setDirection(Direction direction) {
         if (this.direction.equals(Direction.LEFT) && !direction.equals(Direction.RIGHT))
@@ -23,51 +30,48 @@ public class Snake {
             this.direction = direction;
     }
 
-    public Snake(int x, int y) {
-        GameObject obj1 = new GameObject(x, y);
-        GameObject obj2 = new GameObject(x + 1, y);
-        GameObject obj3 = new GameObject(x + 2, y);
-
-        snakeParts.add(obj1);
-        snakeParts.add(obj2);
-        snakeParts.add(obj3);
-    }
-
     public void draw(Game game) {
         Color color = isAlive ? Color.BLACK : Color.RED;
         for (int i = 0; i < snakeParts.size(); i++) {
+            GameObject part = snakeParts.get(i);
             String sign = (i == 0) ? HEAD_SIGN : BODY_SIGN;
-            game.setCellValueEx(snakeParts.get(i).x, snakeParts.get(i).y, Color.NONE, sign, color, 75);
+            game.setCellValueEx(part.x, part.y, Color.NONE, sign, color, 75);
         }
     }
 
     public void move(Apple apple) {
 
         GameObject newHead = createNewHead();
-        if (!checkCollision(newHead)) {
-            if (newHead.x < 0 || newHead.x >= SnakeGame.WIDTH || newHead.y < 0 || newHead.y >= SnakeGame.HEIGHT)
-                isAlive = false;
-            else {
-                snakeParts.add(0, newHead);
-                if (newHead.x == apple.x && newHead.y == apple.y) {
-                    apple.isAlive = false;
-                    return;
-                }
-                removeTail();
-            }
-        } else isAlive = false;
+
+        if (newHead.x < 0
+                || newHead.x >= SnakeGame.WIDTH
+                || newHead.y < 0
+                || newHead.y >= SnakeGame.HEIGHT) {
+            isAlive = false;
+            return;
+        }
+        if (checkCollision(newHead)) {
+            isAlive = false;
+            return;
+        }
+        snakeParts.add(0, newHead);
+        if (newHead.x == apple.x && newHead.y == apple.y) {
+            apple.isAlive = false;
+        } else {
+            removeTail();
+        }
     }
 
     public GameObject createNewHead() {
+        GameObject oldHead = snakeParts.get(0);
         if (direction.equals(Direction.LEFT))
-            return new GameObject(snakeParts.get(0).x - 1, snakeParts.get(0).y);
+            return new GameObject(oldHead.x - 1, oldHead.y);
         else if (direction.equals(Direction.RIGHT))
-            return new GameObject(snakeParts.get(0).x + 1, snakeParts.get(0).y);
+            return new GameObject(oldHead.x + 1, oldHead.y);
         else if (direction.equals(Direction.DOWN))
-            return new GameObject(snakeParts.get(0).x, snakeParts.get(0).y + 1);
+            return new GameObject(oldHead.x, oldHead.y + 1);
         else
-            return new GameObject(snakeParts.get(0).x, snakeParts.get(0).y - 1);
-
+            return new GameObject(oldHead.x, oldHead.y - 1);
     }
 
     public void removeTail() {
@@ -75,13 +79,10 @@ public class Snake {
     }
 
     public boolean checkCollision(GameObject gameObject) {
-
-        boolean flag = false;
-
-        for (int i = 0; i < snakeParts.size(); i++)
-            if (gameObject.x == snakeParts.get(i).x && gameObject.y == snakeParts.get(i).y)
-                flag = true;
-        return flag;
-
+        for (GameObject snakePart : snakeParts)  {
+            if (gameObject.x == snakePart.x && gameObject.y == snakePart.y)
+                return true;
+        }
+        return false;
     }
 }

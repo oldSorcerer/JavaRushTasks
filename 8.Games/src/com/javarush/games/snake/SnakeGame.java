@@ -2,7 +2,6 @@ package com.javarush.games.snake;
 
 import com.javarush.engine.cell.*;
 
-
 public class SnakeGame extends Game {
     
     public static final int WIDTH = 15;
@@ -33,7 +32,6 @@ public class SnakeGame extends Game {
     public void initialize() {
         setScreenSize(15, 15);
         createGame();
-        
     }
 
     @Override
@@ -58,7 +56,6 @@ public class SnakeGame extends Game {
     }
 
     private void createNewApple() {
-
         apple = new Apple(getRandomNumber(WIDTH), getRandomNumber(HEIGHT));
     }
 }
