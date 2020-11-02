@@ -17,7 +17,7 @@ public class SnakeGame extends Game {
 
         Snake newSnake = new Snake(WIDTH / 2, HEIGHT / 2);
         this.snake = newSnake;
-        apple = new Apple(5,5);
+        createNewApple();
         drawScene();
     }
     
@@ -39,6 +39,9 @@ public class SnakeGame extends Game {
     @Override
     public void onTurn(int step) {
         snake.move(apple);
+        if (!apple.isAlive) {
+            createNewApple();
+        }
         drawScene();
     }
 
@@ -52,5 +55,10 @@ public class SnakeGame extends Game {
             snake.setDirection(Direction.UP);
         else if (key.equals(Key.DOWN))
             snake.setDirection(Direction.DOWN);
+    }
+
+    private void createNewApple() {
+
+        apple = new Apple(getRandomNumber(WIDTH), getRandomNumber(HEIGHT));
     }
 }

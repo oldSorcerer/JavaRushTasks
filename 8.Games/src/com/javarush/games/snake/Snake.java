@@ -1,7 +1,6 @@
 package com.javarush.games.snake;
 
 import java.util.*;
-
 import com.javarush.engine.cell.*;
 
 public class Snake {
@@ -9,19 +8,19 @@ public class Snake {
     public boolean isAlive = true;
 
     private List<GameObject> snakeParts = new ArrayList<>();
-
     private static final String HEAD_SIGN = "\uD83D\uDC7E";
     private static final String BODY_SIGN = "\u26AB";
     private Direction direction = Direction.LEFT;
 
     public void setDirection(Direction direction) {
-        // тут возможно баг запомнить что нужна проверка для всех
-        // 4-х состояний left-right / right-left / up-down / down-up
         if (this.direction.equals(Direction.LEFT) && !direction.equals(Direction.RIGHT))
             this.direction = direction;
+        else if (this.direction.equals(Direction.RIGHT) && !direction.equals(Direction.LEFT))
+             this.direction = direction;
         else if (this.direction.equals(Direction.UP) && !direction.equals(Direction.DOWN))
             this.direction = direction;
-
+        else if ( this.direction.equals(Direction.DOWN) && !direction.equals(Direction.UP))
+            this.direction = direction;
     }
 
     public Snake(int x, int y) {
@@ -35,13 +34,11 @@ public class Snake {
     }
 
     public void draw(Game game) {
-
         Color color = isAlive ? Color.BLACK : Color.RED;
-
-        game.setCellValueEx(snakeParts.get(0).x, snakeParts.get(0).y, Color.NONE, HEAD_SIGN, color, 75);
-
-        for (int i = 1; i < snakeParts.size(); i++)
-            game.setCellValueEx(snakeParts.get(i).x, snakeParts.get(i).y, Color.NONE, BODY_SIGN, color, 75);
+        for (int i = 0; i < snakeParts.size(); i++) {
+            String sign = (i == 0) ? HEAD_SIGN : BODY_SIGN;
+            game.setCellValueEx(snakeParts.get(i).x, snakeParts.get(i).y, Color.NONE, sign, color, 75);
+        }
     }
 
     public void move(Apple apple) {
@@ -67,11 +64,16 @@ public class Snake {
             return new GameObject(snakeParts.get(0).x + 1, snakeParts.get(0).y);
         else if (direction.equals(Direction.DOWN))
             return new GameObject(snakeParts.get(0).x, snakeParts.get(0).y + 1);
-        else return new GameObject(snakeParts.get(0).x, snakeParts.get(0).y - 1);
+        else
+            return new GameObject(snakeParts.get(0).x, snakeParts.get(0).y - 1);
 
     }
 
     public void removeTail() {
         snakeParts.remove(snakeParts.size() - 1);
+    }
+
+    public boolean checkCollision(GameObject gameObject) {
+        return false;
     }
 }
