@@ -44,17 +44,18 @@ public class Snake {
     public void move(Apple apple) {
 
         GameObject newHead = createNewHead();
-
-        if (newHead.x < 0 || newHead.x >= SnakeGame.WIDTH || newHead.y < 0 || newHead.y >= SnakeGame.HEIGHT)
-            isAlive = false;
-        else {
-            snakeParts.add(0, newHead);
-            if (newHead.x == apple.x && newHead.y == apple.y) {
-                apple.isAlive = false;
-                return;
+        if (!checkCollision(newHead)) {
+            if (newHead.x < 0 || newHead.x >= SnakeGame.WIDTH || newHead.y < 0 || newHead.y >= SnakeGame.HEIGHT)
+                isAlive = false;
+            else {
+                snakeParts.add(0, newHead);
+                if (newHead.x == apple.x && newHead.y == apple.y) {
+                    apple.isAlive = false;
+                    return;
+                }
+                removeTail();
             }
-            removeTail();
-        }
+        } else isAlive = false;
     }
 
     public GameObject createNewHead() {
@@ -74,6 +75,13 @@ public class Snake {
     }
 
     public boolean checkCollision(GameObject gameObject) {
-        return false;
+
+        boolean flag = false;
+
+        for (int i = 0; i < snakeParts.size(); i++)
+            if (gameObject.x == snakeParts.get(i).x && gameObject.y == snakeParts.get(i).y)
+                flag = true;
+        return flag;
+
     }
 }
