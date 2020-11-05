@@ -62,10 +62,19 @@ public class SnakeGame extends Game {
             snake.setDirection(Direction.UP);
         else if (key.equals(Key.DOWN))
             snake.setDirection(Direction.DOWN);
+        else if (key.equals(Key.SPACE) && isGameStopped)
+            createGame();
+
     }
 
+
+
     private void createNewApple() {
-        apple = new Apple(getRandomNumber(WIDTH), getRandomNumber(HEIGHT));
+        while (true) {
+            apple = new Apple(getRandomNumber(WIDTH), getRandomNumber(HEIGHT));
+            if (!snake.checkCollision(apple))
+                return;
+        }
     }
 
     private void gameOver() {
