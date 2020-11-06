@@ -13,8 +13,11 @@ public class SnakeGame extends Game {
     private int turnDelay;
     private Apple apple;
     private boolean isGameStopped;
+    private int score;
 
     private void createGame() {
+        score = 0;
+        setScore(score);
         turnDelay = 300;
         setTurnTimer(turnDelay);
         snake = new Snake(WIDTH / 2, HEIGHT / 2);
@@ -41,6 +44,8 @@ public class SnakeGame extends Game {
     public void onTurn(int step) {
         snake.move(apple);
         if (!apple.isAlive) {
+            setScore(score += 5);
+            setTurnTimer(turnDelay -= 10);
             createNewApple();
         }
         if (!snake.isAlive) {
