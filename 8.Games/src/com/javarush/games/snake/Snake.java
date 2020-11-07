@@ -28,7 +28,7 @@ public class Snake {
             return;
         if ( (this.direction == Direction.UP || this.direction == Direction.DOWN) && flagY )
             return;
-        
+
         if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT))
             return;
         else if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT))
