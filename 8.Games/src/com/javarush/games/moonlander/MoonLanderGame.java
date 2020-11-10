@@ -72,6 +72,8 @@ public class MoonLanderGame extends Game {
         } else if (key.equals(Key.RIGHT)) {
             isRightPressed = true;
             isLeftPressed = false;
+        } else if (key.equals(Key.SPACE) && isGameStopped) {
+            createGame();
         }
     }
 
@@ -83,8 +85,6 @@ public class MoonLanderGame extends Game {
             isLeftPressed = false;
         } else if (key.equals(Key.RIGHT)) {
             isRightPressed = false;
-        } else if (key.equals(Key.SPACE) && isGameStopped) {
-            createGame();
         }
     }
 
