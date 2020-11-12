@@ -95,10 +95,10 @@ public class MoonLanderGame extends Game {
     }
 
     private void check() {
-        if (rocket.isCollision(landscape)) {
-            gameOver();
-        } else if (rocket.isCollision(platform) && rocket.isStopped()) {
+        if (rocket.isCollision(platform) && rocket.isStopped()) {
             win();
+        } else if (rocket.isCollision(landscape)) {
+            gameOver();
         }
     }
 
@@ -107,7 +107,6 @@ public class MoonLanderGame extends Game {
         isGameStopped = true;
         showMessageDialog(Color.NONE, "WIN", Color.GREEN, 75);
         stopTurnTimer();
-
     }
 
     private void gameOver() {
