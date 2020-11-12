@@ -86,7 +86,7 @@ public class Rocket extends GameObject {
     }
 
     public void land() {
-        y -= 1;
+        y--;
     }
 
     public void crash() {
