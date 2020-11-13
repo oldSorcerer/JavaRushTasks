@@ -55,12 +55,22 @@ public class RacerGame extends Game {
 
     private void moveAll() {
         roadMarking.move(player.speed);
+        player.move();
     }
 
     @Override
     public void onTurn(int step) {
         moveAll();
         drawScene();
+    }
+
+    @Override
+    public void onKeyPress(Key key) {
+        if (key.equals(Key.RIGHT)) {
+            player.setDirection(Direction.RIGHT);
+        } else if(key.equals(Key.LEFT)) {
+            player.setDirection(Direction.LEFT);
+        }
 
     }
 }
