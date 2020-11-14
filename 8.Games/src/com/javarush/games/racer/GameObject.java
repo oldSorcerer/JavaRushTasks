@@ -14,14 +14,14 @@ public class GameObject {
         this.x = x;
         this.y = y;
         this.matrix = matrix;
-        width = matrix[0].length;
-        height = matrix.length;
+        this.width = matrix[0].length;
+        this.height = matrix.length;
     }
 
     public void draw(Game game) {
-        for (int i = 0; i < width; i++) {
-            for (int j = 0; j < height; j++) {
-                game.setCellColor(x + i, y + j, Color.values()[matrix[i][j]]);
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                game.setCellColor(x + j, y + i, Color.values()[matrix[i][j]]);
             }
         }
     }
