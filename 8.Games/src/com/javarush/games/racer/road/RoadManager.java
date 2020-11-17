@@ -16,6 +16,18 @@ public class RoadManager {
     private List<RoadObject> items = new ArrayList<>();
 
 
+    public void draw(Game game) {
+        for (int i = 0; i < items.size(); i++) {
+            items.get(i).draw(game);
+        }
+    }
+
+    public void move(int boost) {
+        for (int i = 0; i < items.size(); i++) {
+            items.get(i).move(boost);
+        }
+    }
+
     private RoadObject createRoadObject(RoadObjectType type, int x, int y) {
         if (type.equals(RoadObjectType.THORN)) {
             return new Thorn(x, y);
