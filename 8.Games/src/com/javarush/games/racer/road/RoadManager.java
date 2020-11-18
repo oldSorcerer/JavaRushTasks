@@ -24,7 +24,7 @@ public class RoadManager {
 
     public void move(int boost) {
         for (int i = 0; i < items.size(); i++) {
-            items.get(i).move(boost + items.get(i).speed);
+            items.get(i).move(boost + items.get(i).speed, items);
         }
         deletePassedItems();
     }
@@ -32,6 +32,7 @@ public class RoadManager {
     public void generateNewRoadObjects(Game game) {
         generateThorn(game);
         generateRegularCar(game);
+        generateMovingCar(game);
     }
 
     public boolean checkCrush(PlayerCar playerCar) {
@@ -45,6 +46,8 @@ public class RoadManager {
     private RoadObject createRoadObject(RoadObjectType type, int x, int y) {
         if (type == RoadObjectType.THORN) {
             return new Thorn(x, y);
+        }else if (type == RoadObjectType.DRUNK_CAR) {
+            return new MovingCar(x, y);
         } else
             return new Car(type, x, y);
     }
@@ -81,6 +84,12 @@ public class RoadManager {
         }
     }
 
+    private void generateMovingCar(Game game) {
+        if (game.getRandomNumber(100) < 10 && !isMovingCarExists()) {
+            addRoadObject(RoadObjectType.DRUNK_CAR, game);
+        }
+    }
+
     private void deletePassedItems() {
         items.removeIf(item -> item.y >= RacerGame.HEIGHT);
     }
@@ -91,7 +100,15 @@ public class RoadManager {
                 return false;
             }
         }
-
         return true;
+    }
+
+    private boolean isMovingCarExists() {
+        for (RoadObject item : items) {
+            if (item instanceof MovingCar) {
+                return true;
+            }
+        }
+        return false;
     }
 }

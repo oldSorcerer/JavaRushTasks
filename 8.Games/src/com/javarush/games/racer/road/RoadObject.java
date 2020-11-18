@@ -3,6 +3,8 @@ package com.javarush.games.racer.road;
 import com.javarush.games.racer.GameObject;
 import com.javarush.games.racer.ShapeMatrix;
 
+import java.util.List;
+
 public class RoadObject extends GameObject {
     public RoadObjectType type;
     public int speed;
@@ -19,7 +21,7 @@ public class RoadObject extends GameObject {
      * Метод, отвечающий за передвижение препятствия. У препятствия может быть своя скорость и дополнительная,
      * которая зависит от скорости движения игрока.
      */
-    public void move(int boost) {
+    public void move(int boost, List<RoadObject> roadObjects) {
         this.y += boost;
     }
 

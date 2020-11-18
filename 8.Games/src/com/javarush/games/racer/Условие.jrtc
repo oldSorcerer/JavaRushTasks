@@ -1,4 +1,36 @@
-taskKey="com.javarush.games.racer.part20"\n\nИгра Racer (20/28)
+taskKey="com.javarush.games.racer.part21"\n\nИгра Racer (21/28)
+
+Давай немного усложним игру.
+Добавим машину с &quot;пьяным&quot; водителем.
+Для ее представления на игровом поле в пакет road был добавлен новый класс MovingCar. Используй его для создания таких машин.
+В отличие от обычных машин, &quot;пьяный&quot; водитель будет двигаться и по горизонтали.
+Чтобы он не пересекался с другими машинами, в методе move() класса MovingCar, происходит проверка таких пересечений.
+Для этого в метод move(int boost), кроме скорости, нужно еще передавать список всех объектов-препятствий.
+
+Еще одна тонкость заключается в том, что MovingCar &mdash; наследник класса RoadObject, и переопределяет его метод move,
+поэтому необходимо добавить второй аргумент и методу move в родительском классе.
+
+При большом количестве &quot;пьяных&quot; водителей на трассе игра станет слишком сложной, поэтому позаботься о том,
+чтобы на трассе одновременно была только одна такая машина.
+Для проверки этого реализуй метод isMovingCarExists() по аналогии с методом isThornExists().
+
+За генерацию MovingCar будет отвечать отдельный метод void generateMovingCar(Game).
+Его реализация аналогична реализации метода generateThorn(Game).
+
+
+Требования:
+1.	В классе RoadObject метод void move() должен принимать два параметра: скорость движения и список RoadObject-ов.
+2.	В классе RoadManager в методе void move(int boost) у объектов типа RoadObject должен вызываться метод move() с двумя параметрами: первый &mdash; сумма boost и скорости текущего объекта, второй &mdash; список items.
+3.	Метод createRoadObject(RoadObjectType, int, int) класса RoadManager должен вернуть новый объект типа MovingCar, если type равен RoadObjectType.DRUNK_CAR.
+4.	В классе RoadManager должен существовать приватный метод boolean isMovingCarExists().
+5.	Метод isMovingCarExists() должен возвращать true, если в списке items есть объект типа MovingCar. Иначе &mdash; false.
+6.	В классе RoadManager должен существовать приватный метод void generateMovingCar(Game).
+7.	В методе generateMovingCar(Game game) у объекта game необходимо вызвать метод getRandomNumber(int) с параметром 100.
+8.	В методе generateMovingCar(Game game), если метод getRandomNumber(int) вернул меньше 10 и метод isMovingCarExists() вернул false, необходимо вызвать метод addRoadObject(RoadObjectType, Game) с параметрами: RoadObjectType.DRUNK_CAR, game.
+9.	В методе generateNewRoadObjects(Game) класса RoadManager необходимо вызвать метод generateMovingCar(Game).
+
+
+Игра Racer (21/28)
 
 Сейчас встречных машин слишком много.
 Чтобы игру можно было пройти, промежутки между препятствиями должны быть достаточно большими.
@@ -13,17 +45,8 @@ taskKey="com.javarush.games.racer.part20"\n\nИгра Racer (20/28)
 Если на дороге есть свободное место, добавляй новую машину в items.
 
 
-Требования:
-1.	В классе RoadManager должно существовать приватное статическое final int поле PLAYER_CAR_DISTANCE, проинициализированное при объявлении значением 12.
-2.	В классе RoadManager должен существовать приватный метод boolean isRoadSpaceFree(RoadObject object).
-3.	Метод isRoadSpaceFree(RoadObject object) должен вызывать метод isCollisionWithDistance(GameObject, int) у элементов списка items для проверки пересечений объектов. В качестве параметров передавать: object, PLAYER_CAR_DISTANCE.
-4.	Метод isRoadSpaceFree(RoadObject) должен возвращать false, если метод isCollisionWithDistance(GameObject, int) с любым из объектов списка items вернул true.
-5.	Метод isRoadSpaceFree(RoadObject) должен возвращать true, если метод isCollisionWithDistance(GameObject, int) со всеми объектами из списка items вернул false.
-6.	Метод addRoadObject(RoadObjectType, Game) должен вызывать метод isRoadSpaceFree(RoadObject).
-7.	Метод addRoadObject(RoadObjectType, Game) должен добавлять созданный методом createRoadObject(RoadObjectType, int, int) объект в список items только в том случае, если метод isRoadSpaceFree(RoadObject) вернул true.
 
-
-Игра Racer (20/28)
+Игра Racer (21/28)
 
 Кроме шипов, на трассе неплохо бы смотрелись машины разных типов.
 Для представления машин на игровом поле создай в пакете road общий для всех типов машин класс Car и унаследуй его от RoadObject.
@@ -38,7 +61,7 @@ taskKey="com.javarush.games.racer.part20"\n\nИгра Racer (20/28)
 
 
 
-Игра Racer (20/28)
+Игра Racer (21/28)
 
 После завершения игры должна быть возможность начать заново. Реализуй перезапуск игры по нажатию клавиши SPACE.
 
@@ -47,7 +70,7 @@ taskKey="com.javarush.games.racer.part20"\n\nИгра Racer (20/28)
 
 
 
-Игра Racer (20/28)
+Игра Racer (21/28)
 
 Игра должна останавливаться в двух случаях: когда игрок выиграл или проиграл. Пока реализуем остановку только для проигрышей.
 Для хранения текущего состояния игры создадим поле boolean isGameStopped, начальное состояние которого должно быть false.
@@ -57,7 +80,7 @@ taskKey="com.javarush.games.racer.part20"\n\nИгра Racer (20/28)
 
 
 
-Игра Racer (20/28)
+Игра Racer (21/28)
 
 На данный момент при пересечении с препятствием машина игрока продолжает движение.
 В этой части реализуем метод, который будет проверять, столкнулась ли машина с преградой.
@@ -65,14 +88,6 @@ taskKey="com.javarush.games.racer.part20"\n\nИгра Racer (20/28)
 
 Столкновение должно быть визуально заметно, то есть необходимо изменить изображение машины игрока.
 Для этого в класс PlayerCar добавь метод stop(), который будет устанавливать полю matrix значение ShapeMatrix.PLAYER_DEAD.
-
-
-
-Игра Racer (20/28)
-
-Сейчас шипы появляются только один раз (в начале игры). Чтобы генерировались новые шипы, старые нужно удалять из списка items после того,
-как они вышли за пределы экрана. Для удаления можно либо использовать итератор, либо создать копию списка items и проходить по ней циклом,
-и если объект нужно удалить из списка &mdash; вызывать items.remove(item).
 
 
 
