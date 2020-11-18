@@ -44,10 +44,8 @@ public class RoadManager {
     private RoadObject createRoadObject(RoadObjectType type, int x, int y) {
         if (type == RoadObjectType.THORN) {
             return new Thorn(x, y);
-        } else if(type != RoadObjectType.THORN) {
-            return new Car(type, x, y);
         } else
-            return null;
+            return new Car(type, x, y);
     }
 
     private void addRoadObject(RoadObjectType roadObjectType, Game game) {
