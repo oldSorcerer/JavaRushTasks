@@ -15,6 +15,11 @@ public class RoadManager {
     private List<RoadObject> items = new ArrayList<>();
     private static final int PLAYER_CAR_DISTANCE = 12;
 
+    private int passedCarsCount = 0;
+
+    public int getPassedCarsCount() {
+        return passedCarsCount;
+    }
 
     public void draw(Game game) {
         for (int i = 0; i < items.size(); i++) {
@@ -91,7 +96,15 @@ public class RoadManager {
     }
 
     private void deletePassedItems() {
-        items.removeIf(item -> item.y >= RacerGame.HEIGHT);
+        List<RoadObject> copyItems = new ArrayList<>(items);
+        for (RoadObject copyItem : copyItems) {
+            if (copyItem.y >= RacerGame.HEIGHT) {
+                if (!(copyItem instanceof Thorn) ) {
+                    passedCarsCount++;
+                }
+                items.remove(copyItem);
+            }
+        }
     }
 
     private boolean isRoadSpaceFree(RoadObject object) {
