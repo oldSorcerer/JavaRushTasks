@@ -8,6 +8,7 @@ public class GameObject {
     public int y;
     public int countMineNeighbors;
     public boolean isOpen;
+    public boolean isFlag;
 
     
     public GameObject(int x, int y, boolean isMine) {
