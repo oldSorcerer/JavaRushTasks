@@ -26,6 +26,11 @@ public class MinesweeperGame extends Game {
         openTile(x, y);
     }
 
+    @Override
+    public void onMouseRightClick(int x, int y) {
+        markTile(x, y);
+    }
+
     private void createGame() {
         for (int y = 0; y < SIDE; y++) {
             for (int x = 0; x < SIDE; x++) {
@@ -92,6 +97,21 @@ public class MinesweeperGame extends Game {
             }
         } else {
             setCellNumber(x, y, cell.countMineNeighbors);
+        }
+    }
+
+    private void markTile(int x, int y) {
+        GameObject cell = gameField[y][x];
+        if (!cell.isFlag && !cell.isOpen && countFlags != 0) {
+            cell.isFlag = true;
+            countFlags--;
+            setCellValue(cell.x, cell.y, FLAG);
+            setCellColor(cell.x, cell.y, Color.YELLOW);
+        } else if (cell.isFlag && !cell.isOpen) {
+            cell.isFlag = false;
+            countFlags++;
+            setCellValue(cell.x, cell.y, "");
+            setCellColor(cell.x, cell.y, Color.ORANGE);
         }
     }
 
