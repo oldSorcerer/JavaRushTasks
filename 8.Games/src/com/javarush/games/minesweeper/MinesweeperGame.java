@@ -8,14 +8,16 @@ import java.util.List;
 
 public class MinesweeperGame extends Game {
     private static final int SIDE = 9;
-    private GameObject[][] gameField = new GameObject[SIDE][SIDE];
-    private int countMinesOnField;
-    private int countFlags;
-    private int countClosedTiles = SIDE * SIDE;
-    private  int score;
 
     private static final String MINE = "\uD83D\uDCA3";
     private static final String FLAG = "\uD83D\uDEA9";
+
+    private GameObject[][] gameField = new GameObject[SIDE][SIDE];
+
+    private int countMinesOnField;
+    private int countFlags;
+    private int countClosedTiles = SIDE * SIDE;
+    private int score;
 
     private boolean isGameStopped;
 
@@ -29,10 +31,9 @@ public class MinesweeperGame extends Game {
     public void onMouseLeftClick(int x, int y) {
         if (isGameStopped) {
             restart();
-        }else {
-            openTile(x, y);
+            return;
         }
-
+        openTile(x, y);
     }
 
     @Override
@@ -48,8 +49,7 @@ public class MinesweeperGame extends Game {
                     countMinesOnField++;
                 }
                 gameField[y][x] = new GameObject(x, y, isMine);
-                setCellColor(x, y, Color.ORANGE);
-                setCellValue(x, y, "");
+                setCellValueEx(x, y, Color.ORANGE, "");
             }
         }
         countMineNeighbors();
