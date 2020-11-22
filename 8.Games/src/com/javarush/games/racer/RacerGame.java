@@ -85,6 +85,11 @@ public class RacerGame extends Game {
             if (roadManager.getPassedCarsCount() >= RACE_GOAL_CARS_COUNT) {
                 finishLine.show();
             }
+            if (finishLine.isCrossed(player)) {
+                win();
+                drawScene();
+                return;
+            }
             moveAll();
         }
         drawScene();
@@ -121,5 +126,11 @@ public class RacerGame extends Game {
         showMessageDialog(Color.NONE, "GAME OVER", Color.RED, 75);
         stopTurnTimer();
         player.stop();
+    }
+
+    private void win() {
+        isGameStopped = true;
+        showMessageDialog(Color.NONE, "YOU WIN", Color.VIOLET, 75);
+        stopTurnTimer();
     }
 }
