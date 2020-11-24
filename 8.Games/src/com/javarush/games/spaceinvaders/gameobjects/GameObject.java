@@ -21,9 +21,9 @@ public class GameObject {
     }
 
     public void draw(Game game) {
-        for (int j = 0; j < width ; j++) {  // x
-            for (int i = 0; i < height; i++) { // y
-                game.setCellValueEx((int)x + j, (int)y + i, Color.values()[matrix[i][j]], "");
+        for (int i = 0; i < width ; i++) {  // x
+            for (int j = 0; j < height; j++) { // y
+                game.setCellValueEx((int)x + i, (int)y + j, Color.values()[matrix[j][i]], "");
             }
         }
         
