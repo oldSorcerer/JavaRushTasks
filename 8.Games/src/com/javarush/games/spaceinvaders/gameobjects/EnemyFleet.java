@@ -21,7 +21,7 @@ public class EnemyFleet {
         ships = new ArrayList<>();
         for (int x = 0; x < COLUMNS_COUNT; x++) {
             for (int y = 0; y < ROWS_COUNT; y++) {
-                ships.add(new EnemyShip(x * STEP, y * STEP +12));
+                ships.add(new EnemyShip(x * STEP, y * STEP + 12));
             }
         }
     }
@@ -32,4 +32,28 @@ public class EnemyFleet {
         }
 
     }
+
+    private double getLeftBorder() {
+        double min = ships.get(0).x;
+
+        for (EnemyShip ship : ships) {
+            if (ship.x < min) {
+                min = ship.x;
+            }
+        }
+        return min;
+    }
+
+    private double getRightBorder() {
+        double max = ships.get(0).x + ships.get(0).width;
+
+        for (EnemyShip ship : ships) {
+            if (ship.x + ship.width > max) {
+                max = ship.x + ship.width;
+            }
+        }
+        return max;
+    }
+
+
 }
