@@ -6,4 +6,9 @@ public class ShapeMatrix {
             {7, 7, 7},
             {0, 7, 0}
     };
+
+    public static final int[][] BULLET = new int[][]{
+            {2},
+            {2}
+    };
 }
