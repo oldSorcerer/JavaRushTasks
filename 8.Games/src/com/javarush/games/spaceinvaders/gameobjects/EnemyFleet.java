@@ -3,6 +3,7 @@ package com.javarush.games.spaceinvaders.gameobjects;
 import com.javarush.engine.cell.Game;
 import com.javarush.games.spaceinvaders.Direction;
 import com.javarush.games.spaceinvaders.ShapeMatrix;
+import com.javarush.games.spaceinvaders.SpaceInvadersGame;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,27 @@ public class EnemyFleet {
     }
 
     public void move() {
+        boolean flagDirection = false;
+        if (ships.isEmpty()) {
+            return;
+        }
+        if (direction == Direction.LEFT && getLeftBorder() < 0) {
+            direction = Direction.RIGHT;
+            flagDirection = true;
+        } else if (direction == Direction.RIGHT && getRightBorder() > SpaceInvadersGame.WIDTH) {
+            direction = Direction.LEFT;
+            flagDirection = true;
+        }
+        if (flagDirection) {
+            for (EnemyShip ship : ships) {
+                ship.move(Direction.DOWN, getSpeed());
+            }
+        } else {
+            for (EnemyShip ship : ships) {
+                ship.move(direction, getSpeed());
+            }
+        }
+
 
     }
 
