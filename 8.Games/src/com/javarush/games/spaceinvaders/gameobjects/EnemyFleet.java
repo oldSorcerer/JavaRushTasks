@@ -86,4 +86,18 @@ public class EnemyFleet {
 
     }
 
+    public Bullet fire(Game game) {
+        if (ships.isEmpty()) {
+            return null;
+        }
+        if (game.getRandomNumber(100 / SpaceInvadersGame.COMPLEXITY) > 0) {
+            return null;
+        }
+
+        int index = game.getRandomNumber(ships.size());
+
+        return ships.get(index).fire();
+
+    }
+
 }
