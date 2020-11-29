@@ -22,4 +22,8 @@ public class Bullet extends GameObject {
     public void move() {
         y += dy;
     }
+
+    public void kill() {
+        isAlive = false;
+    }
 }

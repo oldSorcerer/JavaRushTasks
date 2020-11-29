@@ -11,4 +11,10 @@ public class ShapeMatrix {
             {2},
             {2}
     };
+
+    public static final int[][] PLAYER = new int[][]{
+            {0, 0, 6, 0, 0},
+            {0, 6, 6, 6, 0},
+            {6, 6, 6, 6, 6}
+    };
 }
