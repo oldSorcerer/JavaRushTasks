@@ -28,6 +28,17 @@ public class PlayerShip extends Ship {
         }
     }
 
+    @Override
+    public void kill() {
+        if (!isAlive) {
+            return;
+        }
+        isAlive = false;
+        super.setAnimatedView(
+                ShapeMatrix.KILL_PLAYER_ANIMATION_FIRST,
+                ShapeMatrix.KILL_PLAYER_ANIMATION_SECOND,
+                ShapeMatrix.KILL_PLAYER_ANIMATION_THIRD,
+                ShapeMatrix.DEAD_PLAYER);
 
-
+    }
 }
