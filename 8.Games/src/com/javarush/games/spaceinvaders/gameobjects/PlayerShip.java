@@ -21,8 +21,9 @@ public class PlayerShip extends Ship {
                 if (isAlive && bullet.isAlive && isCollision(bullet)) {
                     kill();
                     bullet.kill();
-//                    break;
+                    //break;
                 }
+
             }
         }
     }
