@@ -17,10 +17,12 @@ public class SpaceInvadersGame extends Game {
     private List<Bullet> enemyBullets;
 
     private EnemyFleet enemyFleet;
+    private PlayerShip playerShip;
 
     private void createGame() {
         enemyBullets = new ArrayList<>();
         enemyFleet = new EnemyFleet();
+        playerShip = new PlayerShip();
         createStars();
         drawScene();
         setTurnTimer(40);
@@ -32,6 +34,7 @@ public class SpaceInvadersGame extends Game {
             bullet.draw(this);
         }
         enemyFleet.draw(this);
+        playerShip.draw(this);
     }
     
     private void drawField() {
@@ -69,6 +72,7 @@ public class SpaceInvadersGame extends Game {
     }
 
     private void check() {
+        playerShip.verifyHit(enemyBullets);
         removeDeadBullets();
     }
 
