@@ -4,7 +4,6 @@ import com.javarush.games.spaceinvaders.Direction;
 import com.javarush.games.spaceinvaders.ShapeMatrix;
 import com.javarush.games.spaceinvaders.SpaceInvadersGame;
 
-import java.security.Key;
 import java.util.List;
 
 public class PlayerShip extends Ship {
@@ -20,6 +19,10 @@ public class PlayerShip extends Ship {
         if (newDirection != Direction.DOWN) {
             this.direction = newDirection;
         }
+    }
+
+    public Direction getDirection() {
+        return direction;
     }
 
     public void verifyHit(List<Bullet> bullets) {
