@@ -1,4 +1,25 @@
-taskKey="com.javarush.games.spaceinvaders.part21"\n\nИгра Space Invaders (21/34)
+taskKey="com.javarush.games.spaceinvaders.part22"\n\nИгра Space Invaders (22/34)
+
+Добавим новое свойство кораблю игрока &mdash; направление движения. Задавать его будем через сеттер. Корабль может
+двигаться в двух направлениях &mdash; влево или вправо. Но поскольку он может совсем не двигаться, для этого состояния
+будем использовать направление &quot;вверх&quot;. Так как при старте корабль не двигается, установим
+направление &quot;вверх&quot; по умолчанию.
+Для считывания команд игрока (нажатия клавиш) переопределим метод onKeyPress(Key) класса Game. Этот метод будет
+устанавливать соответствующее направление кораблю при нажатии клавиши влево или вправо. Кроме этого реализуем
+перезапуск остановленной игры по нажатию клавиши пробел.
+
+
+Требования:
+1.	В классе PlayerShip должно существовать приватное поле direction типа Direction, проинициализированное при объявлении значением Direction.UP.
+2.	В классе PlayerShip должен существовать публичный сеттер setDirection(Direction newDirection).
+3.	Сеттер setDirection(Direction newDirection) должен устанавливать полю direction значение newDirection, если newDirection не равен Direction.DOWN.
+4.	В классе SpaceInvadersGame должен быть переопределен метод onKeyPress(Key) родительского класса Game.
+5.	Метод onKeyPress(Key) должен вызывать метод createGame() и больше ничего не делать, если параметр метода &mdash; клавиша SPACE и игра была остановлена (isGameStopped == true).
+6.	Метод onKeyPress(Key) должен устанавливать кораблю игрока направление Direction.LEFT, если параметр метода &mdash; клавиша LEFT.
+7.	Метод onKeyPress(Key) должен устанавливать кораблю игрока направление Direction.RIGHT, если параметр метода &mdash; клавиша RIGHT.
+
+
+Игра Space Invaders (22/34)
 
 При проигрыше и выигрыше игра останавливается. Давай реализуем метод stopGame, который будет останавливать игру
 и выводить соответствующее сообщение на экран. Тексты сообщений о выигрыше или о проигрыше придумай сам.
@@ -8,23 +29,8 @@ taskKey="com.javarush.games.spaceinvaders.part21"\n\nИгра Space Invaders (21
 вызвав метод stopGameWithDelay.
 
 
-Требования:
-1.	В классе SpaceInvadersGame должно существовать приватное поле isGameStopped типа boolean.
-2.	Поле isGameStopped должно быть проинициализировано в методе createGame() значением false до вызова метода drawScene().
-3.	В классе SpaceInvadersGame должно существовать приватное поле animationsCount типа int.
-4.	Поле animationsCount должно быть проинициализировано в методе createGame() значением 0 до вызова метода drawScene().
-5.	В классе SpaceInvadersGame должен существовать приватный метод void stopGame(boolean isWin).
-6.	В методе stopGame(boolean isWin) значение поля isGameStopped должно быть установлено в true.
-7.	В методе stopGame(boolean isWin) необходимо вызвать метод stopTurnTimer().
-8.	В методе stopGame(boolean isWin), если параметр isWin истина, необходимо вызвать метод showMessageDialog(Color, String, Color, int). Цвет текста передай Color.GREEN.
-9.	В методе stopGame(boolean isWin), если параметр isWin ложь, необходимо вызвать метод showMessageDialog(Color, String, Color, int). Цвет текста передай Color.RED.
-10.	В классе SpaceInvadersGame должен существовать приватный метод void stopGameWithDelay().
-11.	В методе stopGameWithDelay() значение поля animationsCount необходимо увеличить на единицу.
-12.	В методе stopGameWithDelay() необходимо вызвать метод stopGame(boolean) с параметром playerShip.isAlive, если значение поля animationsCount больше либо равно 10.
-13.	В методе check() класса SpaceInvadersGame необходимо вызвать метод stopGameWithDelay(), если корабль игрока НЕ &quot;живой&quot;.
 
-
-Игра Space Invaders (21/34)
+Игра Space Invaders (22/34)
 
 Чтобы переключиться на следующий кадр анимации, в классе Ship создадим метод nextFrame. Он устанавливает в поле matrix
 следующий кадр анимации, если это возможно. Также расширим функционал метода draw, переопределив его таким образом,
@@ -32,14 +38,14 @@ taskKey="com.javarush.games.spaceinvaders.part21"\n\nИгра Space Invaders (21
 
 
 
-Игра Space Invaders (21/34)
+Игра Space Invaders (22/34)
 
 Реализуем &quot;убийство&quot; игрока, переопределив метод kill(). Помимо установки флага isAlive в состояние false,
 он будет добавлять анимацию уничтожения корабля.
 
 
 
-Игра Space Invaders (21/34)
+Игра Space Invaders (22/34)
 
 На данном этапе мы подготовим анимацию для крушения кораблей. Для этого нам понадобится поле frames типа List&lt;int[][]&gt;,
 которое будет хранить список матриц для кадров анимации. Также нам понадобится поле frameIndex, которое хранит индекс
@@ -49,22 +55,10 @@ taskKey="com.javarush.games.spaceinvaders.part21"\n\nИгра Space Invaders (21
 
 
 
-Игра Space Invaders (21/34)
+Игра Space Invaders (22/34)
 
 Добавим в класс PlayerShip метод, который проверяет, попали ли вражеские пули в корабль игрока (метод isCollision класса GameObject).
 Если было попадание, он &quot;убивает&quot; корабль и пулю. Также добавим корабль игрока в класс игры, отрисуем его и внесем проверку попаданий в соответствующий метод.
-
-
-
-Игра Space Invaders (21/34)
-
-Теперь создадим корабль игрока. Для этого нам нужен класс PlayerShip. В его конструкторе
-будем устанавливать значения координат таким образом, чтобы корабль отображался внизу экрана по центру.
-Кроме этого, конструктор задает внешний вид корабля, устанавливая матрицу PLAYER, которую
-мы тебе прислали в классе ShapeMatrix. У корабля может быть два состояния: &quot;живой&quot; или &quot;неживой&quot;
-Чтобы описать эти состояния, добавим поле isAlive в общий класс кораблей Ship. Когда пуля попадает в корабль,
-они (пуля и корабль) уничтожаются, поэтому добавим метод kill. При его вызове будем &quot;убивать&quot;
-корабль и пулю.
 
 
 
