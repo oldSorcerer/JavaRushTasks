@@ -13,6 +13,8 @@ public class SpaceInvadersGame extends Game {
     public static final int HEIGHT = 64;
     public static final int COMPLEXITY = 5;
 
+    private static final int PLAYER_BULLETS_MAX = 1;
+
     private List<Star> stars;
     private List<Bullet> enemyBullets;
     private List<Bullet> playerBullets;
@@ -77,10 +79,16 @@ public class SpaceInvadersGame extends Game {
     }
 
     private void removeDeadBullets() {
-        List<Bullet> bulletsCopy = new ArrayList<>(enemyBullets);
-        for (Bullet bullet : bulletsCopy) {
+        List<Bullet> enemyBulletsCopy = new ArrayList<>(enemyBullets);
+        for (Bullet bullet : enemyBulletsCopy) {
             if (!bullet.isAlive || bullet.y >= HEIGHT - 1) {
                 enemyBullets.remove(bullet);
+            }
+        }
+        List<Bullet> playerBulletsCopy = new ArrayList<>(playerBullets);
+        for (Bullet bullet : playerBulletsCopy) {
+            if (!bullet.isAlive || bullet.y + bullet.height < 0) {
+                playerBullets.remove(bullet);
             }
         }
     }
@@ -135,6 +143,11 @@ public class SpaceInvadersGame extends Game {
             playerShip.setDirection(Direction.LEFT);
         } else if (key == Key.RIGHT) {
             playerShip.setDirection(Direction.RIGHT);
+        } else if (key == Key.SPACE) {
+            Bullet bullet = playerShip.fire();
+            if ( bullet != null && playerBullets.size() < PLAYER_BULLETS_MAX) {
+                playerBullets.add(bullet);
+            }
         }
     }
 
@@ -145,5 +158,13 @@ public class SpaceInvadersGame extends Game {
         } else if (key == Key.RIGHT && playerShip.getDirection() == Direction.RIGHT){
             playerShip.setDirection(Direction.UP);
         }
+    }
+
+    @Override
+    public void setCellValueEx(int x, int y, Color cellColor, String value) {
+        if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT ) {
+            return;
+        }
+        super.setCellValueEx(x, y, cellColor, value);
     }
 }
