@@ -7,15 +7,45 @@ public class ShapeMatrix {
             {0, 7, 0}
     };
 
+    public static final int[][] PLAYER = new int[][]{
+            {0, 0, 6, 0, 0},
+            {0, 6, 6, 6, 0},
+            {6, 6, 6, 6, 6}
+    };
+
+    public static final int[][] DEAD_PLAYER = new int[][]{
+            {0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0}
+    };
+
+    public static final int[][] WIN_PLAYER = new int[][]{
+            {0, 0, 5, 0, 0},
+            {0, 5, 5, 5, 0},
+            {5, 5, 5, 5, 5}
+    };
+
     public static final int[][] BULLET = new int[][]{
             {2},
             {2}
     };
 
-    public static final int[][] PLAYER = new int[][]{
-            {0, 0, 6, 0, 0},
-            {0, 6, 6, 6, 0},
-            {6, 6, 6, 6, 6}
+    public static final int[][] KILL_ENEMY_ANIMATION_FIRST = new int[][]{
+            {4, 4, 4},
+            {4, 4, 4},
+            {4, 4, 4}
+    };
+
+    public static final int[][] KILL_ENEMY_ANIMATION_SECOND = new int[][]{
+            {4, 0, 4},
+            {0, 4, 0},
+            {4, 0, 4}
+    };
+
+    public static final int[][] KILL_ENEMY_ANIMATION_THIRD = new int[][]{
+            {0, 0, 0},
+            {0, 4, 0},
+            {0, 0, 0}
     };
 
     public static final int[][] KILL_PLAYER_ANIMATION_FIRST = new int[][]{
@@ -34,11 +64,5 @@ public class ShapeMatrix {
             {0, 4, 0, 4, 0},
             {4, 0, 4, 0, 4},
             {0, 4, 0, 4, 0}
-    };
-
-    public static final int[][] DEAD_PLAYER = new int[][]{
-            {0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0}
     };
 }
