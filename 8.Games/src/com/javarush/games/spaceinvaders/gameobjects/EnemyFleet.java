@@ -97,7 +97,27 @@ public class EnemyFleet {
         int index = game.getRandomNumber(ships.size());
 
         return ships.get(index).fire();
+    }
 
+    public void verifyHit(List<Bullet> bullets) {
+        for (EnemyShip enemyShip : ships) {
+            for (Bullet bullet : bullets) {
+                boolean flag = enemyShip.isCollision(bullet);
+                if (flag && enemyShip.isAlive && bullet.isAlive) {
+                    enemyShip.kill();
+                    bullet.kill();
+                }
+            }
+        }
+    }
+
+    public void deleteHiddenShips() {
+        List<EnemyShip> enemyShipsCopy = new ArrayList<>(ships);
+        for (EnemyShip enemyShip : enemyShipsCopy) {
+            if (!enemyShip.isVisible()) {
+                ships.remove(enemyShip);
+            }
+        }
     }
 
 }
