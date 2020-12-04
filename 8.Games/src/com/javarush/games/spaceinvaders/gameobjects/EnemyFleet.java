@@ -21,12 +21,15 @@ public class EnemyFleet {
     }
 
     private void createShips() {
+
         ships = new ArrayList<>();
         for (int x = 0; x < COLUMNS_COUNT; x++) {
             for (int y = 0; y < ROWS_COUNT; y++) {
                 ships.add(new EnemyShip(x * STEP, y * STEP + 12));
             }
         }
+        ships.add(new Boss(STEP * COLUMNS_COUNT / 2
+                - ShapeMatrix.BOSS_ANIMATION_FIRST.length / 2 - 1, 5));
     }
 
     public void draw(Game game) {
