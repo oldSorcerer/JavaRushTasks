@@ -1,22 +1,33 @@
-taskKey="com.javarush.games.spaceinvaders.part30"\n\nИгра Space Invaders (30/34)
+taskKey="com.javarush.games.spaceinvaders.part31"\n\nИгра Space Invaders (31/34)
+
+Давай сделаем так, чтобы анимация босса была постоянной. Для этого нам нужно добавить в метод setAnimatedView
+параметр isLoopAnimation, отвечающий за бесконечность анимации. Этот параметр устанавливает соответствующее
+значение полю loopAnimation. Если значение поля loopAnimation равно true, метод nextFrame повторяет кадры, сбрасывая
+frameIndex. Вледствие этого нужно отрефакторить параметры в
+местах вызова метода setAnimatedView.
+
+
+Требования:
+1.	В классе Ship должно существовать приватное поле loopAnimation типа boolean, проинициализированное при объявлении значением false.
+2.	В классе Ship должен существовать публичный метод void setAnimatedView(boolean isLoopAnimation, int[][]... viewFrames).
+3.	В классе Ship не должен существовать публичный метод void setAnimatedView(int[][]... viewFrames).
+4.	Метод setAnimatedView(boolean isLoopAnimation, int[][]... viewFrames) должен устанавливать полю loopAnimation значение isLoopAnimation.
+5.	Метод nextFrame() класса Ship не должен ничего делать, если значение frameIndex больше либо равно количеству фреймов в списке frames и loopAnimation равен false.
+6.	Метод nextFrame() класса Ship должен устанавливать полю frameIndex значение 0, если значение frameIndex больше либо равно количеству фреймов в списке frames и loopAnimation равен true.
+7.	В методе kill() класса PlayerShip необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: false, ShapeMatrix.KILL_PLAYER_ANIMATION_FIRST, ShapeMatrix.KILL_PLAYER_ANIMATION_SECOND, ShapeMatrix.KILL_PLAYER_ANIMATION_THIRD, ShapeMatrix.DEAD_PLAYER.
+8.	В методе kill() класса EnemyShip необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: false, ShapeMatrix.KILL_ENEMY_ANIMATION_FIRST, ShapeMatrix.KILL_ENEMY_ANIMATION_SECOND, ShapeMatrix.KILL_ENEMY_ANIMATION_THIRD.
+9.	В методе kill() класса Boss необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: false, ShapeMatrix.KILL_BOSS_ANIMATION_FIRST, ShapeMatrix.KILL_BOSS_ANIMATION_SECOND, ShapeMatrix.KILL_BOSS_ANIMATION_THIRD.
+10.	В конструкторе класса Boss необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: true, ShapeMatrix.BOSS_ANIMATION_FIRST, ShapeMatrix.BOSS_ANIMATION_SECOND.
+
+
+Игра Space Invaders (31/34)
 
 Сейчас научим босса стрелять. В зависимости от кадра анимации, босс будет стрелять из разных пушек.
 Также переопределим метод kill(), в котором установим значение поля isAlive и зададим кадры анимации взрыва.
 
 
-Требования:
-1.	В классе Boss должен быть переопределен метод fire() родительского класса EnemyShip.
-2.	Метод fire() должен вернуть null, если босс &quot;неживой&quot;.
-3.	Метод fire() должен вернуть новый объект типа Bullet.
-4.	В методе fire() нужно вызвать конструктор класса Bullet с параметрами: x + 6, y + height, Direction.DOWN, если matrix == ShapeMatrix.BOSS_ANIMATION_FIRST.
-5.	В методе fire() нужно вызвать конструктор класса Bullet с параметрами: x, y + height, Direction.DOWN, если matrix != ShapeMatrix.BOSS_ANIMATION_FIRST.
-6.	В классе Boss должен быть переопределен метод kill() родительского класса EnemyShip.
-7.	Метод kill() не должен ничего делать, если босс &quot;неживой&quot;.
-8.	В методе kill() полю isAlive необходимо установить значение false.
-9.	В методе kill() необходимо вызвать метод базового класса setAnimatedView(int[][]...) с параметрами: ShapeMatrix.KILL_BOSS_ANIMATION_FIRST, ShapeMatrix.KILL_BOSS_ANIMATION_SECOND, ShapeMatrix.KILL_BOSS_ANIMATION_THIRD.
 
-
-Игра Space Invaders (30/34)
+Игра Space Invaders (31/34)
 
 Пришло время создать главаря врагов. Чтобы он выглядел эффектнее, добавим анимацию при движении. Если менять анимацию каждый
 такт, его движения будут казаться слишком быстрыми. Чтобы они выглядели нормально, нужно менять кадр один раз в 10 тактов. Именно поэтому
@@ -24,7 +35,7 @@ taskKey="com.javarush.games.spaceinvaders.part30"\n\nИгра Space Invaders (30
 
 
 
-Игра Space Invaders (30/34)
+Игра Space Invaders (31/34)
 
 На данном этапе добавим метод verifyHit(List&lt;Bullet&gt; bullets) для проверки попаданий пуль игрока во вражеские корабли.
 После попадания нам нужно &quot;убить&quot; соответствующие пулю и вражеский корабль. Кроме этого, добавим метод
@@ -34,7 +45,7 @@ deleteHiddenShips(), который будет удалять из списка 
 
 
 
-Игра Space Invaders (30/34)
+Игра Space Invaders (31/34)
 
 Переопределим метод уничтожения для вражеского корабля. Он устанавливает значение false полю isAlive
 и задает матрицы для анимации уничтожения. Также создадим в классе Ship метод isVisible().
@@ -42,7 +53,7 @@ deleteHiddenShips(), который будет удалять из списка 
 
 
 
-Игра Space Invaders (30/34)
+Игра Space Invaders (31/34)
 
 В этой части добавим возможность стрелять по нажатию клавиши пробел. Новосозданные пули игрока добавляются
 в список playerBullets, а те, которые вылетают за пределы игрового поля, удаляются из него.
@@ -51,14 +62,6 @@ deleteHiddenShips(), который будет удалять из списка 
 Также ограничим максимальное количество пуль игрока на экране, чтобы немного усложнить игру. Для удобства вынесем
 это количество в переменную. Переопределим метод setCellValueEx класса Game так, чтобы он работал только
 с валидными координатами.
-
-
-
-Игра Space Invaders (30/34)
-
-Сейчас подготовим возможность стрельбы для игрока. Для этого нам нужен метод fire, который будет создавать пули. Хранить их
-будем в списке playerBullets. Добавь отрисовку пуль в метод drawScene, а их движение &mdash; в метод moveSpaceObjects.
-Осталось только реализовать выстрел по нажатию клавиши. Этим мы займемся в следующей части.
 
 
 
