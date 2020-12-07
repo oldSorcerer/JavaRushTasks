@@ -1,4 +1,28 @@
-taskKey="com.javarush.games.spaceinvaders.part31"\n\nИгра Space Invaders (31/34)
+taskKey="com.javarush.games.spaceinvaders.part32"\n\nИгра Space Invaders (32/34)
+
+Игра проиграна не только если корабль игрока уничтожен, но и когда вражеский флот вплотную
+приблизился к кораблю игрока. Чтобы определить координаты нижней границы вражеского флота,
+добавим метод getBottomBorder().
+После разгрома всех врагов игрок побеждает. Для удобства добавим метод getShipsCount(), который будет возвращать
+количество оставшихся кораблей вражеского флота. Если количество равно 0, нужно вызвать метод stopGameWithDelay() и
+win() у объекта playerShip, который поменяет матрицу корабля игрока на ShapeMatrix.WIN_PLAYER.
+Проверку количества оставшихся вражеских кораблей и достижения ими корабля игрока выполним в методе check().
+
+
+Требования:
+1.	В классе EnemyFleet должен существовать публичный метод double getBottomBorder().
+2.	Метод getBottomBorder() должен возвращать максимальное из значений (y + height) среди всех вражеских кораблей из списка ships.
+3.	В классе EnemyFleet должен существовать публичный метод int getShipsCount().
+4.	Метод getShipsCount() должен возвращать количество вражеских кораблей в списке ships.
+5.	В классе PlayerShip должен существовать публичный метод void win().
+6.	В методе win() класса PlayerShip необходимо вызвать метод setStaticView(int[][]). В качестве параметра передай ShapeMatrix.WIN_PLAYER.
+7.	В методе check() класса SpaceInvadersGame необходимо вызвать метод getBottomBorder() у объекта enemyFleet.
+8.	Если результат вызова метода getBottomBorder() больше либо равен playerShip.y, в методе check() необходимо вызвать метод kill() у объекта playerShip.
+9.	В методе check() класса SpaceInvadersGame необходимо вызвать метод getShipsCount() у объекта enemyFleet.
+10.	Если результат вызова метода getShipsCount() равен 0, в методе check() необходимо вызвать метод win() у объекта playerShip и метод stopGameWithDelay() класса SpaceInvadersGame.
+
+
+Игра Space Invaders (32/34)
 
 Давай сделаем так, чтобы анимация босса была постоянной. Для этого нам нужно добавить в метод setAnimatedView
 параметр isLoopAnimation, отвечающий за бесконечность анимации. Этот параметр устанавливает соответствующее
@@ -7,27 +31,15 @@ frameIndex. Вледствие этого нужно отрефакторить 
 местах вызова метода setAnimatedView.
 
 
-Требования:
-1.	В классе Ship должно существовать приватное поле loopAnimation типа boolean, проинициализированное при объявлении значением false.
-2.	В классе Ship должен существовать публичный метод void setAnimatedView(boolean isLoopAnimation, int[][]... viewFrames).
-3.	В классе Ship не должен существовать публичный метод void setAnimatedView(int[][]... viewFrames).
-4.	Метод setAnimatedView(boolean isLoopAnimation, int[][]... viewFrames) должен устанавливать полю loopAnimation значение isLoopAnimation.
-5.	Метод nextFrame() класса Ship не должен ничего делать, если значение frameIndex больше либо равно количеству фреймов в списке frames и loopAnimation равен false.
-6.	Метод nextFrame() класса Ship должен устанавливать полю frameIndex значение 0, если значение frameIndex больше либо равно количеству фреймов в списке frames и loopAnimation равен true.
-7.	В методе kill() класса PlayerShip необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: false, ShapeMatrix.KILL_PLAYER_ANIMATION_FIRST, ShapeMatrix.KILL_PLAYER_ANIMATION_SECOND, ShapeMatrix.KILL_PLAYER_ANIMATION_THIRD, ShapeMatrix.DEAD_PLAYER.
-8.	В методе kill() класса EnemyShip необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: false, ShapeMatrix.KILL_ENEMY_ANIMATION_FIRST, ShapeMatrix.KILL_ENEMY_ANIMATION_SECOND, ShapeMatrix.KILL_ENEMY_ANIMATION_THIRD.
-9.	В методе kill() класса Boss необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: false, ShapeMatrix.KILL_BOSS_ANIMATION_FIRST, ShapeMatrix.KILL_BOSS_ANIMATION_SECOND, ShapeMatrix.KILL_BOSS_ANIMATION_THIRD.
-10.	В конструкторе класса Boss необходимо вызвать метод базового класса setAnimatedView(boolean, int[][]...) с параметрами: true, ShapeMatrix.BOSS_ANIMATION_FIRST, ShapeMatrix.BOSS_ANIMATION_SECOND.
 
-
-Игра Space Invaders (31/34)
+Игра Space Invaders (32/34)
 
 Сейчас научим босса стрелять. В зависимости от кадра анимации, босс будет стрелять из разных пушек.
 Также переопределим метод kill(), в котором установим значение поля isAlive и зададим кадры анимации взрыва.
 
 
 
-Игра Space Invaders (31/34)
+Игра Space Invaders (32/34)
 
 Пришло время создать главаря врагов. Чтобы он выглядел эффектнее, добавим анимацию при движении. Если менять анимацию каждый
 такт, его движения будут казаться слишком быстрыми. Чтобы они выглядели нормально, нужно менять кадр один раз в 10 тактов. Именно поэтому
@@ -35,7 +47,7 @@ frameIndex. Вледствие этого нужно отрефакторить 
 
 
 
-Игра Space Invaders (31/34)
+Игра Space Invaders (32/34)
 
 На данном этапе добавим метод verifyHit(List&lt;Bullet&gt; bullets) для проверки попаданий пуль игрока во вражеские корабли.
 После попадания нам нужно &quot;убить&quot; соответствующие пулю и вражеский корабль. Кроме этого, добавим метод
@@ -45,23 +57,11 @@ deleteHiddenShips(), который будет удалять из списка 
 
 
 
-Игра Space Invaders (31/34)
+Игра Space Invaders (32/34)
 
 Переопределим метод уничтожения для вражеского корабля. Он устанавливает значение false полю isAlive
 и задает матрицы для анимации уничтожения. Также создадим в классе Ship метод isVisible().
 Он будет возвращать false после того, как у &quot;неживого&quot; корабля отобразится вся анимация.
-
-
-
-Игра Space Invaders (31/34)
-
-В этой части добавим возможность стрелять по нажатию клавиши пробел. Новосозданные пули игрока добавляются
-в список playerBullets, а те, которые вылетают за пределы игрового поля, удаляются из него.
-Для удаления можно либо использовать итератор, либо создать копию списка playerBullets
-и проходить по ней циклом. Если в результате проверки объект нужно удалить из списка &mdash; вызывать playerBullets.remove(bullet).
-Также ограничим максимальное количество пуль игрока на экране, чтобы немного усложнить игру. Для удобства вынесем
-это количество в переменную. Переопределим метод setCellValueEx класса Game так, чтобы он работал только
-с валидными координатами.
 
 
 

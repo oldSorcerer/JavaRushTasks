@@ -123,4 +123,21 @@ public class EnemyFleet {
         }
     }
 
+    public double getBottomBorder() {
+        if (ships.size() == 0) {
+            return 0;
+        }
+
+        double max = ships.get(0).y + ships.get(0).height;
+
+        for (EnemyShip ship : ships) {
+            max = Math.max(max, ship.y + ship.height);
+        }
+        return max;
+    }
+
+    public int getShipsCount() {
+        return ships.size();
+    }
+
 }
