@@ -102,16 +102,22 @@ public class EnemyFleet {
         return ships.get(index).fire();
     }
 
-    public void verifyHit(List<Bullet> bullets) {
+    public int verifyHit(List<Bullet> bullets) {
+        if (bullets.isEmpty()) {
+            return 0;
+        }
+        int summScore = 0;
         for (EnemyShip enemyShip : ships) {
             for (Bullet bullet : bullets) {
                 boolean flag = enemyShip.isCollision(bullet);
                 if (flag && enemyShip.isAlive && bullet.isAlive) {
                     enemyShip.kill();
                     bullet.kill();
+                    summScore += enemyShip.score;
                 }
             }
         }
+        return summScore;
     }
 
     public void deleteHiddenShips() {
@@ -124,16 +130,11 @@ public class EnemyFleet {
     }
 
     public double getBottomBorder() {
-        if (ships.size() == 0) {
-            return 0;
-        }
-
-        double max = ships.get(0).y + ships.get(0).height;
-
+        double bottom = 0;
         for (EnemyShip ship : ships) {
-            max = Math.max(max, ship.y + ship.height);
+            bottom = Math.max(bottom, ship.y + ship.height);
         }
-        return max;
+        return bottom;
     }
 
     public int getShipsCount() {
