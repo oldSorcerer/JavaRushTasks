@@ -14,9 +14,9 @@ public class Game2048 extends Game{
     }
     
     private void drawScene() {
-        for(int i = 0; i < SIDE; i++)
-            for (int j = 0; j < SIDE; j++)
-                setCellColor(i, j, Color.RED);
+        for(int y = 0; y < SIDE; y++)
+            for (int x = 0; x < SIDE; x++)
+                setCellColoredNumber(x, y, gameField[y][x]);
     }
     
     @Override
@@ -41,5 +41,41 @@ public class Game2048 extends Game{
         } else
             createNewNumber();
     }
-    
+
+    private Color getColorByValue(int value) {
+        switch (value) {
+            case 0:
+                return Color.WHITE;
+            case 2:
+                return Color.PLUM;
+            case 4:
+                return Color.SLATEBLUE;
+            case 8:
+                return Color.DODGERBLUE;
+            case 16:
+                return Color.DARKTURQUOISE;
+            case 32:
+                return Color.MEDIUMSEAGREEN;
+            case 64:
+                return Color.LIMEGREEN;
+            case 128:
+                return Color.DARKORANGE;
+            case 256:
+                return Color.SALMON;
+            case 512:
+                return Color.ORANGERED;
+            case 1024:
+                return Color.DEEPPINK;
+            case 2048:
+                return Color.MEDIUMVIOLETRED;
+            default:
+                return Color.NONE;
+        }
+    }
+
+    private void setCellColoredNumber(int x, int y, int value) {
+        Color newColor = getColorByValue(value);
+        String strValue = value > 0 ? "" + value : "";
+        setCellValueEx(x, y,newColor, strValue);
+    }
 }

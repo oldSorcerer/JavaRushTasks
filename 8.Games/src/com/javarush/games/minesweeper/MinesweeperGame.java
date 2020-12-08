@@ -153,6 +153,5 @@ public class MinesweeperGame extends Game {
         countMinesOnField = 0;
         setScore(score);
         createGame();
-
     }
 }
