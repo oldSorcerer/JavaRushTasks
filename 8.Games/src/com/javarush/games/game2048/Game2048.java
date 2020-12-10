@@ -27,11 +27,9 @@ public class Game2048 extends Game{
     }
 
     private void createNewNumber() {
-
         int x = getRandomNumber(SIDE);
         int y = getRandomNumber(SIDE);
         int number = getRandomNumber(10);
-
         if (gameField[x][y] == 0) {
             if (number < 9) {
                 gameField[x][y] = 2;
@@ -111,18 +109,30 @@ public class Game2048 extends Game{
     public void onKeyPress(Key key) {
         if (key == Key.LEFT) {
             moveLeft();
+            drawScene();
         } else if (key == Key.RIGHT) {
             moveRight();
+            drawScene();
         } else if (key == Key.UP) {
             moveUp();
+            drawScene();
         } else if (key == Key.DOWN) {
             moveDown();
+            drawScene();
         }
 
     }
 
     private void moveLeft() {
-
+        boolean flag = false;
+        for (int[] ints : gameField) {
+            if (compressRow(ints) | mergeRow(ints) | compressRow(ints) ) {
+                flag = true;
+            }
+        }
+        if (flag) {
+            createNewNumber();
+        }
     }
 
     private void moveRight() {
