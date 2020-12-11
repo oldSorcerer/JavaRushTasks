@@ -2,6 +2,8 @@ package com.javarush.games.game2048;
 
 import com.javarush.engine.cell.*;
 
+import java.util.Arrays;
+
 public class Game2048 extends Game{
     
     private static final int SIDE = 4;
@@ -136,15 +138,37 @@ public class Game2048 extends Game{
     }
 
     private void moveRight() {
-
+        rotateClockwise();
+        rotateClockwise();
+        moveLeft();
+        rotateClockwise();
+        rotateClockwise();
     }
 
     private void moveUp() {
-
+        rotateClockwise();
+        rotateClockwise();
+        rotateClockwise();
+        moveLeft();
+        rotateClockwise();
     }
 
     private void moveDown() {
+        rotateClockwise();
+        moveLeft();
+        rotateClockwise();
+        rotateClockwise();
+        rotateClockwise();
+    }
 
+    private void rotateClockwise() {
+        int[][] newGameField = new int[SIDE][SIDE];
+        for (int i = 0; i < SIDE ; i++) {
+            for (int j = 0; j < SIDE; j++) {
+                newGameField[j][SIDE - i - 1] = gameField[i][j];
+            }
+        }
+        gameField = newGameField;
     }
 
 }
