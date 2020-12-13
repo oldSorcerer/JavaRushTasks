@@ -5,10 +5,9 @@ import com.javarush.engine.cell.*;
 public class Game2048 extends Game{
     
     private static final int SIDE = 4;
-
     private int[][] gameField = new int[SIDE][SIDE];
-
     private boolean isGameStopped = false;
+    private int score;
 
     private void createGame() {
         gameField = new int[SIDE][SIDE];
@@ -107,6 +106,8 @@ public class Game2048 extends Game{
                 row[i] += row[i + 1];
                 row[i + 1] = 0;
                 result = true;
+                score += row[i];
+                setScore(score);
             }
         }
         return result;
@@ -117,6 +118,8 @@ public class Game2048 extends Game{
         if (isGameStopped) {
             if (key == Key.SPACE) {
                 isGameStopped = false;
+                score = 0;
+                setScore(score);
                 createGame();
                 drawScene();
             } else {
@@ -226,6 +229,4 @@ public class Game2048 extends Game{
         }
         return false;
     }
-
-
 }
