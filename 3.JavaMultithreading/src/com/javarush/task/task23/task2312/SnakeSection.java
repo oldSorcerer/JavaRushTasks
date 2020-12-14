@@ -1,5 +1,7 @@
 package com.javarush.task.task23.task2312;
 
+import java.util.List;
+
 public class SnakeSection {
 
     private int x;
@@ -13,8 +15,9 @@ public class SnakeSection {
     public int getX() {
         return x;
     }
-
     public int getY() {
         return y;
     }
+
+
 }
