@@ -55,6 +55,10 @@ public class Room {
         mouse = new Mouse((int)(Math.random() * width), (int)(Math.random() * height));
     }
 
+    public void sleep() {
+
+    }
+
     public void eatMouse() {
         createMouse();
     }
@@ -64,6 +68,8 @@ public class Room {
         Snake snake = new Snake(0,0);
         game = new Room(100, 100, snake);
         snake.setDirection(SnakeDirection.DOWN);
+        game.createMouse();
+        game.run();
 
     }
 }
