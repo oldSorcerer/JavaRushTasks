@@ -1,7 +1,6 @@
 package com.javarush.task.task23.task2312;
 
 public class Mouse {
-
     private int x;
     private int y;
 
@@ -17,6 +16,4 @@ public class Mouse {
     public int getY() {
         return y;
     }
-
-
 }
