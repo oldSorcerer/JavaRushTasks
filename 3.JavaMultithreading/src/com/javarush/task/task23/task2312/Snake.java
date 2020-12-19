@@ -10,9 +10,9 @@ public class Snake {
     private SnakeDirection direction;
 
     public Snake(int x, int y) {
-        this.sections = new ArrayList<>();
+        sections = new ArrayList<>();
         sections.add(new SnakeSection(x, y));
-        this.isAlive = true;
+        isAlive = true;
     }
 
     public int getX() {
@@ -35,6 +35,22 @@ public class Snake {
     }
 
     public void move() {
+        if (!isAlive) {
+            return;
+        }
+
+        if (direction == SnakeDirection.UP) {
+            move(0, -1);
+        } else if (direction == SnakeDirection.RIGHT) {
+            move(1, 0);
+        } else if (direction == SnakeDirection.DOWN) {
+            move(0, 1);
+        } else if (direction == SnakeDirection.LEFT) {
+            move(-1, 0);
+        }
+    }
+
+    public void move(int dx, int dy) {
 
     }
 }
