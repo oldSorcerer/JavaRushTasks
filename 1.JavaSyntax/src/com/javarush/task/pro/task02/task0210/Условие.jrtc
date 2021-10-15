@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.pro.task02.task0210"\n\nС каждым разом огромнее
+
+В переменную hugeAmount нужно записать число 100500.
+Используй переменные bigAmount, greatAmount и преобразование строки в число.
+Для объявления и инициализации hugeAmount используй одну команду.
+
+
+Требования:
+1.	Не изменяй значения переменных bigAmount и greatAmount.
+2.	Для инициализации переменной hugeAmount используй bigAmount, greatAmount и метод Integer.parseInt(String).
+3.	Программа должна выводить на экран переменную hugeAmount.
+
+
