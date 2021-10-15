@@ -13,8 +13,8 @@ public class Solution {
 
         //напишите тут ваш код
         System.out.println("RESUME".toLowerCase());
-        System.out.println("TITLE: ".toLowerCase() + title);
-        System.out.println("DEGREE: ".toLowerCase() + degree);
-        System.out.println("CAREER: ".toLowerCase() + career);
+        System.out.println(("TITLE: " + title).toLowerCase());
+        System.out.println(("DEGREE: " + degree).toLowerCase());
+        System.out.println(("CAREER: " + career).toLowerCase());
     }
 }
