@@ -10,6 +10,16 @@ public class Solution {
     public static void main(String[] args) {
         String cold = "на улице холодно";
         String warm = "на улице тепло";
-        //напишите тут ваш код
+
+        Scanner scanner = new Scanner(System.in);
+
+        int number = scanner.nextInt();
+
+        if (number < 0 ) {
+            System.out.println(cold);
+        } else {
+            System.out.println(warm);
+        }
+
     }
 }
