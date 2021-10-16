@@ -17,7 +17,7 @@ public class Solution {
 
         if (string1.equals(string2))
             System.out.println("строки одинаковые");
-        else 
+        else
             System.out.println("строки разные");
     }
 }
