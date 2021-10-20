@@ -7,7 +7,24 @@ package com.javarush.task.pro.task04.task0405;
 public class Solution {
     public static void main(String[] args) {
 
-        int i = 0;
+        int height = 1;
+        while (height <= 10) {
+            int width = 1;
+            while (width <= 20) {
+                if (height == 1 || height == 10) {
+                    System.out.print('Б');
+                } else if (width == 1 || width == 20) {
+                    System.out.print('Б');
+                } else {
+                    System.out.print(' ');
+                }
+                width++;
+            }
+            System.out.println();
+            height++;
+        }
+
+        /*int i = 0;
         while (i < 10) {
             int j = 0;
             if (i == 0 || i == 9) {
@@ -29,7 +46,7 @@ public class Solution {
             System.out.println();
             i++;
 
-        }
+        }*/
 
     }
 }
