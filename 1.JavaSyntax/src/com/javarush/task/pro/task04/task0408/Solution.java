@@ -11,16 +11,16 @@ public class Solution {
 
         Scanner sc = new Scanner(System.in);
 
-        int min = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
 
         while (sc.hasNextInt()) {
             int number = sc.nextInt();
 
-            if (number > min && (number % 2 ) == 0) {
-                min = number;
+            if (number > max && (number % 2 ) == 0) {
+                max = number;
             }
         }
-        System.out.println(min);
+        System.out.println(max);
 
     }
 }
