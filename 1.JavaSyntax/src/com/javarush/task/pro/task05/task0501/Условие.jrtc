@@ -1,0 +1,11 @@
+taskKey="com.javarush.task.pro.task05.task0501"\n\nСоздаем массивы
+
+В методе main создай массив intArray типа int и массив doubleArray типа double,
+размер которых равен 10.
+
+
+Требования:
+1.	В методе main(String[]) проинициализируй переменную intArray согласно условию.
+2.	В методе main(String[]) проинициализируй переменную doubleArray согласно условию.
+
+
