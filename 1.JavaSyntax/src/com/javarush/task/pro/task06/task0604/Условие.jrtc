@@ -1,0 +1,19 @@
+taskKey="com.javarush.task.pro.task06.task0604"\n\nЛиверпульская четверка
+
+Метод createCrew() выводит должности и имена членов экипажа космического корабля.
+Во избежание путаницы внутри метода, измени имена параметров createCrew(), чтобы они соответствовали именам переменных,
+которые передаются в метод:
+- name1 в navigator
+- name2 в pilot
+- name3 в secondPilot
+- name4 в flightEngineer
+
+При этом результат выполнения программы не должен измениться.
+
+
+Требования:
+1.	Параметры метода createCrew() должны называться navigator, pilot, secondPilot и flightEngineer.
+2.	Вывод в консоли должен соответствовать условию задачи.
+3.	В методе main() переменные navigator, pilot, secondPilot и flightEngineer должны остаться без изменений.
+
+
