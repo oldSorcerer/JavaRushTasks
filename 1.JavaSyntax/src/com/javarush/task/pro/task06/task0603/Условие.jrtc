@@ -1,0 +1,16 @@
+taskKey="com.javarush.task.pro.task06.task0603"\n\nЛюбимое блюдо
+
+Переименуй параметры метода printPersonInfo():
+- firstName в name;
+- lastName в surname;
+- favouriteDish в meal;
+таким образом, чтобы функционал программы остался неизменным.
+Имена переменных в методе main() оставь без изменений.
+
+
+Требования:
+1.	Параметры метода printPersonInfo() должны называться name, surname и meal.
+2.	Вывод в консоль должен соответствовать условию задачи.
+3.	В методе main() переменные firstName, lastName, favouriteDish должны остаться без изменений.
+
+
