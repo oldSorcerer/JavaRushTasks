@@ -10,7 +10,17 @@ public class Solution {
     public static int[] resultArray;
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+
+        resultArray = new int[firstArray.length + secondArray.length];
+
+        for (int i = 0; i < firstArray.length; i++) {
+            resultArray[i] = firstArray[i];
+        }
+
+        for (int i = 0; i < secondArray.length; i++) {
+            resultArray[i + firstArray.length] = secondArray[i];
+        }
+
         for (int i = 0; i < resultArray.length; i++) {
             System.out.print(resultArray[i] + ", ");
         }
