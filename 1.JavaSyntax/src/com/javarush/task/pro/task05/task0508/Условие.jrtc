@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.pro.task05.task0508"\n\nУдаляем одинаковые строки
+
+В этой задаче тебе нужно:
+1. Считать 6 строк и заполнить ими массив strings.
+2. Удалить повторяющиеся строки из массива strings, заменив их на null (null должны быть не строками &quot;null&quot;).
+
+Примеры.
+1. Массив после чтения строк:
+{&quot;Hello&quot;, &quot;Hello&quot;, &quot;World&quot;, &quot;Java&quot;, &quot;Tasks&quot;, &quot;World&quot;}
+2. Массив после удаления повторяющихся строк:
+{null, null, null, &quot;Java&quot;, &quot;Tasks&quot;, null}
+
+
+Требования:
+1.	В методе main(String[]) считай с клавиатуры 6 строк и заполнить ими массив strings.
+2.	В методе main(String[]) удали(заменить строку на null) элементы из массива strings с одинаковыми строками.
+
+
