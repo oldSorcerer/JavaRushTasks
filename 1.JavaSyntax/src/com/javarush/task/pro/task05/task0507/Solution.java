@@ -1,6 +1,5 @@
 package com.javarush.task.pro.task05.task0507;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /* 
