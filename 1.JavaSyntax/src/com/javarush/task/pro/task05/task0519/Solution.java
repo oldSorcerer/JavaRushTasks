@@ -20,6 +20,6 @@ public class Solution {
         int k = Arrays.binarySearch(copyArray, element);
 
         System.out.println(k >= 0 ? "true" : "false");
-        
+
     }
 }
