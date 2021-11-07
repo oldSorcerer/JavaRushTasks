@@ -69,10 +69,7 @@ public class SnakeGame extends Game {
             snake.setDirection(Direction.DOWN);
         else if (key.equals(Key.SPACE) && isGameStopped)
             createGame();
-
     }
-
-
 
     private void createNewApple() {
         while (true) {
@@ -85,7 +82,7 @@ public class SnakeGame extends Game {
     private void gameOver() {
         stopTurnTimer();
         isGameStopped = true;
-        showMessageDialog(Color.NONE,"GAME OVER", Color.RED,75);
+        showMessageDialog(Color.NONE,"GAME OVER", Color.RED, 75);
     }
 
     private void win() {

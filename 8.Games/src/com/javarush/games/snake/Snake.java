@@ -52,10 +52,8 @@ public class Snake {
 
     public void move(Apple apple) {
         GameObject newHead = createNewHead();
-        if (newHead.x < 0
-                || newHead.x >= SnakeGame.WIDTH
-                || newHead.y < 0
-                || newHead.y >= SnakeGame.HEIGHT) {
+        if (newHead.x < 0 || newHead.x >= SnakeGame.WIDTH ||
+                newHead.y < 0 || newHead.y >= SnakeGame.HEIGHT) {
             isAlive = false;
             return;
         }
