@@ -90,5 +90,4 @@ public class SnakeGame extends Game {
         isGameStopped = true;
         showMessageDialog(Color.NONE, "YOU WIN", Color.GREEN, 75);
     }
-
 }
