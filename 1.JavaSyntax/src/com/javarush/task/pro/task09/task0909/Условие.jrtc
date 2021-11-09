@@ -1,0 +1,20 @@
+taskKey="com.javarush.task.pro.task09.task0909"\n\nЭкранирование символов
+
+Выведи на экран следующий текст в две строки:
+
+It&#39;s a Windows path: &quot;C:\Program Files\Java\jdk-13.0.0\bin&quot;
+It&#39;s a Java string: \&quot;C:\\Program Files\\Java\\jdk-13.0.0\\bin\&quot;
+Подсказка:
+\&rdquo; &ndash; экранирование двойной кавычки;
+\\ &ndash; экранирование обратной косой черты (\).
+Больше про экранирование символов и Escape-последовательности в Java читай в статье:
+https://javarush.ru/groups/posts/614-----ehkranirovanie-simvolov-v-java
+
+
+Требования:
+1.	Нужно, чтобы программа выводила текст.
+2.	Нужно, чтобы было выведено две строки.
+3.	Текст первой строки должен быть: It&#39;s a Windows path: &quot;C:\Program Files\Java\jdk-13.0.0\bin&quot;
+4.	Текст второй строки должен быть: It&#39;s a Java string: \&quot;C:\\Program Files\\Java\\jdk-13.0.0\\bin\&quot;
+
+
