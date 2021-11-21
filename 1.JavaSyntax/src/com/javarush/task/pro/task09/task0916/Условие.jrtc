@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.pro.task09.task0916"\n\nString.format()
+
+Сделай так, чтобы метод format(String name, int salary) возвращал строку в таком виде:
+Меня зовут &lt;name&gt;. Я буду зарабатывать $&lt;salary&gt; в месяц.
+
+Для этого используй метод String.format().
+
+
+Требования:
+1.	Нужно, чтобы метод format(String, int) использовал метод String.format().
+2.	Нужно, чтобы метод format(String, int) возвращал строку согласно условию задачи.
+
+
