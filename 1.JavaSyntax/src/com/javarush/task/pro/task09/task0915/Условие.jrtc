@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.pro.task09.task0915"\n\nStringTokenizer
+
+Используя StringTokenizer раздели query на части по разделителю delimiter.
+Пример:
+getTokens(&quot;java.util.stream&quot;, &quot;\\.&quot;)
+возвращает массив строк
+{&quot;java&quot;, &quot;util&quot;, &quot;stream&quot;}
+
+
+Требования:
+1.	Нужно, чтобы метод getTokens(String, String) использовал StringTokenizer.
+2.	Нужно, чтобы метод getTokens(String, String) возвращал массив типа String, заполненный согласно условию задачи.
+
+
