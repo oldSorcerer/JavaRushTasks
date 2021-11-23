@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.pro.task12.task1214"\n\nПрощай, Паскаль
+
+В методе main найди и удали язык программирования Pascal из списка programmingLanguages.
+
+
+Требования:
+1.	В методе main должен удаляться Pascal из списка programmingLanguages.
+
+
