@@ -1,7 +1,6 @@
 package com.javarush.task.pro.task10.task1012;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 /* 
 Дефрагментация памяти
@@ -16,6 +15,13 @@ public class Memory {
     }
 
     public static void executeDefragmentation(String[] array) {
-        //напишите тут ваш код
+        for (int i = array.length; i >= 1; i--) {
+            for (int j = 1;  j < i; j++) {
+                if (array[j - 1] == null) {
+                    array[j - 1] = array[j];
+                    array[j] = null;
+                }
+            }
+        }
     }
 }
