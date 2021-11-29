@@ -1,10 +1,10 @@
 package com.javarush.task.pro.task10.task1010;
 
-import java.util.Objects;
-
 /* 
 Два айфона
 */
+
+import java.util.Objects;
 
 public class Iphone {
     private String model;
@@ -16,26 +16,24 @@ public class Iphone {
         this.color = color;
         this.price = price;
     }
-   /* @Override
-    public boolean equals(Objects obj) {
+
+    @Override
+    public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Iphone)) {
+            return false;
+        }
+        Iphone iphone = (Iphone) obj;
 
-
-        return false;
-    }
-
-   /* @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Iphone iphone = (Iphone) o;
         return price == iphone.price &&
                 Objects.equals(model, iphone.model) &&
                 Objects.equals(color, iphone.color);
-    }*/
-
+    }
 
     public static void main(String[] args) {
         Iphone iphone1 = new Iphone("X", "Black", 999);
