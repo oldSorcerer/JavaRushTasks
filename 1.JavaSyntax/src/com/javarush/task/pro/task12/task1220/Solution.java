@@ -20,8 +20,14 @@ public class Solution {
 
     public static void checkElementsType(ArrayList<Object> elements) {
         for (Object element : elements) {
-            if (element instanceof String str) {
-                str.printString();
+            if (element instanceof String) {
+                printString();
+            } else if (element instanceof Integer) {
+                printInteger();
+            } else if (element instanceof Integer[]) {
+                printIntegerArray();
+            } else {
+                printUnknown();
             }
         }
     }
