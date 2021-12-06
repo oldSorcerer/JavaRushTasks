@@ -1,5 +1,6 @@
 package com.javarush.task.pro.task13.task1303;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -16,8 +17,6 @@ public class Solution {
             String str = iterator.next();
             System.out.println(str);
         }
-
-
     }
 
     public static void main(String[] args) {
