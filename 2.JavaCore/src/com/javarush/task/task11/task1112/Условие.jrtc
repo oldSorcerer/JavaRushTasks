@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.task11.task1112"\n\niPhone и Apple
+
+Измени два класса &mdash; Apple и IPhone.
+Унаследуй IPhone от Apple.
+
+
+Требования:
+1.	В классе Solution должен быть класс Apple.
+2.	Класс Apple должен быть public.
+3.	В классе Solution должен быть класс IPhone.
+4.	Класс IPhone должен быть public.
+5.	Класс IPhone должен быть унаследован от класса Apple.
+
+
