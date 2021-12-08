@@ -1,7 +1,5 @@
 package com.javarush.task.task13.task1328;
 
-import java.util.Random;
-
 public abstract class AbstractRobot implements Attackable, Defensable{
 
     private static int hitCount = (int) (Math.random() * 4) + 1;

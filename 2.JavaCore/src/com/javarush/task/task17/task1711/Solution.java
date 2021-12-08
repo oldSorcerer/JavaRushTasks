@@ -1,10 +1,8 @@
 package com.javarush.task.task17.task1711;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 /* 
 CRUD 2
