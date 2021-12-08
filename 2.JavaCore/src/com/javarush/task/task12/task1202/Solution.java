@@ -18,6 +18,9 @@ public class Solution {
     }
 
     public static class Whale extends Cow {
-
+        @Override
+        public String getName() {
+            return "";
+        }
     }
 }
