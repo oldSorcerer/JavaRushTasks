@@ -11,11 +11,18 @@ public class Solution {
         System.out.println(cto);
     }
 
+    public static class Worker {
+
+        public void workHard() {
+
+        }
+    }
+
     public static interface Businessman {
         public void workHard();
     }
 
-    public static class CTO implements Businessman {
+    public static class CTO extends Worker implements Businessman {
 
     }
 }
