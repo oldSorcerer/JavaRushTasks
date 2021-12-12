@@ -38,14 +38,30 @@ public class Solution {
     }
 
     public static void removeBugWithFor(ArrayList<String> list) {
-        //напишите тут ваш код
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).equalsIgnoreCase("bug")) {
+                list.remove(i);
+                i--;
+            }
+        }
     }
 
     public static void removeBugWithWhile(ArrayList<String> list) {
-        //напишите тут ваш код
+        Iterator<String> it = list.iterator();
+        while (it.hasNext()) {
+            String str = it.next();
+            if (str.equalsIgnoreCase("bug")) {
+                it.remove();
+            }
+        }
     }
 
     public static void removeBugWithCopy(ArrayList<String> list) {
-        //напишите тут ваш код
+        ArrayList<String> copyList = new ArrayList<>(list);
+        for (String str : copyList) {
+            if (str.equalsIgnoreCase("bug")) {
+                list.remove(str);
+            }
+        }
     }
 }

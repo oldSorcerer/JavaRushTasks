@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.pro.task13.task1306"\n\nИзучаем методы класса Collections, часть 1
+
+В классе Solution объявлены методы: copy(ArrayList&lt;String&gt;, ArrayList&lt;String&gt;), addAll(ArrayList&lt;String&gt;, String...),
+replaceAll(ArrayList&lt;String&gt;, String, String). Тебе нужно переписать их реализацию, используя при этом только соответствующие методы
+класса Collections.
+Параметр String... означает то же, что и String[], только аргументы String можно передавать через запятую.
+
+
+Требования:
+1.	В классе Solution должен быть публичный статический метод copy(ArrayList&lt;String&gt;, ArrayList&lt;String&gt;) с типом возвращаемого значения void.
+2.	В классе Solution должен быть публичный статический метод addAll(ArrayList&lt;String&gt;, String...) с типом возвращаемого значения void.
+3.	В классе Solution должен быть публичный статический метод replaceAll(ArrayList&lt;String&gt;, String, String) с типом возвращаемого значения void.
+4.	Метод copy(ArrayList&lt;String&gt;, ArrayList&lt;String&gt;) нужно переписать, используя метод copy класса Collections.
+5.	Метод addAll(ArrayList&lt;String&gt;, String...) нужно переписать, используя метод addAll класса Collections.
+6.	Метод replaceAll(ArrayList&lt;String&gt;, String, String) нужно переписать, используя метод replaceAll класса Collections.
+
+
