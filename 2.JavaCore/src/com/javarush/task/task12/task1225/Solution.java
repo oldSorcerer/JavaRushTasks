@@ -15,7 +15,6 @@ public class Solution {
     }
 
     public static String getObjectType(Object o) {
-        //напишите тут ваш код
 
         return "Животное";
     }
