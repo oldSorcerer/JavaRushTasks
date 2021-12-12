@@ -4,6 +4,9 @@ package com.javarush.task.task12.task1233;
 Изоморфы наступают
 */
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Solution {
     public static void main(String[] args) throws Exception {
         int[] data = new int[]{1, 2, 3, 5, -2, -8, 0, 77, 5, 5};
@@ -19,9 +22,17 @@ public class Solution {
             return new Pair<Integer, Integer>(null, null);
         }
 
-        //напишите тут ваш код
+        int min = array[0];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+                index = i;
+            }
+        }
 
-        return new Pair<Integer, Integer>(0, 0);
+
+        return new Pair<Integer, Integer>(min, index);
     }
 
 
