@@ -15,7 +15,9 @@ public class Solution {
     }
 
     public static String getObjectType(Object o) {
-
+        if (o instanceof Cat) {
+            return "Кот";
+        }
         return "Животное";
     }
 
