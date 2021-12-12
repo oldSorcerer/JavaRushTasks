@@ -19,9 +19,17 @@ public class Solution {
             return new Pair<Integer, Integer>(null, null);
         }
 
-        //напишите тут ваш код
+        int min = array[0];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+                index = i;
+            }
+        }
 
-        return new Pair<Integer, Integer>(0, 0);
+
+        return new Pair<Integer, Integer>(min, index);
     }
 
 

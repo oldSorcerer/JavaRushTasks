@@ -1,0 +1,12 @@
+taskKey="com.javarush.task.task13.task1304"\n\nSelectable и Updatable
+
+Создай класс Screen и реализуй в нем интерфейсы Selectable и Updatable. Не забудь реализовать методы!
+
+
+Требования:
+1.	Класс Screen должен реализовывать (implements) интерфейс Selectable.
+2.	Класс Screen должен реализовывать (implements) интерфейс Updatable.
+3.	В классе Screen должны быть реализованы методы интерфейса Selectable.
+4.	В классе Screen должны быть реализованы методы интерфейса Updatable.
+
+
