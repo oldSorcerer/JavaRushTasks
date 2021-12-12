@@ -21,15 +21,42 @@ public class Solution {
         public void swim();
     }
 
-    public class Duck {
+    public class Duck implements CanFly, CanSwim, CanRun {
 
+        @Override
+        public void fly() {
+
+        }
+
+        @Override
+        public void run() {
+
+        }
+
+        @Override
+        public void swim() {
+
+        }
     }
 
-    public class Penguin {
+    public class Penguin implements CanSwim, CanRun {
 
+        @Override
+        public void swim() {
+
+        }
+
+        @Override
+        public void run() {
+
+        }
     }
 
-    public class Toad {
+    public class Toad implements CanSwim {
 
+        @Override
+        public void swim() {
+
+        }
     }
 }
