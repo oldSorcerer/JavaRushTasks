@@ -1,0 +1,11 @@
+taskKey="com.javarush.task.pro.task13.task1321"\n\nИз switch в if
+
+В классе Solution есть метод getTranslationForDayOfWeek(String), который возвращает перевод дня недели с английского на русский. Твоя задача &mdash; переписать
+метод, используя только оператор if-else.
+
+
+Требования:
+1.	Метод getTranslationForDayOfWeek(String) должен возвращать перевод дня недели с русского на английский.
+2.	В методе getTranslationForDayOfWeek(String) должен использоваться только оператор if-else.
+
+
