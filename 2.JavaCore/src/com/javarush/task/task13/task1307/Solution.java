@@ -5,11 +5,11 @@ package com.javarush.task.task13.task1307;
 */
 
 public class Solution {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
     }
 
-    interface SimpleObject<String> {
-        SimpleObject<String> getInstance();
+    interface SimpleObject<T> {
+        SimpleObject<T> getInstance();
     }
 
     class StringObject implements SimpleObject<String> {
@@ -18,5 +18,4 @@ public class Solution {
             return null;
         }
     }
-
 }

@@ -13,7 +13,24 @@ public class StringsLinkedList {
     }
 
     public void add(String value) {
-        //напишите тут ваш код
+
+        Node node = new Node();
+
+        if (this.first == null && this.last == null) {
+            node.value = value;
+        }
+        if (this.first != null && this.last == null) {
+
+        }
+        if (this.first == null && this.last != null) {
+
+        }
+        if (this.first != null && this.last != null) {
+
+        }
+
+
+
     }
 
     public static class Node {
