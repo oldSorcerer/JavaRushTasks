@@ -29,6 +29,5 @@ public class Solution {
             en = "Недействительный день недели";
 
         return en;
-
     }
 }
