@@ -51,7 +51,6 @@ public class Solution {
             default :
                 monthString =  "Недействительный месяц";
         }
-
         return monthString;
     }
 }
