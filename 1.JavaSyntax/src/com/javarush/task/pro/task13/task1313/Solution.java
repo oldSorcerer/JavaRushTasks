@@ -18,5 +18,6 @@ public class Solution {
         stringsLinkedList.add("8");
         stringsLinkedList.add("9");
         stringsLinkedList.printAll();
+
     }
 }
