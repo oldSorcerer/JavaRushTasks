@@ -29,6 +29,7 @@ class Solution {
             buyElephant(answer, scanner);
         } catch (Exception e) {
             System.out.println(answer);
+            throw e;
         }
     }
 }
