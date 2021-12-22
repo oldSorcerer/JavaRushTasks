@@ -1,0 +1,15 @@
+taskKey="com.javarush.task.pro.task14.task1411"\n\nРаспаковка исключений
+
+В методе main перехвати RuntimeException.
+Определи, какое исключение в нем сохранено.
+Если это FileNotFoundException, выведи в консоли сообщение: &quot;Не удалось прочесть файл.&quot;,
+а если FileSystemException &mdash; &quot;Не удалось записать в файл.&quot;.
+
+
+Требования:
+1.	В методе main должно перехватываться RuntimeException.
+2.	Нужно вывести &quot;Не удалось прочесть файл.&quot;, если в RuntimeException упаковано FileNotFoundException.
+3.	Нужно вывести &quot;Не удалось записать в файл.&quot;, если в RuntimeException упаковано FileSystemException.
+4.	Класс FileManager не изменяй.
+
+
