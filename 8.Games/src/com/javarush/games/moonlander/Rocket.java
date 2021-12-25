@@ -1,7 +1,6 @@
 package com.javarush.games.moonlander;
 
 import com.javarush.engine.cell.*;
-
 import java.util.Arrays;
 
 public class Rocket extends GameObject {
@@ -28,7 +27,6 @@ public class Rocket extends GameObject {
             speedY += boost;
         }
         y += speedY;
-
         if (isLeftPressed) {
             speedX -= boost;
             x += speedX;

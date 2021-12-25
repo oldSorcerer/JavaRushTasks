@@ -22,6 +22,7 @@ public class Solution {
             } else {
                 return "Напиток безалкогольный";
             }
+
         }
 
         @Override

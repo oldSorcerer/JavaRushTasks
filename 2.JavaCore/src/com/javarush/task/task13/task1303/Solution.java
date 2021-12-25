@@ -25,7 +25,7 @@ public class Solution {
         }
     }
 
-    public static class Cola implements Drink {
+    public static class Cola implements Drink{
         @Override
         public boolean isAlcoholic() {
             return false;
