@@ -1,10 +1,10 @@
 package com.javarush.task.task13.task1314;
 
+import java.awt.*;
+
 /* 
 Большая лисица — это такая лисица
 */
-
-import java.awt.*;
 
 public class Solution {
 
@@ -26,11 +26,11 @@ public class Solution {
     }
 
     public static class BigFox extends Fox {
+
         @Override
         public Color getColor() {
             return Color.GRAY;
         }
-
     }
 
 }
