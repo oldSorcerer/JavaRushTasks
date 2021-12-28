@@ -9,9 +9,10 @@ public class Solution {
     }
 
     interface Person {
-        public boolean isAlive();
+        boolean isAlive();
     }
-    interface Presentable extends Person {
 
+    interface Presentable extends Person {
     }
+
 }
