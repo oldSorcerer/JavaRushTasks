@@ -19,9 +19,7 @@ public class Solution {
                 continue;
             }
             sum = sum + i;
-
         }
-
         System.out.println(sum);
 
     }
