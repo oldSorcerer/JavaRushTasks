@@ -1,10 +1,10 @@
-package com.javarush.task.pro.task15.task1515;
+package com.javarush.task.pro.task15.task1513;
 
 import java.nio.file.Path;
 import java.util.Scanner;
 
 /* 
-Абсолютный путь
+Зри в корень
 */
 
 public class Solution {
@@ -13,12 +13,7 @@ public class Solution {
         String str = scanner.nextLine();
 
         Path path = Path.of(str);
-        if (path.isAbsolute()) {
-            System.out.println(str);
-        } else {
-            System.out.println(path.toAbsolutePath());
-        }
-
+        System.out.println(path.getRoot());
     }
 }
 
