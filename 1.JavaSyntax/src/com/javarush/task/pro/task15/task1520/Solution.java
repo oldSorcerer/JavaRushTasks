@@ -1,4 +1,4 @@
-package com.javarush.task.pro.task15.task1519;
+package com.javarush.task.pro.task15.task1520;
 
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.util.Scanner;
 
 /* 
-Поверхностное копирование
+Перемещение файлов
 */
 
 public class Solution {
@@ -16,13 +16,15 @@ public class Solution {
         Path sourceDirectory = Path.of(scanner.nextLine());
         Path targetDirectory = Path.of(scanner.nextLine());
 
-        try (DirectoryStream<Path> files = Files.newDirectoryStream(sourceDirectory)) {
+        try(DirectoryStream<Path> files = Files.newDirectoryStream(sourceDirectory)) {
             for (Path path : files) {
                 if (Files.isRegularFile(path)) {
-                    Files.copy(path, targetDirectory.resolve(path.getFileName()));
+                    Files.move(path, targetDirectory.resolve(path.getFileName()));
                 }
             }
         }
+
+
     }
 }
 
