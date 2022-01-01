@@ -16,8 +16,13 @@ public class Solution {
         Path sourceDirectory = Path.of(scanner.nextLine());
         Path targetDirectory = Path.of(scanner.nextLine());
 
-
-
+        try (DirectoryStream<Path> files = Files.newDirectoryStream(sourceDirectory)) {
+            for (Path path : files) {
+                if (Files.isRegularFile(path)) {
+                    Files.copy(path, targetDirectory.resolve(path.getFileName()));
+                }
+            }
+        }
     }
 }
 
