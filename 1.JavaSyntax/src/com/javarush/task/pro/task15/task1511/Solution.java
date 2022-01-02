@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
         char[] chars = args[0].toCharArray();
-        try (Scanner scanner = new Scanner(System.in)) {
-           BufferedWriter writer = Files.newBufferedWriter(Path.of(scanner.nextLine()));
+        try (Scanner scanner = new Scanner(System.in);
+             BufferedWriter writer = Files.newBufferedWriter(Path.of(scanner.nextLine())) ) {
            writer.write(chars);
         } catch (IOException e) {
             System.out.println("Something went wrong : " + e);
