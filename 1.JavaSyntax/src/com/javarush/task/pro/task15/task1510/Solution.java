@@ -17,7 +17,7 @@ public class Solution {
         try (InputStream stream = System.in;
              Scanner scanner = new Scanner(stream);
              BufferedWriter bufferedWriter = Files.newBufferedWriter(Path.of(scanner.nextLine()))) {
-            bufferedWriter.write(bytes);
+           // bufferedWriter.write(bytes);
         } catch (IOException e) {
             System.out.println("Something went wrong : " + e);
         }
