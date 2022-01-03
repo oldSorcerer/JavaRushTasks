@@ -1,11 +1,11 @@
-package com.javarush.task.task18.task1801;
+package com.javarush.task.task18.task1802;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
 /* 
-Максимальный байт
+Минимальный байт
 */
 
 public class Solution {
@@ -13,15 +13,15 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String str = reader.readLine();
 
-        int maxByte = 0;
+        int minByte = Integer.MAX_VALUE;
         try (FileInputStream inputStream = new FileInputStream(str)) {
             while (inputStream.available() > 0) {
                 int date = inputStream.read();
-                if (maxByte < date) {
-                    maxByte = date;
+                if (minByte > date) {
+                    minByte = date;
                 }
             }
         }
-        System.out.println(maxByte);
+        System.out.println(minByte);
     }
 }

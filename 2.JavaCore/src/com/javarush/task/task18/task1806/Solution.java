@@ -10,9 +10,9 @@ import java.io.IOException;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        FileInputStream inputStream = new FileInputStream("d:\\!012\\data.txt");
+        FileInputStream inputStream = new FileInputStream("c:/data.txt");
         // Создаем поток-записи-байт-в-файл
-        FileOutputStream outputStream = new FileOutputStream("d:\\!012\\result.txt");
+        FileOutputStream outputStream = new FileOutputStream("c:/result.txt");
 
         byte[] buffer = new byte[1000];
         if (inputStream.available() > 0) {
