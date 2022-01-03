@@ -13,17 +13,15 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String str = reader.readLine();
 
-        FileInputStream fileInputStream = new FileInputStream(str);
-
         int maxByte = 0;
-
-        while (fileInputStream.available() > 0) {
-            int date = fileInputStream.read();
-            if (maxByte < date) {
-                maxByte = date;
+        try (FileInputStream fileInputStream = new FileInputStream(str)) {
+            while (fileInputStream.available() > 0) {
+                int date = fileInputStream.read();
+                if (maxByte < date) {
+                    maxByte = date;
+                }
             }
         }
-        fileInputStream.close();
         System.out.println(maxByte);
     }
 }
