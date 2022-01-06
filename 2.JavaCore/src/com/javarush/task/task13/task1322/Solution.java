@@ -10,15 +10,16 @@ public class Solution {
         SimpleObject<String> stringObject = new StringObject();
     }
 
-    interface SimpleObject<String> {
-        SimpleObject<String> getInstance();
+    interface SimpleObject<T> {
+        SimpleObject<T> getInstance();
     }
 
-    static class StringObject implements SimpleObject<String>  {
+    static class StringObject implements SimpleObject<String> {
 
         @Override
         public SimpleObject<String> getInstance() {
             return null;
         }
     }
+
 }
