@@ -13,7 +13,6 @@ public class QuestionFileOutputStream implements AmigoOutputStream {
     private AmigoOutputStream amigoOutputStream;
 
     public QuestionFileOutputStream(AmigoOutputStream amigoOutputStream) {
-        super();
         this.amigoOutputStream = amigoOutputStream;
     }
 
