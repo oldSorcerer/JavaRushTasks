@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.task18.task1811"\n\nWrapper (Decorator)
+
+Разберись, что делает программа.
+Аналогично классу DecoratorRunnableImpl создай класс DecoratorMyRunnableImpl.
+Вывод в консоль должен быть таким:
+DecoratorRunnableImpl body
+DecoratorMyRunnableImpl body
+RunnableImpl body
+
+
+Требования:
+1.	Создай класс DecoratorMyRunnableImpl, аналогичный DecoratorRunnableImpl.
+2.	После запуска, каждый класс должен вывести в консоль &quot;&lt;свое имя класса&gt; body&quot;, например &quot;DecoratorRunnableImpl body&quot;.
+3.	Классы RunnableImpl и DecoratorRunnableImpl изменять нельзя.
+4.	Метод main изменять нельзя.
+
+
