@@ -1,10 +1,10 @@
 package com.javarush.task.task13.task1325;
 
+import java.awt.*;
+
 /* 
 Компиляция программы
 */
-
-import java.awt.*;
 
 public class Solution {
 
@@ -18,7 +18,7 @@ public class Solution {
         Color getColor();
     }
 
-    public static abstract class Fox implements Animal {
+    public abstract static class Fox implements Animal {
         public String getName() {
             return "Fox";
         }
