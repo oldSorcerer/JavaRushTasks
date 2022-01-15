@@ -12,8 +12,7 @@ public class Solution {
     static LocalDateTime localDateTime = LocalDateTime.now();
 
     public static void main(String[] args) {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy" + "г. " + "H" + "ч."+ "m" + "мин");
-        String suring = dateTimeFormatter.format(localDateTime);
-        System.out.println(suring);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy" + "г. " + "H" + "ч."+ "m" + "мин");
+        System.out.println(dtf.format(localDateTime));
     }
 }
