@@ -12,16 +12,14 @@ public class Solution {
 
     interface SimpleObject {
         String NAME = "SimpleObject";
-
-        void onPress();
     }
 
     interface Button extends SimpleObject {
 
-        String NAME = "Submit";
+        final String NAME = "Submit";
+
+        void onPress();
 
         String onPress(Object o);
-
-
     }
 }
