@@ -27,12 +27,11 @@ public class Solution {
     }
 
     static void fixDate(List<Date> brokenDates) {
-        Date date = new Date(122, 0, 15);
+        Date date = new Date();
         for (Date brokenDate : brokenDates) {
             if (brokenDate.after(date)) {
                 brokenDate.setMonth(brokenDate.getMonth() - 1);
-                int year = brokenDate.getYear() - 1900;
-                brokenDate.setYear(year);
+                brokenDate.setYear(brokenDate.getYear() - 1900);
             }
         }
 
