@@ -2,24 +2,24 @@ package com.javarush.task.task13.task1321;
 
 
 /* 
-Исправление ошибок Ӏ Java Core: 3 уровень, 11 лекция
+Исправление ошибок
 */
 
 public class Solution {
 
     public static void main(String[] args) {
         System.out.println(Dream.HOBBY.toString());
-        System.out.println(Hobby.INDEX);
+        System.out.println(new Hobby().INDEX);
     }
 
     interface Desire {
     }
 
-    interface Dream  {
-        Hobby HOBBY = new Hobby();
+    interface Dream {
+        public static Hobby HOBBY = new Hobby();
     }
 
-    static class Hobby implements Desire, Dream {
+    static class Hobby implements Dream, Desire {
         static int INDEX = 1;
 
         @Override
