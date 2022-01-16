@@ -18,13 +18,21 @@ public class Solution {
 
     public static void createKeyboardOrchestra() {
         orchestra.add(new Organ());
+        orchestra.add(new Piano());
+        orchestra.add(new Piano());
+        orchestra.add(new Piano());
+
     }
 
     public static void createStringedOrchestra() {
-        //напишите тут ваш код
+        orchestra.add(new Violin());
+        orchestra.add(new Violin());
+        orchestra.add(new Guitar());
     }
 
     public static void playOrchestra() {
-        //напишите тут ваш код
+        for (MusicalInstrument musicalInstrument : orchestra) {
+            musicalInstrument.play();
+        }
     }
 }
