@@ -15,11 +15,12 @@ public class Solution {
     }
 
     public static void printMainInfo(Object object) {
-        if (object instanceof Drawable)
+        if (object instanceof Drawable) {
             ((Drawable) object).draw();
-        if (object instanceof Movable)
+        }
+        if (object instanceof Movable) {
             ((Movable) object).move();
-
+        }
     }
 
     static interface Movable {
