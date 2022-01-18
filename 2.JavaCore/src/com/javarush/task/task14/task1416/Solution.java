@@ -1,61 +1,60 @@
 package com.javarush.task.task14.task1416;
 
 /* 
-Исправление ошибок Ӏ Java Core: 4 уровень, 8 лекция
+Стой, кто плывет?
 */
 
 public class Solution {
     public static void main(String[] args) {
-        Swimmable animal = new Orca();
-        animal.swim();
-        animal = new Whale();
-        animal.swim();
-        animal = new Otter();
-        animal.swim();
+        CanSwim creature = new Orca();
+        creature.swim();
+        creature = new Whale();
+        creature.swim();
+        creature = new RiverOtter();
+        creature.swim();
     }
 
-    public static void test(Swimmable animal) {
-        animal.swim();
+    public static void test(CanSwim creature) {
+        creature.swim();
     }
 
-    interface Walkable {
+    interface CanWalk {
         void walk();
     }
 
-    interface Swimmable {
+    interface CanSwim {
         void swim();
     }
 
-    static abstract class OceanAnimal {
+    static abstract class SeaCreature {
         public void swim() {
-            OceanAnimal currentAnimal = (OceanAnimal) getCurrentAnimal();
-            currentAnimal.displaySwim();
+            SeaCreature currentCreature = (SeaCreature) getCurrentCreature();
+            currentCreature.displaySwim();
         }
 
         private void displaySwim() {
-            System.out.println(getCurrentAnimal().getClass().getSimpleName() + " is swimming");
+            System.out.println(getCurrentCreature().getClass().getSimpleName() + " is swimming");
         }
 
-        abstract Swimmable getCurrentAnimal();
+        abstract CanSwim getCurrentCreature();
     }
 
-    static class Orca extends OceanAnimal implements Swimmable {
+    static class Orca extends SeaCreature implements CanSwim{
         @Override
-        Swimmable getCurrentAnimal() {
-            return new Orca();
+        CanSwim getCurrentCreature() {
+            return this;
         }
     }
 
-    static class Whale extends OceanAnimal implements Swimmable {
+    static class Whale extends SeaCreature implements CanSwim {
 
         @Override
-        Swimmable getCurrentAnimal() {
-            return new Whale();
+        CanSwim getCurrentCreature() {
+            return this;
         }
     }
 
-    static class Otter implements Walkable, Swimmable
-    {
+    static class RiverOtter implements CanWalk, CanSwim {
 
         @Override
         public void walk() {
