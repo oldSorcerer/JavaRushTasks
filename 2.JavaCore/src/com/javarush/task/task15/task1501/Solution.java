@@ -6,7 +6,6 @@ package com.javarush.task.task15.task1501;
 
 public class Solution {
     public static void main(String[] args) {
-
     }
 
     public interface Movable {
@@ -26,12 +25,10 @@ public class Solution {
         public boolean isMovable() {
             return false;
         }
-
         @Override
         public Object getAllowedAction(String name) {
             return null;
         }
-
         @Override
         public Object getAllowedAction() {
             return null;
