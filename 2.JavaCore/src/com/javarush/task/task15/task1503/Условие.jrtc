@@ -1,0 +1,28 @@
+taskKey="com.javarush.task.task15.task1503"\n\nООП - машинки
+
+Оцени наши машины и определи их в подходящую категорию &mdash; роскошное или дешевое авто &mdash; и выведи результат.
+Для вывода используй только переменные из класса Constants.
+
+1. В классе Ferrari реализуй метод printlnDesire(), чтобы он выводил на экран &quot;Я хочу ездить на Феррари&quot;.
+2. В классе Lanos реализуй метод printlnDesire(), чтобы он выводил на экран &quot;Я хочу ездить на Ланосе&quot;.
+3. Создай public static класс LuxuriousCar (РоскошнаяМашина).
+4. Создай public static класс CheapCar (ДешеваяМашина).
+5. Унаследуй Ferrari и Lanos от CheapCar и LuxuriousCar, подумай, какой класс для кого.
+6. В классе LuxuriousCar реализуй метод printlnDesire(), чтобы он выводил на экран &quot;Я хочу ездить на роскошной машине&quot;.
+7. В классе CheapCar реализуй метод printlnDesire(), чтобы он выводил на экран &quot;Я хочу ездить на дешевой машине&quot;.
+8. В классах LuxuriousCar и CheapCar для метода printlnDesire() расставь различными способами модификаторы доступа так,
+чтобы в классах Ferrari и Lanos выполнялось расширение видимости.
+
+
+Требования:
+1.	Класс Solution должен содержать public static класс LuxuriousCar.
+2.	Класс Solution должен содержать public static класс CheapCar.
+3.	Класс Ferrari должен быть потомком класса LuxuriousCar.
+4.	Класс Lanos должен быть потомком класса CheapCar.
+5.	Метод printlnDesire в классе LuxuriousCar должен выводить на экран фразу &quot;Я хочу ездить на роскошной машине&quot;.
+6.	Метод printlnDesire в классе CheapCar должен выводить на экран фразу &quot;Я хочу ездить на дешевой машине&quot;.
+7.	Метод printlnDesire в классе Ferrari должен выводить на экран фразу &quot;Я хочу ездить на Феррари&quot;.
+8.	Метод printlnDesire в классе Lanos должен выводить на экран фразу &quot;Я хочу ездить на Ланосе&quot;.
+9.	Область видимости методов printlnDesire в классах Ferrari и Lanos должна быть шире, чем в их классах родителях.
+
+
