@@ -12,15 +12,27 @@ public class Solution {
         new Solution.Lanos().printlnDesire();
     }
 
-    public static class Ferrari {
+    public static class Ferrari extends LuxuriousCar{
         public void printlnDesire() {
-            //add your code here
+            System.out.println(Constants.WANT_STRING + Constants.FERRARI_NAME);
         }
     }
 
-    public static class Lanos {
+    public static class Lanos extends CheapCar {
         public void printlnDesire() {
-            //add your code here
+            System.out.println(Constants.WANT_STRING + Constants.LANOS_NAME);
+        }
+    }
+
+    public static class LuxuriousCar {
+        private void printlnDesire() {
+            System.out.println(Constants.WANT_STRING + Constants.LUXURIOUS_CAR);
+        }
+    }
+
+    public static class CheapCar {
+        private void printlnDesire() {
+            System.out.println(Constants.WANT_STRING + Constants.CHEAP_CAR);
         }
     }
 
