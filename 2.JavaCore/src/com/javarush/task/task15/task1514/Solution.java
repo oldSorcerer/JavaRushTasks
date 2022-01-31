@@ -11,11 +11,11 @@ public class Solution {
     public static Map<Double, String> labels = new HashMap<Double, String>();
 
     static {
-        labels.put(1.1, "Один");
-        labels.put(1.2, "Два");
-        labels.put(1.3, "Три");
-        labels.put(1.4, "Четыри");
-        labels.put(1.5, "Пять");
+        labels.put(1d, "1d");
+        labels.put(2d, "2d");
+        labels.put(3d, "3d");
+        labels.put(4d, "4d");
+        labels.put(5d, "5d");
     }
 
     public static void main(String[] args) {
