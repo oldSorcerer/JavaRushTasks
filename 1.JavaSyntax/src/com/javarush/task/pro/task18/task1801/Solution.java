@@ -17,10 +17,12 @@ public class Solution {
     }
 
     public static void addToList(Runnable runnable) {
-        //напишите тут ваш код
+        list.add(runnable);
     }
 
     public static void runList() {
-        //напишите тут ваш код
+        for (Runnable runnable : list) {
+            runnable.run();
+        }
     }
 }
