@@ -1,0 +1,27 @@
+taskKey="com.javarush.task.pro.task18.task1805"\n\nПрощание с лямбда-выражением
+
+Перед тобой программа, которая сортирует список строк по их длине по возрастанию.
+Это делает метод sortStringsByLength(ArrayList&lt;String&gt;). Для сортировки строк используется метод
+Collections.sort(ArrayList&lt;String&gt;, Comparator&lt;String&gt;), который принимает список строк и компаратор в виде
+лямбда-выражения.
+
+Твоя задача &mdash; переписать реализацию метода sortStringsByLength(ArrayList&lt;String&gt;), чтобы вместо
+лямбда-выражения использовался класс StringComparator, который реализует интерфейс Comparator&lt;String&gt;,
+не меняя логику работы метода sortStringsByLength(ArrayList&lt;String&gt;).
+
+То есть нужно, чтобы в классе StringComparator метод int compare(String s1, String s2) возвращал числовое
+значение согласно этим условиям:
+- отрицательное число, если длина строки s1 меньше длины строки s2;
+- положительное число, если длина строки s1 больше длины строки s2;
+- 0, если длины строк s1 и s2 одинаковы.
+Метод main() не принимает участие в тестировании.
+
+
+Требования:
+1.	В отдельном файле нужно создать публичный класс StringComparator, который реализует интерфейс Comparator&lt;String&gt;.
+2.	В классе StringComparator нужно создать публичный метод int compare(String s1, String s2).
+3.	Метод compare(String s1, String s2) нужно реализовать согласно условию.
+4.	В методе sortStringsByLength(ArrayList&lt;String&gt;) нужно сортировать список строк по возрастанию их длины.
+5.	В методе sortStringsByLength(ArrayList&lt;String&gt;) для сортировки списка строк по возрастанию их длины нужно использовать собственный компаратор (объект типа StringComparator).
+
+
