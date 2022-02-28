@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.pro.task18.task1823"\n\nИз потока данных во множество
+
+Необходимо, чтобы метод getFilteredStrings(Stream&lt;String&gt;) преобразовывал входящий поток строк во множество строк, длина которых больше шести символов.
+Реализуй его, используя метод collect() объекта типа Stream&lt;String&gt;. В качестве параметра передай нужный коллектор
+(объект типа Collector&lt;Set&lt;String&gt;&gt;). Такой объект можно получить, вызвав статический метод toSet() класса Collectors.
+
+Метод main() не принимает участие в тестировании.
+
+
+Требования:
+1.	В публичном статическом методе getFilteredStrings(Stream&lt;String&gt;) нужно вызывать статический метод toSet() класса Collectors.
+2.	Метод getFilteredStrings(Stream&lt;String&gt;) нужно реализовать согласно условию.
+
+
