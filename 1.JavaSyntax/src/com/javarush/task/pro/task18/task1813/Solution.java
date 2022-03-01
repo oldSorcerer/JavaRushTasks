@@ -29,7 +29,6 @@ public class Solution {
     }
 
     public static Stream<Car> onlyElectricCars(ArrayList<Car> cars) {
-        //напишите тут ваш код
-        return Stream.empty();
+        return cars.stream().filter(Car::isElectric);
     }
 }
