@@ -1,0 +1,20 @@
+taskKey="com.javarush.games.minigames.mini05"\n\nЦвета радуги
+
+Поработаем с методом setCellColor(int, int, Color), который будет разукрашивать клетку по переданным координатам.
+Приступим к отрисовке радуги. Необходимо создать игровое поле размером 10x7 в методе initialize() и разукрасить
+каждую строку разными цветами, используя метод setCellColor(int, int, Color). Порядок сверху вниз должен быть следующим:
+Color.RED
+Color.ORANGE
+Color.YELLOW
+Color.GREEN
+Color.BLUE
+Color.INDIGO
+Color.VIOLET
+
+
+Требования:
+1.	В классе RainbowGame должен быть переопределен метод initialize() родительского класса Game.
+2.	В методе initialize() должен быть вызван метод setScreenSize(int, int) с аргументами 10 и 7.
+3.	В методе initialize() с помощью метода setCellColor(int, int, Color) разукрась игровое поле в радужные цвета.
+
+
