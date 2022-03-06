@@ -29,17 +29,14 @@ public class Solution {
     }
 
     public static boolean hasNegativeEvenNumbers(Stream<Integer> stream) {
-        //напишите тут ваш код
-        return false;
+        return stream.anyMatch(x -> x < 0 && x % 2 == 0);
     }
 
     public static boolean hasOnlyPositiveNumbers(Stream<Integer> stream) {
-        //напишите тут ваш код
-        return false;
+        return stream.allMatch(x -> x > 0);
     }
 
     public static boolean hasOnlyNegativeNumbers(Stream<Integer> stream) {
-        //напишите тут ваш код
-        return false;
+        return stream.noneMatch(x -> x > 0);
     }
 }
