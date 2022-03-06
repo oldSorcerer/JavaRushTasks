@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.pro.task18.task1822"\n\nИз потока данных в список
+
+Для решения этой задачи необходимо, чтобы метод getPositiveNumbers(Stream&lt;Integer&gt;) преобразовывал входящий поток чисел в список чисел больше нуля.
+Реализуй его, используя метод collect() объекта типа Stream&lt;Integer&gt;. В качестве параметра передай нужный коллектор
+(объект типа Collector&lt;List&lt;Integer&gt;&gt;). Такой объект можно получить, вызвав статический метод toList() класса Collectors.
+
+Метод main() не принимает участие в тестировании.
+
+
+Требования:
+1.	В публичном статическом методе getPositiveNumbers(Stream&lt;Integer&gt;) нужно вызывать статический метод toList() класса Collectors.
+2.	Метод getPositiveNumbers(Stream&lt;Integer&gt;) нужно реализовать согласно условию.
+
+

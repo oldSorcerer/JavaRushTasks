@@ -1,5 +1,6 @@
 package com.javarush.task.pro.task18.task1825;
 
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
@@ -17,7 +18,6 @@ public class Solution {
     }
 
     public static String getString(Stream<String> stringStream) {
-        //напишите тут ваш код
-        return "";
+        return stringStream.collect(Collectors.joining(" "));
     }
 }

@@ -1,0 +1,24 @@
+taskKey="com.javarush.task.pro.task18.task1820"\n\nСамый дорогой автомобиль
+
+У автомобиля, представленного классом Car, есть две характеристики: название - поле name, цена - поле price.
+В классе Solution выполняются две операции поиска:
+- метод getMostExpensiveCar(Stream&lt;Car&gt;) ищет самый дорогой автомобиль в одном списке;
+- метод getMoreExpensiveCar(Stream&lt;Car&gt;, Car) в другом списке ищет автомобиль дороже, чем полученный в методе
+getMostExpensiveCar(Stream&lt;Car&gt;).
+
+Методы возвращают не сам автомобиль (объект типа Car), а объект типа Optional&lt;Car&gt;.
+
+Подсказка:
+Для поиска элемента с максимальным искомым значением в потоке данных используй метод max(), а чтобы найти первый попавшийся подходящий элемент
+из потока отфильтрованных данных используй метод findFirst().
+
+Метод main() не принимает участие в тестировании.
+
+
+Требования:
+1.	В публичном статическом методе getMostExpensiveCar(Stream&lt;Car&gt;) нужно вызывать метод max() объекта типа Stream&lt;Car&gt;.
+2.	В публичном статическом методе getMoreExpensiveCar(Stream&lt;Car&gt;, Car) нужно вызывать метод findFirst() объекта типа Stream&lt;Car&gt;.
+3.	Метод getMostExpensiveCar(Stream&lt;Car&gt;) нужно реализовать согласно условию.
+4.	Метод getMoreExpensiveCar(Stream&lt;Car&gt;, Car) нужно реализовать согласно условию.
+
+
