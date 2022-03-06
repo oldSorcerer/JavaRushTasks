@@ -20,6 +20,6 @@ public class Solution {
     }
 
     public static Map<String, Integer> getMap(Stream<String> stringStream) {
-        return stringStream.collect(Collectors.toMap(e -> e, e -> e.length()));
+        return stringStream.collect(Collectors.toMap(e -> e, String::length));
     }
 }
