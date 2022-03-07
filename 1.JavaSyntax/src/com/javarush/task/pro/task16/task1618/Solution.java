@@ -16,14 +16,16 @@ public class Solution {
         System.out.println(ZonedDateTime.now(zone1));
         System.out.println(ZonedDateTime.now(zone2));
 
-        LocalDateTime time = changeZone(LocalDateTime.of(2020, 3, 19, 1, 40), zone1, zone2);
+        LocalDateTime time = changeZone(LocalDateTime.of(2020, 3, 19, 9, 40), zone1, zone2);
         System.out.println(time);
     }
 
     static LocalDateTime changeZone(LocalDateTime fromDateTime, ZoneId fromZone, ZoneId toZone) {
+        ZonedDateTime fromZonedDateTime = fromDateTime.atZone(fromZone);
+        ZonedDateTime toZonedDateTime = fromZonedDateTime.withZoneSameInstant(toZone);
 
-        ZonedDateTime time = ZonedDateTime.of(fromDateTime, toZone);
+        return toZonedDateTime.toLocalDateTime();
 
-        return time.toLocalDateTime();
+        //return fromDateTime.atZone(fromZone).withZoneSameInstant(toZone).toLocalDateTime();
     }
 }
