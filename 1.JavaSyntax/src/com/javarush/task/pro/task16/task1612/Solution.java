@@ -20,9 +20,13 @@ public class Solution {
     }
 
     static Set<LocalDateTime> convert(Map<LocalDate, List<LocalTime>> sourceMap) {
-        //напишите тут ваш код
-
-        return null;
+        Set<LocalDateTime> set = new HashSet<>();
+        for (Map.Entry<LocalDate, List<LocalTime>> entry : sourceMap.entrySet()) {
+            for (LocalTime localTime : entry.getValue()) {
+                set.add(LocalDateTime.of(entry.getKey(), localTime));
+            }
+        }
+        return set;
     }
 
     static void printCollection(Collection<?> collection) {
