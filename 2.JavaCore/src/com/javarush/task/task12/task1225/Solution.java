@@ -15,10 +15,17 @@ public class Solution {
     }
 
     public static String getObjectType(Object o) {
-        if (o instanceof Cat) {
+        if (o instanceof Lion) {
+            return "Лев";
+        } else if (o instanceof  Tiger) {
+            return "Тигр";
+        } else if (o instanceof Cat) {
             return "Кот";
-        }
-        return "Животное";
+        } else if (o instanceof Bull) {
+            return "Бык";
+        } else if (o instanceof Cow) {
+            return "Корова";
+        } else return "Животное";
     }
 
     public static class Cat extends Animal   //<--Классы наследуются!!
