@@ -9,27 +9,24 @@ import java.io.InputStreamReader;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        while (true) {
+            String string = reader.readLine();
+            if (string.isEmpty()) {
+                break;
+            }
+            System.out.println(CatFactory.getCatByKey(string).toString());
+        }
     }
 
     static class CatFactory {
         static Cat getCatByKey(String key) {
-            Cat cat;
-            switch (key) {
-                case "vaska":
-                    cat = new MaleCat("Василий");
-                    break;
-                case "murka":
-                    cat = new FemaleCat("Мурочка");
-                    break;
-                case "kiska":
-                    cat = new FemaleCat("Кисюлька");
-                    break;
-                default:
-                    cat = new Cat(key);
-                    break;
-            }
-            return cat;
+            return switch (key) {
+                case "vaska" -> new MaleCat("Василий");
+                case "murka" -> new FemaleCat("Мурочка");
+                case "kiska" -> new FemaleCat("Кисюлька");
+                default -> new Cat(key);
+            };
         }
     }
 
