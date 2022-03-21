@@ -1,0 +1,21 @@
+taskKey="com.javarush.task.jdk13.task14.task1409"\n\nУсложняем switch expression
+
+Метод main с помощью метода getLettersCount получает информацию о количестве букв в названиях дней недели, и выводит ее в виде:
+MONDAY: (6)
+TUESDAY: (7)
+...
+
+Внеси изменения в getLettersCount (добавь вывод на экран), чтобы информация выводилась в виде:
+MONDAY: шесть(6)
+TUESDAY: семь(7)
+...
+
+Метод getLettersCount должен по прежнему содержать одну команду return и использовать switch expression.
+
+
+Требования:
+1.	Нельзя изменять метод main
+2.	Вывод в консоль должен изменится согласно условию.
+3.	В методе getLettersCount должен быть только return с switch expression.
+
+
