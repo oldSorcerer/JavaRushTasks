@@ -6,11 +6,11 @@ import java.util.List;
 Знакомство с дженериками
 */
 
-public class Solution {
+public class Solution <T extends List<Solution.SomeClass>> {
     public static void main(String[] args) {
 
     }
 
-    public static class SomeClass {
+    public static class SomeClass <T extends Number> {
     }
 }
