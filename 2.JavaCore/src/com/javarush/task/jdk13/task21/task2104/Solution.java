@@ -14,7 +14,7 @@ public class Solution {
         solution.users.put("Hubert", new User(172, "Hubert"));
         solution.users.put("Zapp", new User(41, "Zapp"));
         try {
-            Solution clone = solution.clone();
+            Solution clone = (Solution) solution.clone();
             System.out.println(solution);
             System.out.println(clone);
 
