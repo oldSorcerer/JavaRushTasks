@@ -1,0 +1,12 @@
+taskKey="com.javarush.task.jdk13.task28.task2809"\n\nМногонитиевость в одной нити
+
+Тебе нужно модифицировать программу, используя newSingleThreadExecutor вместо создания new Thread().
+Для этого тебе нужно создать ExecutorService, использовать его метод submit(Callable) вместо new Thread(), а в конце не забыть его остановить.
+
+
+Требования:
+1.	В классе Solution должно быть публичное статическое поле executorService инициализированное с помощью метода newSingleThreadExecutor.
+2.	В методе startPlaying создание new Thread() должно быть заменено на вызов метода submit(Callable) сервиса executorService.
+3.	Сервис executorService должен быть остановлен в конце метода main с помощью метода shutdown.
+
+
