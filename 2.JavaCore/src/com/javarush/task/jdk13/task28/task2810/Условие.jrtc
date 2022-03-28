@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.jdk13.task28.task2810"\n\nЖелезобетонная остановка
+
+Реализуй метод completeConcert. Тебе нужно:
+- инициировать остановку сервиса executor;
+- подождать 2 секунды;
+- проверить остановлен ли сервис executor;
+- если остановлен, то ничего не делать;
+- если не остановлен, то принудительно остановить его.
+
+
+Требования:
+1.	Метод completeConcert должен инициировать остановку сервиса executor с помощью метода shutdown.
+2.	Метод completeConcert должен выделить 2 секунды на остановку executor с помощью метода awaitTermination(2, TimeUnit.SECONDS).
+3.	Метод completeConcert не должен больше ничего делать если метод awaitTermination вернул true (executor остановлен).
+4.	Метод completeConcert должен остановить executor с помощью метода shutdownNow если метод awaitTermination вернул false (executor продолжает работать спустя 2 секунды).
+
+
