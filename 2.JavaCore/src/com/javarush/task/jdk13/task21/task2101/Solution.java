@@ -20,9 +20,11 @@ public class Solution {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Solution solution = (Solution) o;
-        return first.equals(solution.first) && last.equals(solution.last);
+        if (o == null) return false;
+        if (o instanceof Solution) {
+            Solution solution = (Solution) o;
+            return Objects.equals(first, solution.first) && Objects.equals(last, solution.last);
+        } else return false;
     }
 
     @Override
