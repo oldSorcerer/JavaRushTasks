@@ -1,0 +1,11 @@
+taskKey="com.javarush.task.jdk13.task28.task2814"\n\nСбор статистики
+
+Реализуй метод invokeMillionTasks. Тебе нужно:
+- создать коллекцию которая будет миллион раз содержать объект переданный в качестве параметра task;
+- с помощью метода invokeAll передать коллекцию в cachedPool.
+
+
+Требования:
+1.	Метод invokeMillionTasks должен вызвать у ExecutorService метод invokeAll передав туда коллекцию состоящую из миллиона объектов task.
+
+
