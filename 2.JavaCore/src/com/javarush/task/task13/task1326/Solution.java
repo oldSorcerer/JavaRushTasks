@@ -1,37 +1,34 @@
 package com.javarush.task.task13.task1326;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
 /* 
 Сортировка четных чисел из файла
 */
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class Solution {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        List<Integer> list = new ArrayList<>();
 
-        InputStream inputStream = new FileInputStream(reader.readLine());
+        try (Scanner scanner = new Scanner(System.in);
+            FileInputStream stream = new FileInputStream(scanner.nextLine());
+            BufferedReader reader = new BufferedReader(new InputStreamReader(stream)) ) {
 
-        BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStream));
-
-        ArrayList<Integer> list = new ArrayList<>();
-
-        while (fileReader.ready()) {
-
-            int number = Integer.parseInt(fileReader.readLine());
-            if (number % 2 == 0) {
-                list.add(number);
+            while (reader.ready()) {
+                int anInt = Integer.parseInt(reader.readLine().trim());
+                if (anInt % 2 == 0) {
+                    list.add(anInt);
+                }
             }
+            Collections.sort(list);
+            list.forEach(System.out::println);
         }
-
-        Collections.sort(list);
-
-        for (Integer tmp : list) {
-            System.out.println(tmp);
-        }
-
-        inputStream.close();
     }
 }
