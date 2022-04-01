@@ -21,8 +21,8 @@ public class Solution {
 
     public static void doMove(AbstractRobot robotFirst, AbstractRobot robotSecond) {
         BodyPart attacked = robotFirst.attack();
-        BodyPart defenced = robotFirst.defense();
-        System.out.println(String.format("%s атаковал робота %s, атакована %s, защищена %s",
-                robotFirst.getName(), robotSecond.getName(), attacked, defenced));
+        BodyPart defended = robotSecond.defense();
+        System.out.printf("%s атаковал робота %s, атакована %s, защищена %s%n",
+                robotFirst.getName(), robotSecond.getName(), attacked, defended);
     }
 }
