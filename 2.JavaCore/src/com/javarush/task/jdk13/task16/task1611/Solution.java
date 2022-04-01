@@ -7,7 +7,6 @@ My first thread
 public class Solution {
 
     public static class TestThread implements Runnable {
-
         @Override
         public void run() {
             System.out.println("My first thread");
