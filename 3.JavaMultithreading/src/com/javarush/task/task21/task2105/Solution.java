@@ -7,6 +7,7 @@ import java.util.Set;
 /* 
 Исправить ошибку. Сравнение объектов
 */
+
 public class Solution {
     private final String first, last;
 
@@ -16,17 +17,12 @@ public class Solution {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null)
-            return false;
-        if (!(obj instanceof Solution))
-            return false;
-
-        if (this == obj)
-            return true;
-
-        Solution n = (Solution) obj;
-        return n.first  == this.first && n.last == this.last;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (!(o instanceof Solution)) return false;
+        Solution solution = (Solution) o;
+        return Objects.equals(first, solution.first) && Objects.equals(last, solution.last);
     }
 
     @Override
