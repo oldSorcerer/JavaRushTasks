@@ -14,9 +14,8 @@ public class Solution {
     public static void main(String[] args) throws IOException {
 
         try (Scanner scanner = new Scanner(System.in);
-             FileInputStream fileInputStream = new FileInputStream(scanner.nextLine());
-             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-             BufferedReader reader = new BufferedReader(inputStreamReader);) {
+             FileInputStream stream = new FileInputStream(scanner.nextLine());
+             BufferedReader reader = new BufferedReader(new InputStreamReader(stream));) {
             while (reader.ready()) {
                 System.out.println(reader.readLine());
             }
