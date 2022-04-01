@@ -11,7 +11,7 @@ public class Solution {
         new Thread(task).start();
     }
 
-    private static class TestThread implements Runnable {
+    public static class TestThread implements Runnable {
         @Override
         public void run() {
             System.out.println("My first thread");
