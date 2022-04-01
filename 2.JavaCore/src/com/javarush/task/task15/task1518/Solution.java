@@ -14,7 +14,7 @@ public class Solution {
 
     static {
         cat = new Cat();
-        cat.name = "Vaska";
+        cat.name = "Vasya";
         System.out.println(cat.name);
     }
 

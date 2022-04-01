@@ -1,7 +1,7 @@
 taskKey="com.javarush.task.task15.task1517"\n\nСтатики и исключения
 
-В статическом блоке класса Solution выбрось Exception.
-Нужно, чтобы класс не загрузился, и вместо значения переменной B появилось сообщение об ошибке:
+В статическом блоке класса Solution напиши код, выполнение которого приведет к возникновению исключения.
+В результате класс не загрузится, и вместо значения переменной B появится сообщение об ошибке:
 
 Exception in thread &quot;main&quot; java.lang.ExceptionInInitializerError
 at java.lang.Class.forName0(Native Method)

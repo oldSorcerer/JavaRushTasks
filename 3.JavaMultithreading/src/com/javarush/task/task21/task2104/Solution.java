@@ -1,11 +1,11 @@
-package com.javarush.task.task21.task2105;
+package com.javarush.task.task21.task2104;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 /* 
-Исправить ошибку. Сравнение объектов
+Equals and HashCode
 */
 
 public class Solution {
@@ -19,10 +19,11 @@ public class Solution {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null) return false;
-        if (!(o instanceof Solution)) return false;
-        Solution solution = (Solution) o;
-        return Objects.equals(first, solution.first) && Objects.equals(last, solution.last);
+        if (o ==  null) return false;
+        if (o instanceof Solution) {
+            Solution solution = (Solution) o;
+            return Objects.equals(first, solution.first) && Objects.equals(last, solution.last);
+        } else return false;
     }
 
     @Override
@@ -32,7 +33,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Set<Solution> s = new HashSet<>();
-        s.add(new Solution("Mickey", "Mouse"));
-        System.out.println(s.contains(new Solution("Mickey", "Mouse")));
+        s.add(new Solution("Donald", "Duck"));
+        System.out.println(s.contains(new Solution("Donald", "Duck")));
     }
 }

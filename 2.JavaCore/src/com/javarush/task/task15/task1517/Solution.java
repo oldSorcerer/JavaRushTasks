@@ -8,8 +8,9 @@ public class Solution {
     public static int A = 0;
 
     static {
-        if (true)
-            throw new ExceptionInInitializerError();
+        if (true) {
+            throw new RuntimeException();
+        }
     }
 
     public static int B = 5;
