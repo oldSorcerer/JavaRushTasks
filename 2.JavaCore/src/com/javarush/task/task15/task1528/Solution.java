@@ -29,5 +29,6 @@ public class Solution {
         public Double getAmount() {
             return amount;
         }
+
     }
 }
