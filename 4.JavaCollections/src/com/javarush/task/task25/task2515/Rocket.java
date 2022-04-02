@@ -1,4 +1,4 @@
 package com.javarush.task.task25.task2515;
 
-public class SpaceShip extends BaseObject{
+public class Rocket extends BaseObject {
 }
