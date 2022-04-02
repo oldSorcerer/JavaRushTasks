@@ -14,24 +14,22 @@ public class Solution {
     }
 
     static {
-        try {
-            reset();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        reset();
     }
 
     public static CanFly result;
 
-    public static void reset() throws IOException {
-        BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-        String word = rd.readLine();
-        if (word.equals("helicopter"))
-            result = new Helicopter();
-        if (word.equals("plane")) {
-            int volume = Integer.parseInt(rd.readLine());
-            result = new Plane(volume);
+    public static void reset() {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)) ) {
+            String string = reader.readLine();
+            if (string.equalsIgnoreCase("helicopter")) {
+                result = new Helicopter();
+            } else if (string.equalsIgnoreCase("plane")) {
+                int count = Integer.parseInt(reader.readLine());
+                result = new Plane(count);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        //rd.close();
     }
 }
