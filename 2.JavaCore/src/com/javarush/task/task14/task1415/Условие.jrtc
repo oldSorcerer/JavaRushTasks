@@ -6,6 +6,7 @@ taskKey="com.javarush.task.task14.task1415"\n\nКлининговый центр
 - для однокомнатных квартир (OneRoomApt) вызвать метод clean1Room();
 - для двухкомнатных квартир (TwoRoomApt) вызвать метод clean2Rooms();
 - для трехкомнатных квартир (ThreeRoomApt) вызвать метод clean3Rooms().
+3. Использовать instanceof.
 
 
 Требования:
