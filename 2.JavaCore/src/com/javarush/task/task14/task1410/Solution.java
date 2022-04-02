@@ -8,7 +8,7 @@ public class Solution {
     public static void main(String[] args) {
         getDeliciousDrink().taste();
         System.out.println(getWine().getHolidayName());
-        System.out.println(getBubblyWine().getHolidayName());
+        System.out.println(getSparklingWine().getHolidayName());
         System.out.println(getWine().getHolidayName());
     }
 
@@ -20,7 +20,7 @@ public class Solution {
         return new Wine();
     }
 
-    public static Wine getBubblyWine() {
-        return new BubblyWine();
+    public static Wine getSparklingWine() {
+        return new SparklingWine();
     }
 }
