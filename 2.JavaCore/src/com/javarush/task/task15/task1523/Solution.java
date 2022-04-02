@@ -5,25 +5,18 @@ package com.javarush.task.task15.task1523;
 */
 
 public class Solution {
-    public int a;
-    public int b;
-    public int c;
 
-    Solution() {
-    }
+    public Solution() {
 
-    public Solution(int a) {
-        this.a = a;
     }
+    private Solution(int x) {
 
-    protected Solution(int a, int b) {
-        this.a = a;
-        this.b = b;
     }
-    private Solution(int a, int b, int c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    protected Solution(int x, int y) {
+
+    }
+    Solution(String string) {
+
     }
 
     public static void main(String[] args) {
