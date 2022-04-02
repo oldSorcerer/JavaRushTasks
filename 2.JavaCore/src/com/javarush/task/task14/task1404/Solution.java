@@ -1,40 +1,36 @@
 package com.javarush.task.task14.task1404;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /* 
 Коты
 */
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
-            String key = rd.readLine();
-
-            if (key.isEmpty())
+            String string = reader.readLine();
+            if (string.isEmpty()) {
                 break;
-
-            Cat cat = CatFactory.getCatByKey(key);
-
-            System.out.println(cat.toString());
-
+            }
+            System.out.println(CatFactory.getCatByKey(string));
         }
     }
 
     static class CatFactory {
         static Cat getCatByKey(String key) {
-            Cat cat = null;
-            if ("vaska".equals(key)) {
-                cat = new MaleCat("Василий");
-            } else if ("murka".equals(key)) {
-                cat = new FemaleCat("Мурочка");
-            } else if ("kiska".equals(key)) {
-                cat = new FemaleCat("Кисюлька");
-            } else {
-                cat = new Cat(key);
+            switch (key) {
+                case "vaska":
+                    return new MaleCat("Василий");
+                case "murka":
+                    return new FemaleCat("Мурочка");
+                case "kiska":
+                    return new FemaleCat("Кисюлька");
+                default:
+                    return new Cat(key);
             }
-            return cat;
         }
     }
 
