@@ -14,27 +14,29 @@ public class Solution {
         while (true) {
             String key = reader.readLine();
 
-            if (key.equals("user"))
+            if (key.equalsIgnoreCase("user")) {
                 doWork(new Person.User());
-            else if (key.equals("loser"))
+            } else if (key.equalsIgnoreCase("loser")) {
                 doWork(new Person.Loser());
-            else if (key.equals("coder"))
+            } else if (key.equalsIgnoreCase("coder")) {
                 doWork(new Person.Coder());
-            else if (key.equals("proger"))
+            } else if (key.equalsIgnoreCase("proger")) {
                 doWork(new Person.Proger());
-            else
+            } else {
                 break;
+            }
         }
     }
 
     public static void doWork(Person person) {
-        if (person instanceof Person.User)
+        if (person instanceof Person.User) {
             ((Person.User) person).live();
-        if (person instanceof Person.Loser)
+        } else if (person instanceof Person.Loser) {
             ((Person.Loser) person).doNothing();
-        if (person instanceof Person.Coder)
+        } else if (person instanceof Person.Coder) {
             ((Person.Coder) person).writeCode();
-        if (person instanceof Person.Proger)
+        } else if (person instanceof Person.Proger) {
             ((Person.Proger) person).enjoy();
+        }
     }
 }
