@@ -8,16 +8,15 @@ public class Tree {
         this.number = ++globalNumber;
     }
 
-
     public void info(Object s) {
-        System.out.println(String.format("Дерево № %d , метод Object, параметр %s", number, s.getClass().getSimpleName()));
+        System.out.printf("Дерево № %d , метод Object, параметр %s%n", number, s.getClass().getSimpleName());
     }
 
     public void info(Number s) {
-        System.out.println(String.format("Дерево № %d , метод Number, параметр %s", number, s.getClass().getSimpleName()));
+        System.out.printf("Дерево № %d , метод Number, параметр %s%n", number, s.getClass().getSimpleName());
     }
 
     public void info(String s) {
-        System.out.println(String.format("Дерево № %d , метод String, параметр %s", number, s.getClass().getSimpleName()));
+        System.out.printf("Дерево № %d , метод String, параметр %s%n", number, s.getClass().getSimpleName());
     }
 }
