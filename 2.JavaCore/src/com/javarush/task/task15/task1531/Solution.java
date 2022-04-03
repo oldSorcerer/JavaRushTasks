@@ -17,22 +17,17 @@ public class Solution {
         reader.close();
 
         System.out.println(factorial(input));
-        
     }
 
     public static String factorial(int n) {
-        BigDecimal factorial = BigDecimal.valueOf(1);
+        int fact;
+
         if (n < 0) {
             return "0";
-        } else if ( n == 0) {
-            return "1";
-        } else if (n <= 150) {
-            for (int i = 0; i < n; i++) {
-                factorial = factorial.multiply(BigDecimal.valueOf(i + 1));
-            }
-        } else {
-            return "больше условия в 150";
         }
-        return String.valueOf(factorial);
+
+        fact = n * Integer.parseInt(factorial(n - 1));
+
+        return fact + "";
     }
 }
