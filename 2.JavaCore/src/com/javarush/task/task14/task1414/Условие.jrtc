@@ -6,13 +6,13 @@ taskKey="com.javarush.task.task14.task1414"\n\nMovieFactory
 1. Разобраться, что программа умеет делать.
 2. Все классы должны быть внутри класса Solution.
 3. Добавить классы Cartoon, Thriller.
-4. Разобраться, как мы получаем объект класса SoapOpera по ключу "soapOpera".
+4. Разобраться, как мы получаем объект класса SoapOpera по ключу &quot;soapOpera&quot;.
 5. Аналогично получению объекта SoapOpera:
-- добавить в MovieFactory.getMovie получение объекта Cartoon для ключа "cartoon";
-- добавить в MovieFactory.getMovie получение объекта Thriller для ключа "thriller".
+- добавить в MovieFactory.getMovie получение объекта Cartoon для ключа &quot;cartoon&quot;;
+- добавить в MovieFactory.getMovie получение объекта Thriller для ключа &quot;thriller&quot;.
 
 6. Считать с консоли несколько ключей (строк).
-Важно: ввод заканчивается, как только вводится строка, не совпадающая с одной из: "cartoon", "thriller", "soapOpera".
+Важно: ввод заканчивается, как только вводится строка, не совпадающая с одной из: &quot;cartoon&quot;, &quot;thriller&quot;, &quot;soapOpera&quot;.
 7. Создать переменную movie типа Movie, и для каждой введенной строки (ключа):
 - получить объект, используя MovieFactory.getMovie и присвоить его переменной movie;
 - вывести на экран movie.getClass().getSimpleName().
