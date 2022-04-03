@@ -19,8 +19,8 @@ public class Solution {
             }
         };
 
-        BTable table = new TableAdapter(aTable);
-        System.out.println(table.getHeaderText());
+        //BTable table = new TableAdapter(aTable);
+        //System.out.println(table.getHeaderText());
     }
 
     public static class TableAdapter {
