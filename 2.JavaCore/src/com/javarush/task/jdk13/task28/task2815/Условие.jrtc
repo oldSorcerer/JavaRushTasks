@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.jdk13.task28.task2815"\n\nПакуем лампочки
+
+Разберись, что делает программа.
+1. Допиши метод simulatingProducers. Он должен добавлять в очередь QUEUE 5 миллионов лампочек.
+Для нумерации лампочек можешь воспользоваться генератором случайных чисел.
+2. В методе main три раза вызови метод runProcess передавая в него разные ExecutorService.
+Для создания ExecutorService воспользуйся методами newSingleThreadExecutor, newCachedThreadPool и newWorkStealingPool.
+
+
+Требования:
+1.	Метод simulatingProducers должен добавлять в QUEUE 5 миллионов лампочек.
+2.	Метод main должен трижды вызвать метод runProcess передавая в него три разных ExecutorService.
+
+
