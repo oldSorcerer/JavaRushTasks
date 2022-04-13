@@ -16,12 +16,12 @@ public class Solution {
         }
     }
 
-    private static class SpecialThread implements Runnable {
+    public static class SpecialThread implements Runnable {
         @Override
         public void run() {
-            StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+            for (StackTraceElement stackTraceElement : Thread.currentThread().getStackTrace()) {
+                System.out.println(stackTraceElement);
+            }
         }
     }
-
-
 }
