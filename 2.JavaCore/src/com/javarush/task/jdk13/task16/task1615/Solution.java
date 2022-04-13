@@ -28,7 +28,7 @@ public class Solution {
         Date stopPlaying();
     }
 
-    public static class Violin implements Runnable {
+    public static class Violin implements MusicalInstrument {
         private String owner;
 
         public Violin(String owner) {
@@ -47,7 +47,12 @@ public class Solution {
 
         @Override
         public void run() {
-            //тут код
+            Date startPlaying = startPlaying();
+            sleepNSeconds(1);
+            Date stopPlaying = stopPlaying();
+            long startTime = startPlaying.getTime();
+            long stopTime = stopPlaying.getTime();
+            System.out.println("Playing " + (stopTime - startTime) + " ms");
         }
     }
 }
