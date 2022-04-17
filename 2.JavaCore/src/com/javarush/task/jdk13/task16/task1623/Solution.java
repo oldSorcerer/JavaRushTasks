@@ -1,4 +1,4 @@
-package com.javarush.task.task16.task1616;
+package com.javarush.task.jdk13.task16.task1623;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,13 +23,14 @@ public class Solution {
         private int seconds;
 
         public void run() {
-            try {
-                while (true) {
+            while (!Thread.currentThread().isInterrupted()) {
+                try {
                     Thread.sleep(1000);
                     seconds++;
+                } catch (InterruptedException e) {
+                    System.out.println(seconds);
+                    Thread.currentThread().interrupt();
                 }
-            } catch (InterruptedException e) {
-                System.out.println(seconds);
             }
         }
     }

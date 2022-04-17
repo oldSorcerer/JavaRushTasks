@@ -34,31 +34,28 @@ public class Solution {
                 while (!isStopped) {
                     printTime();
                 }
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
 
         private void printTime() throws InterruptedException {
-
             Thread.sleep(1000);
             seconds++;
-
             if (seconds > 59) {
-                seconds = 0;
                 minutes++;
+                seconds = 0;
             }
-            if (minutes >59) {
-                minutes = 0;
+            if (minutes > 59) {
                 hours++;
+                minutes = 0;
             }
             if (hours > 23) {
                 hours = 0;
             }
-
             if (hours == 0 && minutes == 0 && seconds == 0) {
-                System.out.println(String.format("В г. %s сейчас полночь!", cityName));
+                System.out.printf("В г. %s сейчас полночь!%n", cityName);
             } else {
-                System.out.println(String.format("В г. %s сейчас %d:%d:%d!", cityName, hours, minutes, seconds));
+                System.out.printf("В г. %s сейчас %d:%d:%d!%n", cityName, hours, minutes, seconds);
             }
         }
     }
