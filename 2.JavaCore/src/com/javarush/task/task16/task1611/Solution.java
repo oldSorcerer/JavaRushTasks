@@ -36,6 +36,7 @@ public class Solution {
             Thread.sleep(500);
             System.out.println("Tak");
             Thread.sleep(500);
+
         }
     }
 }
