@@ -14,7 +14,6 @@ public class Solution {
     public static class TestThread extends Thread {
         @Override
         public void run() {
-
         }
     }
 }
