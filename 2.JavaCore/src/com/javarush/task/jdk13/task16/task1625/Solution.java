@@ -9,7 +9,6 @@ public class Solution {
         TestThread thread = new TestThread();
         thread.start();
         thread.interrupt();
-
     }
 
     public static class TestThread extends Thread {
