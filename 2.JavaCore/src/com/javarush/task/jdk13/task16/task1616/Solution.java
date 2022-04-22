@@ -17,7 +17,7 @@ public class Solution {
 
     public static void printList(List<String> list, String threadName) {
         for (String item : list) {
-            System.out.println(String.format("%s : %s", threadName, item));
+            System.out.printf("%s : %s%n", threadName, item);
         }
     }
 
