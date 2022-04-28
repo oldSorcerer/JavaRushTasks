@@ -8,15 +8,6 @@ import java.util.List;
 */
 
 public class Solution {
-
-    public static class SortThread extends Thread {
-
-        @Override
-        public void run() {
-            sort(testArray);
-        }
-    }
-
     public static int threadCount = 10;
     public static int[] testArray = new int[1000];
 
@@ -35,8 +26,8 @@ public class Solution {
         initThreads();
 
         StringBuffer result = new StringBuffer();
-        for (int i = 0; i < testArray.length; i++) {
-            result.append(testArray[i]).append(" ");
+        for (int j : testArray) {
+            result.append(j).append(" ");
         }
         System.out.println(result);
         System.out.println((result.toString()).equals(expectedResult.toString()));
@@ -58,6 +49,13 @@ public class Solution {
                     array[j] = k;
                 }
             }
+        }
+    }
+
+    public static class SortThread extends Thread {
+        @Override
+        public void run() {
+            sort(testArray);
         }
     }
 }
