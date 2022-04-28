@@ -8,10 +8,15 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         Cat cat1 = new Cat("Мурка");
         Cat cat2 = new Cat("Пушинка");
+
     }
 
     private static void investigateWorld() {
-
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static class Cat extends Thread {
@@ -37,6 +42,8 @@ public class Solution {
         private void initAllKittens() throws InterruptedException {
             kitten1.start();
             kitten2.start();
+            kitten1.join();
+            kitten2.join();
         }
     }
 

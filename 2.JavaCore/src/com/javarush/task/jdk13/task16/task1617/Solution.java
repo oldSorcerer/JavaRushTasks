@@ -12,6 +12,7 @@ public class Solution {
         Politician ivanov = new Politician("Иванов");
         Politician petrov = new Politician("Петров");
         Politician sidorov = new Politician("Сидоров");
+        ivanov.join();
 
         while (ivanov.getSpeechCount() + petrov.getSpeechCount() + sidorov.getSpeechCount() < totalSpeechCount) {
         }
