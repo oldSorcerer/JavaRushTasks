@@ -15,7 +15,7 @@ public class Solution {
 
     public static class Note {
 
-        public final List<String> notes = new ArrayList<String>();
+        public final List<String> notes = new ArrayList<>();
 
         public synchronized void addNote(int index, String note) {
             System.out.println("Сейчас будет добавлена заметка [" + note + "] На позицию " + index);
