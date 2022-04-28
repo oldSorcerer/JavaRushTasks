@@ -1,12 +1,12 @@
 package com.javarush.task.task17.task1706;
 
 public class OurPresident {
-    private volatile static OurPresident president;
+
+    private static OurPresident president;
 
     static {
         synchronized (OurPresident.class) {
-            if (president == null)
-                president = new OurPresident();
+            president = new OurPresident();
         }
     }
 
