@@ -20,8 +20,10 @@ public class Solution {
 
         Person(String name) {
             this.name = name;
-            this.allMoney = new ArrayList<Money>();
-            //напишите тут ваш код
+            this.allMoney = new ArrayList<>();
+            allMoney.add(new Hryvnia(52.4));
+            allMoney.add(new USD(52.4));
+            allMoney.add(new Ruble(52.4));
         }
 
         private List<Money> allMoney;

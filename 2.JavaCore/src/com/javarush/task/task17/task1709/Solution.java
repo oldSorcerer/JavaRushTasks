@@ -5,13 +5,11 @@ package com.javarush.task.task17.task1709;
 */
 
 public class Solution {
-    public volatile static int proposal = 0;
+    public static volatile int proposal = 0;
 
     public static void main(String[] args) {
         new AcceptProposal().start();
         new MakeProposal().start();
-
-
     }
 
     public static class MakeProposal extends Thread {
@@ -27,6 +25,8 @@ public class Solution {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+
             }
         }
     }
@@ -41,6 +41,7 @@ public class Solution {
                     System.out.println("Принято предложение №" + proposal);
                     thisProposal = proposal;
                 }
+
             }
         }
     }
