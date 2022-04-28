@@ -10,8 +10,12 @@ public class Solution {
         Cat cat2 = new Cat("Пушинка");
     }
 
-    private static void investigateWorld() throws InterruptedException{
-        Thread.sleep(200);
+    private static void investigateWorld() {
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static class Cat extends Thread {
@@ -23,14 +27,13 @@ public class Solution {
             kitten1 = new Kitten("Котенок 1, мама - " + getName());
             kitten2 = new Kitten("Котенок 2, мама - " + getName());
             start();
-
         }
 
         public void run() {
-            System.out.println(getName() + " родила 2 котенка");
+            System.out.println(getName() + " родила 2 котят");
             try {
                 initAllKittens();
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
             System.out.println(getName() + ": Все котята в корзинке. " + getName() + " собрала их назад");
         }
@@ -50,11 +53,7 @@ public class Solution {
 
         public void run() {
             System.out.println(getName() + ", вылез из корзинки");
-            try {
-                investigateWorld();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            investigateWorld();
         }
     }
 }
