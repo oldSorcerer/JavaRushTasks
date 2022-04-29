@@ -16,15 +16,26 @@ public class Hippodrome {
         this.horses = horses;
     }
 
+    public void run() {
+
+    }
+
+    public void move() {
+
+    }
+
+    public void print() {
+
+    }
+
     public static void main(String[] args) {
         List<Horse> horses = new ArrayList<>();
 
-        horses.add(new Horse("Lucky", 3, 0));
-        horses.add(new Horse("Slevin", 3, 0));
-        horses.add(new Horse("Homer", 3, 0));
+        horses.add(new Horse("Horse1", 3, 0));
+        horses.add(new Horse("Horse2", 3, 0));
+        horses.add(new Horse("Horse3", 3, 0));
 
         game = new Hippodrome(horses);
-
 
     }
 }
