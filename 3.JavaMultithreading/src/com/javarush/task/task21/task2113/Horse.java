@@ -40,6 +40,10 @@ public class Horse {
     }
 
     public void print() {
-
+        StringBuilder dot = new StringBuilder();
+        for (int i = 0; i < (int)this.getDistance(); i++) {
+            dot.append(".");
+        }
+        System.out.println(dot + this.getName());
     }
 }
