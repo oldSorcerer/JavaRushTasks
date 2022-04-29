@@ -15,29 +15,9 @@ public class Solution {
 
     public static Planet thePlanet;
 
-    static {
-        try {
-            readKeyFromConsoleAndInitPlanet();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    //add static block here - добавьте статический блок тут
 
-    public static void readKeyFromConsoleAndInitPlanet() throws IOException {
-
-        BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-
-        String string = rd.readLine();
-
-        if (Planet.EARTH.equals(string)) {
-            thePlanet = Earth.getInstance();
-        } else if (Planet.MOON.equals(string)) {
-            thePlanet = Moon.getInstance();
-        } else if (Planet.SUN.equals(string)) {
-            thePlanet = Sun.getInstance();
-        } else {
-            thePlanet = null;
-        }
-
+    public static void readKeyFromConsoleAndInitPlanet() {
+        // implement step #5 here - реализуйте задание №5 тут
     }
 }
