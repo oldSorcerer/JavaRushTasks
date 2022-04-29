@@ -29,7 +29,9 @@ public class Hippodrome {
     }
 
     public void move() {
-
+        for (int i = 0; i < getHorses().size(); i++) {
+            getHorses().get(i).move();
+        }
     }
 
     public void print() {
