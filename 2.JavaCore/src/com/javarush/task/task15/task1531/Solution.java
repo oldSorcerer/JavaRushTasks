@@ -20,14 +20,10 @@ public class Solution {
     }
 
     public static String factorial(int n) {
-        int fact;
-
         if (n < 0) {
             return "0";
         }
 
-        fact = n * Integer.parseInt(factorial(n - 1));
-
-        return fact + "";
+        return "";
     }
 }
