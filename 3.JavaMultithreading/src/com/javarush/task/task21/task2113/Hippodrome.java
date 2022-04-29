@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Hippodrome {
 
-    private final List<Horse> horses;
+    private List<Horse> horses;
 
     public List<Horse> getHorses() {
         return horses;
