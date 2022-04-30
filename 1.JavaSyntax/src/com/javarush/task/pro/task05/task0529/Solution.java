@@ -1,7 +1,7 @@
 package com.javarush.task.pro.task05.task0529;
 
 /*
-Галаксианские роботанки (1)
+Галаксианские роботанки (5)
 */
 
 import java.util.Arrays;
@@ -21,16 +21,9 @@ public class Solution {
             Arrays.fill(field[i], empty);
         }
 
-        for (int i = 0; i < 10 ; i++) {
+        for (int i = 0; i < field.length ; i++) {
             int j = (int) (Math.random() * width);
             field[i][j] = robotank;
-        }
-
-
-        for (int i = 0; i < 10; i++) {
-
-            int j = (int) (Math.random() * width);
-            bombs[i][j] = 1;
         }
 
         int countsRobotank = 10;
@@ -38,12 +31,11 @@ public class Solution {
         while (countsRobotank > 0) {
 
             for (int i = 0; i < bombs.length; i++) {
-                for (int j = 1; j < 10; j++) {
+                for (int j = 10; j > 0; ) {
                     int k = (int) (Math.random() * width);
-                    if (bombs[i][k] == 1) {
-                        j--;
-                    } else {
+                    if (bombs[i][k] == 0) {
                         bombs[i][k] = 1;
+                        j--;
                     }
                 }
             }

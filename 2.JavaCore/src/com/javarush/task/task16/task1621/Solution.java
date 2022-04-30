@@ -29,9 +29,8 @@ public class Solution {
             try {
                 Thread.sleep(1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
-
         }
     }
 }
