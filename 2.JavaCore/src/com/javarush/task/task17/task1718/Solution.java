@@ -20,12 +20,12 @@ public class Solution {
 
         @Override
         public void run() {
-           synchronized (Iron.class) {
-               Iron iron = takeIron();
-               Clothes clothes = takeClothes();
-               iron(iron, clothes);
-               returnIron();
-           }
+            Iron iron = takeIron();
+            Clothes clothes = takeClothes();
+            synchronized (Iron.class) {
+                iron(iron, clothes);
+            }
+            returnIron();
         }
 
         protected Iron takeIron() {

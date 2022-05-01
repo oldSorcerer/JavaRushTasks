@@ -1,14 +1,14 @@
 taskKey="com.javarush.task.task17.task1717"\n\nЛишняя синхронизация
 
-synchronized существенно замедляет программу, поэтому убери избыточность synchronized внутри методов.
+Несколько раз запусти программу и каждый раз обрати внимание на вывод - информация по каждому человеку отображается
+одним блоком, без перемешивания. Так как synchronized существенно замедляет программу (на нашей маленькой программе
+это, скорее всего, заметно не будет), то попробуй как будет работать программа без synchronized - удали все
+synchronized и посмотри на вывод.
+Твоя задача: удалить лишние synchronized, но так, чтобы вывод информации по каждому человеку отображался одним блоком.
 
 
 Требования:
-1.	Метод append(CharSequence s) класса Solution не должен быть synchronized.
-2.	Метод appendThis(Solution s) класса Solution должен быть synchronized.
-3.	Метод writeObject(java.io.ObjectOutputStream s) класса Solution должен быть synchronized.
-4.	Метод readObject(java.io.ObjectInputStream s) класса Solution не должен быть synchronized.
-5.	Метод main(String[] args) класса Solution не должен быть synchronized.
-6.	В классе Solution не должно быть synchronized блоков.
+1.	В программе должны быть удалены synchronized согласно условию.
+2.	Вывод информации по каждому человеку не должен перемешиваться с выводом информации по другим людям.
 
 
