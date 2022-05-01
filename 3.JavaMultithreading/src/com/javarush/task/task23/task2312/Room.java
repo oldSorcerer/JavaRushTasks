@@ -2,10 +2,12 @@ package com.javarush.task.task23.task2312;
 
 public class Room {
 
-    private int width;
+    private int width; // ширина
     private int height;
     private Snake snake;
     private Mouse mouse;
+
+    public static Room game;
 
     public Room(int width, int height, Snake snake) {
         this.width = width;
@@ -45,7 +47,17 @@ public class Room {
         this.mouse = mouse;
     }
 
+    public void run() {
+
+    }
+
+    public void print() {
+
+    }
+
     public static void main(String[] args) {
+        game = new Room(20, 20, new Snake(10,10));
+        game.snake.setDirection(SnakeDirection.DOWN);
 
     }
 }
