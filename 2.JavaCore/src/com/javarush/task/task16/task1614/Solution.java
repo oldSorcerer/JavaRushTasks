@@ -8,7 +8,7 @@ import java.util.List;
 */
 
 public class Solution {
-    public static volatile List<String> list = new ArrayList<String>(5);
+    public static volatile List<String> list = new ArrayList<>(5);
 
     static {
         for (int i = 0; i < 5; i++) {
@@ -33,12 +33,16 @@ public class Solution {
                 while (countFrom > 0) {
                     printCountdown();
                 }
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
 
         public void printCountdown() throws InterruptedException {
-
+            while (countFrom > 0) {
+                countFrom--;
+                System.out.println(list.get(countFrom));
+                Thread.sleep(500/list.size());
+            }
         }
     }
 }
