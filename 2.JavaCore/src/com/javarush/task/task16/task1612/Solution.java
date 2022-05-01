@@ -33,13 +33,18 @@ public class Solution {
                 while (!isStopped) {
                     doStep();
                 }
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignored) {
             }
         }
 
         private void doStep() throws InterruptedException {
             stepNumber++;
-            Thread.sleep(1000/owner.getSpeed());
+            if (owner.getSpeed() == 2) {
+                Thread.sleep(500);
+            }
+            if (owner.getSpeed() == 4) {
+                Thread.sleep(250);
+            }
             System.out.println(owner.getName() + " делает шаг №" + stepNumber + "!");
         }
     }
