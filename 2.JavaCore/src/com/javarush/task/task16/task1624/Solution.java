@@ -20,7 +20,7 @@ public class Solution {
     public static void sleep() {
         try {
             Thread.sleep(10);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
     }
 
