@@ -65,9 +65,15 @@ public class Room {
         createMouse();
     }
 
+    public void sleep() {
+
+    }
+
     public static void main(String[] args) {
         game = new Room(20, 20, new Snake(10,10));
         game.snake.setDirection(SnakeDirection.DOWN);
+        game.createMouse();
+        game.run();
 
     }
 }
