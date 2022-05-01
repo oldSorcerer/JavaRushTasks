@@ -15,6 +15,7 @@ public class Solution {
         counter2.start();
         counter3.start();
         counter4.start();
+
         counter1.join();
         counter2.join();
         counter3.join();
@@ -56,7 +57,7 @@ public class Solution {
 
                 try {
                     Thread.sleep(1);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException ignored) {
                 }
             } while (getCount() < 100);
         }
