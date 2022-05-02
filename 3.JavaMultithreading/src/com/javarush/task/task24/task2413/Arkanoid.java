@@ -10,6 +10,8 @@ public class Arkanoid {
     private Stand stand;
     private List<Brick> bricks;
 
+    public static Arkanoid game;
+
     public int getWidth() {
         return width;
     }
@@ -53,6 +55,14 @@ public class Arkanoid {
 
     public void setBricks(List<Brick> bricks) {
         this.bricks = bricks;
+    }
+
+    public void run() {
+
+    }
+
+    public void move() {
+
     }
 
     public static void main(String[] args) {
