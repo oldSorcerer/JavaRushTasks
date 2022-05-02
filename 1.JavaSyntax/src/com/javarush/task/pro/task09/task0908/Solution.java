@@ -17,11 +17,11 @@ public class Solution {
         if (binaryNumber == null || binaryNumber.isEmpty() || !binaryNumber.matches("[01]+")) {
             return "";
         }
-        if (binaryNumber.length() % 4 != 0) {
+        while (binaryNumber.length() % 4 != 0) {
             binaryNumber = "0" + binaryNumber;
         }
         String hexNumber = "";
-        while (binaryNumber.length() % 4 == 0 && binaryNumber.length() > 0) {
+        while (binaryNumber.length() > 0) {
             String fourBit = binaryNumber.substring(0, 4);
 
             String oneHex  = switch (fourBit) {
