@@ -9,6 +9,11 @@ public class Arkanoid {
         return width;
     }
 
+    public Arkanoid(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
     public void setWidth(int width) {
         this.width = width;
     }
