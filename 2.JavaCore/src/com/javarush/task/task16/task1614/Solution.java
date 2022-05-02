@@ -41,7 +41,7 @@ public class Solution {
             while (countFrom > 0) {
                 countFrom--;
                 System.out.println(list.get(countFrom));
-                Thread.sleep(500/list.size());
+                Thread.sleep(500/list.size()); //
             }
         }
     }
