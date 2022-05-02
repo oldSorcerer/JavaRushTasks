@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.task29.task2904"\n\nОсобенности автобоксинга
+
+Исправь ошибку в методе getValueByIndex().
+Читай доп. статью про особенности автобоксинга.
+
+
+Требования:
+1.	Метод getValueByIndex() должен возвращать объект типа Integer из массива array, если элемент с индексом index есть в массиве.
+2.	Метод getValueByIndex() должен возвращать объект типа Double, равный -1, если в массиве array нет элемента с индексом index.
+3.	Метод main() не изменять.
+4.	Программа должна вывести две строки: &quot;-1.0, class java.lang.Double&quot; и &quot;3, class java.lang.Integer&quot;.
+
+
