@@ -39,7 +39,7 @@ public class Solution {
 
         private void doStep() throws InterruptedException {
             stepNumber++;
-            if (owner.getSpeed() == 2) {
+            if (owner.getSpeed() == 2) { //
                 Thread.sleep(500);
             }
             if (owner.getSpeed() == 4) {

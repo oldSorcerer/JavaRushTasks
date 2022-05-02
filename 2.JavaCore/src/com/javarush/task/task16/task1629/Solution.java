@@ -15,37 +15,33 @@ public class Solution {
         Read3Strings t1 = new Read3Strings();
         Read3Strings t2 = new Read3Strings();
 
-
         t1.start();
         t2.start();
 
-        t1.join();
-        t2.join();
-
         t1.printResult();
         t2.printResult();
+
+        t1.join();
+        t2.join();
     }
 
     public static class Read3Strings extends Thread {
 
-        StringBuilder strBuilder = new StringBuilder();
+        private String string = " ";
 
-        @Override
-        public void run () {
-
-            try {
-                for (int i = 0; i < 3; i++) {
-                    String string = reader.readLine();
-                    strBuilder.append(string).append(" ");
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        public void printResult() {
+            System.out.println(string);
         }
 
-        public synchronized void printResult() {
-            System.out.println(strBuilder);
+        @Override
+        public void run() {
+            for (int i = 0; i < 3; i++) {
+                try {
+                    string = reader.readLine() + string;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 }
