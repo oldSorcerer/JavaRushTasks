@@ -1,4 +1,4 @@
 package com.javarush.task.task24.task2413;
 
-public class Brick {
+public class Brick extends BaseObject {
 }
