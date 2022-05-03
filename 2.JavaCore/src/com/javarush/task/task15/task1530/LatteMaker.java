@@ -2,17 +2,17 @@ package com.javarush.task.task15.task1530;
 
 public class LatteMaker extends DrinkMaker {
     @Override
-    public void getRightCup() {
+    protected void getRightCup() {
         System.out.println("Берем чашку для латте");
     }
 
     @Override
-    public void putIngredient() {
-        System.out.println("Делаем кофе");
+    protected void putIngredient() {
+        System.out.println("Делаем молоко с пенкой");
     }
 
     @Override
-    public void pour() {
-        System.out.println("Заливаем молоком с пенкой");
+    protected void pour() {
+        System.out.println("Заливаем кофе");
     }
 }
