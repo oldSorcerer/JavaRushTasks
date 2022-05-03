@@ -11,19 +11,21 @@ import java.math.BigDecimal;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        int input = Integer.parseInt(reader.readLine());
-        reader.close();
-
-        System.out.println(factorial(input));
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            int input = Integer.parseInt(reader.readLine());
+            System.out.println(factorial(input));
+        }
     }
 
     public static String factorial(int n) {
         if (n < 0) {
             return "0";
         }
+        BigDecimal result = BigDecimal.ONE;
+        for (int i = 1; i <= n ; i++) {
+            result = result.multiply(BigDecimal.valueOf(i));
+        }
 
-        return "";
+        return String.valueOf(result);
     }
 }
