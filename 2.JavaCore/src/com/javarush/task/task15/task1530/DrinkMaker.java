@@ -1,12 +1,9 @@
 package com.javarush.task.task15.task1530;
 
-abstract public class DrinkMaker {
-
-    public abstract void getRightCup();
-
-    public abstract void putIngredient();
-
-    public abstract void pour();
+public abstract class DrinkMaker {
+    protected abstract void getRightCup();
+    protected abstract void putIngredient();
+    protected abstract void pour();
 
     public void makeDrink() {
         getRightCup();
