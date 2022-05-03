@@ -1,7 +1,6 @@
 package com.javarush.task.task15.task1525;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,21 +11,15 @@ import java.util.List;
 */
 
 public class Solution {
-    public static List<String> lines = new ArrayList<String>();
+    public static List<String> lines = new ArrayList<>();
 
     static {
-        try {
-            BufferedReader rd = new BufferedReader(new FileReader(Statics.FILE_NAME));
-
-            while (rd.ready()) {
-                lines.add(rd.readLine());
+        try (BufferedReader reader = new BufferedReader(new FileReader(Statics.FILE_NAME))) {
+            while (reader.ready()) {
+                lines.add(reader.readLine());
             }
-            rd.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
