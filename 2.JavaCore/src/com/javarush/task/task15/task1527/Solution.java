@@ -10,31 +10,9 @@ import java.io.InputStreamReader;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        String string = reader.readLine();
-
-        String [] words = string.substring(string.lastIndexOf("?") + 1).split("&");
-
-        for (String word : words) {
-
-            if (word.contains("=")) {
-                System.out.print(word.substring(0, word.indexOf("=")) + " ");
-            } else
-                System.out.print(word + " ");
-        }
-        System.out.println(" ");
-
-        for (String word : words) {
-            if (word.contains("obj")) {
-                try {
-                    alert(Double.parseDouble(word.substring(4)));
-                } catch (NumberFormatException e) {
-                    alert(word.substring(4));
-                }
-            }
-        }
+        String url = reader.readLine();
+        //напишите тут ваш код
     }
 
     public static void alert(double value) {
