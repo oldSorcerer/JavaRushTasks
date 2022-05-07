@@ -3,7 +3,6 @@ package com.javarush.task.task15.task1527;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 /* 
 Парсер реквестов
@@ -12,22 +11,27 @@ import java.util.Arrays;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        //String url = reader.readLine();
-        String url = "http://javarush.ru/alpha/index.html?lvl=15&view&name=Amigo";
+        String url = reader.readLine();
 
-        int index = url.indexOf("?");
-        String[] split = url.substring(url.indexOf("?") + 1).split("&");
-        /*for (String str : split) {
-            if (str.contains("obj")) {
-                String obj = str.substring(4);
-                double aDouble = Double.parseDouble(obj);
-                alert(aDouble);
+        String[] words = url.substring(url.indexOf("?") + 1).split("&");
+
+        for (String word : words) {
+            if (word.contains("=")) {
+                System.out.print(word.substring(0, word.indexOf("=")) + " ");
+            } else {
+                System.out.print(word + " ");
             }
-        }*/
-        for (String str : split) {
-            System.out.print(str + " ");
         }
-
+        System.out.println(" ");
+        for (String word : words) {
+            if (word.contains("obj")) {
+                try {
+                    alert(Double.parseDouble(word.substring(4)));
+                } catch (NumberFormatException e) {
+                    alert(word.substring(4));
+                }
+            }
+        }
     }
 
     public static void alert(double value) {
