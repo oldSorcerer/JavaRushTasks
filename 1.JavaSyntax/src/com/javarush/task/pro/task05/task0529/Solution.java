@@ -27,9 +27,8 @@ public class Solution {
         }
 
         int countsRobotank = 10;
-
         while (countsRobotank > 0) {
-
+            bombs = new int[height][width];
             for (int i = 0; i < bombs.length; i++) {
                 for (int j = 10; j > 0; ) {
                     int k = (int) (Math.random() * width);
@@ -39,7 +38,6 @@ public class Solution {
                     }
                 }
             }
-
             for (int i = 0; i < height; i++) {
                 for (int j = 0; j < width; j++) {
                     if (field[i][j].equalsIgnoreCase(robotank) && bombs[i][j] == 1) {
@@ -48,7 +46,6 @@ public class Solution {
                     }
                 }
             }
-
         }
 
         for (int i = 0; i < field.length; i++) {
