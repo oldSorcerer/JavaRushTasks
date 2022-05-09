@@ -56,6 +56,28 @@ public class Snake {
     }
 
     public void move(int dx, int dy) {
+        SnakeSection haed = sections.get(0);
+        haed = new SnakeSection(haed.getX() + dx, haed.getY() + dy);
+
+        checkBorders(haed);
+        if (!isAlive) {
+            return;
+        }
+        checkBody(haed);
+        if (!isAlive) {
+            return;
+        }
+
+        Mouse mouse = Room.game.getMouse();
+        if (haed.getX() == mouse.getX()
+            && haed.getY() == mouse.getY()) {
+            sections.add(0, haed);
+            Room.game.eatMouse();
+        } else {
+            sections.add(0, haed);
+            sections.remove(sections.size() - 1);
+        }
+
 
     }
 
