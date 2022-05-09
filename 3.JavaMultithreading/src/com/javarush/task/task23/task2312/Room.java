@@ -1,12 +1,12 @@
 package com.javarush.task.task23.task2312;
 
-
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 /**
  * Основной класс программы.
  */
+
 public class Room {
     private int width;
     private int height;
@@ -141,7 +141,6 @@ public class Room {
         mouse = new Mouse(x, y);
     }
 
-
     public static Room game;
 
     public static void main(String[] args) {
@@ -151,19 +150,15 @@ public class Room {
         game.run();
     }
 
-
-    private int initialDelay = 520;
-    private int delayStep = 20;
-
     /**
      * Программа делает паузу, длинна которой зависит от длинны змеи.
      */
     public void sleep() {
         try {
             int level = snake.getSections().size();
-            int delay = level < 15 ? (initialDelay - delayStep * level) : 200;
+            int delay = level < 15 ? (520 - 20 * level) : 200;
             Thread.sleep(delay);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignore) {
         }
     }
 }
