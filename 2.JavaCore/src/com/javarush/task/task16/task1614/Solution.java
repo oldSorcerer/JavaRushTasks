@@ -2,6 +2,7 @@ package com.javarush.task.task16.task1614;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /* 
 Обратный отсчет
@@ -38,11 +39,9 @@ public class Solution {
         }
 
         public void printCountdown() throws InterruptedException {
-            while (countFrom > 0) {
+                Thread.sleep(500);
                 countFrom--;
                 System.out.println(list.get(countFrom));
-                Thread.sleep(500/list.size()); //
-            }
         }
     }
 }
