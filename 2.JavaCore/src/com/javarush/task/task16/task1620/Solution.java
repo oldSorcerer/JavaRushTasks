@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Solution {
     public static byte threadCount = 3;
-    static List<Thread> threads = new ArrayList<Thread>(threadCount);
+    static List<Thread> threads = new ArrayList<>(threadCount);
 
     public static void main(String[] args) throws InterruptedException {
         initThreadsAndStart();
@@ -18,7 +18,9 @@ public class Solution {
     }
 
     public static void ourInterruptMethod() {
-        //add your code here - добавь код тут
+        for (Thread thread : threads) {
+            thread.interrupt();
+        }
     }
 
     private static void initThreadsAndStart() {
@@ -41,16 +43,15 @@ public class Solution {
 
         public void run() {
             //fix 2 variables - исправь 2 переменных
-            boolean isCurrentThreadInterrupted = false;
-            String threadName = "";
+            boolean isCurrentThreadInterrupted = Thread.currentThread().isInterrupted();
+            String threadName = Thread.currentThread().getName();
 
             try {
                 while (!isCurrentThreadInterrupted) {
-
                     System.out.println("Объект " + sharedResource + ", нить " + threadName);
                     Thread.sleep(1000);
                 }
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignore) {
             }
         }
     }
