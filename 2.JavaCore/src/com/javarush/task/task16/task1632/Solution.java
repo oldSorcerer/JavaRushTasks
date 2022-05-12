@@ -22,14 +22,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
-        MyThreadFive myThreadFive = new MyThreadFive();
-        myThreadFive.start();
-
     }
 
     static class MyThreadOne extends Thread {
-
         @Override
         public void run() {
             while (true) {
@@ -38,11 +33,10 @@ public class Solution {
     }
 
     static class MyThreadTwo extends Thread {
-
         @Override
         public void run() {
             try {
-                Thread.sleep(1000);
+                throw new InterruptedException();
             } catch (InterruptedException e) {
                 System.out.println("InterruptedException");
             }
@@ -50,28 +44,23 @@ public class Solution {
     }
 
     static class MyThreadThree extends Thread {
-
         @Override
         public void run() {
-            try {
-                while (true) {
-                    System.out.println("Ура");
+            while (true) {
+                System.out.println("Ура");
+                try {
                     Thread.sleep(500);
+                } catch (InterruptedException ignored) {
                 }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
         }
     }
 
-    static class MyThreadFour extends Thread implements Message{
-
+    static class MyThreadFour extends Thread implements Message {
         @Override
         public void run() {
-
             while (!isInterrupted()) {
             }
-
         }
 
         @Override
@@ -81,28 +70,21 @@ public class Solution {
     }
 
     static class MyThreadFive extends Thread {
-
         @Override
         public void run() {
             BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-
-            String string;
             int sum = 0;
-
             while (true) {
                 try {
-                    string = rd.readLine();
-                    if (!string.equals("N")) {
-                        sum += Integer.parseInt(string);
-                    } else {
-                        System.out.println(sum);
+                    String string = rd.readLine();
+                    if (string.equals("N")) {
                         break;
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    sum += Integer.parseInt(string);
+                } catch (IOException ignored) {
                 }
             }
+            System.out.println(sum);
         }
     }
-
 }
