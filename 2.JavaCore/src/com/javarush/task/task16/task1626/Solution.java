@@ -13,22 +13,25 @@ public class Solution {
     }
 
     public static class CountUpRunnable implements Runnable {
-        private int countIndexUp = 1;
+        private int countIndexUp;
 
         @Override
         public void run() {
             try {
+                int i = 0;
                 while (true) {
-                    System.out.println(toString());
-                    countIndexUp += 1;
+                    ++countIndexUp;
+                    System.out.println(this);
                     Thread.sleep(500);
-                    if (countIndexUp > Solution.number ) return;
+                    if (countIndexUp == Solution.number) {
+                        return;
+                    }
                 }
-            } catch(InterruptedException e){
+            } catch (InterruptedException ignore) {
             }
-
         }
 
+        @Override
         public String toString() {
             return Thread.currentThread().getName() + ": " + countIndexUp;
         }
@@ -41,15 +44,15 @@ public class Solution {
         public void run() {
             try {
                 while (true) {
-                    System.out.println(toString());
+                    System.out.println(this);
                     countIndexDown -= 1;
                     if (countIndexDown == 0) return;
                     Thread.sleep(500);
                 }
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignore) {
             }
         }
-
+        @Override
         public String toString() {
             return Thread.currentThread().getName() + ": " + countIndexDown;
         }
