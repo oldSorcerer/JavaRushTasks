@@ -20,29 +20,29 @@ public class Solution {
         int count = Integer.parseInt(reader.readLine());
 
         //init threads
-        ReaderThread consolReader1 = new ReaderThread();
-        ReaderThread consolReader2 = new ReaderThread();
-        ReaderThread consolReader3 = new ReaderThread();
+        ReaderThread consoleReader1 = new ReaderThread();
+        ReaderThread consoleReader2 = new ReaderThread();
+        ReaderThread consoleReader3 = new ReaderThread();
 
-        consolReader1.start();
-        consolReader2.start();
-        consolReader3.start();
+        consoleReader1.start();
+        consoleReader2.start();
+        consoleReader3.start();
 
         while (count > readStringCount.get()) {
         }
 
-        consolReader1.interrupt();
-        consolReader2.interrupt();
-        consolReader3.interrupt();
-        System.out.println("#1:" + consolReader1);
-        System.out.println("#2:" + consolReader2);
-        System.out.println("#3:" + consolReader3);
+        consoleReader1.interrupt();
+        consoleReader2.interrupt();
+        consoleReader3.interrupt();
+        System.out.println("#1:" + consoleReader1);
+        System.out.println("#2:" + consoleReader2);
+        System.out.println("#3:" + consoleReader3);
 
         reader.close();
     }
 
     public static class ReaderThread extends Thread {
-        private List<String> result = new ArrayList<String>();
+        private List<String> result = new ArrayList<>();
 
         public void run() {
             while (!isInterrupted()) {
@@ -51,8 +51,7 @@ public class Solution {
                         readStringCount.incrementAndGet();
                         result.add(reader.readLine());
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException ignore) {
                 }
             }
         }
