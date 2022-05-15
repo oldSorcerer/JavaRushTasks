@@ -16,32 +16,31 @@ public class Solution {
         Read3Strings t2 = new Read3Strings();
 
         t1.start();
+        t1.join();
+
         t2.start();
+        t2.join();
 
         t1.printResult();
         t2.printResult();
-
-        t1.join();
-        t2.join();
     }
 
     public static class Read3Strings extends Thread {
 
-        private String string = " ";
-
-        public void printResult() {
-            System.out.println(string);
-        }
+        private String string = "";
 
         @Override
         public void run() {
             for (int i = 0; i < 3; i++) {
                 try {
-                    string = reader.readLine() + string;
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    string = string + reader.readLine() + " " ;
+                } catch (IOException ignore) {
                 }
             }
+        }
+
+        public void printResult() {
+            System.out.println(string);
         }
     }
 }
