@@ -16,7 +16,7 @@ public class Solution {
         Calculator.divide(a, b);
     }
 
-    static  class Calculator {
+    static class Calculator {
 
         public static void add(int a, int b) {
             System.out.println(a + " + " + b + EQUAL + (a + b));
