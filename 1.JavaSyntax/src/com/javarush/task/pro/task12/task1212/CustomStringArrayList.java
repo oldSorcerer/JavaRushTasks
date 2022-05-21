@@ -4,8 +4,6 @@ package com.javarush.task.pro.task12.task1212;
 Создаем свой список
 */
 
-import java.util.Arrays;
-
 public class CustomStringArrayList {
 
     private int size;
