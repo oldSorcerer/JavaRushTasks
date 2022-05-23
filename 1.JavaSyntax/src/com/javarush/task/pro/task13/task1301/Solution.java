@@ -1,8 +1,6 @@
 package com.javarush.task.pro.task13.task1301;
 
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 
 /* 
 Оформляем возврат
