@@ -42,7 +42,6 @@ public class Solution {
                 System.out.println(ANSWERING + studentsJournal.get(studentId));
             } catch (NumberFormatException e) {
                 System.out.println(INTEGER_REQUIRED);
-
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println(NOT_EXIST);
             }
