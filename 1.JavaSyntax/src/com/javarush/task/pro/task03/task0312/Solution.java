@@ -10,7 +10,6 @@ public class Solution {
     public static void main(String[] args) {
 
         Scanner scanner1 = new Scanner(System.in);
-        Scanner scanner2 = new Scanner(System.in);
 
         String string1 = scanner1.nextLine();
         String string2 = scanner1.nextLine();
