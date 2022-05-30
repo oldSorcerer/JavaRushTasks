@@ -10,8 +10,6 @@ public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        boolean isExit;
-
         int sum = 0;
 
         while (true) {
@@ -20,8 +18,7 @@ public class Solution {
                 sum += number;
             } else if (sc.hasNextLine()) {
                 String string = sc.nextLine();
-                isExit = string.equals("ENTER");
-                if (isExit)
+                if (string.equals("ENTER"))
                     break;
             }
         }
