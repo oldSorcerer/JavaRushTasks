@@ -2,7 +2,7 @@ package com.javarush.games.game2048;
 
 import com.javarush.engine.cell.*;
 
-public class Game2048 extends Game{
+public class Game2048 extends Game {
     
     private static final int SIDE = 4;
     private int[][] gameField = new int[SIDE][SIDE];
@@ -47,34 +47,21 @@ public class Game2048 extends Game{
     }
 
     private Color getColorByValue(int value) {
-        switch (value) {
-            case 0:
-                return Color.WHITE;
-            case 2:
-                return Color.PLUM;
-            case 4:
-                return Color.SLATEBLUE;
-            case 8:
-                return Color.DODGERBLUE;
-            case 16:
-                return Color.DARKTURQUOISE;
-            case 32:
-                return Color.MEDIUMSEAGREEN;
-            case 64:
-                return Color.LIMEGREEN;
-            case 128:
-                return Color.DARKORANGE;
-            case 256:
-                return Color.SALMON;
-            case 512:
-                return Color.ORANGERED;
-            case 1024:
-                return Color.DEEPPINK;
-            case 2048:
-                return Color.MEDIUMVIOLETRED;
-            default:
-                return Color.NONE;
-        }
+        return switch (value) {
+            case 0 -> Color.WHITE;
+            case 2 -> Color.PLUM;
+            case 4 -> Color.SLATEBLUE;
+            case 8 -> Color.DODGERBLUE;
+            case 16 -> Color.DARKTURQUOISE;
+            case 32 -> Color.MEDIUMSEAGREEN;
+            case 64 -> Color.LIMEGREEN;
+            case 128 -> Color.DARKORANGE;
+            case 256 -> Color.SALMON;
+            case 512 -> Color.ORANGERED;
+            case 1024 -> Color.DEEPPINK;
+            case 2048 -> Color.MEDIUMVIOLETRED;
+            default -> Color.NONE;
+        };
     }
 
     private void setCellColoredNumber(int x, int y, int value) {
@@ -229,3 +216,4 @@ public class Game2048 extends Game{
         return false;
     }
 }
+//--module-path "D:\The Projects\IdeaProjects\JavaRushTasks\lib\javafx-sdk-17.0.2\lib" --add-modules javafx.controls,javafx.fxml
