@@ -9,13 +9,13 @@ import java.io.Serializable;
 Переопределение сериализации
 */
 
-public class Solution implements {
+public class Solution  {
     private Thread runner;
     private int speed;
 
     public Solution(int speed) {
         this.speed = speed;
-        runner = new Thread(this);
+        //runner = new Thread(this);
         runner.start();
     }
 
