@@ -17,8 +17,6 @@ public class Solution {
     }
 
     static String getDayOfWeek(LocalDate date) {
-        String str = date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.forLanguageTag("ru"));
-
-        return str;
+        return date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.forLanguageTag("ru"));
     }
 }
