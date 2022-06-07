@@ -16,22 +16,18 @@ public class Solution {
     }
 
     static LocalDate nowExample() {
-        LocalDate today = LocalDate.now();
-        return today;
+        return LocalDate.now();
     }
 
     static LocalDate ofExample() {
-        LocalDate date = LocalDate.of(2020, 9, 12);
-        return date;
+        return LocalDate.of(2020, 9, 12);
     }
 
     static LocalDate ofYearDayExample() {
-        LocalDate date = LocalDate.ofYearDay(2020, 256);
-        return date;
+        return LocalDate.ofYearDay(2020, 256);
     }
 
     static LocalDate ofEpochDayExample() {
-        LocalDate date = LocalDate.ofEpochDay(18517);
-        return date;
+        return LocalDate.ofEpochDay(18517);
     }
 }
