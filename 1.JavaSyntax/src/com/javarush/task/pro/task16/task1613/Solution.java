@@ -38,18 +38,16 @@ public class Solution {
     public static boolean isWeekend(LocalDateTime dateTime) {
         int dayValue = dateTime.getDayOfWeek().getValue();
 
-        boolean weekend = false;
-
         if ( dayValue == FRIDAY && dateTime.getHour() >= WEEKEND_START_FRIDAY_CUT_OFF_HOUR) {
-            weekend = true;
+            return true;
         }
         if (dayValue == SATURDAY) {
-            weekend = true;
+            return true;
         }
         if (dayValue == SUNDAY && dateTime.getHour() < WEEKEND_END_SUNDAY_CUT_OFF_HOUR) {
-            weekend = true;
+            return true;
         }
 
-        return weekend;
+        return false;
     }
 }
