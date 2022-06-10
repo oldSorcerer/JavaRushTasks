@@ -36,7 +36,7 @@ public class SnakeGame extends Game {
     
     @Override
     public void initialize() {
-        setScreenSize(15, 15);
+        setScreenSize(WIDTH, HEIGHT);
         createGame();
     }
 
