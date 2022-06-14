@@ -48,7 +48,7 @@ public class Solution {
 
     public static class MarkTwainBook extends Book {
 
-        public String title;
+        private String title;
 
         public MarkTwainBook(String title) {
             super("Mark Twain");
@@ -68,7 +68,7 @@ public class Solution {
 
     public static class AgathaChristieBook extends Book {
 
-        public String title;
+        private String title;
 
         public AgathaChristieBook(String title) {
             super("Agatha Christie");
