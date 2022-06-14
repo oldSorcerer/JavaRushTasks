@@ -20,6 +20,7 @@ public class Solution {
     public static class Hryvnia extends Money {
         private double amount = 123d;
 
+        @Override
         public Hryvnia getMoney() {
             return this;
         }
