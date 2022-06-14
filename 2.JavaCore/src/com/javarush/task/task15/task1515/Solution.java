@@ -17,8 +17,7 @@ public class Solution {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             A = Integer.parseInt(reader.readLine());
             B = Integer.parseInt(reader.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignore) {
         }
     }
 
