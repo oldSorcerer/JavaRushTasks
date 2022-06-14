@@ -8,7 +8,7 @@ import java.util.Map;
 */
 
 public class Solution {
-    public static Map<Double, String> labels = new HashMap<Double, String>();
+    public static Map<Double, String> labels = new HashMap<>();
 
     static {
         labels.put(1d, "1d");
