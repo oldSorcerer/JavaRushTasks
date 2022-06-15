@@ -37,7 +37,7 @@ public class Solution {
             this.children = children;
         }
 
-        @Override
+        //@Override
         public void writeExternal(ObjectOutput out) throws IOException {
             out.writeObject(mother);
             out.writeObject(father);
@@ -47,7 +47,7 @@ public class Solution {
             out.writeObject(children);
         }
 
-        @Override
+        //@Override
         public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
             firstName = in.readLine();
             lastName = in.readLine();

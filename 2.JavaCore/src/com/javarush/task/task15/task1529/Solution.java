@@ -28,8 +28,7 @@ public class Solution {
                 int count = Integer.parseInt(reader.readLine());
                 result = new Plane(count);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignore) {
         }
     }
 }
