@@ -13,7 +13,7 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String url = reader.readLine();
 
-        String[] words = url.substring(url.indexOf("?") + 1).split("&");
+        String[] words = url.substring(url.lastIndexOf("?") + 1).split("&");
 
         for (String word : words) {
             if (word.contains("=")) {
