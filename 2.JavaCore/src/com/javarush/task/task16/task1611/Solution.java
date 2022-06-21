@@ -27,7 +27,7 @@ public class Solution {
                 while (!isStopped) {
                     printTikTak();
                 }
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignore ) {
             }
         }
 
