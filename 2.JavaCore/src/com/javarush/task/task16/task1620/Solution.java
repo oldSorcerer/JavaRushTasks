@@ -21,6 +21,7 @@ public class Solution {
         for (Thread thread : threads) {
             thread.interrupt();
         }
+        //threads.forEach(Thread::interrupt);
     }
 
     private static void initThreadsAndStart() {

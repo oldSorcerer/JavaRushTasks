@@ -17,9 +17,7 @@ public class Solution {
         try {
             Thread.sleep(100);
         } catch (InterruptedException ignored) {
-
         }
-
     }
 
     private static void takingOff() {

@@ -22,16 +22,16 @@ public class Solution {
             try {
                 while (!isInterrupted() && numSeconds >= 0) {
                     if (numSeconds == 0) {
-                        System.out.println("Марш!");
+                        System.out.print("Марш!");
                     } else {
-                        System.out.println(numSeconds +  " ");
+                        System.out.print(numSeconds +  " ");
                         Thread.sleep(1000);
                     }
                     numSeconds--;
                 }
             } catch (InterruptedException e) {
                 if (numSeconds != -1) {
-                    System.out.println("Прервано!");
+                    System.out.print("Прервано!");
                 }
             }
         }
