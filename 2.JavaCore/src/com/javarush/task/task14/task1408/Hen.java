@@ -8,5 +8,4 @@ abstract public class Hen {
         return "Я - курица.";
     }
 
-
 }
