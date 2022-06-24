@@ -25,8 +25,6 @@ public class Solution {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-
             }
         }
     }
@@ -41,7 +39,6 @@ public class Solution {
                     System.out.println("Принято предложение №" + proposal);
                     thisProposal = proposal;
                 }
-
             }
         }
     }
