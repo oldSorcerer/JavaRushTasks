@@ -39,7 +39,7 @@ public class Beach implements Comparable<Beach> {
         this.quality = quality;
     }
 
-    public synchronized static void main(String[] args) {
+    public static void main(String[] args) {
 
     }
 
