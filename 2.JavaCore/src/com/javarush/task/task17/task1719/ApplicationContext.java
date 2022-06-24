@@ -8,9 +8,8 @@ ApplicationContext
 */
 
 public abstract class ApplicationContext<GenericsBean extends Bean> {
-    private volatile Map<String, GenericsBean> container = new HashMap<String, GenericsBean>();
+    private volatile Map<String, GenericsBean> container = new HashMap<>();
     // Map<Name, some class that implements the Bean interface>
-
 
     protected ApplicationContext() {
         parseAllClassesAndInterfaces();
