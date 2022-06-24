@@ -34,7 +34,7 @@ public class Solution {
     }
 
     public static void initThreads() throws InterruptedException {
-        List<Thread> threads = new ArrayList<Thread>(threadCount);
+        List<Thread> threads = new ArrayList<>(threadCount);
         for (int i = 0; i < threadCount; i++) threads.add(new SortThread());
         for (Thread thread : threads) thread.start();
         for (Thread thread : threads) thread.join();
