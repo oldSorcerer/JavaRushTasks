@@ -21,14 +21,14 @@ public class Solution {
         }
 
         while (sc.hasNextInt()) {
-            int x = sc.nextInt();
-            if (min == secondMin && x > min) {
-                secondMin = x;
-            } else if (x < min) {
+            int number = sc.nextInt();
+            if (min == secondMin && number > min) {
+                secondMin = number;
+            } else if (number < min) {
                 secondMin = min;
-                min = x;
-            } else if (x > min && x < secondMin) {
-                secondMin = x;
+                min = number;
+            } else if (number > min && number < secondMin) {
+                secondMin = number;
             }
         }
         System.out.println(secondMin);
