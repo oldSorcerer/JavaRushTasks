@@ -1,0 +1,24 @@
+taskKey="com.javarush.task.task17.task1720"\n\nБанкомат
+
+Разберись, как работает программа.
+Во время тестирования лог содержит следующее:
+.....
+Добавляем 1000, на счету 1000
+Тратим 100, на счету 800
+Тратим 100, на счету 800
+Тратим 100, на счету 800
+Тратим 100, на счету 700
+.....
+
+Создан баг: деньги не правильно списываются со счета.
+Твоя задача: найти и исправить ошибку.
+
+
+Требования:
+1.	Класс BankAccount должен содержать private поле balance типа BigDecimal.
+2.	Метод deposit(String money) класса BankAccount должен делегировать поведение в метод deposit(BigDecimal money).
+3.	Метод withdraw(String money) класса BankAccount должен делегировать поведение в метод withdraw(BigDecimal money).
+4.	В методе withdraw(BigDecimal money), если необходимо, используй synchronized.
+5.	В методе deposit(BigDecimal money), если необходимо, используй synchronized.
+
+
