@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DrugsController {
-    public static Map<Drug, Integer> allDrugs = new HashMap<Drug, Integer>();   // <Лекарство, Количество>
+    public static Map<Drug, Integer> allDrugs = new HashMap<>();   // <Лекарство, Количество>
 
     static {
         Drug panadol = new Drug();
@@ -27,10 +27,10 @@ public class DrugsController {
         }
         Integer currentCount = allDrugs.get(drug);
         if (currentCount < count) {
-            System.out.println(String.format("%s хочет %s %d шт. В наличии - %d", name, drug.getName(), count, currentCount));
+            System.out.printf("%s хочет %s %d шт. В наличии - %d%n", name, drug.getName(), count, currentCount);
         } else {
             allDrugs.put(drug, (currentCount - count));
-            System.out.println(String.format("%s купил(а) %s %d шт. Осталось - %d", name, drug.getName(), count, (currentCount - count)));
+            System.out.printf("%s купил(а) %s %d шт. Осталось - %d%n", name, drug.getName(), count, (currentCount - count));
         }
     }
 
