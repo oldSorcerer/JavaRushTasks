@@ -24,35 +24,31 @@ public class Solution {
             throw new RuntimeException();
         }
 
-        Date birthday;
+        SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
+
         Person person = null;
 
         switch (args[0]) {
             case "-c" -> {
-                birthday = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(args[3]);
-
                 if (args[2].equalsIgnoreCase("м")) {
-                    person = Person.createMale(args[1], birthday);
+                    person = Person.createMale(args[1], inputFormat.parse(args[3]));
                 } else if (args[2].equalsIgnoreCase("ж")) {
-                    person = Person.createFemale(args[1], birthday);
+                    person = Person.createFemale(args[1], inputFormat.parse(args[3]));
                 }
                 allPeople.add(person);
                 System.out.println(allPeople.size() - 1);
             }
             case "-r" -> {
-                person = allPeople.get(Integer.parseInt(args[1]));
-                if (person != null) {
-
+                if ((person = allPeople.get(Integer.parseInt(args[1]))) != null) {
                     String sex = null;
                     if (person.getSex().equals(Sex.MALE)) {
                         sex = "м";
                     } else if (person.getSex().equals(Sex.FEMALE)) {
                         sex = "ж";
                     }
-
-                    String format = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH).format(person.getBirthDate());
-
-                    System.out.println(person.getName() + " " + sex + " " + format);
+                    System.out.println(person.getName() + " " + sex +
+                            " " + outputFormat.format(person.getBirthDate()));
                 }
             }
             case "-u" -> {
@@ -66,8 +62,7 @@ public class Solution {
                 } else if (args[3].equalsIgnoreCase("ж")) {
                     person.setSex(Sex.FEMALE);
                 }
-                Date date = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH).parse(args[4]);
-                person.setBirthDate(date);
+                person.setBirthDate(inputFormat.parse(args[4]));
             }
             case "-d" -> {
                 person = allPeople.get(Integer.parseInt(args[1]));
