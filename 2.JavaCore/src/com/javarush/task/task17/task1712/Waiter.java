@@ -19,7 +19,7 @@ public class Waiter implements Runnable {
             }
             try {
                 Thread.sleep(100);  //walking to the next table
-            } catch (InterruptedException e) {
+            } catch (InterruptedException ignore) {
             }
         }
     }

@@ -29,7 +29,7 @@ public class Solution {
         @Override
         public void run() {
             while (!isStopped) {
-                drugsController.buy(getRandomDrug(), getRandomCount());
+                drugsController.sell(getRandomDrug(), getRandomCount());
                 for (int i = 0; i < 3; i++) {
                     waitAMoment();
                 }
@@ -42,7 +42,7 @@ public class Solution {
         @Override
         public void run() {
             while (!isStopped) {
-                drugsController.sell(getRandomDrug(), getRandomCount());
+                drugsController.buy(getRandomDrug(),getRandomCount());
                 waitAMoment();
             }
         }
