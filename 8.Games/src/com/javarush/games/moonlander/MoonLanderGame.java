@@ -53,11 +53,11 @@ public class MoonLanderGame extends Game {
 
     @Override
     public void onKeyReleased(Key key) {
-        if (Key.RIGHT == key) {
+        if (key.equals(Key.RIGHT)) {
             isRightPressed = false;
-        } else if (Key.LEFT == key) {
+        } else if (key.equals(Key.LEFT)) {
             isLeftPressed = false;
-        } else if (Key.UP == key) {
+        } else if (key.equals(Key.UP)) {
             isUpPressed = false;
         }
     }
@@ -78,7 +78,6 @@ public class MoonLanderGame extends Game {
                 setCellColor(x, y, Color.BLACK);
             }
         }
-
         rocket.draw(this);
         landscape.draw(this);
     }
