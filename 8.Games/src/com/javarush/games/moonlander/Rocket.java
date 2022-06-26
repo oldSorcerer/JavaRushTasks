@@ -74,4 +74,8 @@ public class Rocket extends GameObject {
         }
         return false;
     }
+
+    public void land() {
+        y--;
+    }
 }
