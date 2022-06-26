@@ -1,6 +1,5 @@
 package com.javarush.task.task17.task1713;
 
-
 import java.util.*;
 
 /* 
@@ -13,7 +12,6 @@ public class Solution implements List<Long> {
     public static void main(String[] args) {
 
     }
-
 
     @Override
     public synchronized int size() {
