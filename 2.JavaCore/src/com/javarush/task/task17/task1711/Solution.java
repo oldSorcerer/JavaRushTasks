@@ -80,7 +80,7 @@ public class Solution {
                                 sex = "м";
                             } else if (person.getSex().equals(Sex.FEMALE)) {
                                 sex = "ж";
-                            }
+                            } // Sex sex = person.getSex().equals(Sex.MALE) ? "м" : "ж";
                             System.out.println(person.getName() + " " + sex +
                                     " " + outputFormat.format(person.getBirthDate()));
                         }

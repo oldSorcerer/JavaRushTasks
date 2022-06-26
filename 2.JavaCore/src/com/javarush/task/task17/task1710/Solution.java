@@ -49,12 +49,12 @@ public class Solution {
                     }
                     System.out.println(person.getName() + " " + sex +
                             " " + outputFormat.format(person.getBirthDate()));
-                }
+                } //String sex = person.getSex().equals(Sex.MALE) ? "м" : "ж";
             }
             case "-u" -> {
                 person = allPeople.get(Integer.parseInt(args[1]));
                 if (person == null) {
-                    throw new IllegalAccessError();
+                    throw new IllegalArgumentException();
                 }
                 person.setName(args[2]);
                 if (args[3].equalsIgnoreCase("м")) {
