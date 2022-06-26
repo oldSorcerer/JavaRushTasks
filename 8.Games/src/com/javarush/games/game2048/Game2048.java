@@ -216,4 +216,4 @@ public class Game2048 extends Game {
         return false;
     }
 }
-//--module-path "D:\The Projects\IdeaProjects\JavaRushTasks\lib\javafx-sdk-17.0.2\lib" --add-modules javafx.controls,javafx.fxml
+//--module-path "D:\TheProjects\IdeaProjects\JavaRushTasks\lib\javafx-sdk-17.0.2\lib" --add-modules javafx.controls,javafx.fxml
