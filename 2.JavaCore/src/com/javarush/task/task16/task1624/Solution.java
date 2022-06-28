@@ -8,7 +8,7 @@ public class Solution {
     public static MyThread t = new MyThread();
     static String message = "inside main ";
 
-    public static void main(String a[]) throws Exception {
+    public static void main(String[] a) throws Exception {
         t.start();
         t.join();
         for (int i = 0; i < 10; i++) {
