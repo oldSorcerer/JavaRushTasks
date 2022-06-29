@@ -18,7 +18,6 @@ public class Solution {
         @Override
         public void run() {
             try {
-                int i = 0;
                 while (true) {
                     ++countIndexUp;
                     System.out.println(this);

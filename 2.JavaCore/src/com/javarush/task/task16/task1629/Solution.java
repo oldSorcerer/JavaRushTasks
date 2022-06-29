@@ -33,7 +33,7 @@ public class Solution {
         public void run() {
             for (int i = 0; i < 3; i++) {
                 try {
-                    string = string + reader.readLine() + " " ;
+                    string += reader.readLine() + " " ;
                 } catch (IOException ignore) {
                 }
             }
