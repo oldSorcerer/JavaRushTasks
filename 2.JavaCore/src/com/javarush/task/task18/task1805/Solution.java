@@ -22,6 +22,5 @@ public class Solution {
         for (Integer integer : set) {
             System.out.print(integer + " ");
         }
-
     }
 }
