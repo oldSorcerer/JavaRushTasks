@@ -35,7 +35,7 @@ public class Solution {
         }
 
         for (Integer integer : list) {
-            System.out.println(integer + " ");
+            System.out.print(integer + " ");
         }
     }
 }
