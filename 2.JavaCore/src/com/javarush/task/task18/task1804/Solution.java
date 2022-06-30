@@ -1,4 +1,4 @@
-package com.javarush.task.task18.task1803;
+package com.javarush.task.task18.task1804;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* 
-Самые частые байты
+Самые редкие байты
 */
 
 public class Solution {
@@ -15,21 +15,21 @@ public class Solution {
         int[] byteCountArray = new int[256];
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            FileInputStream inputStream = new FileInputStream(reader.readLine()); ) {
+             FileInputStream inputStream = new FileInputStream(reader.readLine()); ) {
             while (inputStream.available() > 0) {
                 byteCountArray[inputStream.read()] += 1;
             }
         }
 
-        int maxCount = 0;
+        int minCount = Integer.MAX_VALUE;
         for (int byteCount : byteCountArray) {
-            if (byteCount > maxCount) {
-                maxCount = byteCount;
+            if (byteCount > 0 && byteCount < minCount) {
+                minCount = byteCount;
             }
         }
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < byteCountArray.length; i++) {
-            if (byteCountArray[i] == maxCount) {
+            if (byteCountArray[i] == minCount) {
                 list.add(i);
             }
         }
@@ -37,5 +37,6 @@ public class Solution {
         for (Integer integer : list) {
             System.out.print(integer + " ");
         }
+
     }
 }

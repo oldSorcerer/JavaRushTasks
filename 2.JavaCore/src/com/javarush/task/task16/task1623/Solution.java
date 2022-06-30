@@ -19,8 +19,9 @@ public class Solution {
             start();
         }
 
+        @Override
         public void run() {
-            if (createdThreadCount < count) {
+            while (createdThreadCount < Solution.count) {
                 System.out.println(new GenerateThread());
             }
         }

@@ -1,6 +1,9 @@
 package com.javarush.task.task16.task1630;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /* 
 Последовательный вывод файлов
@@ -11,12 +14,11 @@ public class Solution {
     public static String secondFileName;
 
     static {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));) {
             firstFileName = reader.readLine();
             secondFileName = reader.readLine();
-        } catch (IOException exception) {
-            exception.printStackTrace();
+        } catch (IOException ignore) {
+
         }
     }
 
@@ -45,30 +47,29 @@ public class Solution {
     }
 
     public static class ReadFileThread extends Thread implements ReadFileInterface {
-        String fileName;
-        String fileContent = "";
+
+        private StringBuilder stringBuilder = new StringBuilder();
+        private String fullFileName;
 
         @Override
         public void setFileName(String fullFileName) {
-            this.fileName = fullFileName;
-        }
-
-        @Override
-        public void run() {
-            String line;
-            try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-                while ((line = br.readLine()) != null) {
-                    fileContent += line + " ";
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            this.fullFileName = fullFileName;
         }
 
         @Override
         public String getFileContent() {
-            return fileContent;
+            return stringBuilder.toString() ;
+        }
+
+        @Override
+        public void run() {
+            try (BufferedReader reader = new BufferedReader(new FileReader(fullFileName))) {
+                while (reader.ready()) {
+                    String string = reader.readLine();
+                    stringBuilder.append(string).append(" ");
+                }
+            } catch (IOException ignore) {
+            }
         }
     }
-
 }
