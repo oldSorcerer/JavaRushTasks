@@ -24,20 +24,22 @@ public class Snake {
         boolean flagX =  snakeParts.get(0).x == snakeParts.get(1).x;
         boolean flagY =  snakeParts.get(0).y == snakeParts.get(1).y;
 
-        if ( (this.direction == Direction.LEFT || this.direction == Direction.RIGHT ) && flagX)
+        if ( (this.direction == Direction.LEFT || this.direction == Direction.RIGHT ) && flagX) {
             return;
-        if ( (this.direction == Direction.UP || this.direction == Direction.DOWN) && flagY )
+        }
+        if ( (this.direction == Direction.UP || this.direction == Direction.DOWN) && flagY ) {
             return;
+        }
 
-        if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT))
+        if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
             return;
-        else if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT))
-             return;
-        else if (this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN))
+        } else if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
             return;
-        else if ( this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP))
+        } else if (this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN)) {
             return;
-
+        } else if ( this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
+            return;
+        }
         this.direction = direction;
     }
 

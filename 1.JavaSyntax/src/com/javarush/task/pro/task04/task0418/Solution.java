@@ -17,7 +17,5 @@ public class Solution {
         } else {
             System.out.println((int)Math.floor(glass));
         }
-
-
     }
 }

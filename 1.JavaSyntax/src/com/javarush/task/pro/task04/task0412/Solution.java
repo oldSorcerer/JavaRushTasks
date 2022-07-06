@@ -22,7 +22,6 @@ public class Solution {
                 continue;
             }
         }
-
         System.out.println(sum);
     }
 }
