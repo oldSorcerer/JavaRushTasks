@@ -21,8 +21,6 @@ public class Solution {
             Arrays.fill(array, 0, array.length / 2 + 1, valueStart);
             Arrays.fill(array, array.length / 2 + 1, array.length, valueEnd);
         }
-
-
         System.out.println(Arrays.toString(array));
     }
 }
