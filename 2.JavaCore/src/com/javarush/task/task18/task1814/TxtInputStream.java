@@ -20,3 +20,4 @@ public class TxtInputStream extends FileInputStream {
     public static void main(String[] args) {
     }
 }
+
