@@ -9,7 +9,11 @@ import java.io.IOException;
 */
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        FileInputStream fileInputStream = new FileInputStream(args[0]);
+        FileOutputStream fileOutputStream = new FileOutputStream(args[1]);
+
 
     }
 
