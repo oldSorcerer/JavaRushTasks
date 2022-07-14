@@ -18,8 +18,8 @@ target/
 
 /lib/
 /out/
+/Test/
 /JavaRushPlugin.properties
 /Instruction.png
 /out.log
 /out.log.*
-/Test/
