@@ -18,8 +18,9 @@ public class Solution {
                 sum += number;
             } else if (sc.hasNextLine()) {
                 String string = sc.nextLine();
-                if (string.equals("ENTER"))
+                if (string.equals("ENTER")) {
                     break;
+                }
             }
         }
         System.out.println(sum);
