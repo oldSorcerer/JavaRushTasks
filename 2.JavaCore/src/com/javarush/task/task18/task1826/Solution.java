@@ -11,11 +11,20 @@ import java.io.IOException;
 public class Solution {
     public static void main(String[] args) throws IOException {
 
-        FileInputStream fileInputStream = new FileInputStream(args[0]);
-        FileOutputStream fileOutputStreamOne = new FileOutputStream(args[1]);
-        FileOutputStream fileOutputStreamTwo = new FileOutputStream(args[1]);
-
-
+        try (FileInputStream inputStream = new FileInputStream(args[1]);
+        FileOutputStream outputStream = new FileOutputStream(args[2])) {
+            if (args[0].equalsIgnoreCase("-e")) {
+                while (inputStream.available() > 0) {
+                    int read = inputStream.read();
+                    outputStream.write(read + 1);
+                }
+            } else if (args[0].equalsIgnoreCase("-d")) {
+                while (inputStream.available() > 0) {
+                    int read = inputStream.read();
+                    outputStream.write(read - 1);
+                }
+            }
+        }
     }
 
 }
