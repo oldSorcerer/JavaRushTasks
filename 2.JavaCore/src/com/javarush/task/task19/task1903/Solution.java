@@ -8,13 +8,60 @@ import java.util.Map;
 */
 
 public class Solution {
-    public static Map<String, String> countries = new HashMap<String, String>();
+    public static Map<String, String> countries = new HashMap<>();
+
+    static {
+        countries.put("UA", "Ukraine");
+        countries.put("RU", "Russia");
+        countries.put("CA", "Canada");
+    }
 
     public static void main(String[] args) {
 
     }
 
-    public static class IncomeDataAdapter {
+    public static class IncomeDataAdapter implements Customer, Contact {
+
+        private final IncomeData data;
+
+        public IncomeDataAdapter(IncomeData incomeData) {
+            this.data = incomeData;
+        }
+
+        @Override
+        public String getCompanyName() {
+            return data.getCompany();
+        }
+
+        @Override
+        public String getCountryName() {
+            return countries.get(data.getCountryCode());
+        }
+
+        @Override
+        public String getName() {
+            return data.getContactLastName() + ", " + data.getContactFirstName();
+        }
+
+        @Override
+        public String getPhoneNumber() {
+
+            String phoneNumber = "" + data.getPhoneNumber();
+            while (phoneNumber.length() < 10) {
+                phoneNumber = "0" + phoneNumber;
+            }
+            String city = phoneNumber.substring(0, 3);
+            String numberPartOne = phoneNumber.substring(3, 6);
+            String numberPartTwo = phoneNumber.substring(6, 8);
+            String numberPartThree = phoneNumber.substring(8);
+
+            String code = "+" + data.getCountryPhoneCode();
+
+            return code + "("+ city + ")" +
+                    numberPartOne + "-" +
+                    numberPartTwo + "-" +
+                    numberPartThree;
+        }
     }
 
 
