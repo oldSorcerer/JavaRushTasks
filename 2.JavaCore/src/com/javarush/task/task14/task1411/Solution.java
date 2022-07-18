@@ -12,15 +12,15 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
-            String key = reader.readLine();
+            String string = reader.readLine();
 
-            if (key.equalsIgnoreCase("user")) {
+            if (string.equalsIgnoreCase("user")) {
                 doWork(new Person.User());
-            } else if (key.equalsIgnoreCase("loser")) {
+            } else if (string.equalsIgnoreCase("loser")) {
                 doWork(new Person.Loser());
-            } else if (key.equalsIgnoreCase("coder")) {
+            } else if (string.equalsIgnoreCase("coder")) {
                 doWork(new Person.Coder());
-            } else if (key.equalsIgnoreCase("proger")) {
+            } else if (string.equalsIgnoreCase("proger")) {
                 doWork(new Person.Proger());
             } else {
                 break;
