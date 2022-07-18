@@ -14,13 +14,13 @@ public class Solution {
     public static void main(String[] args) throws IOException {
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(reader.readLine())); ) {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(reader.readLine()))) {
             while (true) {
                 String string = reader.readLine();
-                writer.write(string + System.lineSeparator());
                 if (string.equalsIgnoreCase("exit")) {
                     break;
                 }
+                writer.write(string + System.lineSeparator());
             }
         }
     }
