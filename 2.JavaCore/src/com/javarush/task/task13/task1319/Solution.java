@@ -17,10 +17,10 @@ public class Solution {
             BufferedWriter writer = new BufferedWriter(new FileWriter(reader.readLine()))) {
             while (true) {
                 String string = reader.readLine();
+                writer.write(string + System.lineSeparator());
                 if (string.equalsIgnoreCase("exit")) {
                     break;
                 }
-                writer.write(string + System.lineSeparator());
             }
         }
     }
