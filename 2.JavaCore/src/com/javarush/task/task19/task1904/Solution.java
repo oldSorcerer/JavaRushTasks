@@ -16,7 +16,32 @@ public class Solution {
 
     }
 
-    public static class PersonScannerAdapter {
+    public static class PersonScannerAdapter implements PersonScanner {
 
+        private final Scanner fileScanner;
+
+        public PersonScannerAdapter(Scanner fileScanner) {
+            this.fileScanner = fileScanner;
+        }
+
+        @Override
+        public Person read() throws IOException {
+
+            String string = fileScanner.nextLine();
+            String[] split = string.split(" ");
+
+            int year = Integer.parseInt(split[5]);
+            int month = Integer.parseInt(split[4]) - 1;
+            int dayOfMonth = Integer.parseInt(split[3]);
+            Calendar calendar = new GregorianCalendar(year, month, dayOfMonth);
+            Date date = calendar.getTime();
+
+            return new Person(split[1], split[2], split[0], date) ;
+        }
+
+        @Override
+        public void close() throws IOException {
+            fileScanner.close();
+        }
     }
 }

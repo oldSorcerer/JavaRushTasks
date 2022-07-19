@@ -19,12 +19,22 @@ public class Solution {
             }
         };
 
-        //BTable table = new TableAdapter(aTable);
-        //System.out.println(table.getHeaderText());
+        BTable table = new TableAdapter(aTable);
+        System.out.println(table.getHeaderText());
     }
 
-    public static class TableAdapter {
+    public static class TableAdapter implements BTable {
 
+        private final ATable aTable;
+
+        public TableAdapter(ATable aTable) {
+            this.aTable = aTable;
+        }
+
+        @Override
+        public String getHeaderText() {
+            return "[" + aTable.getCurrentUserName() + "] : " + aTable.getTableName();
+        }
     }
 
     public interface ATable {
