@@ -12,7 +12,7 @@ import java.util.List;
 */
 
 public class Solution {
-    public static List<String> words = new ArrayList<String>();
+    public static List<String> words = new ArrayList<>();
 
     static {
         words.add("файл");
@@ -20,7 +20,19 @@ public class Solution {
         words.add("В");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
+        try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
+
+            while (reader.ready()) {
+                String string = reader.readLine();
+                for (String word : words) {
+                    if (string.contains(word)) {
+                        System.out.println(string);
+                    }
+                }
+            }
+        }
     }
 }
