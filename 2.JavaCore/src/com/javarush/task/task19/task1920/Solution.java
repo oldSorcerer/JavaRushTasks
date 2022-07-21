@@ -1,12 +1,7 @@
 package com.javarush.task.task19.task1920;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.io.*;
+import java.util.*;
 
 /* 
 Самый богатый
@@ -16,6 +11,7 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         
         Map<String, Double> map = new TreeMap<>();
+        Set<String> set = new TreeSet<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
             while (reader.ready()) {
@@ -30,10 +26,20 @@ public class Solution {
                 }
             }
         }
-        Set<String> set = new TreeSet<>(map.keySet());
+
+        double max = 0.0;
+        for (Map.Entry<String, Double> entry : map.entrySet()) {
+            if (entry.getValue() > max) {
+                max = entry.getValue();
+                set.clear();
+                set.add(entry.getKey());
+            } else if (entry.getValue() == max) {
+                set.add(entry.getKey());
+            }
+        }
+
         for (String string : set) {
             System.out.println(string);
         }
-
     }
 }
