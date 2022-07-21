@@ -1,21 +1,18 @@
 package com.javarush.task.task20.task2015;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 
 /* 
 Переопределение сериализации
 */
 
-public class Solution  {
-    private Thread runner;
+public class Solution implements Serializable, Runnable {
+    transient private Thread runner;
     private int speed;
 
     public Solution(int speed) {
         this.speed = speed;
-        //runner = new Thread(this);
+        runner = new Thread(this);
         runner.start();
     }
 
@@ -30,12 +27,14 @@ public class Solution  {
      * private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException
      * Теперь сериализация/десериализация пойдет по нашему сценарию :)
      */
+
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        in.defaultReadObject();
+        Thread thread = new Thread(this);
+        thread.start();
     }
 
     public static void main(String[] args) {
