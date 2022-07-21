@@ -9,7 +9,7 @@ import java.util.List;
 */
 
 public class Solution {
-    public static class JavaRush {
+    public static class JavaRush implements Serializable {
         public List<User> users = new ArrayList<>();
     }
 
