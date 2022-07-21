@@ -10,6 +10,12 @@ import java.io.InputStreamReader;
 */
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
+            while (reader.ready()) {
+                System.out.println(new StringBuilder(reader.readLine()).reverse());
+            }
+        }
     }
 }

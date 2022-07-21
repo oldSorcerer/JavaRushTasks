@@ -1,6 +1,9 @@
 package com.javarush.task.task20.task2012;
 
-import java.io.*;
+import java.io.Externalizable;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectOutput;
 
 /* 
 OutputToConsole
@@ -16,14 +19,14 @@ public class Solution {
      *
      * @author JavaRush
      */
-    public static class OutputToConsole implements Serializable {
+    public static class OutputToConsole implements Externalizable {
         private int counter;
 
         /**
          * @param out A stream for externalization
          * @throws java.io.IOException
          */
-      //  @Override
+        @Override
         public void writeExternal(ObjectOutput out) throws IOException {
             out.writeInt(counter);
         }
@@ -33,7 +36,7 @@ public class Solution {
          * @throws java.io.IOException
          * @throws ClassNotFoundException
          */
-      //  @Override
+        @Override
         public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
             counter = in.readInt();
         }

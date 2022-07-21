@@ -10,7 +10,7 @@ import java.util.List;
 */
 
 public class Solution {
-    public static class Human {
+    public static class Human implements Serializable {
         public String name;
         public List<String> assets = new ArrayList<>();
 
