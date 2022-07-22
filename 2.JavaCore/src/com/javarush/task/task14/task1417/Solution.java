@@ -16,6 +16,7 @@ public class Solution {
     }
 
     static class Person {
+        private final List<Money> allMoney;
         public String name;
 
         Person(String name) {
@@ -25,8 +26,6 @@ public class Solution {
             allMoney.add(new USD(52.4));
             allMoney.add(new Ruble(52.4));
         }
-
-        private List<Money> allMoney;
 
         public List<Money> getAllMoney() {
             return allMoney;
