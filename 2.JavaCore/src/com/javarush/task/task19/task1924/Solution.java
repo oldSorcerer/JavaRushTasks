@@ -40,7 +40,17 @@ public class Solution {
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
-            List<String> strings = Files.readAllLines(Path.of(console.readLine()));
+
+            while (reader.ready()) {
+                String string = reader.readLine();
+                String[] strings = string.split(" ");
+
+
+
+            }
+
+
+
         }
 
 
