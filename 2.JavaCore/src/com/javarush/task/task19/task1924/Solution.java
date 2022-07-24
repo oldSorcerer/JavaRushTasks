@@ -1,14 +1,7 @@
 package com.javarush.task.task19.task1924;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
+import java.io.*;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /* 
@@ -30,29 +23,22 @@ public class Solution {
         map.put(8, "восемь");
         map.put(9, "девять");
         map.put(10, "десять");
-        map.put(11, "одинадцать");
+        map.put(11, "одиннадцать");
         map.put(12, "двенадцать");
     }
 
     public static void main(String[] args) throws IOException {
-
-        List<String> list = new ArrayList<>();
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
 
             while (reader.ready()) {
                 String string = reader.readLine();
-                String[] strings = string.split(" ");
-
-
-
+                for (Map.Entry<Integer, String> entry : map.entrySet()) {
+                    string = string.replaceAll("\\b" + entry.getKey() + "\\b", entry.getValue());
+                }
+                System.out.println(string);
             }
-
-
-
         }
-
-
     }
 }
