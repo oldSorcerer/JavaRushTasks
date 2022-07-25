@@ -8,11 +8,10 @@ public class Earth implements Planet {
     }
 
     public static Earth getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new Earth();
+        }
         return instance;
     }
 
 }
-
-
