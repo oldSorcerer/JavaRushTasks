@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 */
 
 public class Solution {
-    public static List<Exception> exceptions = new ArrayList<Exception>();
+    public static List<Exception> exceptions = new ArrayList<>();
 
     public static void main(String[] args) {
         initExceptions();
