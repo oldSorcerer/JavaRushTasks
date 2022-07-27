@@ -27,4 +27,3 @@ public class Skyscraper {
         Skyscraper skyscraperSkyline = new Skyscraper("JavaRushDevelopment");
     }
 }
-
