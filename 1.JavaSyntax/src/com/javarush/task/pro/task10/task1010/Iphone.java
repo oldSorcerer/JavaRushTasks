@@ -41,5 +41,4 @@ public class Iphone {
 
         System.out.println(iphone1.equals(iphone2));
     }
-
 }
