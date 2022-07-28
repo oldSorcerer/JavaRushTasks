@@ -14,7 +14,8 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         Set<Integer> set = new TreeSet<>();
         try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            FileInputStream inputStream = new FileInputStream(reader.readLine())) {
+            FileInputStream inputStream = new FileInputStream(reader.readLine())
+        ) {
             while (inputStream.available() > 0) {
                 set.add(inputStream.read());
             }
