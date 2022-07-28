@@ -13,7 +13,8 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         int count = 0;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-             FileInputStream inputStream = new FileInputStream(reader.readLine())) {
+             FileInputStream inputStream = new FileInputStream(reader.readLine())
+        ) {
             while (inputStream.available() > 0) {
                 int data = inputStream.read();
                 char aChar = (char) data;
