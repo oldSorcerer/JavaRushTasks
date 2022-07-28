@@ -14,9 +14,9 @@ public class Solution {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             FileInputStream inputStream = new FileInputStream(reader.readLine())) {
             while (inputStream.available() > 0) {
-                int date = inputStream.read();
-                if (maxByte < date) {
-                    maxByte = date;
+                int data = inputStream.read();
+                if (maxByte < data) {
+                    maxByte = data;
                 }
             }
         }
