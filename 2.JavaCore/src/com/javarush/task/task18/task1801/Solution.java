@@ -10,15 +10,14 @@ import java.io.InputStreamReader;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String str = reader.readLine();
-
         int maxByte = 0;
-        try (FileInputStream inputStream = new FileInputStream(str)) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            FileInputStream inputStream = new FileInputStream(reader.readLine())
+        ) {
             while (inputStream.available() > 0) {
-                int date = inputStream.read();
-                if (maxByte < date) {
-                    maxByte = date;
+                int data = inputStream.read();
+                if (maxByte < data) {
+                    maxByte = data;
                 }
             }
         }
