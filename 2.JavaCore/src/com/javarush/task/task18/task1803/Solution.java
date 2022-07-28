@@ -17,7 +17,7 @@ public class Solution {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             FileInputStream inputStream = new FileInputStream(reader.readLine())) {
             while (inputStream.available() > 0) {
-                byteCountArray[inputStream.read()] += 1;
+                byteCountArray[inputStream.read()]++;
             }
         }
 
