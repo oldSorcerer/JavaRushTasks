@@ -12,8 +12,8 @@ public class Solution {
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
              FileInputStream readerFileOne = new FileInputStream(console.readLine());
              FileOutputStream writerFileTwo = new FileOutputStream(console.readLine());
-             FileOutputStream writerFileThree = new FileOutputStream(console.readLine())) {
-
+             FileOutputStream writerFileThree = new FileOutputStream(console.readLine())
+        ) {
             int halfFile = (readerFileOne.available() + 1) / 2;
             int count = 0;
             while (readerFileOne.available() > 0) {
