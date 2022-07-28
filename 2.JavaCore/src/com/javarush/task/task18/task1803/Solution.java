@@ -15,12 +15,11 @@ public class Solution {
         int[] byteCountArray = new int[256];
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            FileInputStream inputStream = new FileInputStream(reader.readLine())) {
+             FileInputStream inputStream = new FileInputStream(reader.readLine())) {
             while (inputStream.available() > 0) {
                 byteCountArray[inputStream.read()]++;
             }
         }
-
         int maxCount = 0;
         for (int byteCount : byteCountArray) {
             if (byteCount > maxCount) {
@@ -33,7 +32,6 @@ public class Solution {
                 list.add(i);
             }
         }
-
         for (Integer integer : list) {
             System.out.print(integer + " ");
         }
