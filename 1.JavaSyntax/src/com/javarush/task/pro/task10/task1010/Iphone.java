@@ -7,9 +7,9 @@ package com.javarush.task.pro.task10.task1010;
 import java.util.Objects;
 
 public class Iphone {
-    private String model;
-    private String color;
-    private int price;
+    private final String model;
+    private final String color;
+    private final int price;
 
     public Iphone(String model, String color, int price) {
         this.model = model;
@@ -41,5 +41,4 @@ public class Iphone {
 
         System.out.println(iphone1.equals(iphone2));
     }
-
 }
