@@ -14,7 +14,7 @@ public class Solution {
         // Создаем поток-записи-байт-в-файл
         FileOutputStream outputStream = new FileOutputStream("c:/result.txt");
 
-        byte[] buffer = new byte[1000];
+        byte[] buffer = new byte[inputStream.available()];
         if (inputStream.available() > 0) {
             //читаем весь файл одним куском
             int count = inputStream.read(buffer);
