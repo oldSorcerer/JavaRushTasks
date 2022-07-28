@@ -15,7 +15,8 @@ public class Solution {
         int[] byteCountArray = new int[256];
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-             FileInputStream inputStream = new FileInputStream(reader.readLine())) {
+             FileInputStream inputStream = new FileInputStream(reader.readLine())
+        ) {
             while (inputStream.available() > 0) {
                 byteCountArray[inputStream.read()]++;
             }
