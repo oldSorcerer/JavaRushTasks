@@ -15,24 +15,32 @@ public class Solution {
     public static List<LineItem> lines = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        List<String> stringListFileOne = new ArrayList<>();
-        List<String> stringListFileTwo = new ArrayList<>();
+        List<String> listOne = new ArrayList<>();
+        List<String> listTwo = new ArrayList<>();
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
             BufferedReader readerFileOne = new BufferedReader(new FileReader(console.readLine()));
             BufferedReader readerFileTwo = new BufferedReader(new FileReader(console.readLine()))) {
 
             while (readerFileOne.ready()) {
-                stringListFileOne.add(readerFileOne.readLine());
+                listOne.add(readerFileOne.readLine());
             }
             while (readerFileTwo.ready()) {
-                stringListFileTwo.add(readerFileOne.readLine());
+                listTwo.add(readerFileOne.readLine());
             }
         }
 
-        for (int i = 0; i < stringListFileOne.size(); i++) {
-            if (stringListFileOne.get(i).equals(stringListFileTwo.get(i))) {
-                lines.add(new LineItem(Type.SAME, stringListFileOne.get(i)));
+        for (int i = 0, j = 0; i < listOne.size() && j < listTwo.size(); ) {
+            if (listOne.get(i).equals(listTwo.get(j))) {
+                lines.add(new LineItem(Type.SAME, listOne.get(i)));
+                i++;
+                j++;
+            } else if ((i + 1 < listOne.size()) && listOne.get(i + 1).equals(listTwo.get(j))) {
+                lines.add(new LineItem(Type.REMOVED, listOne.get(i)));
+                i++;
+            } else if ((j + 1 < listTwo.size()) && listOne.get(i).equals(listTwo.get(j + 1))){
+                lines.add(new LineItem(Type.ADDED, listTwo.get(j)));
+                j++;
             }
         }
     }
