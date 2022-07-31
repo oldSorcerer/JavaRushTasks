@@ -23,28 +23,38 @@ public class Solution {
             BufferedReader readerFileTwo = new BufferedReader(new FileReader(console.readLine()))) {
 
             while (readerFileOne.ready()) {
-                listOne.add(readerFileOne.readLine());
+                String string = readerFileOne.readLine();
+                listOne.add(string);
             }
             while (readerFileTwo.ready()) {
-                listTwo.add(readerFileOne.readLine());
+                String string = readerFileTwo.readLine();
+                listTwo.add(string);
             }
         }
 
-        for (int i = 0, j = 0; i < listOne.size() && j < listTwo.size(); ) {
-            if (listOne.get(i).equals(listTwo.get(j))) {
-                lines.add(new LineItem(Type.SAME, listOne.get(i)));
-                i++;
-                j++;
-            } else if ((i + 1 < listOne.size()) && listOne.get(i + 1).equals(listTwo.get(j))) {
-                lines.add(new LineItem(Type.REMOVED, listOne.get(i)));
-                i++;
-            } else if ((j + 1 < listTwo.size()) && listOne.get(i).equals(listTwo.get(j + 1))){
-                lines.add(new LineItem(Type.ADDED, listTwo.get(j)));
-                j++;
+        while (listOne.size() > 0  && listTwo.size() > 0) {
+            if (listOne.get(0).equals(listTwo.get(0))) {
+                lines.add(new LineItem(Type.SAME, listOne.get(0)));
+                listOne.remove(0);
+                listTwo.remove(0);
+            } else if (listOne.get(0).equals(listTwo.get(1))){
+                lines.add(new LineItem(Type.ADDED, listTwo.get(0)));
+                listTwo.remove(0);
+            } else if (listOne.get(1).equals(listTwo.get(0))) {
+                lines.add(new LineItem(Type.REMOVED, listOne.get(0)));
+                listOne.remove(0);
             }
         }
+
+        if (listOne.isEmpty()) {
+            listTwo.forEach(i -> lines.add(new LineItem(Type.ADDED, i)));
+        }
+        if (listTwo.isEmpty()) {
+            listOne.forEach(i -> lines.add(new LineItem(Type.REMOVED, i)));
+        }
+
+        lines.forEach(System.out::println);
     }
-
 
     public enum Type {
         ADDED,        //добавлена новая строка
@@ -59,6 +69,11 @@ public class Solution {
         public LineItem(Type type, String line) {
             this.type = type;
             this.line = line;
+        }
+
+        @Override
+        public String toString() {
+            return type + " " + line;
         }
     }
 }
