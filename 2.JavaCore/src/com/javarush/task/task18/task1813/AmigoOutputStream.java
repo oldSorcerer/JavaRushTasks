@@ -11,7 +11,7 @@ AmigoOutputStream
 public class AmigoOutputStream  extends FileOutputStream  {
     public static String fileName = "C:/tmp/result.txt";
 
-    private FileOutputStream original;
+    private final FileOutputStream original;
 
     public AmigoOutputStream(FileOutputStream fileOutputStream) throws FileNotFoundException {
         super(fileName);
