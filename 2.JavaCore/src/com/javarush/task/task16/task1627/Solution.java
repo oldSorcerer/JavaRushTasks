@@ -43,7 +43,7 @@ public class Solution {
     }
 
     public static class Gamer extends Thread {
-        private int rating;
+        private final int rating;
 
         public Gamer(String name, int rating) {
             super(name);
