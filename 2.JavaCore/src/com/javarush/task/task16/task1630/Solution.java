@@ -14,11 +14,10 @@ public class Solution {
     public static String secondFileName;
 
     static {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             firstFileName = reader.readLine();
             secondFileName = reader.readLine();
         } catch (IOException ignore) {
-
         }
     }
 
@@ -48,7 +47,7 @@ public class Solution {
 
     public static class ReadFileThread extends Thread implements ReadFileInterface {
 
-        private StringBuilder stringBuilder = new StringBuilder();
+        private final StringBuilder stringBuilder = new StringBuilder();
         private String fullFileName;
 
         @Override
