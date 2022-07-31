@@ -16,14 +16,14 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-        while (true) {
-            String string = reader.readLine();
-            if (string.equals("exit")) {
-                break;
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            while (true) {
+                String string = reader.readLine();
+                if (string.equals("exit")) {
+                    break;
+                }
+                new ReadThread(string).start();
             }
-            new ReadThread(string).start();
         }
     }
 
