@@ -31,8 +31,8 @@ public class Solution {
 }
 
 class Product {
-    private String name;
-    private LocalDate expirationDate;
+    private final String name;
+    private final LocalDate expirationDate;
 
     public Product(String name, LocalDate expirationDate) {
         this.name = name;
