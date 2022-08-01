@@ -59,7 +59,7 @@ public class Solution {
         String binaryNumber = "";
         for (int i = 0; i < hexNumber.length(); i++) {
             String oneHex = String.valueOf(hexNumber.charAt(i));
-            String oneBit = switch (oneHex) {
+            String fourBit = switch (oneHex) {
                 case "0" -> "0000";
                 case "1" -> "0001";
                 case "2" -> "0010";
@@ -78,7 +78,7 @@ public class Solution {
                 case "f" -> "1111";
                 default -> null;
             };
-            binaryNumber += oneBit;
+            binaryNumber += fourBit;
         }
         return binaryNumber;
     }
