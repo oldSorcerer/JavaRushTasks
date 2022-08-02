@@ -5,14 +5,14 @@ package com.javarush.task.task18.task1825;
 */
 
 import java.io.*;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Solution {
 
     public static void main(String[] args) throws IOException {
 
-        Map<Integer, String> map = new HashMap<>();
+        TreeMap<Integer, String> map = new TreeMap<>();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
@@ -31,12 +31,11 @@ public class Solution {
         for (Map.Entry<Integer, String> pair : map.entrySet()) {
             String fileName = pair.getValue();
             String shortName = fileName.substring(0, fileName.lastIndexOf("."));
-            try (InputStream inputStream = new FileInputStream(fileName);
-                 OutputStream outputStream = new FileOutputStream(shortName)) {
-                byte[] buffer = new byte[inputStream.available()];
+            try (BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
+                 BufferedOutputStream outputStream = new BufferedOutputStream( new FileOutputStream(shortName))) {
                 while (inputStream.available() > 0) {
-                    int read = inputStream.read(buffer);
-                    outputStream.write(buffer, 0, read);
+                    int read = inputStream.read();
+                    outputStream.write(read);
                 }
             }
         }

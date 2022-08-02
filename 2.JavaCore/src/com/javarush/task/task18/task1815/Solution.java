@@ -9,7 +9,7 @@ import java.util.List;
 public class Solution {
     public class TableInterfaceWrapper implements TableInterface {
 
-        private TableInterface tableInterface;
+        private final TableInterface tableInterface;
 
         public TableInterfaceWrapper(TableInterface tableInterface) {
             this.tableInterface = tableInterface;

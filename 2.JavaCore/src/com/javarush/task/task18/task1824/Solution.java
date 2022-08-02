@@ -9,15 +9,15 @@ import java.io.*;
 public class Solution {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            while (true) {
+                String string = reader.readLine();
+                try (FileReader fileReader = new FileReader(string)) {
 
-        while (true) {
-            String string = reader.readLine();
-            try (FileReader fileReader = new FileReader(string)) {
-
-            } catch (FileNotFoundException e) {
-                System.out.println(string);
-                break;
+                } catch (FileNotFoundException e) {
+                    System.out.println(string);
+                    break;
+                }
             }
         }
     }

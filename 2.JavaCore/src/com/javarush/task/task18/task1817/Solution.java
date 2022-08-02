@@ -14,8 +14,7 @@ public class Solution {
         StringBuilder stringBuilder = new StringBuilder();
         int countSpace = 0;
 
-        try (FileReader fileReader = new FileReader(args[0]);
-             BufferedReader reader = new BufferedReader(fileReader)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
             while (reader.ready()) {
                 String string = reader.readLine();
                 stringBuilder.append(string);
