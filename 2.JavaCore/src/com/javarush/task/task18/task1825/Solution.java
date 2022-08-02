@@ -5,7 +5,6 @@ package com.javarush.task.task18.task1825;
 */
 
 import java.io.*;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
