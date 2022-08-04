@@ -23,14 +23,19 @@ public class Solution {
     public static void main(String[] args) throws IOException {
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-            BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
-
+             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
+            int count = 0;
             while (reader.ready()) {
-                String string = reader.readLine();
-                for (String word : words) {
-                    if (string.contains(word)) {
-                        System.out.println(string);
+                String line = reader.readLine();
+                String[] strings = line.split(" ");
+
+                for (String string : strings) {
+                    if (words.contains(string)) {
+                        count++;
                     }
+                }
+                if (count == 2) {
+                    System.out.println(line);
                 }
             }
         }
