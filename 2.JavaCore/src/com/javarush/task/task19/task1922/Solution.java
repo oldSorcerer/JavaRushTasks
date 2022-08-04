@@ -24,19 +24,17 @@ public class Solution {
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
              BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
-            int count = 0;
             while (reader.ready()) {
                 String line = reader.readLine();
                 String[] strings = line.split(" ");
 
+                int count = 0;
                 for (String string : strings) {
                     if (words.contains(string)) {
                         count++;
                     }
                 }
-                if (count == 2) {
-                    System.out.println(line);
-                }
+                if (count == 2) System.out.println(line);
             }
         }
     }
