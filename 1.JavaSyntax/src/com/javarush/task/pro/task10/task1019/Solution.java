@@ -8,7 +8,7 @@ import java.util.Calendar;
 
 public class Solution {
 
-    private int currentYear;
+    private final int currentYear;
 
     public Solution() {
         this.currentYear = Calendar.getInstance().get(Calendar.YEAR);
