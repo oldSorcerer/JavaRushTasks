@@ -16,7 +16,7 @@ public class Memory {
 
     public static void executeDefragmentation(String[] array) {
         for (int i = array.length; i >= 1; i--) {
-            for (int j = 1;  j < i; j++) {
+            for (int j = 1; j < i; j++) {
                 if (array[j - 1] == null) {
                     array[j - 1] = array[j];
                     array[j] = null;
