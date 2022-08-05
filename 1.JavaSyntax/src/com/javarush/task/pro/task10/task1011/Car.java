@@ -7,8 +7,8 @@ import java.util.Objects;
 */
 
 public class Car {
-    private String model;
-    private int year;
+    private final String model;
+    private final int year;
 
     public Car(String model, int year) {
         this.model = model;
