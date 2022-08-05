@@ -1,0 +1,35 @@
+taskKey="com.javarush.task.task19.task1918"\n\nЗнакомство с тегами
+
+Считай с консоли имя файла, который имеет HTML-формат.
+Пример:
+Info about Leela &lt;span xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;b&gt;&lt;span&gt;Turanga Leela
+&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;span&gt;Super&lt;/span&gt;&lt;span&gt;girl&lt;/span&gt;
+Первым параметром в метод main приходит тег. Например, &quot;span&quot;.
+Вывести на консоль все теги, которые соответствуют заданному тегу.
+Каждый тег на новой строке, порядок должен соответствовать порядку следования в файле.
+Количество пробелов, \n, \r не влияют на результат.
+Файл не содержит тег CDATA, для всех открывающих тегов имеется отдельный закрывающий тег, одиночных тегов нет.
+Тег может содержать вложенные теги.
+Пример вывода:
+&lt;span xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;b&gt;&lt;span&gt;Turanga Leela&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;
+&lt;span&gt;Turanga Leela&lt;/span&gt;
+&lt;span&gt;Super&lt;/span&gt;
+&lt;span&gt;girl&lt;/span&gt;
+
+Шаблон тега:
+&lt;tag&gt;text1&lt;/tag&gt;
+&lt;tag text2&gt;text1&lt;/tag&gt;
+&lt;tag
+text2&gt;text1&lt;/tag&gt;
+
+text1, text2 могут быть пустыми
+
+
+Требования:
+1.	Программа должна считывать имя файла с консоли (используй BufferedReader).
+2.	BufferedReader для считывания данных с консоли должен быть закрыт.
+3.	Программа должна считывать содержимое файла (используй FileReader).
+4.	Поток чтения из файла (FileReader) должен быть закрыт.
+5.	Программа должна выводить в консоль все теги, которые соответствуют тегу, заданному в параметре метода main.
+
+
