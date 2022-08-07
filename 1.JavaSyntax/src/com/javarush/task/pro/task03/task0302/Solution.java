@@ -19,6 +19,5 @@ public class Solution {
         if (age >= 18 && age <= 28) {
             System.out.println(name + militaryCommissar);
         }
-
     }
 }
