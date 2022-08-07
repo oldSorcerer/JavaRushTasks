@@ -36,7 +36,7 @@ public class Solution {
                         }
                     } else if (args[0].equals("-d")) {
                         String id = args[1].trim();
-                        map.entrySet().removeIf(key -> key.getKey().equals(id));
+                        map.entrySet().removeIf(pair -> pair.getKey().equals(id));
                     }
                 }
             }
