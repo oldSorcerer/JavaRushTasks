@@ -24,7 +24,7 @@ public class Solution {
                         map.put(index, substring);
                     }
                 }
-                if(args.length != 0) {
+                if (args.length != 0) {
                     if (args[0].equals("-u")) {
                         String id = args[1].trim();
                         for (Map.Entry<String, String> pair : map.entrySet()) {
@@ -36,7 +36,7 @@ public class Solution {
                         }
                     } else if (args[0].equals("-d")) {
                         String id = args[1].trim();
-                        map.entrySet().removeIf(key -> key.getKey().equals(id));
+                        map.entrySet().removeIf(pair -> pair.getKey().equals(id));
                     }
                 }
             }
