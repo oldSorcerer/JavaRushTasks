@@ -17,7 +17,7 @@ public class Solution {
 
         if (number1 == number2 && number2 == number3)
             System.out.println(number1 + " " + number2 + " " + number3);
-        else  if (number1 == number2)
+        else if (number1 == number2)
             System.out.println(number1 + " " + number2);
         else if (number2 == number3)
             System.out.println(number2 + " " + number3);
