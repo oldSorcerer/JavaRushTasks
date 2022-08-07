@@ -24,7 +24,7 @@ public class Solution {
                         map.put(index, substring);
                     }
                 }
-                if(args.length != 0) {
+                if (args.length != 0) {
                     if (args[0].equals("-u")) {
                         String id = args[1].trim();
                         for (Map.Entry<String, String> pair : map.entrySet()) {
