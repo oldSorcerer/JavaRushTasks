@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class AdapterFileOutputStream implements AmigoStringWriter {
 
-    private FileOutputStream fileOutputStream;
+    private final FileOutputStream fileOutputStream;
 
     public AdapterFileOutputStream(FileOutputStream fileOutputStream) {
         this.fileOutputStream = fileOutputStream;
