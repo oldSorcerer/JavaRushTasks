@@ -1,8 +1,8 @@
 package com.javarush.task.pro.task18.task1812;
 
 public class Language {
-    private String name;
-    private Double ranking;
+    private final String name;
+    private final Double ranking;
 
     public Language(String name, Double ranking) {
         this.name = name;
