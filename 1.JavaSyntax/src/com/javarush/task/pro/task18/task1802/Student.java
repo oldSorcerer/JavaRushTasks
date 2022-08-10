@@ -1,8 +1,8 @@
 package com.javarush.task.pro.task18.task1802;
 
 public class Student {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
 
     public Student(String name, int age) {
         this.name = name;
