@@ -11,7 +11,7 @@ Externalizable Person
 */
 
 public class Solution {
-    public static class Person implements Externalizable{
+    public static class Person implements Externalizable {
         private String firstName;
         private String lastName;
         private int age;
@@ -42,9 +42,9 @@ public class Solution {
 
         @Override
         public void writeExternal(ObjectOutput out) throws IOException {
-            out.writeChars(firstName);
-            out.writeChars(lastName);
-            out.writeInt(age);
+            out.writeObject(firstName);
+            out.writeObject(lastName);
+            out.writeObject(age);
             out.writeObject(mother);
             out.writeObject(father);
             out.writeObject(children);
