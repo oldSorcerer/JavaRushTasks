@@ -23,23 +23,18 @@ public class Solution implements Serializable {
     }
 
     public static ByteArrayOutputStream serializeSingletonInstance(Singleton instance) throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-
-        ObjectOutputStream oos = new ObjectOutputStream(byteArrayOutputStream);
-        oos.writeObject(instance);
-        oos.close();
-
-        return byteArrayOutputStream;
+        try(ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(byteArrayOutputStream)){
+            oos.writeObject(instance);
+            return byteArrayOutputStream;
+        }
     }
 
     public static Singleton deserializeSingletonInstance(ByteArrayOutputStream byteArrayOutputStream) throws IOException, ClassNotFoundException {
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
-
-        ObjectInputStream ois = new ObjectInputStream(byteArrayInputStream);
-        Singleton singleton = (Singleton) ois.readObject();
-        ois.close();
-
-        return singleton;
+        try (ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
+             ObjectInputStream ois = new ObjectInputStream(byteArrayInputStream)) {
+            return (Singleton) ois.readObject();
+        }
     }
 
     public static class Singleton implements Serializable {
@@ -53,6 +48,11 @@ public class Solution implements Serializable {
         }
 
         private Singleton() {
+        }
+
+        @Serial
+        private Object readResolve() {
+            return ourInstance;
         }
     }
 }
