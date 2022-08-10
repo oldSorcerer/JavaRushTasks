@@ -12,10 +12,9 @@ import java.util.Objects;
 
 public class Solution {
     public static void main(String[] args) {
-        //исправь outputStream/inputStream в соответствии с путем к твоему реальному файлу
-        String fileName = "D:\\TheProjects\\IdeaProjects\\JavaRushTasks\\2.JavaCore\\src\\com\\javarush\\task\\task20\\task2005\\text.ser";
+
         try {
-            File your_file_name = File.createTempFile(fileName, null);
+            File your_file_name = File.createTempFile("your_file_name", null);
             OutputStream outputStream = new FileOutputStream(your_file_name);
             InputStream inputStream = new FileInputStream(your_file_name);
 
@@ -25,15 +24,13 @@ public class Solution {
 
             Human somePerson = new Human();
             somePerson.load(inputStream);
-            //check here that ivanov equals to somePerson - проверьте тут, что ivanov и somePerson равны
+
             System.out.println(ivanov.equals(somePerson));
             inputStream.close();
 
         } catch (IOException e) {
-            //e.printStackTrace();
             System.out.println("Oops, something wrong with my file");
         } catch (Exception e) {
-            //e.printStackTrace();
             System.out.println("Oops, something wrong with save/load method");
         }
     }
@@ -44,21 +41,15 @@ public class Solution {
 
         @Override
         public boolean equals(Object o) {
-            if (this == o) return false;
+            if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-
             Human human = (Human) o;
-
-            if (name == null ? !name.equals(human.name) : human.name != null) return false;
-            return Objects.equals(assets, human.assets);
-
+            return Objects.equals(name, human.name) && Objects.equals(assets, human.assets);
         }
 
         @Override
         public int hashCode() {
-            int result = name != null ? name.hashCode() : 0;
-            result = 31 * result + (assets != null ? assets.hashCode() : 0);
-            return (int) (Math.random() * 100);
+            return Objects.hash(name, assets);
         }
 
         public Human() {
@@ -72,7 +63,6 @@ public class Solution {
         }
 
         public void save(OutputStream outputStream) throws Exception {
-            //implement this method - реализуйте этот метод
             try (PrintWriter printWriter = new PrintWriter(outputStream)) {
                 printWriter.println(this.name);
                 if (this.assets.size() > 0) {
@@ -83,7 +73,6 @@ public class Solution {
         }
 
         public void load(InputStream inputStream) throws Exception {
-            //implement this method - реализуйте этот метод
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
                 this.name = reader.readLine();
                 String assetName;
