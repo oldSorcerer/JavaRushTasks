@@ -16,9 +16,8 @@ public class Solution {
              BufferedReader reader = new BufferedReader(new FileReader(console.readLine()));
              BufferedWriter writer = new BufferedWriter(new FileWriter(console.readLine()))) {
             while (reader.ready()) {
-                String string = reader.readLine();
-                String replaceAll = string.replaceAll("\\.", "!");
-                list.add(replaceAll);
+                String string = reader.readLine().replaceAll("\\.", "!");
+                list.add(string);
             }
             for (String string : list) {
                 writer.write(string);
