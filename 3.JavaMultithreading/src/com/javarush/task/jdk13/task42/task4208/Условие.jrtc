@@ -1,0 +1,24 @@
+taskKey="com.javarush.task.jdk13.task42.task4208"\n\nПотоки в очередь!
+
+Сделай класс MyQueue потокобезопасным используя ReentrantReadWriteLock.
+Методы size и peek могут одновременно выполнятся многими потоками, если только сейчас не происходит запись в очередь.
+Методы offer и poll может одновременно выполнять только один поток.
+Для этого:
+- добавь в MyQueue приватное поле lock типа ReadWriteLock и инициализируй его новым объектом ReentrantReadWriteLock.
+- добавь в MyQueue два приватных поля: writeLock и readLock типа Lock.
+Для их инициализации используй поле lock и методы writeLock, readLock.
+- оберни тела методов size и peek в try-finally. В try вызови метод lock у поля readLock,
+а в finally - метод unlock у поля writeLock;
+- оберни тела методов offer и poll в try-finally. В try вызови метод lock у поля writeLock,
+а в finally - метод unlock у поля readLock.
+
+Напоследок, в методе iterator брось UnsupportedOperationException.
+
+
+Требования:
+1.	В классе MyQueue должны быть поля lock, writeLock и readLock согласно условию.
+2.	Методы size и peek должны быть изменены согласно условию.
+3.	Методы offer и poll должны быть изменены согласно условию.
+4.	Метод iterator должен бросать UnsupportedOperationException.
+
+
