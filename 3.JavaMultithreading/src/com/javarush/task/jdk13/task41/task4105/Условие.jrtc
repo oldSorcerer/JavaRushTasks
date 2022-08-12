@@ -1,0 +1,25 @@
+taskKey="com.javarush.task.jdk13.task41.task4105"\n\nАлхимическая библиотека
+
+Дано: пакет alchemy_library содержит библиотеку, которая эмулирует превращение одного зелья в другое того-же размера.
+Метод main содержит клиентский код, и он немного запутан. Тебе нужно создать фасад с более простым интерфейсом.
+
+В корневой папке задачи создай пакет facade и в нем класс PotionConversionFacade.
+Создай в нем метод public String convertPotion(String potionName, String convertTo).
+Он должен принимать название исходного зелья и тип зелья которое нужно получить,
+а возвращать название нового полученного зелья.
+Перенеси весь клиентский код из main в convertPotion.
+В выводе в консоль замени &quot;Client Code:&quot; на &quot;PotionConversionFacade:&quot;.
+
+Что должно остаться в main:
+- создание объекта фасада;
+- вызов convertPotion с полями potionName и type в качестве параметров;
+- вывод на экран результата convertPotion.
+
+
+Требования:
+1.	Классы пакета alchemy_library не должны изменяться.
+2.	В пакете facade должен быть класс PotionConversionFacade.
+3.	В классе PotionConversionFacade должен быть метод convertPotion реализованный согласно условию.
+4.	Метод main должен быть реализован согласно условию.
+
+
