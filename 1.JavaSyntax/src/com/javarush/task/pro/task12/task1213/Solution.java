@@ -33,7 +33,7 @@ public class Solution {
 
     public static void print() {
         for (int i = 0; i < planets.size(); i++) {
-            System.out.println(String.format("%s — %d-я планета от Солнца", planets.get(i), (i + 1)));
+            System.out.printf("%s — %d-я планета от Солнца%n", planets.get(i), (i + 1));
         }
         System.out.println();
     }

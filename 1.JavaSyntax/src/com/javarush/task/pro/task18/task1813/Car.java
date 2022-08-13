@@ -1,8 +1,8 @@
 package com.javarush.task.pro.task18.task1813;
 
 public class Car {
-    private String model;
-    private boolean isElectric;
+    private final String model;
+    private final boolean isElectric;
 
     public Car(String model, boolean isElectric) {
         this.model = model;

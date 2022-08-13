@@ -42,8 +42,8 @@ public class Solution {
 }
 
 class Car {
-    private String name;
-    private Integer price;
+    private final String name;
+    private final Integer price;
 
     public Car(String name, Integer price) {
         this.name = name;
