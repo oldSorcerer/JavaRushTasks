@@ -20,14 +20,9 @@ public class Solution {
 
             testString.printSomething();
 
-            String string = outputStream.toString();
-
-            String allNumber = string.replaceAll("\\D", "");
-
             System.setOut(consoleStream);
 
-            System.out.println(allNumber);
-
+            System.out.println(outputStream.toString().replaceAll("\\D", ""));
         }
     }
 
