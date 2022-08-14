@@ -12,11 +12,9 @@ public class Solution {
 
         for (int i = 0; i < MULTIPLICATION_TABLE.length; i++) {
             for (int j = 0; j < MULTIPLICATION_TABLE[i].length; j++) {
-                int k = MULTIPLICATION_TABLE[i][j] = (i + 1) * (j + 1);
-                System.out.print( k + " " );
+                System.out.print( (MULTIPLICATION_TABLE[i][j] = (i + 1) * (j + 1)) + " " );
             }
             System.out.println();
         }
-
     }
 }
