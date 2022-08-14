@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /* 
 Читаем и пишем в файл: Human
@@ -56,8 +57,8 @@ public class Solution {
 
             Human human = (Human) o;
 
-            if (name != null ? !name.equals(human.name) : human.name != null) return false;
-            return assets != null ? assets.equals(human.assets) : human.assets == null;
+            if (!Objects.equals(name, human.name)) return false;
+            return Objects.equals(assets, human.assets);
         }
 
         @Override
@@ -68,11 +69,25 @@ public class Solution {
         }
 
         public void save(OutputStream outputStream) throws Exception {
-            //implement this method - реализуйте этот метод
+            if (assets.isEmpty() && name.isEmpty()) {
+                return;
+            }
+
+            try (DataOutputStream stream = new DataOutputStream(outputStream)) {
+                stream.write(name.getBytes());
+                if (!assets.isEmpty()) {
+                    for (Asset asset : assets) {
+                        stream.write(asset.getName().getBytes());
+                        stream.writeDouble(asset.getPrice());
+                    }
+                }
+            }
         }
 
         public void load(InputStream inputStream) throws Exception {
-            //implement this method - реализуйте этот метод
+            try (DataInputStream stream = new DataInputStream(inputStream)) {
+                int read = stream.read();
+            }
         }
     }
 }
