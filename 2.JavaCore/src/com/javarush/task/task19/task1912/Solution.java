@@ -20,13 +20,9 @@ public class Solution {
 
             testString.printSomething();
 
-            String string = outputStream.toString();
-
             System.setOut(consoleStream);
 
-            String replaceString = string.replaceAll("te", "??");
-
-            System.out.println(replaceString);
+            System.out.println(outputStream.toString().replaceAll("te", "??"));
         }
     }
 
