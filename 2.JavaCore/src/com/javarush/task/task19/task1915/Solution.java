@@ -21,13 +21,11 @@ public class Solution {
 
             testString.printSomething();
 
-            String string = outputStream.toString();
-
-            fileOutputStream.write(string.getBytes());
+            fileOutputStream.write(outputStream.toByteArray());
 
             System.setOut(consoleStream);
 
-            System.out.println(string);
+            System.out.println(outputStream);
         }
     }
 
