@@ -17,8 +17,7 @@ public class Solution {
              BufferedWriter writer = new BufferedWriter(new FileWriter(console.readLine()))) {
             while (reader.ready()) {
                 String string = reader.readLine();
-                String[] split = string.split(" ");
-                for (String str : split) {
+                for (String str : string.split(" ")) {
                     try {
                         int number = Integer.parseInt(str);
                         list.add(number);
