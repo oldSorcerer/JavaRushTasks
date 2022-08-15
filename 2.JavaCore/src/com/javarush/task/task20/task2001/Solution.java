@@ -12,10 +12,8 @@ import java.util.Objects;
 
 public class Solution {
     public static void main(String[] args) {
-        try {
-            File your_file_name = File.createTempFile("your_file_name", null);
-            OutputStream outputStream = new FileOutputStream(your_file_name);
-            InputStream inputStream = new FileInputStream(your_file_name);
+        try (OutputStream outputStream = new FileOutputStream(File.createTempFile("your_file_name", null));
+             InputStream inputStream = new FileInputStream(File.createTempFile("your_file_name", null))) {
 
             Human ivanov = new Human("Ivanov", new Asset("home", 999_999.99), new Asset("car", 2999.99));
             ivanov.save(outputStream);
@@ -23,8 +21,6 @@ public class Solution {
 
             Human somePerson = new Human();
             somePerson.load(inputStream);
-            inputStream.close();
-
         } catch (IOException e) {
             System.out.println("Oops, something wrong with my file");
         } catch (Exception e) {
