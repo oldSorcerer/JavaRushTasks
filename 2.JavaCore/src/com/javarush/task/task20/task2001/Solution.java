@@ -12,11 +12,8 @@ import java.util.Objects;
 
 public class Solution {
     public static void main(String[] args) {
-        //исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
-        try {
-            File your_file_name = File.createTempFile("your_file_name", null);
-            OutputStream outputStream = new FileOutputStream(your_file_name);
-            InputStream inputStream = new FileInputStream(your_file_name);
+        try (OutputStream outputStream = new FileOutputStream(File.createTempFile("your_file_name", null));
+             InputStream inputStream = new FileInputStream(File.createTempFile("your_file_name", null))) {
 
             Human ivanov = new Human("Ivanov", new Asset("home", 999_999.99), new Asset("car", 2999.99));
             ivanov.save(outputStream);
@@ -24,14 +21,9 @@ public class Solution {
 
             Human somePerson = new Human();
             somePerson.load(inputStream);
-            inputStream.close();
-            //check here that ivanov equals to somePerson - проверьте тут, что ivanov и somePerson равны
-
         } catch (IOException e) {
-            //e.printStackTrace();
             System.out.println("Oops, something wrong with my file");
         } catch (Exception e) {
-            //e.printStackTrace();
             System.out.println("Oops, something wrong with save/load method");
         }
     }
@@ -69,24 +61,24 @@ public class Solution {
         }
 
         public void save(OutputStream outputStream) throws Exception {
-            if (assets.isEmpty() && name.isEmpty()) {
-                return;
-            }
-
-            try (DataOutputStream stream = new DataOutputStream(outputStream)) {
-                stream.write(name.getBytes());
+            try (PrintWriter writer = new PrintWriter(outputStream)) {
+                writer.println(this.name);
                 if (!assets.isEmpty()) {
-                    for (Asset asset : assets) {
-                        stream.write(asset.getName().getBytes());
-                        stream.writeDouble(asset.getPrice());
+                    for (Asset asset : this.assets) {
+                        writer.println(asset.getName());
+                        writer.println(asset.getPrice());
                     }
                 }
             }
         }
 
         public void load(InputStream inputStream) throws Exception {
-            try (DataInputStream stream = new DataInputStream(inputStream)) {
-                int read = stream.read();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            this.name = reader.readLine();
+            while (reader.ready()) {
+                String assetsName = reader.readLine();
+                double assetsPrice = Double.parseDouble(reader.readLine());
+                this.assets.add(new Asset(assetsName, assetsPrice));
             }
         }
     }

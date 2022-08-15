@@ -9,8 +9,8 @@ import java.util.ArrayList;
 */
 
 public class Solution {
-    private int number = 54;
-    private String string = "string";
+    private final int number = 54;
+    private final String string = "string";
 
     public static void main(String[] args) {
         var integer = 22;
