@@ -14,23 +14,23 @@ public class FileConsoleWriter {
     private final FileWriter fileWriter;
 
     public FileConsoleWriter(String fileName) throws IOException {
-        this.fileWriter = new FileWriter(fileName);
+        fileWriter = new FileWriter(fileName);
     }
 
     public FileConsoleWriter(String fileName, boolean append) throws IOException {
-        this.fileWriter = new FileWriter(fileName, append);
+        fileWriter = new FileWriter(fileName, append);
     }
 
     public FileConsoleWriter(File file) throws IOException {
-        this.fileWriter = new FileWriter(file);
+        fileWriter = new FileWriter(file);
     }
 
     public FileConsoleWriter(File file, boolean append) throws IOException {
-        this.fileWriter = new FileWriter(file, append);
+        fileWriter = new FileWriter(file, append);
     }
 
     public FileConsoleWriter(FileDescriptor fd) {
-        this.fileWriter = new FileWriter(fd);
+        fileWriter = new FileWriter(fd);
     }
 
     public static void main(String[] args) {

@@ -19,11 +19,9 @@ public class Solution {
 
             testString.printSomething();
 
-            String string = outputStream.toString();
-
             System.setOut(consoleStream);
 
-            String[] strings = string.split(" ");
+            String[] strings = outputStream.toString().split(" ");
 
             int numberOne = Integer.parseInt(strings[0]);
 
