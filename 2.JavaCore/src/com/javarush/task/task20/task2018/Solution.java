@@ -10,7 +10,6 @@ public class Solution implements Serializable {
     public static class A {
 
         public A() {
-
         }
 
         protected String nameA = "A";
