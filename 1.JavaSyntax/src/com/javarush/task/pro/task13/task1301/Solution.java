@@ -1,5 +1,6 @@
 package com.javarush.task.pro.task13.task1301;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 /* 
@@ -9,8 +10,8 @@ import java.util.HashSet;
 public class Solution {
     public static void main(String[] args) {
         String[] array = {"Через", "три", "года", "я", "буду", "Senior", "Java", "Developer"};
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for (String value : array) {
+            System.out.println(value);
         }
         System.out.println("___________________________________");
 
@@ -21,13 +22,7 @@ public class Solution {
     }
 
     public static HashSet<String> arrayToHashSet(String[] strings) {
-
-        HashSet<String> hashSet = new HashSet<>();
-        for (int i = 0; i < strings.length; i++) {
-            hashSet.add(strings[i]);
-
-        }
-        return hashSet;
+        return new HashSet<>(Arrays.asList(strings));
 
     }
 }
