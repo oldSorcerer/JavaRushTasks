@@ -64,6 +64,7 @@ public class User {
         public String getDisplayName() {
             return this.name;
         }
+
     }
 
     @Override
