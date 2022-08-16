@@ -16,8 +16,7 @@ public class Solution {
     static String name;
 
     public Solution() {
-        this.map = new HashMap<Integer, String>();
-       // map.put(index, name);
+        this.map = new HashMap<>();
     }
 
     public static void main(String[] args) throws IOException {
@@ -37,13 +36,3 @@ public class Solution {
         }
     }
 }
-/*Поправочки нужны
-Задача: Программа демонстрирует работу HashMap: вводит с клавиатуры набор пар (номер и строку), помещает их в HashMap и выводит на экран содержимое HashMap.
-
-
-Требования:
-1. Программа должна считывать данные с клавиатуры.
-2. Программа должна выводить текст на экран.
-3. Класс Solution должен содержать три переменные.
-4. Программа должна помещать в HashMap 10 пар считанных с клавиатуры.
-5. Программа должна выводить на экран содержимое HashMap. Каждое значение с новой строки.*/
