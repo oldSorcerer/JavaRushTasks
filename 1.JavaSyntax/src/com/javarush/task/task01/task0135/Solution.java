@@ -11,6 +11,7 @@ public class Solution {
         String sausage = "Колбаса";
         String peach = "Персик";
 
-        //напишите тут ваш код
+        System.out.println(apple);
+        System.out.println(peach);
     }
 }
