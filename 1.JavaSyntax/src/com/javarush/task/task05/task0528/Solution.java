@@ -6,7 +6,6 @@ package com.javarush.task.task05.task0528;
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
-        System.out.print("08 08 2017");
+        System.out.println("08 08 2017");
     }
 }
