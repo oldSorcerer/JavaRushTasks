@@ -11,15 +11,6 @@ public class Person {
     int weight;
     double size;
 
-  /*  public void initialize(String name) {
-        this.name = name;
-    }
-
-    public void initialize(String name, char sex) {
-        this.name = name;
-        this.sex = sex;
-    }
-*/
     public void initialize(String name, int money, char sex, int weight,  double size) {
         this.name = name;
         this.money = money;
