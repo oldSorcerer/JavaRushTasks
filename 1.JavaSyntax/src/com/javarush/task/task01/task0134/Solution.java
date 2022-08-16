@@ -10,6 +10,6 @@ public class Solution {
     }
 
     public static long getVolume(int a, int b, int c) {
-        return a * b * c *1000;
+        return (long) a * b * c * 1000;
     }
 }
