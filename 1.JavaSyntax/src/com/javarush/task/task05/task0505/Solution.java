@@ -6,10 +6,10 @@ package com.javarush.task.task05.task0505;
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
-        Cat c = new Cat("A",10,1,2);
-        Cat c1 = new Cat("A1",1090,190,28);
-        Cat c2 = new Cat("A2",100,10,29);
+
+        Cat c = new Cat("A", 10, 1, 2);
+        Cat c1 = new Cat("A1", 1090, 190, 28);
+        Cat c2 = new Cat("A2", 100, 10, 29);
         System.out.println(c.fight(c1));
         System.out.println(c2.fight(c1));
         System.out.println(c.fight(c2));
@@ -34,7 +34,7 @@ public class Solution {
             int strengthPlus = this.strength > anotherCat.strength ? 1 : 0;
 
             int score = agePlus + weightPlus + strengthPlus;
-            return score > 2; // return score > 2 ? true : false;
+            return score > 2;
         }
     }
 }
