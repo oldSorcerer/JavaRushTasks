@@ -14,7 +14,7 @@ public class Solution {
     public static void main(String[] args) {
     }
 
-    public  int getValue() {
+    public int getValue() {
         return D;
     }
 
