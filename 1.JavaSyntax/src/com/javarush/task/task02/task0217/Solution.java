@@ -10,10 +10,7 @@ public class Solution {
     }
 
     public static int min(int a, int b) {
-        if (a < b)
-            return a;
-        else return b;
-
+        return Math.min(a, b);
     }
 
     public static void main(String[] args) throws Exception {
