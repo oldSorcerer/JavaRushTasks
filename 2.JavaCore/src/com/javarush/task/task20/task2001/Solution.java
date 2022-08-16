@@ -63,7 +63,7 @@ public class Solution {
         public void save(OutputStream outputStream) throws Exception {
             try (PrintWriter writer = new PrintWriter(outputStream)) {
                 writer.println(this.name);
-                if (!assets.isEmpty()) {
+                if (!this.assets.isEmpty()) {
                     for (Asset asset : this.assets) {
                         writer.println(asset.getName());
                         writer.println(asset.getPrice());

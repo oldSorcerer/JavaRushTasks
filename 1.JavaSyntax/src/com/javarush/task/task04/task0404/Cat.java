@@ -9,7 +9,6 @@ public class Cat {
 
     public static void addNewCat() {
         catsCount ++;
-
     }
 
     public static void main(String[] args) {

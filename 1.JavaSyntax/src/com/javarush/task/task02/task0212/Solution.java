@@ -15,7 +15,6 @@ public class Solution {
         Cat cat8 = new Cat();
         Cat cat9;
         Cat cat10;
-        //напишите тут ваш код
     }
 
     public static class Cat {

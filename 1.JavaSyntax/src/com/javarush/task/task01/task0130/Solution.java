@@ -10,7 +10,7 @@ public class Solution {
     }
 
     public static double convertCelsiusToFahrenheit(int celsius) {
-        
-        return (celsius *9/5.0)+32;
+
+        return (celsius * 9 / 5.0) + 32;
     }
 }

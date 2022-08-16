@@ -6,6 +6,8 @@ JavaRush. Learn once - use anywhere
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        for (int i = 0; i < 10; i++) {
+            System.out.println("JavaRush. Learn once - use anywhere");
+        }
     }
 }

@@ -5,12 +5,7 @@ package com.javarush.task.task02.task0214;
 */
 public class Solution {
     public static int min(int a, int b) {
-        int m;
-        if (a < b)
-           m = a;
-        else 
-            m = b;
-    return m;
+        return Math.min(a, b);
     }
 
     public static void main(String[] args) {

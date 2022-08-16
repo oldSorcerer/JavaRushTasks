@@ -1,0 +1,15 @@
+taskKey="com.javarush.task.pro.task02.task0217"\n\nРазгон Амиго
+
+В переменную result нужно записать строку &quot;100500&quot;.
+Используй переменные numberOne, numberTwo, numberThree, string.
+Вывод должен быть следующий:
+Разгоняем Амиго на 100500%
+
+
+Требования:
+1.	Не изменяй значения переменных numberOne, numberTwo, numberThree, string.
+2.	Для инициализации переменной result используй numberOne, numberTwo, numberThree, string.
+3.	Вызов метода отвечающего за вывод не менять.
+4.	Вывод должен быть согласно условию.
+
+

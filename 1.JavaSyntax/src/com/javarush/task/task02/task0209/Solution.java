@@ -11,9 +11,6 @@ public class Solution {
         dog1.name = "Max";
         dog2.name = "Bella";
         dog3.name = "Jack";
-        
-
-        //напишите тут ваш код
     }
 
     public static class Dog {
