@@ -5,23 +5,22 @@ package com.javarush.task.task05.task0516;
 */
 
 public class Friend {
-    //напишите тут ваш код
-int age;
-String name;
-char sex;
 
-public  Friend(String name){
-    this.name = name;
-}
+    int age;
+    String name;
+    char sex;
 
+    public Friend(String name) {
+        this.name = name;
+    }
 
-    public  Friend(String name, int age){
+    public Friend(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
 
-    public  Friend(String name, int age,char sex){
+    public Friend(String name, int age, char sex) {
         this.name = name;
         this.age = age;
         this.sex = sex;
@@ -31,6 +30,3 @@ public  Friend(String name){
 
     }
 }
-/*— Имя
-— Имя, возраст
-— Имя, возраст, пол*/
