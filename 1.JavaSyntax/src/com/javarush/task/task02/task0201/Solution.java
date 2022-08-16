@@ -12,6 +12,8 @@ public class Solution {
     }
 
     public static void print(String s) {
-        //напишите тут ваш код
+        for (int i = 0; i < 4; i++) {
+            System.out.println(s);
+        }
     }
 }
