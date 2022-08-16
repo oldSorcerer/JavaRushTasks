@@ -18,25 +18,7 @@ public class Solution {
         r.close();
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date d = dateFormat.parse(dateString);
-        SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMM dd, yyyy",Locale.ENGLISH);
-        System.out.println(dateFormat1.format(d).toUpperCase() );
-        //напишите тут ваш код
+        SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH);
+        System.out.println(dateFormat1.format(d).toUpperCase());
     }
 }
-/*  SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = dateFormat.parse( d );
-        SimpleDateFormat dateFormat1 = new SimpleDateFormat("MMM dd, yyyy",Locale.ENGLISH);
-        System.out.println(dateFormat1.format(date).toUpperCase() );
-
-
-        Ввести с клавиатуры дату в формате "08/18/2013"
-Вывести на экран эту дату в виде "AUG 18, 2013".
-Воспользоваться объектом Date и SimpleDateFormat.
-
-
-Требования:
-1. Программа должна считывать данные с клавиатуры.
-2. В программе должна быть объявлена переменная типа SimpleDateFormat.
-3. В программе должна быть объявлена переменная типа Date.
-4. Программа должна выводить данные на экран.
-5. Вывод должен соответствовать заданию.*/
