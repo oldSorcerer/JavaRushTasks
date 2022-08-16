@@ -15,7 +15,7 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         try (FileOutputStream outputStream = new FileOutputStream(args[0]);
-                InputStream is = Solution.class.getClassLoader().getResourceAsStream(args[1])) {
+             InputStream is = Solution.class.getClassLoader().getResourceAsStream(args[1])) {
 
 
             byte[] b = new byte[is.available()];
