@@ -21,8 +21,8 @@ public class Solution {
             while (reader.ready()) {
                 String string = reader.readLine();
 
-                String name = string.replaceAll("\\\\? \\w+", "");
-                String date = string.replaceAll("^\\D+", "");
+                String name = string.replaceAll("\\d", "").trim();
+                String date = string.replaceAll("\\D+", "").trim();
 
                 PEOPLE.add(new Person(name, dateFormat.parse(date)));
             }
