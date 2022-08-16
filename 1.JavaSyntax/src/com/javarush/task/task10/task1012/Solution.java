@@ -21,7 +21,7 @@ public class Solution {
                 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я');
 
         // Ввод строк
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             String s = reader.readLine();
             list.add(s.toLowerCase());
@@ -39,17 +39,5 @@ public class Solution {
             map.put(character, Collections.frequency(charList, character));
             System.out.println(character + " " + map.get(character));
         }
-
-        /*String str = String.join("", list);
-
-        for (Character character : alphabet) {
-            String strNew = str.replaceAll(String.valueOf(character), "");
-            System.out.println(character + " " + (str.length() - strNew.length()));
-        }
-*/
-
-
-
     }
-
 }

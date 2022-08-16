@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
         map.put("Sim", "Sim");
         map.put("Tom", "Tom");
         map.put("Arbus", "Arbus");
@@ -25,18 +25,8 @@ public class Solution {
     }
 
     public static void printKeys(Map<String, String> map) {
-        //напишите тут ваш код
-        for(Map.Entry<String,String> p:map.entrySet()){
-            System.out.println(p.getKey());
+        for (Map.Entry<String, String> pair : map.entrySet()) {
+            System.out.println(pair.getKey());
         }
     }
 }
-/*Есть коллекция HashMap<String, String>, туда занесли 10 различных строк.
-Вывести на экран список ключей, каждый элемент с новой строки.
-
-
-Требования:
-1. Программа должна создавать переменную коллекции HashMap с типом элементов String, String. Переменная должна быть сразу проинициализирована.
-2. Программа не должна считывать значения с клавиатуры.
-3. Программа должна добавлять в коллекцию 10 различных строк, согласно условию.
-4. Метод printKeys() должен выводить на экран список ключей коллекции, каждый элемент с новой строки.*/

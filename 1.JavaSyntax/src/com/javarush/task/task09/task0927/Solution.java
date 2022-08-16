@@ -17,21 +17,19 @@ public class Solution {
     }
 
     public static Map<String, Cat> createMap() {
-        //напишите тут ваш код
-        HashMap<String, Cat> j = new HashMap<>();
-        for (int i=0;i<10;i++) {
-            j.put(Integer.toString(i), new Cat(Integer.toString(i)));
+        HashMap<String, Cat> map = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            map.put(Integer.toString(i), new Cat(Integer.toString(i)));
         }
-        return  j;
+        return map;
     }
 
     public static Set<Cat> convertMapToSet(Map<String, Cat> map) {
-        //напишите тут ваш код
-        HashSet<Cat> s = new HashSet<>();
-        for(Map.Entry<String, Cat> q:map.entrySet()){
-            s.add(q.getValue());
+        HashSet<Cat> set = new HashSet<>();
+        for (Map.Entry<String, Cat> pair : map.entrySet()) {
+            set.add(pair.getValue());
         }
-        return s;
+        return set;
     }
 
     public static void printCatSet(Set<Cat> set) {
@@ -41,7 +39,7 @@ public class Solution {
     }
 
     public static class Cat {
-        private String name;
+        private final String name;
 
         public Cat(String name) {
             this.name = name;
@@ -51,19 +49,4 @@ public class Solution {
             return "Cat " + this.name;
         }
     }
-
-
 }
-/*Десять котов
-Есть класс кот – Cat, с полем «имя» (String).
-Создать словарь Map<String, Cat> и добавить туда 10 котов в виде «Имя»-«Кот».
-Получить из Map множество(Set) всех котов и вывести его на экран.
-
-
-Требования:
-1. Программа не должна считывать данные с клавиатуры.
-2. Метод createMap должен объявлять и инициализировать переменную типа HashMap.
-3. Метод createMap должен добавлять в словарь 10 котов в виде «Имя»-«Кот».
-4. Метод createMap должен возвращать созданный словарь.
-5. Метод convertMapToSet должен создать и вернуть множество котов, полученных из переданного словаря.
-6. Программа должна вывести всех котов из множества на экран.*/

@@ -44,8 +44,6 @@ public class Solution {
     }
 
     public static void remove10000(List<String> list) {
-        for (int i = 0; i < 10000; i++) {
-            list.remove(0);
-        }
+        list.subList(0, 10000).clear();
     }
 }

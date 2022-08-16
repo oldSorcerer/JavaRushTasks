@@ -23,20 +23,11 @@ public class Solution {
     }
 
     public static long getTimeMsOfGet(List list) {
-        //напишите тут ваш код
-        Date d1 = new Date();
-        long s1 = d1.getTime();
+
+        Date start = new Date();
         get10000(list);
-        Date d2 = new Date();
-        long s2 = d2.getTime();
-        return s2-s1;
-        //напишите тут ваш код
-/*Date d1 = new Date();
-long s1 = d1.getTime();
-        insert10000(list);
-        Date d2 = new Date();
-        long s2 = d2.getTime();
-        return s2-s1;*/
+        Date end = new Date();
+        return end.getTime() - start.getTime();
     }
 
     public static void get10000(List list) {
@@ -48,15 +39,3 @@ long s1 = d1.getTime();
         }
     }
 }
-/*Измерить, сколько времени занимает 10 тысяч вызовов get для каждого списка.
-Метод getTimeMsOfGet должен вернуть время своего исполнения в миллисекундах.
-
-
-Требования:
-1. Программа должна выводить числа на экран.
-2. Метод main должен вызывать метод getTimeMsOfGet только два раза.
-3. Метод main должен вызывать метод fill только два раза.
-4. Метод fill(List list) должен вставлять 10 тысяч элементов в список.
-5. Метод get10000(List list) должен производить 10 тысяч вызовов get для списка.
-6. Метод getTimeMsOfGet должен вызывать метод get10000(List list) только один раз.
-7. Метод getTimeMsOfGet должен вернуть время в миллисекундах, которое занимает 10 тысяч вызовов get для списка.*/

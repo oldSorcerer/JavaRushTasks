@@ -25,8 +25,7 @@ public class Solution {
         }
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println( entry.getValue() + " " + entry.getKey());
+            System.out.println(entry.getValue() + " " + entry.getKey());
         }
-
     }
 }

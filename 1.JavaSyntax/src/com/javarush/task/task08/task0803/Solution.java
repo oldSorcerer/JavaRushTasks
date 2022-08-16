@@ -18,16 +18,13 @@ public class Solution {
         }
     }
 
-
     public static HashMap<String, Cat> addCatsToMap(String[] cats) {
-        //напишите тут ваш код
-        HashMap<String, Cat> m = new HashMap<>();
-        for(int i=0;i<cats.length;i++){
-            m.put(cats[i],new Cat(cats[i]));
+        HashMap<String, Cat> map = new HashMap<>();
+        for (String cat : cats) {
+            map.put(cat, new Cat(cat));
         }
-return m;
+        return map;
     }
-
 
     public static class Cat {
         String name;
@@ -42,15 +39,3 @@ return m;
         }
     }
 }
-/*Коллекция HashMap из котов
-Есть класс Cat с полем имя (name, String).
-Создать коллекцию HashMap<String, Cat>.
-Добавить в коллекцию 10 котов, в качестве ключа использовать имя кота.
-Вывести результат на экран, каждый элемент с новой строки.
-
-
-Требования:
-1. Объяви переменную коллекции HashMap с типом элементов String, Cat и сразу проинициализируй ee.
-2. Программа не должна считывать значения с клавиатуры.
-3. Метод addCatsToMap()должен добавлять в коллекцию 10 котов, согласно условию.
-4. Программа должна выводить содержимое коллекции на экран, каждую пару через дефис и с новой строки.*/
