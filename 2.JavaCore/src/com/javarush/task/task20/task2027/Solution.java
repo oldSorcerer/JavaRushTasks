@@ -30,7 +30,7 @@ same - (1, 1) - (4, 1)
     }
 
     public static class Word {
-        private String text;
+        private final String text;
         private int startX;
         private int startY;
         private int endX;
