@@ -8,7 +8,7 @@ import java.util.List;
 Знакомство с графами
 */
 
-public class Solution {
+public class Solution implements Serializable {
     int node;
     List<Solution> edges = new LinkedList<>();
 
