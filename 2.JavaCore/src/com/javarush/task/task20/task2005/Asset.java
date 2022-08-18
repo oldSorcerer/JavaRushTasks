@@ -5,7 +5,7 @@ public class Asset {
         this.name = name;
     }
 
-    private String name;
+    private final String name;
     private double price;
 
     public String getName() {
