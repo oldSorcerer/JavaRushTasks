@@ -55,7 +55,7 @@ public class User implements Serializable {
         RUSSIA("Russia"),
         OTHER("Other");
 
-        private String name;
+        private final String name;
 
         Country(String name) {
             this.name = name;
