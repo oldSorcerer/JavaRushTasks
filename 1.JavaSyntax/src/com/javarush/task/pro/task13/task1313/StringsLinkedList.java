@@ -1,8 +1,8 @@
 package com.javarush.task.pro.task13.task1313;
 
 public class StringsLinkedList {
-    private Node first = new Node();
-    private Node last = new Node();
+    private final Node first = new Node();
+    private final Node last = new Node();
 
     public StringsLinkedList() {
         first.next = last;
