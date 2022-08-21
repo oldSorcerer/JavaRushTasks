@@ -7,7 +7,7 @@ import java.io.*;
 */
 
 public class Solution implements Serializable, Runnable {
-    transient private Thread runner;
+    private transient Thread runner;
     private int speed;
 
     public Solution(int speed) {
