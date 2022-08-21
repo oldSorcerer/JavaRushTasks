@@ -29,7 +29,6 @@ public class Solution {
         } else {
             System.out.println(loosePhrase);
         }
-
     }
 
     public static void findDiablo() {
@@ -58,11 +57,7 @@ public class Solution {
         }
     }
     public static boolean isAmigoWin() {
-        if (diabloLives <= 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return diabloLives <= 0;
     }
 
 
