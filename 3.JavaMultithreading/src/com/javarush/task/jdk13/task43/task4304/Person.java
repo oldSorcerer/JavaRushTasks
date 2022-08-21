@@ -4,7 +4,7 @@ package com.javarush.task.jdk13.task43.task4304;
 Нам null-ы не страшны
 */
 
-import org.apache.commons.lang3.StringUtils;
+//import org.apache.commons.lang3.StringUtils;
 
 public class Person implements Comparable<Person> {
 
