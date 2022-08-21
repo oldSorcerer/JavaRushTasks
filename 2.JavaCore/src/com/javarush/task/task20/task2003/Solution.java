@@ -17,7 +17,7 @@ public class Solution {
         Properties properties = new Properties();
         for (Map.Entry<String, String> entry : runtimeStorage.entrySet()) {
             properties.setProperty(entry.getKey(), entry.getValue());
-        } //properties.forEach((k,v) ->properties.setProperty(k.toString(), v.toString()));
+        } //runtimeStorage.forEach((k,v) ->properties.setProperty(k, v));
         properties.store(outputStream, null);
     }
 
@@ -26,7 +26,7 @@ public class Solution {
         properties.load(inputStream);
         for (Map.Entry<Object, Object> entry : properties.entrySet()) {
             runtimeStorage.put(entry.getKey().toString(), entry.getValue().toString());
-        } // properties.forEach((k,v) -> properties.put(k.toString(), v.toString()));
+        } // properties.forEach((k,v) -> runtimeStorage.put(k.toString(), v.toString()));
     }
 
     public static void main(String[] args) {

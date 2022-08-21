@@ -14,11 +14,7 @@ public class MagicBall {
 
     public static String getPrediction() {
 
-        Random r = new Random();
-
-        int rand = r.nextInt(8);
-
-        switch (rand) {
+        switch (new Random().nextInt(8)) {
             case 0: return CERTAIN;
             case 1: return DEFINITELY;
             case 2: return MOST_LIKELY;
