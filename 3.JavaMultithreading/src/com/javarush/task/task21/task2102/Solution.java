@@ -18,7 +18,7 @@ public class Solution {
     }
 
     public static boolean isModifierSet(int allModifiers, int specificModifier) {
-        return false;
+        return (allModifiers & specificModifier) != 0;
     }
 
     private static Method getMainMethod() {
@@ -26,7 +26,6 @@ public class Solution {
         for (Method method : methods) {
             if (method.getName().equalsIgnoreCase("main")) return method;
         }
-
         return null;
     }
 }
