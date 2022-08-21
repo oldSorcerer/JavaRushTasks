@@ -4,7 +4,7 @@ package com.javarush.task.jdk13.task43.task4305;
 Вернуться к истокам
 */
 
-import org.apache.commons.lang3.StringUtils;
+//import org.apache.commons.lang3.StringUtils;
 import java.util.Scanner;
 
 public class Solution {
