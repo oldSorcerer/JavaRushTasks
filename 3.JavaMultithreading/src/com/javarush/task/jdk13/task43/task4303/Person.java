@@ -4,8 +4,8 @@ package com.javarush.task.jdk13.task43.task4303;
 Нам шаблоны не нужны
 */
 
-import org.apache.commons.lang3.builder.StandardToStringStyle;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+//import org.apache.commons.lang3.builder.StandardToStringStyle;
+//import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class Person {
     private String name;
