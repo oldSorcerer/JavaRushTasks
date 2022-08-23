@@ -1,0 +1,13 @@
+---
+goods:
+  names:
+    - "S1"
+    - "S2"
+count: 12
+profit: 123.4
+secretData:
+  - "String1"
+  - "String2"
+  - "String3"
+  - "String4"
+  - "String5"
