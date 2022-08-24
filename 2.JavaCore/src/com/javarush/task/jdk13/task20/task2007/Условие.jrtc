@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.jdk13.task20.task2007"\n\nСериализация в JSON
+
+НЕОБХОДИМО: подключенные библиотеки из лекции https://javarush.ru/quests/lectures/jru.module2.lecture31
+
+Расставь JSON аннотации так, чтобы результат работы метода main был следующим:
+{
+&quot;wildAnimal&quot; : &quot;Murka&quot;,
+&quot;over&quot; : 3
+}
+
+
+Требования:
+1.	Поле name класса Cat должно быть отмечено правильной аннотацией.
+2.	Поле age класса Cat должно быть отмечено правильной аннотацией.
+3.	Поле weight класса Cat должно быть отмечено правильной аннотацией.
+
+

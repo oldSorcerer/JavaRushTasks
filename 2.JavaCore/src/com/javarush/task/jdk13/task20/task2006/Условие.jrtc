@@ -1,0 +1,25 @@
+taskKey="com.javarush.task.jdk13.task20.task2006"\n\nСериализация в XML
+
+НЕОБХОДИМО: подключенные библиотеки из лекции https://javarush.ru/quests/lectures/jru.module2.lecture31
+
+Реализуй метод getXmlString. Он должен сериализовать полученный объект в XML строку и вернуть ее.
+Строка должна быть удобочитаемой:
+&lt;ArrayList&gt;
+&lt;item&gt;
+&lt;name&gt;Мурка&lt;/name&gt;
+&lt;age&gt;5&lt;/age&gt;
+&lt;weight&gt;3&lt;/weight&gt;
+&lt;/item&gt;
+&lt;item&gt;
+&lt;name&gt;Полкан&lt;/name&gt;
+&lt;age&gt;8&lt;/age&gt;
+&lt;owner&gt;Билли Бонс&lt;/owner&gt;
+&lt;/item&gt;
+&lt;/ArrayList&gt;
+Т.е. в ней должны быть переносы строк и отступы как в примере. Для этого нужно воспользоваться SerializationFeature.INDENT_OUTPUT.
+
+
+Требования:
+1.	Метод getXmlString должен возвращать полученный объект в виде удобочитаемой XML строки.
+
+

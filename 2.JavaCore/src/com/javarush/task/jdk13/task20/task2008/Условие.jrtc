@@ -1,0 +1,21 @@
+taskKey="com.javarush.task.jdk13.task20.task2008"\n\nСериализация зоопарка
+
+НЕОБХОДИМО: подключенные библиотеки из лекции https://javarush.ru/quests/lectures/jru.module2.lecture31
+
+Сделай так, чтобы при сериализации объекта типа Zoo, каждому элементу списка animals был добавлен тип
+(lion для класса Lion, penguin для класса Penguin).
+Пример:
+- !&lt;lion&gt;
+name: &quot;Алекс&quot;
+roarVolume: 5.5
+- !&lt;penguin&gt;
+name: &quot;Шкипер&quot;
+age: 8
+
+
+Требования:
+1.	Класс Zoo.Animal должен быть отмечен аннотацией @JsonTypeInfo.
+2.	Класс Zoo.Animal должен быть отмечен аннотацией @JsonSubTypes.
+3.	При сериализации в YAML всем объектам списка animals должен быть добавлен тип и сохранен основной формат.
+
+
