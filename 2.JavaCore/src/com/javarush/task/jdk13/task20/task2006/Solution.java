@@ -2,7 +2,7 @@ package com.javarush.task.jdk13.task20.task2006;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-//import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,9 +33,10 @@ public class Solution {
     }
 
     public static String getXmlString(Object object) throws IOException {
-        //напишите тут ваш код
+        ObjectMapper mapper = new XmlMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
-        return null;
+        return mapper.writeValueAsString(object);
     }
 
     public static class Pet {
@@ -52,4 +53,3 @@ public class Solution {
         public String owner;
     }
 }
-
