@@ -17,7 +17,6 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         //напишите тут ваш код
 
-
         submitProducers();
         submitConsumers();
 
