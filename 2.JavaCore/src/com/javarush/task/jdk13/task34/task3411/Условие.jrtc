@@ -1,0 +1,12 @@
+taskKey="com.javarush.task.jdk13.task34.task3411"\n\nПриватный родитель
+
+Реализуй метод setPrivateParentField: он должен приватному полю fieldName родительского класса объекта childObject присвоить значение value.
+Ожидаемый вывод:
+начальная строка
+новая строка
+
+
+Требования:
+1.	Метод setPrivateParentField должен быть реализован согласно условию.
+
+
