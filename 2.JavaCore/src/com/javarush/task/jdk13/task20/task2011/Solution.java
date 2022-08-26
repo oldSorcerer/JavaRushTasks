@@ -26,8 +26,8 @@ public class Solution {
                         "- \"String5\"";
 
         ObjectMapper mapper = new YAMLMapper();
-//        Shop shop = mapper.readValue(yamlData, Shop.class);
+        Shop shop = mapper.readValue(yamlData, Shop.class);
 
-//        System.out.println(shop);
+        System.out.println(shop);
     }
 }
