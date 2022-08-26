@@ -18,9 +18,8 @@ public class Solution {
     }
 
     public static <T> T getFromXml(String xmlString, Class<T> clazz) throws IOException {
-        //напишите тут ваш код
-
-        return null;
+        ObjectMapper mapper = new XmlMapper();
+        return mapper.readValue(xmlString, clazz);
     }
 
     static class Cat {
