@@ -1,0 +1,88 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaRush</title>
+    <style>
+        mark {
+            padding: .1em .3em;
+            color: #fff;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+            font-size: 1em;
+            font-family: Menlo, Monaco, Consolas, Courier New, Ubuntu Mono, monospace;
+            border-radius: 3px;
+        }
+
+        .light-content {
+            font-size: 15px;
+            line-height: 1.62;
+            overflow-wrap: break-word;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #151f33;
+        }
+
+        .dark-content {
+            font-size: 15px;
+            line-height: 1.62;
+            overflow-wrap: break-word;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            background: #1F2023;
+        }
+
+        .light-content .text-corporate {
+            color: #f80 !important;
+        }
+
+        .dark-content .text-corporate {
+            color: #ff7337 !important;
+        }
+
+        .light-content mark.green {
+            background-color: #41a444;
+        }
+
+        .dark-content mark.green {
+            background-color: #45aa4c;
+        }
+
+        .light-content mark.orange {
+            background-color: #faa033;
+        }
+
+        .dark-content mark.orange {
+            background-color: #ff7337;
+        }
+
+        .light-content mark.blue {
+            background-color: #3a5fa5;
+        }
+
+        .dark-content mark.blue {
+            background-color: #4798cf;
+        }
+
+        .light-content .text-red {
+            color: red !important;
+        }
+
+        .dark-content .text-red {
+            color: #f14f4c !important;
+        }
+    </style>
+</head>
+<body class="dark-content">
+
+<div style="padding: 10px 30px">
+    <h3>Основы Java</h3>
+    <p><strong>Квест «Java Core»</strong> рассчитан на тех, кто уже получил минимальную подготовку по
+        <strong>Java</strong> (в рамках <strong>Квеста «Java Syntax» Java<span
+                class="text-corporate">Rush</span></strong>). Здесь вам предстоит пройти <strong>10 увлекательных
+            уровней</strong>, в которых вы изучите основы <strong>ООП</strong>, познакомитесь с потоками, сериализацией,
+        перегрузкой методов, узнаете много нового об интерфейсах и множественном наследовании. Учёба уже не так проста,
+        как на <strong>Квесте «Java Syntax»</strong>, но регулярная практика — решение задач — поможет вам успешно
+        пройти все его <strong>10 уровней</strong> и быть готовым к разработке мини-проектов в самом ближайшем будущем.
+    </p>
+</div>
+</body>
+</html>
