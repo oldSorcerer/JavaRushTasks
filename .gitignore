@@ -10,7 +10,7 @@ target/
 
 
 *.class
-
+*.info
 *.properties
 
 
