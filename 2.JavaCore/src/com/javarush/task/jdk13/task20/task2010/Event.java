@@ -7,6 +7,7 @@ import java.util.Date;
 public class Event {
 
     public String name;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyy hh:mm:ss")
     public Date eventDate;
 
     public Event() {
