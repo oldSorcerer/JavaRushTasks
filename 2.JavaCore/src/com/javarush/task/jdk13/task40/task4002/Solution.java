@@ -2,8 +2,11 @@ package com.javarush.task.jdk13.task40.task4002;
 
 import java.io.IOException;
 
-public class Solution {
+/* 
+UDP сервер и клиент
+*/
 
+public class Solution {
 
     public static void main(String[] args) throws IOException {
         new MessageServer().start();
