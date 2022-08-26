@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaRush</title>
+    <style>
+        mark {
+            padding: .1em .3em;
+            color: #fff;
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+            font-size: 1em;
+            font-family: Menlo, Monaco, Consolas, Courier New, Ubuntu Mono, monospace;
+            border-radius: 3px;
+        }
+
+        .light-content {
+            font-size: 15px;
+            line-height: 1.62;
+            overflow-wrap: break-word;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #151f33;
+        }
+
+        .dark-content {
+            font-size: 15px;
+            line-height: 1.62;
+            overflow-wrap: break-word;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            background: #1F2023;
+        }
+
+        .light-content .text-corporate {
+            color: #f80 !important;
+        }
+
+        .dark-content .text-corporate {
+            color: #ff7337 !important;
+        }
+
+        .light-content mark.green {
+            background-color: #41a444;
+        }
+
+        .dark-content mark.green {
+            background-color: #45aa4c;
+        }
+
+        .light-content mark.orange {
+            background-color: #faa033;
+        }
+
+        .dark-content mark.orange {
+            background-color: #ff7337;
+        }
+
+        .light-content mark.blue {
+            background-color: #3a5fa5;
+        }
+
+        .dark-content mark.blue {
+            background-color: #4798cf;
+        }
+
+        .light-content .text-red {
+            color: red !important;
+        }
+
+        .dark-content .text-red {
+            color: #f14f4c !important;
+        }
+    </style>
+</head>
+<body class="dark-content">
+
+<div style="padding: 10px 30px">
+    <h3>Стажировка JavaRush</h3>
+    <p><em>Получить первую работу ох как непросто.</em> Даже если вы усердно занимались, прошли все <strong>40
+        уровней</strong>, перешерстили десяток тематических книг и знаете весь Java Core от и до, вы не застрахованы от
+        того, что рекрутер не поверит в ваше резюме. Просто потому, что эти ребята хотят видеть в команде людей с
+        реальным практическим опытом. Что же теперь делать? Как преодолеть ситуацию «чтобы получить опыт, нужен опыт»?
+    </p>
+    <p>Всё не так плохо: «хакнуть» систему можно! Причём легально, без нарушения законов и общественных норм или лжи.
+        Есть несколько способов это сделать, один из них — пройти стажировку <strong>Java<span class="text-corporate">Rush</span></strong>,
+        во время которой вы изучите новые технологии и поработаете над настоящим проектом.</p>
+    <p>На момент написания статьи стажировку <strong>Java<span class="text-corporate">Rush</span></strong> прошло уже
+        <strong>около 700 студентов</strong> <strong>Java<span class="text-corporate">Rush</span></strong> (<em>к весне
+            к ним прибавится еще сотня</em>). Большинство из них нашли работу, некоторые — не поленились поделиться
+        историями успеха.</p>
+    <p>В этой статье мы расскажем о том, что представляет собой наша стажировка, как туда попасть и что это даст.</p>
+    <h2>Что такое стажировка JavaRush?</h2>
+    <p>По сути, стажировка <strong>Java<span class="text-corporate">Rush</span></strong> и есть самая настоящая работа
+        программистом, только обучающая. Вы три месяца работаете над серьезным проектом, параллельно получая
+        теоретические сведения. Раз в неделю вам выдают блок, который нужно выполнить. В конце недели вы участвуете в
+        обсуждении этого блока, исправляете, если нужно, ошибки и корявости, после чего получаете следующее задание. И
+        так, пока проект не будет готов.</p>
+    <h2>Что изучают?</h2>
+    <p>На выходе вы получите опыт работы с платформой <strong>Java Enterprise</strong> и полнофункциональное приложение
+        на <strong>Spring/JPA Enterprise</strong> c авторизацией и правами доступа на основе ролей с использованием
+        наиболее популярных инструментов и технологий <strong>Java</strong>. А это <strong>Maven</strong>, <strong>Spring
+            MVC</strong>, <strong>Security</strong>, J<strong>PA (Hibernate)</strong>, <strong>REST
+            (Jackson)</strong>,<strong> Bootstrap (css,js)</strong>, <strong>datatables</strong>, <strong>jQuery +
+            plugins</strong>, <strong>Java</strong> <strong>8 Stream and Time API</strong>.</p>
+</div>
+</body>
+</html>

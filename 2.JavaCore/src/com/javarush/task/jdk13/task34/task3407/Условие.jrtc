@@ -1,0 +1,21 @@
+taskKey="com.javarush.task.jdk13.task34.task3407"\n\nСобиратель типов
+
+Реализуй метод getTypes, который принимает один тип, и должен вернуть множество типов содержащихся во входном типе.
+Например, текущий метод main должен вывести на экран такие типы (порядок не обязателен):
+interface java.util.Map
+class java.util.concurrent.TimeUnit
+interface java.util.function.BiFunction
+class java.lang.Integer
+class java.lang.Long
+class java.lang.Boolean
+interface java.util.List
+class java.lang.String
+
+Сигнатуру метода getTypes не изменяй. Методы main() не участвует в тестировании.
+
+
+Требования:
+1.	Сигнатуру и тип возвращаемого значения метода getTypes не изменяй.
+2.	Метод getTypes должен быть реализован согласно условию.
+
+
