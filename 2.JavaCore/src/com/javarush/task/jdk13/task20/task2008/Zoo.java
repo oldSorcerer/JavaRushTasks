@@ -9,8 +9,11 @@ import java.util.List;
 public class Zoo {
     public List<Animal> animals = new ArrayList<>();
 
-
-
+    @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
+    @JsonSubTypes({
+            @JsonSubTypes.Type(value = Lion.class, name = "lion"),
+            @JsonSubTypes.Type(value = Penguin.class, name = "penguin")
+    })
     public static class Animal {
         public String name;
 
