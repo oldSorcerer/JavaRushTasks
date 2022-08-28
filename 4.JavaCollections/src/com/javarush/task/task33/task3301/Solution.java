@@ -41,12 +41,12 @@ public class Solution {
     public static class Pet {
         public String name;
     }
-
+    @JsonAutoDetect
     public static class Cat extends Pet {
         public int age;
         public int weight;
     }
-
+    @JsonAutoDetect
     public static class Dog extends Pet {
         public int age;
         public String owner;
