@@ -14,16 +14,16 @@ public class MagicBall {
 
     public static String getPrediction() {
 
-        switch (new Random().nextInt(8)) {
-            case 0: return CERTAIN;
-            case 1: return DEFINITELY;
-            case 2: return MOST_LIKELY;
-            case 3: return OUTLOOK_GOOD;
-            case 4: return ASK_AGAIN_LATER;
-            case 5: return TRY_AGAIN;
-            case 6: return NO;
-            case 7: return VERY_DOUBTFUL;
-        }
-        return null;
+        return switch (new Random().nextInt(8)) {
+            case 0 -> CERTAIN;
+            case 1 -> DEFINITELY;
+            case 2 -> MOST_LIKELY;
+            case 3 -> OUTLOOK_GOOD;
+            case 4 -> ASK_AGAIN_LATER;
+            case 5 -> TRY_AGAIN;
+            case 6 -> NO;
+            case 7 -> VERY_DOUBTFUL;
+            default -> null;
+        };
     }
 }

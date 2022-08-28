@@ -18,7 +18,5 @@ public class Pair {
         int tmp = x ^ y;
         x = y;
         y = tmp ^ x;
-
-
     }
 }
