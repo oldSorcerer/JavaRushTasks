@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.task33.task3307"\n\nДесериализация XML объекта
+
+В метод convertFromXmlToNormal первым параметром приходит строка, содержащая xml объект.
+Вторым параметром приходит класс, объект которого необходимо вернуть.
+Метод convertFromXmlToNormal должен создать объект из xml-строки и вернуть его.
+
+
+Требования:
+1.	В методе convertFromXmlToNormal должен быть создан новый объект типа JAXBContext с помощью статического метода JAXBContext.newInstance, в качестве параметра используй целевой класс.
+2.	В методе convertFromXmlToNormal должен быть создан новый объект типа Unmarshaller с помощью метода createUnmarshaller вызванного на объекте типа JAXBContext.
+3.	Метод convertFromXmlToNormal должен корректно преобразовывать входящую xml строку в объект требуемого класса.
+4.	Метод convertFromXmlToNormal должен быть статическим.
+
+
