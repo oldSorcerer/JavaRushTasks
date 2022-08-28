@@ -21,7 +21,7 @@ public class Solution {
 
         StringWriter writer = new StringWriter();
         convertToJSON(writer, cat);
-        System.out.println(writer.toString());
+        System.out.println(writer);
     }
 
     public static void convertToJSON(StringWriter writer, Object object) throws IOException {
@@ -31,10 +31,11 @@ public class Solution {
 
     @JsonAutoDetect
     public static class Cat {
+        @JsonProperty("wildAnimal")
         public String name;
-
+        @JsonIgnore
         public int age;
-
+        @JsonProperty("over")
         public int weight;
 
         Cat() {
