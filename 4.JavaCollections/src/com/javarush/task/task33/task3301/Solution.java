@@ -29,7 +29,7 @@ public class Solution {
 
         StringWriter writer = new StringWriter();
         convertToJSON(writer, pets);
-        System.out.println(writer.toString());
+        System.out.println(writer);
         //[{"name":"Murka","age":5,"weight":3},{"name":"Killer","age":8,"owner":"Bill Jeferson"}]
     }
 
@@ -37,18 +37,18 @@ public class Solution {
         ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(writer, object);
     }
-
+    @JsonAutoDetect
     public static class Pet {
-        String name;
+        public String name;
     }
 
     public static class Cat extends Pet {
-        int age;
-        int weight;
+        public int age;
+        public int weight;
     }
 
     public static class Dog extends Pet {
-        int age;
-        String owner;
+        public int age;
+        public String owner;
     }
 }
