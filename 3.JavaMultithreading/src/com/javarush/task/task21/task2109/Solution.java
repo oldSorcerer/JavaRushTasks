@@ -23,8 +23,8 @@ public class Solution {
     }
 
     public static class A implements Cloneable {
-        private int i;
-        private int j;
+        private final int i;
+        private final int j;
 
         public A(int i, int j) {
             this.i = i;
@@ -60,7 +60,7 @@ public class Solution {
     }
 
     public static class B extends A {
-        private String name;
+        private final String name;
 
         public B(int i, int j, String name) {
             super(i, j);
@@ -98,8 +98,7 @@ public class Solution {
 
         @Override
         protected Object clone() {
-            C copyC = new C(getI(), getJ(), getName());
-            return copyC;
+            return new C(getI(), getJ(), getName());
         }
 
         @Override
