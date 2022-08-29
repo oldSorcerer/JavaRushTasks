@@ -8,11 +8,11 @@ import java.util.Objects;
 */
 
 public class Solution {
-    private int anInt;
-    private String string;
-    private double aDouble;
-    private Date date;
-    private Solution solution;
+    private final int anInt;
+    private final String string;
+    private final double aDouble;
+    private final Date date;
+    private final Solution solution;
 
     public Solution(int anInt, String string, double aDouble, Date date, Solution solution) {
         this.anInt = anInt;
