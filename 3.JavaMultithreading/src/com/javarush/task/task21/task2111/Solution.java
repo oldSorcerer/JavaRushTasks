@@ -21,10 +21,10 @@ public class Solution {
     public List<User> getUsers() {
         String query = "select ID, DISPLAYED_NAME, LEVEL, LESSON from USER";
 
-        List<User> result = new LinkedList();
+        List<User> result = new LinkedList<>();
 
-        try(Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query)) {
+        try (Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 int id = rs.getInt("ID");
                 String name = rs.getString("DISPLAYED_NAME");
@@ -49,10 +49,10 @@ public class Solution {
     }
 
     public static class User {
-        private int id;
-        private String name;
-        private int level;
-        private int lesson;
+        private final int id;
+        private final String name;
+        private final int level;
+        private final int lesson;
 
         public User(int id, String name, int level, int lesson) {
             this.id = id;
