@@ -50,10 +50,7 @@ public class Solution {
         @Override
         public Tree clone() throws CloneNotSupportedException  {
 
-            String name = String.valueOf(this.getName());
-            String[] strings = Arrays.copyOf(this.getBranches(), this.getBranches().length);
-
-            return new Tree(name, strings);
+            return new Tree(getName(), Arrays.copyOf(this.getBranches(), this.getBranches().length));
         }
     }
 }
