@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Hippodrome {
 
-    private List<Horse> horses;
+    private final List<Horse> horses;
     public static Hippodrome game;
 
     public List<Horse> getHorses() {
