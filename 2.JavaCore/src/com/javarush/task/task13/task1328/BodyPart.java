@@ -6,7 +6,7 @@ public final class BodyPart {
     final static BodyPart ARM = new BodyPart("рука");
     final static BodyPart CHEST = new BodyPart("грудь");
 
-    private String bodyPart;
+    private final String bodyPart;
 
     private BodyPart(String bodyPart) {
         this.bodyPart = bodyPart;

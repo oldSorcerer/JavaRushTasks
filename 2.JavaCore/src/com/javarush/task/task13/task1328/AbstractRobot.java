@@ -1,8 +1,10 @@
 package com.javarush.task.task13.task1328;
 
+import java.util.Random;
+
 public abstract class AbstractRobot implements Attackable, Defensable {
 
-    private static int hitCount = (int)(Math.random() * 4) + 1;
+    private static int hitCount = new Random().nextInt(4);
 
     public abstract String getName();
 
@@ -27,11 +29,11 @@ public abstract class AbstractRobot implements Attackable, Defensable {
         BodyPart defendedBodyPart;
         hitCount = hitCount + 2;
 
-        if (hitCount == 1) {
+        if (hitCount == 2) {
             defendedBodyPart = BodyPart.LEG;
-        } else if (hitCount == 2) {
-            defendedBodyPart = BodyPart.HEAD;
         } else if (hitCount == 3) {
+            defendedBodyPart = BodyPart.HEAD;
+        } else if (hitCount == 4) {
             defendedBodyPart = BodyPart.ARM;
         } else {
             hitCount = 0;
