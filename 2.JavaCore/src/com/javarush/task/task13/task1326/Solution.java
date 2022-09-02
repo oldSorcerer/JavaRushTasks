@@ -27,8 +27,7 @@ public class Solution {
                     list.add(anInt);
                 }
             }
-            Collections.sort(list);
-            list.forEach(System.out::println);
+            list.stream().sorted().forEach(System.out::println);
         }
     }
 }
