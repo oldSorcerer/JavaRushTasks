@@ -1,0 +1,16 @@
+taskKey="com.javarush.task.task23.task2304"\n\nInner 3
+
+Внутри класса Solution:
+1) реализуй private class TaskDataProvider используя Task и MockDB, цель которого - обновить поле tasks.
+2) реализуй private class NameDataProvider используя String и MockDB, цель которого - обновить поле names.
+
+
+Требования:
+1.	Класс TaskDataProvider должен быть создан внутри класса Solution и быть приватным.
+2.	Класс NameDataProvider должен быть создан внутри класса Solution и быть приватным.
+3.	Класс TaskDataProvider должен реализовывать интерфейс DbDataProvider с параметром типа Task.
+4.	Класс NameDataProvider должен реализовывать интерфейс DbDataProvider с параметром типа String.
+5.	Метод refreshAllData в классе TaskDataProvider должен сохранять в список tasks результат работы метода getFakeTasks класса MockDB.
+6.	Метод refreshAllData в классе NameDataProvider должен сохранять в список names результат работы метода getFakeNames класса MockDB.
+
+
