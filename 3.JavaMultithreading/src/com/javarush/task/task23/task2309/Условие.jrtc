@@ -1,0 +1,34 @@
+taskKey="com.javarush.task.task23.task2309"\n\nАнонимность иногда так приятна!
+
+1. В пакете vo создай public классы User, Location, Server, Subject, Subscription, которые наследуются от NamedItem
+2. В классе Solution для каждого класса создай свой метод, который возвращает список экземпляров класса.
+Например, для класса User это будет - public List&lt;User&gt; getUsers()
+Для класса Location это будет - public List&lt;Location&gt; getLocations()
+3. Внутри каждого такого метода создай анонимный класс от AbstractDbSelectExecutor и вызови его нужный метод.
+Подсказка: тело метода должно начинаться так: return new AbstractDbSelectExecutor
+
+4. Пример вывода для User и Location:
+Id=5, name=&#39;User-5&#39;, description=Received from executing &#39;SELECT * FROM USER&#39;
+Id=1, name=&#39;Location-1&#39;, description=Received from executing &#39;SELECT * FROM LOCATION&#39;
+
+5. Проанализируй пример вывода и сформируй правильный query для всех классов.
+
+
+Требования:
+1.	В пакете vo должен быть создан public класс User, унаследованный от класса NamedItem.
+2.	В пакете vo должен быть создан public класс Location, унаследованный от класса NamedItem.
+3.	В пакете vo должен быть создан public класс Server, унаследованный от класса NamedItem.
+4.	В пакете vo должен быть создан public класс Subject, унаследованный от класса NamedItem.
+5.	В пакете vo должен быть создан public класс Subscription, унаследованный от класса NamedItem.
+6.	В методе getUsers должен быть создан объект класса AbstractDbSelectExecutor с параметром типа User.
+7.	В методе getLocations должен быть создан объект класса AbstractDbSelectExecutor с параметром типа Location.
+8.	В методе getServers должен быть создан объект класса AbstractDbSelectExecutor с параметром типа Server.
+9.	В методе getSubjects должен быть создан объект класса AbstractDbSelectExecutor с параметром типа Subject.
+10.	В методе getSubscriptions должен быть создан объект класса AbstractDbSelectExecutor с параметром типа Subscription.
+11.	Метод getUsers должен возвращать корректный список(в соответствии с условием задачи).
+12.	Метод getLocations должен возвращать корректный список(в соответствии с условием задачи).
+13.	Метод getServers должен возвращать корректный список(в соответствии с условием задачи).
+14.	Метод getSubjects должен возвращать корректный список(в соответствии с условием задачи).
+15.	Метод getSubscriptions должен возвращать корректный список(в соответствии с условием задачи).
+
+
