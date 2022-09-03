@@ -12,15 +12,15 @@ public class Solution {
     private List<Task> tasks;
     private List<String> names;
 
-    private DbDataProvider taskDataProvider = new TaskDataProvider();
-    private DbDataProvider nameDataProvider = new NameDataProvider();
+//    private DbDataProvider taskDataProvider = new TaskDataProvider();
+//    private DbDataProvider nameDataProvider = new NameDataProvider();
 
     public void refresh() {
         Map taskCriteria = MockView.getFakeTaskCriteria();
-        taskDataProvider.refreshAllData(taskCriteria);
+//        taskDataProvider.refreshAllData(taskCriteria);
 
         Map nameCriteria = MockView.getFakeNameCriteria();
-        nameDataProvider.refreshAllData(nameCriteria);
+//        nameDataProvider.refreshAllData(nameCriteria);
     }
 
     private interface DbDataProvider<T> {
