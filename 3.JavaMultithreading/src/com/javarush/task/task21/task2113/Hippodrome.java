@@ -2,6 +2,7 @@ package com.javarush.task.task21.task2113;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Hippodrome {
@@ -45,7 +46,8 @@ public class Hippodrome {
     }
 
     public Horse getWinner() {
-        return Collections.max(horses, (o1, o2) -> (int) (o1.getDistance() - o2.getDistance()));
+        return horses.stream().max(Comparator.comparingDouble(Horse::getDistance)).get();
+//        return Collections.max(horses, (o1, o2) -> (int) (o1.getDistance() - o2.getDistance()));
     }
 
     public void printWinner() {
