@@ -36,14 +36,10 @@ public class Horse {
         this.distance = distance;
     }
     public void move() {
-        setDistance(getDistance() + getSpeed() * Math.random());
+        setDistance(distance + speed * Math.random());
     }
 
     public void print() {
-        StringBuilder dot = new StringBuilder();
-        for (int i = 0; i < (int)this.getDistance(); i++) {
-            dot.append(".");
-        }
-        System.out.println(dot + this.getName());
+        System.out.println(".".repeat(Math.max(0, (int) distance)) + name);
     }
 }
