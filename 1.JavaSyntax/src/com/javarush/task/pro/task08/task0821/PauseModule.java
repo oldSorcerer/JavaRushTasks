@@ -21,6 +21,7 @@ public class PauseModule {
         while (timeUnits > 999_999){
             timeUnits = timeUnits / 10;
         }
-            Thread.sleep(0, (int) timeUnits);
+
+        Thread.sleep(0, (int) timeUnits);
     }
 }
