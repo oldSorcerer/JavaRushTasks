@@ -27,7 +27,7 @@ public class NimrodAi {
     public static String[] powerRoom = {"power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp"};
 
     public static void main(String[] args) {
-        String[] RoomName = {"diningRoom", "o2", "medRoom","armory","securityRoom", "reactor", "telecom", "warehouse","controlRoom","powerRoom"};
+        String[] RoomName = {"diningRoom", "o2", "medRoom", "armory", "securityRoom", "reactor", "telecom", "warehouse", "controlRoom", "powerRoom"};
         checkPirates("securityRoom");
     }
 
@@ -39,9 +39,9 @@ public class NimrodAi {
 
         String[] scanResult = RoomScanner.scanRoom(roomName);
         System.out.printf("В %s обнаружено: %s\n", roomName, Arrays.toString(scanResult));
-        if (Arrays.deepEquals(room, scanResult) ){
+        if (Arrays.deepEquals(room, scanResult)) {
             return false;
-        }else {
+        } else {
             return true;
         }
     }
@@ -52,6 +52,6 @@ public class NimrodAi {
     }
 
     public static String[] getRoomByName(String roomName) {
-   return null;
+        return null;
     }
 }
