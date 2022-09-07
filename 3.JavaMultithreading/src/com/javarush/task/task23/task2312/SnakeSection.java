@@ -3,8 +3,8 @@ package com.javarush.task.task23.task2312;
 import java.util.Objects;
 
 public class SnakeSection {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public SnakeSection(int x, int y) {
         this.x = x;
