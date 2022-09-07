@@ -1,7 +1,6 @@
 package com.javarush.task.task21.task2113;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -31,15 +30,12 @@ public class Hippodrome {
     }
 
     public void move() {
-        for (int i = 0; i < getHorses().size(); i++) {
-            getHorses().get(i).move();
-        }
+        horses.forEach(Horse::move);
     }
 
     public void print() {
-        for (int i = 0; i < getHorses().size(); i++) {
-            getHorses().get(i).print();
-        }
+        horses.forEach(Horse::print);
+
         for (int i = 0; i < 10; i++) {
             System.out.println();
         }
@@ -53,7 +49,6 @@ public class Hippodrome {
     public void printWinner() {
         System.out.println("Winner is " + getWinner().getName() + "!");
     }
-
 
     public static void main(String[] args) {
         List<Horse> horses = new ArrayList<>();
