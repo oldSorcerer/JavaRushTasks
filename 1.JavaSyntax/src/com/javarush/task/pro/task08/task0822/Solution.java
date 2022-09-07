@@ -17,13 +17,6 @@ public class Solution {
     }
 
     public static int changeBit(int number, int bit, boolean activate) {
-//        int result = 0;
-//        if (activate){
-//            result = number | bit;
-//        }else{
-//         result = number & (~bit);
-//        }
-//        return result;
         return activate ? number | bit : number & (~bit);
     }
 }
