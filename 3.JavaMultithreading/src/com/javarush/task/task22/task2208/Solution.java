@@ -10,9 +10,27 @@ import java.util.Map;
 public class Solution {
     public static void main(String[] args) {
 
+        LinkedHashMap<String, String> map = new LinkedHashMap<>();
+        map.put("name","Ivanov");
+        map.put("country","Ukraine");
+        map.put("city","Kiev");
+        map.put("age",null);
+
+        System.out.println(getQuery(map));
     }
 
     public static String getQuery(Map<String, String> params) {
-        return null;
+
+        StringBuilder builder = new StringBuilder();
+
+        for (Map.Entry<String, String> pair : params.entrySet()) {
+            if (pair.getValue() != null) {
+                builder.append(pair.getKey()).append(" = '")
+                        .append(pair.getValue())
+                        .append("' and ");
+            }
+        }
+
+        return builder.substring(0, builder.lastIndexOf("'") + 1);
     }
 }

@@ -24,10 +24,10 @@ public class Solution {
         Nimrod[] nimrods = new Nimrod[diegos.length];
         for (int i = 0; i < diegos.length; i++) {
             int password = random.nextInt();
-           diegos[i].hashSum ^= password;
-           Nimrod nimrod = new Nimrod();
-           nimrod.password = password;
-           nimrods[i] = nimrod;
+            diegos[i].hashSum ^= password;
+            Nimrod nimrod = new Nimrod();
+            nimrod.password = password;
+            nimrods[i] = nimrod;
         }
         return nimrods;
     }

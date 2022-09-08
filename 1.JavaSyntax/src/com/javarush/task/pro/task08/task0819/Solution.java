@@ -19,9 +19,18 @@ public class Solution {
             number = random.nextInt(upperBound - lowerBound) + lowerBound;
             result = nextAttempt(number);
         } while (number != result);
-        Field declaredField = CosmicAnomaly.class.getDeclaredField("rightNumber");
-        declaredField.setAccessible(true);
 
-
+//        for (int i = 0; i < 30; i++) {
+//            int number = random.nextInt(upperBound - lowerBound) + lowerBound;
+//            nextAttempt(number);
+//
+//            Field declaredField = CosmicAnomaly.class.getDeclaredField("rightNumber");
+//            declaredField.setAccessible(true);
+//            int number2 = (int) declaredField.get(new CosmicAnomaly());
+//
+//            if (number == number2) {
+//                break;
+//            }
+//        }
     }
 }

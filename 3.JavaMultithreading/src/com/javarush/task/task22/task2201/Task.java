@@ -1,8 +1,8 @@
 package com.javarush.task.task22.task2201;
 
 public class Task implements Runnable {
-    private String initialString;
-    private Solution solution;
+    private final String initialString;
+    private final Solution solution;
 
     public Task(Solution solution, String initialString) {
         this.solution = solution;
