@@ -13,8 +13,18 @@ import java.util.StringTokenizer;
 */
 
 public class Solution {
-    public static void main(String[] args) {
-        //...
+    public static void main(String[] args) throws IOException {
+        try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+             FileInputStream inputStream = new FileInputStream(console.readLine());
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream)))
+        {
+            while (reader.ready()) {
+                String string = reader.readLine();
+
+            }
+
+        }
+
         StringBuilder result = getLine();
         System.out.println(result.toString());
     }
