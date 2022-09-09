@@ -17,7 +17,6 @@ public class Solution {
 
     interface DBObject {
         DBObject initializeIdAndName(long id, String name);
-
     }
 
     static class User implements DBObject {
@@ -36,5 +35,4 @@ public class Solution {
             return this;
         }
     }
-
 }
