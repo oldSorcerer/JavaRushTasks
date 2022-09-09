@@ -16,22 +16,20 @@ public class Solution {
 
     public static Pair<Integer, Integer> getMinimumAndIndex(int[] array) {
         if (array == null || array.length == 0) {
-            return new Pair<Integer, Integer>(null, null);
+            return new Pair<>(null, null);
         }
 
         int min = array[0];
         int index = 0;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
                 min = array[i];
                 index = i;
             }
         }
 
-
-        return new Pair<Integer, Integer>(min, index);
+        return new Pair<>(min, index);
     }
-
 
     public static class Pair<X, Y> {
         public X x;
