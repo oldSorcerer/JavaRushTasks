@@ -12,10 +12,10 @@ public class Solution {
         int number = scanner.nextInt();
         int sum = 0;
 
-        int i = 0;
         if (number > 0) {
+            int i = 0;
             while (i <= number) {
-                sum = sum + i;
+                sum += i;
                 i++;
             }
         }
