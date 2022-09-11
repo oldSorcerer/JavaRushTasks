@@ -1,7 +1,6 @@
 package com.javarush.task.task22.task2211;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /* 
@@ -11,19 +10,11 @@ import java.nio.charset.StandardCharsets;
 public class Solution {
     public static void main(String[] args) throws IOException {
 
-        try (BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(args[0]));
-             BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(args[1]))
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(args[0]),"Windows-1251"));
+             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(args[1]), StandardCharsets.UTF_8))
         ) {
-            Charset windows1251 = Charset.forName("Windows-1251");
-
-            while (inputStream.available() > 0) {
-
-                int read = inputStream.read(new byte[inputStream.available()]);
-
-                new String(new byte[inputStream.available()]);
-
-
-//                outputStream.write(reader.readLine().getBytes(StandardCharsets.UTF_8));
+            while (reader.ready()) {
+                writer.write(reader.readLine() + System.lineSeparator());
             }
         }
     }
