@@ -1,0 +1,23 @@
+taskKey="com.javarush.task.task28.task2801"\n\nОсваиваем switch
+
+Реализуй логику метода switchTest:
+1. Не используй условные операторы.
+2. Используй 1 switch, у которого 2 case и 1 default.
+3. Ожидаемый вывод:
+Вывод для E1.A - &quot;it&#39;s E1.A&quot;
+Вывод для E1.B - &quot;it&#39;s E1.B&quot;
+Вывод для E1.C - &quot;it&#39;s E1.C&quot;
+Вывод для E1.Y - &quot;it&#39;s E1.Y&quot;
+Вывод для E2.D - &quot;it&#39;s E2.D&quot;
+Вывод для E2.E - &quot;it&#39;s E2.E&quot;
+Вывод для E2.F - &quot;it&#39;s E2.F&quot;
+Вывод для всех других значений - &quot;undefined&quot;.
+
+
+Требования:
+1.	Класс Solution должен содержать метод switchTest и enums E1, E2, E3.
+2.	Реализуй метод switchTest, используя 1 switch, у которого 2 case и 1 default.
+3.	Вывод в консоль должен соответствовать условию задачи.
+4.	Использовать условные операторы нельзя.
+
+
