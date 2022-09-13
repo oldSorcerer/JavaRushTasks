@@ -16,38 +16,18 @@ public class Solution {
     }
 
     public static String digitToText(char digit) {
-        String result = "";
-        switch (digit) {
-            case '0':
-                result = "ноль";
-                break;
-            case '1':
-                result = "один";
-                break;
-            case '2':
-                result = "два";
-                break;
-            case '3':
-                result = "три";
-                break;
-            case '4':
-                result = "четыре";
-                break;
-            case '5':
-                result = "пять";
-                break;
-            case '6':
-                result = "шесть";
-                break;
-            case '7':
-                result = "семь";
-                break;
-            case '8':
-                result = "восемь";
-                break;
-            case '9':
-                result = "девять";
-        }
-        return result;
+        return switch (digit) {
+            case '0' -> "ноль";
+            case '1' -> "один";
+            case '2' -> "два";
+            case '3' -> "три";
+            case '4' -> "четыре";
+            case '5' -> "пять";
+            case '6' -> "шесть";
+            case '7' -> "семь";
+            case '8' -> "восемь";
+            case '9' -> "девять";
+            default -> "";
+        };
     }
 }

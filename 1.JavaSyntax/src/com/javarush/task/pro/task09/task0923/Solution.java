@@ -4,31 +4,24 @@ package com.javarush.task.pro.task09.task0923;
 Ранг доступа — Пиратский Капитан
 */
 
-import static com.javarush.task.pro.task09.task0923.CaptainBridge.checkAccess;
-import static com.javarush.task.pro.task09.task0923.CaptainBridge.debugAccess;
+import static com.javarush.task.pro.task09.task0923.CaptainBridge.*;
 
 public class Solution {
     public static void main(String[] args) {
         String str = "";
         if (debugAccess("Раб")) {
             str = "Раб";
-        }
-        if (debugAccess("Гость")) {
+        } else if (debugAccess("Гость")) {
             str = "Гость";
-        }
-        if (debugAccess("Боец")) {
+        } else if (debugAccess("Боец")) {
             str = "Боец";
-        }
-        if (debugAccess("Ветеран")) {
+        } else if (debugAccess("Ветеран")) {
             str = "Ветеран";
-        }
-        if (debugAccess("Картографист")) {
+        } else if (debugAccess("Картографист")) {
             str = "Картографист";
-        }
-        if (debugAccess("Капитан")) {
+        } else if (debugAccess("Капитан")) {
             str = "Капитан";
-        }
-        if (debugAccess("Стив")) {
+        } else if (debugAccess("Стив")) {
             str = "Стив";
         }
         checkAccess(str);
