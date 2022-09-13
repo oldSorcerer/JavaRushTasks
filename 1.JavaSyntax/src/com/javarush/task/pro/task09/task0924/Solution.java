@@ -30,12 +30,10 @@ public class Solution {
                     morals[i][j] = "compassion";
                 } else if (string.contains("thief")) {
                     morals[i][j] = "fairness";
-                }else if (string.contains("bully")) {
+                } else if (string.contains("bully")) {
                     morals[i][j] = ("respect");
                 }
             }
         }
-
     }
-
 }
