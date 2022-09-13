@@ -15,29 +15,14 @@ public class CaptainBridge {
     private static int attemptsCounter = 1;
 
     static {
-        int randomFactor = new Random().nextInt(7);
-        switch (randomFactor) {
-            case 0:
-                slave = true;
-                break;
-            case 1:
-                guest = true;
-                break;
-            case 2:
-                fighter = true;
-                break;
-            case 3:
-                veteran = true;
-                break;
-            case 4:
-                cartographer = true;
-                break;
-            case 5:
-                captain = true;
-                break;
-            case 6:
-                Steve = true;
-                break;
+        switch (new Random().nextInt(7)) {
+            case 0 -> slave = true;
+            case 1 -> guest = true;
+            case 2 -> fighter = true;
+            case 3 -> veteran = true;
+            case 4 -> cartographer = true;
+            case 5 -> captain = true;
+            case 6 -> Steve = true;
         }
     }
 
@@ -55,32 +40,16 @@ public class CaptainBridge {
     }
 
     private static boolean getAccessibilityByRank(String rank) {
-        boolean accessibility = false;
-        switch (rank) {
-            case "Раб":
-                accessibility = slave;
-                break;
-            case "Гость":
-                accessibility = guest;
-                break;
-            case "Боец":
-                accessibility = fighter;
-                break;
-            case "Ветеран":
-                accessibility = veteran;
-                break;
-            case "Картографист":
-                accessibility = cartographer;
-                break;
-            case "Капитан":
-                accessibility = captain;
-                break;
-            case "Стив":
-                accessibility = Steve;
-                break;
-        }
-
-        return accessibility;
+        return switch (rank) {
+            case "Раб" -> slave;
+            case "Гость" -> guest;
+            case "Боец" -> fighter;
+            case "Ветеран" -> veteran;
+            case "Картографист" -> cartographer;
+            case "Капитан" -> captain;
+            case "Стив" -> Steve;
+            default -> false;
+        };
     }
 
     public static boolean debugAccess(String accessRank) {
