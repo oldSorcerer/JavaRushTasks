@@ -25,6 +25,5 @@ public class Solution {
         } catch (FileSystemException e) {
             throw new RuntimeException(e);
         }
-        //напишите тут ваш код
     }
 }
