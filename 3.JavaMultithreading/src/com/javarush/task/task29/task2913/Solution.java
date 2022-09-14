@@ -25,7 +25,7 @@ public class Solution {
         Random random = new Random();
         numberA = random.nextInt(1000);
         numberB = random.nextInt(1000);
-        System.out.println(getAllNumbersBetween(numberA, numberB));
-        System.out.println(getAllNumbersBetween(numberB, numberA));
+//        System.out.println(getAllNumbersBetween(numberA, numberB));
+//        System.out.println(getAllNumbersBetween(numberB, numberA));
     }
 }
