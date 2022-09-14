@@ -2,11 +2,9 @@ package com.javarush.task.task22.task2207;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /* 
 Обращенные слова
@@ -15,8 +13,38 @@ import java.util.List;
 public class Solution {
     public static List<Pair> result = new LinkedList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
+        try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
+
+            List<String> list = new ArrayList<>();
+
+            while (reader.ready()) {
+                list.addAll(Arrays.asList(reader.readLine().split(" ")));
+            }
+
+            for (int i = 0; i < list.size(); i++) {
+                for (int j = i + 1; j < list.size(); ) {
+                    StringBuilder builder = new StringBuilder(list.get(i));
+                    if (builder.reverse().toString().equals(list.get(j))) {
+                        Pair pair = new Pair();
+                        pair.first = list.get(i);
+                        pair.second = list.get(j);
+
+                        result.add(pair);
+                        list.remove(i);
+                        j--;
+                        list.remove(j);
+                        j = i + 1;
+                    } else {
+                        j++;
+                    }
+                }
+            }
+        }
+
+        result.forEach(System.out::println);
     }
 
     public static class Pair {
