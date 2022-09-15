@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -14,22 +15,42 @@ import java.util.StringTokenizer;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
+
+        String[] strings = null;
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
              FileInputStream inputStream = new FileInputStream(console.readLine());
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream)))
-        {
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+
             while (reader.ready()) {
-                String string = reader.readLine();
+                strings = reader.readLine().split(" ");
 
             }
-
         }
-
-        StringBuilder result = getLine();
+        StringBuilder result = getLine(strings);
         System.out.println(result.toString());
     }
 
     public static StringBuilder getLine(String... words) {
-        return null;
+        if (words == null) {
+            return null;
+        }
+        List<String> list = Arrays.asList(words);
+
+        StringBuilder result = new StringBuilder(list.get(0));
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size();) {
+                String str = list.get(i);
+                char charAt = str.charAt(str.length() - 1);
+                if (charAt == list.get(j).toLowerCase().charAt(0)) {
+                    result.append(" ").append(list.get(j));
+                    list.set(i, list.get(j));
+                    list.remove(j);
+                    j--;
+                } else {
+                    j++;
+                }
+            }
+        }
+        return result;
     }
 }
