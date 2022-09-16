@@ -1,0 +1,19 @@
+taskKey="com.javarush.task.pro.task09.task0925"\n\nОсвобождение Пиратов
+
+В блоки управления пиратов (массив controlUnits) проникли вирусы и баги. Требуется почистить эти блоки, чтобы помочь пиратам.
+С этой задачей нам помогут два метода в классе Solution: splitArrayElements и getStringFromArray.
+В методе splitArrayElements требуется пройтись по массиву controlUnits и с помощью StringTokenizer разбить элементы таким образом, чтобы массив изменился на пять следующих строк: &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot; и &quot;five&quot;.
+Затем, в методе getStringFromArray требуется пройтись по массиву controlUnits и с помощью String.format() отформатировать каждый его элемент таким образом, чтобы элементы массива изменились на следующие:
+&quot;Block one back online.&quot;
+&quot;Block two back online.&quot;
+&quot;Block three back online.&quot;
+&quot;Block four back online.&quot;
+&quot;Block five back online.&quot;
+
+Метод main не участвует в проверке.
+
+
+Требования:
+1.	Не изменяй изначальные значения массива controlUnits в классе Solution.
+2.	Метод splitArrayElements должен изменять элементы массива controlUnits согласно условиям.
+3.	Метод getStringFromArray должен изменять элементы массива controlUnits согласно условиям.
