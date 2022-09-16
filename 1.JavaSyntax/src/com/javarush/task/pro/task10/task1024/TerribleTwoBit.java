@@ -3,7 +3,7 @@ package com.javarush.task.pro.task10.task1024;
 public class TerribleTwoBit {
     private String mission = "разрушать и разорять";
 
-    public TerribleTwoBit(){
+    public TerribleTwoBit() {
         mission = "быстрые и комфортные перевозки";
     }
 
