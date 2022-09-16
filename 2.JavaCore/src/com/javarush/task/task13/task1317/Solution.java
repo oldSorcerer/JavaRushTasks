@@ -12,7 +12,7 @@ public class Solution {
     }
 
     static class Today implements Weather {
-        private String type;
+        private final String type;
 
         Today(String type) {
             this.type = type;
