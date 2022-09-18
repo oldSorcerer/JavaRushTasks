@@ -5,6 +5,13 @@ package com.javarush.task.task23.task2308;
 */
 
 public class Solution {
+
+    public final class Constants {
+        final static String SERVER_IS_CURRENTLY_NOT_ACCESSIBLE = "The server is not currently accessible.";
+
+    }
+
+
     public class ServerNotAccessibleException extends Exception {
         public ServerNotAccessibleException() {
             super("The server is currently not accessible.");
