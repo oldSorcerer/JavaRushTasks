@@ -17,11 +17,11 @@ public class Solution {
         test3.c1one();
 
         Test4 test4 = new Test4();
-        //test4.clone();
+        test4.clone();
     }
 
 
-    public static class Test1 {
+    public static class Test1 implements Cloneable {
         protected Test1 clone() throws CloneNotSupportedException {
             return (Test1) super.clone();
         }
@@ -33,15 +33,15 @@ public class Solution {
         }
     }
 
-    public static class Test3 {
-        protected Object c1one() throws CloneNotSupportedException {
-            return new Test3();
+    public static class Test3 implements Cloneable {
+        protected Test3 c1one() throws CloneNotSupportedException {
+            return (Test3) super.clone();
         }
     }
 
-    public static class Test4 extends Test3 {
-        protected Object c1one() throws CloneNotSupportedException {
-            return super.c1one();
+    public static class Test4 extends Test3 implements Cloneable {
+        protected Test4 clone() throws CloneNotSupportedException {
+            return (Test4) super.clone();
         }
     }
 }
