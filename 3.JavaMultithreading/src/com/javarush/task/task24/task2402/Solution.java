@@ -34,8 +34,8 @@ public class Solution {
     }
 
     public static class Test3 implements Cloneable {
-        protected Test3 c1one() throws CloneNotSupportedException {
-            return (Test3) super.clone();
+        protected Object c1one() throws CloneNotSupportedException {
+            return new Test3();
         }
     }
 
