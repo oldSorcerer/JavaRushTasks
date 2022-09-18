@@ -23,7 +23,7 @@ public class Pepl {
         int i = 0;
         for (Robot robot : robots) {
             robot.replaceBattery(batteryWarehouse[i++]);
-            if (robot.getCharge() < 10) {
+            while (robot.getCharge() < 10) {
                 robot.replaceBattery(batteryWarehouse[i++]);
             }
         }
