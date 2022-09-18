@@ -10,7 +10,7 @@ public class Solution {
         if (telNumber == null) {
             return false;
         }
-
+/*
         if (telNumber.matches("^\\+\\d{12}$")) {
             return true;
 //        } else if (telNumber.matches("^\\+\\d{2}\\(\\d{3}\\)\\d{7}")) {
@@ -24,11 +24,14 @@ public class Solution {
         } else if (telNumber.matches("^(\\d)?\\(\\d{3}\\)\\d{6,7}$")) {
             return true;
         }
-//        else if (telNumber.matches("^(\\+)?(\\d+)?(\\(\\d{3}\\))?\\d+$")) {
-//            return true;
-//        }
+*/
+        boolean matches = telNumber.matches("^\\+(\\d[()]?){12}$");
 
-        return false;
+        boolean matches1 = telNumber.matches("^([()]?\\d){10}$");
+
+        boolean matches2 = telNumber.matches("^(\\+)?(\\d+)?(\\(\\d{3}\\))?\\d+$");
+
+        return (matches || matches1) && matches2;
     }
 
     public static void main(String[] args) {
