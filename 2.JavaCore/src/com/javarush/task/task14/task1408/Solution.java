@@ -13,18 +13,13 @@ public class Solution {
     static class HenFactory {
 
         static Hen getHen(String country) {
-            switch (country) {
-                case (Country.BELARUS):
-                    return new BelarusianHen();
-                case (Country.RUSSIA):
-                    return new RussianHen();
-                case (Country.MOLDOVA):
-                    return new MoldovanHen();
-                case (Country.UKRAINE):
-                    return new UkrainianHen();
-                default:
-                    return null;
-            }
+            return switch (country) {
+                case (Country.BELARUS) -> new BelarusianHen();
+                case (Country.RUSSIA) -> new RussianHen();
+                case (Country.MOLDOVA) -> new MoldovanHen();
+                case (Country.UKRAINE) -> new UkrainianHen();
+                default -> null;
+            };
         }
     }
 
