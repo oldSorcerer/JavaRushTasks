@@ -21,21 +21,17 @@ public class Solution {
 
     static class CatFactory {
         static Cat getCatByKey(String key) {
-            switch (key) {
-                case "vaska":
-                    return new MaleCat("Василий");
-                case "murka":
-                    return new FemaleCat("Мурочка");
-                case "kiska":
-                    return new FemaleCat("Кисюлька");
-                default:
-                    return new Cat(key);
-            }
+            return switch (key) {
+                case "vaska" -> new MaleCat("Василий");
+                case "murka" -> new FemaleCat("Мурочка");
+                case "kiska" -> new FemaleCat("Кисюлька");
+                default -> new Cat(key);
+            };
         }
     }
 
     static class Cat {
-        private String name;
+        private final String name;
 
         protected Cat(String name) {
             this.name = name;
