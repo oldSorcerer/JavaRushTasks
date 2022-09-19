@@ -1,0 +1,12 @@
+taskKey="com.javarush.task.sql.task01.task0143"\n\ntask0143
+
+Выбрать колонки id, identifier, description (в указанном порядке) из таблицы parts.
+Результат отсортируй по полю identifier по возрастанию, по полю required по убыванию и по полю description по убыванию.
+Выбрать только первых 7 строк.
+Нужно использовать: ORDER BY, DESC, ASC, LIMIT
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
