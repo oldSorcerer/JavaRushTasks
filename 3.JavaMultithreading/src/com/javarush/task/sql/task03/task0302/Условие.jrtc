@@ -1,0 +1,10 @@
+taskKey="com.javarush.task.sql.task03.task0302"\n\ntask0302
+
+Требуется найти все записи из таблиц gyms и customers, где location равно London.
+Используй WHERE.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
