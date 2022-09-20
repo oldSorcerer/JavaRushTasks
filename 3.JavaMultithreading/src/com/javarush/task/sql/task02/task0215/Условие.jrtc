@@ -1,0 +1,15 @@
+taskKey="com.javarush.task.sql.task02.task0215"\n\ntask0215
+
+Напиши запрос, который согласно данных из поля number_of_season таблицы months вернет такую информацию:
+- &#39;winter&#39;, если значение number_of_season равно 1
+- &#39;spring&#39;, если значение number_of_season равно 2
+- &#39;summer&#39;, если значение number_of_season равно 3
+- &#39;autumn&#39;, если значение number_of_season равно 4
+- &#39;unknown&#39;, при любом другом значении number_of_season
+Используй CASE вида CASE case_value WHEN value1 THEN result1 ... FROM table
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
