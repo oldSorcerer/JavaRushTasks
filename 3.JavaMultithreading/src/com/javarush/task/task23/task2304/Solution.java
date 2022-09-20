@@ -12,8 +12,8 @@ public class Solution {
     private List<Task> tasks;
     private List<String> names;
 
-    private DbDataProvider taskDataProvider = new TaskDataProvider();
-    private DbDataProvider nameDataProvider = new NameDataProvider();
+    private final DbDataProvider taskDataProvider = new TaskDataProvider();
+    private final DbDataProvider nameDataProvider = new NameDataProvider();
 
     public void refresh() {
         Map taskCriteria = MockView.getFakeTaskCriteria();
@@ -29,6 +29,23 @@ public class Solution {
 
     class Task {
     }
+
+    private class TaskDataProvider implements DbDataProvider<Task> {
+
+        @Override
+        public void refreshAllData(Map criteria) {
+
+        }
+    }
+
+    private class NameDataProvider implements DbDataProvider<String>{
+
+        @Override
+        public void refreshAllData(Map criteria) {
+
+        }
+    }
+
 
     public static void main(String[] args) {
 
