@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.sql.task03.task0319"\n\ntask0319
+
+В этой задаче тебе потребуется:
+1. Выбрать колонки ret_name и ret_location из таблицы top_retailers, и колонки sup_name и sup_country из таблицы suppliers.
+2. Объединить таблицы оператором JOIN, придав им при этом временные названия r и s (для top_retailers и suppliers, соответственно).
+3. Добавить условие, что ret_location равно sup_country.
+Используй операторы JOIN, AS, и ON.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+

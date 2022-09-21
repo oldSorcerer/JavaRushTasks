@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task03.task0324"\n\ntask0324
+
+В этой задаче тебе потребуется:
+1. Выбрать колонку customer_id из таблицы customers и колонку order_id из таблицы orders.
+2. Объединить таблицы customers и orders оператором LEFT JOIN, заменив их имена на c и o, соответственно, используя оператор AS.
+3. Используя оператор ON, добавить условие, что колонка customer_id таблицы customers равнa колонке customer_id таблицы orders.
+4. Используя оператор WHERE, добавить условие, что shipped_date таблицы orders IS NULL.
+Используй операторы LEFT JOIN, AS, ON и IS NULL.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+

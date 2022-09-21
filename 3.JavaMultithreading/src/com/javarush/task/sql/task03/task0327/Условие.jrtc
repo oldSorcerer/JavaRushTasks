@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task03.task0327"\n\ntask0327
+
+В этой задаче тебе потребуется:
+1. Выбрать колонку city из таблицы customers и колонку store_id из таблицы orders.
+2. Объединить таблицы customers и orders оператором RIGHT JOIN.
+3. Используя оператор ON, добавить условие, что колонка customer_id таблицы customers равнa колонке customer_id таблицы orders.
+4. Используя операторы WHERE и AND, добавить условие, что order_status и total_cost таблицы orders должны быть равны &#39;SHIPPED&#39; и больше 100, соответственно.
+Используй операторы RIGHT JOIN, ON, WHERE и AND.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
