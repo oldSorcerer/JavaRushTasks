@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.sql.task03.task0304"\n\ntask0304
+
+Требуется найти колонки name и location из таблицы gyms, и колонки sex и location из таблицы customers.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
