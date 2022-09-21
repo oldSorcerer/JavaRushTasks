@@ -1,0 +1,10 @@
+taskKey="com.javarush.task.sql.task03.task0310"\n\ntask0310
+
+Требуется выбрать колонки location из таблиц gyms и customers, но заменив при этом их названия с location на city для таблицы gyms,
+и с location на address для таблицы customers.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
