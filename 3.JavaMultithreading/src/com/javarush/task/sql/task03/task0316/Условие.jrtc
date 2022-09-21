@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task03.task0316"\n\ntask0316
+
+В этой задаче тебе потребуется:
+1. Выбрать колонки name и hq_location из таблицы top_retailers, временно заменив name на ret_name, а hq_location на ret_location.
+2. Выбрать колонку name из таблицы suppliers, временно заменив имя колонки на sup_name.
+3. Временно заменить названия таблиц с top_retailers на retailer, и suppliers на supplier.
+4. Отфильтровать поиск по ритейлерам с доходом выше 100.
+Используй AS и WHERE.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
