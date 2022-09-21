@@ -1,0 +1,12 @@
+taskKey="com.javarush.task.sql.task03.task0313"\n\ntask0313
+
+Требуется выбрать колонку name из таблицы top_retailers, но временно заменив обращение к колонке на ret_name.
+Также следует выбрать колонки name и country из таблицы suppliers, временно заменив name на sup_name, а country на sup_country.
+Также следует временно заменить названия таблиц с top_retailers на retailers, и suppliers на sup.
+Используй AS.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
