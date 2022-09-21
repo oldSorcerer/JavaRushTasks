@@ -20,7 +20,6 @@ public class Solution {
 
             while (reader.ready()) {
                 strings = reader.readLine().split(" ");
-
             }
         }
         StringBuilder result = getLine(strings);
@@ -34,44 +33,55 @@ public class Solution {
 
         List<String> list = new ArrayList<>(Arrays.asList(words));
 
-        List<String> result = new ArrayList<>();
 
-
-        for (int i = 1; i < list.size(); ) {
-            String str = list.get(0);
-
-            if (!result.contains(list.get(0))) {
-                result.add(list.get(0));
+        StringBuilder result = new StringBuilder(list.get(0));
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); ) {
+                String str = list.get(i);
+                char charAt = str.charAt(str.length() - 1);
+                if (charAt == list.get(j).toLowerCase().charAt(0)) {
+                    result.append(" ").append(list.get(j));
+                    list.set(i, list.get(j));
+                    list.remove(j);
+                    j--;
+                } else {
+                    j++;
+                }
             }
-            char charAt = str.charAt(str.length() - 1);
-            if (charAt == list.get(i).toLowerCase().charAt(0)) {
-                list.set(0, list.get(i));
-                result.add(list.get(i));
-                list.remove(i);
-                i = 1;
+        }
+
+        StringBuilder builder = new StringBuilder(words[0]);
+
+        List<String> list2 = new ArrayList<>();
+
+        for (int i = 1; i < words.length; i++) {
+            list2.add(words[i]);
+        }
+
+
+        int count = 0;
+        while (!list2.isEmpty()) {
+            String firstStartChar = builder.substring(0, 1);
+            String firstEndChar = builder.substring(builder.length() - 1);
+            String secondChar = list2.get(0).substring(0, 1);
+
+            if (firstEndChar.equalsIgnoreCase(secondChar)) {
+                builder.append(" ").append(list2.get(0));
+                list2.remove(0);
+            } else if (firstStartChar.equalsIgnoreCase(secondChar)) {
+                builder.insert(0, list2.get(0) + " ");
             } else {
-                i++;
+                String str = list2.get(0);
+                list2.remove(0);
+                list2.add(str);
+                count++;
             }
-        }
 
-        String stringStart = result.get(0);
-        String stringEnd = result.get(result.size() - 1);
 
-        char charStart = stringStart.toLowerCase().charAt(0);
-        char charEnd = stringEnd.charAt(stringEnd.length() - 1);
-
-        StringBuilder builder = new StringBuilder(stringStart);
-        if (charStart == charEnd) {
-            for (int i = 1; i < result.size(); i++) {
-                builder.append(" ").append(result.get(i));
-            }
         }
 
 
-//        StringBuilder result = new StringBuilder(list.get(0));
+        return result;
 
-//                result.append(" ").append(list.get(j));
-
-        return builder;
     }
 }

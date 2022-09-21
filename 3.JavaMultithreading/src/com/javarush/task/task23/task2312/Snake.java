@@ -13,7 +13,7 @@ public class Snake {
     // Состояние - жива змея или нет.
     private boolean isAlive;
     // Список кусочков змеи.
-    private ArrayList<SnakeSection> sections;
+    private final ArrayList<SnakeSection> sections;
 
     public Snake(int x, int y) {
         sections = new ArrayList<>();
@@ -79,12 +79,10 @@ public class Snake {
 
         // Проверяем - не съела ли змея мышь.
         Mouse mouse = Room.game.getMouse();
-        if (head.getX() == mouse.getX() && head.getY() == mouse.getY()) // съела
-        {
+        if (head.getX() == mouse.getX() && head.getY() == mouse.getY()) { // съела
             sections.add(0, head);                  // Добавили новую голову
             Room.game.eatMouse();                   // Хвост не удаляем, но создаем новую мышь.
-        } else // просто движется
-        {
+        } else { // просто движется
             sections.add(0, head);                  // добавили новую голову
             sections.remove(sections.size() - 1);   // удалили последний элемент с хвоста
         }
