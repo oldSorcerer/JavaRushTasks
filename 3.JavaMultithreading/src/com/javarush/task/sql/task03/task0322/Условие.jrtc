@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task03.task0322"\n\ntask0322
+
+В этой задаче тебе потребуется:
+1. Выбрать колонки customer_id и email из таблицы customers и колонки order_id и order_status из таблицы orders.
+2. Объединить таблицы customers и orders оператором JOIN, но при этом через оператор AS временно заменить название таблицы customers на c, а таблицы orders на o.
+3. Используя оператор ON, добавить условие, что колонка customer_id таблицы customers равнa колонке customer_id таблицы orders.
+4. Используя оператор WHERE, добавить условие, что order_status таблицы orders должно содержать &#39;PAID&#39; или (используй OR) &#39;PROCESSING&#39;.
+Используй операторы JOIN, ON, AS, WHERE и OR.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
