@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.sql.task06.task0626"\n\ntask0626
+
+Напиши запрос, который создаст индексы в таблице employee: position_index по колонке position и salary_index по колонке salary.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
