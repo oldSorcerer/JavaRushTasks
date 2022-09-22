@@ -1,0 +1,10 @@
+taskKey="com.javarush.task.sql.task03.task0336"\n\ntask0336
+
+1. Выбрать колонку year_born из таблицы authors, переименовав её в author_country.
+2. Используя оператор WHERE, добавить условие, что year_born таблицы books должно быть меньше или равно date_released из таблицы books.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
