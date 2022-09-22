@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task05.task0508"\n\ntask0508
+
+Внеси изменения в таблицу author:
+- у автора с полным именем &#39;C. S. Lewis&#39; измени полное имя на &#39;Clive Staples Lewis&#39;;
+- у автора с полным именем &#39;J. R. R. Tolkien&#39; измени полное имя на &#39;John Ronald Reuel Tolkien&#39;;
+- у автора с полным именем &#39;Friedrich Nietzsche&#39; измени полное имя на &#39;Friedrich Wilhelm Nietzsche&#39;;
+- у автора с полным именем &#39;Stephen King&#39; измени полное имя на &#39;Stephen Edwin King&#39;;
+- у автора с полным именем &#39;Aldous Huxley&#39; измени полное имя на &#39;Aldous Leonard Huxley&#39;.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
