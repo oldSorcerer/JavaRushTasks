@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.sql.task05.task0501"\n\ntask0501
+
+Добавь в таблицу publisher три издателя:
+id 	name
+1 	Азбука
+2 	Фолио
+3 	Wordsworth Editions
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
