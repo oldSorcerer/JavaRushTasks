@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.sql.task03.task0334"\n\ntask0334
+
+1. Выбрать колонки last_name и country из таблицы authors, переименовав их в author и author_country, соответственно.
+Также, выбрать колонку genre из таблицы books, переименовав её в book_genre.
+2. Объединить таблицы authors и books оператором LEFT JOIN, переименовав их в author и book, соответственно.
+3. Используя оператор ON, добавить условие, что колонка id таблицы authors равнa колонке author_id таблицы books.
+4. Используя оператор WHERE, добавить условие, что genre таблицы books должно быть равна &#39;fantasy&#39;.
+5. Используя оператор GROUP BY, сгруппируй результат по колонкам last_name и country таблицы authors и колонке genre таблицы books.
+6. Используя операторы ORDER BY и ASC, отсортируй результат по колонке country таблицы authors.
+7. Используя оператор LIMIT, добавить ограничение количество строк в размере 5.
+Используй операторы LEFT JOIN, AS, ON, WHERE, GROUP BY, ORDER BY, ASC и LIMIT.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
