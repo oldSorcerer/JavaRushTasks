@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.sql.task07.task0705"\n\ntask0705
+
+В методе main создай подключение к БД с помощью метода getConnection(String, String, String) класса DriverManager.
+Используй URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль.
+Получи Statement используя метод createStatement без параметров.
+
+Выведи в консоль минимальное значение колонки age таблицы employee.
+Тип колонки - INT.
+Закрой Statement и Connection.
+
+
+Требования:
+1.	В методе main должно создаваться подключение к БД согласно условию.
+2.	В методе main у подключения должен вызываться метод createStatement без параметров.
+3.	В консоль должны быть выведено минимальное значение колонки age.
+4.	Statement и Connection должны быть закрыты.
+
+
