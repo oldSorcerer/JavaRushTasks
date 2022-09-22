@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.sql.task06.task0628"\n\ntask0628
+
+Напиши запрос, который удалит индексы name_index и salary_index из таблицы employee. Используй ALTER TABLE.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
