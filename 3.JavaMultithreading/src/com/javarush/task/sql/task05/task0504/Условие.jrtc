@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.sql.task05.task0504"\n\ntask0504
+
+Добавь в таблицу author восемь авторов:
+first_name 	last_name 	full_name
+Joanne 		Rowling 	J. K. Rowling
+Stephen 	King 		Stephen King
+Clive 		Lewis 		C. S. Lewis
+Hajime 		Isayama 	Hajime Isayama
+Edgar 		Burroughs 	Edgar Rice Burroughs
+Lewis 		Carroll 	Lewis Carroll
+Astrid 		Lindgren 	Astrid Lindgren
+Richard 	Scarry 		Richard Scarry
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
