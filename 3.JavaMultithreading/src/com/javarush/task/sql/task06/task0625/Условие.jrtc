@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.sql.task06.task0625"\n\ntask0625
+
+Напиши запрос, который создаст индекс population_index в таблице cities по колонке population.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
