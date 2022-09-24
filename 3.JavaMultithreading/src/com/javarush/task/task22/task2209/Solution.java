@@ -1,9 +1,6 @@
 package com.javarush.task.task22.task2209;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 /* 
@@ -12,7 +9,6 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-
         String[] strings = null;
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
              FileInputStream inputStream = new FileInputStream(console.readLine());
@@ -23,65 +19,55 @@ public class Solution {
             }
         }
         StringBuilder result = getLine(strings);
-        System.out.println(result.toString());
+        System.out.println(result);
     }
 
     public static StringBuilder getLine(String... words) {
         if (words == null || words.length == 0) {
-            return null;
+            return new StringBuilder();
         }
 
-        List<String> list = new ArrayList<>(Arrays.asList(words));
+        StringBuilder builder = new StringBuilder();
 
+        List<StringBuilder> builderList = new ArrayList<>();
 
-        StringBuilder result = new StringBuilder(list.get(0));
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = i + 1; j < list.size(); ) {
-                String str = list.get(i);
-                char charAt = str.charAt(str.length() - 1);
-                if (charAt == list.get(j).toLowerCase().charAt(0)) {
-                    result.append(" ").append(list.get(j));
-                    list.set(i, list.get(j));
-                    list.remove(j);
-                    j--;
+        for (String word : words) {
+
+            builder.append(word);
+
+            List<String> list = new ArrayList<>(Arrays.asList(words));
+            list.remove(word);
+
+            int count = 0;
+            while (!list.isEmpty()) {
+                String firstStartChar = builder.substring(0, 1);
+                String firstEndChar = builder.substring(builder.length() - 1);
+
+                String secondStartChar = list.get(0).substring(0, 1);
+                String secondEndChar = list.get(0).substring(list.get(0).length() - 1);
+
+                if (firstEndChar.equalsIgnoreCase(secondStartChar)) {
+                    builder.append(" ").append(list.get(0));
+                    list.remove(0);
+                    count--;
+                } else if (firstStartChar.equalsIgnoreCase(secondEndChar)) {
+                    builder.insert(0, list.get(0) + " ");
+                    list.remove(0);
+                    count--;
                 } else {
-                    j++;
+                    String str = list.get(0);
+                    list.remove(0);
+                    list.add(str);
+                    count++;
+                    if (count > Math.pow(list.size() + 1, 2)) {
+                        break;
+                    }
                 }
             }
+            builderList.add(builder);
+            builder = new StringBuilder();
         }
-
-        StringBuilder builder = new StringBuilder(words[0]);
-
-        List<String> list2 = new ArrayList<>();
-
-        for (int i = 1; i < words.length; i++) {
-            list2.add(words[i]);
-        }
-
-
-        int count = 0;
-        while (!list2.isEmpty()) {
-            String firstStartChar = builder.substring(0, 1);
-            String firstEndChar = builder.substring(builder.length() - 1);
-            String secondChar = list2.get(0).substring(0, 1);
-
-            if (firstEndChar.equalsIgnoreCase(secondChar)) {
-                builder.append(" ").append(list2.get(0));
-                list2.remove(0);
-            } else if (firstStartChar.equalsIgnoreCase(secondChar)) {
-                builder.insert(0, list2.get(0) + " ");
-            } else {
-                String str = list2.get(0);
-                list2.remove(0);
-                list2.add(str);
-                count++;
-            }
-
-
-        }
-
-
-        return result;
-
+        return builderList.stream().max(Comparator.comparingInt(StringBuilder::length)).get();
     }
 }
+//Якутск Дербент Арзамас Рог Киев Кувшиново Капустин-Яр Стокгольм Флоренция Глен-Хоп Тобольск Нью-Йорк Афины Муром Осташков Прага Кострома Вена Амстердам Мельбурн Волгоград Минск
