@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.task26.task2609"\n\nРаспределение элементов по корзинам с собственным локом
+
+В синхронизированных блоках используй нужный лок.
+
+
+Требования:
+1.	Класс Solution должен содержать private static final поле int NUMBER_LOCKS.
+2.	Класс Solution должен содержать private final поле Node[] buckets.
+3.	Класс Solution должен содержать private final поле Object[] locks.
+4.	Все методы класса Solution не должны быть synchronized.
+5.	В методе get() класса Solution в synchronized блоке используй lock из массива locks в зависимости от хэша объекта и количества лок объектов.
+6.	В методе clear() класса Solution в synchronized блоке используй lock из массива locks в зависимости от индекса элемента и количества лок объектов.
+
+
