@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.task26.task2611"\n\nМир не меняется, меняемся мы
+
+Разберись с ConcurrentHashMap.
+В отдельном файле создай класс Producer, который будет:
+1. каждые полсекунды добавлять в ConcurrentHashMap ключ и значение, где ключ - счетчик начиная с 1, значение - фраза: &quot;Some text for i&quot; , пример &quot;Some text for 1&quot;.
+2. при возникновении исключения выводить в консоль: &quot;[THREAD_NAME] thread was terminated&quot;, пример &quot;[thread-1] thread was terminated&quot;.
+
+
+Требования:
+1.	Класс Producer должен быть создан в отдельном файле.
+2.	Класс Producer должен реализовывать интерфейс Runnable.
+3.	Класс Producer должен содержать приватное поле ConcurrentHashMap&lt;String, String&gt; map.
+4.	Класс Producer должен содержать конструктор с одним параметром, инициализирующий поле map.
+5.	Метод run() класса Producer должен каждые полсекунды добавлять в ConcurrentHashMap ключ и значение согласно заданию.
+6.	Метод run() класса Producer должен при возникновении исключения выводить в консоль &quot;[THREAD_NAME] thread was terminated&quot;.
+
+
