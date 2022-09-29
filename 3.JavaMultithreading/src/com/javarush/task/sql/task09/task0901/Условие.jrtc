@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task09.task0901"\n\ntask0901
+
+Добавить зависимость в pom-файл на mysql-connector-java и hibernate-core.
+Необходимо указать groupId, artifactId и version для каждой из этих зависимостей.
+Используй версии:
+mysql-connector-java: 8.0.30
+hibernate-core-jakarta: 5.6.11.Final
+
+
+Требования:
+1.	В pom файле должна присутствовать зависимость mysql-connector-java.
+2.	В pom файле должна присутствовать зависимость hibernate-core-jakarta.
+
+
