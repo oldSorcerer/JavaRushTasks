@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.task30.task3002"\n\nОсваиваем методы класса Integer
+
+Используя метод Integer.parseInt(String, int) реализуй логику метода convertToDecimalSystem,
+который должен переводить переданную строку в десятичное число и возвращать его в виде строки.
+
+
+Требования:
+1.	В классе Solution должен существовать метод convertToDecimalSystem(String), возвращающий String.
+2.	Метод convertToDecimalSystem(String) должен иметь модификаторы доступа: public, static.
+3.	Метод convertToDecimalSystem(String) должен переводить переданную строку в десятичное число и возвращать его в виде строки.
+4.	Метод convertToDecimalSystem(String) должен вызывать метод Integer.parseInt(String, int).
+
+
