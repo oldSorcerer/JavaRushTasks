@@ -12,11 +12,11 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
 
-        Producer producer = new Producer(map);
+//        Producer producer = new Producer(map);
         Consumer consumer = new Consumer(map);
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.submit(producer);
+//        executorService.submit(producer);
         executorService.submit(consumer);
 
         Thread.sleep(2000);
