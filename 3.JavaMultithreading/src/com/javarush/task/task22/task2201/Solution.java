@@ -29,22 +29,14 @@ public class Solution {
     }
 
     public synchronized String getPartOfString(String string, String threadName) {
-
-        if (threadName.equals(FIRST_THREAD_NAME)) {
-            throw new StringForFirstThreadTooShortException();
-        } else if(threadName.equals(SECOND_THREAD_NAME)) {
-            throw new StringForSecondThreadTooShortException();
-        } else {
-//            throw new RuntimeException();
+        try {
+            return string.substring(string.indexOf("\t") + 1, string.lastIndexOf("\t"));
+        } catch (Exception e) {
+            if (threadName.equals(FIRST_THREAD_NAME)) {
+                throw new StringForFirstThreadTooShortException(e);
+            } else if (threadName.equals(SECOND_THREAD_NAME)) {
+                throw  new StringForSecondThreadTooShortException(e);
+            } else throw new RuntimeException(e);
         }
-
-        String[] strings = threadName.split(string);
-        StringBuilder builder = new StringBuilder();
-
-        for (int i = 1; i < strings.length; i++) {
-            builder.append(strings[i]);
-        }
-
-        return builder.toString();
     }
 }
