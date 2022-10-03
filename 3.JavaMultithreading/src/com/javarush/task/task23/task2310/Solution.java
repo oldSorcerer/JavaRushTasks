@@ -5,7 +5,7 @@ package com.javarush.task.task23.task2310;
 */
 
 public class Solution {
-    private String name;
+    private final String name;
 
     Solution(String name) {
         this.name = name;
