@@ -1,5 +1,6 @@
 package com.javarush.task.task24.task2413;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Arkanoid {
@@ -10,6 +11,8 @@ public class Arkanoid {
     private Stand stand;
     private List<Brick> bricks;
 
+    private boolean isGameOver;
+
     public static Arkanoid game;
 
     public int getWidth() {
@@ -19,6 +22,45 @@ public class Arkanoid {
     public Arkanoid(int width, int height) {
         this.width = width;
         this.height = height;
+    }
+
+    public void run() {
+
+    }
+
+    public void move() {
+        stand.move();
+        ball.move();
+    }
+
+    public void draw(Canvas canvas) {
+        stand.draw(canvas);
+        ball.draw(canvas);
+        bricks.forEach(brick -> brick.draw(canvas));
+    }
+
+    public void checkBricksBump() {
+        List<Brick> copyBrick = new ArrayList<>(bricks);
+        for (Brick brick : copyBrick) {
+            if (brick.intersects(ball)) {
+                double angle = Math.random() * 360;
+                ball.setDirection(angle);
+                bricks.remove(brick);
+            }
+        }
+    }
+
+    public void checkStandBump() {
+        if (ball.intersects(stand)) {
+            double angle = 90 + 20 * (Math.random() - 0.5);
+            ball.setDirection(angle);
+        }
+    }
+
+    public void checkEndGame() {
+        if (ball.getY() > height) {
+            isGameOver = true;
+        }
     }
 
     public void setWidth(int width) {
@@ -57,20 +99,6 @@ public class Arkanoid {
         this.bricks = bricks;
     }
 
-    public void run() {
-
-    }
-
-    public void move() {
-        stand.move();
-        ball.move();
-    }
-
-    public void draw(Canvas canvas) {
-        stand.draw(canvas);
-        ball.draw(canvas);
-        bricks.forEach(brick -> brick.draw(canvas));
-    }
 
     public static void main(String[] args) {
 
