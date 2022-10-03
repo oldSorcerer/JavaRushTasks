@@ -1,5 +1,7 @@
 package com.javarush.task.task24.task2413;
 
+import java.util.Arrays;
+
 public class Canvas {
     private int width;
     private int height;
@@ -18,7 +20,7 @@ public class Canvas {
     }
 
     public void drawMatrix(double x, double y, int[][] matrix, char c) {
-
+        
         for (int i = 0; i < matrix.length ; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] != 0) {
@@ -28,6 +30,18 @@ public class Canvas {
         }
     }
 
+    public void clear() {
+        matrix = new char[height + 2][width + 2];
+    }
+
+    public void print() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
 
     public int getWidth() {
         return width;
