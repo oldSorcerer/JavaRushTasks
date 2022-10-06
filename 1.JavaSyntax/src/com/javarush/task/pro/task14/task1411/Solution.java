@@ -26,6 +26,5 @@ public class Solution {
                 System.out.println(FAILED_TO_WRITE);
             }
         }
-
     }
 }
