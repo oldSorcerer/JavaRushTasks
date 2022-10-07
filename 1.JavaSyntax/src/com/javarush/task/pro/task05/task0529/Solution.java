@@ -17,8 +17,8 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        for (int i = 0; i < field.length; i++) {
-            Arrays.fill(field[i], empty);
+        for (String[] value : field) {
+            Arrays.fill(value, empty);
         }
 
         for (int i = 0; i < field.length ; i++) {
