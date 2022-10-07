@@ -11,24 +11,24 @@ import java.io.IOException;
 public class Solution {
     public static void main(String[] args) throws IOException {
 
-        StringBuilder stringBuilder = new StringBuilder();
-        int countSpace = 0;
+        StringBuilder builder = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
             while (reader.ready()) {
                 String string = reader.readLine();
-                stringBuilder.append(string);
+                builder.append(string);
             }
-            String bigString = stringBuilder.toString();
-            int countAll = bigString.length();
-            for (char aChar : bigString.toCharArray()) {
-                if (Character.isSpaceChar(aChar)) {
-                    countSpace++;
-                }
+        }
+
+        int countAll = builder.length();
+        int countSpace = 0;
+        for (char aChar : builder.toString().toCharArray()) {
+            if (Character.isSpaceChar(aChar)) {
+                countSpace++;
             }
-            if (countAll != 0) {
-                System.out.printf("%.2f", (double) countSpace / countAll * 100);
-            }
+        }
+        if (countAll != 0) {
+            System.out.printf("%.2f", (double) countSpace / countAll * 100);
         }
     }
 }
