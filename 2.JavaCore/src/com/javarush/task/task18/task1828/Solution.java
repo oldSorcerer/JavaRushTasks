@@ -24,20 +24,20 @@ public class Solution {
                         map.put(index, substring);
                     }
                 }
-                if (args.length != 0) {
-                    if (args[0].equals("-u")) {
-                        String id = args[1].trim();
-                        for (Map.Entry<String, String> pair : map.entrySet()) {
-                            if (id.equals(pair.getKey())) {
-                                map.put(id, checkLength(args[2], 30) +
-                                        checkLength(args[3], 8) +
-                                        checkLength(args[4], 4));
-                            }
+            }
+            if (args.length != 0) {
+                if (args[0].equals("-u")) {
+                    String id = args[1].trim();
+                    for (Map.Entry<String, String> pair : map.entrySet()) {
+                        if (id.equals(pair.getKey())) {
+                            map.put(id, checkLength(args[2], 30) +
+                                    checkLength(args[3], 8) +
+                                    checkLength(args[4], 4));
                         }
-                    } else if (args[0].equals("-d")) {
-                        String id = args[1].trim();
-                        map.entrySet().removeIf(pair -> pair.getKey().equals(id));
                     }
+                } else if (args[0].equals("-d")) {
+                    String id = args[1].trim();
+                    map.entrySet().removeIf(pair -> pair.getKey().equals(id));
                 }
             }
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
