@@ -16,7 +16,7 @@ public class Solution {
      fifth
      */
     public static void main(String[] args) throws InterruptedException {
-        CustomThreadManipulator manipulator = new TaskManipulator();
+        /*CustomThreadManipulator manipulator = new TaskManipulator();
 
         manipulator.start("first");
         Thread.sleep(150);
@@ -35,6 +35,6 @@ public class Solution {
 
         manipulator.start("fifth");
         Thread.sleep(1);
-        manipulator.stop();
+        manipulator.stop();*/
     }
 }
