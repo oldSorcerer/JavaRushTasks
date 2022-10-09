@@ -5,7 +5,7 @@ package com.javarush.task.task24.task2407;
 который не реализован в текущем классе
  */
 public class Cat implements Pet {
-    private String name;
+    private final String name;
 
     public Cat(String name) {
         this.name = name;
@@ -30,6 +30,15 @@ public class Cat implements Pet {
      * @return экземпляр класса CatPet
      */
     public Sayable toSayable(final int i) {
-        return null;
+        class CatPet implements Sayable {
+
+            @Override
+            public String say() {
+                return i < 1 ?
+                        name + " спит." :
+                        name + " говорит м" + new String(new char[i]).replace("\0", "я") + "у!";
+            }
+        }
+        return new CatPet();
     }
 }
