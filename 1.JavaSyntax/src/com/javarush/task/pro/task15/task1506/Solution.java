@@ -26,3 +26,6 @@ public class Solution {
     }
 }
 
+// Files.readAllLines(Path.of(new Scanner(System.in).nextLine()))
+//                .stream().map(str -> str.replaceAll("[.,\\s]", ""))
+//                .forEach(System.out::println);
