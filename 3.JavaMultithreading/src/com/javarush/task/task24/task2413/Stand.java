@@ -5,7 +5,7 @@ package com.javarush.task.task24.task2413;
  */
 public class Stand extends BaseObject {
     //картинка для отрисовки
-    private static int[][] matrix = {
+    private static final int[][] matrix = {
             {1, 1, 1, 1, 1},
             {1, 0, 0, 0, 1},
             {0, 0, 0, 0, 0},
@@ -14,7 +14,7 @@ public class Stand extends BaseObject {
     };
 
     //скорость
-    private double speed = 1;
+    private final double speed = 1;
     //направление (-1 влево, +1 вправо)
     private double direction = 0;
 
@@ -26,8 +26,7 @@ public class Stand extends BaseObject {
      * Метод передвигает подставку в соответствии с текущим значением direction.
      */
     void move() {
-        double dx = speed * direction;
-        x = x + dx;
+        x = x + speed * direction;
 
         checkBorders(radius, Arkanoid.game.getWidth() - radius + 1, 1, Arkanoid.game.getHeight() + 1);
     }

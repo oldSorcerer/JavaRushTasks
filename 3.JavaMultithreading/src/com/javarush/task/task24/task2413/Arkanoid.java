@@ -12,7 +12,7 @@ public class Arkanoid {
     private int height;
 
     // список кирпичей
-    private ArrayList<Brick> bricks = new ArrayList<Brick>();
+    private final ArrayList<Brick> bricks = new ArrayList<>();
     // шарик
     private Ball ball;
     // подставка
@@ -53,9 +53,7 @@ public class Arkanoid {
         drawBorders(canvas);
 
         // draw bricks
-        for (Brick brick : bricks) {
-            brick.draw(canvas);
-        }
+        bricks.forEach(brick -> brick.draw(canvas));
 
         // draw ball
         ball.draw(canvas);
@@ -152,7 +150,7 @@ public class Arkanoid {
      * Если столкновение было - шарик отлетает в случайном направлении 0..360 градусов
      */
     void checkBricksBump() {
-        for (Brick brick : new ArrayList<Brick>(bricks)) {
+        for (Brick brick : new ArrayList<>(bricks)) {
             if (ball.intersects(brick)) {
                 double angle = Math.random() * 360;
                 ball.setDirection(angle);
@@ -168,8 +166,7 @@ public class Arkanoid {
      */
     void checkStandBump() {
         if (ball.intersects(stand)) {
-            double angle = 90 + 20 * (Math.random() - 0.5);
-            ball.setDirection(angle);
+            ball.setDirection(90 + 20 * (Math.random() - 0.5));
         }
     }
 

@@ -19,8 +19,8 @@ public class Ball extends BaseObject {
     public Ball(double x, double y, double speed, double direction) {
         super(x, y, 1);
 
-        this.direction = direction;
         this.speed = speed;
+        this.direction = direction;
 
         this.isFrozen = true;
     }
@@ -62,7 +62,7 @@ public class Ball extends BaseObject {
      * Рисуем себя на "канвасе".
      */
     @Override
-    void draw(Canvas canvas) {
+    public void draw(Canvas canvas) {
         canvas.setPoint(x, y, 'O');
     }
 
