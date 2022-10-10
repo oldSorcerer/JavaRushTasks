@@ -7,13 +7,24 @@ Black box
 public class Solution implements Action {
     public static int countActionObjects;
 
-    private int param;
+    private final int param;
 
-    private Action solutionAction = new Action() {
-        //напишите тут ваш код
+    private final Action solutionAction = new Action() {
 
         public void someAction() {
-            //напишите тут ваш код
+
+            if (param > 0) {
+                FirstClass firstClass = new FirstClass() {
+                    @Override
+                    public Action getDependantAction() {
+//                        super.someAction();
+                        return this;
+                    }
+                };
+            } else {
+                SecondClass secondClass = new SecondClass();
+                secondClass.someAction();
+            }
         }
     };
 
