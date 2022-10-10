@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.task27.task2701"\n\nИзбавляемся от меток
+
+Избавьтесь от меток в методе isSubstringPresent сохранив логику.
+Метод возвращает true, в случае если строка substring является подстрокой строки string, иначе false.
+В коде должны отсутствовать операторы break и continue.
+
+
+Требования:
+1.	Метод isSubstringPresent должен возвращать true, если строка substring является подстрокой строки string.
+2.	Метод isSubstringPresent должен возвращать false, если строка substring НЕ является подстрокой строки string.
+3.	В методе isSubstringPresent должны отсутствовать операторы break.
+4.	В методе isSubstringPresent должны отсутствовать операторы continue.
+
+
