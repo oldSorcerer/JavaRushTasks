@@ -1,0 +1,16 @@
+taskKey="com.javarush.task.task30.task3004"\n\nFork/Join
+
+1. Создай класс BinaryRepresentationTask. Для этого в IntelliJ IDEA на красном имени класса нажми Alt+Enter -&gt; Create Class ...
+(класс должен наследоваться от RecursiveTask&lt;String&gt;). Параметр конструктора - int x.
+2. Реализуй логику метода compute - число должно переводиться в двоичное представление.
+3. Используй методы fork и join.
+4. Пример функциональной реализации - метод binaryRepresentationMethod.
+
+
+Требования:
+1.	Создай класс BinaryRepresentationTask.
+2.	В классе BinaryRepresentationTask должен быть переопределен метод compute().
+3.	В классе BinaryRepresentationTask в методе compute() используй методы fork() и join().
+4.	Метод compute() должен правильно переводить число в двоичную систему счисления.
+
+
