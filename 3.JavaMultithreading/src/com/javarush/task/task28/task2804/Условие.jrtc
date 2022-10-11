@@ -1,0 +1,17 @@
+taskKey="com.javarush.task.task28.task2804"\n\nMagic class
+
+В пакете java.util.concurrent найди такую реализацию List, у которой:
+1. Итератор не содержит какие-либо данные, вставленные в список после создания итератора;
+2. Внутри данные хранятся в виде массива;
+3. Итератор гарантированно не бросает ConcurrentModificationException;
+4. Допускаются все элементы включая null;
+5. Исправь строку List&lt;String&gt; list = null ... в методе main.
+
+
+Требования:
+1.	Класс Solution изменять нельзя.
+2.	Реализацию методов startUpdatingThread и stopUpdatingThread менять нельзя.
+3.	Реализацию метода copyOnWriteSolution менять нельзя.
+4.	Добавь в main создание нужного экземпляра List согласно заданию.
+
+
