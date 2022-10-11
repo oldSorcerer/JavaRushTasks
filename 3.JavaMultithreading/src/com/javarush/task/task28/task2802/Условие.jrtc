@@ -1,0 +1,29 @@
+taskKey="com.javarush.task.task28.task2802"\n\nПишем свою ThreadFactory
+
+В классе Solution создай публичный статический класс AmigoThreadFactory, реализующий интерфейс ThreadFactory.
+1. Реализация интерфейсного метода - создай и верни трэд, который должен:
+1.1. не быть демоном,
+1.2. иметь нормальный приоритет,
+1.3. имя трэда должно иметь шаблон &quot;GN-pool-A-thread-B&quot;, где
+GN - это имя группы,
+A - это номер фабрики инкрементируется в пределах класса начиная с 1, используй AtomicInteger,
+B - номер треда инкрементируется в пределах конкретной фабрики начиная с 1, используй AtomicInteger.
+2. Каждая фабрика должна иметь ту группу тредов (ThreadGroup), в которой она была создана.
+3. Методы main и emulateThreadFactory не участвуют в тестировании.
+Пример вывода:
+secondGroup-pool-2-thread-1
+firstGroup-pool-1-thread-1
+firstGroup-pool-1-thread-3
+secondGroup-pool-2-thread-3
+firstGroup-pool-1-thread-2
+secondGroup-pool-2-thread-2
+
+
+Требования:
+1.	В классе Solution нужно создать класс public static AmigoThreadFactory, который реализует интерфейс ThreadFactory.
+2.	Фабрика AmigoThreadFactory должна создавать трэды, которые не являются демоном.
+3.	Фабрика AmigoThreadFactory должна создавать трэды, которые имеют нормальный приоритет.
+4.	Фабрика AmigoThreadFactory должна создавать имена для трэдов по шаблону &quot;GN-pool-A-thread-B&quot;.
+5.	Каждая фабрика должна производить трэды с группой (ThreadGroup), в которой она была создана.
+
+
