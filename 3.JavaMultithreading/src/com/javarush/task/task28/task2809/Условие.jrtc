@@ -1,0 +1,21 @@
+taskKey="com.javarush.task.task28.task2809"\n\nPlants vs Zombies
+
+1. Почитай про java.util.concurrent.Phaser.
+2. Расставь методы в нужных местах:
+-arriveAndDeregister() - начинает запускать методы run у тасок,
+-arriveAndAwaitAdvance() - ждет, когда все трэды будут созданы.
+
+Пример вывода см. в output.txt.
+Логика:
+Сначала все персонажи присоединяются к игре.
+После того, как все персонажи присоединятся к игре и готовы играть, выводится фраза &quot;Игра началась!&quot;.
+После этого персонажи вступают в игру, после чего умирают.
+
+
+Требования:
+1.	Класс Character менять не нужно.
+2.	Классы Plant и Zombie менять не нужно.
+3.	В классе Solution вызови метод phaser.arriveAndDeregister в правильном месте.
+4.	В классе Solution вызови метод phaser.arriveAndAwaitAdvance в правильном месте.
+
+
