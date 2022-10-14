@@ -59,8 +59,6 @@ public class Solution {
     public static boolean isAmigoWin() {
         return diabloLives <= 0;
     }
-
-
     public static void amigoLostLife() {
         amigoLives = amigoLives - 1;
     }
@@ -73,7 +71,6 @@ public class Solution {
     public static int diabloDefends() {
         return getRandomNumber(3);
     }
-
     public static int getRandomNumber(int range) {
         return (int) (Math.random() * range) + 1;
     }
