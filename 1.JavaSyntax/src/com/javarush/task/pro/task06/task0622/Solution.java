@@ -59,10 +59,10 @@ public class Solution {
         return diabloLives <= 0;
     }
     public static void amigoLostLife() {
-        amigoLives = amigoLives - 1;
+        amigoLives--;
     }
     public static void diabloLostLife() {
-        diabloLives = diabloLives - 3;
+        diabloLives -= 3;
     }
     public static int amigoAttacks() {
         return getRandomNumber(3);
