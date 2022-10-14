@@ -22,8 +22,5 @@ public class Solution {
             System.out.println(TRIANGLE_EXISTS);
         else
             System.out.println(TRIANGLE_NOT_EXISTS);
-
-
-
     }
 }
