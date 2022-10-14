@@ -34,7 +34,7 @@ public class Solution {
     public static void findDiablo() {
         System.out.println(getFirstPositionPhrase);
         Scanner scanner = new Scanner(System.in);
-        for (; true;) {
+        while (true) {
             int number = scanner.nextInt();
             if (diabloPosition == number) {
                 System.out.println(findDiabloPhrase);
