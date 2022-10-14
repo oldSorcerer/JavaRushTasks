@@ -43,7 +43,6 @@ public class Solution {
                 System.out.println(getPositionPhrase);
             }
         }
-
     }
     public static void battle() {
         while (amigoLives > 0 && diabloLives > 0) {
