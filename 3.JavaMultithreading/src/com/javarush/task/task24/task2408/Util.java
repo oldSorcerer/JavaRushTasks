@@ -6,8 +6,8 @@ import java.util.List;
 public class Util {
     //Util отлично работает с классами Dog, Mouse.
     public static void printDialog(List<Sayable> pets) {
-        for (int i = 0; i < pets.size(); i++) {
-            System.out.println(pets.get(i).say());
+        for (Sayable pet : pets) {
+            System.out.println(pet.say());
         }
     }
 
