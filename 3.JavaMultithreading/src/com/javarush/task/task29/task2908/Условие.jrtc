@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.task29.task2908"\n\nКеширование
+
+В CacheComputeManager реализуй логику пустого метода.
+Догадайся, что он должен делать по названию метода и по логике класса.
+
+
+Требования:
+1.	Метод createFutureTaskForNewArgumentThatHasToComputeValue() должен создавать и возвращать объект типа FutureTask.
+2.	В методе createFutureTaskForNewArgumentThatHasToComputeValue() должен создаваться объект анонимного класса, реализующего  интерфейс Callable.
+3.	Внутри метода createFutureTaskForNewArgumentThatHasToComputeValue() должна встречаться строка &quot;return computable.compute(arg);&quot;.
+4.	Программа должна выводить текст указанный в комментариях в классе Solution.
+
+
