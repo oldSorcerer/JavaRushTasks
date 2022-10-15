@@ -12,7 +12,7 @@ public class Solution {
     public static void main(String[] args) throws IOException {
 
         try (FileInputStream inputStream = new FileInputStream(args[1]);
-        FileOutputStream outputStream = new FileOutputStream(args[2])) {
+             FileOutputStream outputStream = new FileOutputStream(args[2])) {
             if (args[0].equalsIgnoreCase("-e")) {
                 while (inputStream.available() > 0) {
                     int read = inputStream.read();
