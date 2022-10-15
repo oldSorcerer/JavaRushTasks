@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.task29.task2906"\n\nОсобенности автобоксинга - 2
+
+Исправь ошибку реализации, приводящую к NullPointerException, в методе getValue().
+Читай доп. статью про особенности автобоксинга.
+
+
+Требования:
+1.	Реализация метод getValue() должна использовать тернарный оператор.
+2.	Метод getValue() не должен кидать исключений при любых значениях параметров first и second.
+3.	Метод getValue() должен вернуть 100, если в него передать Boolean.TRUE и Boolean.TRUE.
+4.	Метод getValue() должен вернуть 200, если в него передать Boolean.FALSE и Boolean.TRUE.
+5.	Метод getValue() должен вернуть null, если в него передать Boolean.FALSE и Boolean.FALSE.
+
+
