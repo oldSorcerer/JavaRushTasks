@@ -1,5 +1,6 @@
 package com.javarush.task.task24.task2408;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /*
@@ -8,7 +9,7 @@ import java.util.Date;
 Так намного лучше, чем Copy+Paste!
  */
 public class Dog implements Pet {
-    private String name;
+    private final String name;
 
     public Dog(String name) {
         this.name = name;
@@ -44,6 +45,19 @@ public class Dog implements Pet {
      * @return экземпляр класса DogPet
      */
     public Sayable toSayable(final int i) {
-        return null;
+        class DogPet extends SuperDog implements Sayable  {
+
+            private String getName() {
+                return getSuperQuotes() + name + getSuperQuotes();
+            }
+
+            @Override
+            public String say() {
+                return i < 1 ?
+                        getName() + " спит." :
+                        getName() + " лает г" + new String(new char[i]).replace("\0", "а") + "в! " + formatter.format(new Date());
+            } //"а".repeat(i)
+        }
+        return new DogPet();
     }
 }
