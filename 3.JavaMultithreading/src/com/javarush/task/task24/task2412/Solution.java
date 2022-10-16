@@ -4,6 +4,7 @@ import java.text.ChoiceFormat;
 import java.text.Format;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.*;
 
 /* 
@@ -42,14 +43,28 @@ public class Solution {
     }
 
     public static void sort(List<Stock> list) {
-        list.sort(Comparator.comparing(stock -> stock.get("name").toString()));
 
-        Comparator<Stock> comparator = new Comparator<Stock>() {
-            @Override
-            public int compare(Stock o1, Stock o2) {
-                return 0;
-            }
-        };
+        list.sort((a, b) -> {
+            double chandge1 = !a.containsKey("change") ?
+                    (double)(a.get("last")) - (double)(a.get("open")) :
+                    (double)(a.get("change"));
+
+            double chandge2 = !b.containsKey("change") ?
+                    (double)(b.get("last")) - (double)(b.get("open")) :
+                    (double)(b.get("change"));
+
+            return Double.compare(chandge2, chandge1);
+        });
+
+        list.sort((a, b) -> {
+            Date date1 = (Date) a.get("date");
+            Date date2 = (Date) b.get("date");
+            LocalDate localDate1 = LocalDate.of(date1.getYear() + 1900, date1.getMonth() + 1, date1.getDay() == 0 ? 7 : date1.getDay());
+            LocalDate localDate2 = LocalDate.of(date2.getYear() + 1900, date2.getMonth() + 1, date2.getDay() == 0 ? 7 : date2.getDay());
+            return localDate2.compareTo(localDate1);
+        });
+
+        list.sort(Comparator.comparing(stock -> stock.get("name").toString()));
     }
 
     public static class Stock extends HashMap<String, Object> {
