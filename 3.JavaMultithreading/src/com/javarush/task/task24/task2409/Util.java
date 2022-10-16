@@ -18,10 +18,10 @@ public class Util {
 
         abstract class AbstractJeans implements Jeans {
 
-            final int id;
-            final int length;
-            final int size;
-            final double price;
+            private final int id;
+            private final int length;
+            private final int size;
+            private final double price;
 
             public AbstractJeans(int id, int length, int size, double price) {
                 this.id = id;
