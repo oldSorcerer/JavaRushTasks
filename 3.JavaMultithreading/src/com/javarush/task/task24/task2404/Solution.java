@@ -38,7 +38,6 @@ public class Solution {
                     return Math.abs(point1.getY() - point2.getY());
                 }
             };
-
         }
 
         public HasWidth castToHasWidth() {
@@ -46,7 +45,6 @@ public class Solution {
                 @Override
                 public double getWidth() {
                     return Math.abs(point1.getX() - point2.getX());
-
                 }
             };
         }
