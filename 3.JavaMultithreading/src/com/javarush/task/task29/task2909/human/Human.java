@@ -20,20 +20,16 @@ public class Human {
     protected String name;
     protected int course;
     protected int[] size;
-    protected boolean isSoldier;
 
-    public Human(boolean isSoldier) {
-        this.isSoldier = isSoldier;
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
         this.id = nextId;
         nextId++;
     }
 
-    public void live() {
-        if (isSoldier)
-            fight();
-    }
-
-    public void fight() {
+    public void printSize() {
+        System.out.println("Рост: " + size[0] + " Вес: " + size[1]);
     }
 
     public int getAge() {
@@ -42,10 +38,6 @@ public class Human {
 
     public int getId() {
         return id;
-    }
-
-    public void printSize() {
-        System.out.println("Рост: " + size[0] + " Вес: " + size[1]);
     }
 
     public void addChild(Human human) {
