@@ -1,9 +1,15 @@
 package com.javarush.task.task29.task2909.human;
 
-public class University extends Student {
+import java.util.ArrayList;
+import java.util.List;
+
+public class University {
+    String name;
+    int age;
+    private List<Student> students = new ArrayList<>();
 
     public University(String name, int age) {
-        super(name, age, 0);
+
     }
 
     public Student getStudentWithAverageGrade() {
@@ -18,5 +24,29 @@ public class University extends Student {
 
     public void getStudentWithMinAverageGradeAndExpel() {
         //TODO:
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }

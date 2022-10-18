@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Student extends Human {
+public class Student extends UniversityPerson {
     private int course;
     private double averageGrade;
-    private String university;
     private Date beginningOfSession;
     private Date endOfSession;
 
@@ -62,14 +61,6 @@ public class Student extends Human {
 
     public double getAverageGrade() {
         return averageGrade;
-    }
-
-    public String getUniversity() {
-        return university;
-    }
-
-    public void setUniversity(String university) {
-        this.university = university;
     }
 
 }
