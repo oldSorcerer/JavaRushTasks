@@ -10,7 +10,7 @@ public class Human implements Alive {
     public static final int THIRD = 3;
     public static final int FOURTH = 4;
 
-    public static int nextId = 0;
+    private static int nextId = 0;
 
     private int id;
     private int bloodGroup;
@@ -53,10 +53,6 @@ public class Human implements Alive {
 
     public void removeChild(Human human) {
         children.remove(human);
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getBloodGroup() {
