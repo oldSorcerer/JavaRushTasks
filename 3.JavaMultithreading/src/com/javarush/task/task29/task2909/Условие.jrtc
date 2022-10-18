@@ -1,4 +1,27 @@
-taskKey="com.javarush.task.task29.task2909.big05"\n\nРефакторинг (5)
+taskKey="com.javarush.task.task29.task2909.big06"\n\nРефакторинг (6)
+
+6.1.	Замена параметра набором специализированных методов. Замени метод setValue() класса
+Student специализированными методами setCourse и setAverageGrade.
+6.2.	Добавление параметра. Добавить параметр с типом double в метод
+getStudentWithAverageGrade(), чтобы было понятно с каким средним балом нужен студент.
+Реализуй метод getStudentWithAverageGrade().
+6.3.	Удаление параметра. Убери параметр из метода getStudentWithMaxAverageGrade().
+Реализуй этот метод, он должен возвращать студента с максимальным средним балом.
+6.4.	Разделение запроса и модификатора. Раздели метод
+getStudentWithMinAverageGradeAndExpel на Student getStudentWithMinAverageGrade() и
+void expel(Student student). Первый метод должен возвратить студента с
+минимальным средним балом, а второй - отчислить переданного студента (удалять из
+списка students).
+
+
+Требования:
+1.	Необходимо заменить метод setValue класса Student специализированными методами setCourse и setAverageGrade.
+2.	Необходимо добавить параметр с типом double в метод getStudentWithAverageGrade() класса University и реализовать метод.
+3.	Необходимо удалить параметр из метода getStudentWithMaxAverageGrade(double) класса University и реализовать метод.
+4.	Необходимо разделить метод getStudentWithMinAverageGradeAndExpel на Student getStudentWithMinAverageGrade() и void expel(Student student) и реализовать эти два метода.
+
+
+Рефакторинг (6)
 
 5.1.	Создание шаблонного метода.
 5.1.1.	Добавь в класс Human метод String getPosition(), который должен возвращать строку &quot;Человек&quot;.
@@ -8,17 +31,8 @@ taskKey="com.javarush.task.task29.task2909.big05"\n\nРефакторинг (5)
 5.3.	Переименование метода. Переименуй метод setSlr, чтобы было понятно сеттером чего является этот метод.
 
 
-Требования:
-1.	В классе Human должен существовать метод String getPosition(), который возвращает строку &quot;Человек&quot;.
-2.	В классе Student переопредели метод String getPosition(), чтобы он возвращал строку &quot;Студент&quot;.
-3.	В классе Teacher переопредели метод String getPosition(), чтобы он возвращал строку &quot;Преподаватель&quot;.
-4.	Необходимо заменить метод printData() в классе Student на метод printData() в классе Human. Используй getPosition().
-5.	Необходимо заменить метод printData() в классе Teacher на метод printData() в классе Human. Используй getPosition().
-6.	Класс Worker должен наследоваться от класса Human, а не содержать его.
-7.	В классе Worker необходимо переименовать метод setSlr(double) на setSalary(double).
 
-
-Рефакторинг (5)
+Рефакторинг (6)
 
 4.1.	Замена наследования делегированием.
 4.1.1.	Класс University не должен наследоваться от Student.
@@ -34,7 +48,7 @@ taskKey="com.javarush.task.task29.task2909.big05"\n\nРефакторинг (5)
 
 
 
-Рефакторинг (5)
+Рефакторинг (6)
 
 3.1.	Спуск поля. Спусти поле course в соответствующий класс. Сделай его приватным.
 3.2.	Спуск метода. Спусти геттер для поля course в соответствующий класс.
@@ -46,7 +60,7 @@ taskKey="com.javarush.task.task29.task2909.big05"\n\nРефакторинг (5)
 
 
 
-Рефакторинг (5)
+Рефакторинг (6)
 
 2.1.	Извлечение подкласса.
 2.1.1.	Добавь класс Soldier в пакет human.
@@ -59,7 +73,7 @@ taskKey="com.javarush.task.task29.task2909.big05"\n\nРефакторинг (5)
 
 
 
-Рефакторинг (5)
+Рефакторинг (6)
 
 Пришло время немного порефакторить.
 Википедия говорит: &quot;Рефакторинг (англ. refactoring)
