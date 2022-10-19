@@ -10,7 +10,6 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < COUNT; i++) {
             new SleepingThread().join();
-
         }
     }
 
