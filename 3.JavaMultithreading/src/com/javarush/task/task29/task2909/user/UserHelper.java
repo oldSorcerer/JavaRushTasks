@@ -19,16 +19,13 @@ public class UserHelper {
 
     public int calculateAverageAge() {
         User userUra = new User("Юра", "Карп", 28);
-        return  (userAnya.getAge() + userRoma.getAge() + userUra.getAge()) / 3;
+        return (userAnya.getAge() + userRoma.getAge() + userUra.getAge()) / 3;
     }
 
     public int calculateRate(AtomicInteger base, int age, boolean hasWork, boolean hasHouse) {
-        int i = base.get();
-        base.set(base.get() + age / 100);
-        base.set((int) (base.get() * (hasWork ? 1.1 : 0.9)));
-        base.set((int) (base.get() * (hasHouse ? 1.1 : 0.9)));
-
-        return 0;
+        int number2 = (base.get() + age / 100);
+        int number3 = (int) (number2 * (hasWork ? 1.1 : 0.9));
+        return (int) (number3 * (hasHouse ? 1.1 : 0.9));
     }
 
     public String getBossName(User user) {
