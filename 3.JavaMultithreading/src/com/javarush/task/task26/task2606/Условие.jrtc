@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.task26.task2606"\n\nТот, кто любит труд, не нуждается в развлечениях
+
+Расставь volatile там, где необходимо.
+
+
+Требования:
+1.	Класс Solution должен содержать private final поле URL javarushUrl.
+2.	Класс Solution должен содержать private final поле URL javarushUrl1Child.
+3.	Класс Solution должен содержать private final поле URL javarushVkGroupUrl.
+4.	Класс Solution должен содержать private final поле URL javarushVkGroupUrl1Child.
+5.	Класс Solution должен содержать private final поле URL javarushVkGroupUrl2Child.
+6.	Класс Solution должен содержать private final поле URL javarushVkGroupUrl3Child.
+7.	Класс Solution должен содержать private поле ExecutorService executorService.
+8.	Класс Solution должен содержать private поле Set&lt;URL&gt; urlsForProcessing.
+9.	Класс UrlTask должен содержать private final поле URL url.
+10.	Расставь volatile там, где необходимо.
+
+
