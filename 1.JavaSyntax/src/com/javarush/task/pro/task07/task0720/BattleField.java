@@ -25,7 +25,6 @@ public class BattleField {
                 break;
             }
         } while(isGalavirAlive(galavirXIII));
-
     }
 
     public static boolean isNimrodAlive(Nimrod nimrod) {

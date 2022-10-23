@@ -87,4 +87,8 @@ public class User {
     public void setMan(boolean man) {
         this.man = man;
     }
+
+    public String getBoss() {
+        return work.getBoss();
+    }
 }
