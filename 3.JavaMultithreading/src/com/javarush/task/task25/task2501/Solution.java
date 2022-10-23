@@ -6,7 +6,7 @@ package com.javarush.task.task25.task2501;
 
 public class Solution {
     public static void main(String[] args) {
-        System.out.println(Alphabet.G.getLetterPosition());
+        System.out.println(Alphabet.A.getLetterPosition());
     }
 
     public enum Alphabet {
@@ -17,7 +17,7 @@ public class Solution {
         U, V, W, X, Y, Z;
 
         int getLetterPosition() {
-            return ordinal();
+            return ordinal() + 1;
         }
     }
 }
