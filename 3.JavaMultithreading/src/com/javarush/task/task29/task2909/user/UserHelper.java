@@ -6,9 +6,6 @@ public class UserHelper {
     private final User userAnya = new User("Аня", "Смирнова", 10);
     private final User userRoma = new User("Рома", "Виноградов", 30);
 
-    private final boolean isManAnya = false;
-    private final boolean isManRoma = true;
-
     public void printUsers() {
         userAnya.printInfo();
         userAnya.printAdditionalInfo();
