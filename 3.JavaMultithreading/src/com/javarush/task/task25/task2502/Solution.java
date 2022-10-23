@@ -10,7 +10,7 @@ import java.util.Set;
 */
 
 public class Solution {
-    public static enum Wheel {
+    public enum Wheel {
         FRONT_LEFT,
         FRONT_RIGHT,
         BACK_LEFT,
