@@ -5,8 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class University {
-    String name;
-    int age;
+    private String name;
+    private int age;
     private List<Student> students = new ArrayList<>();
 
     public University(String name, int age) {
