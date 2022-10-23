@@ -10,7 +10,8 @@ public class University {
     private List<Student> students = new ArrayList<>();
 
     public University(String name, int age) {
-
+        this.name = name;
+        this.age = age;
     }
 
     public Student getStudentWithAverageGrade(double averageGrade) {
