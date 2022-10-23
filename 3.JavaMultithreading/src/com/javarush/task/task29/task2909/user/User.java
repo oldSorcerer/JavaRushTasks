@@ -5,11 +5,10 @@ public class User {
     private String surname;
     private int age;
 
-    private String country;
-    private String city;
-    private House house;
-
+    private Address address;
     private Work work;
+
+    private boolean man;
 
     public User(String name, String surname, int age) {
         this.name = name;
@@ -54,23 +53,23 @@ public class User {
     }
 
     public String getCountry() {
-        return country;
+        return address.getCountry();
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        address.setCountry(country);
     }
 
     public String getCity() {
-        return city;
+        return address.getCity();
     }
 
     public void setCity(String city) {
-        this.city = city;
+        address.setCity(city);
     }
 
     public String getAddress() {
-        return country + " " + city + " " + house.house;
+        return getCountry() + " " + getCity() + " " + address.getHouse();
     }
 
     public Work getWork() {
@@ -79,5 +78,13 @@ public class User {
 
     public void setWork(Work work) {
         this.work = work;
+    }
+
+    public boolean isMan() {
+        return man;
+    }
+
+    public void setMan(boolean man) {
+        this.man = man;
     }
 }
