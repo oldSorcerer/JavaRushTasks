@@ -11,7 +11,6 @@ public class Nimrod {
         health -= applyShield(i);
     }
 
-
     public int attack(){
         return angelicaKiss;
     }
