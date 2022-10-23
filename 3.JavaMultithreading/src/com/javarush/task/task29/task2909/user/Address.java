@@ -4,7 +4,7 @@ public class Address {
 
     private String country;
     private String city;
-    public String house;
+    private String house;
 
 
     public String getCountry() {
