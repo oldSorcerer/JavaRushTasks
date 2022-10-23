@@ -1,15 +1,18 @@
 package com.javarush.task.task25.task2503;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-public enum Column {
+public enum Column implements Columnable {
     Customer("Customer"),
     BankName("Bank Name"),
     AccountNumber("Account Number"),
     Amount("Available Amount");
 
-    private String columnName;
+    private final String columnName;
 
     private static int[] realOrder;
 
@@ -51,6 +54,32 @@ public enum Column {
     public static List<Column> getVisibleColumns() {
         List<Column> result = new LinkedList<>();
 
-        return result;
+
+        for (int i : realOrder) {
+            if (i != -1) {
+                result.add(Column.values()[i]);
+            }
+        }
+
+        //return result;
+        return Arrays.stream(realOrder)
+                .filter(i -> i != -1)
+                .mapToObj(i -> Column.values()[i])
+                .collect(Collectors.toCollection(LinkedList::new));
+
+    }
+
+    @Override
+    public String getColumnName() {
+        return columnName;
+    }
+
+    @Override
+    public boolean isShown() {
+        return false;
+    }
+
+    @Override
+    public void hide() {
     }
 }
