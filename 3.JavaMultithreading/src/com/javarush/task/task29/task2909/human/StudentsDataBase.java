@@ -9,7 +9,6 @@ public class StudentsDataBase {
     public static void addInfoAboutStudent(Student student) {
         students.add(student);
         printInfoAboutStudent(student);
-
     }
 
     public static void printInfoAboutStudent(Student student) {
