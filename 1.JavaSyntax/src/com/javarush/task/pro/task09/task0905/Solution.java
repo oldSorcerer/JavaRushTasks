@@ -19,7 +19,7 @@ public class Solution {
         int i = 0;
         int octalNumber = 0;
         while (decimalNumber != 0) {
-            octalNumber = octalNumber +(decimalNumber % 8 )* (int) Math.pow(10, i);
+            octalNumber = octalNumber + (decimalNumber % 8) * (int) Math.pow(10, i);
             decimalNumber = decimalNumber / 8;
             i++;
         }
