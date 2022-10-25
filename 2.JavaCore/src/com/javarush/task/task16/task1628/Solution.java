@@ -42,7 +42,7 @@ public class Solution {
     }
 
     public static class ReaderThread extends Thread {
-        private List<String> result = new ArrayList<>();
+        private final List<String> result = new ArrayList<>();
 
         public void run() {
             while (!isInterrupted()) {
