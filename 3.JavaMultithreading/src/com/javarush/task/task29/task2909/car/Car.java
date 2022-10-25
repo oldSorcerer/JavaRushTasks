@@ -23,9 +23,9 @@ public abstract class Car {
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    public void fill(double numberOfLiters) throws Exception {
+    public void fill(double numberOfLiters) {
         if (numberOfLiters < 0) {
-            throw new Exception();
+            throw new IndexOutOfBoundsException();
         }
         fuel += numberOfLiters;
     }
