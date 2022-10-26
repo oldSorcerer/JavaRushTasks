@@ -54,19 +54,13 @@ public enum Column implements Columnable {
     public static List<Column> getVisibleColumns() {
         List<Column> result = new LinkedList<>();
 
-
         for (int i : realOrder) {
             if (i != -1) {
                 result.add(Column.values()[i]);
             }
         }
-
-        //return result;
-        return Arrays.stream(realOrder)
-                .filter(i -> i != -1)
-                .mapToObj(i -> Column.values()[i])
-                .collect(Collectors.toCollection(LinkedList::new));
-
+        return result;
+//        return Arrays.stream(realOrder).filter(i -> i != -1).mapToObj(i -> Column.values()[i]).collect(Collectors.toCollection(LinkedList::new));
     }
 
     @Override
