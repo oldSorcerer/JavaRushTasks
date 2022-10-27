@@ -24,5 +24,6 @@ public class Solution {
 
     public static Path downloadFile(String urlString, Path downloadDirectory) throws IOException {
         // implement this method
+        return null;
     }
 }
