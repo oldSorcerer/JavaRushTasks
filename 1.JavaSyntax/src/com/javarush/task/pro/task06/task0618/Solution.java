@@ -10,7 +10,6 @@ public class Solution {
 
     public static void main(String[] args) {
         System.out.println("Из болота вылез нематериальный монстр...");
-
         switchSword(immaterial);
     }
 
