@@ -1,8 +1,8 @@
 package com.javarush.task.pro.task06.task0610;
 
 public class Person {
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;

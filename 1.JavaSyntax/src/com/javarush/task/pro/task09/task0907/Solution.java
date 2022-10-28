@@ -23,7 +23,6 @@ public class Solution {
             hexNumber = HEX.charAt(decimalNumber % 16) + hexNumber;
             decimalNumber = decimalNumber / 16;
         }
-
         return hexNumber;
     }
 
