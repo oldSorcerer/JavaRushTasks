@@ -24,11 +24,7 @@ public class Solution {
         findDiablo();
         battle();
 
-        if (isAmigoWin()) {
-            System.out.println(winPhrase);
-        } else {
-            System.out.println(loosePhrase);
-        }
+        System.out.println(isAmigoWin() ? winPhrase : loosePhrase );
     }
 
     public static void findDiablo() {
