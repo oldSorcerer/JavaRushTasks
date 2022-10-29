@@ -17,7 +17,7 @@ public class Solution implements Action {
                 FirstClass firstClass = new FirstClass() {
                     @Override
                     public Action getDependantAction() {
-//                        super.someAction();
+                        super.someAction();
                         return this;
                     }
                 };
