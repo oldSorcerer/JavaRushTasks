@@ -7,27 +7,37 @@ Black box
 public class Solution implements Action {
     public static int countActionObjects;
 
-    private final int param;
+    private int param;
 
     private final Action solutionAction = new Action() {
-
+        @Override
         public void someAction() {
 
             if (param > 0) {
                 FirstClass firstClass = new FirstClass() {
                     @Override
                     public Action getDependantAction() {
+                        while (param > 0) {
+                            System.out.println(param--);
+                        }
                         super.someAction();
-                        return this;
+                        Solution.this.someAction();
+                        return new SecondClass();
                     }
                 };
+                firstClass.getDependantAction();
             } else {
-                SecondClass secondClass = new SecondClass();
+                SecondClass secondClass = new SecondClass() {
+                    @Override
+                    public void someAction() {
+                        System.out.println(sb.append(SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM).append(param));
+//                        super.someAction();
+                    }
+                };
                 secondClass.someAction();
             }
         }
     };
-
 
     public Solution(int param) {
         this.param = param;
