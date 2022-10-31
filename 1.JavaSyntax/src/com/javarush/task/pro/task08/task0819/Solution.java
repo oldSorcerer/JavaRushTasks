@@ -13,13 +13,13 @@ public class Solution {
 
     public static void main(String[] args) throws Exception {
         Random random = new Random();
-        int number;
-        int result;
-        do {
-            number = random.nextInt(upperBound - lowerBound) + lowerBound;
-            result = nextAttempt(number);
-        } while (number != result);
-
+        for (int i = 0; i < 30; i++) {
+            int number = random.nextInt(upperBound - lowerBound) + lowerBound;
+            int result = nextAttempt(number);
+            if (number == result) {
+                break;
+            }
+        }
 //        for (int i = 0; i < 30; i++) {
 //            int number = random.nextInt(upperBound - lowerBound) + lowerBound;
 //            nextAttempt(number);
