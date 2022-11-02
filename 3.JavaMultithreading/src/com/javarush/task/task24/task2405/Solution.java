@@ -15,6 +15,7 @@ public class Solution implements Action {
 
             if (param > 0) {
                 FirstClass firstClass = new FirstClass() {
+
                     @Override
                     public Action getDependantAction() {
                         while (param > 0) {
@@ -22,7 +23,7 @@ public class Solution implements Action {
                         }
                         super.someAction();
                         Solution.this.someAction();
-                        return new SecondClass();
+                        return this;
                     }
                 };
                 firstClass.getDependantAction();
@@ -30,8 +31,8 @@ public class Solution implements Action {
                 SecondClass secondClass = new SecondClass() {
                     @Override
                     public void someAction() {
-                        System.out.println(sb.append(SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM).append(param));
-//                        super.someAction();
+                        sb.append(SPECIFIC_ACTION_FOR_ANONYMOUS_SECOND_CLASS_PARAM).append(param);
+                        super.someAction();
                     }
                 };
                 secondClass.someAction();
