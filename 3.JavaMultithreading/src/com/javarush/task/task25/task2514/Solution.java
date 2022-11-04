@@ -10,7 +10,6 @@ public class Solution {
 
         public YieldRunnable(int index) {
             this.index = index;
-
         }
 
         public void run() {
@@ -21,6 +20,5 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
     }
 }
