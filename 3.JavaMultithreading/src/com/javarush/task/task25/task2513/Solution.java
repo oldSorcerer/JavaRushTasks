@@ -25,7 +25,7 @@ public class Solution {
     }
 
     static class Account {
-        private int number;
+        private final int number;
         private int balance;
         private boolean balanceChanged;
 
