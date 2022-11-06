@@ -12,7 +12,7 @@ public class Robot {
         if (battery != null) {
             batteryCharge += battery.use();
         }
-        zombieMode = batteryCharge < 10;
+        zombieMode = batteryCharge < 20;
     }
 
     @Override
