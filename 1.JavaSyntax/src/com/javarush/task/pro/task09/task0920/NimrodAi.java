@@ -17,7 +17,7 @@ public class NimrodAi {
     public static String[] medRoom = {"bed", "bed", "bed", "bed", "SCAN-MO-TRON-2000", "liquid analyser"};
     public static String[] armoury = {"cannon launcher", "chair"};
     public static String[] securityRoom = {"rack", "rack", "table"};
-    public static String[] reactor = {};
+    public static String[] reactor = {"reactor"};
     public static String[] telecom = {"computer", "computer", "computer", "table", "chair"};
     public static String[] warehouse = {
             "container", "container", "container",
