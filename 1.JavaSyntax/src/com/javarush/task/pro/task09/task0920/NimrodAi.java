@@ -44,7 +44,7 @@ public class NimrodAi {
         String[] scanResult = RoomScanner.scanRoom(roomName);
         System.out.printf("В %s обнаружено: %s\n", roomName, Arrays.toString(scanResult));
 
-        return !Arrays.deepEquals(room, scanResult);
+        return !Arrays.deepEquals(room, scanResult); // проверить другое решение
     }
 
     public static void openFloodgates(String roomName) {
