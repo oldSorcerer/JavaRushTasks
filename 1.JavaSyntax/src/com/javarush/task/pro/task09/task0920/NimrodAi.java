@@ -27,8 +27,12 @@ public class NimrodAi {
     public static String[] powerRoom = {"power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp"};
 
     public static void main(String[] args) {
-        String[] RoomName = {"diningRoom", "o2", "medRoom", "armory", "securityRoom", "reactor", "telecom", "warehouse", "controlRoom", "powerRoom"};
-        checkPirates("securityRoom");
+        String[] roomName = {"diningRoom", "o2", "medRoom", "armory", "securityRoom", "reactor", "telecom", "warehouse", "controlRoom", "powerRoom"};
+        for (String room : roomName) {
+            if (checkPirates(room)) {
+                openFloodgates(room);
+            }
+        }
     }
 
     public static boolean checkPirates(String roomName) {
@@ -39,11 +43,8 @@ public class NimrodAi {
 
         String[] scanResult = RoomScanner.scanRoom(roomName);
         System.out.printf("В %s обнаружено: %s\n", roomName, Arrays.toString(scanResult));
-        if (Arrays.deepEquals(room, scanResult)) {
-            return false;
-        } else {
-            return true;
-        }
+
+        return !Arrays.deepEquals(room, scanResult);
     }
 
     public static void openFloodgates(String roomName) {
@@ -52,6 +53,18 @@ public class NimrodAi {
     }
 
     public static String[] getRoomByName(String roomName) {
-        return null;
+        return switch (roomName) {
+            case "diningRoom" -> diningRoom;
+            case "o2" -> o2;
+            case "medRoom" -> medRoom;
+            case "armoury" -> armoury;
+            case "securityRoom" -> securityRoom;
+            case "reactor" -> reactor;
+            case "telecom" -> telecom;
+            case "warehouse" -> warehouse;
+            case "controlRoom" -> controlRoom;
+            case "powerRoom" -> powerRoom;
+            default -> null;
+        };
     }
 }
