@@ -70,10 +70,11 @@ public enum Column implements Columnable {
 
     @Override
     public boolean isShown() {
-        return false;
+        return realOrder[ordinal()] != -1;
     }
 
     @Override
     public void hide() {
+        realOrder[ordinal()] = -1;
     }
 }
