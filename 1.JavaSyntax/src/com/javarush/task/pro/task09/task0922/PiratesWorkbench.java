@@ -40,7 +40,6 @@ public class PiratesWorkbench {
                 counter++;
             }
         }
-
     }
 
     public static void addTwoNames() {
