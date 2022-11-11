@@ -19,13 +19,18 @@ public class Solution {
         }
     }
 
-    public static class Soldier {
-        private String name;
-        private int height;
+    public static class Soldier implements Comparable<Soldier> {
+        private final String name;
+        private final int height;
 
         public Soldier(String name, int height) {
             this.name = name;
             this.height = height;
+        }
+
+        @Override
+        public int compareTo(Soldier o) {
+            return o.height - this.height;
         }
     }
 }
