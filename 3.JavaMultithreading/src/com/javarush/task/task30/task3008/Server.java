@@ -27,6 +27,14 @@ public class Server {
             this.socket = socket;
         }
 
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
+            for (Map.Entry<String, Connection> entry : connectionMap.entrySet()) {
+
+            }
+            return null;
+        }
+
+
         @Override
         public void run() {
 
