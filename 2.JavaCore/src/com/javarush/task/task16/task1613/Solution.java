@@ -15,7 +15,7 @@ public class Solution {
     }
 
     public static class Clock extends Thread {
-        private String cityName;
+        private final String cityName;
         private int hours;
         private int minutes;
         private int seconds;
