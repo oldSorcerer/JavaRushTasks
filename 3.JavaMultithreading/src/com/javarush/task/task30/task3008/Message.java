@@ -9,7 +9,7 @@ public class Message implements Serializable {
 
     public Message(MessageType type) {
         this.type = type;
-        data =  null;
+        data = null;
     }
 
     public Message(MessageType type, String data) {
