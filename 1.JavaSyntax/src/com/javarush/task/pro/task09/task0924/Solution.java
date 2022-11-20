@@ -31,7 +31,7 @@ public class Solution {
                 } else if (string.contains("thief")) {
                     morals[i][j] = "fairness";
                 } else if (string.contains("bully")) {
-                    morals[i][j] = ("respect");
+                    morals[i][j] = "respect";
                 }
             }
         }
