@@ -1,10 +1,8 @@
 package com.javarush.task.task25.task2503;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public enum Column implements Columnable {
     Customer("Customer"),
@@ -16,7 +14,7 @@ public enum Column implements Columnable {
 
     private static int[] realOrder;
 
-    private Column(String columnName) {
+    Column(String columnName) {
         this.columnName = columnName;
     }
 
@@ -54,13 +52,16 @@ public enum Column implements Columnable {
     public static List<Column> getVisibleColumns() {
         List<Column> result = new LinkedList<>();
 
-        for (int i : realOrder) {
-            if (i != -1) {
-                result.add(Column.values()[i]);
+        for (int i = 0; i < values().length; i++) {
+            result.add(null);
+        }
+        for (int i = 0; i < values().length; i++) {
+            if (realOrder[i] != -1) {
+                result.set(realOrder[i], values()[i]);
             }
         }
+        result.removeAll(Collections.singleton(null));
         return result;
-//        return Arrays.stream(realOrder).filter(i -> i != -1).mapToObj(i -> Column.values()[i]).collect(Collectors.toCollection(LinkedList::new));
     }
 
     @Override
