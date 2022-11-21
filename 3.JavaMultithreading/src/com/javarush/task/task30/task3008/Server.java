@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
@@ -11,13 +12,13 @@ public class Server {
     private static Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
 
     public static void sendBroadcastMessage(Message message) {
-            for (Connection connection : connectionMap.values()) {
-                try {
-                    connection.send(message);
-                } catch (IOException e) {
-                    ConsoleHelper.writeMessage("Не смогли отправить сообщение " + connection.getRemoteSocketAddress());
-                }
+        for (Connection connection : connectionMap.values()) {
+            try {
+                connection.send(message);
+            } catch (IOException e) {
+                ConsoleHelper.writeMessage("Не смогли отправить сообщение " + connection.getRemoteSocketAddress());
             }
+        }
     }
 
     private static class Handler extends Thread {
@@ -28,10 +29,25 @@ public class Server {
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
-            for (Map.Entry<String, Connection> entry : connectionMap.entrySet()) {
 
+            String name;
+
+            while (true) {
+                connection.send(new Message(MessageType.NAME_REQUEST, "Пожалуйста, введите Ваше имя."));
+                Message receive = connection.receive();
+                MessageType type = receive.getType();
+                name = receive.getData();
+
+                if (type.equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
+                        !name.isEmpty() && !connectionMap.containsKey(name)) {
+                    connectionMap.put(name, connection);
+                    connection.send(new Message(MessageType.NAME_ACCEPTED, "Добро пожаловать в чат, " + name));
+                    break;
+                } else {
+                    ConsoleHelper.writeMessage("Ошибка ввода имени пользователя.");
+                }
             }
-            return null;
+            return name;
         }
 
 
