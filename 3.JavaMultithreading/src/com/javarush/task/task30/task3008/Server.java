@@ -29,16 +29,14 @@ public class Server {
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
-
             String name;
 
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST, "Пожалуйста, введите Ваше имя."));
                 Message receive = connection.receive();
-                MessageType type = receive.getType();
                 name = receive.getData();
 
-                if (type.equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
+                if (receive.getType().equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
                         !name.isEmpty() && !connectionMap.containsKey(name)) {
                     connectionMap.put(name, connection);
                     connection.send(new Message(MessageType.NAME_ACCEPTED, "Добро пожаловать в чат, " + name));
@@ -50,6 +48,13 @@ public class Server {
             return name;
         }
 
+        private void notifyUsers(Connection connection, String userName) throws IOException {
+            for (String name : connectionMap.keySet()) {
+                if (!name.equals(userName)) {
+                    connection.send(new Message(MessageType.USER_ADDED, name));
+                }
+            }
+        }
 
         @Override
         public void run() {
