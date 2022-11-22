@@ -21,6 +21,22 @@ public class Server {
         }
     }
 
+    public static void main(String[] args) {
+        ConsoleHelper.writeMessage("Введите порт сервера:");
+        int port = ConsoleHelper.readInt();
+
+        try (ServerSocket serverSocket = new ServerSocket(port)) {
+            ConsoleHelper.writeMessage("Чат сервер запущен.");
+            while (true) {
+                Socket accept = serverSocket.accept();
+                Handler handler = new Handler(accept);
+                handler.start();
+            }
+        } catch (IOException e) {
+            ConsoleHelper.writeMessage("Произошла ошибка при запуске или работе сервера.");
+        }
+    }
+
     private static class Handler extends Thread {
         private Socket socket;
 
@@ -33,10 +49,10 @@ public class Server {
 
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST, "Пожалуйста, введите Ваше имя."));
-                Message receive = connection.receive();
-                name = receive.getData();
+                Message message = connection.receive();
+                name = message.getData();
 
-                if (receive.getType().equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
+                if (message.getType().equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
                         !name.isEmpty() && !connectionMap.containsKey(name)) {
                     connectionMap.put(name, connection);
                     connection.send(new Message(MessageType.NAME_ACCEPTED, "Добро пожаловать в чат, " + name));
@@ -56,28 +72,20 @@ public class Server {
             }
         }
 
+        private void serverMainLoop(Connection connection, String userName) throws IOException, ClassNotFoundException {
+            while (true) {
+                Message message = connection.receive();
+                if (message.getType() == (MessageType.TEXT)) {
+                    sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + message.getData()));
+                } else {
+                    ConsoleHelper.writeMessage("Ошибка .");
+                }
+            }
+        }
+
         @Override
         public void run() {
 
         }
     }
-
-
-    public static void main(String[] args) {
-        ConsoleHelper.writeMessage("Введите порт сервера:");
-        int port = ConsoleHelper.readInt();
-
-        try (ServerSocket serverSocket = new ServerSocket(port)) {
-            ConsoleHelper.writeMessage("Чат сервер запущен.");
-            while (true) {
-                Socket accept = serverSocket.accept();
-                Handler handler = new Handler(accept);
-                handler.start();
-            }
-        } catch (IOException e) {
-            ConsoleHelper.writeMessage("Произошла ошибка при запуске или работе сервера.");
-        }
-
-    }
-
 }
