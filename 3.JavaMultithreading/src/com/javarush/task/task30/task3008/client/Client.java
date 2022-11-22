@@ -30,7 +30,6 @@ public class Client {
         return true;
     }
 
-
     protected SocketThread getSocketThread() {
         return new SocketThread();
     }
@@ -39,7 +38,7 @@ public class Client {
         try {
             connection.send(new Message(MessageType.TEXT, text));
         } catch (IOException e) {
-            ConsoleHelper.writeMessage("Данное сообщение не отправлено");
+            ConsoleHelper.writeMessage("Не удалось отправить сообщение");
             clientConnected = false;
         }
     }
