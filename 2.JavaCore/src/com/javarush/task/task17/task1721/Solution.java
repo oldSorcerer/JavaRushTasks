@@ -18,8 +18,8 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            BufferedReader readerPathOne = new BufferedReader(new FileReader(reader.readLine()));
-             BufferedReader readerPathTwo = new BufferedReader(new FileReader(reader.readLine()));) {
+             BufferedReader readerPathOne = new BufferedReader(new FileReader(reader.readLine()));
+             BufferedReader readerPathTwo = new BufferedReader(new FileReader(reader.readLine()))) {
             while (readerPathOne.ready()) {
                 allLines.add(readerPathOne.readLine());
             }
@@ -30,7 +30,7 @@ public class Solution {
         }
     }
 
-    public  void joinData() throws CorruptedDataException {
+    public void joinData() throws CorruptedDataException {
         if (new HashSet<>(allLines).containsAll(forRemoveLines)) {
             allLines.removeAll(forRemoveLines);
         } else {
