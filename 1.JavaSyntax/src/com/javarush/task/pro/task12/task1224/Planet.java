@@ -19,7 +19,7 @@ public class Planet {
         }
 
         public static class ControlSystem {
-            private Interface[] interfaces;
+            private final Interface[] interfaces;
 
             private ControlSystem() {
                 interfaces = new Interface[100500];

@@ -21,9 +21,9 @@ public class Solution {
     public static int[] getConnection(Planet planet) {
         for (int i = 0; i < planet.stations.length; i++) {
             for (int j = 0; j < planet.stations[i].controlSystem.getInterfacesNumber(); j++) {
-                if (planet.stations[i].controlSystem.connect(j).equals(Boolean.TRUE)) {
-                    return new int[] {i, j};
+                if (planet.stations[i].controlSystem.connect(j) == Boolean.TRUE) {
                 }
+                return new int[] {i, j};
             }
         }
         return null;
