@@ -137,7 +137,6 @@ public class Client {
         } else {
             ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
         }
-
     }
 
     public static void main(String[] args) {
