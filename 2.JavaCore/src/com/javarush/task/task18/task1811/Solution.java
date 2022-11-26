@@ -18,7 +18,7 @@ public class Solution {
     }
 
     public static class DecoratorRunnableImpl implements Runnable {
-        private Runnable component;
+        private final Runnable component;
 
         public DecoratorRunnableImpl(Runnable component) {
             this.component = component;
@@ -32,10 +32,10 @@ public class Solution {
     }
 
     public static class DecoratorMyRunnableImpl implements Runnable {
-        private Runnable component;
+        private final Runnable component;
 
         public DecoratorMyRunnableImpl(Runnable component) {
-            this.component=component;
+            this.component = component;
         }
 
         @Override
