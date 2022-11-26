@@ -51,9 +51,9 @@ public class BotClient extends Client {
                 SimpleDateFormat formatMonth = new SimpleDateFormat("MMMM");
                 SimpleDateFormat formatYear = new SimpleDateFormat("yyyy");
                 SimpleDateFormat formatTime = new SimpleDateFormat("H:mm:ss");
-                SimpleDateFormat formatH = new SimpleDateFormat("H");
-                SimpleDateFormat formatM = new SimpleDateFormat("m");
-                SimpleDateFormat formatS = new SimpleDateFormat("s");
+                SimpleDateFormat formatHour = new SimpleDateFormat("H");
+                SimpleDateFormat formatMinute = new SimpleDateFormat("m");
+                SimpleDateFormat formatSecond = new SimpleDateFormat("s");
 
 
                 Calendar calendar = new GregorianCalendar();
