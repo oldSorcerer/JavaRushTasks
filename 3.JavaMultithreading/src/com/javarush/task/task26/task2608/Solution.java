@@ -18,11 +18,15 @@ public class Solution {
     }
 
     public int getSumOfVar1AndVar2() {
-        return var1 + var2;
+        synchronized (Solution.class) {
+            return var1 + var2;
+        }
     }
 
     public int getSumOfVar3AndVar4() {
-        return var3 + var4;
+        synchronized (this) {
+            return var3 + var4;
+        }
     }
 
     public static void main(String[] args) {
