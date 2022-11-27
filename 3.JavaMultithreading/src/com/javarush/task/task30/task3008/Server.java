@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
 
-    private static Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
+    private static final Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
 
     public static void sendBroadcastMessage(Message message) {
         for (Connection connection : connectionMap.values()) {
@@ -38,7 +38,7 @@ public class Server {
     }
 
     private static class Handler extends Thread {
-        private Socket socket;
+        private final Socket socket;
 
         private Handler(Socket socket) {
             this.socket = socket;
@@ -78,8 +78,7 @@ public class Server {
                 if (message.getType() == MessageType.TEXT) {
                     sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + message.getData()));
                 } else {
-                    ConsoleHelper.writeMessage("Получено сообщение от " +
-                                                socket.getRemoteSocketAddress() +
+                    ConsoleHelper.writeMessage("Получено сообщение от " + socket.getRemoteSocketAddress() +
                                                 ". Тип сообщения не соответствует протоколу.");
                 }
             }

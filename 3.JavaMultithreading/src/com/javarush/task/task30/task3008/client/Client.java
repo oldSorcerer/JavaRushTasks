@@ -51,11 +51,11 @@ public class Client {
         }
 
         protected void informAboutAddingNewUser(String userName) {
-            ConsoleHelper.writeMessage(userName + "присоединился к чату");
+            ConsoleHelper.writeMessage(userName + " присоединился к чату");
         }
 
         protected void informAboutDeletingNewUser(String userName) {
-            ConsoleHelper.writeMessage(userName + "покинул чат");
+            ConsoleHelper.writeMessage(userName + " покинул чат");
         }
 
         protected void notifyConnectionStatusChanged(boolean clientConnected) {
@@ -106,7 +106,6 @@ public class Client {
             } catch (IOException | ClassNotFoundException e) {
                 notifyConnectionStatusChanged(false);
             }
-
         }
     }
 
@@ -143,5 +142,4 @@ public class Client {
         Client client = new Client();
         client.run();
     }
-
 }
