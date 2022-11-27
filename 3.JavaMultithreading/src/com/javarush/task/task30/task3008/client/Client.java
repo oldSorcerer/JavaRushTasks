@@ -106,7 +106,6 @@ public class Client {
             } catch (IOException | ClassNotFoundException e) {
                 notifyConnectionStatusChanged(false);
             }
-
         }
     }
 
@@ -143,5 +142,4 @@ public class Client {
         Client client = new Client();
         client.run();
     }
-
 }
