@@ -39,34 +39,26 @@ public class BotClient extends Client {
         protected void processIncomingMessage(String message) {
             ConsoleHelper.writeMessage(message);
             if (message.contains(":")) {
-                String name = message.split(": ")[0];
-                String text = message.split(": ")[1];
+                int index = message.indexOf(": ");
+                String name = message.substring(0, index);
+                String text = message.substring(index + 2);
 
-                if (text.equalsIgnoreCase("дата")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("d.MM.yyyy").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("день")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("d").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("месяц")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("MMMM").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("год")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("yyyy").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("время")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("H:mm:ss").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("час")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("H").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("минуты")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("m").format(new GregorianCalendar().getTime()));
-                } else if (text.equalsIgnoreCase("секунды")) {
-                    sendTextMessage("Информация для " + name + ": " +
-                            new SimpleDateFormat("s").format(new GregorianCalendar().getTime()));
+                String format = switch (text) {
+                    case "дата" -> "d.MM.yyyy";
+                    case "день" -> "d";
+                    case "месяц" -> "MMMM";
+                    case "год" -> "yyyy";
+                    case "время" -> "H:mm:ss";
+                    case "час" -> "H";
+                    case "минуты" -> "m";
+                    case "секунды" -> "s";
+                    default -> null;
+                };
+
+                if (format != null) {
+                    sendTextMessage("Информация для " + name + ": " + new SimpleDateFormat(format).format(new GregorianCalendar().getTime()));
                 }
+
             }
         }
     }
