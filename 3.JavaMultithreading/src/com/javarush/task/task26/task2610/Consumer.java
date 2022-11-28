@@ -9,6 +9,7 @@ public class Consumer implements Runnable {
         this.queue = queue;
     }
 
+    @Override
     public void run() {
         try {
             while (true) {
