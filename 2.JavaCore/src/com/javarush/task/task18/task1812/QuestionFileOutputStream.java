@@ -10,11 +10,12 @@ import java.io.InputStreamReader;
 
 public class QuestionFileOutputStream implements AmigoOutputStream {
 
-    private final AmigoOutputStream amigoOutputStream;
+    private AmigoOutputStream amigoOutputStream;
 
     public QuestionFileOutputStream(AmigoOutputStream amigoOutputStream) {
         this.amigoOutputStream = amigoOutputStream;
     }
+
 
     @Override
     public void flush() throws IOException {
