@@ -7,7 +7,7 @@ import java.util.List;
 */
 
 public class Solution {
-    public class TableInterfaceWrapper implements TableInterface {
+    public static class TableInterfaceWrapper implements TableInterface {
 
         private final TableInterface tableInterface;
 
