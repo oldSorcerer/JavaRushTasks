@@ -9,6 +9,7 @@ public class Consumer implements Runnable {
         this.map = map;
     }
 
+    @Override
     public void run() {
         Thread currentThread = Thread.currentThread();
         while (!currentThread.isInterrupted()) {
