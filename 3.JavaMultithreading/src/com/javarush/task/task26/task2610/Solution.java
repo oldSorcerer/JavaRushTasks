@@ -16,11 +16,11 @@ public class Solution {
         BlockingQueue queue = new ArrayBlockingQueue(32);
 
         Producer producer = new Producer(queue);
-//        Consumer consumer = new Consumer(queue);
+        Consumer consumer = new Consumer(queue);
 
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.submit(producer);
-//        executorService.submit(consumer);
+        executorService.submit(consumer);
 
         Thread.sleep(2000);
 
