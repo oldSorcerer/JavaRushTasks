@@ -3,9 +3,9 @@ package com.javarush.task.task26.task2610;
 import java.util.concurrent.BlockingQueue;
 
 public class Consumer implements Runnable {
-    private final BlockingQueue<Object> queue;
+    private final BlockingQueue<String> queue;
 
-    public Consumer(BlockingQueue<Object> queue) {
+    public Consumer(BlockingQueue<String> queue) {
         this.queue = queue;
     }
 

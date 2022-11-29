@@ -3,9 +3,9 @@ package com.javarush.task.task26.task2610;
 import java.util.concurrent.BlockingQueue;
 
 public class Producer implements Runnable {
-    private final BlockingQueue<Object> queue;
+    private final BlockingQueue<String> queue;
 
-    public Producer(BlockingQueue<Object> queue) {
+    public Producer(BlockingQueue<String> queue) {
         this.queue = queue;
     }
 
