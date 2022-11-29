@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 
 public class QuestionFileOutputStream implements AmigoOutputStream {
 
-    private AmigoOutputStream amigoOutputStream;
+    private final AmigoOutputStream amigoOutputStream;
 
     public QuestionFileOutputStream(AmigoOutputStream amigoOutputStream) {
         this.amigoOutputStream = amigoOutputStream;
