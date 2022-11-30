@@ -1,6 +1,8 @@
 package com.javarush.task.task18.task1827;
 
 import java.io.*;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 
 /* 
 Прайсы
@@ -14,24 +16,16 @@ public class Solution {
             try (BufferedReader reader = new BufferedReader(new FileReader(fileName));
                  BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))
             ) {
-                int id = 0;
-                int max = 0;
+                int maxId = 0;
                 while (reader.ready()) {
-                    String string = reader.readLine();
-                    String substring = string.substring(0, 8);
-                    String trim = substring.trim();
-                    id = Integer.parseInt(trim);
-                    if (id > max) {
-                        max = id;
-                    } else {
-                        id = max;
-                    }
-                    id++;
-
+                    String string = reader.readLine().substring(0, 8).trim();
+                    int id = Integer.parseInt(string);
+                    if (id > maxId) maxId = id;
                 }
+
                 if (args.length != 0) {
                     if (args[0].equals("-c")) {
-                        String index = checkLength(String.valueOf(id), 8);
+                        String index = checkLength(String.valueOf(++maxId), 8);
                         String productName = checkLength(args[1], 30);
                         String price = checkLength(args[2], 8);
                         String quantity = checkLength(args[3], 4);
