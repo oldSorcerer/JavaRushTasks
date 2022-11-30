@@ -1,5 +1,6 @@
 package com.javarush.task.pro.task05.task0508;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /* 
@@ -30,8 +31,6 @@ public class Solution {
                 }
             }
         }
-        for (String string : strings) {
-            System.out.print(string + ", ");
-        }
+        Arrays.stream(strings).map(string -> string + ", ").forEach(System.out::print);
     }
 }
