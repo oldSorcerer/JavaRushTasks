@@ -24,10 +24,9 @@ public class Solution {
     }
 
     public static List<String> decryptSecretMessage() {
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < secretMessage.size(); i += 3) {
-            String string = secretMessage.get(i);
-            list.add(string);
+            list.add(secretMessage.get(i));
         }
         return list;
     }
