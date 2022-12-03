@@ -11,7 +11,6 @@ public class CommandExecutor {
 
     private static final Map<Operation, Command> ALL_KNOWN_COMMANDS_MAP = new HashMap<>();
 
-
     static {
         ALL_KNOWN_COMMANDS_MAP.put(CREATE, new ZipCreateCommand());
         ALL_KNOWN_COMMANDS_MAP.put(ADD, new ZipAddCommand());
