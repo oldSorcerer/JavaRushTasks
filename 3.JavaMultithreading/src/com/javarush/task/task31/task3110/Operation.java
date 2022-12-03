@@ -7,5 +7,4 @@ public enum Operation {
     EXTRACT,
     CONTENT,
     EXIT
-
 }

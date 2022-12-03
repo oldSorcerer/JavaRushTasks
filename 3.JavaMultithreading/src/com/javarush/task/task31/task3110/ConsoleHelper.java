@@ -17,6 +17,6 @@ public class ConsoleHelper {
     }
 
     public static int readInt() throws IOException {
-        return Integer.parseInt(readString());
+        return Integer.parseInt(readString().trim());
     }
 }
