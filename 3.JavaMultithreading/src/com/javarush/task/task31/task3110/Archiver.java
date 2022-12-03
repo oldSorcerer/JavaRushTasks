@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Paths;
 
-import static com.javarush.task.task31.task3110.Operation.*;
 
 public class Archiver {
 
@@ -23,18 +22,18 @@ public class Archiver {
 
         int number = ConsoleHelper.readInt();
 
-        if (number == CREATE.ordinal()) {
-            return CREATE;
-        } else if (number == ADD.ordinal()) {
-            return ADD;
-        } else if (number == REMOVE.ordinal()) {
-            return REMOVE;
-        }  else if (number == EXTRACT.ordinal()) {
-            return EXTRACT;
-        }  else if (number == CONTENT.ordinal()) {
-            return CONTENT;
-        }  else if (number == EXIT.ordinal()) {
-            return EXIT;
+        if (number == Operation.CREATE.ordinal()) {
+            return Operation.CREATE;
+        } else if (number == Operation.ADD.ordinal()) {
+            return Operation.ADD;
+        } else if (number == Operation.REMOVE.ordinal()) {
+            return Operation.REMOVE;
+        }  else if (number == Operation.EXTRACT.ordinal()) {
+            return Operation.EXTRACT;
+        }  else if (number == Operation.CONTENT.ordinal()) {
+            return Operation.CONTENT;
+        }  else if (number == Operation.EXIT.ordinal()) {
+            return Operation.EXIT;
         } else {
             return null;
         }
@@ -55,7 +54,7 @@ public class Archiver {
 //        exitCommand.execute();
 
         Operation operation = null;
-        while (operation != EXIT) {
+        while (operation != Operation.EXIT) {
             try {
                 operation = askOperation();
                 CommandExecutor.execute(operation);
