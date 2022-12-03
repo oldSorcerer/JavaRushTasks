@@ -57,7 +57,7 @@ public class Solution {
 
             String code = "+" + data.getCountryPhoneCode();
 
-            return code + "("+ city + ")" +
+            return code + "(" + city + ")" +
                     numberPartOne + "-" +
                     numberPartTwo + "-" +
                     numberPartThree;
