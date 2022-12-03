@@ -1,13 +1,8 @@
 package com.javarush.task.task31.task3110;
 
-import com.javarush.task.task31.task3110.command.ExitCommand;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Paths;
-
 
 public class Archiver {
 
@@ -20,38 +15,10 @@ public class Archiver {
                                    "4 - просмотреть содержимое архива\n" +
                                    "5 - выход");
 
-        int number = ConsoleHelper.readInt();
-
-        if (number == Operation.CREATE.ordinal()) {
-            return Operation.CREATE;
-        } else if (number == Operation.ADD.ordinal()) {
-            return Operation.ADD;
-        } else if (number == Operation.REMOVE.ordinal()) {
-            return Operation.REMOVE;
-        }  else if (number == Operation.EXTRACT.ordinal()) {
-            return Operation.EXTRACT;
-        }  else if (number == Operation.CONTENT.ordinal()) {
-            return Operation.CONTENT;
-        }  else if (number == Operation.EXIT.ordinal()) {
-            return Operation.EXIT;
-        } else {
-            return null;
-        }
+        return Operation.values()[ConsoleHelper.readInt()];
     }
 
-
     public static void main(String[] args) throws Exception {
-//        BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-//
-//        System.out.println("Введите полный путь файла архива:");
-//        ZipFileManager zipFileManager = new ZipFileManager(Paths.get(console.readLine()));
-//
-//        System.out.println("Введите полное имя файла для архивации:");
-//        zipFileManager.createZip(Paths.get(console.readLine()));
-//
-//
-//        ExitCommand exitCommand = new ExitCommand();
-//        exitCommand.execute();
 
         Operation operation = null;
         while (operation != Operation.EXIT) {
@@ -64,8 +31,5 @@ public class Archiver {
                 ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
             }
         }
-
-
-
     }
 }
