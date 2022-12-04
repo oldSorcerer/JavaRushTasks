@@ -28,7 +28,11 @@ public class ZipFileManager {
     }
 
     private void addNewZipEntry(ZipOutputStream zipOutputStream, Path filePath, Path fileName) throws Exception {
-
+        try (InputStream inputStream = Files.newInputStream(filePath.resolve(fileName))) {
+            ZipEntry zipEntry = new ZipEntry(fileName.toString());
+            zipOutputStream.putNextEntry(zipEntry);
+            zipOutputStream.closeEntry();
+        }
     }
 
     private void copyData(InputStream in, OutputStream out) throws Exception {
