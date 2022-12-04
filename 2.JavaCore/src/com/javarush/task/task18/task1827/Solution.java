@@ -38,15 +38,15 @@ public class Solution {
     }
 
     public static String checkLength(String string, int limit) {
-        StringBuilder stringBuilder = new StringBuilder(string);
+        StringBuilder builder = new StringBuilder(string);
 
         if (string.length() > limit) {
             return string.substring(0, limit);
         } else {
-            while (stringBuilder.length() != limit) {
-                stringBuilder.append(" ");
+            while (builder.length() != limit) {
+                builder.append(" ");
             }
-            return stringBuilder.toString();
+            return builder.toString();
         }
     }
 }
