@@ -38,3 +38,9 @@ public class Solution {
         }
     }
 }
+/*
+        IntStream.range(0, byteCountArray.length)
+                .filter(i -> byteCountArray[i] == Arrays.stream(byteCountArray).max().getAsInt())
+                .boxed()
+                .toList()
+                .forEach(integer -> System.out.print(integer + " "));*/
