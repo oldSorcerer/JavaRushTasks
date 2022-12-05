@@ -1,6 +1,5 @@
 package com.javarush.task.task40.task4002;
 
-//
 //import org.apache.http.HttpResponse;
 //import org.apache.http.NameValuePair;
 //import org.apache.http.client.HttpClient;
