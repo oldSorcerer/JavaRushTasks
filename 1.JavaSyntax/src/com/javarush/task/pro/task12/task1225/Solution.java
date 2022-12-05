@@ -15,9 +15,7 @@ public class Solution {
         convertAccounts();
         registerAccount("Амиго");
         registerAccount("Диего");
-        for (int i = 0; i < accountsList.size(); i++) {
-            System.out.println(accountsList.get(i));
-        }
+        accountsList.forEach(System.out::println);
     }
 
     public static void convertAccounts() {
