@@ -1,4 +1,5 @@
 package com.javarush.task.task40.task4002;
+
 //
 //import org.apache.http.HttpResponse;
 //import org.apache.http.NameValuePair;
@@ -18,6 +19,7 @@ package com.javarush.task.task40.task4002;
 */
 
 public class Solution {
+
 //    public static void main(String[] args) throws Exception {
 //        Solution solution = new Solution();
 //        solution.sendPost("https://requestbin.jumio.com/1hzk82w1", "name=zapp&mood=good&locale=&id=777");
@@ -47,4 +49,5 @@ public class Solution {
 //    protected HttpClient getHttpClient() {
 //        return HttpClientBuilder.create().build();
 //    }
+
 }
