@@ -12,6 +12,12 @@ import java.util.List;
 
 public class CustomTree extends AbstractList<String> implements Cloneable, Serializable {
 
+    static class Entry<T> implements Serializable {
+        String elementName;
+        
+
+    }
+
     @Override
     public String get(int index) {
         throw new UnsupportedOperationException();
