@@ -2,7 +2,6 @@ package com.javarush.task.task20.task2028;
 
 import java.io.Serializable;
 import java.util.AbstractList;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -14,8 +13,21 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
 
     static class Entry<T> implements Serializable {
         String elementName;
-        
+        boolean availableToAddLeftChildren;
+        boolean availableToAddRightChildren;
+        Entry<T> parent;
+        Entry<T> leftChild;
+        Entry<T> rightChild;
 
+        public Entry(String elementName) {
+            this.elementName = elementName;
+            availableToAddLeftChildren = true;
+            availableToAddRightChildren = true;
+        }
+
+        public boolean isAvailableToAddChildren() {
+            return availableToAddLeftChildren | availableToAddRightChildren;
+        }
     }
 
     @Override
