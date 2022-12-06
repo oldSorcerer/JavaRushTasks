@@ -11,6 +11,25 @@ import java.util.List;
 
 public class CustomTree extends AbstractList<String> implements Cloneable, Serializable {
 
+    Entry<String> root;
+
+    public CustomTree(/*Entry<String> root*/) {
+        this.root = root;
+    }
+
+    @Override
+    public boolean add(String s) {
+
+
+
+
+        return super.add(s);
+    }
+
+    public String getParent(String s) {
+        return null;
+    }
+
     static class Entry<T> implements Serializable {
         String elementName;
         boolean availableToAddLeftChildren;
@@ -49,18 +68,22 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
     public void add(int index, String element) {
         throw new UnsupportedOperationException();
     }
+
     @Override
     public String remove(int index) {
         throw new UnsupportedOperationException();
     }
+
     @Override
     public List<String> subList(int fromIndex, int toIndex) {
         throw new UnsupportedOperationException();
     }
+
     @Override
     protected void removeRange(int fromIndex, int toIndex) {
         throw new UnsupportedOperationException();
     }
+
     @Override
     public boolean addAll(int index, Collection<? extends String> c) {
         throw new UnsupportedOperationException();
