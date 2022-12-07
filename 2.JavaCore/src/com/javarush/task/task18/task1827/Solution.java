@@ -1,8 +1,6 @@
 package com.javarush.task.task18.task1827;
 
 import java.io.*;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
 
 /* 
 Прайсы
