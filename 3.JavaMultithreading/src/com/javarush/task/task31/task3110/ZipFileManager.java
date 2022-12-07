@@ -2,6 +2,8 @@ package com.javarush.task.task31.task3110;
 
 import com.javarush.task.task31.task3110.exception.PathIsNotFoundException;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
@@ -47,8 +49,9 @@ public class ZipFileManager {
     }
 
     private void copyData(InputStream in, OutputStream out) throws Exception {
+        byte[] buffer = new byte[8 * 1024];
         while (in.available() > 0) {
-            out.write(in.read());
+            out.write(buffer, 0, in.read(buffer));
         }
     }
 }
