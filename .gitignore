@@ -19,6 +19,8 @@ target/
 /lib/
 /out/
 /Test/
+/Test/src/
+/Test/src/sorce/
 /JavaRushPlugin.properties
 /Instruction.png
 /out.log
