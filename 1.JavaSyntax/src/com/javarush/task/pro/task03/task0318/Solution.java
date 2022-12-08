@@ -16,11 +16,11 @@ public class Solution {
         int hour = scanner.nextInt();
         int minutes = scanner.nextInt();
 
-        if(minutes == 30 && hour == 0){
+        if (minutes == 30 && hour == 0) {
             System.out.println(DONE);
-        }else if(minutes < 30 && hour == 0){
+        } else if (minutes < 30 && hour == 0) {
             System.out.println(NOT_YET);
-        } else if((minutes > 30 && hour == 0) || hour >= 1){
+        } else if ((minutes > 30 && hour == 0) || hour >= 1) {
             System.out.println(HORRIBLY_DONE);
         }
     }
