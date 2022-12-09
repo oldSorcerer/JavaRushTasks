@@ -13,11 +13,11 @@ public class ZipExtractCommand extends ZipCommand {
         try {
             ConsoleHelper.writeMessage("Распоковка архива.");
             ZipFileManager zipFileManager = getZipFileManager();
-            ConsoleHelper.writeMessage("Введите полное имя архива для распаковки:");
+            ConsoleHelper.writeMessage("Введите путь для распаковки:");
             zipFileManager.extractAll(Paths.get(ConsoleHelper.readString()));
-            ConsoleHelper.writeMessage("Архив распакован.");
+            ConsoleHelper.writeMessage("Архив был распакован.");
         } catch (WrongZipFileException exception) {
-            ConsoleHelper.writeMessage("Вы неверно указали имя файла или директории.");
+            ConsoleHelper.writeMessage("Архив не существует.");
         }
     }
 }
