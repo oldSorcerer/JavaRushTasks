@@ -3,10 +3,10 @@ package com.javarush.task.pro.task11.task1132;
 import java.util.Random;
 
 public class Cosmoport {
-    private static RoboZombie[] roboZombies = RoboZombieFactory.produce();
+    private static final RoboZombie[] roboZombies = RoboZombieFactory.produce();
 
     public static class Werehouse {
-        private static RoboZombie[] roboZombies = RoboZombieFactory.produce();
+        private static final RoboZombie[] roboZombies = RoboZombieFactory.produce();
     }
 
     public static class RoboZombieFactory {
@@ -15,7 +15,6 @@ public class Cosmoport {
             for (int i = 0; i < army.length; i++) {
                 army[i] = new RoboZombie();
             }
-
             return army;
         }
     }
