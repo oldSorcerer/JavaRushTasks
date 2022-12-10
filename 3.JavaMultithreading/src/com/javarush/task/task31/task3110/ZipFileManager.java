@@ -111,26 +111,26 @@ public class ZipFileManager {
     }
 
     public void removeFiles(List<Path> pathList) throws Exception {
-        for (Path path : pathList) {
-            if (!Files.isRegularFile(path)) {
-                throw new WrongZipFileException();
-            }
+        if (!Files.isRegularFile(zipFile)) {
+            throw new WrongZipFileException();
         }
-        Path temp = Files.createTempFile(null, null);
+
+        Path temp = Files.createTempFile("tmp", null);
         try (ZipOutputStream zipOutputStream = new ZipOutputStream(Files.newOutputStream(temp));
              ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
             ZipEntry zipEntry;
             while ((zipEntry = zipInputStream.getNextEntry()) != null) {
                 if (pathList.contains(Paths.get(zipEntry.getName()))) {
                     ConsoleHelper.writeMessage(String.format("Файл %s удален", zipEntry.getName()));
+                } else {
+                    zipOutputStream.putNextEntry(zipEntry);
+                    copyData(zipInputStream, zipOutputStream);
+                    zipInputStream.closeEntry();
+                    zipOutputStream.closeEntry();
                 }
-                zipOutputStream.putNextEntry(zipEntry);
-                copyData(zipInputStream, zipOutputStream);
-                zipInputStream.closeEntry();
-                zipOutputStream.closeEntry();
             }
         }
-        Files.move(temp, zipFile,StandardCopyOption.REPLACE_EXISTING);
+        Files.move(temp, zipFile, StandardCopyOption.REPLACE_EXISTING);
     }
 
     public void removeFile(Path path) throws Exception {
