@@ -1,0 +1,24 @@
+taskKey="com.javarush.task.pro.task14.task1419"\n\nПроверка Робозомби
+
+Требуется пройти цепочку тестов, положительным итогом которого будет вывод на экран строки &quot;All tests pass. You may go&quot; (кроме выводов результатов работы методов).
+Для этого требуется:
+1. В методе startTest изменить строку с выводом на экран таким образом, чтобы после запуска программы не выпадала ошибка ArithmeticException.
+2. В методе question2 изменить строку с выводом на экран таким образом, чтобы после запуска программы не выпадала ошибка NullPointerException.
+3. В методе question3 изменить строку с выводом на экран таким образом, чтобы после запуска программы не выпадала ошибка ArrayIndexOutOfBoundsException.
+4. В методе question4 изменить строку с Integer.parseInt() таким образом, чтобы после запуска программы не выпадала ошибка NumberFormatException.
+
+Пример вывода на экран:
+1
+1
+t
+All tests passed. You may go.
+
+
+Требования:
+1.	В методе main необходимо вызывать метод startTest.
+2.	В результате работы метода startTest не должно появляться ошибки ArithmeticException.
+3.	В результате работы метода question2 не должно появляться ошибки NullPointerException.
+4.	В результате работы метода question3 не должно появляться ошибки ArrayIndexOutOfBoundsException.
+5.	В результате работы метода question4 не должно появляться ошибки NumberFormatException. Также на экран должна быть выведена строка &quot;All tests passed. You may go.&quot;.
+
+
