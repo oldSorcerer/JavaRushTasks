@@ -44,7 +44,6 @@ public class Solution {
         System.out.printf(INPUT_AGE, name);
         int age = Integer.parseInt(scanner.nextLine());
 
-
         if (user.setName(name) == -1) {
             System.out.println(CANNOT_BE_NULL);
         } else if (user.setName(name) == -2) {
@@ -62,7 +61,6 @@ public class Solution {
         } else if (user.setAge(age) != 0) {
             System.out.println(UNKNOWN_ERROR);
         }
-
         users.add(user);
     }
 
