@@ -136,4 +136,24 @@ public class ZipFileManager {
     public void removeFile(Path path) throws Exception {
         removeFiles(Collections.singletonList(path));
     }
+
+    public void addFiles(List<Path> absolutePathList) throws Exception {
+        if (!Files.isRegularFile(zipFile)) {
+            throw new WrongZipFileException();
+        }
+
+        Path temp = Files.createTempFile("tmp", null);
+        List<Path> list = new ArrayList<>();
+
+        ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile));
+        ZipEntry zipEntry;
+        while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+            list.add(Paths.get(zipEntry.getName()));
+        }
+
+    }
+
+    public void addFile(Path absolutePath) throws Exception {
+        addFiles(Collections.singletonList(absolutePath));
+    }
 }
