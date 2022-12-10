@@ -121,7 +121,7 @@ public class ZipFileManager {
             ZipEntry zipEntry;
             while ((zipEntry = zipInputStream.getNextEntry()) != null) {
                 if (pathList.contains(Paths.get(zipEntry.getName()))) {
-                    ConsoleHelper.writeMessage(String.format("Файл %s удален", zipEntry.getName()));
+                    ConsoleHelper.writeMessage(String.format("Файл '%s' удален из архива.", zipEntry.getName()));
                 } else {
                     zipOutputStream.putNextEntry(zipEntry);
                     copyData(zipInputStream, zipOutputStream);
