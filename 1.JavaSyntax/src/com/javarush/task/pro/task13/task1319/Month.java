@@ -25,14 +25,14 @@ public enum Month {
     }
 
     public static Month[] getSpringMonths() {
-        return Arrays.copyOfRange(Month.values(), 2, 5);
+        return Arrays.copyOfRange(values(), 2, 5);
     }
 
     public static Month[] getSummerMonths() {
-        return Arrays.copyOfRange(Month.values(), 5, 8);
+        return Arrays.copyOfRange(values(), 5, 8);
     }
 
     public static Month[] getAutumnMonths() {
-        return Arrays.copyOfRange(Month.values(), 8, 11);
+        return Arrays.copyOfRange(values(), 8, 11);
     }
 }
