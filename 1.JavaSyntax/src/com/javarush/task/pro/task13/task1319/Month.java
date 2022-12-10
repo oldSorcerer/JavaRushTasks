@@ -21,7 +21,7 @@ public enum Month {
     DECEMBER;
 
     public static Month[] getWinterMonths() {
-        return new Month[]{Month.DECEMBER, Month.JANUARY, Month.FEBRUARY};
+        return new Month[]{DECEMBER, JANUARY, FEBRUARY};
     }
 
     public static Month[] getSpringMonths() {
