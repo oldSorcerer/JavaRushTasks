@@ -20,19 +20,17 @@ public class Solution {
 
         public void run() {
             try {
-                while (!isInterrupted() && numSeconds >= 0) {
+                while (numSeconds != 0) {
                     if (numSeconds == 0) {
                         System.out.print("Марш!");
                     } else {
-                        System.out.print(numSeconds +  " ");
+                        System.out.print(numSeconds + " ");
                         Thread.sleep(1000);
                     }
                     numSeconds--;
                 }
             } catch (InterruptedException e) {
-                if (numSeconds != -1) {
-                    System.out.print("Прервано!");
-                }
+                System.out.print("Прервано!");
             }
         }
     }
