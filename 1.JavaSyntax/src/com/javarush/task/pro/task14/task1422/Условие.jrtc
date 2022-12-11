@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.pro.task14.task1422"\n\nСбор и сканирование ДНК
+
+В классе Solution есть методы составляющие ДНК: adenine(), thymine(), cytosine(), guanine(). Их стектрейсы собраны в список, в методе DNA.
+Твоя задача, в методе printDNA(), создать вывод стектрейсов четырех методов составляющих ДНК, но без вывода информации по методу getStackTrace класса Thread.
+В итоге в консоль должно быть выведено 4 строки в следующем формате:
+&quot;File name: Solution.java, Method name: adenine, Line number: 32&quot;
+
+
+Требования:
+1.	Не изменяй методы main(), getDNA(), adenine(), thymine(), cytosine() и guanine().
+2.	Метод printDNA() должен выводить в консоль четыре строки согласно условиям.
+
+

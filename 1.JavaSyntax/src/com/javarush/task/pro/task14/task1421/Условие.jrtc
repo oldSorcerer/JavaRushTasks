@@ -1,0 +1,28 @@
+taskKey="com.javarush.task.pro.task14.task1421"\n\nКатзилла
+
+Котороботы построили гигантского кошкоподобного робота (Котзилла), но в его коде еще несколько ошибок, которые не дают начать полноценное тестирование и активацию Котзиллы.
+Код Котзиллы предоставлен в классе Catzilla, который состоит из 4-х переменных разного типа, и 4-х методов, которые обращаются к этим переменным.
+Требуется исправить несколько ошибок в классе Catzilla, чтобы ушли ненужные ошибки. Для этого тебе следует:
+1. Исправить код метода overclockReactor(), чтобы программа не заканчивалась с ошибкой StackOverflowError.
+Результатом работы метода должен быть вывод на экран текста &quot;Reactor has been overclocked. 10 cores are ready.&quot;
+2. Исправить код метода enlargeFangs(), чтобы программа не заканчивалась с ошибкой NullPointerException.
+Измени тип переменной fangStrength класса Catzilla на примитивный и инициализируй числом 5.
+Метод enlargeFangs() должен увеличивать значение переменной fangStrength до 10. В результате работы метода, на экран должен выводиться текст &quot;Fangs are ready with strength 10.&quot;
+3. Исправить код метода generateExtraClaws(), чтобы программа не заканчивалась с ошибкой ArrayIndexOutOfBoundsException.
+Номер каждой лапы (paw) должен начинаться с 1 и заканчиваться 4. В каждой лапе количество когтей (claws) должно быть увеличено на два. Пример вывода на экран: &quot;Paw 1 is ready with 7 claws&quot;.
+4. Исправить код метода fireExceptionRockets(), чтобы вместо вывода на экран текста ошибки, выводил ее StackTrace.
+Пример: java.lang.Exception: Whatcha gonna do now!?
+at ru.rush.task.pro.task14.task1421.Catzilla.&lt;init&gt;(Catzilla.java:9)
+at ru.rush.task.pro.task14.task1421.Solution.main(Solution.java:6)
+
+После всех исправлений и запуска программы, последней строкой в консоле должен быть текст &quot;Catzilla is ready for action.&quot;.
+
+
+Требования:
+1.	Не изменяй класс Solution.
+2.	Исправь код метода overclockReactor() класса Catzilla согласно условиям.
+3.	Исправь код метода enlargeFangs() класса Catzilla согласно условиям.
+4.	Исправь код метода generateExtraClaws() класса Catzilla согласно условиям.
+5.	Исправь код метода fireExceptionRockets() класса Catzilla согласно условиям.
+
+
