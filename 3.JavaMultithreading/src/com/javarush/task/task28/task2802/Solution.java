@@ -28,7 +28,7 @@ public class Solution {
     }
 
     private static void emulateThreadFactory() {
-      /*  AmigoThreadFactory factory = new AmigoThreadFactory();
+        AmigoThreadFactory factory = new AmigoThreadFactory();
         Runnable r = new Runnable() {
             @Override
             public void run() {
@@ -37,6 +37,6 @@ public class Solution {
         };
         factory.newThread(r).start();
         factory.newThread(r).start();
-        factory.newThread(r).start();*/
+        factory.newThread(r).start();
     }
 }
