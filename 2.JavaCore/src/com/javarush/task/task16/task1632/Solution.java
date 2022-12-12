@@ -24,7 +24,7 @@ public class Solution {
     public static void main(String[] args) {
     }
 
-    static class MyThreadOne extends Thread {
+    public static class MyThreadOne extends Thread {
         @Override
         public void run() {
             while (true) {
@@ -32,7 +32,7 @@ public class Solution {
         }
     }
 
-    static class MyThreadTwo extends Thread {
+    public static class MyThreadTwo extends Thread {
         @Override
         public void run() {
             try {
@@ -43,7 +43,7 @@ public class Solution {
         }
     }
 
-    static class MyThreadThree extends Thread {
+    public static class MyThreadThree extends Thread {
         @Override
         public void run() {
             while (true) {
@@ -56,7 +56,7 @@ public class Solution {
         }
     }
 
-    static class MyThreadFour extends Thread implements Message {
+    public static class MyThreadFour extends Thread implements Message {
         @Override
         public void run() {
             while (!isInterrupted()) {
@@ -69,7 +69,7 @@ public class Solution {
         }
     }
 
-    static class MyThreadFive extends Thread {
+    public static class MyThreadFive extends Thread {
         @Override
         public void run() {
             BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
