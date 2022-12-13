@@ -13,7 +13,6 @@ public class Solution {
 
         int age = scanner.nextInt();
 
-        if (age < 20 || age > 60)
-            System.out.println("можно  не работать");
+        if (age < 20 || age > 60) System.out.println("можно  не работать");
     }
 }
