@@ -9,11 +9,10 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner scanner1 = new Scanner(System.in);
-        Scanner scanner2 = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        double number1 = scanner1.nextDouble();
-        double number2 = scanner2.nextDouble();
+        double number1 = scanner.nextDouble();
+        double number2 = scanner.nextDouble();
 
         if (Math.abs(number2 - number1) < 0.000001)
             System.out.println("числа равны");
