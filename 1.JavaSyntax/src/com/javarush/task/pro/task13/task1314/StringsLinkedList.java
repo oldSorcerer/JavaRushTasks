@@ -27,12 +27,12 @@ public class StringsLinkedList {
     public String get(int index) {
 
         int counter = 0;
-        Node newNod = first.next;
-        while (newNod != null) {
+        Node node = first.next;
+        while (node != null) {
             if (counter == index) {
-                return newNod.value;
+                return node.value;
             }
-            newNod = newNod.next;
+            node = node.next;
             counter++;
         }
         return null;
