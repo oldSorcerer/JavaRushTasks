@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum Error {
-    NETWORK_ERROR(100), SYSTEM_ERROR(200), COMPILATION_ERROR(300);
+    NETWORK_ERROR(100),
+    SYSTEM_ERROR(200),
+    COMPILATION_ERROR(300);
 
     private static final Map<Integer, Error> errorMap = new HashMap<>();
 
