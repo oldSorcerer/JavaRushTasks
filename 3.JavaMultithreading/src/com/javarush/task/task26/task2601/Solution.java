@@ -10,11 +10,13 @@ import java.util.Comparator;
 public class Solution {
 
     public static void main(String[] args) {
-
+        sort(new Integer[]{13, 8, 15, 5, 17});
     }
 
     public static Integer[] sort(Integer[] array) {
-        //implement logic here
+        Arrays.sort(array);
+//        System.out.println("array = " + Arrays.toString(array));
+        int index = array.length / 2;
         return array;
     }
 }
