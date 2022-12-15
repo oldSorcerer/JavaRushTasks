@@ -18,7 +18,7 @@ public class Bankomat {
         isStopped = true;
     }
 
-    private static Thread addMoney = new Thread() {
+    private static final Thread addMoney = new Thread() {
         @Override
         public void run() {
             while (!isStopped) {

@@ -20,7 +20,7 @@ public class Solution {
                     map.put(aChar, 1);
                 } else {
                     map.put(aChar, map.get(aChar) + 1);
-                }
+                } //    map.merge(aChar, 1, Integer::sum);
             }
         }
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {

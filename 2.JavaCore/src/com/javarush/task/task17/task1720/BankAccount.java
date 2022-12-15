@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class BankAccount {
     private BigDecimal balance;
-    private String owner;
+    private final String owner;
 
     public BankAccount(String owner) {
         this(BigDecimal.ZERO, owner);

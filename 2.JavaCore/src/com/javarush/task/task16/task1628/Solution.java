@@ -47,7 +47,7 @@ public class Solution {
         public void run() {
             while (!isInterrupted()) {
                 try {
-                    if (reader.ready()) {
+                    while (reader.ready()) {
                         readStringCount.incrementAndGet();
                         result.add(reader.readLine());
                     }
