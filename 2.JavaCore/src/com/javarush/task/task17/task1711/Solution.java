@@ -12,7 +12,7 @@ CRUD 2
 */
 
 public class Solution {
-    public static volatile List<Person> allPeople = new ArrayList<>();
+    public static final List<Person> allPeople = new ArrayList<>();
 
     static {
         allPeople.add(Person.createMale("Иванов Иван", new Date()));  //сегодня родился    id=0
