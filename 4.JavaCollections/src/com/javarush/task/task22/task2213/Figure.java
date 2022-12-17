@@ -53,7 +53,7 @@ public class Figure {
     }
 
     public void landed() {
-
+        
     }
 
 
