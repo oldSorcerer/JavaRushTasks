@@ -38,10 +38,30 @@ public class Canvas {
     public void drawMatrix(double x, double y, int[][] matrix, char c) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j] != 0 ) {
+                if (matrix[i][j] != 0) {
                     setPoint(x + j, y + i, c);
                 }
             }
         }
     }
+
+    public void clear() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                setPoint(j, i, ' ');
+            }
+        }
+    }
+
+    public void print() {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[j][i]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+    }
+
 }
