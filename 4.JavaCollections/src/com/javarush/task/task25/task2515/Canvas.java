@@ -1,5 +1,7 @@
 package com.javarush.task.task25.task2515;
 
+import java.util.Arrays;
+
 public class Canvas {
 
     private int width;
@@ -22,5 +24,24 @@ public class Canvas {
 
     public char[][] getMatrix() {
         return matrix;
+    }
+
+    public void setPoint(double x, double y, char c) {
+        int roundX = (int) Math.round(x);
+        int roundY = (int) Math.round(y);
+
+        if (roundY >= 0 && roundY < matrix.length && roundX >= 0 && roundX < matrix[0].length) {
+            matrix[roundY][roundX] = c;
+        }
+    }
+
+    public void drawMatrix(double x, double y, int[][] matrix, char c) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] != 0 ) {
+                    setPoint(x + j, y + i, c);
+                }
+            }
+        }
     }
 }
