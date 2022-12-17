@@ -26,6 +26,12 @@ public class Field {
 
 
     public void print() {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                System.out.print(matrix[y][x] == 0 ? '.' : 'X');
+            }
+            System.out.println();
+        }
 
     }
 
