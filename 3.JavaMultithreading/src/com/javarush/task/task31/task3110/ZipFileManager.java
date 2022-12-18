@@ -177,7 +177,7 @@ public class ZipFileManager {
                     addNewZipEntry(zipOutputStream, path.getParent(), path.getFileName());
                     ConsoleHelper.writeMessage(String.format("Файл '%s' добавлен в архив.", path.getFileName()));
                 } else {
-                    throw  new PathIsNotFoundException();
+                    throw new PathIsNotFoundException();
                 }
             }
         }
