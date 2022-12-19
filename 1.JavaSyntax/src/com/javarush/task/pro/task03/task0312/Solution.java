@@ -9,11 +9,10 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner scanner1 = new Scanner(System.in);
-        Scanner scanner2 = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        String string1 = scanner1.nextLine();
-        String string2 = scanner2.nextLine();
+        String string1 = scanner.nextLine();
+        String string2 = scanner.nextLine();
 
         if (string1.equals(string2))
             System.out.println("строки одинаковые");
