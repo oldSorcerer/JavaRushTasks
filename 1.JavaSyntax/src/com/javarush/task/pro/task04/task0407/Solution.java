@@ -12,7 +12,7 @@ public class Solution {
 
         while (i < 100) {
             i++;
-            if ((i % 3) == 0 ) {
+            if (i % 3 == 0 ) {
                 continue;
             }
             sum = sum + i;
