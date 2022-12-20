@@ -1,0 +1,16 @@
+taskKey="com.javarush.task.task27.task2707"\n\nОпределяем порядок захвата монитора
+
+Реализуй логику метода isLockOrderNormal, который должен определять:
+соответствует ли порядок synchronized блоков в методе someMethodWithSynchronizedBlocks -
+порядку передаваемых в него аргументов.
+В случае, если сначала происходит синхронизация по o1, а потом по o2, метод должен вернуть true.
+Если наоборот - false.
+
+
+Требования:
+1.	Метод isLockOrderNormal должен возвращать true в случае, если синхронизация в методе someMethodWithSynchronizedBlocks происходит сначала по объекту o1, а потом по o2.
+2.	Метод isLockOrderNormal должен возвращать false в случае, если синхронизация в методе someMethodWithSynchronizedBlocks происходит сначала по объекту o2, а потом по o1.
+3.	Метод isLockOrderNormal НЕ должен быть приватным.
+4.	Класс Solution НЕ должен быть объявлен с модификатором final.
+
+
