@@ -10,13 +10,16 @@ import java.util.Comparator;
 public class Solution {
 
     public static void main(String[] args) {
-        sort(new Integer[]{13, 8, 15, 5, 17});
+        sort(new Integer[]{13, 8, 15, 5, 17}); //System.out.println(Arrays.toString(sort(new Integer[]{13, 8, 15, 5, 17})));
     }
 
     public static Integer[] sort(Integer[] array) {
         Arrays.sort(array);
-//        System.out.println("array = " + Arrays.toString(array));
-        int index = array.length / 2;
+
+        int median = array.length % 2 == 0 ? (array[array.length / 2 - 1] + array[array.length / 2]) / 2 : array[array.length / 2];
+
+        Arrays.sort(array, Comparator.comparingInt(i -> Math.abs(median - i)));
+
         return array;
     }
 }
