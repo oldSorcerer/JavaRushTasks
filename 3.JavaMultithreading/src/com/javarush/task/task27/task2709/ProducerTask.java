@@ -3,7 +3,7 @@ package com.javarush.task.task27.task2709;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProducerTask implements Runnable {
-    private TransferObject transferObject;
+    private final TransferObject transferObject;
     protected volatile boolean stopped;
     static volatile AtomicInteger i = new AtomicInteger(0);
 
