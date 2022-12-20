@@ -14,7 +14,7 @@ public class Person implements Runnable {
             Thread.sleep(1000);
             synchronized (mail) {
                 mail.setText("Person [" + name + "] wrote an email 'AAA'");
-                notify();
+                mail.notify();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
