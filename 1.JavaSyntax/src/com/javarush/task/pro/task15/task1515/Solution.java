@@ -18,6 +18,5 @@ public class Solution {
         } else {
             System.out.println(path.toAbsolutePath());
         }
-
     }
 }
