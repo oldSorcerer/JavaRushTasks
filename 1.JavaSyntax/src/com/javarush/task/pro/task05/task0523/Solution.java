@@ -12,11 +12,11 @@ public class Solution {
         int y = 0;
         for (int coordinate : coordinates) {
             if (coordinate % 2 != 0) {
-                y += coordinate;
-            } else {
                 x += coordinate;
+            } else {
+                y += coordinate;
             }
         }
-        System.out.println("(" + y + ";" + x + ")");
+        System.out.println("(" + x + ";" + y + ")");
     }
 }
