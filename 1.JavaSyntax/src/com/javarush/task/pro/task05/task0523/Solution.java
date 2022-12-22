@@ -10,13 +10,13 @@ public class Solution {
     public static void main(String[] args) {
         int x = 0;
         int y = 0;
-        for (int i = 0; i <coordinates.length; i++) {
-            if(coordinates[i] % 2 != 0){
-                y = y+ coordinates[i];
-            }else{
-                x = x+ coordinates[i];
+        for (int coordinate : coordinates) {
+            if (coordinate % 2 != 0) {
+                y += coordinate;
+            } else {
+                x += coordinate;
             }
         }
-        System.out.println("("+ y +";"+ x + ")");
+        System.out.println("(" + y + ";" + x + ")");
     }
 }
