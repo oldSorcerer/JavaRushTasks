@@ -4,7 +4,6 @@ package com.javarush.task.pro.task13.task1332;
 Вирусы в Инстаматрице
 */
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,10 +17,9 @@ public class Solution {
     }
 
     public static void removeBugs() {
-        ArrayList<String> matrixLogsCopy = new ArrayList<>(matrixLogs);
-        for (String a : matrixLogsCopy){
-            if (a.startsWith("buahaha")){
-                matrixLogs.remove(a);
+        for (String string : new HashSet<>(matrixLogs)){
+            if (string.startsWith("buahaha")){
+                matrixLogs.remove(string);
             }
         }
     }
