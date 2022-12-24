@@ -24,10 +24,6 @@ public class MyThread  extends Thread {
         super(group, target, name, stackSize);
     }
 
-    public MyThread(ThreadGroup group, Runnable target, String name, long stackSize, boolean inheritThreadLocals) {
-        super(group, target, name, stackSize, inheritThreadLocals);
-    }
-
     public MyThread(String name) {
         super(name);
     }
