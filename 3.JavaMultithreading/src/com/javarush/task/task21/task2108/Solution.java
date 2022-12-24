@@ -49,7 +49,6 @@ public class Solution {
 
         @Override
         public Tree clone() throws CloneNotSupportedException  {
-
             return new Tree(getName(), Arrays.copyOf(this.getBranches(), this.getBranches().length));
         }
     }
