@@ -11,7 +11,7 @@ Magic class
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
         Solution solution = new Solution();
-        List<String> list = null/* create object of this magic class here*/;
+        List<String> list = new CopyOnWriteArrayList<>();
 
         solution.startUpdatingThread(list);
         solution.copyOnWriteSolution(list);
