@@ -20,22 +20,19 @@ public class Solution {
                 if (string.equals("end")) {
                     break;
                 }
-                String substring = string.substring(string.lastIndexOf(".part") + 5);
-                int index = Integer.parseInt(substring);
+                int index = Integer.parseInt(string.substring(string.lastIndexOf("t") + 1));
                 if (!map.containsKey(index)) {
                     map.put(index, string);
                 }
             }
         }
 
-        for (Map.Entry<Integer, String> pair : map.entrySet()) {
-            String fileName = pair.getValue();
+        for (String fileName : map.values()) {
             String shortName = fileName.substring(0, fileName.lastIndexOf("."));
             try (BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
                  BufferedOutputStream outputStream = new BufferedOutputStream( new FileOutputStream(shortName))) {
                 while (inputStream.available() > 0) {
-                    int read = inputStream.read();
-                    outputStream.write(read);
+                    outputStream.write(inputStream.read());
                 }
             }
         }
