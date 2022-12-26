@@ -120,4 +120,17 @@ public class View extends JFrame implements ActionListener {
     public boolean isHtmlTabSelected() {
         return tabbedPane.getSelectedIndex() == tabbedPane.indexOfTab("HTML"); //0
     }
+
+    public void selectHtmlTab() {
+        tabbedPane.setSelectedIndex(0);
+        resetUndo();
+    }
+
+    public void update() {
+        htmlTextPane.setDocument(controller.getDocument());
+    }
+
+    public void showAbout() {
+        JOptionPane.showMessageDialog(getContentPane(), "Version 1.0", "About", JOptionPane.INFORMATION_MESSAGE);
+    }
 }
