@@ -1,6 +1,5 @@
 package com.javarush.task.task32.task3209;
 
-import javax.swing.text.Document;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
@@ -35,7 +34,6 @@ public class Controller {
         document = (HTMLDocument) htmlEditorKit.createDefaultDocument();
         document.addUndoableEditListener(view.getUndoListener());
         view.update();
-
     }
 
     public static void main(String[] args) {
