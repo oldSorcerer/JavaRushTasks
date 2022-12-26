@@ -31,8 +31,21 @@ public class View extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-
+    public void actionPerformed(ActionEvent actionEvent) {
+        String actionCommand = actionEvent.getActionCommand();
+        if (actionCommand.equals("Новый")) {
+            controller.createNewDocument();
+        } else if (actionCommand.equals("Открыть")) {
+            controller.openDocument();
+        } else if (actionCommand.equals("Сохранить")) {
+            controller.saveDocument();
+        } else if (actionCommand.equals("Сохранить как...")) {
+            controller.saveDocumentAs();
+        } else if (actionCommand.equals("Выход")) {
+            controller.exit();
+        } else if (actionCommand.equals("О программе")) {
+            showAbout();
+        }
     }
 
     public Controller getController() {
@@ -82,7 +95,12 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void selectedTabChanged() {
-
+        if (tabbedPane.getSelectedIndex() == 0) {
+            controller.setPlainText(plainTextPane.getText());
+        } else if (tabbedPane.getSelectedIndex() == 1) {
+            plainTextPane.setText(controller.getPlainText());
+        }
+        resetUndo();
     }
 
     public boolean canUndo() {
