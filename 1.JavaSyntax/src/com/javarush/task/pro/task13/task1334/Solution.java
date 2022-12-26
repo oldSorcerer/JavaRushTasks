@@ -18,10 +18,9 @@ public class Solution {
 
     public static void setRewards() {
         List<Voter> voters = Voter.generateVoters();
-        for (int i = 0; i < voters.size(); i++) {
-            Voter voter = voters.get(i);
+        for (Voter voter : voters) {
             String personalQuality = voter.getPersonalQuality();
-            if (personalQuality.equals("Good")){
+            if (personalQuality.equals("Good")) {
                 corporatePyramid.put(voter, new Rewards().getGoodRewardsMap());
             } else if (personalQuality.equals("Holy")) {
                 corporatePyramid.put(voter, new Rewards().getHolyRewardsMap());
