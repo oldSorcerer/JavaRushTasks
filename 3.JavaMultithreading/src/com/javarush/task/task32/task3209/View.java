@@ -16,6 +16,15 @@ public class View extends JFrame implements ActionListener {
     private JTextPane htmlTextPane = new JTextPane();
     private JEditorPane plainTextPane = new JEditorPane();
 
+
+    public View() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            ExceptionHandler.log(new RuntimeException(e));
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -41,14 +50,22 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void initMenuBar() {
-
+        JMenuBar jMenuBar = new JMenuBar();
+        MenuHelper.initFileMenu(this, jMenuBar);
+        MenuHelper.initEditMenu(this, jMenuBar);
+        MenuHelper.initStyleMenu(this, jMenuBar);
+        MenuHelper.initAlignMenu(this, jMenuBar);
+        MenuHelper.initColorMenu(this, jMenuBar);
+        MenuHelper.initFontMenu(this, jMenuBar);
+        MenuHelper.initHelpMenu(this, jMenuBar);
+        getContentPane().add(jMenuBar, BorderLayout.NORTH);
     }
 
     public void initEditor() {
         htmlTextPane.setContentType("text/html");
         tabbedPane.add("HTML", new JScrollPane(htmlTextPane));
         tabbedPane.add("Текст", new JScrollPane(plainTextPane));
-        tabbedPane.setPreferredSize(new Dimension(500, 500));
+        tabbedPane.setPreferredSize(new Dimension(1280, 720));
         tabbedPane.addChangeListener(new TabbedPaneChangeListener(this));
         getContentPane().add(tabbedPane, BorderLayout.CENTER);
     }
