@@ -82,7 +82,12 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void selectedTabChanged() {
-
+        if (tabbedPane.getSelectedIndex() == 0) {
+            controller.setPlainText(plainTextPane.getText());
+        } else if (tabbedPane.getSelectedIndex() == 1) {
+            plainTextPane.setText(controller.getPlainText());
+        }
+        resetUndo();
     }
 
     public boolean canUndo() {
