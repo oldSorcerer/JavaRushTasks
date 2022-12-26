@@ -9,8 +9,8 @@ import javax.swing.event.MenuListener;
 public class UndoMenuListener implements MenuListener {
 
     private View view;
-    private JMenuItem undoMenuItem = new JMenuItem("Отменить");
-    private JMenuItem redoMenuItem = new JMenuItem("Вернуть");
+    private JMenuItem undoMenuItem;
+    private JMenuItem redoMenuItem;
 
     public UndoMenuListener(View view, JMenuItem undoMenuItem, JMenuItem redoMenuItem) {
         this.view = view;
