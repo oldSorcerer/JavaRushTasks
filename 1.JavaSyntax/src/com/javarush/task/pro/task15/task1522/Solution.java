@@ -14,12 +14,11 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         URL url = new URL("https://javarush.ru/api/1.0/rest/projects");
 
-        InputStream inputStream = url.openStream();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-        while (reader.ready()) {
-            System.out.println(reader.readLine());
+        try (InputStream inputStream = url.openStream();
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            while (reader.ready()) {
+                System.out.println(reader.readLine());
+            }
         }
-
     }
 }
