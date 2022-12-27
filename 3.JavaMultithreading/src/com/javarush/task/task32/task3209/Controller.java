@@ -32,8 +32,7 @@ public class Controller {
         if (document != null) {
             document.removeUndoableEditListener(view.getUndoListener());
         }
-        HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
-        document = (HTMLDocument) htmlEditorKit.createDefaultDocument();
+        document = (HTMLDocument) new HTMLEditorKit().createDefaultDocument();
         document.addUndoableEditListener(view.getUndoListener());
         view.update();
     }
@@ -41,8 +40,7 @@ public class Controller {
     public void setPlainText(String text) {
         resetDocument();
         try (StringReader stringReader = new StringReader(text)) {
-            HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
-            htmlEditorKit.read(stringReader, document, 0);
+            new HTMLEditorKit().read(stringReader, document, 0);
         } catch (IOException | BadLocationException e) {
             ExceptionHandler.log(e);
         }
@@ -50,9 +48,8 @@ public class Controller {
 
     public String getPlainText() {
         StringWriter stringWriter = new StringWriter();
-        HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
         try {
-            htmlEditorKit.write(stringWriter, document, 0, document.getLength());
+            new HTMLEditorKit().write(stringWriter, document, 0, document.getLength());
         } catch (IOException | BadLocationException e) {
             ExceptionHandler.log(e);
         }
