@@ -73,7 +73,7 @@ public class Controller {
         HTMLFileFilter htmlFileFilter = new HTMLFileFilter();
         jFileChooser.setFileFilter(htmlFileFilter);
 
-        int dialog = jFileChooser.showOpenDialog(view);
+        int dialog = jFileChooser.showDialog(view, "Open File");
         if (dialog == JFileChooser.APPROVE_OPTION) {
             currentFile = jFileChooser.getSelectedFile();
             resetDocument();
@@ -113,7 +113,7 @@ public class Controller {
         HTMLFileFilter htmlFileFilter = new HTMLFileFilter();
         jFileChooser.setFileFilter(htmlFileFilter);
 
-        int dialog = jFileChooser.showSaveDialog(view);
+        int dialog = jFileChooser.showDialog(view, "Save File");
         if (dialog == JFileChooser.APPROVE_OPTION) {
             currentFile = jFileChooser.getSelectedFile();
             view.setTitle(currentFile.getName());
@@ -125,10 +125,6 @@ public class Controller {
                 ExceptionHandler.log(e);
             }
         }
-    }
-
-    public void showAbout() {
-
     }
 
     public static void main(String[] args) {
