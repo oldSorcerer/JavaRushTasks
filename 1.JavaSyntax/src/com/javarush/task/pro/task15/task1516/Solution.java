@@ -27,9 +27,7 @@ public class Solution {
             } else {
                 break;
             }
-
         }
-
     }
 }
 
