@@ -4,10 +4,7 @@ import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
-import java.io.File;
-import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.io.*;
 
 public class Controller {
 
@@ -79,10 +76,23 @@ public class Controller {
 
     public void saveDocumentAs() {
         view.selectHtmlTab();
+
         JFileChooser jFileChooser = new JFileChooser();
-
         HTMLFileFilter htmlFileFilter = new HTMLFileFilter();
+        jFileChooser.setFileFilter(htmlFileFilter);
 
+        int dialog = jFileChooser.showSaveDialog(view);
+        if (dialog == JFileChooser.APPROVE_OPTION) {
+            currentFile = jFileChooser.getSelectedFile();
+            view.setTitle(currentFile.getName());
+
+            try (FileWriter fileWriter = new FileWriter(currentFile)) {
+                HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
+                htmlEditorKit.write(fileWriter, document, 0, document.getLength());
+            } catch (IOException | BadLocationException e) {
+                ExceptionHandler.log(e);
+            }
+        }
     }
 
     public void showAbout() {
