@@ -3,6 +3,7 @@ package com.javarush.task.task28.task2806;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 /* 
 Знакомство с Executors
@@ -10,9 +11,21 @@ import java.util.concurrent.TimeUnit;
 
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
-        //Add your code here
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
 
-        /* output example
+        IntStream.range(1, 11).mapToObj(i -> (Runnable) () -> doExpensiveOperation(i))
+                .forEach(executorService::submit);
+
+        executorService.shutdown();
+        executorService.awaitTermination(5, TimeUnit.SECONDS);
+
+    }
+
+    private static void doExpensiveOperation(int localId) {
+        System.out.println(Thread.currentThread().getName() + ", localId=" + localId);
+    }
+}
+/* output example
 pool-1-thread-2, localId=2
 pool-1-thread-1, localId=1
 pool-1-thread-3, localId=3
@@ -24,9 +37,3 @@ pool-1-thread-2, localId=6
 pool-1-thread-1, localId=10
 pool-1-thread-3, localId=8
          */
-    }
-
-    private static void doExpensiveOperation(int localId) {
-        System.out.println(Thread.currentThread().getName() + ", localId=" + localId);
-    }
-}
