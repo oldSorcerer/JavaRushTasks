@@ -8,7 +8,7 @@ import java.io.*;
 
 public class Controller {
 
-    private View view;
+    private final View view;
     private HTMLDocument document;
     private File currentFile;
 

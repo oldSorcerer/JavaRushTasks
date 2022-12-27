@@ -14,12 +14,12 @@ public class View extends JFrame implements ActionListener {
 
     private Controller controller;
 
-    private JTabbedPane tabbedPane = new JTabbedPane();
-    private JTextPane htmlTextPane = new JTextPane();
-    private JEditorPane plainTextPane = new JEditorPane();
+    private final JTabbedPane tabbedPane = new JTabbedPane();
+    private final JTextPane htmlTextPane = new JTextPane();
+    private final JEditorPane plainTextPane = new JEditorPane();
 
-    private UndoManager undoManager = new UndoManager();
-    private UndoListener undoListener = new UndoListener(undoManager);
+    private final UndoManager undoManager = new UndoManager();
+    private final UndoListener undoListener = new UndoListener(undoManager);
 
 
     public View() {
@@ -33,18 +33,13 @@ public class View extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         String actionCommand = actionEvent.getActionCommand();
-        if (actionCommand.equals("Новый")) {
-            controller.createNewDocument();
-        } else if (actionCommand.equals("Открыть")) {
-            controller.openDocument();
-        } else if (actionCommand.equals("Сохранить")) {
-            controller.saveDocument();
-        } else if (actionCommand.equals("Сохранить как...")) {
-            controller.saveDocumentAs();
-        } else if (actionCommand.equals("Выход")) {
-            controller.exit();
-        } else if (actionCommand.equals("О программе")) {
-            showAbout();
+        switch (actionCommand) {
+            case "Новый" -> controller.createNewDocument();
+            case "Открыть" -> controller.openDocument();
+            case "Сохранить" -> controller.saveDocument();
+            case "Сохранить как..." -> controller.saveDocumentAs();
+            case "Выход" -> controller.exit();
+            case "О программе" -> showAbout();
         }
     }
 
