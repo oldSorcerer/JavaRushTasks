@@ -72,16 +72,17 @@ public class Controller {
         JFileChooser jFileChooser = new JFileChooser();
         HTMLFileFilter htmlFileFilter = new HTMLFileFilter();
         jFileChooser.setFileFilter(htmlFileFilter);
+
         int dialog = jFileChooser.showOpenDialog(view);
         if (dialog == JFileChooser.APPROVE_OPTION) {
             currentFile = jFileChooser.getSelectedFile();
             resetDocument();
             view.setTitle(currentFile.getName());
 
-            try(FileReader fileReader = new FileReader(currentFile)) {
+            try (FileReader fileReader = new FileReader(currentFile)) {
                 HTMLEditorKit htmlEditorKit = new HTMLEditorKit();
                 htmlEditorKit.read(fileReader, document, 0);
-            }catch (IOException | BadLocationException e) {
+            } catch (IOException | BadLocationException e) {
                 ExceptionHandler.log(e);
             }
             view.resetUndo();
