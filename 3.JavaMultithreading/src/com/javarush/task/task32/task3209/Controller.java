@@ -70,11 +70,9 @@ public class Controller {
         view.selectHtmlTab();
 
         JFileChooser jFileChooser = new JFileChooser();
-        HTMLFileFilter htmlFileFilter = new HTMLFileFilter();
-        jFileChooser.setFileFilter(htmlFileFilter);
+        jFileChooser.setFileFilter(new HTMLFileFilter());
 
-        int dialog = jFileChooser.showDialog(view, "Open File");
-        if (dialog == JFileChooser.APPROVE_OPTION) {
+        if (jFileChooser.showDialog(view, "Open File") == JFileChooser.APPROVE_OPTION) {
             currentFile = jFileChooser.getSelectedFile();
             resetDocument();
             view.setTitle(currentFile.getName());
@@ -110,11 +108,9 @@ public class Controller {
         view.selectHtmlTab();
 
         JFileChooser jFileChooser = new JFileChooser();
-        HTMLFileFilter htmlFileFilter = new HTMLFileFilter();
-        jFileChooser.setFileFilter(htmlFileFilter);
+        jFileChooser.setFileFilter(new HTMLFileFilter());
 
-        int dialog = jFileChooser.showDialog(view, "Save File");
-        if (dialog == JFileChooser.APPROVE_OPTION) {
+        if (jFileChooser.showDialog(view, "Save File") == JFileChooser.APPROVE_OPTION) {
             currentFile = jFileChooser.getSelectedFile();
             view.setTitle(currentFile.getName());
 
