@@ -13,7 +13,6 @@ import java.awt.event.ActionListener;
 
 public class MenuHelper {
 
-
     public static JMenuItem addMenuItem(JMenu parent, String text, ActionListener actionListener) {
         JMenuItem jMenuItem = new JMenuItem(text);
         jMenuItem.addActionListener(actionListener);

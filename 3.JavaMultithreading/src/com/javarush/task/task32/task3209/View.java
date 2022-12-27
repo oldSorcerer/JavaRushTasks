@@ -56,7 +56,6 @@ public class View extends JFrame implements ActionListener {
         this.controller = controller;
     }
 
-
     public void init() {
         initGui();
         addWindowListener(new FrameListener(this));
