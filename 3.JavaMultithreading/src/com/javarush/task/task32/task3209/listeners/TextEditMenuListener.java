@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class TextEditMenuListener implements MenuListener {
 
-    private View view;
+    private final View view;
 
     public TextEditMenuListener(View view) {
         this.view = view;

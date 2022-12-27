@@ -6,7 +6,7 @@ import javax.swing.undo.UndoManager;
 
 public class UndoListener implements UndoableEditListener {
 
-    private UndoManager undoManager;
+    private final UndoManager undoManager;
 
     public UndoListener(UndoManager undoManager) {
         this.undoManager = undoManager;
