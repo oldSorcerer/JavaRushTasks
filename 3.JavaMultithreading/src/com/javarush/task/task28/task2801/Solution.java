@@ -22,7 +22,7 @@ public class Solution {
          */
     }
 
-    public static void switchTest(Enum obj) {
+    public static void switchTest(Enum<?> obj) {
         String name = obj.getClass().getSimpleName();
 
         switch (name) {
