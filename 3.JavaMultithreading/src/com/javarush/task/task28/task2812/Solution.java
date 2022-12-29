@@ -20,7 +20,7 @@ public class Solution {
             });
         }
 
-        executor.shutdownNow();
+        executor.shutdownNow().forEach(System.out::println);
     }
 
     private static void doExpensiveOperation(int localId) {
