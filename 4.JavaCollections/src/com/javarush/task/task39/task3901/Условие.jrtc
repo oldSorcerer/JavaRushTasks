@@ -1,0 +1,15 @@
+taskKey="com.javarush.task.task39.task3901"\n\nУникальные подстроки
+
+Реализуй метод lengthOfLongestUniqueSubstring таким образом, чтобы он возвращал длину
+самой длинной подстроки без повторяющихся символов, найденной в строке полученной в качестве параметра.
+Например, для строки &quot;a123bcbcqwe&quot; - 6, а для строки &quot;ttttwt&quot; - 2.
+Если анализируемая строка пуста или равна null - верни 0.
+
+
+Требования:
+1.	Метод lengthOfLongestUniqueSubstring должен возвращать длину подстроки с максимальным количеством уникальных символов.
+2.	Метод lengthOfLongestUniqueSubstring должен возвращать 0 для пустой строки, или строки равной null.
+3.	Метод lengthOfLongestUniqueSubstring должен быть публичным.
+4.	Метод lengthOfLongestUniqueSubstring должен быть статическим.
+
+
