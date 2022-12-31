@@ -10,14 +10,14 @@ FutureTask
 */
 
 public class Solution {
-    private static final ExecutorService threadpool = Executors.newFixedThreadPool(4);
+    private static final ExecutorService THREAD_POOL = Executors.newFixedThreadPool(4);
     private static final int n = 16;
 
-    public static void main(String args[]) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         FactorialCalculator task = new FactorialCalculator(n);
 
         System.out.println("Submitting Task ...");
-        Future future = threadpool.submit(task);
+        Future<Long> future = THREAD_POOL.submit(task);
         System.out.println("The task was submitted successfully");
 
         while (!future.isDone()) {
@@ -26,9 +26,9 @@ public class Solution {
         }
 
         System.out.println("The task is done. Let's check the result");
-        long factorial = (long) future.get();
+        long factorial = future.get();
 
         System.out.println("Factorial of " + n + " is " + factorial);
-        threadpool.shutdown();
+        THREAD_POOL.shutdown();
     }
 }

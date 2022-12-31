@@ -2,7 +2,7 @@ package com.javarush.task.task28.task2813;
 
 import java.util.concurrent.Callable;
 
-public class FactorialCalculator implements Callable {
+public class FactorialCalculator implements Callable<Long> {
     private final int number;
 
     public FactorialCalculator(int number) {
@@ -10,8 +10,8 @@ public class FactorialCalculator implements Callable {
     }
 
     @Override
-    public Long call() {
-        return 0L;
+    public Long call() throws InterruptedException {
+        return factorial(number);
     }
 
     public long factorial(int number) throws InterruptedException {
