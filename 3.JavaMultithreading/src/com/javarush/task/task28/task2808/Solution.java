@@ -26,6 +26,13 @@ public class Solution {
         executor.shutdown();
         executor.awaitTermination(10, TimeUnit.SECONDS);
 
+    }
+
+    public static Callable<String> getTask(final int i) {
+
+        return null;
+    }
+}
 /* output
 500500
 501501
@@ -40,9 +47,3 @@ public class Solution {
 510555
 50000005000000
 */
-    }
-
-    public static Callable<String> getTask(final int i) {
-        return null;
-    }
-}
