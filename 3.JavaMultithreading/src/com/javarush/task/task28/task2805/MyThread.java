@@ -1,6 +1,15 @@
 package com.javarush.task.task28.task2805;
 
-public class MyThread  extends Thread {
+public class MyThread extends Thread {
+
+    {
+        int priority = getPriority();
+        if (priority == MAX_PRIORITY) {
+            priority = MIN_PRIORITY;
+            setPriority(++priority);
+        }
+    }
+
     public MyThread() {
     }
 
@@ -28,7 +37,7 @@ public class MyThread  extends Thread {
         super(name);
     }
 
-    public boolean getPriority(int min, int max) {
-        return false;
-    }
+//    public boolean getPriority(int min, int max) {
+//        return false;
+//    }
 }
