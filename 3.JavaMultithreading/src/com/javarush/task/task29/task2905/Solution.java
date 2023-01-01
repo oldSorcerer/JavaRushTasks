@@ -45,7 +45,7 @@ public class Solution {
         new Thread() {
             @Override
             public void run() {
-                for (int i = 0; i < 100000; i++) {
+                for (int i = 0; i < 100_000; i++) {
                     messageQueue.add(String.valueOf(i--));
                 }
             }

@@ -5,7 +5,7 @@ package com.javarush.task.task29.task2904;
 */
 
 public class Solution {
-    private Integer[] array = new Integer[]{1, 2, 3, 4};
+    private final Integer[] array = new Integer[]{1, 2, 3, 4};
 
     public static void main(String[] args) {
         Number value1 = new Solution().getValueByIndex(5); //-1.0, class java.lang.Double expected
@@ -16,6 +16,10 @@ public class Solution {
     }
 
     Number getValueByIndex(int index) {
-        return (index >= 0 && index < array.length) ? array[index] : new Double(-1);
+        if (index >= 0 && index < array.length) {
+            return array[index];
+        } else {
+            return (double) -1;
+        }
     }
 }
