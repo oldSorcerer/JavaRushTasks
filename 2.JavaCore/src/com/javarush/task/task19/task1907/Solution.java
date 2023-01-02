@@ -17,7 +17,7 @@ public class Solution {
             int count = 0;
             while (reader.ready()) {
                 String string = reader.readLine();
-                String replacedString = string.replaceAll("\\p{P}", " ").replaceAll("\\s", " ");
+                String replacedString = string.replaceAll("\\p{P}", " ");
                 for (String str: replacedString.split(" ")) {
                     if (str.equals("world")) {
                         count++;
