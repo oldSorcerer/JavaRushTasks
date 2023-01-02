@@ -22,7 +22,7 @@ public class Solution {
                 System.out.print(word + " ");
             }
         }
-        System.out.println(" ");
+        System.out.println();
         for (String word : words) {
             if (word.contains("obj")) {
                 try {
