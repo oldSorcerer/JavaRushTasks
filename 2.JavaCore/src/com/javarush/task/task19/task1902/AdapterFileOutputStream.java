@@ -15,10 +15,6 @@ public class AdapterFileOutputStream implements AmigoStringWriter {
         this.fileOutputStream = fileOutputStream;
     }
 
-    public static void main(String[] args) {
-
-    }
-
     @Override
     public void flush() throws IOException {
         fileOutputStream.flush();
@@ -32,6 +28,10 @@ public class AdapterFileOutputStream implements AmigoStringWriter {
     @Override
     public void close() throws IOException {
         fileOutputStream.close();
+    }
+
+    public static void main(String[] args) {
+
     }
 }
 
