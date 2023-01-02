@@ -9,17 +9,13 @@ public class Solution {
 
         int i = 0;
         while (i < 5) {
-            System.out.print("Q");
             int j = 0;
-            while (j <9) {
+            while (j < 10) {
                 System.out.print("Q");
                 j++;
             }
             System.out.println();
             i++;
-
         }
-
-
     }
 }
