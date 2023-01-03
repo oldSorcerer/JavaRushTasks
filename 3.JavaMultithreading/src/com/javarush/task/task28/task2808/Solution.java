@@ -17,7 +17,7 @@ public class Solution {
             futures.add(executor.submit(getTask(i)));
         }
 
-        futures.add(executor.submit(getTask(10000000)));
+        futures.add(executor.submit(getTask(10_000_000)));
 
         for (Future<String> future : futures) {
             System.out.println(future.get());
