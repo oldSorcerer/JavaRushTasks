@@ -18,6 +18,7 @@ public class Solution {
         for (Map.Entry<String, String> entry : runtimeStorage.entrySet()) {
             properties.setProperty(entry.getKey(), entry.getValue());
         } //runtimeStorage.forEach((k,v) ->properties.setProperty(k, v));
+        //properties.putAll(runtimeStorage);
         properties.store(outputStream, null);
     }
 
