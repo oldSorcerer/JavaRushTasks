@@ -18,6 +18,7 @@ public class Solution {
         }
 
         futures.add(executor.submit(getTask(10_000_000)));
+        futures.add(executor.submit(getTask(Integer.MAX_VALUE)));
 
         for (Future<String> future : futures) {
             System.out.println(future.get());
@@ -29,8 +30,8 @@ public class Solution {
     }
 
     public static Callable<String> getTask(final int i) {
-
-        return null;
+        return () -> BigInteger.valueOf(i).multiply((BigInteger.valueOf(i).add(BigInteger.ONE))).divide(BigInteger.valueOf(2)).toString();
+//    return () -> String.valueOf(i * (i + 1L) / 2);
     }
 }
 /* output
