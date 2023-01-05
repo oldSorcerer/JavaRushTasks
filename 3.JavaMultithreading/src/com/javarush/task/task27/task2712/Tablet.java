@@ -3,24 +3,30 @@ package com.javarush.task.task27.task2712;
 import com.javarush.task.task27.task2712.kitchen.Order;
 
 import java.io.IOException;
+import java.util.Observable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Tablet {
+public class Tablet extends Observable {
+
     private final int number;
-    private static final Logger logger = Logger.getLogger(Tablet.class.getName());
+    private static Logger logger = Logger.getLogger(Tablet.class.getName());
 
     public Tablet(int number) {
         this.number = number;
     }
 
-    public void createOrder() {
+    public Order createOrder() {
+        Order order = null;
         try {
-            ConsoleHelper.writeMessage(new Order(this).toString());
+            order = new Order(this);
+            ConsoleHelper.writeMessage(order.toString());
+            setChanged();
+            notifyObservers(order);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         }
-
+        return order;
     }
 
     @Override
