@@ -8,12 +8,21 @@ import java.util.List;
 
 public class Order {
 
-    protected List<Dish> dishes;
     private final Tablet tablet;
+    protected List<Dish> dishes;
 
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
         dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(this.toString());
+    }
+
+    public int getTotalCookingTime() {
+        return dishes.stream().mapToInt(Dish::getDuration).sum();
+    }
+
+    public boolean isEmpty() {
+        return dishes.isEmpty();
     }
 
     @Override
@@ -21,6 +30,6 @@ public class Order {
         if (dishes.isEmpty()) {
             return "";
         }
-        return "Your order: " + dishes + " of " + tablet.toString();
+        return String.format("Your order: %s of %s, cooking time %smin", dishes, tablet.toString(), getTotalCookingTime());
     }
 }

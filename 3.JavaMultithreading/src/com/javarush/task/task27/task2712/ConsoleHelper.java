@@ -24,6 +24,7 @@ public class ConsoleHelper {
         List<Dish> dishes = new ArrayList<>();
 
         writeMessage(String.format("Please choose a dish from the list: [ %s ] or type 'exit' to complete the order", Dish.allDishesToString()));
+
         while (true) {
             String dishName = readString().trim();
             if (dishName.equals("exit")) {
@@ -39,5 +40,4 @@ public class ConsoleHelper {
         }
         return dishes;
     }
-
 }
