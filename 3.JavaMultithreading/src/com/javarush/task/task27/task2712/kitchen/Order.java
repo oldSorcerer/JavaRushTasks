@@ -8,12 +8,13 @@ import java.util.List;
 
 public class Order {
 
-    protected List<Dish> dishes;
     private final Tablet tablet;
+    protected List<Dish> dishes;
 
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
         dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(this.toString());
     }
 
     public int getTotalCookingTime() {
