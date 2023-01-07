@@ -1,7 +1,6 @@
 package com.javarush.task.task29.task2913;
 
 import java.util.Random;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /* 
