@@ -11,6 +11,9 @@ public class AdvertisementManager {
     }
 
     public void processVideos() {
-        System.out.println("calling processVideos method");
+        if (storage.list().isEmpty()) {
+
+        }
+
     }
 }
