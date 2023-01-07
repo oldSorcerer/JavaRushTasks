@@ -1,6 +1,7 @@
 package com.javarush.task.task29.task2913;
 
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /* 
@@ -12,19 +13,18 @@ public class Solution {
     private static int numberB;
 
     public static String getAllNumbersBetween(int a, int b) {
-
         StringBuilder builder = new StringBuilder();
         if (a > b) {
             for (int i = a; i >= b; i--) {
                 builder.append(i).append(" ");
             }
         } else {
-            if (a == b) {
-                return Integer.toString(a);
-            }
             IntStream.rangeClosed(a, b).forEach(i -> builder.append(i).append(" "));
         }
         return builder.toString().trim();
+        /*return a > b ?
+                IntStream.iterate(a, i -> i >= b, i -> i - 1).mapToObj(i -> i + " ").collect(Collectors.joining()).trim() :
+                IntStream.rangeClosed(a, b).mapToObj(i -> i + " ").collect(Collectors.joining()).trim();*/
     }
 
     public static void main(String[] args) {
