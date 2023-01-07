@@ -1,7 +1,5 @@
 package com.javarush.task.pro.task08.task0801;
 
-import static java.lang.Math.toRadians;
-
 /* 
 Утильный класс: часть 1
 */
