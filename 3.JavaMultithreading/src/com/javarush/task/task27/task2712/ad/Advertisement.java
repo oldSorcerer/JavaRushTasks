@@ -4,7 +4,7 @@ public class Advertisement {
 
     private final Object content;
     private final String name;
-    private final long initialAmount;
+    private long initialAmount;
     private final int hits;
     private final int duration;
 
@@ -29,5 +29,12 @@ public class Advertisement {
 
     public long getAmountPerOneDisplaying() {
         return amountPerOneDisplaying;
+    }
+
+    public void revalidate() {
+        if (initialAmount < 0) {
+            throw  new UnsupportedOperationException();
+        }
+        initialAmount = initialAmount - 1;
     }
 }
