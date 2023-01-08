@@ -39,4 +39,16 @@ public class Solution {
         factory.newThread(r).start();
         factory.newThread(r).start();
     }
+
+    public static class AmigoThreadFactory implements ThreadFactory {
+        @Override
+        public Thread newThread(Runnable r) {
+            Thread thread = new Thread();
+            thread.setDaemon(false);
+            thread.setPriority(5);
+            thread.setName("GN-pool-A-thread-B");
+
+            return null;
+        }
+    }
 }
