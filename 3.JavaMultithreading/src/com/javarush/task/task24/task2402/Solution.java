@@ -20,7 +20,6 @@ public class Solution {
         test4.clone();
     }
 
-
     public static class Test1 implements Cloneable {
         protected Test1 clone() throws CloneNotSupportedException {
             return (Test1) super.clone();
