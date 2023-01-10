@@ -4,25 +4,43 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MyThread extends Thread {
 
-    private AtomicInteger priority = new AtomicInteger(0);
+    private static final AtomicInteger atomicInteger = new AtomicInteger(1); //9
+
+//    {
+//        this.setPriority(atomicInteger.incrementAndGet() % 10 + 1);
+//    }
 
     {
-        int priority = getPriority();
-        if (priority == MAX_PRIORITY) {
+        int priority = atomicInteger.getAndIncrement();
+        if (priority > MAX_PRIORITY) {
             priority = MIN_PRIORITY;
         }
-            setPriority(++priority);
+        atomicInteger.set(priority);
+        setPriority(atomicInteger.getAndIncrement());
+
+        if (getThreadGroup() != null && getThreadGroup().getMaxPriority() < priority) {
+            setPriority(getThreadGroup().getMaxPriority());
+        }
     }
 
     public MyThread() {
+        super();
     }
 
     public MyThread(Runnable target) {
         super(target);
     }
 
-    public MyThread(ThreadGroup group, String s) {
-        super(group, s);
+    public MyThread(ThreadGroup group, Runnable target) {
+        super(group, target);
+    }
+
+    public MyThread(String name) {
+        super(name);
+    }
+
+    public MyThread(ThreadGroup group, String name) {
+        super(group, name);
     }
 
     public MyThread(Runnable target, String name) {
@@ -36,12 +54,4 @@ public class MyThread extends Thread {
     public MyThread(ThreadGroup group, Runnable target, String name, long stackSize) {
         super(group, target, name, stackSize);
     }
-
-    public MyThread(String name) {
-        super(name);
-    }
-
-//    public boolean getPriority(int min, int max) {
-//        return false;
-//    }
 }
