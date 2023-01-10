@@ -1,13 +1,17 @@
 package com.javarush.task.task28.task2805;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class MyThread extends Thread {
+
+    private AtomicInteger priority = new AtomicInteger(0);
 
     {
         int priority = getPriority();
         if (priority == MAX_PRIORITY) {
             priority = MIN_PRIORITY;
-            setPriority(++priority);
         }
+            setPriority(++priority);
     }
 
     public MyThread() {
