@@ -22,7 +22,7 @@ public class Solution {
                 String string = reader.readLine();
 
                 String name = string.replaceAll("\\d", "").trim();
-                String date = string.replaceAll("\\D+", "").trim();
+                String date = string.replaceAll("\\D", " ").trim();
 
                 PEOPLE.add(new Person(name, dateFormat.parse(date)));
             }
