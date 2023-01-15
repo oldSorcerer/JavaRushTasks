@@ -19,9 +19,9 @@ public class Solution implements Serializable {
         }
     }
 
-    public static class B extends A implements Serializable {
+    public class B extends A implements Serializable {
 
-        private final String nameB;
+        private String nameB;
 
         public B(String nameA, String nameB) {
             super(nameA);
@@ -33,29 +33,32 @@ public class Solution implements Serializable {
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
             out.writeObject(nameA);
+            out.writeObject(nameB);
         }
 
         @Serial
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             nameA = (String) in.readObject();
+            nameB = (String) in.readObject();
         }
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         try (ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
-             ObjectOutputStream oos = new ObjectOutputStream(arrayOutputStream);
-             ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(arrayOutputStream.toByteArray());
-             ObjectInputStream ois = new ObjectInputStream(arrayInputStream)) {
+             ObjectOutputStream oos = new ObjectOutputStream(arrayOutputStream)) {
 
-            B b = new B("B2", "C33");
+            Solution solution = new Solution();
+            B b = solution.new B("B2", "C33");
             System.out.println("nameA: " + b.nameA + ", nameB: " + b.nameB);
 
             oos.writeObject(b);
+            try (ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(arrayOutputStream.toByteArray());
+                 ObjectInputStream ois = new ObjectInputStream(arrayInputStream)) {
 
-
-            B b1 = (B) ois.readObject();
-            System.out.println("nameA: " + b1.nameA + ", nameB: " + b1.nameB);
+                B b1 = (B) ois.readObject();
+                System.out.println("nameA: " + b1.nameA + ", nameB: " + b1.nameB);
+            }
         }
     }
 }

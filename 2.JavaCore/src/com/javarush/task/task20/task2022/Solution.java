@@ -42,7 +42,7 @@ public class Solution implements Serializable, AutoCloseable {
         try (FileOutputStream fileOutput = new FileOutputStream("your_file_name_2.txt");
              ObjectOutputStream outputStream = new ObjectOutputStream(fileOutput);
              FileInputStream fiStream = new FileInputStream("your_file_name_2.txt");
-             ObjectInputStream objectStream = new ObjectInputStream(fiStream)
+             ObjectInputStream inputStream = new ObjectInputStream(fiStream)
         ) {
             Solution solution = new Solution("your_file_name_1.txt");
             solution.writeObject("some text");
@@ -51,7 +51,7 @@ public class Solution implements Serializable, AutoCloseable {
             outputStream.flush();
 
             //load object from file
-            Solution loadedObject = (Solution) objectStream.readObject();
+            Solution loadedObject = (Solution) inputStream.readObject();
 
             loadedObject.writeObject("some text - 2");
         } catch (Exception ignored) {
