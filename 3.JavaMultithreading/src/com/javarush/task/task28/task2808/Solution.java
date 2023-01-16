@@ -13,6 +13,7 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         List<Future<String>> futures = new ArrayList<>();
         ExecutorService executor = Executors.newFixedThreadPool(5);
+        //List<Future<String>> futures = IntStream.rangeClosed(1000, 1010).mapToObj(i -> executor.submit(getTask(i))).collect(Collectors.toList());
         for (int i = 1000; i <= 1010; i++) {
             futures.add(executor.submit(getTask(i)));
         }
