@@ -54,7 +54,7 @@ public class Solution {
             }
         }
 
-        public static Thread getThread() {
+        public static Thread getCurrentThread() {
             return Thread.currentThread();
         }
     }
