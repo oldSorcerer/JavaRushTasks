@@ -3,6 +3,8 @@ package com.javarush.task.task28.task2807;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /* 
 Знакомство с ThreadPoolExecutor
@@ -11,18 +13,21 @@ import java.util.concurrent.TimeUnit;
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
 
-        LinkedBlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<>();
+        LinkedBlockingQueue<Runnable> blockingQueue = IntStream
+                .rangeClosed(1, 10)
+                .mapToObj(i ->(Runnable)() -> doExpensiveOperation(i))
+                .collect(Collectors.toCollection(LinkedBlockingQueue::new));
 
-        for (int i = 1; i <= 10; i++) {
-            final int localId = i;
-            blockingQueue.add(() -> doExpensiveOperation(localId));
-        }
+//        LinkedBlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<>();
+//        for (int i = 1; i <= 10; i++) {
+//            final int localId = i;
+//            blockingQueue.add(() -> doExpensiveOperation(localId));
+//        }
 
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, blockingQueue);
         executor.prestartAllCoreThreads();
         executor.shutdown();
         executor.awaitTermination(5, TimeUnit.SECONDS);
-
     }
 
     private static void doExpensiveOperation(int localId) {
