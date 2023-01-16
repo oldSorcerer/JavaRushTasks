@@ -13,12 +13,16 @@ import java.util.stream.IntStream;
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
 
-        LinkedBlockingQueue<Runnable> blockingQueue = IntStream.rangeClosed(1, 10).mapToObj(i ->(Runnable)() -> doExpensiveOperation(i)).collect(Collectors.toCollection(LinkedBlockingQueue::new));
+        LinkedBlockingQueue<Runnable> blockingQueue = IntStream
+                .rangeClosed(1, 10)
+                .mapToObj(i ->(Runnable)() -> doExpensiveOperation(i))
+                .collect(Collectors.toCollection(LinkedBlockingQueue::new));
 
-        /*for (int i = 1; i <= 10; i++) {
-            final int localId = i;
-            blockingQueue.add(() -> doExpensiveOperation(localId));
-        }*/
+//        LinkedBlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<>();
+//        for (int i = 1; i <= 10; i++) {
+//            final int localId = i;
+//            blockingQueue.add(() -> doExpensiveOperation(localId));
+//        }
 
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, blockingQueue);
         executor.prestartAllCoreThreads();
