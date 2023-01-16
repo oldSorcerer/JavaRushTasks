@@ -15,11 +15,11 @@ public class Solution {
     }
 
     public static void printDNA() {
-        for (StackTraceElement[] a : getDNA()) {
-            StackTraceElement stackTraceElement = a[1];
-            System.out.printf("File name: %s, Method name: %s, Line number: %d\n",
-                    stackTraceElement.getFileName(), stackTraceElement.getMethodName(),
-                    stackTraceElement.getLineNumber());
+        for (StackTraceElement[] elements : getDNA()) {
+            StackTraceElement element = elements[1];
+            System.out.printf("File name: %s, Method name: %s, Line number: %s",
+                    element.getFileName(), element.getMethodName(),
+                    element.getLineNumber() + System.lineSeparator());
         }
     }
 
