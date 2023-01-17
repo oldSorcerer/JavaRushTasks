@@ -1,6 +1,21 @@
-taskKey="com.javarush.task.sql.task08.task0802"\n\ntask0802
+taskKey="com.javarush.task.sql.task08.task0802"\n\nОткат транзакции
 
-task0802
+В методе main создай подключение к БД с помощью метода getConnection(String, String, String) класса DriverManager.
+Используй URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль.
+Отключи AutoCommit.
+Получи Statement используя метод createStatement без параметров.
+
+Сотруднику (таблица employee) с полем name равному Diego, увеличь значение salary на 2000.
+Сотруднику (таблица employee) с полем name равному Amigo, увеличь значение salary на 500.
+Выполни commit.
+
+Оберни код в блок try-catch, и в catch вызови rollback у подключения.
+Закрой Statement и Connection.
+
+
 Требования:
+1.	В методе main должно создаваться подключение к БД и отключаться AutoCommit согласно условию.
+2.	В методе main у подключения должен вызываться метод createStatement без параметров.
+3.	В базу данных должно быть внесено два изменения и выполнен коммит согласно условию.
 
 
