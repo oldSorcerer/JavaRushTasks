@@ -3,7 +3,7 @@ package com.javarush.task.sql.task07.task0709;
 import java.sql.*;
 
 /* 
-task0709
+Метод getObject
 */
 
 public class Solution {

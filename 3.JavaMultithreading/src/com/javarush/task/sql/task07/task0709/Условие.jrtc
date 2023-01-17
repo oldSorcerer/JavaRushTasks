@@ -1,10 +1,10 @@
-taskKey="com.javarush.task.sql.task07.task0709"\n\ntask0709
+taskKey="com.javarush.task.sql.task07.task0709"\n\nМетод getObject
 
 В методе main создай подключение к БД с помощью метода getConnection(String, String, String) класса DriverManager.
 Используй URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль.
 Получи Statement используя метод createStatement без параметров.
 
-Выведи в консоль значения колонок name (VARCHAR), weight (FLOAT), birthday (DATE) и inn (LONG) разделенные пробелом.
+Выведи в консоль из таблицы employee значения колонок name (VARCHAR), weight (FLOAT), birthday (DATE) и inn (LONG) разделенные пробелом.
 Пример вывода:
 Pasha 73.7 null 2222222222
 Nastya null 1997-07-17 null
@@ -16,6 +16,5 @@ Nastya null 1997-07-17 null
 1.	В методе main должно создаваться подключение к БД согласно условию.
 2.	В методе main у подключения должен вызываться метод createStatement без параметров.
 3.	В консоль должны быть выведены значения колонок name, weight, birthday и inn согласно условию.
-4.	Statement и Connection должны быть закрыты.
 
 
