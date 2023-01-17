@@ -1,10 +1,10 @@
-taskKey="com.javarush.task.sql.task07.task0708"\n\ntask0708
+taskKey="com.javarush.task.sql.task07.task0708"\n\nПолучение даты
 
 В методе main создай подключение к БД с помощью метода getConnection(String, String, String) класса DriverManager.
 Используй URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль.
 Получи Statement используя метод createStatement без параметров.
 
-Выведи в консоль значения колонок name (VARCHAR) и created (TIMESTAMP) разделенные пробелом.
+Выведи в консоль из таблицы employee значения колонок name (VARCHAR) и created (TIMESTAMP), разделенные пробелом.
 Значения колонки created представь в виде LocalDateTime.
 Пример вывода:
 Vasya 2020-01-01T10:10:10
@@ -17,6 +17,5 @@ Pasha 2019-12-31T23:40:10
 1.	В методе main должно создаваться подключение к БД согласно условию.
 2.	В методе main у подключения должен вызываться метод createStatement без параметров.
 3.	В консоль должны быть выведены значения колонок name и created согласно условию.
-4.	Statement и Connection должны быть закрыты.
 
 
