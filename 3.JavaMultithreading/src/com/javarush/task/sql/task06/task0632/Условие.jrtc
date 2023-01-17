@@ -1,6 +1,10 @@
-taskKey="com.javarush.task.sql.task06.task0632"\n\ntask0632
+taskKey="com.javarush.task.sql.task06.task0632"\n\nДобавление в таблицу FOREIGN KEY с опциями
 
-task0632
+Напиши скрипт добавления FOREIGN KEY с опциями ON UPDATE CASCADE, ON DELETE SET NULL в таблицу event по
+полю user_id с ссылкой на поле id таблицы users.
+
+
 Требования:
+1.	Запрос должен быть реализован согласно условию.
 
 
