@@ -1,6 +1,6 @@
-taskKey="com.javarush.task.sql.task06.task0630"\n\ntask0630
+taskKey="com.javarush.task.sql.task06.task0630"\n\nДобавление в таблицу FOREIGN KEY
 
-Напиши скрипт добавления FOREIGN KEY в таблицу event по полю user_id с ссылкой на поле id таблицы user.
+Напиши скрипт добавления FOREIGN KEY в таблицу event по полю user_id с ссылкой на поле id таблицы users.
 
 
 Требования:
