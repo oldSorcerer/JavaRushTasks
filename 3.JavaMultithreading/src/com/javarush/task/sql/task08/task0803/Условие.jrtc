@@ -1,6 +1,17 @@
 taskKey="com.javarush.task.sql.task08.task0803"\n\ntask0803
 
-task0803
+В методе main создай подключение к БД с помощью метода getConnection(String, String, String) класса DriverManager.
+Используй URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль.
+Получи PreparedStatement используя метод prepareStatement, передав в качестве параметра переменную sql.
+Установи запросу соответствующие параметры используя переменные name, age и smth.
+Выполни запрос.
+Закрой Statement и Connection.
+
+
 Требования:
+1.	В методе main должно создаваться подключение к БД согласно условию.
+2.	В методе main у Connection должен вызываться метод prepareStatement согласно условию.
+3.	В методе main у PreparedStatement должны вызываться методы setString, setInt и executeUpdate согласно условию.
+4.	В таблицу employee должна добавиться новая запись.
 
 
