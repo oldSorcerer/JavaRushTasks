@@ -1,6 +1,13 @@
 taskKey="com.javarush.task.sql.task08.task0807"\n\ntask0807
 
-task0807
+В конструкторе HikariCPDataSource выполни настройку HikariCP:
+- инициализируй поле config;
+- установи полю config параметры подключения к БД: URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль;
+- инициализируй поле ds передав в конструктор поле config.
+
+
 Требования:
+1.	Конструктор HikariCPDataSource должен инициализировать поле config согласно условию.
+2.	Конструктор HikariCPDataSource должен инициализировать поле ds согласно условию.
 
 
