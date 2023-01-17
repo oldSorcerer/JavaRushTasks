@@ -1,9 +1,9 @@
-package com.javarush.task.sql.task07.task0709;
+package com.javarush.task.sql.task08.task0801;
 
 import java.sql.*;
 
 /* 
-Метод getObject
+Работа с транзакциями
 */
 
 public class Solution {

@@ -3,7 +3,7 @@ package com.javarush.task.sql.task07.task0708;
 import java.sql.*;
 
 /* 
-task0708
+Получение даты
 */
 
 public class Solution {

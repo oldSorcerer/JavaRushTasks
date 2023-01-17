@@ -3,7 +3,7 @@ package com.javarush.task.sql.task07.task0707;
 import java.sql.*;
 
 /* 
-task0707
+Метод wasNull
 */
 
 public class Solution {
