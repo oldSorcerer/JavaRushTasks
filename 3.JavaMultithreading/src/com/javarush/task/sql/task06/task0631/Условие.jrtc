@@ -1,6 +1,9 @@
 taskKey="com.javarush.task.sql.task06.task0631"\n\ntask0631
 
-task0631
+Напиши скрипт удаления FOREIGN KEY fk_user из таблицы event.
+
+
 Требования:
+1.	Запрос должен быть реализован согласно условию.
 
 
