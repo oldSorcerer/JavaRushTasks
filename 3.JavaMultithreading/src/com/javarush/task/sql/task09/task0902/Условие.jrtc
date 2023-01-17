@@ -1,11 +1,11 @@
-taskKey="com.javarush.task.sql.task09.task0902"\n\ntask0902
+taskKey="com.javarush.task.sql.task09.task0902"\n\nEntity
 
 Подключи зависимости в проект. Для этого Alt + Ctrl + Shift + S (в Идее), вкладка Libraries.
-Зависимость можна скачать здесь: https://javarush.ru/downloads/ide/javarush/hibernate.zip
+Зависимости можно скачать здесь: https://javarush.ru/downloads/ide/javarush/hibernate.zip
 Архив распакуй, и каждую зависимость добавь к модулю. Эта часть задания не проверяется, но если ее не выполнить - ты не сможешь локально выполнять код.
 
 Добавь в публичный класс Animal приватные поля: id (Long), name (String), age (Integer), family (String).
-У класса должны присутствовать аннотации @Entity и @Table (имя таблицы animal_table, схема - temp).
+У класса должны присутствовать аннотации @Entity и @Table (имя таблицы animal_table, схема - test).
 У всех полей должны присутствовать геттеры и сеттеры.
 У поля id должна присутствовать соответствующая аннотация.
 У остальных полей должна присутствовать аннотация @Column, в которой указано имя колонки. Имя колонки совпадает с названием поля.
