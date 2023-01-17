@@ -10,14 +10,14 @@ public class Solution {
     public static int[][] multiArray;
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int num = Integer.parseInt(sc.nextLine());
+        int num = Integer.parseInt(scanner.nextLine());
 
         if (num > 0) {
             multiArray = new int[num][];
             for (int i = 0; i < num; i++) {
-                int n = Integer.parseInt(sc.nextLine());
+                int n = Integer.parseInt(scanner.nextLine());
                 multiArray[i] = new int[n];
             }
         }

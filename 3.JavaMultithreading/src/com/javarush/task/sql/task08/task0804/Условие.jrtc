@@ -1,6 +1,21 @@
 taskKey="com.javarush.task.sql.task08.task0804"\n\ntask0804
 
-task0804
+В методе main создай подключение к БД с помощью метода getConnection(String, String, String) класса DriverManager.
+Используй URL &quot;jdbc:mysql://localhost:3306/test&quot;, пользователя &quot;root&quot; и такой же пароль.
+Получи PreparedStatement используя метод prepareStatement, передав в качестве параметра переменную sql.
+В batch-режиме добавь в таблицу пять записей:
+(&#39;employee_0&#39;, 30, &#39;i = 0&#39;),
+(&#39;employee_1&#39;, 31, &#39;i = 1&#39;),
+...
+(&#39;employee_4&#39;, 34, &#39;i = 4&#39;).
+
+Закрой Statement и Connection.
+
+
 Требования:
+1.	В методе main должно создаваться подключение к БД согласно условию.
+2.	В методе main у Connection должен вызываться метод prepareStatement согласно условию.
+3.	В методе main у PreparedStatement должны вызываться методы setString, setInt, addBatch и executeBatch согласно условию.
+4.	В таблицу employee должны добавиться пять новых записей.
 
 
