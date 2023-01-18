@@ -9,7 +9,10 @@ task0703
 public class Solution {
 
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
-
+        try (Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/test", "root", "root");
+             Statement statement = connection.createStatement()){
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM employee");
+        }
     }
 }
