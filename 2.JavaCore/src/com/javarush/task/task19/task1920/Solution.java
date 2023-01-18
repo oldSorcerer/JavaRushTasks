@@ -15,19 +15,14 @@ public class Solution {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
             while (reader.ready()) {
-                String string = reader.readLine();
-                String[] strings = string.split(" ");
+                String[] strings = reader.readLine().split(" ");
                 String name = strings[0];
                 double aDouble = Double.parseDouble(strings[1]);
-                if (!map.containsKey(name)) {
-                    map.put(name, aDouble);
-                } else {
-                    map.put(name, map.get(name) + aDouble);
-                }
+                map.merge(name, aDouble, Double::sum);
             }
         }
 
-        double max = 0.0;
+        double max = Double.MAX_VALUE;
         for (Map.Entry<String, Double> entry : map.entrySet()) {
             if (entry.getValue() > max) {
                 max = entry.getValue();
@@ -38,8 +33,6 @@ public class Solution {
             }
         }
 
-        for (String string : set) {
-            System.out.println(string);
-        }
+        set.forEach(System.out::println);
     }
 }
