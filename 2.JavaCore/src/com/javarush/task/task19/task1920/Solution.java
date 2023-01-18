@@ -22,7 +22,7 @@ public class Solution {
             }
         }
 
-        double max = Double.MAX_VALUE;
+        double max = Double.MIN_VALUE;
         for (Map.Entry<String, Double> entry : map.entrySet()) {
             if (entry.getValue() > max) {
                 max = entry.getValue();
