@@ -21,9 +21,6 @@ public class Solution {
                 String smth = resultSet.getString("smth");
                 System.out.printf("%d %s %d %s" + System.lineSeparator(), id, name, age, smth);
             }
-
-
         }
-
     }
 }
