@@ -14,7 +14,7 @@ public class Solution {
             while (reader.ready()) {
                 String string = reader.readLine();
                 for (String word : string.split(" ")) {
-                    if (word.matches(".*[0-9].*")) {
+                    if (word.matches(".*\\d.*")) {
                         writer.write(word + " ");
                     }
                 }
