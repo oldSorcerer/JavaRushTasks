@@ -1,6 +1,17 @@
 taskKey="com.javarush.task.sql.task10.task1002"\n\ntask1002
 
-task1002
+Если ранее не подключал зависимости, то подключи их. Для этого Alt + Ctrl + Shift + S (в Идее), вкладка Libraries.
+Зависимости можно скачать здесь: https://javarush.ru/downloads/ide/javarush/hibernate.zip
+Архив распакуй, и каждую зависимость добавь к модулю.
+Эта часть задания не проверяется, но если ее не выполнить - ты не сможешь локально выполнять код.
+
+В методе getDirector получи сессию из MySessionFactory.getSessionFactory().
+Напиши запрос на hql для получения Employee у которого smth = &#39;director&#39;.
+Результатом запроса ожидается одно значение, верни его в методе getDirector.
+
+
 Требования:
+1.	Метод getDirector должен открывать сессию с помощью SessionFactory возвращаемой методом getSessionFactory.
+2.	Метод getDirector должен вернуть объект Employee согласно условию.
 
 
