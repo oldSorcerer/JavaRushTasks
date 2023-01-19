@@ -1,6 +1,19 @@
-taskKey="com.javarush.task.sql.task10.task1004"\n\ntask1004
+taskKey="com.javarush.task.sql.task10.task1004"\n\nРасстановка аннотаций
 
-task1004
+Есть три класса-ентити: Author, Book и Publisher.
+Расставь в них аннотации, учитывая, что Author и Publisher являются полями Book.
+Для упрощения считаем, что у каждой книги может быть только один автор.
+
+Соответствующие таблицы:
+- таблица publisher с колонками id, name, type, discoverer, discovery_date;
+- таблица author с колонками id, first_name, last_name, full_name;
+- таблица book с колонками id, title, author_id, publisher_id, publication_year, isbn.
+
+
 Требования:
+1.	У всех классов должны быть аннотации Entity и Table с именами таблиц.
+2.	У полей id всех классов должны быть аннотации Id и GeneratedValue.
+3.	У всех полей кроме id должны быть аннотации Column либо JoinColumn с именами колонок.
+4.	У полей которые ссылаются на другие ентити должны быть аннотации ManyToOne.
 
 
