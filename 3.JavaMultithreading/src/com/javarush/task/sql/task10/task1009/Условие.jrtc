@@ -1,6 +1,18 @@
 taskKey="com.javarush.task.sql.task10.task1009"\n\ntask1009
 
-task1009
+Если ранее не подключал зависимости, то подключи их. Для этого используй Alt + Ctrl + Shift + S (в Идее), вкладка Libraries.
+Зависимости можно скачать здесь: https://javarush.com/downloads/ide/javarush/hibernate.zip
+Архив распакуй, и каждую зависимость добавь к модулю. Эта часть задания не проверяется, но если ее не выполнить, ты не сможешь локально выполнять код.
+
+1. В методе getSalaryFund получи сессию из MySessionFactory.getSessionFactory().
+Напиши запрос на hql для получения суммы значений колонки salary.
+Метод getSalaryFund должен вернуть сумму.
+
+2. В методе getAverageAge получи сессию из MySessionFactory.getSessionFactory().
+Напиши запрос на hql для получения среднего значения колонки age.
+Метод getAverageAge должен вернуть среднее значение.
 Требования:
+1.	Методы getSalaryFund и getAverageAge должны открывать сессию с помощью SessionFactory возвращаемой методом getSessionFactory.
+2.	Методы getSalaryFund и getAverageAge должны возвращать числа согласно условию.
 
 
