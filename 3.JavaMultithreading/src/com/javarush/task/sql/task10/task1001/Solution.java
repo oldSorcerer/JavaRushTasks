@@ -1,7 +1,7 @@
 package com.javarush.task.sql.task10.task1001;
 
-//import org.hibernate.Session;
-//import org.hibernate.query.Query;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 /* 
 task1001

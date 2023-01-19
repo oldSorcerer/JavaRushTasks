@@ -1,18 +1,18 @@
 package com.javarush.task.sql.task10.task1001;
 
-//import jakarta.persistence.*;
+import jakarta.persistence.*;
 
-//@Entity
-//@Table(name = "employee")
+@Entity
+@Table(name = "employee")
 public class Employee {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-//    @Column(name = "name")
+    @Column(name = "name")
     private String name;
-//    @Column(name = "age")
+    @Column(name = "age")
     private Integer age;
-//    @Column(name = "smth")
+    @Column(name = "smth")
     private String smth;
 
     public Integer getId() {
