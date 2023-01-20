@@ -17,7 +17,7 @@ public class Solution {
 
         try (OutputStream outputStream = connection.getOutputStream();
             PrintStream stream = new PrintStream(outputStream)) {
-            stream.println("");
+            stream.println("Hello");
         }
 
         try (InputStream inputStream = connection.getInputStream();
