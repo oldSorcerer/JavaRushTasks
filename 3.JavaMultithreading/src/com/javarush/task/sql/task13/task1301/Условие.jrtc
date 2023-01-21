@@ -1,0 +1,14 @@
+taskKey="com.javarush.task.sql.task13.task1301"\n\nРасстановка аннотаций
+
+Есть класс-ентити Author, у автора могут быть статьи articles.
+Добавь аннотации перед полем articles в классе Author, чтобы программа корректно обрабатывала данные из таблиц:
+- таблица author с колонками id, first_name, last_name, full_name;
+- таблица author_article с колонками author_id, article.
+
+
+Требования:
+1.	У поля articles должна быть аннотация @ElementCollection.
+2.	У поля articles должна быть аннотация @CollectionTable с указанием именем вспомагательной таблицы и колонки с id автора.
+3.	У поля articles должна быть аннотация @Column с указанием колонки со статьей в спомогательной таблице.
+
+
