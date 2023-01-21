@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.sql.task14.task1401"\n\ntask1401
+
+Есть три класса-ентити: Author, Book и Publisher.
+У Author и Publisher не хватает аннотаций на полях books.
+Добавь им аннотации OneToMany и JoinColumn.
+Сделай так, чтобы при загрузке сущностей Author или Publisher с ними не загружались их книги, а создавались прокси объекты.
+
+Соответствующие таблицы:
+- таблица publisher с колонками id, name, type, discoverer, discovery_date;
+- таблица author с колонками id, first_name, last_name, full_name;
+- таблица book с колонками id, title, author_id, publisher_id, publication_year, isbn.
+
+
+Требования:
+1.	У полей books должны быть аннотации JoinColumn с именами колонок.
+2.	У полей books должны быть аннотации OneToMany с правильным параметром fetch.
+
+
