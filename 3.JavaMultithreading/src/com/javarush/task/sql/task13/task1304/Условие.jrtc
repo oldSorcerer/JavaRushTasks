@@ -1,0 +1,21 @@
+taskKey="com.javarush.task.sql.task13.task1304"\n\nАвтор книги или книга автора?
+
+Есть три класса-ентити: Author, Book и Publisher и таблицы, которые им соответствуют:
+- таблица publisher с колонками id, name;
+- таблица author с колонками id, first_name, last_name, full_name;
+- таблица book с колонками id, title, author_id, publisher_id, publication_year, isbn.
+
+Расставь аннотации в классе Author перед полем books.
+
+В методе main получи сессию из MySessionFactory.getSessionFactory().
+Напиши hql-запрос для получения автора с полным именем &#39;Mark Twain&#39;.
+Выведи в консоль все его книги.
+
+
+Требования:
+1.	Метод main должен открывать сессию с помощью SessionFactory возвращаемой методом getSessionFactory.
+2.	Метод main должен выводить в консоль книги автора согласно условию.
+3.	У поля books должна быть аннотация JoinColumn с именем колоноки из таблицы book.
+4.	У поля books должна быть аннотация OneToMany.
+
+
