@@ -17,6 +17,6 @@ public class Solution {
 
         //напишите тут ваш код
 
-        publishers.stream().map(Publisher::getName).forEach(System.out::println);
+//        publishers.stream().map(Publisher::getName).forEach(System.out::println);
     }
 }
