@@ -1,0 +1,16 @@
+taskKey="com.javarush.task.sql.task13.task1302"\n\nРасстановка аннотаций 2
+
+Есть класс-ентити Author, у автора могут быть достижения achievements.
+Не все достижения одинаково ценные, поэтому они упорядочены с помощью achievement_index и хранятся в списке List.
+
+Добавь аннотации перед полем achievements в классе Author, чтобы программа корректно обрабатывала данные из таблиц:
+- таблица author с колонками id, first_name, last_name, full_name;
+- таблица author_achievement с колонками author_id, achievement, achievement_index.
+
+
+Требования:
+1.	У поля achievements должна быть аннотация @ElementCollection.
+2.	У поля achievements должна быть аннотация @CollectionTable с указанием именем вспомагательной таблицы и колонки с id автора.
+3.	У поля achievements должна быть аннотация @Column с указанием колонки с достижением в спомогательной таблице.
+
+
