@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.sql.task14.task1407"\n\ntask1407
+
+Дан файл ehcache.xml. Добавь в него кастомную настройку для ентити Employee, с такими атрибутами:
+- атрибут name с значением &quot;Employee&quot;;
+- атрибут maxEntriesLocalHeap с значением &quot;10000&quot;;
+- атрибут maxEntriesLocalDisk с значением &quot;1000&quot;;
+- атрибут eternal с значением &quot;false&quot;;
+- атрибут diskSpoolBufferSizeMB с значением &quot;20&quot;;
+- атрибут timeToIdleSeconds с значением &quot;300&quot;;
+- атрибут timeToLiveSeconds с значением &quot;600&quot;;
+- атрибут memoryStoreEvictionPolicy с значением &quot;LFU&quot;;
+- атрибут transactionalMode с значением &quot;off&quot;.
+
+
+Требования:
+1.	В файле ehcache.xml должна присутствовать настройка для Employee согласно условию.
+
+

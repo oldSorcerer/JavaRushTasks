@@ -1,0 +1,41 @@
+taskKey="com.javarush.task.sql.task15.task1501"\n\nСтратегия MappedSuperClass
+
+Посмотри на скрипт по созданию таблиц. Создай классы-сущности для этих таблиц. Обрати внимание на поля, которые повторяются.
+Для избежания дублирования используй наследование. Расставь правильно аннотации созданным классам.
+Скрипт:
+CREATE TABLE `person`
+(
+`id`    INT             not null    auto_increment,
+`name`  VARCHAR(100)    not null,
+`age`   INT             not null,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE `employee`
+(
+`id`        INT             not null    auto_increment,
+`name`      VARCHAR(100)    not null,
+`age`       INT             not null,
+`company`   VARCHAR(100)    not null,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE `client`
+(
+`id`    INT             not null    auto_increment,
+`name`  VARCHAR(100)    not null,
+`age`   INT             not null,
+`bank`  VARCHAR(100)    not null,
+PRIMARY KEY (id)
+);
+
+
+Требования:
+1.	Должен быть создан класс Person с полями id, name и age.
+2.	Должен быть создан класс Client с полем bank, который наследуется от класса Person.
+3.	Должен быть создан класс Employee с полем company, который наследуется от класса Person.
+4.	Класс Person должен быть помечен анотациями @MappedSuperclass и @Table.
+5.	Класс Client должен быть помечен анотациями @Entity и @Table.
+6.	Класс Employee должен быть помечен анотациями @Entity и @Table.
+
+
