@@ -1,0 +1,15 @@
+taskKey="com.javarush.task.sql.task14.task1402"\n\ntask1402
+
+Есть три класса-ентити: Author, Book и Publisher.
+У Author и Publisher замени параметр fetch аннотации OneToMany на эквивалентную аннотацию LazyCollection.
+
+Соответствующие таблицы:
+- таблица publisher с колонками id, name, type, discoverer, discovery_date;
+- таблица author с колонками id, first_name, last_name, full_name;
+- таблица book с колонками id, title, author_id, publisher_id, publication_year, isbn.
+
+
+Требования:
+1.	У полей books должны быть аннотации LazyCollection с правильным параметром.
+
+

@@ -1,0 +1,13 @@
+taskKey="com.javarush.task.sql.task14.task1403"\n\ntask1403
+
+Есть два класса-ентити: Employee и StatisticView.
+У Employee замени параметр fetch аннотации OneToMany на аннотацию LazyCollection с значением EXTRA.
+А аннотацию JoinColumn замени на OrderColumn с тем же параметром.
+
+
+Требования:
+1.	У поля statistics должна быть аннотация LazyCollection с правильным параметром.
+2.	У поля statistics должна быть аннотация OrderColumn с правильным параметром.
+3.	У поля statistics не должно быть аннотации JoinColumn.
+
+
