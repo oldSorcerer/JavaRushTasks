@@ -1,0 +1,34 @@
+taskKey="com.javarush.task.sql.task16.task1603"\n\nУдаление через Criteria API
+
+Используя Criteria API, в методе deleteEmployeeById удали объект Employee из базы данных по его id.
+Для этого, в методе deleteEmployeeById тебе потребуется:
+1) Создать объект Session, инициализировав его обращением к методу getSessionFactory, и открыть сессию.
+2) У объекта класса Session вызвать метод getCriteriaBuilder.
+3) У объекта класса CriteriaBuilder вызвать метод createCriteriaDelete с нужным параметром.
+4) У объектов класса CriteriaDelete вызвать методы from и where с нужными параметрами.
+5) У объекта класса CriteriaBuilder вызвать метод equal с нужным параметром.
+6) У объекта класса Root вызвать метод get с нужными параметрами.
+7) У объекта класса Session вызвать метод beginTransaction.
+8) У объекта класса Session вызвать методы createQuery (с нужным параметром) и executeUpdate.
+9) У объекта класса Transaction вызвать метод commit.
+
+Для проверки работы программы тебе потребуется:
+- Локально запустить sql сервер (localhost:3306) и создать базу данных со схемой test и таблицей employee_table с нужными пустыми колонками.
+- При правильной работе программы, в таблице должны появиться три объекта Employee с id 1, 3 и 4.
+
+P.S. Классы MySessionFactory и EmployeeFactory не учавствуют в проверке.
+
+
+Требования:
+1.	Не изменяй класс Employee.
+2.	В классе Solution не изменяй метод main.
+3.	В методе deleteEmployeeById у объекта класса Session должен быть вызван метод getCriteriaBuilder.
+4.	В методе deleteEmployeeById у объекта класса CriteriaBuilder должен быть вызван метод createCriteriaDelete с нужным параметром.
+5.	В методе deleteEmployeeById у объектов класса CriteriaDelete должны быть вызваны методы from и where с нужными параметрами.
+6.	В методе deleteEmployeeById у объекта класса CriteriaBuilder должен быть вызван метод equal с нужным параметром.
+7.	В методе deleteEmployeeById у объекта класса Root должен быть вызван метод get с нужными параметрами.
+8.	В методе deleteEmployeeById у объекта класса Session должен быть вызван метод beginTransaction.
+9.	В методе deleteEmployeeById у объекта класса Session должны быть вызваны методы createQuery (с нужным параметром) и executeUpdate.
+10.	В методе deleteEmployeeById у объекта класса Transaction должен быть вызван метод commit.
+
+
