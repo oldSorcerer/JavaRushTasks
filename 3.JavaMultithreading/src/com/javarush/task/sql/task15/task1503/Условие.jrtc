@@ -1,0 +1,35 @@
+taskKey="com.javarush.task.sql.task15.task1503"\n\nСтратегия Joined Table
+
+Посмотри на скрипт по созданию таблиц. Создай три ентити-класса по этим таблицам, которые описывают стратегию Joined Table.
+Client и Employee унаследуй от Person. Расставь правильно аннотации созданным классам. Не забудь про необходимые параметры в аннотациях.
+Скрипт:
+CREATE TABLE `person`
+(
+`id`    INT             not null    auto_increment,
+`name`  VARCHAR(100)    not null,
+`age`   INT             not null,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE `employee`
+(
+`person_id`        INT      not null,
+`company`   VARCHAR(100)    not null
+);
+
+CREATE TABLE `client`
+(
+`person_id`    INT      not null,
+`bank`  VARCHAR(100)    not null
+);
+
+
+Требования:
+1.	Должен быть создан класс Person с полями id, name и age.
+2.	Должен быть создан класс Client с полем bank, который наследуется от класса Person.
+3.	Должен быть создан класс Employee с полем company, который наследуется от класса Person.
+4.	Класс Person должен быть помечен анотациями @Entity, @Table и @Inheritance.
+5.	Класс Client должен быть помечен анотациями @Entity и @PrimaryKeyJoinColumn.
+6.	Класс Employee должен быть помечен анотациями @Entity и @PrimaryKeyJoinColumn.
+
+
