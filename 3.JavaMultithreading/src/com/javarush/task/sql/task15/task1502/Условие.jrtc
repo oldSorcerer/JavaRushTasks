@@ -1,0 +1,29 @@
+taskKey="com.javarush.task.sql.task15.task1502"\n\nСтратегия Single Table
+
+Посмотри на скрипт по созданию таблицы person. Создай три ентити-класса по этой таблице, которые описывают стратегию
+Single Table: кроме ентити Person должны быть созданы ентити-классы Client (с полем bank) и Employee (с полем company),
+которые унаследуй от Person. Объекты классов Client и Employee нужно хранить в одной таблице (person) с использованием
+числовых дескрипторов. Для Client используй значение дескриптора 1, для Employee - 2.
+Расставь правильно аннотации созданным классам. Не забудь про необходимые параметры в аннотациях.
+Скрипт:
+CREATE TABLE `person`
+(
+`id`        INT             not null    auto_increment,
+`name`      VARCHAR(100)    null,
+`age`       INT             null,
+`bank`      VARCHAR(100)    null,
+`company`   VARCHAR(100)    null,
+`person_type` INT           not null,
+PRIMARY KEY (id)
+);
+
+
+Требования:
+1.	Должен быть создан класс Person с полями id, name и age.
+2.	Должен быть создан класс Client с полем bank, который наследуется от класса Person.
+3.	Должен быть создан класс Employee с полем company, который наследуется от класса Person.
+4.	Класс Person должен быть помечен анотациями @Entity, @Table, @Inheritance и @DiscriminatorColumn.
+5.	Класс Client должен быть помечен анотациями @Entity и @DiscriminatorValue.
+6.	Класс Employee должен быть помечен анотациями @Entity и @DiscriminatorValue.
+
+
