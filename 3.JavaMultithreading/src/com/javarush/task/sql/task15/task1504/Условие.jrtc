@@ -1,0 +1,38 @@
+taskKey="com.javarush.task.sql.task15.task1504"\n\nСтратегия Table per class
+
+Посмотри на скрипт по созданию таблиц. Создай три ентити-класса по этим таблицам, которые описывают стратегию Table per class.
+Client и Employee унаследуй от Person. Расставь правильно аннотации созданным классам. Не забудь про необходимые параметры в аннотациях.
+Скрипт:
+create table person
+(
+id   int auto_increment primary key,
+name varchar(100) not null,
+age  int          not null
+);
+
+create table client
+(
+id   int auto_increment primary key,
+name varchar(100) not null,
+age  int          not null,
+bank varchar(100) not null
+);
+
+create table employee
+(
+id      int auto_increment primary key,
+name    varchar(100) not null,
+age     int          not null,
+company varchar(100) not null
+);
+
+
+Требования:
+1.	Должен быть создан класс Person с полями id, name и age.
+2.	Должен быть создан класс Client с полем bank, который наследуется от класса Person.
+3.	Должен быть создан класс Employee с полем company, который наследуется от класса Person.
+4.	Класс Person должен быть помечен анотациями @Entity, @Table и @Inheritance.
+5.	Класс Client должен быть помечен анотацией @Entity.
+6.	Класс Employee должен быть помечен анотацией @Entity.
+
+
