@@ -1,6 +1,8 @@
 package com.javarush.task.task18.task1820;
 
 import java.io.*;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /* 
 Округление чисел
@@ -13,11 +15,8 @@ public class Solution {
              BufferedWriter writer = new BufferedWriter(new FileWriter(console.readLine()))) {
             while (reader.ready()) {
                 String[] strings = reader.readLine().split(" ");
-                StringBuilder stringBuilder = new StringBuilder();
-                for (String string : strings) {
-                    stringBuilder.append((int) Math.round(Double.parseDouble(string))).append(" ");
-                }
-                writer.write(stringBuilder + System.lineSeparator());
+                String str = Arrays.stream(strings).map(string -> (int) Math.round(Double.parseDouble(string)) + " ").collect(Collectors.joining());
+                writer.write(str + System.lineSeparator());
             }
         }
     }
