@@ -17,6 +17,5 @@ public class Solution {
                 System.out.println(resultSet.getInt(1));
             }
         }
-
     }
 }
