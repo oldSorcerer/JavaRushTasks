@@ -15,5 +15,4 @@ public class Solution {
     float aFloat;
     double aDouble;
 
-
 }
