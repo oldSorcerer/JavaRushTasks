@@ -11,7 +11,7 @@ public class Solution {
     public static String[] strings;
 
     public static void main(String[] args) {
-        Scanner scanner =  new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         strings = new String[6];
 
