@@ -25,6 +25,5 @@ public class Solution {
             }
             System.out.println("Попробуй еще раз");
         }
-
     }
 }
