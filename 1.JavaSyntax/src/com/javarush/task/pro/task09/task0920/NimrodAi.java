@@ -55,7 +55,6 @@ public class NimrodAi {
             }
         }
         return false;
-//        return !Arrays.deepEquals(room, scanResult); // проверить другое решение
     }
 
     public static void openFloodgates(String roomName) {
