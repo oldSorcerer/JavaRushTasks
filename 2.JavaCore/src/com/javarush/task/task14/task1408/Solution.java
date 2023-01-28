@@ -14,10 +14,10 @@ public class Solution {
 
         static Hen getHen(String country) {
             return switch (country) {
-                case (Country.BELARUS) -> new BelarusianHen();
-                case (Country.RUSSIA) -> new RussianHen();
-                case (Country.MOLDOVA) -> new MoldovanHen();
-                case (Country.UKRAINE) -> new UkrainianHen();
+                case Country.BELARUS -> new BelarusianHen();
+                case Country.RUSSIA -> new RussianHen();
+                case Country.MOLDOVA -> new MoldovanHen();
+                case Country.UKRAINE -> new UkrainianHen();
                 default -> null;
             };
         }
