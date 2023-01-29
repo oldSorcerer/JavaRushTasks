@@ -18,7 +18,7 @@ public class Cosmoport {
     }
 
     public static class Compiler {
-        public static void compile(RoboZombie roboZombie) {
+        public void compile(RoboZombie roboZombie) {
             roboZombie.destiny = "Loader";
         }
     }
