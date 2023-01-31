@@ -15,7 +15,7 @@ public class Nimrod {
         return angelicaKiss;
     }
 
-    private byte applyShield(int intToByte) {
+    public byte applyShield(int intToByte) {
         return (byte) intToByte;
     }
 }
