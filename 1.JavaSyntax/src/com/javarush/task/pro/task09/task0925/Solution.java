@@ -19,13 +19,9 @@ public class Solution {
     public static void splitArrayElements() {
         for (int i = 0; i < controlUnits.length; i++) {
             StringTokenizer tokenizer = new StringTokenizer(controlUnits[i], "/");
-            String[] strings = new String[tokenizer.countTokens()];
-            int j = 0;
             while (tokenizer.hasMoreTokens()){
-                strings[j] = tokenizer.nextToken();
-                j++;
+                controlUnits[i] = tokenizer.nextToken();
             }
-            controlUnits[i] = strings[strings.length - 1];
         }
     }
 
