@@ -19,6 +19,5 @@ public class Solution {
         b = (short) value;
         c = (int) value;
         d = value;
-
     }
 }
