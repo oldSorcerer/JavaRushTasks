@@ -28,14 +28,15 @@ public class Solution {
         }
 
     }
+
     public static void processCastedObjects(List<Number> list) {
         for (Number object : list) {
-            if (object instanceof Double) {
-                Double a = (Double) object;
-                System.out.println("Is double value infinite? " + a.isInfinite());
-            } else if (object instanceof Float) {
+            if (object instanceof Float) {
                 Float a = (Float) object;
                 System.out.println("Is float value defined? " + !(a.isNaN()));
+            } else if (object instanceof Double) {
+                Double a = (Double) object;
+                System.out.println("Is double value infinite? " + a.isInfinite());
             }
         }
     }
