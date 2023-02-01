@@ -17,8 +17,7 @@ public class Solution {
             return;
         }
 
-        int count = 1;
-        for (; true; count++) {
+        for (int count = 1; true; count++) {
             int randomNumber = new Random().nextInt(inputNumber + 1);
             if (inputNumber == randomNumber) {
                 System.out.println("Попытка №" + count);
