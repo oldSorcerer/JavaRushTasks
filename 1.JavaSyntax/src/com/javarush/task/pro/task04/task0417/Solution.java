@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int number = sc.nextInt();
+        int number = scanner.nextInt();
 
-        System.out.println( Math.round(number * 3.6));
+        System.out.println(Math.round(number * 3.6));
 
     }
 }

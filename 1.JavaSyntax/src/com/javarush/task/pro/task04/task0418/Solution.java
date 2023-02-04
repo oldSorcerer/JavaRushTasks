@@ -10,9 +10,9 @@ public class Solution {
     public static void main(String[] args) {
         double glass = 0.5;
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        if (sc.nextBoolean()) {
+        if (scanner.nextBoolean()) {
             System.out.println((int)Math.ceil(glass));
         } else {
             System.out.println((int)Math.floor(glass));
