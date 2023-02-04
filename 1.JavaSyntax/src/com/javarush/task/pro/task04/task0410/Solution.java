@@ -9,10 +9,10 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int min = sc.nextInt();
-        int secondMin = sc.nextInt();
+        int min = scanner.nextInt();
+        int secondMin = scanner.nextInt();
 
         if (secondMin < min) {
             int tmp = min;
@@ -20,8 +20,8 @@ public class Solution {
             secondMin = tmp;
         }
 
-        while (sc.hasNextInt()) {
-            int number = sc.nextInt();
+        while (scanner.hasNextInt()) {
+            int number = scanner.nextInt();
             if (min == secondMin && number > min) {
                 secondMin = number;
             } else if (number < min) {
