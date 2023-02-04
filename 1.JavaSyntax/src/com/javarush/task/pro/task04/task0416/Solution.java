@@ -9,12 +9,12 @@ Share a Coke
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int countCola = sc.nextInt();
-        int countPiople = sc.nextInt();
+        int countCola = scanner.nextInt();
+        int countHuman = scanner.nextInt();
 
-        double number = countCola / (countPiople * 1.0);
+        double number = countCola / (countHuman * 1.0);
 
         System.out.println(number);
 
