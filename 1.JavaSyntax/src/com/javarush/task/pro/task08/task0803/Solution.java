@@ -25,11 +25,11 @@ public class Solution {
     }
 
     public static int[] getArrayOfTenElements() {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {
-            array[i] = sc.nextInt();
+            array[i] = scanner.nextInt();
         }
 
         return array;

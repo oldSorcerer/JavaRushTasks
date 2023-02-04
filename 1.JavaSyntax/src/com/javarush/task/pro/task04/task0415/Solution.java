@@ -9,13 +9,12 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int rad = sc.nextInt();
+        int radius = scanner.nextInt();
 
-        if ( rad >= 0) {
-            System.out.println((int)(3.14 * rad * rad));
+        if ( radius >= 0) {
+            System.out.println((int)(3.14 * radius * radius));
         }
-
     }
 }
