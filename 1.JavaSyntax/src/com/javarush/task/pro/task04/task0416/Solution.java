@@ -14,9 +14,6 @@ public class Solution {
         int countCola = scanner.nextInt();
         int countHuman = scanner.nextInt();
 
-        double number = countCola / (countHuman * 1.0);
-
-        System.out.println(number);
-
+        System.out.println(countCola / (countHuman * 1.0));
     }
 }
