@@ -4,6 +4,8 @@ package com.javarush.task.pro.task08.task0818;
 Путь через аномалию
 */
 
+import static java.lang.Math.*;
+
 public class Solution {
 
     public static int[][] anomalySpace = new int[][]{
@@ -21,9 +23,7 @@ public class Solution {
             int y = anomalySpace[i][1];
             int z = anomalySpace[i][2];
 
-            double result = (Math.sin(x) * Math.PI +
-                    Math.cos(y) * Math.min(x, Math.min(y, z)) +
-                    Math.tan(y) / Math.log(z));
+            double result = sin(x) * PI + cos(y) * min(x, min(y, z)) + tan(y) / log(z);
 
             if (result >= 100 && result <= 200) {
                 safeRoute[i] = result;
