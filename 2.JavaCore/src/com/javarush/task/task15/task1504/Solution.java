@@ -31,12 +31,8 @@ public class Solution {
             String markTwainOutput = getBook().getTitle() + " was written by " + author;
 
             String output = "output";
-            if (this instanceof AgathaChristieBook) {
-                output = agathaChristieOutput;
-            }
-            if (this instanceof MarkTwainBook) {
-                output = markTwainOutput;
-            }
+            if (this instanceof AgathaChristieBook) output = agathaChristieOutput;
+            if (this instanceof MarkTwainBook) output = markTwainOutput;
 
             return output;
         }
