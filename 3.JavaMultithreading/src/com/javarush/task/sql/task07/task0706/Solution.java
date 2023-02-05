@@ -12,14 +12,17 @@ public class Solution {
         try (Connection connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/test", "root", "root");
              Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM employee limit 1");
-            ResultSetMetaData metaData = resultSet.getMetaData();
-            int columnCount = metaData.getColumnCount();
 
-            for (int i = 1; i < columnCount; i++) {
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM employee limit 1");
+
+            ResultSetMetaData metaData = resultSet.getMetaData();
+
+            for (int i = 1; i <= metaData.getColumnCount(); i++) {
+
                 String columnName = metaData.getColumnName(i);
                 String columnTypeName = metaData.getColumnTypeName(i);
-                System.out.print(columnName + "(" + columnTypeName + ") ");
+
+                System.out.println(columnName + "(" + columnTypeName + ")");
             }
         }
     }
