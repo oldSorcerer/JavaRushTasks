@@ -16,8 +16,6 @@ public class Solution {
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("name"));
             }
-
         }
-
     }
 }
