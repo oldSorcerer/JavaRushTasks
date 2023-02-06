@@ -26,6 +26,6 @@ public class Solution {
             result = result.multiply(BigDecimal.valueOf(i));
         }
 
-        return String.valueOf(result);
+        return result.toString();
     }
 }
