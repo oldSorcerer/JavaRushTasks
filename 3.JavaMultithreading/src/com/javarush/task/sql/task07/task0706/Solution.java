@@ -33,6 +33,7 @@ CREATE TABLE employee
     id   INT,
     name VARCHAR(100) NULL,
     age INT NULL,
+    weight FLOAT,
     smth VARCHAR(100) NULL,
     PRIMARY KEY (id)
 );
