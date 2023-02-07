@@ -9,10 +9,13 @@ import java.sql.*;
 public class Solution {
 
     public static void main(String[] args) throws Exception {
-        Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/test", "root", "root");
-        connection.setAutoCommit(false);
-        try (Statement statement = connection.createStatement();) {
+        Connection connection = null;
+        Statement statement = null;
+        try {
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/test", "root", "root");
+            statement = connection.createStatement();
+            connection.setAutoCommit(false);
             statement.executeUpdate("UPDATE employee SET salary = salary + 2000 WHERE name = 'Diego'");
             statement.executeUpdate("UPDATE employee SET salary = salary + 500 WHERE name = 'Amigo'");
             connection.commit();
@@ -20,6 +23,7 @@ public class Solution {
             if (connection != null) connection.rollback();
         } finally {
             if (connection != null) connection.close();
+            if (statement != null) statement.close();
         }
     }
 }
