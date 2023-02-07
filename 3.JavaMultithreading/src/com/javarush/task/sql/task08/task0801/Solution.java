@@ -9,7 +9,14 @@ import java.sql.*;
 public class Solution {
 
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        try(Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/test", "root", "root");
+            Statement statement = connection.createStatement()){
+            connection.setAutoCommit(false);
+            statement.executeUpdate("UPDATE employee SET salary = salary + 2000 WHERE name = 'Diego'");
+            statement.executeUpdate("UPDATE employee SET salary = salary + 500 WHERE name = 'Amigo'");
+            connection.commit();
+        }
 
     }
 }
