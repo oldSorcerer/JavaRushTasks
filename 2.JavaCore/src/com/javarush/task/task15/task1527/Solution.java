@@ -25,10 +25,11 @@ public class Solution {
         System.out.println();
         for (String word : words) {
             if (word.contains("obj")) {
+                String str = word.substring(word.indexOf("=") + 1);
                 try {
-                    alert(Double.parseDouble(word.substring(4)));
+                    alert(Double.parseDouble(str));
                 } catch (NumberFormatException e) {
-                    alert(word.substring(4));
+                    alert(str);
                 }
             }
         }
