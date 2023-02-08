@@ -11,8 +11,8 @@ public class Solution {
         array = new String[] { "robotank","robotank","robotank","robotank","robotank","robotank" };
 
         boolean isMissionComplete = false;
-        for (String s : array) {
-            if ("robotank".equalsIgnoreCase(s)) {
+        for (String string : array) {
+            if ("robotank".equalsIgnoreCase(string)) {
                 isMissionComplete = true;
                 break;
             }
