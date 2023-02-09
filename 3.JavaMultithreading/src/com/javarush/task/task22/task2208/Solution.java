@@ -25,7 +25,8 @@ public class Solution {
 
         for (Map.Entry<String, String> pair : params.entrySet()) {
             if (pair.getValue() != null) {
-                builder.append(pair.getKey()).append(" = '")
+                builder.append(pair.getKey())
+                        .append(" = '")
                         .append(pair.getValue())
                         .append("' and ");
             }
