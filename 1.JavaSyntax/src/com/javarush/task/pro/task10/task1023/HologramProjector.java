@@ -16,4 +16,16 @@ public class HologramProjector {
         this.prism = prism;
         this.mirror = mirror;
     }
+
+    @Override
+    public String toString() {
+        return "HologramProjector{" +
+                "lens='" + lens + '\'' +
+                ", matrix='" + matrix + '\'' +
+                ", condenser='" + condenser + '\'' +
+                ", lamp='" + lamp + '\'' +
+                ", prism='" + prism + '\'' +
+                ", mirror='" + mirror + '\'' +
+                '}';
+    }
 }
