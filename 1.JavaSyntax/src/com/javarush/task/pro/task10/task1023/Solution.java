@@ -26,5 +26,7 @@ public class Solution {
         };
 
         projector = new HologramProjector(spareParts[9], spareParts[11], spareParts[6], spareParts[1], spareParts[3], spareParts[7]);
+
+        System.out.println(projector);
     }
 }
