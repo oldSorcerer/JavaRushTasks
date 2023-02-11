@@ -15,7 +15,7 @@ public class Solution {
         String name = "Harry";
         int age = 18;
         String smth = "Senior pomidor";
-        String sql = "insert into employee (name, age, smth) values (?, ?, ?)";
+        String sql = "INSERT INTO employee (name, age, smth) VALUES (?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/test", "root", "root");

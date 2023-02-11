@@ -18,7 +18,7 @@ public class Solution {
                 new Employee("Sasha", 40, "lead"),
                 new Employee("Dima", 40, "director"),
                 new Employee("Sasha", 40, "dev"));
-        String sql = "insert into employee (name, age, smth) values (?, ?, ?)";
+        String sql = "INSERT INTO employee (name, age, smth) VALUES (?, ?, ?)";
 
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "root");
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -32,3 +32,15 @@ public class Solution {
         }
     }
 }
+/*
+drop table employee;
+
+CREATE TABLE employee
+(
+    id   INT PRIMARY KEY NOT NULL
+    AUTO_INCREMENT,
+    name VARCHAR(100) NULL,
+    age  INT          NULL,
+    smth VARCHAR(100) NULL
+);
+*/

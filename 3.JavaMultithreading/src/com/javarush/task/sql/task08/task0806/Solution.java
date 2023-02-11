@@ -20,7 +20,16 @@ public class Solution {
         try(Connection connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/test", "root", "root");
             Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery("SELECT id, name, age, smth  FROM employee");
+            while (resultSet.next()) {
+                Employee employee = new Employee();
+                employee.setId(resultSet.getInt("id"));
+                employee.setName(resultSet.getString("name"));
+                employee.setAge(resultSet.getInt("age"));
+                employee.setSmth(resultSet.getString("smth"));
 
+                employees.add(employee);
+            }
         }
 
         employees.forEach(System.out::println);
