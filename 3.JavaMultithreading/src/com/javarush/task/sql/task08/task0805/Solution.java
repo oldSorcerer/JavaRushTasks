@@ -32,3 +32,15 @@ public class Solution {
         }
     }
 }
+/*
+drop table employee;
+
+CREATE TABLE employee
+(
+    id   INT PRIMARY KEY NOT NULL
+    AUTO_INCREMENT,
+    name VARCHAR(100) NULL,
+    age  INT          NULL,
+    smth VARCHAR(100) NULL
+);
+*/
