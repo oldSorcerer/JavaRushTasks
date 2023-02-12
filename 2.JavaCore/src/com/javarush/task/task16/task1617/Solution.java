@@ -20,7 +20,7 @@ public class Solution {
 
         public void run() {
             try {
-                while (numSeconds != 0) {
+                while (numSeconds >= 0) {
                     if (numSeconds == 0) {
                         System.out.print("Марш!");
                     } else {
