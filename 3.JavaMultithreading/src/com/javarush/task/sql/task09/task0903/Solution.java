@@ -1,8 +1,8 @@
 package com.javarush.task.sql.task09.task0903;
 
-//import org.hibernate.SessionFactory;
-//import org.hibernate.cfg.Configuration;
-//import org.hibernate.cfg.Environment;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.Environment;
 
 import java.util.Properties;
 
