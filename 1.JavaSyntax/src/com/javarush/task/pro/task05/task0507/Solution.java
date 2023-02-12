@@ -11,13 +11,13 @@ public class Solution {
 
     public static void main(String[] args) throws Exception {
 
-        Scanner sc = new Scanner(System.in);
-        int n = Integer.parseInt(sc.nextLine());
+        Scanner scanner = new Scanner(System.in);
+        int number = Integer.parseInt(scanner.nextLine());
 
-        array = new int[n];
+        array = new int[number];
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = Integer.parseInt(sc.nextLine());
+            array[i] = Integer.parseInt(scanner.nextLine());
         }
 
         int max = array[0];
