@@ -8,12 +8,15 @@ import java.sql.SQLException;
 
 public class HikariCPDataSource {
     private static HikariCPDataSource instance;
-    private HikariConfig config;
-    private HikariDataSource ds;
+    private final HikariConfig config;
+    private final HikariDataSource ds;
 
     private HikariCPDataSource() {
-        //напишите тут ваш код
-
+        config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/test");
+        config.setUsername("root");
+        config.setPassword("root");
+        ds = new HikariDataSource(config);
     }
 
     public static Connection getConnection() throws SQLException {
