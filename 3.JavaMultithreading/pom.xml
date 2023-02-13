@@ -58,6 +58,12 @@
             <version>3.29.0-GA</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+
     </dependencies>
 
     <properties>

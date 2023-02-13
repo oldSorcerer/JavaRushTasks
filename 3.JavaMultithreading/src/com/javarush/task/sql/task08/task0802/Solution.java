@@ -18,9 +18,9 @@ public class Solution {
             statement.executeUpdate("UPDATE employee SET salary = salary + 500 WHERE name = 'Amigo'");
             connection.commit();
         } catch (Exception e) {
-            if (connection != null) connection.rollback();
+            connection.rollback();
         } finally {
-            if (connection != null) connection.close();
+            connection.close();
         }
     }
 }
