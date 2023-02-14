@@ -34,24 +34,28 @@
             <version>21.5.0.0</version>
         </dependency>
 
+        <!-->Hibernate dependency 1/4 </-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>6.1.5.Final</version>
         </dependency>
 
+        <!-->Hibernate dependency 2/4 </-->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
       	    <version>4.0.0</version>
         </dependency>
 
+        <!-->Hibernate dependency 3/4 </-->
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
       	    <version>4.0.0</version>
         </dependency>
 
+        <!-->Hibernate dependency 4/4 </-->
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
