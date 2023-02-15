@@ -72,19 +72,22 @@ public class Solution {
     public static class MyThreadFive extends Thread {
         @Override
         public void run() {
-            BufferedReader rd = new BufferedReader(new InputStreamReader(System.in));
-            int sum = 0;
-            while (true) {
-                try {
-                    String string = rd.readLine();
-                    if (string.equals("N")) {
-                        break;
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+                int sum = 0;
+                while (true) {
+                    try {
+                        String string = reader.readLine();
+                        if (string.equals("N")) {
+                            break;
+                        }
+                        sum += Integer.parseInt(string);
+                    } catch (IOException ignored) {
                     }
-                    sum += Integer.parseInt(string);
-                } catch (IOException ignored) {
                 }
+                System.out.println(sum);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-            System.out.println(sum);
         }
     }
 }
