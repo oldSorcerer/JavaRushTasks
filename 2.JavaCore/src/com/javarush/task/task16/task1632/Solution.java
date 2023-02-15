@@ -75,14 +75,11 @@ public class Solution {
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
                 int sum = 0;
                 while (true) {
-                    try {
-                        String string = reader.readLine();
-                        if (string.equals("N")) {
-                            break;
-                        }
-                        sum += Integer.parseInt(string);
-                    } catch (IOException ignored) {
+                    String string = reader.readLine();
+                    if (string.equals("N")) {
+                        break;
                     }
+                    sum += Integer.parseInt(string);
                 }
                 System.out.println(sum);
             } catch (IOException e) {
