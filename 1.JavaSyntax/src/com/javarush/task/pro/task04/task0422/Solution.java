@@ -23,7 +23,6 @@ public class Solution {
                 System.out.println("Попытка №" + count);
                 break;
             }
-
         }
     }
 }
