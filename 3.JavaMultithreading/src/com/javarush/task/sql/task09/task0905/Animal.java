@@ -1,18 +1,18 @@
 package com.javarush.task.sql.task09.task0905;
 
-//import jakarta.persistence.*;
+import jakarta.persistence.*;
 
-//@Entity
-//@Table(name = "animal_table", schema = "test")
+@Entity
+@Table(name = "animal_table", schema = "test")
 public class Animal {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-//    @Column(name = "name")
+    @Column(name = "name")
     private String name;
-//    @Column(name = "age")
+    @Column(name = "age")
     private Integer age;
-//    @Column(name = "family")
+    @Column(name = "family")
     private String family;
 
     public Long getId() {
