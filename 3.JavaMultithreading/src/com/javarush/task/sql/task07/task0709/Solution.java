@@ -22,6 +22,5 @@ public class Solution {
                 System.out.println(name + " " + weight + " " + birthday + " " + inn);
             }
         }
-
     }
 }

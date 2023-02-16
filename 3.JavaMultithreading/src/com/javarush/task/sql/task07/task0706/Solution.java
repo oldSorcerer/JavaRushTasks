@@ -18,7 +18,6 @@ public class Solution {
             ResultSetMetaData metaData = resultSet.getMetaData();
 
             for (int i = 1; i <= metaData.getColumnCount(); i++) {
-
                 String columnName = metaData.getColumnName(i);
                 String columnTypeName = metaData.getColumnTypeName(i);
 
@@ -27,14 +26,3 @@ public class Solution {
         }
     }
 }
-/*
-CREATE TABLE employee
-(
-    id   INT,
-    name VARCHAR(100) NULL,
-    age INT NULL,
-    weight FLOAT,
-    smth VARCHAR(100) NULL,
-    PRIMARY KEY (id)
-);
-*/
