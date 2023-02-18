@@ -1,14 +1,12 @@
 package com.javarush.task.sql.task09.task0904;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "animal_table", schema = "test")
 public class Animal {
     @Id
+    @GeneratedValue
     private Long id;
     @Column(name = "name")
     private String name;

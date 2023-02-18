@@ -16,9 +16,4 @@ public class Solution {
             System.out.println(animal.getName());
         }
     }
-
-//    private static void addAnimal(){
-//        AnimalManager animalManager = new AnimalManager();
-//
-//    }
 }

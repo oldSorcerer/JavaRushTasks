@@ -2,7 +2,6 @@ package com.javarush.task.sql.task09.task0904;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.query.Query;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class AnimalManager {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     public AnimalManager() {
         Properties properties = new Properties();
@@ -33,16 +32,4 @@ public class AnimalManager {
             return query.list();
         }
     }
-
-//    public void addAllAnimals(List<Animal> list) {
-//        try (Session session = sessionFactory.openSession()) {
-//            Transaction transaction = session.beginTransaction();
-//            for (Animal animal : list) {
-//                session.save(animal);
-//            }
-//            transaction.commit();
-//        }
-//    }
-
-
 }
