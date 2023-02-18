@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class AnimalManager {
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     public AnimalManager() {
         Properties properties = new Properties();
@@ -35,10 +35,18 @@ public class AnimalManager {
     }
 
     public void addAnimal(Animal animal) {
-        //напишите тут ваш код
+        try(Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.persist(animal);
+            transaction.commit();
+        }
     }
 
     public void removeAnimal(Animal animal) {
-        //напишите тут ваш код
+        try(Session session = sessionFactory.openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.remove(animal);
+            transaction.commit();
+        }
     }
 }
