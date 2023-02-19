@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class MySessionFactory {
     private static MySessionFactory instance;
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     private MySessionFactory() {
         Properties properties = new Properties();
