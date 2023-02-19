@@ -1,6 +1,7 @@
 package com.javarush.task.sql.task10.task1002;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
 /* 
@@ -14,7 +15,13 @@ public class Solution {
     }
 
     public static Employee getDirector() {
-        //напишите тут ваш код
-        return null;
+        Employee employee;
+        try(SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
+            Session session = sessionFactory.openSession()) {
+            String hql = "from Employee where smth = 'director'";
+            Query<Employee> query = session.createQuery(hql, Employee.class);
+            employee = query.getSingleResult();
+        }
+        return employee;
     }
 }
