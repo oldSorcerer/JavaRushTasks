@@ -12,13 +12,13 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        array = new int[n];
+        int number = scanner.nextInt();
+        array = new int[number];
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = sc.nextInt();
+            array[i] = scanner.nextInt();
         }
         Arrays.sort(array);
 
