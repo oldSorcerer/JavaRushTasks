@@ -15,13 +15,11 @@ public class Solution {
     }
 
     public static Employee getDirector() {
-        Employee employee;
         try(SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
             Session session = sessionFactory.openSession()) {
             String hql = "from Employee where smth = 'director'";
             Query<Employee> query = session.createQuery(hql, Employee.class);
-            employee = query.getSingleResult();
+            return query.uniqueResult();
         }
-        return employee;
     }
 }
