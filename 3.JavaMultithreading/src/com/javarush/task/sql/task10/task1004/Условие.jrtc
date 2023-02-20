@@ -5,7 +5,7 @@ taskKey="com.javarush.task.sql.task10.task1004"\n\nРасстановка анн
 Для упрощения считаем, что у каждой книги может быть только один автор.
 
 Соответствующие таблицы:
-- таблица publisher с колонками id, name, type, discoverer, discovery_date;
+- таблица publisher с колонками id, name;
 - таблица author с колонками id, first_name, last_name, full_name;
 - таблица book с колонками id, title, author_id, publisher_id, publication_year, isbn.
 
