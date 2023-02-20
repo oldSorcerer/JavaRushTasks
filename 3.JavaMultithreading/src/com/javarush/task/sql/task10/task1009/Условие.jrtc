@@ -11,6 +11,8 @@ taskKey="com.javarush.task.sql.task10.task1009"\n\ntask1009
 2. В методе getAverageAge получи сессию из MySessionFactory.getSessionFactory().
 Напиши запрос на hql для получения среднего значения колонки age.
 Метод getAverageAge должен вернуть среднее значение.
+
+
 Требования:
 1.	Методы getSalaryFund и getAverageAge должны открывать сессию с помощью SessionFactory возвращаемой методом getSessionFactory.
 2.	Методы getSalaryFund и getAverageAge должны возвращать числа согласно условию.
