@@ -8,16 +8,16 @@ import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         int sum = 0;
 
         while (true) {
-            if (sc.hasNextInt()) {
-               int number = sc.nextInt();
+            if (scanner.hasNextInt()) {
+               int number = scanner.nextInt();
                 sum += number;
-            } else if (sc.hasNextLine()) {
-                String string = sc.nextLine();
+            } else if (scanner.hasNextLine()) {
+                String string = scanner.nextLine();
                 if (string.equals("ENTER")) {
                     break;
                 }
