@@ -40,7 +40,8 @@ public class Solution {
                 System.out.println(allPeople.size() - 1);
             }
             case "-r" -> {
-                if ((person = allPeople.get(Integer.parseInt(args[1]))) != null) {
+                int id = Integer.parseInt(args[1]);
+                if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
                     String sex = null;
                     if (person.getSex().equals(Sex.MALE)) {
                         sex = "м";
@@ -52,23 +53,24 @@ public class Solution {
                 } //String sex = person.getSex().equals(Sex.MALE) ? "м" : "ж";
             }
             case "-u" -> {
-                person = allPeople.get(Integer.parseInt(args[1]));
-                if (person == null) {
-                    throw new IllegalArgumentException();
+                int id = Integer.parseInt(args[1]);
+                if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
+                    person.setName(args[2]);
+                    if (args[3].equalsIgnoreCase("м")) {
+                        person.setSex(Sex.MALE);
+                    } else if (args[3].equalsIgnoreCase("ж")) {
+                        person.setSex(Sex.FEMALE);
+                    }
+                    person.setBirthDate(inputFormat.parse(args[4]));
                 }
-                person.setName(args[2]);
-                if (args[3].equalsIgnoreCase("м")) {
-                    person.setSex(Sex.MALE);
-                } else if (args[3].equalsIgnoreCase("ж")) {
-                    person.setSex(Sex.FEMALE);
-                }
-                person.setBirthDate(inputFormat.parse(args[4]));
             }
             case "-d" -> {
-                person = allPeople.get(Integer.parseInt(args[1]));
-                person.setName(null);
-                person.setSex(null);
-                person.setBirthDate(null);
+                int id = Integer.parseInt(args[1]);
+                if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
+                    person.setName(null);
+                    person.setSex(null);
+                    person.setBirthDate(null);
+                }
             }
         }
     }
