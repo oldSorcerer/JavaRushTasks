@@ -8,9 +8,9 @@ public enum Error {
     SYSTEM_ERROR(200),
     COMPILATION_ERROR(300);
 
-    private static final Map<Integer, Error> errorMap = new HashMap<>();
-
     private final int errorCode;
+
+    private static final Map<Integer, Error> errorMap = new HashMap<>();
 
     static {
         for (Error error : Error.values()) {
