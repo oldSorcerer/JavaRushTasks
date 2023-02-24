@@ -24,7 +24,7 @@ public class Book {
     private Integer publicationYear;
 
     @Column(name = "isbn")
-        private Long isbn;
+    private Long isbn;
 
     public Integer getId() {
         return id;
