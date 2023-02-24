@@ -2,9 +2,14 @@ package com.javarush.task.sql.task10.task1004;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "publisher")
 public class Publisher {
+    @Id
+    @GeneratedValue
     private Integer id;
 
+    @Column(name = "name")
     private String name;
 
     public Integer getId() {
