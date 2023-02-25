@@ -14,8 +14,8 @@ public class Solution {
 
     public static StringBuilder addTo(String string, String[] strings) {
         StringBuilder builder = new StringBuilder(string);
-        for (String s : strings) {
-            builder.append(s);
+        for (String str : strings) {
+            builder.append(str);
         }
         return builder;
     }
