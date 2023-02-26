@@ -15,12 +15,18 @@ public class Solution {
     }
 
     public static Long getSalaryFund() {
-        //напишите тут ваш код
-        return 0L;
+        try (Session session = MySessionFactory.getSessionFactory().openSession()) {
+            String hql = "select sum(salary) from Employee";
+            Query<Long> query = session.createQuery(hql, Long.class);
+            return query.uniqueResult();
+        }
     }
 
     public static Double getAverageAge() {
-        //напишите тут ваш код
-        return 0.0;
+        try (Session session = MySessionFactory.getSessionFactory().openSession()) {
+            String hql = "select avg(age) from Employee";
+            Query<Double> query = session.createQuery(hql, Double.class);
+            return query.uniqueResult();
+        }
     }
 }
