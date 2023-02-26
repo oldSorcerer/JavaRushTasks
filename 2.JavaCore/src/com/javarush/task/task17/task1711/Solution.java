@@ -46,18 +46,16 @@ public class Solution {
             case "-u" -> {
                 synchronized (allPeople) {
                     for (int i = 1; i < args.length; i += 4) {
-                        person = allPeople.get(Integer.parseInt(args[i]));
-
-                        if (person == null) {
-                            throw new IllegalArgumentException();
+                        int id = Integer.parseInt(args[i]);
+                        if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
+                            person.setName(args[i + 1]);
+                            if (args[i + 2].equalsIgnoreCase("м")) {
+                                person.setSex(Sex.MALE);
+                            } else if (args[i + 2].equalsIgnoreCase("ж")) {
+                                person.setSex(Sex.FEMALE);
+                            }
+                            person.setBirthDate(inputFormat.parse(args[i + 3]));
                         }
-                        person.setName(args[i + 1]);
-                        if (args[i + 2].equalsIgnoreCase("м")) {
-                            person.setSex(Sex.MALE);
-                        } else if (args[i + 2].equalsIgnoreCase("ж")) {
-                            person.setSex(Sex.FEMALE);
-                        }
-                        person.setBirthDate(inputFormat.parse(args[i + 3]));
                     }
                 }
             }
@@ -74,7 +72,8 @@ public class Solution {
             case "-i" -> {
                 synchronized (allPeople) {
                     for (int i = 1; i < args.length; i++) {
-                        if ((person = allPeople.get(Integer.parseInt(args[i]))) != null) {
+                        int id = Integer.parseInt(args[i]);
+                        if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
                             String sex = null;
                             if (person.getSex().equals(Sex.MALE)) {
                                 sex = "м";
