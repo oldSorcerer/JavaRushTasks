@@ -3,7 +3,6 @@ package com.javarush.task.sql.task10.task1007;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import java.util.Collections;
 import java.util.List;
 
 /* 
@@ -17,7 +16,11 @@ public class Solution {
     }
 
     public static List<Employee> getIn(List<String> in) {
-        //напишите тут ваш код
-        return Collections.emptyList();
+        try(Session session = MySessionFactory.getSessionFactory().openSession()) {
+            String hql = "from Employee where smth in (:IN) order by age";
+            Query<Employee> query = session.createQuery(hql, Employee.class);
+            query.setParameterList("IN", in);
+            return query.list();
+        }
     }
 }
