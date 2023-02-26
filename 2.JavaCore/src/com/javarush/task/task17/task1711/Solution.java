@@ -62,10 +62,12 @@ public class Solution {
             case "-d" -> {
                 synchronized (allPeople) {
                     for (int i = 1; i < args.length; i++) {
-                        person = allPeople.get(Integer.parseInt(args[i]));
-                        person.setName(null);
-                        person.setSex(null);
-                        person.setBirthDate(null);
+                        int id = Integer.parseInt(args[i]);
+                        if (id >= 0 && id < allPeople.size() && (person = allPeople.get(id)) != null) {
+                            person.setName(null);
+                            person.setSex(null);
+                            person.setBirthDate(null);
+                        }
                     }
                 }
             }
