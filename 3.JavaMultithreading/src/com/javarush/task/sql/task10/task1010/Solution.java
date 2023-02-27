@@ -2,6 +2,7 @@ package com.javarush.task.sql.task10.task1010;
 
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -18,7 +19,11 @@ public class Solution {
     }
 
     public static List<Employee> getAll() {
-        //напишите тут ваш код
-        return Collections.emptyList();
+        try (Session session = MySessionFactory.getSessionFactory().openSession()) {
+            String hql = "from E";
+            session.createNamedQuery(hql, Employee.class);
+
+            return Collections.emptyList();
+        }
     }
 }
