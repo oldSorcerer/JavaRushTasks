@@ -21,6 +21,5 @@ public class Solution {
             query.executeUpdate();
             transaction.commit();
         }
-
     }
 }
