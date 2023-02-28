@@ -2,10 +2,7 @@ package com.javarush.task.sql.task10.task1010;
 
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
-import org.hibernate.query.Query;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /* 
@@ -20,10 +17,9 @@ public class Solution {
 
     public static List<Employee> getAll() {
         try (Session session = MySessionFactory.getSessionFactory().openSession()) {
-            String hql = "from E";
-            session.createNamedQuery(hql, Employee.class);
-
-            return Collections.emptyList();
+            String sql = "select * from employee order by id";
+            NativeQuery<Employee> query = session.createNativeQuery(sql, Employee.class);
+            return query.list();
         }
     }
 }
