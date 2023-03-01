@@ -1,6 +1,10 @@
 taskKey="com.javarush.task.sql.task11.task1102"\n\ntask1102
 
-Сохрани объект animalCat в БД с помощью метода save объекта session, потом вызови метод saveOrUpdate для объектов animalCat и animalDog. Запусти программу и убедись, что в БД содержится только две записи (метод saveOrUpdate для объекта animalDog отработал как save, а для объекта animalCat — как update).
+Сохрани объект animalCat в БД с помощью метода save объекта session, потом вызови метод saveOrUpdate для объектов
+animalCat и animalDog. Запусти программу и убедись, что в БД содержится только две записи (метод saveOrUpdate для
+объекта animalDog отработал как save, а для объекта animalCat как update).
+
+
 Требования:
 1.	В методе main у объекта класса Session должен быть вызван метод save с нужным параметром.
 2.	В методе main у объекта класса Session должен быть вызван метод saveOrUpdate для двух разных объектов.
