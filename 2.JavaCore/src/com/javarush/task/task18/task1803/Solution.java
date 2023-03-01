@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /* 
 Самые частые байты
@@ -36,11 +38,11 @@ public class Solution {
         for (Integer integer : list) {
             System.out.print(integer + " ");
         }
+
+//        IntStream.range(0, byteCountArray.length)
+//                .filter(i -> byteCountArray[i] == Arrays.stream(byteCountArray).max().getAsInt())
+//                .boxed()
+//                .toList()
+//                .forEach(integer -> System.out.print(integer + " "));
     }
 }
-/*
-        IntStream.range(0, byteCountArray.length)
-                .filter(i -> byteCountArray[i] == Arrays.stream(byteCountArray).max().getAsInt())
-                .boxed()
-                .toList()
-                .forEach(integer -> System.out.print(integer + " "));*/
