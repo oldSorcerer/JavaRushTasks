@@ -16,9 +16,8 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         List<Book> books;
 
-        try (SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-             Session session = sessionFactory.openSession()) {
-            Query<Book> query = session.createQuery("from Book b where author.fullName = 'Mark Twain' and publisher.name ='Фолио'", Book.class);
+        try (Session session = MySessionFactory.getSessionFactory().openSession()) {
+            Query<Book> query = session.createQuery("from Book where author.fullName = 'Mark Twain' and publisher.name ='Фолио'", Book.class);
             books = query.list();
         }
         books.forEach(System.out::println);

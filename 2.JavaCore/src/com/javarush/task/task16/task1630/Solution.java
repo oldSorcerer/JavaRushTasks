@@ -47,7 +47,7 @@ public class Solution {
 
     public static class ReadFileThread extends Thread implements ReadFileInterface {
 
-        private final StringBuilder stringBuilder = new StringBuilder();
+        private final StringBuilder builder = new StringBuilder();
         private String fullFileName;
 
         @Override
@@ -57,7 +57,7 @@ public class Solution {
 
         @Override
         public String getFileContent() {
-            return stringBuilder.toString() ;
+            return builder.toString() ;
         }
 
         @Override
@@ -65,7 +65,7 @@ public class Solution {
             try (BufferedReader reader = new BufferedReader(new FileReader(fullFileName))) {
                 while (reader.ready()) {
                     String string = reader.readLine();
-                    stringBuilder.append(string).append(" ");
+                    builder.append(string).append(" ");
                 }
             } catch (IOException ignore) {
             }
