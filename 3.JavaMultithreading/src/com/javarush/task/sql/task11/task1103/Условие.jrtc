@@ -1,7 +1,10 @@
 taskKey="com.javarush.task.sql.task11.task1103"\n\ntask1103
 
 Попробуй достать из БД объект класса Animal с id + 1. Используй методы get(), load() и find() объекта session.
-Результат запиши в поля animalGet, animalLoad и animalFind соответственно. Запусти программу и убедись, что значения полей animalGet и animalFind равны null, а значение animalLoad не равно null.
+Результат запиши в поля animalGet, animalLoad и animalFind соответственно. Запусти программу и убедись, что
+значения полей animalGet и animalFind равны null, а значение animalLoad не равно null.
+
+
 Требования:
 1.	В методе main у объекта класса Session должен быть вызван метод get с параметрами Animal.class и id+1.
 2.	В методе main у объекта класса Session должен быть вызван метод load с параметрами Animal.class и id+1.
