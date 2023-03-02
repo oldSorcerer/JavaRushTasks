@@ -1,0 +1,18 @@
+taskKey="com.javarush.task.jdk13.task28.task2805"\n\nМногопоточный факториал
+
+Преобразуй программу, чтобы она вычисляла факториал в параллельном потоке(нити):
+- добавь классу CalculateFactorial реализацию интерфейса Callable&lt;Long&gt;;
+- метод calculate переделай в call, а вместо параметра number создай в CalculateFactorial поле number;
+- в класс CalculateFactorial добавь конструктор с одним параметром Long который инициализирует поле number.
+
+В классе Solution есть код который должен работать с обновленным классом CalculateFactorial.
+Можешь раскомментировать его и проверить работу программы.
+
+
+Требования:
+1.	Класс CalculateFactorial должен реализовывать интерфейс Callable&lt;Long&gt; и его метод call.
+2.	Тело метода call должно остаться такое же как было в методе calculate.
+3.	В классе CalculateFactorial должно быть приватное не статическое поле number.
+4.	В классе CalculateFactorial должен быть конструктор инициализирующий поле number.
+
+
