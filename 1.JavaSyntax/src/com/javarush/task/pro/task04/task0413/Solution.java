@@ -8,12 +8,10 @@ public class Solution {
     public static void main(String[] args) {
 
         for (int i = 0; i < 10; i++) {
-            int count = 1 + i;
-            for (int j = 1; j <= count; j++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print(8);
             }
             System.out.println();
         }
-
     }
 }
