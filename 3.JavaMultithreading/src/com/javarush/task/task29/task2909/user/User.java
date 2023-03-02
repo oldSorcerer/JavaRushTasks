@@ -22,10 +22,7 @@ public class User {
     }
 
     public void printAdditionalInfo() {
-        if (getAge() < 16)
-            System.out.println("Пользователь моложе 16 лет");
-        else
-            System.out.println("Пользователь старше 16 лет");
+        System.out.println(getAge() < 16 ? "Пользователь моложе 16 лет" : "Пользователь старше 16 лет");
     }
 
     public String getName() {
