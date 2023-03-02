@@ -28,15 +28,15 @@ public class Solution {
     }
 
     private static void emulateThreadFactory() {
-        AmigoThreadFactory factory = new AmigoThreadFactory();
+//        AmigoThreadFactory factory = new AmigoThreadFactory();
         Runnable r = new Runnable() {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName());
             }
         };
-        factory.newThread(r).start();
-        factory.newThread(r).start();
-        factory.newThread(r).start();
+//        factory.newThread(r).start();
+//        factory.newThread(r).start();
+//        factory.newThread(r).start();
     }
 }
