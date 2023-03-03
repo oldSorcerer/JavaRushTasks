@@ -20,9 +20,9 @@ public class UserHelper {
     }
 
     public int calculateRate(AtomicInteger base, int age, boolean hasWork, boolean hasHouse) {
-        int number2 = (base.get() + age / 100);
-        int number3 = (int) (number2 * (hasWork ? 1.1 : 0.9));
-        return (int) (number3 * (hasHouse ? 1.1 : 0.9));
+        int number = (base.get() + age / 100);
+        int number2 = (int) (number * (hasWork ? 1.1 : 0.9));
+        return (int) (number2 * (hasHouse ? 1.1 : 0.9));
     }
 
     public String getBossName(User user) {

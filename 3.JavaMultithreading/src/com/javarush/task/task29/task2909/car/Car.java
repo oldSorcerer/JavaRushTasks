@@ -86,15 +86,11 @@ public abstract class Car {
     public abstract int getMaxSpeed();
 
     public static Car create(int type, int numberOfPassengers) {
-        switch (type) {
-            case TRUCK:
-                return new Truck(numberOfPassengers);
-            case SEDAN:
-                return new Sedan(numberOfPassengers);
-            case CABRIOLET:
-                return new Cabriolet(numberOfPassengers);
-            default:
-                return null;
-        }
+        return switch (type) {
+            case TRUCK -> new Truck(numberOfPassengers);
+            case SEDAN -> new Sedan(numberOfPassengers);
+            case CABRIOLET -> new Cabriolet(numberOfPassengers);
+            default -> null;
+        };
     }
 }
