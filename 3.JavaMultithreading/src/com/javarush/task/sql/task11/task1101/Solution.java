@@ -21,7 +21,7 @@ public class Solution {
             SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
-            //напишите тут ваш код
+            session.save(animal);
             transaction.commit();
             session.close();
         } catch (Exception e) {
