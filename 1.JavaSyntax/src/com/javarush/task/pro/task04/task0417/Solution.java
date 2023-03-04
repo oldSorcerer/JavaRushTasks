@@ -13,6 +13,5 @@ public class Solution {
         int number = scanner.nextInt();
 
         System.out.println(Math.round(number * 3.6));
-
     }
 }
