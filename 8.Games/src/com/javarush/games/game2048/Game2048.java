@@ -72,7 +72,7 @@ public class Game2048 extends Game {
     private boolean compressRow(int[] row) {
         int insertPosition = 0;
         boolean result = false;
-        for (int x = 0; x < SIDE; x++) {
+        for (int x = 0; x < row.length; x++) {
             if (row[x] > 0) {
                 if (x != insertPosition) {
                     row[insertPosition] = row[x];
