@@ -3,7 +3,7 @@ package com.javarush.games.game2048;
 import com.javarush.engine.cell.*;
 
 public class Game2048 extends Game {
-    
+
     private static final int SIDE = 4;
     private int[][] gameField = new int[SIDE][SIDE];
     private boolean isGameStopped = false;
@@ -14,13 +14,13 @@ public class Game2048 extends Game {
         createNewNumber();
         createNewNumber();
     }
-    
+
     private void drawScene() {
-        for(int y = 0; y < SIDE; y++)
+        for (int y = 0; y < SIDE; y++)
             for (int x = 0; x < SIDE; x++)
                 setCellColoredNumber(x, y, gameField[y][x]);
     }
-    
+
     @Override
     public void initialize() {
         setScreenSize(SIDE, SIDE);
@@ -39,8 +39,7 @@ public class Game2048 extends Game {
         if (gameField[x][y] == 0) {
             if (number < 9) {
                 gameField[x][y] = 2;
-            }
-            else
+            } else
                 gameField[x][y] = 4;
         } else
             createNewNumber();
@@ -74,8 +73,8 @@ public class Game2048 extends Game {
         int insertPosition = 0;
         boolean result = false;
         for (int x = 0; x < SIDE; x++) {
-            if (row[x] > 0 ) {
-                if (x  != insertPosition) {
+            if (row[x] > 0) {
+                if (x != insertPosition) {
                     row[insertPosition] = row[x];
                     row[x] = 0;
                     result = true;
@@ -135,7 +134,7 @@ public class Game2048 extends Game {
     private void moveLeft() {
         boolean flag = false;
         for (int[] ints : gameField) {
-            if (compressRow(ints) | mergeRow(ints) | compressRow(ints) ) {
+            if (compressRow(ints) | mergeRow(ints) | compressRow(ints)) {
                 flag = true;
             }
         }
@@ -170,7 +169,7 @@ public class Game2048 extends Game {
 
     private void rotateClockwise() {
         int[][] newGameField = new int[SIDE][SIDE];
-        for (int i = 0; i < SIDE ; i++) {
+        for (int i = 0; i < SIDE; i++) {
             for (int j = 0; j < SIDE; j++) {
                 newGameField[j][SIDE - i - 1] = gameField[i][j];
             }
@@ -181,7 +180,7 @@ public class Game2048 extends Game {
     private int getMaxTileValue() {
         int max = gameField[0][0];
 
-        for (int i = 0; i < SIDE ; i++) {
+        for (int i = 0; i < SIDE; i++) {
             for (int j = 0; j < SIDE; j++) {
                 if (max < gameField[i][j]) {
                     max = gameField[i][j];

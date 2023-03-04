@@ -13,11 +13,11 @@ public class Solution {
     }
 
     public static void printStackTrace(StackTraceElement[] stackTrace) {
-        for (int i = 0; i < stackTrace.length; i++) {
-            String methodName = stackTrace[i].getMethodName();
-            int lineNumber = stackTrace[i].getLineNumber();
-            String className = stackTrace[i].getClassName();
-            String fileName = stackTrace[i].getFileName();
+        for (StackTraceElement element : stackTrace) {
+            String methodName = element.getMethodName();
+            int lineNumber = element.getLineNumber();
+            String className = element.getClassName();
+            String fileName = element.getFileName();
             System.out.printf(OUTPUT_FORMAT, methodName, lineNumber, className, fileName);
         }
     }
