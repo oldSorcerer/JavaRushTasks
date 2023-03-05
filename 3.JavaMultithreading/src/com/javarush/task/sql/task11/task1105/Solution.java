@@ -3,6 +3,7 @@ package com.javarush.task.sql.task11.task1105;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /* 
 task1105
@@ -24,15 +25,15 @@ public class Solution {
         animalMouse.setAge(3);
         animalMouse.setFamily("Mice");
 
-        try {
-            SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-            Session session = sessionFactory.openSession();
+        try (SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
+             Session session = sessionFactory.openSession();) {
             Transaction transaction = session.beginTransaction();
             session.persist(animalCat);
             session.persist(animalMouse);
-            //напишите тут ваш код
+            String hql = "delete from Animal where id = 2";
+            Query query = session.createQuery(hql);
+            query.executeUpdate();
             transaction.commit();
-            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
