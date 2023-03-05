@@ -17,15 +17,13 @@ public class Solution {
         animal.setName("Murka");
         animal.setAge(5);
         animal.setFamily("Cats");
-        try {
-            SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-            Session session = sessionFactory.openSession();
+        try(SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
+            Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             id1 = (long) session.save(animal); // вернул id
             session.evict(animal); // отсоединили от бд
             id2 = (long) session.save(animal); // новый объект в безе
             transaction.commit();
-            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
