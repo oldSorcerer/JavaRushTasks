@@ -26,7 +26,7 @@ public class Solution {
         animalMouse.setFamily("Mice");
 
         try (SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-             Session session = sessionFactory.openSession();) {
+             Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(animalCat);
             session.persist(animalMouse);
