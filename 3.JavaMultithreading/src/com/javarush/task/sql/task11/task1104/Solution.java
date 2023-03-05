@@ -24,19 +24,17 @@ public class Solution {
         animalMouse.setAge(3);
         animalMouse.setFamily("Mice");
 
-        try {
-            SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-            Session session = sessionFactory.openSession();
+        try (SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
+             Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(animalCat);
             session.persist(animalMouse);
             animalRemove = session.find(Animal.class, 1L);
             System.out.println(animalRemove == null);
-            //напишите тут ваш код
+            session.remove(animalRemove);
             animalRemove = session.find(Animal.class, 1L);
             System.out.println(animalRemove == null);
             transaction.commit();
-            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
