@@ -20,13 +20,13 @@ public class Solution {
         animalDog.setAge(3);
         animalDog.setFamily("Dogs");
 
-        try {
-            SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-            Session session = sessionFactory.openSession();
+        try(SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
+            Session session = sessionFactory.openSession();) {
             Transaction transaction = session.beginTransaction();
-            //напишите тут ваш код
+            session.save(animalCat);
+            session.saveOrUpdate(animalCat);
+            session.saveOrUpdate(animalDog);
             transaction.commit();
-            session.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
