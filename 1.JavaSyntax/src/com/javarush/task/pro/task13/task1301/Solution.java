@@ -23,6 +23,5 @@ public class Solution {
 
     public static HashSet<String> arrayToHashSet(String[] strings) {
         return new HashSet<>(Arrays.asList(strings));
-
     }
 }
