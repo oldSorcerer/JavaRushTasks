@@ -53,10 +53,11 @@ public class Solution {
         @Override
         public void run() {
             try {
-                for (String step : OnlineGame.steps) {
+                List<String> steps = OnlineGame.steps;
+                for (String step : steps) {
                     System.out.println(getName() + ":" + step);
                     Thread.sleep(1000 / rating);
-                    if (step.equals("Убийство врагов") && !OnlineGame.isWinnerFound) {
+                    if (step.equals(steps.get(steps.size() - 1)) && !OnlineGame.isWinnerFound) {
                         System.out.println(getName() + ":победитель!");
                         OnlineGame.isWinnerFound = true;
                     }
