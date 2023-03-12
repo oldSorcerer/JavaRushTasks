@@ -45,23 +45,21 @@ public class Server {
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
-            String name;
 
             while (true) {
                 connection.send(new Message(MessageType.NAME_REQUEST, "Пожалуйста, введите Ваше имя."));
                 Message message = connection.receive();
-                name = message.getData();
+                String name = message.getData();
 
                 if (message.getType().equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
                         !name.isEmpty() && !connectionMap.containsKey(name)) {
                     connectionMap.put(name, connection);
                     connection.send(new Message(MessageType.NAME_ACCEPTED, "Добро пожаловать в чат, " + name));
-                    break;
+                    return name;
                 } else {
                     ConsoleHelper.writeMessage("Ошибка ввода имени пользователя.");
                 }
             }
-            return name;
         }
 
         private void notifyUsers(Connection connection, String userName) throws IOException {
@@ -79,7 +77,7 @@ public class Server {
                     sendBroadcastMessage(new Message(MessageType.TEXT, userName + ": " + message.getData()));
                 } else {
                     ConsoleHelper.writeMessage("Получено сообщение от " + socket.getRemoteSocketAddress() +
-                                                ". Тип сообщения не соответствует протоколу.");
+                            ". Тип сообщения не соответствует протоколу.");
                 }
             }
         }
@@ -87,7 +85,7 @@ public class Server {
         @Override
         public void run() {
             ConsoleHelper.writeMessage("Установлено соединение с удаленным адресом "
-                                        + socket.getRemoteSocketAddress());
+                    + socket.getRemoteSocketAddress());
             String userName = null;
             try (Connection connection = new Connection(socket)) {
                 userName = serverHandshake(connection);
@@ -96,7 +94,7 @@ public class Server {
                 serverMainLoop(connection, userName);
             } catch (IOException | ClassNotFoundException e) {
                 ConsoleHelper.writeMessage("Произошла ошибка при обмене данными с удаленным адресом " +
-                                            socket.getRemoteSocketAddress());
+                        socket.getRemoteSocketAddress());
             }
             if (userName != null) {
                 connectionMap.remove(userName);
