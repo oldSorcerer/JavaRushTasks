@@ -1,1 +1,1 @@
--- Write your code here:
+select if(3 >= 1, 'yes', 'no')
