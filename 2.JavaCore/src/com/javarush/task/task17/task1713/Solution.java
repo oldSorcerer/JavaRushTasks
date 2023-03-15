@@ -7,7 +7,7 @@ import java.util.*;
 */
 
 public class Solution implements List<Long> {
-    private ArrayList<Long> original = new ArrayList<>();
+    private final ArrayList<Long> original = new ArrayList<>();
 
     public static void main(String[] args) {
 
