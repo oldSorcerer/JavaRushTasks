@@ -1,1 +1,1 @@
--- Write your code here:
+select nullif(5, 5)
