@@ -4,7 +4,7 @@ taskKey="com.javarush.task.sql.task02.task0213"\n\ntask0213
 - &#39;true&#39;, если значение is_full_time равно 1
 - &#39;false&#39;, если значение is_full_time равно 0
 Используй CASE вида CASE case_value WHEN value1 THEN result1 ... FROM table
-Значение поля is_full_time может быть отличным от 0 или 1.
+Значение поля is_full_time может быть отличным от 0 и 1. Этот кейс обрабатывать не нужно.
 
 
 Требования:
