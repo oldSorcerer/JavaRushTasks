@@ -30,7 +30,7 @@ public class Solution {
         for (String fileName : map.values()) {
             String shortName = fileName.substring(0, fileName.lastIndexOf("."));
             try (BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
-                 BufferedOutputStream outputStream = new BufferedOutputStream( new FileOutputStream(shortName))) {
+                 BufferedOutputStream outputStream = new BufferedOutputStream( new FileOutputStream(shortName, true))) {
                 while (inputStream.available() > 0) {
                     outputStream.write(inputStream.read());
                 }

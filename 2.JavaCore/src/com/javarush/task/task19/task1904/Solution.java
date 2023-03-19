@@ -1,5 +1,6 @@
 package com.javarush.task.task19.task1904;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,8 +13,10 @@ import java.util.Scanner;
 
 public class Solution {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        PersonScannerAdapter personScannerAdapter = new PersonScannerAdapter(new Scanner(new File("")));
+        Person read = personScannerAdapter.read();
+        System.out.println(read);
     }
 
     public static class PersonScannerAdapter implements PersonScanner {
