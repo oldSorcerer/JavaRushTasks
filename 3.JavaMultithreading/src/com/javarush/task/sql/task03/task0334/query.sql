@@ -4,9 +4,9 @@ author.country as author_country,
 book.genre as book_genre
 from authors as author
 left join books as book
-on authors.id = books.id
-where books.genre = 'fantasy'
-group by authors.last_name, authors.country, books.genre
-order by authors.country asc
+on author.id = book.author_id
+where book.genre = 'fantasy'
+group by author.last_name, author.country, book.genre
+order by author.country asc
 limit 5
 
