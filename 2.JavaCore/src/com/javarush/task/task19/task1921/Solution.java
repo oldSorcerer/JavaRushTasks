@@ -30,5 +30,11 @@ public class Solution {
         for (Person person : PEOPLE) {
             System.out.println(person.getName() + person.getBirthDate());
         }
+
+//        Files.readAllLines(Paths.get(args[0]))
+//                .stream()
+//                .map(e -> new Person(e.replaceAll("\\d", "").trim(),
+//                        Date.from(LocalDate.parse(e.replaceAll("\\D", " ").trim(), DateTimeFormatter.ofPattern("dd M yyyy")).atStartOfDay(ZoneId.systemDefault()).toInstant())))
+//                .peek(PEOPLE::add).forEach(person -> System.out.println(person.getName() + person.getBirthDate()));
     }
 }
