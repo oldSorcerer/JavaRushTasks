@@ -1,10 +1,12 @@
 taskKey="com.javarush.task.sql.task03.task0350"\n\ntask0350
 
 В данной задаче тебе потребуется:
-1. Используя оператор WITH создать временную таблицу tempTable с колонкой averageDOB.
-2. Используя оператор AS, добавить подзапрос, в котором требуется найти среднее значение колонки year_born таблицы film_directors.
-3. Выбрать колонки id, full_name и year_born из таблицы film_directors и tempTable.
-4. Добавить условие, что колонка year_born таблицы film_directors должна быть меньше колонки averageDOB таблицы tempTable.
+1. Используя оператор WITH создать временную таблицу tempTable с колонкой averageGrossed.
+2. Используя оператор AS, добавить подзапрос, в котором требуется найти среднее значение колонки grossed таблицы films.
+3. Создать вторую временную таблицу tempTable2, и используя оператор AS, добавить второй подзапрос, в котором требуется найти среднее значение колонки year_released таблицы films.
+4. Выбрать колонки title, genre, year_released и grossed из таблиц films, tempTable и tempTable2.
+5. Добавить условие, что колонка grossed таблицы films должна быть больше колонки averageGrossed таблицы tempTable, а также, колонка year_released таблицы films должна быть больше колонки averageYearReleased таблицы tempTable2.
+6. Сгруппировать результат по колонке year_released таблицы films.
 
 
 Требования:
