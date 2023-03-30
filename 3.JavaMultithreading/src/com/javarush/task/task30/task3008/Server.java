@@ -1,6 +1,7 @@
 package com.javarush.task.task30.task3008;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class Server {
     public static void main(String[] args) {
         ConsoleHelper.writeMessage("Введите порт сервера: ");
         int port = ConsoleHelper.readInt();
-
+//try (ServerSocket serverSocket = new ServerSocket(port, 10, InetAddress.getByName("192.168.1.102"))) {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             ConsoleHelper.writeMessage("Чат сервер запущен.");
             while (true) {
