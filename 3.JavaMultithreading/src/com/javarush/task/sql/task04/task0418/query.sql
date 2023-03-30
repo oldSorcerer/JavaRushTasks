@@ -1,1 +1,1 @@
-select
+select NOW(), LOCALTIME()
