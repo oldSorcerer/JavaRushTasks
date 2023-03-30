@@ -1,1 +1,1 @@
--- Write your code here:
+select now(), ADDDATE(now() INTERVAL 3 day), SUBDATE(now() INTERVAL 3 day)
