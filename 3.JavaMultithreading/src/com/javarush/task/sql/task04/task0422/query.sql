@@ -1,1 +1,1 @@
--- Write your code here:
+select now(), ADDTIME(now(), null), SUBTIME(now(), '33')
