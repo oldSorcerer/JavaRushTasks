@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: com.javarush.task.task30.task3008.client.ClientGuiController
-
