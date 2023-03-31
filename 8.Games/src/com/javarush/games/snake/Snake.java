@@ -3,6 +3,8 @@ package com.javarush.games.snake;
 import java.util.*;
 import com.javarush.engine.cell.*;
 
+import static com.javarush.games.snake.Direction.*;
+
 public class Snake {
 
     private static final String HEAD_SIGN = "\uD83D\uDC7E";
@@ -10,8 +12,8 @@ public class Snake {
 
     public boolean isAlive = true;
 
-    private List<GameObject> snakeParts = new ArrayList<>();
-    private Direction direction = Direction.LEFT;
+    private final List<GameObject> snakeParts = new ArrayList<>();
+    private Direction direction = LEFT;
 
     public Snake(int x, int y) {
         snakeParts.add(new GameObject(x, y));
@@ -24,20 +26,20 @@ public class Snake {
         boolean flagX =  snakeParts.get(0).x == snakeParts.get(1).x;
         boolean flagY =  snakeParts.get(0).y == snakeParts.get(1).y;
 
-        if ( (this.direction == Direction.LEFT || this.direction == Direction.RIGHT ) && flagX) {
+        if ( (this.direction == LEFT || this.direction == RIGHT ) && flagX) {
             return;
         }
-        if ( (this.direction == Direction.UP || this.direction == Direction.DOWN) && flagY ) {
+        if ( (this.direction == UP || this.direction == DOWN) && flagY ) {
             return;
         }
 
-        if (this.direction.equals(Direction.LEFT) && direction.equals(Direction.RIGHT)) {
+        if (this.direction.equals(LEFT) && direction.equals(RIGHT)) {
             return;
-        } else if (this.direction.equals(Direction.RIGHT) && direction.equals(Direction.LEFT)) {
+        } else if (this.direction.equals(RIGHT) && direction.equals(LEFT)) {
             return;
-        } else if (this.direction.equals(Direction.UP) && direction.equals(Direction.DOWN)) {
+        } else if (this.direction.equals(UP) && direction.equals(DOWN)) {
             return;
-        } else if ( this.direction.equals(Direction.DOWN) && direction.equals(Direction.UP)) {
+        } else if ( this.direction.equals(DOWN) && direction.equals(UP)) {
             return;
         }
         this.direction = direction;
@@ -73,11 +75,11 @@ public class Snake {
 
     public GameObject createNewHead() {
         GameObject oldHead = snakeParts.get(0);
-        if (direction.equals(Direction.LEFT))
+        if (direction.equals(LEFT))
             return new GameObject(oldHead.x - 1, oldHead.y);
-        else if (direction.equals(Direction.RIGHT))
+        else if (direction.equals(RIGHT))
             return new GameObject(oldHead.x + 1, oldHead.y);
-        else if (direction.equals(Direction.DOWN))
+        else if (direction.equals(DOWN))
             return new GameObject(oldHead.x, oldHead.y + 1);
         else
             return new GameObject(oldHead.x, oldHead.y - 1);

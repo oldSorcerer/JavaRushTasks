@@ -11,6 +11,7 @@ public class SnakeGame extends Game {
 
     private Snake snake;
     private Apple apple;
+
     private int turnDelay;
     private int score;
     private boolean isGameStopped;
