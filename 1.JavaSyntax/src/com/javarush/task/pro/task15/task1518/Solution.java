@@ -28,7 +28,6 @@ public class Solution {
                 System.out.println(path + THIS_IS_DIR);
             }
         }
-
     }
 }
 
