@@ -1,1 +1,1 @@
-select
+select name, department from employee where
