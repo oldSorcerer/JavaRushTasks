@@ -65,7 +65,7 @@ public class Game2048 extends Game {
 
     private void setCellColoredNumber(int x, int y, int value) {
         Color newColor = getColorByValue(value);
-        String strValue = value > 0 ? "" + value : "";
+        String strValue = value > 0 ? String.valueOf(value) : "";
         setCellValueEx(x, y, newColor, strValue);
     }
 
