@@ -12,6 +12,7 @@ target/
 *.class
 *.info
 *.properties
+*.mf
 
 
 
@@ -25,3 +26,4 @@ target/
 /Instruction.png
 /out.log
 /out.log.*
+/META-INF/
