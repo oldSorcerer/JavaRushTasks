@@ -12,6 +12,7 @@ target/
 *.class
 *.info
 *.properties
+*.mf
 
 
 
