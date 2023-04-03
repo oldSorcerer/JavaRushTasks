@@ -1,1 +1,1 @@
-select * from event where month(date_time) = month(curdate())
+select * from event where year(date_time) = year(curdate()) and month(date_time) = month(curdate())
