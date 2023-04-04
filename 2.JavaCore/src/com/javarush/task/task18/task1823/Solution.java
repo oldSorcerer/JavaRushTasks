@@ -57,3 +57,14 @@ public class Solution {
         }
     }
 }
+
+/*
+* Integer max = map.values().stream().max(Comparator.comparingInt(x -> x)).get();
+* List<Integer> list = new ArrayList<>();
+* for (Map.Entry<Integer, Integer> pair : map.entrySet()) {
+    if (Objects.equals(pair.getValue(), max)) {
+        list.add(pair.getKey());
+        }
+}
+list.sort(Comparator.comparingInt(x -> x));
+* resultMap.put(fileName, list.get(0));*/
