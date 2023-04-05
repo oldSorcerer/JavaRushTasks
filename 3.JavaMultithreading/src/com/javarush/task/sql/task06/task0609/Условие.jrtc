@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.sql.task06.task0609"\n\ntask0609
+
+Добавь в таблицу sale_addresses информацию из колонок street, city, state, zip_code и country таблицы customers, но без данных из страны с названием Testostan.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+

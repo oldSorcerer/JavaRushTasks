@@ -1,0 +1,9 @@
+taskKey="com.javarush.task.sql.task06.task0608"\n\ntask0608
+
+Добавь в таблицу customers все колонки таблицы suppliers.
+
+
+Требования:
+1.	Запрос должен быть реализован согласно условию.
+
+
