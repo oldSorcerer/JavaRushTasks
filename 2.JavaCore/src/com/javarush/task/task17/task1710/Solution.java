@@ -15,8 +15,8 @@ public class Solution {
     public static List<Person> allPeople = new ArrayList<>();
 
     static {
-        allPeople.add(Person.createMale("Иванов Иван", new Date()));  //сегодня родился    id=0
-        allPeople.add(Person.createMale("Петров Петр", new Date()));  //сегодня родился    id=1
+        allPeople.add(Person.createMale("Иванов Иван", new Date()));  //сегодня родился id=0
+        allPeople.add(Person.createMale("Петров Петр", new Date()));  //сегодня родился id=1
     }
 
     public static void main(String[] args) throws ParseException {
