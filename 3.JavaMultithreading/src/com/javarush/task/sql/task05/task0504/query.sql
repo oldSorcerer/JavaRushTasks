@@ -1,11 +1,12 @@
-insert into author (first_name, last_name, full_name) values ('Joanne', 'Rowling', 'J. K. Rowling');
-insert into author (first_name, last_name, full_name) values ('Stephen', 'King', 'Stephen King');
-insert into author (first_name, last_name, full_name) values ('Clive', 'Lewis', 'C. S. Lewis');
-insert into author (first_name, last_name, full_name) values ('Hajime', 'Isayama', 'Hajime Isayama');
-insert into author (first_name, last_name, full_name) values ('Edgar', 'Burroughs', 'Edgar Rice Burroughs');
-insert into author (first_name, last_name, full_name) values ('Lewis', 'Carroll', 'Lewis Carroll');
-insert into author (first_name, last_name, full_name) values ('Astrid', 'Lindgren', 'Astrid Lindgren');
-insert into author (first_name, last_name, full_name) values ('Richard', 'Scarry', 'Richard Scarry');
+insert into author (first_name, last_name, full_name)
+values  ('Joanne', 'Rowling', 'J. K. Rowling'),
+        ('Stephen', 'King', 'Stephen King'),
+        ('Clive', 'Lewis', 'C. S. Lewis'),
+        ('Hajime', 'Isayama', 'Hajime Isayama'),
+        ('Edgar', 'Burroughs', 'Edgar Rice Burroughs'),
+        ('Lewis', 'Carroll', 'Lewis Carroll'),
+        ('Astrid', 'Lindgren', 'Astrid Lindgren'),
+        ('Richard', 'Scarry', 'Richard Scarry');
 
 
 
