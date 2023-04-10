@@ -46,7 +46,7 @@ public class Solution {
         @Override
         public String getPhoneNumber() {
 
-            String phoneNumber = "" + data.getPhoneNumber();
+            String phoneNumber = String.valueOf(data.getPhoneNumber());
             while (phoneNumber.length() < 10) {
                 phoneNumber = "0" + phoneNumber;
             }
