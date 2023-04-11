@@ -30,6 +30,8 @@ public class Solution {
             JavaRush loadedObject = new JavaRush();
             loadedObject.load(inputStream);
 
+            System.out.println(loadedObject.equals(javaRush));
+
         } catch (IOException e) {
             System.out.println("Oops, something is wrong with my file");
         } catch (Exception e) {
@@ -42,8 +44,8 @@ public class Solution {
 
         public void save(OutputStream outputStream) throws Exception {
             try (PrintWriter writer = new PrintWriter(outputStream)) {
-                if (!this.users.isEmpty()) {
-                    for (User user : this.users) {
+                if (!users.isEmpty()) {
+                    for (User user : users) {
                         String builder = user.getFirstName() + " " +
                                 user.getLastName() + " " +
                                 user.getBirthDate().getTime() + " " +
@@ -69,7 +71,7 @@ public class Solution {
                     user.setBirthDate(new Date(Long.parseLong(strings[2])));
                     user.setMale(Boolean.parseBoolean(strings[3]));
                     user.setCountry(User.Country.valueOf(strings[4].toUpperCase()));
-                    this.users.add(user);
+                    users.add(user);
                 }
             }
         }
