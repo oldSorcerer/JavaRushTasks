@@ -1,4 +1,4 @@
 select isbn, title
 from book
-         join author on author.id = book.author_id
-where last_name like 'S%'
+         left join author on author.id = book.author_id
+where author.last_name like 'S%'
