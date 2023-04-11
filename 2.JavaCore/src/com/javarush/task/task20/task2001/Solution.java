@@ -21,6 +21,8 @@ public class Solution {
 
             Human somePerson = new Human();
             somePerson.load(inputStream);
+
+            System.out.println(somePerson.equals(ivanov));
         } catch (IOException e) {
             System.out.println("Oops, something wrong with my file");
         } catch (Exception e) {
@@ -63,8 +65,8 @@ public class Solution {
         public void save(OutputStream outputStream) throws Exception {
             try (PrintWriter writer = new PrintWriter(outputStream)) {
                 writer.println(this.name);
-                if (!this.assets.isEmpty()) {
-                    for (Asset asset : this.assets) {
+                if (!assets.isEmpty()) {
+                    for (Asset asset : assets) {
                         writer.println(asset.getName());
                         writer.println(asset.getPrice());
                     }
@@ -74,11 +76,11 @@ public class Solution {
 
         public void load(InputStream inputStream) throws Exception {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            this.name = reader.readLine();
+            name = reader.readLine();
             while (reader.ready()) {
                 String assetsName = reader.readLine();
                 double assetsPrice = Double.parseDouble(reader.readLine());
-                this.assets.add(new Asset(assetsName, assetsPrice));
+                assets.add(new Asset(assetsName, assetsPrice));
             }
         }
     }
