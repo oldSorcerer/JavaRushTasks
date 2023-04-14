@@ -1,6 +1,6 @@
-taskKey="com.javarush.task.sql.task06.task0623"\n\ntask0623
+taskKey="com.javarush.task.sql.task06.task0623"\n\nУдаляем позицию
 
-Напиши запрос, который удалит в таблице employee колонку с департаментом (department).
+Напиши запрос, который удалит в таблице employee колонку с позицией (position).
 
 
 Требования:
