@@ -38,15 +38,15 @@ public class Solution {
         set.forEach(System.out::println);
     }
 
-    public static void main1(String[] args) throws IOException {
-        Map<String, Double> map = new TreeMap<>();
-
-        Files.readAllLines(Paths.get(args[0])).stream()
-                .map(e -> e.split(" "))
-                .forEach(strings -> map.merge(strings[0], Double.parseDouble(strings[1]), Double::sum));
-
-        map.entrySet().stream()
-                .filter(entry -> Objects.equals(entry.getValue(), map.values().stream().max(Double::compare).orElseThrow()))
-                .forEach(entry -> System.out.println(entry.getKey()));
-    }
+//    public static void main1(String[] args) throws IOException {
+//        Map<String, Double> map = new TreeMap<>();
+//
+//        Files.readAllLines(Paths.get(args[0])).stream()
+//                .map(e -> e.split(" "))
+//                .forEach(strings -> map.merge(strings[0], Double.parseDouble(strings[1]), Double::sum));
+//
+//        map.entrySet().stream()
+//                .filter(entry -> Objects.equals(entry.getValue(), map.values().stream().max(Double::compare).orElseThrow()))
+//                .forEach(entry -> System.out.println(entry.getKey()));
+//    }
 }
