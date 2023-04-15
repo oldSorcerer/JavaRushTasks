@@ -37,12 +37,12 @@ public class Solution {
                 lines.add(new LineItem(Type.SAME, listOne.get(0)));
                 listOne.remove(0);
                 listTwo.remove(0);
-            } else if (listOne.get(0).equals(listTwo.get(1))){
-                lines.add(new LineItem(Type.ADDED, listTwo.get(0)));
-                listTwo.remove(0);
             } else if (listOne.get(1).equals(listTwo.get(0))) {
                 lines.add(new LineItem(Type.REMOVED, listOne.get(0)));
                 listOne.remove(0);
+            } else if (listOne.get(0).equals(listTwo.get(1))){
+                lines.add(new LineItem(Type.ADDED, listTwo.get(0)));
+                listTwo.remove(0);
             }
         }
 
@@ -53,7 +53,9 @@ public class Solution {
             listOne.forEach(i -> lines.add(new LineItem(Type.REMOVED, i)));
         }
 
-        lines.forEach(System.out::println);
+        for (LineItem line : lines) {
+            System.out.println(line);
+        }
     }
 
     public enum Type {
