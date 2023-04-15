@@ -1,1 +1,2 @@
--- Write your code here:
+alter table employee
+drop salary_index;
