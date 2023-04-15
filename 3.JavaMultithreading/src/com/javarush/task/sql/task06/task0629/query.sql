@@ -6,7 +6,8 @@ CREATE TABLE `event`
     `type`      VARCHAR(20) not null,
     `status`    VARCHAR(10) not null,
     PRIMARY KEY(id),
-    -- Write your code here:
+    foreign key (user_id)
+        references users(id)
 
 );
 
