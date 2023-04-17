@@ -89,10 +89,27 @@ public class Room {
     }
 
     public void print() {
-        //Создаем массив, куда будем "рисовать" текущее состояние игры
-        //Рисуем все кусочки змеи
-        //Рисуем мышь
-        //Выводим все это на экран
+        int[][] matrix = new int[height][width];
+
+        for (int i = 0; i < snake.getSections().size(); i++) {
+            int x = snake.getSections().get(i).getX();
+            int y = snake.getSections().get(i).getY();
+            matrix[y][x] = (i == 0) ? 2 : 1;
+        }
+
+        matrix[mouse.getY()][mouse.getX()] = 3;
+
+        String[] symbols = {".", "x", "X", "^", "*"};
+
+        for (int y = 0; y < matrix.length; y++) {
+            for (int x = 0; x < matrix[y].length; x++) {
+                System.out.print(symbols[matrix[y][x]]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     public void eatMouse() {
@@ -114,7 +131,7 @@ public class Room {
 
     public void sleep() {
         try {
-            int level  = snake.getSections().size();
+            int level = snake.getSections().size();
             Thread.sleep(level < 15 ? (520 - 20 * level) : 200);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
