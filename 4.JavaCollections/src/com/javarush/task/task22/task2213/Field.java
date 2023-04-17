@@ -1,6 +1,8 @@
 package com.javarush.task.task22.task2213;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Класс Field описывает "поле клеток" игры Тетрис
@@ -110,5 +112,24 @@ public class Field {
         //Копируем все неполные линии в список.
         //Добавляем недостающие строки в начало списка.
         //Преобразуем список обратно в матрицу
+        int count = 0;
+        List<int[]> list = new ArrayList<>();
+        for (int[] line : matrix) {
+            for (int i = 0; i < line.length; i++) {
+                if (line[i] == 0) {
+                    list.add(line);
+                    count++;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < count; i++) {
+            list.add(new int[matrix.length]);
+        }
+        int[][] newMatrix = new int[height][];
+        for (int i = 0; i < newMatrix.length; i++) {
+            newMatrix[i] = list.get(i);
+        }
+        matrix = newMatrix;
     }
 }
