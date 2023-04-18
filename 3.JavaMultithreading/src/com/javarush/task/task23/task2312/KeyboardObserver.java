@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class KeyboardObserver extends Thread {
-    private Queue<KeyEvent> keyEvents = new ArrayBlockingQueue<KeyEvent>(100);
+    private final Queue<KeyEvent> keyEvents = new ArrayBlockingQueue<>(100);
 
     private JFrame frame;
 
@@ -40,7 +40,6 @@ public class KeyboardObserver extends Thread {
             }
         });
 
-
         frame.addKeyListener(new KeyListener() {
 
             public void keyTyped(KeyEvent e) {
@@ -56,7 +55,6 @@ public class KeyboardObserver extends Thread {
             }
         });
     }
-
 
     public boolean hasKeyEvents() {
         return !keyEvents.isEmpty();

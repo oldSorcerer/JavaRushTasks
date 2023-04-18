@@ -13,6 +13,8 @@ public class Room {
     private Snake snake;
     private Mouse mouse;
 
+    public static Room game;
+
     public Room(int width, int height, Snake snake) {
         this.width = width;
         this.height = height;
@@ -100,7 +102,7 @@ public class Room {
         int[][] matrix = new int[height][width];
 
         //Рисуем все кусочки змеи
-        ArrayList<SnakeSection> sections = new ArrayList<SnakeSection>(snake.getSections());
+        ArrayList<SnakeSection> sections = new ArrayList<>(snake.getSections());
         for (SnakeSection snakeSection : sections) {
             matrix[snakeSection.getY()][snakeSection.getX()] = 1;
         }
@@ -141,9 +143,6 @@ public class Room {
         mouse = new Mouse(x, y);
     }
 
-
-    public static Room game;
-
     public static void main(String[] args) {
         game = new Room(20, 20, new Snake(10, 10));
         game.snake.setDirection(SnakeDirection.DOWN);
@@ -151,14 +150,12 @@ public class Room {
         game.run();
     }
 
-
-    private int initialDelay = 520;
-    private int delayStep = 20;
-
     /**
      * Программа делает паузу, длинна которой зависит от длинны змеи.
      */
     public void sleep() {
+        int initialDelay = 520;
+        int delayStep = 20;
         try {
             int level = snake.getSections().size();
             int delay = level < 15 ? (initialDelay - delayStep * level) : 200;
