@@ -41,13 +41,17 @@ public class Solution {
     }
 
     public static class AmigoThreadFactory implements ThreadFactory {
+        AtomicInteger atomicInteger = new AtomicInteger(1);
+
         @Override
         public Thread newThread(Runnable r) {
             Thread thread = new Thread(r);
             thread.setDaemon(false);
             thread.setPriority(5);
-            thread.setName("GN-pool-A-thread-B");
-            ThreadGroup threadGroup = new ThreadGroup(" ");
+            ThreadGroup group = new ThreadGroup("");
+            String string = String.format("%s-pool-%s-thread-%s", group.getName(),
+                    atomicInteger.getAndIncrement(), 1);
+            thread.setName(string);
 
             return thread;
         }
