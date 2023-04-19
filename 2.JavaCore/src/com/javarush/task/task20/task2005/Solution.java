@@ -64,9 +64,9 @@ public class Solution {
 
         public void save(OutputStream outputStream) throws Exception {
             try (PrintWriter printWriter = new PrintWriter(outputStream)) {
-                printWriter.println(this.name);
-                if (this.assets.size() > 0) {
-                    for (Asset current : this.assets)
+                printWriter.println(name);
+                if (assets.size() > 0) {
+                    for (Asset current : assets)
                         printWriter.println(current.getName());
                 }
             }
@@ -74,10 +74,10 @@ public class Solution {
 
         public void load(InputStream inputStream) throws Exception {
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-                this.name = reader.readLine();
+                name = reader.readLine();
                 String assetName;
                 while ((assetName = reader.readLine()) != null)
-                    this.assets.add(new Asset(assetName));
+                    assets.add(new Asset(assetName));
             }
         }
     }
