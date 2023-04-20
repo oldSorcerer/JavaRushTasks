@@ -5,7 +5,7 @@ package com.javarush.task.task25.task2515;
  */
 public class SpaceShip extends BaseObject {
     //картинка корабля для отрисовки
-    private static int[][] matrix = {
+    private static final int[][] matrix = {
             {0, 0, 0, 0, 0},
             {0, 0, 1, 0, 0},
             {0, 0, 1, 0, 0},

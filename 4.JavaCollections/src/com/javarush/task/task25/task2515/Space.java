@@ -9,17 +9,17 @@ import java.util.List;
  */
 public class Space {
     //Ширина и высота игрового поля
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
     //Космический корабль
     private SpaceShip ship;
     //Список НЛО
-    private List<Ufo> ufos = new ArrayList<Ufo>();
+    private final List<Ufo> ufos = new ArrayList<>();
     //Список бомб
-    private List<Bomb> bombs = new ArrayList<Bomb>();
+    private final List<Bomb> bombs = new ArrayList<>();
     //Список ракет
-    private List<Rocket> rockets = new ArrayList<Rocket>();
+    private final List<Rocket> rockets = new ArrayList<>();
 
     public Space(int width, int height) {
         this.width = width;
@@ -93,7 +93,7 @@ public class Space {
      * Метод возвращает общий список, который содержит все объекты игры
      */
     public List<BaseObject> getAllItems() {
-        ArrayList<BaseObject> list = new ArrayList<BaseObject>(ufos);
+        ArrayList<BaseObject> list = new ArrayList<>(ufos);
         list.add(ship);
         list.addAll(bombs);
         list.addAll(rockets);
