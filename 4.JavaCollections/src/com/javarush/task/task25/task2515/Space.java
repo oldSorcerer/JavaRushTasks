@@ -1,10 +1,7 @@
 package com.javarush.task.task25.task2515;
 
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Главный класс игры - Космос (Space)
@@ -110,6 +107,9 @@ public class Space {
      */
     public void createUfo() {
         //тут нужно создать новый НЛО.
+        if (ufos.isEmpty()) {
+            ufos.add(new Ufo(0, 5));
+        }
     }
 
     /**
@@ -119,6 +119,14 @@ public class Space {
      */
     public void checkBombs() {
         //тут нужно проверить все возможные столкновения для каждой бомбы.
+        for (Bomb bomb : bombs) {
+            if (ship.isIntersect(bomb)) {
+                ship.die();
+                bomb.die();
+            } else if (bomb.getY() >= height) {
+                bomb.die();
+            }
+        }
     }
 
     /**
@@ -128,6 +136,18 @@ public class Space {
      */
     public void checkRockets() {
         //тут нужно проверить все возможные столкновения для каждой ракеты.
+        for (Rocket rocket : rockets) {
+            for (Ufo ufo : ufos) {
+                if (rocket.isIntersect(ufo)){
+                    rocket.die();
+                    ufo.die();
+                }
+            }
+            if (rocket.getY() <= 0) {
+                rocket.die();
+            }
+        }
+
     }
 
     /**
@@ -135,6 +155,9 @@ public class Space {
      */
     public void removeDead() {
         //тут нужно удалить все умершие объекты из списков (кроме космического корабля)
+        ufos.removeIf(ufo -> !ufo.isAlive());
+        rockets.removeIf(rocket -> !rocket.isAlive());
+        bombs.removeIf(bomb -> !bomb.isAlive());
     }
 
     /**
