@@ -30,11 +30,11 @@ public class Solution {
         while (countsRobotank > 0) {
             bombs = new int[height][width];
             for (int i = 0; i < bombs.length; i++) {
-                for (int j = 10; j > 0; ) {
-                    int k = (int) (Math.random() * width);
-                    if (bombs[i][k] == 0) {
-                        bombs[i][k] = 1;
-                        j--;
+                for (int count = 0; count < 10; ) {
+                    int j = (int) (Math.random() * width);
+                    if (bombs[i][j] == 0) {
+                        bombs[i][j] = 1;
+                        count++;
                     }
                 }
             }
