@@ -14,25 +14,15 @@ import java.util.List;
 */
 
 public class Solution {
-    public static List<String> getFileTree(String root) throws IOException {
-//        List<String> list = new ArrayList<>();
-//        DirectoryStream<Path> paths = Files.newDirectoryStream(Path.of(root));
-//        for (Path path : paths) {
-//            if (Files.isRegularFile(path)) {
-//                list.add(path.toString());
-//            } else if (Files.isDirectory(path)) {
-//
-//            }
-//        }
-//        return list;
-        File file = new File(root);
-        File[] files = file.listFiles();
-        List<String> list = new ArrayList<>();
-        for (File file1 : files) {
-            if (file1.isFile()) {
-                list.add(file1.getName());
-            } else if (file1.isDirectory()) {
+    private static final List<String> list = new ArrayList<>();
 
+    public static List<String> getFileTree(String root) throws IOException {
+        DirectoryStream<Path> paths = Files.newDirectoryStream(Path.of(root));
+        for (Path path : paths) {
+            if (Files.isRegularFile(path)) {
+                list.add(path.toString());
+            } else if (Files.isDirectory(path)) {
+                getFileTree(path.toString());
             }
         }
         return list;
