@@ -7,8 +7,8 @@ public class Nimrod {
 
     public int health = 1_000_000;
 
-    public void defend(int attack){
-        health -= applyShield(attack);
+    public void defend(int damage){
+        health -= applyShield(damage);
     }
 
     public int attack(){
