@@ -123,13 +123,35 @@ public class Field {
                 }
             }
         }
-        for (int i = 0; i < count; i++) {
-            list.add(new int[matrix.length]);
+        for (int i = 0; i < matrix.length - count; i++) {
+            list.add(0, new int[matrix.length]);
         }
-        int[][] newMatrix = new int[height][];
-        for (int i = 0; i < newMatrix.length; i++) {
-            newMatrix[i] = list.get(i);
-        }
-        matrix = newMatrix;
+        matrix = list.toArray(new int[height][width]);
+
+//        int[][] newMatrix = new int[height][];
+//        for (int i = 0; i < newMatrix.length; i++) {
+//            newMatrix[i] = list.get(i);
+//        }
+//        matrix = newMatrix;
+
     }
+
+//    public static void main(String[] args) {
+//        Field field = new Field(5, 5);
+//        field.matrix = new int[][]{
+//                {0, 0, 0, 0, 0},
+//                {0, 0, 0, 0, 0},
+//                {0, 0, 1, 0, 0},
+//                {1, 1, 1, 1, 1},
+//                {0, 0, 0, 1, 0},
+//        };
+//        field.removeFullLines();
+//        for (int i = 0; i < field.matrix.length; i++) {
+//            for (int j = 0; j < field.matrix[i].length; j++) {
+//                System.out.print(field.matrix[i][j]);
+//            }
+//            System.out.println();
+//        }
+//
+//    }
 }
