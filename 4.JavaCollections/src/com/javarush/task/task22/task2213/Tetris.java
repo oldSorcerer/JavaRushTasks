@@ -81,6 +81,15 @@ public class Tetris {
         //удаляем заполненные линии
         //создаем новую фигурку
 
+        figure.down();
+
+        if (!figure.isCurrentPositionAvailable()) {
+            figure.up();
+            figure.landed();
+            field.removeFullLines();
+            figure = FigureFactory.createRandomFigure(field.getWidth() / 2, 0);
+        }
+
     }
 
     public void setFigure(Figure figure) {

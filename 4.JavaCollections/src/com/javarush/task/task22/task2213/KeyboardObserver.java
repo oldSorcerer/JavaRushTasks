@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class KeyboardObserver extends Thread {
-    private Queue<KeyEvent> keyEvents = new ArrayBlockingQueue<>(100);
+    private final Queue<KeyEvent> keyEvents = new ArrayBlockingQueue<>(100);
 
     private JFrame frame;
 

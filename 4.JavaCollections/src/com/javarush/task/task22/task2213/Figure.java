@@ -2,9 +2,9 @@ package com.javarush.task.task22.task2213;
 
 public class Figure {
 
-    private int x;
-    private int y;
-    private int[][] matrix;
+    private final int x;
+    private final int y;
+    private final int[][] matrix;
 
     public Figure(int x, int y, int[][] matrix) {
         this.x = x;

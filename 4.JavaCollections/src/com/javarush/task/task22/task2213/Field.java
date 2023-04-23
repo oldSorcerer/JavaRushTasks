@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class Field {
     //ширина и высота
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
     //матрица поля: 1 - клетка занята, 0 - свободна
     private int[][] matrix;
@@ -79,7 +79,6 @@ public class Field {
             }
         }
 
-
         //Выводим "нарисованное" на экран, но начинаем с "границы кадра".
         System.out.println("---------------------------------------------------------------------------\n");
 
@@ -107,13 +106,10 @@ public class Field {
      * Удаляем заполненные линии
      */
     public void removeFullLines() {
-        //Например так:
         //Создаем список для хранения линий
-        //Копируем все неполные линии в список.
-        //Добавляем недостающие строки в начало списка.
-        //Преобразуем список обратно в матрицу
-        int count = 0;
         List<int[]> list = new ArrayList<>();
+        //Копируем все неполные линии в список.
+        int count = 0;
         for (int[] line : matrix) {
             for (int i = 0; i < line.length; i++) {
                 if (line[i] == 0) {
@@ -123,9 +119,11 @@ public class Field {
                 }
             }
         }
-        for (int i = 0; i < matrix.length - count; i++) {
-            list.add(0, new int[matrix.length]);
+        //Добавляем недостающие строки в начало списка.
+        for (int i = 0; i < height - count; i++) {
+            list.add(0, new int[width]);
         }
+        //Преобразуем список обратно в матрицу
         matrix = list.toArray(new int[height][width]);
 
 //        int[][] newMatrix = new int[height][];
