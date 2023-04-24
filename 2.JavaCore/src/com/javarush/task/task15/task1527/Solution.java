@@ -16,7 +16,7 @@ public class Solution {
         String[] words = url.substring(url.lastIndexOf("?") + 1).split("&");
 
         for (String word : words) {
-            System.out.println((word.contains("=") ? word.substring(0, word.indexOf("=")) : word));
+            System.out.println((word.contains("=") ? word.substring(0, word.indexOf("=")) : word) + " ");
         }
         System.out.println();
         for (String word : words) {
