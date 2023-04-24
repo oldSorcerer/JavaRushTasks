@@ -3,6 +3,7 @@ package com.javarush.task.task32.task3213;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.stream.IntStream;
 
 /* 
 Шифр Цезаря
@@ -17,20 +18,11 @@ public class Solution {
     public static String decode(StringReader reader, int key) throws IOException {
         String string = "";
         if (reader != null) {
-            String line = "";
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            while (bufferedReader.ready()) {
-                line = bufferedReader.readLine();
-            }
+            String line = new BufferedReader(reader).readLine();
 
+            char[] buff = new char[line.length()];
 
-
-
-            byte[] buff = new byte[line.length()];
-            for (int i = 0; i < line.length(); i++) {
-                int index = reader.read() + key;
-                buff[i] = (byte) index;
-            }
+            IntStream.range(0, line.length()).forEach(i -> buff[i] = (char) (line.charAt(i) + key));
             string = new String(buff);
         }
         return string;
