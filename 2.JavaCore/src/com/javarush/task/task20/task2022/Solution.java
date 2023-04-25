@@ -12,7 +12,7 @@ public class Solution implements Serializable, AutoCloseable {
 
     public Solution(String fileName) throws FileNotFoundException {
         this.fileName = fileName;
-        this.stream = new FileOutputStream(fileName);
+        stream = new FileOutputStream(fileName);
     }
 
     public void writeObject(String string) throws IOException {
@@ -29,7 +29,7 @@ public class Solution implements Serializable, AutoCloseable {
     @Serial
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        this.stream = new FileOutputStream(fileName, true);
+        stream = new FileOutputStream(fileName, true);
     }
 
     @Override
