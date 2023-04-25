@@ -9,10 +9,11 @@ import java.io.*;
 public class Solution implements Serializable {
     public static class A {
 
-        public A() {
-        }
-
         protected String nameA = "A";
+
+        public A() {
+            this.nameA += nameA;
+        }
 
         public A(String nameA) {
             this.nameA += nameA;
@@ -22,6 +23,10 @@ public class Solution implements Serializable {
     public class B extends A implements Serializable {
 
         private String nameB;
+
+        public B() {
+            super();
+        }
 
         public B(String nameA, String nameB) {
             super(nameA);
