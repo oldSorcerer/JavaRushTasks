@@ -24,6 +24,7 @@ public class Solution {
     }
 
     public static SomeInterfaceWithMethods getProxy() {
+
         return null;
     }
 }
