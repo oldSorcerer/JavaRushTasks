@@ -13,8 +13,10 @@ public class CustomInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println(method.getName() + "in");
-        System.out.println(method.getName() + "out");
-        return null;
+        System.out.println(method.getName() + " in");
+        Object invoke = method.invoke(someInterfaceWithMethods, args);
+        System.out.println(method.getName() + " out");
+        return invoke;
+
     }
 }
