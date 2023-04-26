@@ -5,11 +5,16 @@ import java.lang.reflect.Method;
 
 public class CustomInvocationHandler implements InvocationHandler {
 
-    public CustomInvocationHandler(SomeInterfaceWithMethods SomeInterfaceWithMethods) {
+    private SomeInterfaceWithMethods someInterfaceWithMethods;
+
+    public CustomInvocationHandler(SomeInterfaceWithMethods someInterfaceWithMethods) {
+        this.someInterfaceWithMethods = someInterfaceWithMethods;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println(method.getName() + "in");
+        System.out.println(method.getName() + "out");
         return null;
     }
 }
