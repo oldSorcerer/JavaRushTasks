@@ -24,9 +24,12 @@ public class Solution {
     }
 
     public static SomeInterfaceWithMethods getProxy() {
-        SomeInterfaceWithMethodsImpl someInterfaceWithMethods = new SomeInterfaceWithMethodsImpl();
-        ClassLoader classLoader = someInterfaceWithMethods.getClass().getClassLoader();
-        Class<?>[] interfaces = someInterfaceWithMethods.getClass().getInterfaces();
-        return (SomeInterfaceWithMethods) Proxy.newProxyInstance(classLoader,interfaces, new CustomInvocationHandler(someInterfaceWithMethods));
+        SomeInterfaceWithMethodsImpl original = new SomeInterfaceWithMethodsImpl();
+
+        ClassLoader classLoader = original.getClass().getClassLoader();
+        Class<?>[] interfaces = original.getClass().getInterfaces();
+        CustomInvocationHandler handler = new CustomInvocationHandler(original);
+
+        return (SomeInterfaceWithMethods) Proxy.newProxyInstance(classLoader,interfaces, handler);
     }
 }
