@@ -5,12 +5,6 @@ import java.lang.reflect.Method;
 
 public class ItemInvocationHandler implements InvocationHandler {
 
-    private Class<?> item;
-
-    public ItemInvocationHandler(Class<?> item) {
-        this.item = item;
-    }
-
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         return null;

@@ -17,11 +17,18 @@ public class Solution {
         test(solution.getProxy(Big.class));                         //true true false т.к. Big наследуется от Item
     }
 
-    private <T> T getProxy(Class<?> item, Class<?>... classes) {
-        ItemInvocationHandler handler = new ItemInvocationHandler(item);
-        return (T) Proxy.newProxyInstance(this.getClass().getClassLoader(), classes, handler);
-    }
+    public <T extends Item> T getProxy(Class<? extends Item> item, Class<?>... classes) {
 
+        ClassLoader classLoader = this.getClass().getClassLoader();
+
+        Class<?>[] newClasses = new Class[classes.length + 1];
+        newClasses[0] = item;
+        System.arraycopy(classes, 0, newClasses, 1, newClasses.length - 1);
+
+        ItemInvocationHandler handler = new ItemInvocationHandler();
+
+        return (T) Proxy.newProxyInstance(classLoader, newClasses, handler);
+    }
 
     private static void test(Object proxy) {
         boolean isItem = proxy instanceof Item;
