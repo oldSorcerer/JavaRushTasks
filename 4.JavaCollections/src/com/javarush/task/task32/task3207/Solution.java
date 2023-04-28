@@ -33,9 +33,7 @@ public class Solution {
 
             stub = UnicastRemoteObject.exportObject(service, 0);
             registry.bind(UNIC_BINDING_NAME, stub);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (AlreadyBoundException e) {
+        } catch (RemoteException | AlreadyBoundException e) {
             e.printStackTrace();
         }
 

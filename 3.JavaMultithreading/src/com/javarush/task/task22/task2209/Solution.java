@@ -49,17 +49,15 @@ public class Solution {
                 if (firstEndChar.equalsIgnoreCase(secondStartChar)) {
                     builder.append(" ").append(list.get(0));
                     list.remove(0);
-                    count--;
                 } else if (firstStartChar.equalsIgnoreCase(secondEndChar)) {
                     builder.insert(0, list.get(0) + " ");
                     list.remove(0);
-                    count--;
                 } else {
                     String str = list.get(0);
                     list.remove(0);
                     list.add(str);
                     count++;
-                    if (count > Math.pow(list.size() + 1, 2)) {
+                    if (count > Math.pow(words.length, 2)) {
                         break;
                     }
                 }
