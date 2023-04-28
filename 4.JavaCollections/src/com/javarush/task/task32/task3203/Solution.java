@@ -15,13 +15,13 @@ public class Solution {
     }
 
     public static String getStackTrace(Throwable throwable) {
-        StringWriter stringWriter = new StringWriter();
-        try {
-            PrintWriter printWriter = new PrintWriter("");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        throwable.printStackTrace();
+//        StringWriter stringWriter = new StringWriter();
+//        try (PrintWriter printWriter = new PrintWriter("")){
+//            throwable.printStackTrace(printWriter);
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        }
+//        throwable.printStackTrace();
 
         StringBuilder builder = new StringBuilder();
         for (StackTraceElement stackTraceElement : throwable.getStackTrace()) {
