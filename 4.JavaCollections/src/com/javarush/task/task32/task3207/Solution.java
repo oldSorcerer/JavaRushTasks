@@ -20,13 +20,18 @@ public class Solution {
     public static Thread CLIENT_THREAD = new Thread(new Runnable() {
         @Override
         public void run() {
-            //напишите тут ваш код
+            try {
+                DoubleString service = (DoubleString) registry.lookup(UNIC_BINDING_NAME);
+                System.out.println(service.doubleString("Hello "));
+            } catch (RemoteException | NotBoundException e) {
+                e.printStackTrace();
+            }
         }
     });
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // Pretend we're starting an RMI server as the main thread
-        Remote stub = null;
+        Remote stub;
         try {
             registry = LocateRegistry.createRegistry(2099);
             final DoubleStringImpl service = new DoubleStringImpl();
@@ -39,5 +44,7 @@ public class Solution {
 
         // Start the client
         CLIENT_THREAD.start();
+        CLIENT_THREAD.join();
+        System.exit(0);
     }
 }
