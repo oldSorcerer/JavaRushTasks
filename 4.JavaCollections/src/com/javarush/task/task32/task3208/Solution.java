@@ -25,9 +25,7 @@ public class Solution {
                     service.printName();
                     service.speak();
                 }
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            } catch (NotBoundException e) {
+            } catch (RemoteException | NotBoundException e) {
                 e.printStackTrace();
             }
         }
@@ -35,9 +33,23 @@ public class Solution {
 
     // Pretend we're starting an RMI server as the SERVER_THREAD thread
     public static Thread SERVER_THREAD = new Thread(new Runnable() {
+
         @Override
         public void run() {
-            //напишите тут ваш код
+            try {
+                registry = LocateRegistry.createRegistry(2099);
+                final Cat serviceCat = new Cat("Vaska");
+                final Dog serviceDog = new Dog("Rex");
+
+                Remote stubCat = UnicastRemoteObject.exportObject(serviceCat, 0);
+                registry.bind("class.cat", stubCat);
+
+                Remote stubDog = UnicastRemoteObject.exportObject(serviceDog, 0);
+                registry.bind("class.dog", stubDog);
+
+            } catch (RemoteException | AlreadyBoundException e) {
+                e.printStackTrace();
+            }
         }
     });
 
@@ -47,5 +59,7 @@ public class Solution {
         Thread.sleep(1000);
         // Start the client
         CLIENT_THREAD.start();
+        CLIENT_THREAD.join();
+        System.exit(0);
     }
 }
