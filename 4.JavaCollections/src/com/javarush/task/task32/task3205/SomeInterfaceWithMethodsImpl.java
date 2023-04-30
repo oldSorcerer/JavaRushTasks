@@ -1,6 +1,7 @@
 package com.javarush.task.task32.task3205;
 
 public class SomeInterfaceWithMethodsImpl implements SomeInterfaceWithMethods {
+
     public void voidMethodWithoutArgs() {
         System.out.println("inside voidMethodWithoutArgs");
     }
