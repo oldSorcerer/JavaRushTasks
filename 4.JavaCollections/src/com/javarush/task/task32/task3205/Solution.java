@@ -30,6 +30,6 @@ public class Solution {
         Class<?>[] interfaces = original.getClass().getInterfaces();
         CustomInvocationHandler handler = new CustomInvocationHandler(original);
 
-        return (SomeInterfaceWithMethods) Proxy.newProxyInstance(classLoader,interfaces, handler);
+        return (SomeInterfaceWithMethods) Proxy.newProxyInstance(classLoader, interfaces, handler);
     }
 }
