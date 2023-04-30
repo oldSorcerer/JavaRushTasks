@@ -9,15 +9,15 @@ Reverse
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int number = Integer.parseInt(sc.nextLine());
+        int number = Integer.parseInt(scanner.nextLine());
 
         int[] array = new int[number];
 
         if (number > 0) {
             for (int i = 0; i < number; i++) {
-                array[i] = Integer.parseInt(sc.nextLine());
+                array[i] = Integer.parseInt(scanner.nextLine());
             }
         }
 
