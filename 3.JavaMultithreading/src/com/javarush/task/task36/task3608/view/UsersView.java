@@ -3,8 +3,6 @@ package com.javarush.task.task36.task3608.view;
 import com.javarush.task.task36.task3608.controller.Controller;
 import com.javarush.task.task36.task3608.model.ModelData;
 
-import java.util.List;
-
 public class UsersView implements View {
 
     private Controller controller;
@@ -27,5 +25,9 @@ public class UsersView implements View {
 
     public void fireEventShowDeletedUsers() {
         controller.onShowAllDeletedUsers();
+    }
+
+    public void fireEventOpenUserEditForm(long id) {
+        controller.onOpenUserEditForm(id);
     }
 }
