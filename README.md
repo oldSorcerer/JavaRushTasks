@@ -1,2 +1,2 @@
 # JavaRushTasks
-My solution to the JavaRush course tasks
+My solution on the JavaRush course tasks
