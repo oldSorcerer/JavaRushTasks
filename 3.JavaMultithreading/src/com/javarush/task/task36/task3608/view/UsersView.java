@@ -17,12 +17,16 @@ public class UsersView implements View {
         System.out.println("===================================================");
     }
 
+    @Override
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
+
     public void fireEventShowAllUsers() {
         controller.onShowAllUsers();
     }
 
-    @Override
-    public void setController(Controller controller) {
-        this.controller = controller;
+    public void fireEventShowDeletedUsers() {
+        controller.onShowAllDeletedUsers();
     }
 }
