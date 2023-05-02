@@ -67,29 +67,5 @@ public class Solution {
         }
         return builderList.stream().max(Comparator.comparingInt(StringBuilder::length)).get();
     }
-
-    public static StringBuilder getLine1(String... words) {
-        List<String> list = new ArrayList<>(Arrays.asList(words));
-        StringBuilder builder = new StringBuilder(list.get(0));
-        list.remove(0);
-        while (list.size() > 0) {
-            for (int i = 0; i < list.size(); i++) {
-                String firstStartChar = builder.substring(0, 1);
-                String firstEndChar = builder.substring(builder.length() - 1);
-                String secondStartChar = list.get(i).substring(0, 1);
-                String secondEndChar = list.get(i).substring(list.get(i).length() - 1);
-                if (firstEndChar.equalsIgnoreCase(secondStartChar)) {
-                    builder.append(" ").append(list.get(i));
-                    list.remove(i);
-                    i--;
-                } else if (firstStartChar.equalsIgnoreCase(secondEndChar)) {
-                    builder.insert(0, list.get(i) + " ");
-                    list.remove(i);
-                    i--;
-                }
-            }
-        }
-        return builder;
-    }
 }
 //Якутск Дербент Арзамас Рог Киев Кувшиново Капустин-Яр Стокгольм Флоренция Глен-Хоп Тобольск Нью-Йорк Афины Муром Осташков Прага Кострома Вена Амстердам Мельбурн Волгоград Минск
