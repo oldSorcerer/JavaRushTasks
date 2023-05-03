@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FakeModel implements Model {
 
-    private ModelData modelData = new ModelData();
+    private final ModelData modelData = new ModelData();
 
     @Override
     public ModelData getModelData() {
