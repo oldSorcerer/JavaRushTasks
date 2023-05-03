@@ -38,7 +38,6 @@ public class UserServiceImpl implements UserService {
                 result.add(user);
             }
         }
-
         return result;
     }
 
@@ -49,7 +48,6 @@ public class UserServiceImpl implements UserService {
         for (int i = fromLevel; i <= toLevel; i++) {
             result.addAll(userDao.getUsersByLevel(i));
         }
-
         return result;
     }
 
@@ -62,7 +60,6 @@ public class UserServiceImpl implements UserService {
                 result.add(user);
             }
         }
-
         return result;
     }
 
