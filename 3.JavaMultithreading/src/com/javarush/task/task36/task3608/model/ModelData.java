@@ -10,7 +10,6 @@ public class ModelData {
     private User activeUser;
     private boolean displayDeletedUserList;
 
-
     public List<User> getUsers() {
         return users;
     }
