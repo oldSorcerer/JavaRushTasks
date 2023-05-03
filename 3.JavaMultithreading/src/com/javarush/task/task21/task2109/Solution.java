@@ -12,9 +12,9 @@ public class Solution {
         Object cloneA = objectA.clone();
         System.out.println(objectA.equals(cloneA));
 
-        B objectB = new B(2, 7 , "Name");
-        Object cloneB = objectB.clone();
-        System.out.println(objectB.equals(cloneB));
+//        B objectB = new B(2, 7 , "Name");
+//        Object cloneB = objectB.clone();
+//        System.out.println(objectB.equals(cloneB));
 
         C objectC = new C(2, 7, "Name2");
         Object cloneС = objectC.clone();
@@ -40,7 +40,7 @@ public class Solution {
         }
 
         @Override
-        protected Object clone() throws CloneNotSupportedException {
+        protected A clone() throws CloneNotSupportedException {
             A copyA = new A(getI(), getJ());
             return copyA;
         }
@@ -72,7 +72,7 @@ public class Solution {
         }
 
         @Override
-        protected Object clone() throws CloneNotSupportedException  {
+        protected B clone() throws CloneNotSupportedException  {
             throw new CloneNotSupportedException();
         }
 
@@ -97,7 +97,7 @@ public class Solution {
         }
 
         @Override
-        protected Object clone() {
+        protected C clone() {
             return new C(getI(), getJ(), getName());
         }
 
