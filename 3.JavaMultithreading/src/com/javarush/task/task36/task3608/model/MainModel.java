@@ -8,8 +8,8 @@ import java.util.List;
 
 public class MainModel implements Model {
 
-    private ModelData modelData = new ModelData();
-    private UserService userService = new UserServiceImpl();
+    private final ModelData modelData = new ModelData();
+    private final UserService userService = new UserServiceImpl();
 
     @Override
     public ModelData getModelData() {
@@ -37,6 +37,14 @@ public class MainModel implements Model {
     @Override
     public void deleteUserById(long id) {
         User user = userService.deleteUser(id);
+        modelData.setActiveUser(user);
+        List<User> users = getAllUsers();
+        modelData.setUsers(users);
+    }
+
+    @Override
+    public void changeUserData(String name, long id, int level) {
+        User user = userService.createOrUpdateUser(name, id, level);
         modelData.setActiveUser(user);
         List<User> users = getAllUsers();
         modelData.setUsers(users);

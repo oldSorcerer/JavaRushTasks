@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DataSource {
-    private static DataSource ourInstance = new DataSource();
+    private static final DataSource ourInstance = new DataSource();
 
     public static DataSource getInstance() {
         return ourInstance;
@@ -15,14 +15,14 @@ public class DataSource {
     private DataSource() {
     }
 
-    private List<User> users = new LinkedList<User>() {{
-        add(new User("Ivanov", 123l, 1));
-        add(new User("Petrov", 124l, 2));
-        add(new User("Petrov", 125l, 1));
-        add(new User("Sidorov", 126l, 2));
+    private final List<User> users = new LinkedList<User>() {{
+        add(new User("Ivanov", 123L, 1));
+        add(new User("Petrov", 124L, 2));
+        add(new User("Petrov", 125L, 1));
+        add(new User("Sidorov", 126L, 2));
     }};
 
-    private long maxUserId = 126l;
+    private long maxUserId = 126L;
 
     public List<User> getUsers() {
         return users;
