@@ -3,8 +3,11 @@ package com.javarush.task.task19.task1919;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 /* 
 Считаем зарплаты
@@ -32,4 +35,12 @@ public class Solution {
             }
         }
     }
+
+//    public static void main1(String[] args) throws IOException {
+//        Files.readAllLines(Paths.get(args[0]))
+//                .stream()
+//                .collect(Collectors
+//                        .toMap(k -> k.split(" ")[0], k -> Double.parseDouble(k.split("")[1]), Double::sum, TreeMap::new))
+//                .forEach((k, v) -> System.out.println(k + " " + v));
+//    }
 }
