@@ -40,9 +40,9 @@ public class Solution {
         System.out.println(isLockOrderNormal(solution, o1, o2));
     }
 
-    private static volatile boolean flag = false;
-    private static volatile boolean isInnerThreadBlocked = false;
-
+//    private static volatile boolean flag = false;
+//    private static volatile boolean isInnerThreadBlocked = false;
+//
 //    public static boolean isLockOrderNormal1(final Solution solution, final Object o1, final Object o2) throws Exception {
 //        //do something here
 //        synchronized (o1) {
