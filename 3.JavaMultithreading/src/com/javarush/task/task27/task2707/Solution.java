@@ -37,37 +37,35 @@ public class Solution {
         final Object o1 = new Object();
         final Object o2 = new Object();
 
-        System.out.println(isLockOrderNormal1(solution, o1, o2));
+        System.out.println(isLockOrderNormal(solution, o1, o2));
     }
 
     private static volatile boolean flag = false;
     private static volatile boolean isInnerThreadBlocked = false;
 
-    public static boolean isLockOrderNormal1(final Solution solution, final Object o1, final Object o2) throws Exception {
-        //do something here
-        synchronized (o1) {
-            Thread outerThread = new Thread(() -> {
-                Thread innerThread = new Thread(() -> solution.someMethodWithSynchronizedBlocks(o1, o2));
-                innerThread.start();
-
-                while (innerThread.getState() != Thread.State.BLOCKED) ;
-                isInnerThreadBlocked = true;
-                synchronized (o2) {
-                    flag = true;
-                }
-            });
-            outerThread.setDaemon(true);
-            outerThread.start();
-
-            while (!isInnerThreadBlocked) {
-                Thread.sleep(1);
-            }
-            while (outerThread.getState() != Thread.State.BLOCKED && outerThread.isAlive()) {
-                Thread.sleep(1);
-            }
-        }
-        return flag;
-    }
-
-
+//    public static boolean isLockOrderNormal1(final Solution solution, final Object o1, final Object o2) throws Exception {
+//        //do something here
+//        synchronized (o1) {
+//            Thread outerThread = new Thread(() -> {
+//                Thread innerThread = new Thread(() -> solution.someMethodWithSynchronizedBlocks(o1, o2));
+//                innerThread.start();
+//
+//                while (innerThread.getState() != Thread.State.BLOCKED) ;
+//                isInnerThreadBlocked = true;
+//                synchronized (o2) {
+//                    flag = true;
+//                }
+//            });
+//            outerThread.setDaemon(true);
+//            outerThread.start();
+//
+//            while (!isInnerThreadBlocked) {
+//                Thread.sleep(1);
+//            }
+//            while (outerThread.getState() != Thread.State.BLOCKED && outerThread.isAlive()) {
+//                Thread.sleep(1);
+//            }
+//        }
+//        return flag;
+//    }
 }
