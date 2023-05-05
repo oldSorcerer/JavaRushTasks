@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /* 
 Самый богатый
@@ -48,5 +49,15 @@ public class Solution {
 //        map.entrySet().stream()
 //                .filter(entry -> Objects.equals(entry.getValue(), map.values().stream().max(Double::compare).orElseThrow()))
 //                .forEach(entry -> System.out.println(entry.getKey()));
+//
+//        TreeMap<String, Double> map2 = Files.readAllLines(Paths.get(args[0]))
+//                .stream()
+//                .collect(Collectors
+//                        .toMap(k -> k.split("\\s")[0], k -> Double.parseDouble(k.split("\\s")[1]), Double::sum, TreeMap::new));
+//
+//        map2.entrySet().stream()
+//                .filter(entry -> Objects.equals(entry.getValue(), map2.values().stream().max(Double::compare).orElseThrow()))
+//                .forEach(entry -> System.out.println(entry.getKey()));
+//
 //    }
 }
