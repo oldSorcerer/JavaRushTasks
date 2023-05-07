@@ -3,7 +3,6 @@ package com.javarush.task.task32.task3211;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
 import java.security.MessageDigest;
-import java.util.Arrays;
 
 /* 
 Целостность информации
@@ -23,9 +22,13 @@ public class Solution {
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
         byte[] digest = messageDigest.digest(byteArrayOutputStream.toByteArray());
 
-        byte[] bytes = md5.getBytes();
-
-
-        return Arrays.equals(digest, bytes);
+        StringBuilder builder = new StringBuilder();
+        for (byte aByte : digest) {
+//            builder.append(Integer.toHexString(0xFF & aByte));
+            builder.append(String.format("%02x", aByte));
+        }
+        return builder.toString().equals(md5);
     }
+
+
 }
