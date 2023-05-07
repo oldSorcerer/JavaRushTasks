@@ -13,21 +13,17 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
 
     Entry<String> root;
 
-    public CustomTree(/*Entry<String> root*/) {
+    public CustomTree(Entry<String> root) {
         this.root = root;
     }
 
     @Override
-    public boolean add(String s) {
-
-
-
-
-        return super.add(s);
+    public boolean add(String elementName) {
+        return false;
     }
 
     public String getParent(String s) {
-        return null;
+        return "";
     }
 
     static class Entry<T> implements Serializable {
