@@ -4,6 +4,7 @@ import java.util.concurrent.*;
 
 /* Argument and Value are generic types*/
 public class CacheComputeManager<Argument, Value> implements Computable<Argument, Value> {
+
     private final ConcurrentHashMap<Argument, Future<Value>> cache = new ConcurrentHashMap<>();
     private final Computable<Argument, Value> computable;
 
@@ -34,7 +35,11 @@ public class CacheComputeManager<Argument, Value> implements Computable<Argument
     }
 
     public FutureTask<Value> createFutureTaskForNewArgumentThatHasToComputeValue(final Argument arg) {
-
-        return null;
+        return new FutureTask<>(new Callable<Value>() {
+            @Override
+            public Value call() throws Exception {
+                return computable.compute(arg);
+            }
+        });
     }
 }

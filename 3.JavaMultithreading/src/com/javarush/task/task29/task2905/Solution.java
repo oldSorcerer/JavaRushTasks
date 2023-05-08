@@ -15,10 +15,10 @@ public class Solution {
     final int NUMBER_OF_THREADS = 3; // 3 треда будет обрабатывать нашу очередь
     final int MAX_BATCH_SIZE = 100; // Будем вытаскивать по 100 сообщений
 
-    private Logger logger = Logger.getLogger(Solution.class.getName());
-    private BlockingQueue messageQueue = new LinkedBlockingQueue(); // Тут будут храниться все сообщения
+    private final Logger logger = Logger.getLogger(Solution.class.getName());
+    private final BlockingQueue<String> messageQueue = new LinkedBlockingQueue<>(); // Тут будут храниться все сообщения
 
-    private BlockingQueue fakeDatabase = new LinkedBlockingQueue();
+    private final BlockingQueue<String> fakeDatabase = new LinkedBlockingQueue<>();
 
     public static void main(String[] args) throws InterruptedException {
         // Статики во многих местах неуместны, поэтому помещаем все данные в поля класса,
@@ -46,7 +46,7 @@ public class Solution {
             @Override
             public void run() {
                 for (int i = 0; i < 100_000; i++) {
-                    messageQueue.add(String.valueOf(i--));
+                    messageQueue.add(String.valueOf(i));
                 }
             }
         }.start();
@@ -55,7 +55,7 @@ public class Solution {
     public void startPersistingMessages() {
         for (int i = 0; i < NUMBER_OF_THREADS; i++) {
             new Thread() {
-                private final Collection batch = new ArrayList(MAX_BATCH_SIZE);
+                private final Collection<String> batch = new ArrayList<>(MAX_BATCH_SIZE);
 
                 {
                     setDaemon(true);
@@ -65,7 +65,7 @@ public class Solution {
                 public void run() {
                     while (true) {
                         try {
-                            messageQueue.drainTo(messageQueue, MAX_BATCH_SIZE);
+                            messageQueue.drainTo(batch, MAX_BATCH_SIZE);
                             persistData(batch);
                             batch.clear();
                             Thread.sleep(1);
@@ -78,7 +78,7 @@ public class Solution {
         }
     }
 
-    private void persistData(Collection batch) {
+    private void persistData(Collection<String> batch) {
         // Представим, что тут мы коннектимся к базе данных, и сохраняем данные в нее
         // Сохранение данных по 1 записи тратит много ресурсов, поэтому делают батчем (группой по несколько)
         fakeDatabase.addAll(batch);
