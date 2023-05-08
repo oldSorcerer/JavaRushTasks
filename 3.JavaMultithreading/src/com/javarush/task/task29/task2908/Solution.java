@@ -8,7 +8,7 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         //////////////first example///////////////////
         Square square = new Square();
-        CacheComputeManager<Integer, Integer> manager = new CacheComputeManager(square);
+        CacheComputeManager<Integer, Integer> manager = new CacheComputeManager<>(square);
 
         for (int i = 0; i < 8; i++) {
             int j = i % 4;
@@ -29,7 +29,7 @@ public class Solution {
 
         //////////////second example///////////////////
         Copyright copyright = new Copyright();
-        CacheComputeManager manager2 = new CacheComputeManager(copyright);
+        CacheComputeManager<Copyright.Period, String> manager2 = new CacheComputeManager<>(copyright);
         System.out.println(manager2.compute(new Copyright.Period(3012, 3147)));
         System.out.println(manager2.compute(new Copyright.Period(3012, 3146)));
         System.out.println(manager2.compute(new Copyright.Period(3012, 3147)));
