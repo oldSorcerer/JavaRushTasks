@@ -19,11 +19,11 @@ public class Solution implements Cloneable {
             Solution clone = solution.clone();
             System.out.println(solution);
             System.out.println(clone);
-            System.out.println(solution == clone);
+            System.out.println(solution.equals(clone));
 
             System.out.println(solution.users);
             System.out.println(clone.users);
-            System.out.println(solution.users == clone.users);
+            System.out.println(solution.users.equals(clone.users));
         } catch (CloneNotSupportedException e) {
             e.printStackTrace(System.err);
         }
