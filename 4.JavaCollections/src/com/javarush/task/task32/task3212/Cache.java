@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cache {
-    private List<Service> services;
+    private final List<Service> services;
 
     public Cache() {
         services = new ArrayList<>();
