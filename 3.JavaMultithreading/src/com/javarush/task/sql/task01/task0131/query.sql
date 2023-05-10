@@ -1,1 +1,1 @@
-SELECT * FROM ip2country OFFSET 50;
+SELECT * FROM ip2country LIMIT 2 OFFSET 50;
