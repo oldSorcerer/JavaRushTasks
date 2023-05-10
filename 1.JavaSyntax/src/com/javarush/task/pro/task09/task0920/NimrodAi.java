@@ -8,21 +8,19 @@ import java.util.Arrays;
 
 public class NimrodAi {
 
-    public static String[] diningRoom = {
-            "button for emergency meeting",
-            "table", "table", "table", "table", "table",
-            "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench",
-            "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench"};
+    public static String[] diningRoom = {"button for emergency meeting",
+                                        "table", "table", "table", "table", "table",
+                                        "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench",
+                                        "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench", "bench"};
     public static String[] o2 = {"plant", "plant"};
     public static String[] medRoom = {"bed", "bed", "bed", "bed", "SCAN-MO-TRON-2000", "liquid analyser"};
     public static String[] armoury = {"cannon launcher", "chair"};
     public static String[] securityRoom = {"rack", "rack", "table"};
     public static String[] reactor = {"reactor"};
     public static String[] telecom = {"computer", "computer", "computer", "table", "chair"};
-    public static String[] warehouse = {
-            "container", "container", "container",
-            "box", "box", "box", "box", "box", "box",
-            "barrel", "barrel", "barrel", "barrel"};
+    public static String[] warehouse = {"container", "container", "container",
+                                        "box", "box", "box", "box", "box", "box",
+                                        "barrel", "barrel", "barrel", "barrel"};
     public static String[] controlRoom = {"interactive ship map", "chair", "chair", "chair"};
     public static String[] powerRoom = {"power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp"};
 

@@ -10,9 +10,9 @@ public class AdvertisementManager {
         this.timeSeconds = timeSeconds;
     }
 
-    public void processVideos() {
+    public void processVideos() throws NoVideoAvailableException {
         if (storage.list().isEmpty()) {
-
+            throw  new NoVideoAvailableException();
         }
 
     }

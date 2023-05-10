@@ -5,7 +5,7 @@ public class Advertisement {
     private final Object content;
     private final String name;
     private long initialAmount;
-    private final int hits;
+    private int hits;
     private final int duration;
 
     private long amountPerOneDisplaying;
@@ -32,9 +32,9 @@ public class Advertisement {
     }
 
     public void revalidate() {
-        if (initialAmount < 0) {
+        if (hits == 0) {
             throw  new UnsupportedOperationException();
         }
-        initialAmount = initialAmount - 1;
+        hits--;
     }
 }
