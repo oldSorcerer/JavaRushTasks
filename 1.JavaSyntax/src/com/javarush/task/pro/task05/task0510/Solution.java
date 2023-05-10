@@ -17,7 +17,7 @@ public class Solution {
                 result[i][j] = i + j;
                 System.out.print(result[i][j] + " ");
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
