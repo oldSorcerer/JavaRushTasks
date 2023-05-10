@@ -14,7 +14,7 @@ public class Solution {
         if (numRings == 1) {
             System.out.println("from " + a + " to " + b);
         } else {
-            moveRing(a,  c, b, numRings - 1);
+            moveRing(a, c, b, numRings - 1);
             moveRing(a, b, c, 1);
             moveRing(c, b, a, numRings - 1);
         }
