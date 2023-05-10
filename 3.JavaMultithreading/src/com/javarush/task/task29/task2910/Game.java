@@ -23,7 +23,7 @@ public class Game {
         controlSportsman.setAverageSpeed(new BigDecimal(20.));
         controlSportsman.setChanceToHit(MAX_CHANCE_TO_HIT_IN_TARGET);
         controlSportsman.setCountHitOutTarget(2);
-        controlSportsman.setResultTime(new BigDecimal("3640.0"));
+        controlSportsman.setResultTime(new BigDecimal("3640.00"));
         System.out.println("РЕЗУЛЬТАТ КОНТРОЛЬНОГО СПОРТСМЕНА:");
         controlSportsman.printResultInfo();
     }
