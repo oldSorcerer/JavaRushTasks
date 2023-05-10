@@ -1,1 +1,1 @@
-SELECT country_code, ip_from, ip_to FROM ip2country OFFSET 78;
+SELECT country_code, ip_from, ip_to FROM ip2country LIMIT 2 OFFSET 78;
