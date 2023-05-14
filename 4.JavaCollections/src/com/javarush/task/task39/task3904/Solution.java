@@ -14,7 +14,7 @@ public class Solution {
     }
 
     public static long numberOfPossibleAscents(int n) {
-
+        return 0;
     }
 }
 
