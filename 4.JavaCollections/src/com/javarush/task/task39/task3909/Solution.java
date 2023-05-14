@@ -10,6 +10,6 @@ public class Solution {
     }
 
     public static boolean isOneEditAway(String first, String second) {
-
+        return false;
     }
 }
