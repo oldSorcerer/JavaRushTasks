@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class Tablet extends Observable {
 
     private final int number;
-    private static Logger logger = Logger.getLogger(Tablet.class.getName());
+    private static final Logger logger = Logger.getLogger(Tablet.class.getName());
 
     public Tablet(int number) {
         this.number = number;
