@@ -7,7 +7,7 @@ public class MyThread extends Thread {
     private static final AtomicInteger atomicInteger = new AtomicInteger(1); //9
 
 //    {
-//        this.setPriority(atomicInteger.incrementAndGet() % 10 + 1);
+//        setPriority(atomicInteger.incrementAndGet() % 10 + 1);
 //    }
 
     {
