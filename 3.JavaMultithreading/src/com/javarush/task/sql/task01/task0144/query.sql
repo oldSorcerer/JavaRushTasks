@@ -1,2 +1,2 @@
 SELECT description FROM parts
-ORDER BY required DESC, identifier DESC, description DESC OFFSET 23;
+ORDER BY required DESC, identifier DESC, description DESC LIMIT 1 OFFSET 23;
