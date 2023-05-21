@@ -11,10 +11,10 @@ public class Solution {
 
     public static void main(String[] args) {
         HardWorker worker1 = new HardWorker("Bob", getNailsPack(), new Hammer());
-//        HardWorker worker2 = new HardWorker("Bob Jr.", getNailsPack(), new Microscope());
+        HardWorker worker2 = new HardWorker("Bob Jr.", getNailsPack(), new MicroscopeAdapter(new Microscope()));
 
         worker1.hammerAllNails();
-//        worker2.hammerAllNails();
+        worker2.hammerAllNails();
     }
 
     public static Set<Nail> getNailsPack() {
