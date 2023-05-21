@@ -4,8 +4,8 @@ import java.util.Set;
 
 public class HardWorker {
     private final String name;
-    private Set<Nail> nails;
-    private Hammer hammer;
+    private final Set<Nail> nails;
+    private final Hammer hammer;
 
     public HardWorker(String name, Set<Nail> nails, Hammer hammer) {
         this.name = name;
