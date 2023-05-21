@@ -7,8 +7,8 @@ package com.javarush.task.jdk13.task41.task4106;
 public class Solution {
 
     public static void main(String[] args) {
-        Universe universe = new Universe();
-        Universe anotherUniverse = new Universe();
+        Universe universe = Universe.getInstance();
+        Universe anotherUniverse = Universe.getInstance();
         System.out.println(universe);
         System.out.println(anotherUniverse);
     }
