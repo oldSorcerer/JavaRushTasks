@@ -7,9 +7,10 @@ import java.util.concurrent.TimeUnit;
 
 public final class Universe {
 
+    private static Universe instance;
     private final Set<String> laws = new HashSet<>();
 
-    public Universe() {
+    private Universe() {
         System.out.println("Fine-tuning the laws of the universe begins.");
         tune("скорость света");
         tune("гравитационная постоянная");
@@ -18,6 +19,13 @@ public final class Universe {
         tune("масса протона");
         tune("заряд электрона");
         System.out.println("Fine-tuning the laws of the universe is complete.");
+    }
+
+    public static Universe getInstance() {
+        if (instance == null) {
+            instance = new Universe();
+        }
+        return instance;
     }
 
     public Set<String> getLaws() {
