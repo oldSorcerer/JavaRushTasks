@@ -1,4 +1,4 @@
-package ru.rush.task.jdk13.task43.task4311;
+package com.javarush.task.jdk13.task43.task4309;
 
 import java.util.Collection;
 import java.util.HashSet;
