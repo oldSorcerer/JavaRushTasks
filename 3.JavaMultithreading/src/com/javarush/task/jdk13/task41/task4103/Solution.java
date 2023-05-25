@@ -1,6 +1,6 @@
 package com.javarush.task.jdk13.task41.task4103;
 
-//import com.javarush.task.jdk13.task41.task4103.blood.BloodDBProxy;
+import com.javarush.task.jdk13.task41.task4103.blood.BloodDBProxy;
 import com.javarush.task.jdk13.task41.task4103.blood.BloodSample;
 import com.javarush.task.jdk13.task41.task4103.blood.DB;
 
@@ -16,18 +16,18 @@ Surprise, анонимус!
 public class Solution {
 
     public static void main(String[] args) {
-//        DB database = new BloodDBProxy();
+        DB database = new BloodDBProxy();
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Make request: ");
         String request = scanner.nextLine();
 
         if (request.matches("\\d+")) {
-//            BloodSample result = database.getById(Integer.parseInt(request));
-//            printSample(result);
+            BloodSample result = database.getById(Integer.parseInt(request));
+            printSample(result);
         } else {
-//            List<BloodSample> results = database.find(request);
-//            printSamples(results);
+            List<BloodSample> results = database.find(request);
+            printSamples(results);
         }
     }
 

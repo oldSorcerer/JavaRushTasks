@@ -25,7 +25,7 @@ public class NimrodAi {
     public static String[] powerRoom = {"power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp", "power lamp"};
 
     public static void main(String[] args) {
-        String[] roomName = {"diningRoom", "o2", "medRoom", "armory", "securityRoom", "reactor", "telecom", "warehouse", "controlRoom", "powerRoom"};
+        String[] roomName = {"diningRoom", "o2", "medRoom", "armoury", "securityRoom", "reactor", "telecom", "warehouse", "controlRoom", "powerRoom"};
         for (String room : roomName) {
             if (checkPirates(room)) {
                 openFloodgates(room);
