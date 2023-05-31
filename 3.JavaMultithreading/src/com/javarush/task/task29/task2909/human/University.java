@@ -27,7 +27,7 @@ public class University {
     }
 
     public void expel(Student student) {
-        students.removeIf(s-> s.equals(student));
+        students.removeIf(s -> s.equals(student));
     }
 
     public String getName() {

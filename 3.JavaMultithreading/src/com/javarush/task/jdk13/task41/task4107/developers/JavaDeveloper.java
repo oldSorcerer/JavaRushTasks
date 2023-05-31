@@ -1,6 +1,6 @@
 package com.javarush.task.jdk13.task41.task4107.developers;
 
-public class JavaDeveloper {
+public class JavaDeveloper implements Developer {
     public void study() {
         System.out.println("Набирается компьютерной грамотности...");
         System.out.println("Учит английский язык...");
