@@ -7,4 +7,7 @@ public abstract class RequisitionBase extends AbstractEntity {
     public String utmMark;
     public String webinarType;
     public String promoCode;
+
+    public RequisitionBase() {
+    }
 }

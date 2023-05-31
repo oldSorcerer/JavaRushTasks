@@ -1,6 +1,6 @@
 package com.javarush.task.jdk13.task41.task4109;
 
-public class User {
+public class User extends AbstractEntity {
     public String socialKey;
     public String secretKey;
     public String displayName;
@@ -15,4 +15,7 @@ public class User {
     public String country;
     public String city;
     public String statusMessage;
+
+    public User() {
+    }
 }
