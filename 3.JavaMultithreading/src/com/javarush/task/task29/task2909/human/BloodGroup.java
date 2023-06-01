@@ -1,7 +1,9 @@
 package com.javarush.task.task29.task2909.human;
 
-public class BloodGroup {
+import lombok.Getter;
 
+public class BloodGroup {
+    @Getter
     private final int code;
 
     private BloodGroup(int code) {
@@ -22,9 +24,5 @@ public class BloodGroup {
 
     public static BloodGroup fourth() {
         return new BloodGroup(4);
-    }
-
-    public int getCode() {
-        return code;
     }
 }
