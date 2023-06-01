@@ -1,5 +1,8 @@
 package com.javarush.task.task29.task2909.car;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 public abstract class Car {
@@ -15,6 +18,8 @@ public abstract class Car {
 
     private final int type;
 
+    @Getter
+    @Setter
     private boolean driverAvailable;
     private final int numberOfPassengers;
 
@@ -22,6 +27,8 @@ public abstract class Car {
         this.type = type;
         this.numberOfPassengers = numberOfPassengers;
     }
+
+    public abstract int getMaxSpeed();
 
     public void fill(double numberOfLiters) {
         if (numberOfLiters < 0) {
@@ -42,7 +49,6 @@ public abstract class Car {
         return length * summerFuelConsumption;
     }
 
-
     public double getTripConsumption(Date date, int length, Date summerStart, Date summerEnd) {
         return isSummer(date, summerStart, summerEnd) ?
                 getSummerConsumption(length) :
@@ -53,21 +59,11 @@ public abstract class Car {
         return isDriverAvailable() && fuel > 0;
     }
 
-
     public int getNumberOfPassengersCanBeTransferred() {
         if (!canPassengersBeTransferred()) {
             return 0;
         }
-
         return numberOfPassengers;
-    }
-
-    public boolean isDriverAvailable() {
-        return driverAvailable;
-    }
-
-    public void setDriverAvailable(boolean driverAvailable) {
-        this.driverAvailable = driverAvailable;
     }
 
     public void startMoving() {
@@ -82,8 +78,6 @@ public abstract class Car {
 
     public void fastenDriverBelt() {
     }
-
-    public abstract int getMaxSpeed();
 
     public static Car create(int type, int numberOfPassengers) {
         return switch (type) {
