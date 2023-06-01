@@ -2,7 +2,6 @@ package com.javarush.task.task16.task1614;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /* 
 Обратный отсчет
