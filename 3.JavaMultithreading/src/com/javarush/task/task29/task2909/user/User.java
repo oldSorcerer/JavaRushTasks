@@ -1,5 +1,10 @@
 package com.javarush.task.task29.task2909.user;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class User {
     private String name;
     private String surname;
@@ -25,30 +30,6 @@ public class User {
         System.out.println(getAge() < 16 ? "Пользователь моложе 16 лет" : "Пользователь старше 16 лет");
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getCountry() {
         return address.getCountry();
     }
@@ -67,22 +48,6 @@ public class User {
 
     public String getAddress() {
         return getCountry() + " " + getCity() + " " + address.getHouse();
-    }
-
-    public Work getWork() {
-        return work;
-    }
-
-    public void setWork(Work work) {
-        this.work = work;
-    }
-
-    public boolean isMan() {
-        return man;
-    }
-
-    public void setMan(boolean man) {
-        this.man = man;
     }
 
     public String getBoss() {
