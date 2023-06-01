@@ -6,4 +6,7 @@ public abstract class AbstractEntity {
     public int id;
     public Date createdTime;
     public Date updatedTime;
+
+    public AbstractEntity() {
+    }
 }

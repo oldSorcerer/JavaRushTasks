@@ -10,8 +10,6 @@ public class Student extends UniversityPerson {
 
     public Student(String name, int age, double averageGrade) {
         super(name, age);
-        this.name = name;
-        this.age = age;
         this.averageGrade = averageGrade;
     }
 

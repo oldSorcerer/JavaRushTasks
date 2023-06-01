@@ -28,7 +28,7 @@ public class BloodDBProxy implements DB {
     @Override
     public BloodSample getById(int id) {
         if (security.isAuthorized()) {
-            db.getById(id);
+            return db.getById(id);
         }
         return denied;
     }
@@ -36,7 +36,7 @@ public class BloodDBProxy implements DB {
     @Override
     public List<BloodSample> find(String request) {
         if (security.isAuthorized()) {
-            db.find(request);
+            return db.find(request);
         }
         return List.of(denied);
     }
