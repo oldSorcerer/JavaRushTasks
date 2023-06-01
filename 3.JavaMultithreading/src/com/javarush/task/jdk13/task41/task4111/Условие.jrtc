@@ -7,7 +7,7 @@ taskKey="com.javarush.task.jdk13.task41.task4111"\n\nЛенивый зам
 3. Добавь LazyInitializer реализацию интерфейса Entity:
 - в методе getId возвращай значение поля id класса LazyInitializer. К полю entity не обращайся!
 - в методе find проверь поле entity, и если оно null то сначала инициализируй его, после чего переадресуй запрос полю entity.
-4. В методе main инициализируй переменную entity новым объектом LazyInitializer вместо VeryHeavyEntity.
+4. В методе main инициализируй переменную entity новым объектом LazyInitializer вместо VeryHeavyEntity. Параметр конструктора оставь 10001.
 
 
 Требования:
