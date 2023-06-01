@@ -12,11 +12,11 @@ public class Solution {
         prototype.user = new User();
         prototype.user.displayName = "anonymous";
 
-//        CguRequisition requisitionClone = (CguRequisition) prototype.clone();
+        CguRequisition requisitionClone = (CguRequisition) prototype.clone();
         System.out.println("Users should be different objects:");
         System.out.println(prototype.user + " - user");
-//        System.out.println(requisitionClone.user + " - cloned user");
+        System.out.println(requisitionClone.user + " - cloned user");
         System.out.println(prototype.user.displayName);
-//        System.out.println(requisitionClone.user.displayName);
+        System.out.println(requisitionClone.user.displayName);
     }
 }
