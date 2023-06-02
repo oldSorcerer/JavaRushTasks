@@ -2,7 +2,7 @@ package com.javarush.task.jdk13.task41.task4111;
 
 public class LazyInitializer implements Entity {
 
-    private int id;
+    private final int id;
     private VeryHeavyEntity entity;
 
     public LazyInitializer(int id) {
