@@ -5,8 +5,8 @@ Inner 2
 */
 
 public class Solution {
-    private String country;
-    private String city;
+    private final String country;
+    private final String city;
 
     public Solution(String country, String city) {
         this.country = country;
@@ -24,7 +24,7 @@ public class Solution {
     }
 
     private class SuperUser {
-        private String name;
+        private final String name;
 
         //доступ к этому методу возможен только внутри класса Solution, т.к. модификатор иннер класса private
         public SuperUser(String name) {
