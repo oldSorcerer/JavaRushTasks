@@ -43,7 +43,7 @@ public class Solution {
 
         @Override
         public void refreshAllData(Map criteria) {
-            names =MockDB.getFakeNames(criteria);
+            names = MockDB.getFakeNames(criteria);
         }
     }
 
