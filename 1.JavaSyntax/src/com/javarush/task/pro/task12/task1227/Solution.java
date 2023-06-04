@@ -38,7 +38,7 @@ public class Solution {
     }
 
     private static void emptyGarbageBin() {
-        cableContents.removeAll(rescuedRobots);
+        cableContents.clear();
         System.out.println("Garbage cleared");
     }
 
