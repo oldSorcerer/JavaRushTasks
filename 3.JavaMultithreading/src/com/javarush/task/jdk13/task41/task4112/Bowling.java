@@ -1,37 +1,42 @@
 package com.javarush.task.jdk13.task41.task4112;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
+
+import static java.util.Objects.*;
 
 public class Bowling {
 
-    private final Queue<Track> tracks;
-    private final Queue<PairOfShoes> shoesShelf;
+    private final Queue<Track> tracks = new ConcurrentLinkedQueue<>();
+    private final Queue<PairOfShoes> shoesShelf = new ConcurrentLinkedQueue<>();
 
     public Bowling(int tracksNumber) {
-        tracks = new LinkedList<>();
-        IntStream.range(0, tracksNumber).mapToObj(Track::new).forEach(tracks::add);
-        shoesShelf = new LinkedList<>();
-        IntStream.range(38, 45).mapToObj(PairOfShoes::new).forEach(shoesShelf::add);
-
+        IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).forEach(tracks::offer);
+        IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
+                .forEach(shoesShelf::offer);
     }
 
     public synchronized Track acquireTrack() {
-        return new Track(1);
+        if (tracks.isEmpty()) return null;
+
+        Track track = tracks.poll();
+        if (nonNull(track)) track.setPrice(100 - tracks.size() * 10);
+        return track;
     }
 
     public synchronized void releaseTrack(Track track) {
         System.out.printf("C дорожки №%d сняли бронь\n", track.getNumber());
-        tracks.add(track);
+        tracks.offer(track);
     }
 
     public synchronized Set<PairOfShoes> acquireShoes(int number) {
+        if (shoesShelf.size() < number) return null;
+
         Set<PairOfShoes> shoes = new HashSet<>();
         for (int i = 0; i < number; i++) {
-            shoes.add(new PairOfShoes(42));
+            shoes.add(shoesShelf.poll());
         }
         return shoes;
     }

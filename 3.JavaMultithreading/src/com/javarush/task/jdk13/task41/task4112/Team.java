@@ -11,8 +11,8 @@ import static java.util.Objects.nonNull;
 
 public class Team implements Callable<Integer> {
     private final String title;
-    private Set<Bowler> members;
-    private Bowling bowling;
+    private final Set<Bowler> members;
+    private final Bowling bowling;
     private Track track;
 
     public Team(String title, Bowling bowling) {
