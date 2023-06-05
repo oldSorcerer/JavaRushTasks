@@ -35,8 +35,8 @@ public class Solution {
 
         System.arraycopy(secondArray, 0, resultArray, firstArray.length, secondArray.length);
 
-        for (int i = 0; i < resultArray.length; i++) {
-            System.out.print(resultArray[i] + ", ");
+        for (int number : resultArray) {
+            System.out.print(number + ", ");
         }
     }
 }

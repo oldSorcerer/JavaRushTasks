@@ -1,11 +1,8 @@
 package com.javarush.task.jdk13.task41.task4108.factories;
 
-import com.javarush.task.jdk13.task41.task4108.juniors.JavaJunior;
-import com.javarush.task.jdk13.task41.task4108.juniors.JuniorDeveloper;
-import com.javarush.task.jdk13.task41.task4108.middles.JavaMiddle;
-import com.javarush.task.jdk13.task41.task4108.middles.MiddleDeveloper;
-import com.javarush.task.jdk13.task41.task4108.seniors.JavaSenior;
-import com.javarush.task.jdk13.task41.task4108.seniors.SeniorDeveloper;
+import com.javarush.task.jdk13.task41.task4108.juniors.*;
+import com.javarush.task.jdk13.task41.task4108.middles.*;
+import com.javarush.task.jdk13.task41.task4108.seniors.*;
 
 public class JavaRush implements DeveloperCourse{
 
