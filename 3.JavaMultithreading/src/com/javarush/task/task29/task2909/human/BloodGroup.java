@@ -1,14 +1,13 @@
 package com.javarush.task.task29.task2909.human;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@Getter
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class BloodGroup {
-    @Getter
     private final int code;
-
-    private BloodGroup(int code) {
-        this.code = code;
-    }
 
     public static BloodGroup first() {
         return new BloodGroup(1);
