@@ -10,8 +10,6 @@ public class PizzaBuilder implements Builder {
     private String sauce;
     private String topping;
 
-
-
     public Pizza getResult() {
         return new Pizza(type, dough, sauce, topping);
     }
