@@ -3,19 +3,24 @@ package com.javarush.task.jdk13.task41.task4112;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static java.util.Objects.*;
 
 public class Bowling {
 
-    private final Queue<Track> tracks = new ConcurrentLinkedQueue<>();
-    private final Queue<PairOfShoes> shoesShelf = new ConcurrentLinkedQueue<>();
+    private final Queue<Track> tracks;
+    private final Queue<PairOfShoes> shoesShelf;
 
     public Bowling(int tracksNumber) {
-        IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).forEach(tracks::offer);
-        IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
-                .forEach(shoesShelf::offer);
+//        IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).forEach(tracks::offer);
+        tracks = IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
+//        IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
+//                .forEach(shoesShelf::offer);
+        shoesShelf = IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
+                .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
+
     }
 
     public synchronized Track acquireTrack() {
