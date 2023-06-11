@@ -5,6 +5,7 @@ public class User {
     private UserDB db;
     private int id;
     private String name;
+    private Mediator mediator;
 
     public User(UserDB db, int id, String name) {
         this.db = db;
