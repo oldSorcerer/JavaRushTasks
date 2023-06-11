@@ -1,5 +1,7 @@
 package com.javarush.task.jdk13.task41.task4116.animals;
 
+import com.javarush.task.jdk13.task41.task4116.visitor.Visitor;
+
 public class Cat extends Animal {
 
     private int mice;
@@ -8,6 +10,11 @@ public class Cat extends Animal {
     @Override
     public String getName() {
         return "Кот";
+    }
+
+    @Override
+    public String accept(Visitor visitor) {
+        return visitor.visitCat(this);
     }
 
     public int miceCaught() {
