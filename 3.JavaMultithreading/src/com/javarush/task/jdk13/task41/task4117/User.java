@@ -2,13 +2,12 @@ package com.javarush.task.jdk13.task41.task4117;
 
 public class User {
 
-    private UserDB db;
-    private int id;
-    private String name;
-    private Mediator mediator;
+    private final Mediator mediator;
+    private final int id;
+    private final String name;
 
-    public User(UserDB db, int id, String name) {
-        this.db = db;
+    public User(Mediator mediator, int id, String name) {
+        this.mediator = mediator;
         this.name = name;
         this.id = id;
     }
@@ -19,8 +18,7 @@ public class User {
 
     public void send(String msg, int userId) {
         System.out.println(name + " :: исходящее сообщение : " + msg);
-        User user = db.getById(userId);
-        user.receive(msg);
+        mediator.sendMessage(msg, userId);
     }
 
     public void receive(String msg) {
