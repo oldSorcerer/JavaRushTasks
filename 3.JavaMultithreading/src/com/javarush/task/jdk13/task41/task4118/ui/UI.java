@@ -22,13 +22,13 @@ public class UI {
         context.add(buttons);
 
         JButton play = new JButton("Play");
-        play.addActionListener(e -> textField.setText(player.onPlay()));
+        play.addActionListener(e -> textField.setText(player.getState().onPlay()));
         JButton stop = new JButton("Stop");
-        stop.addActionListener(e -> textField.setText(player.onLock()));
+        stop.addActionListener(e -> textField.setText(player.getState().onLock()));
         JButton next = new JButton("Next");
-        next.addActionListener(e -> textField.setText(player.onNext()));
+        next.addActionListener(e -> textField.setText(player.getState().onNext()));
         JButton prev = new JButton("Prev");
-        prev.addActionListener(e -> textField.setText(player.onPrevious()));
+        prev.addActionListener(e -> textField.setText(player.getState().onPrevious()));
         frame.setVisible(true);
         frame.setSize(300, 100);
         buttons.add(play);
