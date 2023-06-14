@@ -3,10 +3,10 @@ package com.javarush.task.jdk13.task41.task4119.customer;
 import java.time.LocalDate;
 
 public class CreditCard {
-    private String number;
-    private String name;
-    private int cvv;
-    private LocalDate expiryDate;
+    private final String number;
+    private final String name;
+    private final int cvv;
+    private final LocalDate expiryDate;
 
     public CreditCard(String number, String name, int cvv, LocalDate expiryDate) {
         this.number = number;

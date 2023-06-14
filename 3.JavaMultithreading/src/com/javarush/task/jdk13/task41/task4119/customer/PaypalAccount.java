@@ -1,8 +1,8 @@
 package com.javarush.task.jdk13.task41.task4119.customer;
 
 public class PaypalAccount {
-    private String email;
-    private String password;
+    private final String email;
+    private final String password;
 
     public PaypalAccount(String email, String password) {
         this.email = email;
