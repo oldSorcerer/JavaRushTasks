@@ -3,8 +3,8 @@ package com.javarush.task.jdk13.task41.task4119.strategy;
 import com.javarush.task.jdk13.task41.task4119.customer.Customer;
 
 public class PaypalStrategy implements PaymentStrategy {
-    private String email;
-    private String password;
+    private final String email;
+    private final String password;
 
     public PaypalStrategy(Customer customer) {
         email = customer.getEmail();
