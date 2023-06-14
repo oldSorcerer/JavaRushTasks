@@ -6,6 +6,7 @@ public class CallCenter extends  TechSupport{
         if (problem.matches(".*(завис|зависло|глючит|глюк|тормозит|лагает|ничего не понимаю|спасити).*")) {
             System.out.println("\t+ Спокойный как удав оператор колл-центра помог решить проблему.");
         } else {
+            System.out.println("\t- Операторы колл-центра не смогли решить вопрос.");
             passAlongTheChain(problem);
         }
     }
