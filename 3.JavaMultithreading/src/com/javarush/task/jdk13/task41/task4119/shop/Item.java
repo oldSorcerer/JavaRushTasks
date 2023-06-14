@@ -1,9 +1,9 @@
 package com.javarush.task.jdk13.task41.task4119.shop;
 
 public class Item {
-    private int id;
-    private String name;
-    private int price;
+    private final int id;
+    private final String name;
+    private final int price;
 
     public Item(int id, String name, int price) {
         this.id = id;

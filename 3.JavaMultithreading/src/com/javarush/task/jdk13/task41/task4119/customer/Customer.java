@@ -3,8 +3,8 @@ package com.javarush.task.jdk13.task41.task4119.customer;
 import java.time.LocalDate;
 
 public class Customer {
-    private CreditCard card;
-    private PaypalAccount paypalAccount;
+    private final CreditCard card;
+    private final PaypalAccount paypalAccount;
 
     public Customer(String name, String email, String cardNumber, int cardCvv, LocalDate cardEexpiryDate, String paypalPassword) {
         this.card = new CreditCard(cardNumber, name, cardCvv, cardEexpiryDate);
