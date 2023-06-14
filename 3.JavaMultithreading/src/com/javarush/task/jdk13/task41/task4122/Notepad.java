@@ -2,7 +2,8 @@ package com.javarush.task.jdk13.task41.task4122;
 
 public class Notepad {
 
-    private TextWindow textWindow;
+    private final TextWindow textWindow;
+    private TextWindow.TextWindowState savedTextWindow;
 
     public Notepad(TextWindow textWindow) {
         this.textWindow = textWindow;
@@ -13,9 +14,11 @@ public class Notepad {
     }
 
     public void save() {
+        savedTextWindow = textWindow.save();
     }
 
     public void undo() {
+        textWindow.restore(savedTextWindow);
     }
 
     public String print() {

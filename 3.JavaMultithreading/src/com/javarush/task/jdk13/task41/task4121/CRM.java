@@ -1,13 +1,16 @@
 package com.javarush.task.jdk13.task41.task4121;
 
-import com.javarush.task.jdk13.task41.task4121.support.TechSupport;
+import com.javarush.task.jdk13.task41.task4121.support.*;
 
 public class CRM {
 
-    private TechSupport techSupport;
+    private final TechSupport techSupport;
 
     public CRM() {
-        this.techSupport = new TechSupport();
+        techSupport = new CallCenter();
+        techSupport.setNextLevel(new HelpDesk())
+                .setNextLevel(new SysAdmin())
+                .setNextLevel(new ITDirector());
     }
 
     public void register(String problem) {

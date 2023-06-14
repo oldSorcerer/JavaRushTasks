@@ -15,4 +15,20 @@ public class TextWindow {
     public String getText() {
         return currentText.toString();
     }
+
+    public TextWindowState save() {
+        return new TextWindowState(currentText.toString());
+    }
+
+    public void restore(TextWindowState state) {
+        currentText = new StringBuilder(state.text);
+    }
+
+    public static class TextWindowState {
+        private final String text;
+
+        public TextWindowState(String text) {
+            this.text = text;
+        }
+    }
 }
