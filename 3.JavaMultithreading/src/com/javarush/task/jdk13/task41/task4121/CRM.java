@@ -4,7 +4,7 @@ import com.javarush.task.jdk13.task41.task4121.support.*;
 
 public class CRM {
 
-    private TechSupport techSupport;
+    private final TechSupport techSupport;
 
     public CRM() {
         techSupport = new CallCenter();
