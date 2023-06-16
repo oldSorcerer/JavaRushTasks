@@ -46,7 +46,7 @@ public class AmigoOutputStream  extends FileOutputStream  {
     @Override
     public void close() throws IOException {
         flush();
-        original.write("JavaRush © All rights reserved.".getBytes());
+        write("JavaRush © All rights reserved.".getBytes());
         original.close();
     }
 }
