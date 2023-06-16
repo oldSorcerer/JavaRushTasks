@@ -6,7 +6,6 @@ import com.javarush.task.jdk13.task41.task4118.states.State;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Player {
     private State state;
     private boolean playing = false;
