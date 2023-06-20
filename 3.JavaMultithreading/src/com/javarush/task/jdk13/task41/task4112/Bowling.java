@@ -14,13 +14,15 @@ public class Bowling {
     private final Queue<PairOfShoes> shoesShelf;
 
     public Bowling(int tracksNumber) {
+        tracks = IntStream.range(1, tracksNumber + 1)
+                .mapToObj(Track::new)
+                .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
 //        IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).forEach(tracks::offer);
-        tracks = IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
+        shoesShelf = IntStream.range(0, 50)
+                .mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
+                .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
 //        IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
 //                .forEach(shoesShelf::offer);
-        shoesShelf = IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
-                .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
-
     }
 
     public synchronized Track acquireTrack() {
