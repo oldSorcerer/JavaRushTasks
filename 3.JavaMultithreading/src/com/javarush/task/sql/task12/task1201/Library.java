@@ -16,7 +16,6 @@ public class Library {
     String publicationName;
     String isdn;
 
-
     public long getId() {
         return id;
     }
