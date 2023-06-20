@@ -25,7 +25,6 @@ public class Solution {
 
         list.add(new PriorityQueue<>(List.of()).iterator());
         list.add(new ArrayDeque<>(List.of()).iterator());
-        list.add(new DelayQueue<>(List.of()).iterator());
 
         list.add(new HashSet<>(List.of()).iterator());
         list.add(new LinkedHashSet<>(List.of()).iterator());
@@ -38,6 +37,7 @@ public class Solution {
         list.add(new TreeMap<>(Map.of()).keySet().iterator());
         list.add(new TreeMap<>(Map.of()).values().iterator());
 
+        list.add(new DelayQueue<>(List.of()).iterator());
         list.add(new LinkedBlockingQueue<>(List.of()).iterator());
         list.add(new LinkedBlockingDeque<>(List.of()).iterator());
         list.add(new ConcurrentLinkedQueue<>(List.of()).iterator());
