@@ -10,20 +10,20 @@ import jakarta.persistence.*;
 @Table(name = "library_table")
 public class Library {
     @Id
-    private long id;
+    private Long id;
 //    @Enumerated(value = "")
     @Column
-    PublicationStatus status;
-    @Column
-    String publicationName;
-    @Column
-    String isdn;
+    private PublicationStatus status;
+    @Column(name = "publicationName")
+    private String publicationName;
+    @Column(name = "isdn")
+    private String isdn;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
