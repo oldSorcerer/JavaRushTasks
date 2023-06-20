@@ -4,5 +4,5 @@ select
     count(*)
 from cars
 where name = 'Black Car' and price > 99000
-group by  prod_year, prod_date
+group by prod_year, prod_date
 
