@@ -12,8 +12,11 @@ public class Library {
     @Id
     private long id;
 //    @Enumerated(value = "")
+    @Column
     PublicationStatus status;
+    @Column
     String publicationName;
+    @Column
     String isdn;
 
     public long getId() {
