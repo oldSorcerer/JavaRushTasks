@@ -1,18 +1,21 @@
 package com.javarush.task.task29.task2909.human;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
 
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Student extends UniversityPerson {
     @Getter
-    private int course;
+    int course;
     @Getter
-    private double averageGrade;
-    private Date beginningOfSession;
-    private Date endOfSession;
+    double averageGrade;
+    Date beginningOfSession;
+    Date endOfSession;
 
     public Student(String name, int age, double averageGrade) {
         super(name, age);
