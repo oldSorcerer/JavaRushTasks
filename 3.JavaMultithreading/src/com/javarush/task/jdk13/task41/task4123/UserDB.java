@@ -8,14 +8,19 @@ import static java.util.Objects.isNull;
 
 public class UserDB {
 
-    private Map<Integer, User> users;
+    private volatile Map<Integer, User> users;
 
-    private synchronized void initDB() throws Exception {
+    private void initDB() throws Exception {
         if (isNull(users)) {
-            users = new HashMap<>();
-            for (int i = 0; i < 100; i++) {
-                users.put(i, new User(i, "user" + i));
-                TimeUnit.MILLISECONDS.sleep(1);
+            synchronized (this) {
+                if (isNull(users)) {
+                    Map<Integer, User> users = new HashMap<>();
+                    for (int i = 0; i < 100; i++) {
+                        users.put(i, new User(i, "user" + i));
+                        TimeUnit.MILLISECONDS.sleep(1);
+                    }
+                    this.users = users;
+                }
             }
         }
     }

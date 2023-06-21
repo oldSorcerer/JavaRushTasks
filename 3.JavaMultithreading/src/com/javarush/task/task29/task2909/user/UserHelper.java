@@ -1,10 +1,14 @@
 package com.javarush.task.task29.task2909.user;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserHelper {
-    private final User userAnya = new User("Аня", "Смирнова", 10);
-    private final User userRoma = new User("Рома", "Виноградов", 30);
+    User userAnya = new User("Аня", "Смирнова", 10);
+    User userRoma = new User("Рома", "Виноградов", 30);
 
     public void printUsers() {
         userAnya.printInfo();

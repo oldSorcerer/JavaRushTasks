@@ -3,19 +3,21 @@ package com.javarush.task.task29.task2909.user;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
     @Setter(AccessLevel.PRIVATE)
-    private String name;
-    private String surname;
-    private int age;
+    String name;
+    String surname;
+    int age;
 
-    private Address address;
-    private Work work;
+    Address address;
+    Work work;
 
-    private boolean man;
+    boolean man;
 
     public User(String name, String surname, int age) {
         this.name = name;
@@ -29,7 +31,7 @@ public class User {
     }
 
     public void printAdditionalInfo() {
-        System.out.println(getAge() < 16 ? "Пользователь моложе 16 лет" : "Пользователь старше 16 лет");
+        System.out.println("Пользователь " + (getAge() < 16 ? "моложе" : "старше") + " 16 лет");
     }
 
     public String getCountry() {
