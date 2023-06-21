@@ -3,11 +3,13 @@ package com.javarush.task.task29.task2909.human;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class BloodGroup {
-    private final int code;
+    final int code;
 
     public static BloodGroup first() {
         return new BloodGroup(1);

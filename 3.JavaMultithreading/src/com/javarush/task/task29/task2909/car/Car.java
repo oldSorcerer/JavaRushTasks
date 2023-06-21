@@ -6,9 +6,9 @@ import lombok.Setter;
 import java.util.Date;
 
 public abstract class Car {
-    static public final int TRUCK = 0;
-    static public final int SEDAN = 1;
-    static public final int CABRIOLET = 2;
+    public static final int TRUCK = 0;
+    public static final int SEDAN = 1;
+    public static final int CABRIOLET = 2;
 
     double fuel;
 
