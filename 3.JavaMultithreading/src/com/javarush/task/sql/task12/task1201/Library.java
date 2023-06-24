@@ -9,13 +9,18 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "library_table")
 public class Library {
+
     @Id
+    @Column(name = "id")
     private Long id;
-//    @Enumerated(value = "")
-    @Column
+
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
     private PublicationStatus status;
-    @Column(name = "publicationName")
+
+    @Column(name = "publication_name")
     private String publicationName;
+
     @Column(name = "isdn")
     private String isdn;
 
