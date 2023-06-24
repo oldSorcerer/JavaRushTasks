@@ -9,15 +9,19 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "library_table")
 public class Library {
+
     @Id
     private Long id;
-//    @Enumerated(value = "")
-    @Column
+
+    @Column(name = "status")
+    @Enumerated(EnumType.ORDINAL)
     private PublicationStatus status;
+
     @Column(name = "publicationName")
     private String publicationName;
-    @Column(name = "isdn")
-    private String isdn;
+
+    @Column(name = "isbn")
+    private String isbn;
 
     public Long getId() {
         return id;
@@ -43,11 +47,11 @@ public class Library {
         this.publicationName = publicationName;
     }
 
-    public String getIsdn() {
-        return isdn;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setIsdn(String isdn) {
-        this.isdn = isdn;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
