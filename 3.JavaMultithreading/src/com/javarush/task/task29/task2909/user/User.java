@@ -1,23 +1,21 @@
 package com.javarush.task.task29.task2909.user;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
-    @Setter(AccessLevel.PRIVATE)
+
     String name;
     String surname;
+    boolean man;
     int age;
 
+    @Setter(AccessLevel.PRIVATE)
     Address address;
     Work work;
-
-    boolean man;
 
     public User(String name, String surname, int age) {
         this.name = name;

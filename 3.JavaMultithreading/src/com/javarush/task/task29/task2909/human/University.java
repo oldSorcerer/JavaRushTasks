@@ -1,8 +1,6 @@
 package com.javarush.task.task29.task2909.human;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.*;
@@ -12,9 +10,9 @@ import java.util.*;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class University {
 
-    List<Student> students = new ArrayList<>();
-    String name;
     int age;
+    String name;
+    List<Student> students = new ArrayList<>();
 
     public University(String name, int age) {
         this.name = name;

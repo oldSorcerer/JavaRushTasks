@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserHelper {
+
     User userAnya = new User("Аня", "Смирнова", 10);
     User userRoma = new User("Рома", "Виноградов", 30);
 
