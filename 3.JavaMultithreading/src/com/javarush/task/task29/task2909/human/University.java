@@ -1,8 +1,6 @@
 package com.javarush.task.task29.task2909.human;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.*;

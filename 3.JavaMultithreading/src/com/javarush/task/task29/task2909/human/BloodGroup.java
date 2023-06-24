@@ -1,9 +1,6 @@
 package com.javarush.task.task29.task2909.human;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.ExtensionMethod;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Getter
