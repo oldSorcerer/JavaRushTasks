@@ -12,7 +12,7 @@ import java.util.List;
 */
 
 public class Solution {
-    private Connection connection;
+    private final Connection connection;
 
     public Solution(Connection connection) {
         this.connection = connection;
