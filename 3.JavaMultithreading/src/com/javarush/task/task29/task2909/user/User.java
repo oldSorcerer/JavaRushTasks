@@ -8,15 +8,14 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
 
-    @Setter(AccessLevel.PRIVATE)
     String name;
     String surname;
+    boolean man;
     int age;
 
+    @Setter(AccessLevel.PRIVATE)
     Address address;
     Work work;
-
-    boolean man;
 
     public User(String name, String surname, int age) {
         this.name = name;
