@@ -11,18 +11,17 @@ import jakarta.persistence.*;
 public class Library {
 
     @Id
-    @Column(name = "id")
     private Long id;
 
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private PublicationStatus status;
 
-    @Column(name = "publication_name")
+    @Column(name = "publicationName")
     private String publicationName;
 
-    @Column(name = "isdn")
-    private String isdn;
+    @Column(name = "isbn")
+    private String isbn;
 
     public Long getId() {
         return id;
@@ -48,11 +47,11 @@ public class Library {
         this.publicationName = publicationName;
     }
 
-    public String getIsdn() {
-        return isdn;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setIsdn(String isdn) {
-        this.isdn = isdn;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
