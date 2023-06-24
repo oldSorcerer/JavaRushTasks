@@ -12,9 +12,9 @@ import java.util.*;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class University {
 
-    List<Student> students = new ArrayList<>();
-    String name;
     int age;
+    String name;
+    List<Student> students = new ArrayList<>();
 
     public University(String name, int age) {
         this.name = name;

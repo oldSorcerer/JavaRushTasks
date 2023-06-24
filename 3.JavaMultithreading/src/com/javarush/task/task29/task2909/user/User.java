@@ -9,6 +9,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class User {
+
     @Setter(AccessLevel.PRIVATE)
     String name;
     String surname;
