@@ -17,8 +17,17 @@ import java.util.Properties;
 public class Solution {
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        TimeClass timeClass = new TimeClass();
 
+        timeClass.setId(1L);
+        timeClass.setInstant(Instant.ofEpochSecond(10L));
+        timeClass.setZonedDateTime(ZonedDateTime.now(ZoneId.systemDefault()));
+
+        try (Session session = getSessionFactory().openSession()) {
+            session.beginTransaction();
+            session.save(timeClass);
+            session.getTransaction().commit();
+        }
     }
 
     public static SessionFactory getSessionFactory() {
