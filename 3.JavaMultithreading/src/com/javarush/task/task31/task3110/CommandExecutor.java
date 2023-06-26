@@ -25,6 +25,5 @@ public class CommandExecutor {
 
     public static void execute(Operation operation) throws Exception {
         ALL_KNOWN_COMMANDS_MAP.get(operation).execute();
-
     }
 }
