@@ -20,7 +20,9 @@ public class Author {
     @Column(name = "full_name")
     private String fullName;
 
-    //напишите тут ваш код
+    @ElementCollection
+    @CollectionTable(name = "author_article")
+    @Column(name = "a")
     private Set<String> articles;
 
     public Integer getId() {
