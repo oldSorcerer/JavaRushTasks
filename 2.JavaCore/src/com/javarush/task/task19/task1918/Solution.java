@@ -29,7 +29,6 @@ public class Solution {
             Document document = Jsoup.parse(builder.toString(), "", Parser.xmlParser());
             Elements elements = document.select(args[0]);
             elements.forEach(System.out::println);
-
         }
     }
 }
