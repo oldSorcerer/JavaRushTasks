@@ -32,6 +32,6 @@ public class University {
     }
 
     public void expel(Student student) {
-        students.removeIf(s -> s.equals(student));
+        students.remove(student);
     }
 }
