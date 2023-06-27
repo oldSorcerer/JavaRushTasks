@@ -32,8 +32,7 @@ public class Solution {
         }
         int decimalNumber = 0;
         for (int i = 0; i < hexNumber.length(); i++) {
-            int index = HEX.indexOf(hexNumber.charAt(i));
-            decimalNumber = 16 * decimalNumber + index;
+            decimalNumber = 16 * decimalNumber + HEX.indexOf(hexNumber.charAt(i));
         }
         return decimalNumber;
     }
