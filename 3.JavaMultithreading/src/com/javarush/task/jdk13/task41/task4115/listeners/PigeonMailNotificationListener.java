@@ -1,7 +1,7 @@
 package com.javarush.task.jdk13.task41.task4115.listeners;
 
 public class PigeonMailNotificationListener implements NotificationListener {
-    private String fullAddress;
+    private final String fullAddress;
 
     public PigeonMailNotificationListener(String fullAddress) {
         this.fullAddress = fullAddress;

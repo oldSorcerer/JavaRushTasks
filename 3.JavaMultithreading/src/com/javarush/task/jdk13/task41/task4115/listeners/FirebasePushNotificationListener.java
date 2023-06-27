@@ -1,7 +1,7 @@
 package com.javarush.task.jdk13.task41.task4115.listeners;
 
 public class FirebasePushNotificationListener implements NotificationListener {
-    private String token;
+    private final String token;
 
     public FirebasePushNotificationListener(String token) {
         this.token = token;
