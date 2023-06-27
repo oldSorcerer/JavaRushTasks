@@ -21,8 +21,9 @@ public class Author {
     private String fullName;
 
     @ElementCollection
-    @CollectionTable(name = "author_article")
-    @Column(name = "a")
+    @CollectionTable(name = "author_article",
+            joinColumns = @JoinColumn(name = "author_id"))
+    @Column(name = "article")
     private Set<String> articles;
 
     public Integer getId() {
