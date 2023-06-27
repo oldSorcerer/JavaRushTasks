@@ -7,7 +7,6 @@ import static com.javarush.task.jdk13.task41.task4115.listeners.NotificationType
 public class ChainStore {
 
     private final String name;
-
     public NotificationManager notifications;
 
     public ChainStore(String name) {

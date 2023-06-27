@@ -1,7 +1,7 @@
 package com.javarush.task.jdk13.task41.task4115.listeners;
 
 public class EmailNotificationListener implements NotificationListener {
-    private String email;
+    private final String email;
 
     public EmailNotificationListener(String email) {
         this.email = email;
