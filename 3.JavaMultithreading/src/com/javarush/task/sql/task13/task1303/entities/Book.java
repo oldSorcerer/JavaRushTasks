@@ -12,10 +12,12 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-    //напишите тут ваш код
+    @ManyToOne
+    @JoinColumn(name = "author_id")
     private Author author;
 
-    //напишите тут ваш код
+    @ManyToOne
+    @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
     @Column(name = "publication_year")

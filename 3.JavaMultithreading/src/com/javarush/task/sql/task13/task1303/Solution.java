@@ -15,8 +15,11 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         List<Publisher> publishers;
 
-        //напишите тут ваш код
+        try (Session session = MySessionFactory.getSessionFactory().openSession()) {
+            Query<Publisher> query = session.createQuery("select distinct b.publisher from Book b where b.author.fullName = 'Mark Twain'", Publisher.class);
+            publishers = query.list();
+        }
 
-//        publishers.stream().map(Publisher::getName).forEach(System.out::println);
+        publishers.stream().map(Publisher::getName).forEach(System.out::println);
     }
 }
