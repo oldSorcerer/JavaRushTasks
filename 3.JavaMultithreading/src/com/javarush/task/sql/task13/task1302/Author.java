@@ -20,7 +20,11 @@ public class Author {
     @Column(name = "full_name")
     private String fullName;
 
-    //напишите тут ваш код
+    @ElementCollection
+    @CollectionTable(name = "author_achievement",
+    indexes = {@Index(columnList = "achievement_index")},
+    joinColumns = @JoinColumn(name = "author_id"))
+    @Column(name = "achievement")
     private List<String> achievements;
 
     public Integer getId() {
