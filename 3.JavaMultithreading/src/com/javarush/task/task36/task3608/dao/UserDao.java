@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
-    private DataSource dataSource = DataSource.getInstance();
+    private final DataSource dataSource = DataSource.getInstance();
 
     public User getUserById(long id) {
         List<User> users = dataSource.getUsers();
