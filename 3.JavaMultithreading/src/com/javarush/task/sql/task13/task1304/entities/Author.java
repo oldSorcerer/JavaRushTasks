@@ -20,8 +20,8 @@ public class Author {
     @Column(name = "full_name")
     private String fullName;
 
-    @OneToMany
-    @JoinColumn(name = "book_id")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "author_id")
     private Set<Book> books;
 
     public Integer getId() {

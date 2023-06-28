@@ -12,8 +12,10 @@ public class Solution {
 
     public static void main(String[] args) throws Exception {
         try (Session session = MySessionFactory.getSessionFactory().openSession()) {
-            Query<Author> query = session.createQuery("from Author where ", Author.class);
-
+            Query<Author> query = session.createQuery("from Author where fullName = :AUTHOR_FULLNAME", Author.class);
+            query.setParameter("AUTHOR_FULLNAME", "Mark Twain");
+            Author author = query.getSingleResult();
+            author.getBooks().forEach(System.out::println);
         }
     }
 }
