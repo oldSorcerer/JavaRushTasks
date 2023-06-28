@@ -20,9 +20,9 @@ public class Author {
     @Column(name = "full_name")
     private String fullName;
 
-    //напишите тут ваш код
+    @OneToMany
+    @JoinColumn(name = "book_id")
     private Set<Book> books;
-
 
     public Integer getId() {
         return id;
