@@ -20,7 +20,7 @@ public class Author {
     @Column(name = "full_name")
     private String fullName;
 
-    //напишите тут ваш код
+    @ManyToMany
     private Set<Book> books;
 
     public Integer getId() {

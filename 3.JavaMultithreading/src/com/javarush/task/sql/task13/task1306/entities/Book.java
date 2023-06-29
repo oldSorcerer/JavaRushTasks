@@ -14,7 +14,7 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-    //напишите тут ваш код
+    @ManyToMany
     private Set<Author> authors;
 
     @Column(name = "publication_year")
