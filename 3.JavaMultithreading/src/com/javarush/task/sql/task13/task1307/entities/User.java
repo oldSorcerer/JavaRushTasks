@@ -18,7 +18,8 @@ public class User {
     @Column(name = "full_name")
     private String fullName;
 
-    //напишите тут ваш код
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     public Integer getId() {
