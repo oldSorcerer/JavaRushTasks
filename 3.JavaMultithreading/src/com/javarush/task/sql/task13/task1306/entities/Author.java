@@ -20,7 +20,10 @@ public class Author {
     @Column(name = "full_name")
     private String fullName;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "author_book",
+        joinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"))
     private Set<Book> books;
 
     public Integer getId() {
