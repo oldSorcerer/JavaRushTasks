@@ -18,7 +18,7 @@ public class Archiver {
         return Operation.values()[ConsoleHelper.readInt()];
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
         Operation operation = null;
         while (operation != Operation.EXIT) {

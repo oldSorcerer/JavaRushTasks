@@ -20,6 +20,5 @@ public class Solution {
         } else {
             System.out.println(warm);
         }
-
     }
 }
