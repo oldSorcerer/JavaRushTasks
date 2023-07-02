@@ -14,9 +14,6 @@ public class Solution {
 
     public static Month getNextMonth(Month month) {
         int index = month.ordinal();
-        if (index == 11) {
-            return Month.values()[0];
-        } else
-            return Month.values()[index + 1];
+        return index == 11 ? Month.values()[0] : Month.values()[index + 1];
     }
 }
