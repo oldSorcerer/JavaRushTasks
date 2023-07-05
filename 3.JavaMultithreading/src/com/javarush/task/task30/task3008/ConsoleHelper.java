@@ -32,5 +32,4 @@ public class ConsoleHelper {
         }
         return result;
     }
-
 }
