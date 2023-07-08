@@ -1,4 +1,34 @@
-taskKey="com.javarush.task.task37.task3702.big03"\n\nФабрики (3)
+taskKey="com.javarush.task.task37.task3702.big04"\n\nФабрики (4)
+
+1. В корне задачи создай интерфейс AbstractFactory, в который вынеси общий в фабриках метод.
+
+2. Реализуй интерфейс AbstractFactory в обеих фабриках.
+
+3. В корне задачи создай класс FactoryProducer, в котором создай публичный статический энум HumanFactoryType
+со значениями MALE, FEMALE.
+
+4. В FactoryProducer создай публичный статический метод getFactory с аргументом HumanFactoryType.
+Этот метод должен возвращать одну из фабрик: для ключа MALE - MaleFactory, для FEMALE - FemaleFactory.
+
+Молодец, Фабрика фабрик готова! Это паттерн Abstract Factory.
+В коде тебе не важно, какая фабрика используется.
+
+Твои успехи:
+1. Освоен паттерн Factory Method.
+2. Освоен паттерн Abstract Factory.
+3. +2 паттерна для прохождения собеседования.
+Работа джава программистом стала еще ближе, скоро достигнешь цели!
+
+
+Требования:
+1.	Класс MaleFactory должен поддерживать интерфейс AbstractFactory.
+2.	Класс FemaleFactory должен поддерживать интерфейс AbstractFactory.
+3.	В классе FactoryProducer должен быть создан enum HumanFactoryType со значениями MALE, FEMALE.
+4.	Метод getFactory в классе FactoryProducer должен принимать один параметр типа HumanFactoryType.
+5.	Метод getFactory в классе FactoryProducer должен возвращать одну из фабрик в зависимости от принятого параметра.
+
+
+Фабрики (4)
 
 1. Создай пакет female, в котором  создай KidGirl, TeenGirl и Woman аналогично классам из пакета male.
 
@@ -8,17 +38,8 @@ taskKey="com.javarush.task.task37.task3702.big03"\n\nФабрики (3)
 Ответ - в следующем задании.
 
 
-Требования:
-1.	Классы KidGirl, TeenGirl, Woman должны быть размещены в пакете female и поддерживать интерфейс Human.
-2.	В классах KidGirl, TeenGirl, Woman должен быть переопределен метод toString в соответствии с условием задачи.
-3.	В классе KidGirl константа MAX_AGE должна быть равна 12.
-4.	В классе TeenGirl константа MAX_AGE должна быть равна 19.
-5.	Для возрастов больше 19 лет метод getPerson фабрики FemaleFactory должен возвращать объект типа Woman.
-6.	Для возрастов больше 12 лет, но меньше 20, метод getPerson фабрики FemaleFactory должен возвращать объект типа TeenGirl.
-7.	Для возрастов меньше 13 лет, метод getPerson фабрики FemaleFactory должен возвращать объект типа KidGirl.
 
-
-Фабрики (3)
+Фабрики (4)
 
 1. Создай публичный класс MaleFactory в пакете male с публичным методом getPerson, который принимает один параметр int age (возраст) и
 возвращает нужный объект одного из классов, реализующих интерфейс Human.
@@ -37,7 +58,7 @@ TeenBoy{}
 
 
 
-Фабрики (3)
+Фабрики (4)
 
 Привет!
 Сейчас ты будешь разбираться с паттерном Factory Method. Возьмем пример с людьми.
