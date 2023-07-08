@@ -38,6 +38,5 @@ public class FileProperties {
         return size > 0 ?
                 String.format("%s %d Kb (%d Kb) сжатие: %d%%", name, size / 1024, compressedSize / 1024, getCompressionRatio() ) :
                 name;
-
     }
 }
