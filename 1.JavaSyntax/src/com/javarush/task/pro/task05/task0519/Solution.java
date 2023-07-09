@@ -17,9 +17,9 @@ public class Solution {
 
         Arrays.sort(copyArray);
 
-        int k = Arrays.binarySearch(copyArray, element);
+        int index = Arrays.binarySearch(copyArray, element);
 
-        System.out.println(k >= 0 ? "true" : "false");
+        System.out.println(index >= 0 ? "true" : "false");
 
     }
 }
