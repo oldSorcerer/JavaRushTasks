@@ -21,25 +21,34 @@ public class ConsoleHelper {
     }
 
     public static String askCurrencyCode() {
-        writeMessage("Введите код валюты");
-        String string = readString();
-        if (string.length() != 3) {
-            writeMessage("Код Валюты должен быть строго 3 символа");
-            string = askCurrencyCode();
+        writeMessage("Please choose a currency code, for example USD");
+        String currencyCode = readString();
+        if (currencyCode == null || currencyCode.trim().length() != 3) {
+            writeMessage("Please specify valid data.");
+            currencyCode = askCurrencyCode();
         }
-        return string.toUpperCase();
+        return currencyCode.toUpperCase();
     }
 
     public static String[] getValidTwoDigits(String currencyCode) {
-        String [] strings = null;
-        writeMessage("Введите два целых положительных числа:");
-        try {
-            int denomination = Integer.parseInt(readString());
-            int count = Integer.parseInt(readString());
-        } catch (NumberFormatException e) {
-
-
+        while (true) {
+            writeMessage(String.format("Please specify integer denomination and " +
+                    "integer count. For example '10 3' means 30 %s", currencyCode));
+            String string = readString();
+            String[] strings = null;
+            if (string == null || (readString().split(" ")).length != 2) {
+                writeMessage("Please specify valid data.");
+            } else {
+                try {
+                    if (Integer.parseInt(strings[0]) <= 0 || Integer.parseInt(strings[1]) <= 0) {
+                        writeMessage("Please specify valid data.");
+                    }
+                } catch (NumberFormatException e) {
+                    writeMessage("Please specify valid data.");
+                    continue;
+                }
+            }
+            return strings;
         }
-        return strings;
     }
 }
