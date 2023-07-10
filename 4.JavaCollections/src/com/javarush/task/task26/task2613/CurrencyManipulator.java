@@ -1,5 +1,6 @@
 package com.javarush.task.task26.task2613;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyManipulator {
@@ -9,6 +10,7 @@ public class CurrencyManipulator {
 
     public CurrencyManipulator(String currencyCode) {
         this.currencyCode = currencyCode;
+        denominations = new HashMap<>();
     }
 
     public String getCurrencyCode() {
@@ -16,7 +18,7 @@ public class CurrencyManipulator {
     }
 
     public void addAmount(int denomination, int count) {
-        denominations.put(denomination, count);
+        denominations.merge(denomination, count, Integer::sum);
     }
 
 }
