@@ -152,7 +152,7 @@ public class ZipFileManager {
                 zipOutputStream.putNextEntry(zipEntry);
                 copyData(zipInputStream, zipOutputStream);
                 zipInputStream.closeEntry();
-                zipInputStream.closeEntry();
+                zipOutputStream.closeEntry();
                 archivePathList.add(Paths.get(zipEntry.getName()));
             }
             for (Path path : absolutePathList) {
