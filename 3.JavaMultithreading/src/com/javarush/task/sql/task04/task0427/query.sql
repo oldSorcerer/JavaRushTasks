@@ -1,1 +1,3 @@
-select * from event where datediff(curdate(), date_time) < 20
+select *
+from event
+where datediff(curdate(), date_time) < 20
