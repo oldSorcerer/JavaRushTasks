@@ -1,1 +1,3 @@
-select department, count(*) from employee group by department
+select department, count(*)
+from employee
+group by department

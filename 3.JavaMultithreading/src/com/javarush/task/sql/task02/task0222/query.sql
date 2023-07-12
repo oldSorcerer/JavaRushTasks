@@ -1,1 +1,3 @@
-select name, count(*) from cars group by name
+select name, count(*)
+from cars
+group by name
