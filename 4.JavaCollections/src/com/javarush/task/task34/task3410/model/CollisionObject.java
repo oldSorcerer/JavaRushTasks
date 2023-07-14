@@ -7,10 +7,11 @@ public abstract class CollisionObject extends GameObject {
     }
 
     public boolean isCollision(GameObject gameObject, Direction direction) {
-        if (this.getX() + Model.FIELD_CELL_SIZE == gameObject.getX()) {
-            return true;
-        } else return false;
+        boolean b = this.getX() + Model.FIELD_CELL_SIZE == gameObject.getX()
+                && getY() == gameObject.getY();
 
+        direction = Direction.DOWN;
+        return false;
 
     }
 }
