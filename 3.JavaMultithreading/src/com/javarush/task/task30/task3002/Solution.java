@@ -14,7 +14,17 @@ public class Solution {
     }
 
     public static String convertToDecimalSystem(String s) {
-        //напишите тут ваш код
+        if (s.startsWith("0")) {
+            int number;
+            if (s.contains("x")){
+               number = Integer.parseInt(s.substring(2), 16);
+            } else if (s.contains("b")) {
+               number = Integer.parseInt(s.substring(2), 2);
+            } else {
+               number = Integer.parseInt(s.substring(1), 8);
+            }
+            return String.valueOf(number);
+        }
         return s;
     }
 }
