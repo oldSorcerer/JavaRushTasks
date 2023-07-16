@@ -12,17 +12,17 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 1; i <= 9; i++) {
-            System.out.format("Элемент 'ShareItem-%d' добавлен", i);
-            queue.offer(new ShareItem("ShareItem-", i));
-            try {
+        try {
+            for (int i = 1; i <= 9; i++) {
+                System.out.format("Элемент 'ShareItem-%d' добавлен\n", i);
+                queue.offer(new ShareItem("ShareItem-" + i, i));
                 Thread.sleep(100);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                if (queue.hasWaitingConsumer()) {
+                    System.out.format("Consumer в ожидании!\n");
+                }
             }
-            if (queue.hasWaitingConsumer()) {
-                System.out.format("Consumer в ожидании!");
-            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }

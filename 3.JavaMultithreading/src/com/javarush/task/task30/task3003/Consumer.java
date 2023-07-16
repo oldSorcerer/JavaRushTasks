@@ -15,6 +15,10 @@ public class Consumer implements Runnable {
     public void run() {
         try {
             Thread.sleep(450);
+            while (true) {
+                ShareItem item = queue.take();
+                System.out.format("Processing %s\n", item);
+            }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
