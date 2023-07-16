@@ -18,15 +18,15 @@ public class Solution {
     public static void main(String[] args) throws InterruptedException {
         TransferQueue<ShareItem> queue = new LinkedTransferQueue<>();
 
-//        Thread producer = new Thread(new Producer(queue));
-//        Thread consumer = new Thread(new Consumer(queue));
-//        producer.start();
-//        consumer.start();
+        Thread producer = new Thread(new Producer(queue));
+        Thread consumer = new Thread(new Consumer(queue));
+        producer.start();
+        consumer.start();
 
         Thread.sleep(1500);
 
-//        producer.interrupt();
-//        consumer.interrupt();
+        producer.interrupt();
+        consumer.interrupt();
     }
 
 }
