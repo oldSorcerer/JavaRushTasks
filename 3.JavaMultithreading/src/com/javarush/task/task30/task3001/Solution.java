@@ -8,7 +8,8 @@ import java.math.BigInteger;
 
 public class Solution {
     public static void main(String[] args) {
-        Number number = new Number(NumberSystemType._10, "6");
+
+        Number number = new Number(NumberSystemType._10, "-6");
         Number result = convertNumberToOtherNumberSystem(number, NumberSystemType._2);
         System.out.println(result);    //expected 110
 
@@ -22,7 +23,14 @@ public class Solution {
     }
 
     public static Number convertNumberToOtherNumberSystem(Number number, NumberSystem expectedNumberSystem) {
-        //напишите тут ваш код
-        return null;
+
+        String digit = number.getDigit();
+
+        int numberSystemIntValue = number.getNumberSystem().getNumberSystemIntValue();
+
+        BigInteger bigInteger = new BigInteger(digit, numberSystemIntValue);
+
+        String string = bigInteger.toString(expectedNumberSystem.getNumberSystemIntValue());
+        return new Number(expectedNumberSystem, string);
     }
 }

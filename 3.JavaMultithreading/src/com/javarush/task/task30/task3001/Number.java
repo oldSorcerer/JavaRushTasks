@@ -1,8 +1,8 @@
 package com.javarush.task.task30.task3001;
 
 public class Number {
-    private NumberSystem numberSystem;
-    private String digit;
+    private final NumberSystem numberSystem;
+    private final String digit;
 
     public Number(NumberSystem numberSystem, String digit) {
         this.numberSystem = numberSystem;

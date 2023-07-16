@@ -16,6 +16,9 @@ public class Solution {
     }
 
     private static Set<Integer> getRadix(String number) {
-        return null;
+        Set<Integer> set = new HashSet<>();
+
+
+        return set;
     }
 }
