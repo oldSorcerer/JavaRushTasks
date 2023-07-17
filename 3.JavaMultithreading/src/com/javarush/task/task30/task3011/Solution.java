@@ -23,7 +23,7 @@ public class Solution {
             if (a != null && a.getName() == null) {
                 a.setName("A");
             }
-        } catch (NullPointerException e) {
+        } catch (NullPointerException ignored) {
         }
         if (a == null) {
             a = new A();
@@ -41,14 +41,14 @@ public class Solution {
             if (b != null && b.getName() == null) {
                 b.setName("B");
             }
-        } catch (NullPointerException e) {
+        } catch (NullPointerException ignored) {
         }
         if (b == null) {
             b = new B();
             b.setName("B");
         }
         try {
-            if (c != null && c.getName() != null) {
+            if (c != null & c.getName() != null) {
             }
         } catch (NullPointerException e) {
             c = new C();
@@ -58,7 +58,7 @@ public class Solution {
             if (c != null && c.getName() == null) {
                 c.setName("C");
             }
-        } catch (NullPointerException e) {
+        } catch (NullPointerException ignored) {
         }
         if (c == null) {
             c = new C();
