@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Model {
+    protected int score;
+    protected int maxTile;
     private static final int FIELD_WIDTH = 4;
     private Tile[][] gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
 
@@ -43,5 +45,12 @@ public class Model {
         addTile();
     }
 
+    private void compressTiles(Tile[] tiles) {
+
+    }
+
+    private void mergeTiles(Tile[] tiles) {
+
+    }
 
 }
