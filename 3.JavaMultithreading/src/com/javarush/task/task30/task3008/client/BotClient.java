@@ -58,7 +58,6 @@ public class BotClient extends Client {
                 if (format != null) {
                     sendTextMessage("Информация для " + name + ": " + new SimpleDateFormat(format).format(new GregorianCalendar().getTime()));
                 }
-
             }
         }
     }

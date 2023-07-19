@@ -21,7 +21,6 @@ public class View extends JFrame implements ActionListener {
     private final UndoManager undoManager = new UndoManager();
     private final UndoListener undoListener = new UndoListener(undoManager);
 
-
     public View() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
