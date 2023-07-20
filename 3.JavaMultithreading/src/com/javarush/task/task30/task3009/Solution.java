@@ -17,8 +17,17 @@ public class Solution {
 
     private static Set<Integer> getRadix(String number) {
         Set<Integer> set = new HashSet<>();
-
-
+        try {
+            for (int i = 2; i <= 36; i++) {
+                int value = Integer.parseInt(number, 10);
+                String string = Integer.toString(value, i);
+                String reverse = new StringBuilder(string).reverse().toString();
+                if (string.equals(reverse)) {
+                    set.add(i);
+                }
+            }
+        } catch (NumberFormatException ignore) {
+        }
         return set;
     }
 }
