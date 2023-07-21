@@ -3,6 +3,7 @@ package com.javarush.task.task36.task3608.model;
 import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.model.service.UserService;
 import com.javarush.task.task36.task3608.model.service.UserServiceImpl;
+import lombok.Getter;
 
 import java.util.List;
 
