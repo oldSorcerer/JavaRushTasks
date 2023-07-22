@@ -8,7 +8,7 @@ import java.util.*;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ClientGuiModel {
 
-    Set<String> allUserNames = new HashSet<>();
+    final Set<String> allUserNames = new HashSet<>();
 
     @Getter
     @Setter
