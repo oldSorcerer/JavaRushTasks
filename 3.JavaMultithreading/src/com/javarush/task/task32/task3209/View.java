@@ -1,8 +1,8 @@
 package com.javarush.task.task32.task3209;
 
-import com.javarush.task.task32.task3209.listeners.FrameListener;
-import com.javarush.task.task32.task3209.listeners.TabbedPaneChangeListener;
-import com.javarush.task.task32.task3209.listeners.UndoListener;
+import com.javarush.task.task32.task3209.listeners.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import javax.swing.undo.UndoManager;
@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 
 public class View extends JFrame implements ActionListener {
 
+    @Getter
+    @Setter
     private Controller controller;
 
     private final JTabbedPane tabbedPane = new JTabbedPane();
@@ -19,6 +21,8 @@ public class View extends JFrame implements ActionListener {
     private final JEditorPane plainTextPane = new JEditorPane();
 
     private final UndoManager undoManager = new UndoManager();
+
+    @Getter
     private final UndoListener undoListener = new UndoListener(undoManager);
 
     public View() {
@@ -40,14 +44,6 @@ public class View extends JFrame implements ActionListener {
             case "Выход" -> controller.exit();
             case "О программе" -> showAbout();
         }
-    }
-
-    public Controller getController() {
-        return controller;
-    }
-
-    public void setController(Controller controller) {
-        this.controller = controller;
     }
 
     public void init() {
@@ -102,10 +98,6 @@ public class View extends JFrame implements ActionListener {
 
     public boolean canRedo() {
         return undoManager.canRedo();
-    }
-
-    public UndoListener getUndoListener() {
-        return undoListener;
     }
 
     public void undo() {

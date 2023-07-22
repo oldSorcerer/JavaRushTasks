@@ -1,7 +1,10 @@
 package com.javarush.task.task30.task3008.client;
 
+import lombok.Getter;
+
 public class ClientGuiController extends Client {
 
+    @Getter
     private final ClientGuiModel model = new ClientGuiModel();
     private final ClientGuiView view = new ClientGuiView(this);
 
@@ -29,10 +32,6 @@ public class ClientGuiController extends Client {
     @Override
     protected String getUserName() {
         return view.getUserName();
-    }
-
-    public ClientGuiModel getModel() {
-        return model;
     }
 
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package com.javarush.task.task32.task3209;
 
+import lombok.Getter;
+
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
@@ -9,6 +11,7 @@ import java.io.*;
 public class Controller {
 
     private final View view;
+    @Getter
     private HTMLDocument document;
     private File currentFile;
 
@@ -22,10 +25,6 @@ public class Controller {
 
     public void exit() {
         System.exit(0);
-    }
-
-    public HTMLDocument getDocument() {
-        return document;
     }
 
     public void resetDocument() {
