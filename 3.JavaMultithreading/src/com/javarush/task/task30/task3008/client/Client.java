@@ -1,9 +1,6 @@
 package com.javarush.task.task30.task3008.client;
 
-import com.javarush.task.task30.task3008.Connection;
-import com.javarush.task.task30.task3008.ConsoleHelper;
-import com.javarush.task.task30.task3008.Message;
-import com.javarush.task.task30.task3008.MessageType;
+import com.javarush.task.task30.task3008.*;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -42,6 +39,40 @@ public class Client {
             ConsoleHelper.writeMessage("Не удалось отправить сообщение");
             clientConnected = false;
         }
+    }
+
+    public void run() {
+        SocketThread socketThread = getSocketThread();
+        socketThread.setDaemon(true);
+        socketThread.start();
+        try {
+            synchronized (this) {
+                wait();
+            }
+        } catch (InterruptedException e) {
+            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
+            return;
+        }
+
+        if (clientConnected) {
+            ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду 'exit'.");
+            while (clientConnected) {
+                String text = ConsoleHelper.readString();
+                if (text.equals("exit")) {
+                    break;
+                }
+                if (shouldSendTextFromConsole()) {
+                    sendTextMessage(text);
+                }
+            }
+        } else {
+            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Client client = new Client();
+        client.run();
     }
 
     public class SocketThread extends Thread {
@@ -107,39 +138,5 @@ public class Client {
                 notifyConnectionStatusChanged(false);
             }
         }
-    }
-
-    public void run() {
-        SocketThread socketThread = getSocketThread();
-        socketThread.setDaemon(true);
-        socketThread.start();
-        try {
-            synchronized (this) {
-                wait();
-            }
-        } catch (InterruptedException e) {
-            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
-            return;
-        }
-
-        if (clientConnected) {
-            ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду 'exit'.");
-            while (clientConnected) {
-                String text = ConsoleHelper.readString();
-                if (text.equals("exit")) {
-                    break;
-                }
-                if (shouldSendTextFromConsole()) {
-                    sendTextMessage(text);
-                }
-            }
-        } else {
-            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
-        }
-    }
-
-    public static void main(String[] args) {
-        Client client = new Client();
-        client.run();
     }
 }
