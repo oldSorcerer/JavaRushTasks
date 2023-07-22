@@ -1,5 +1,8 @@
 package com.javarush.task.task30.task3008;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -7,10 +10,12 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketAddress;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Connection implements Closeable {
-    private final Socket socket;
-    private final ObjectOutputStream out;
-    private final ObjectInputStream in;
+
+    Socket socket;
+    ObjectOutputStream out;
+    ObjectInputStream in;
 
     public Connection(Socket socket) throws IOException {
         this.socket = socket;

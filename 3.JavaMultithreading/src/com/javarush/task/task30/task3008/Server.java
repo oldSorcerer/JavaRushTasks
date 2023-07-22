@@ -1,5 +1,9 @@
 package com.javarush.task.task30.task3008;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.experimental.FieldDefaults;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -8,9 +12,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Server {
 
-    private static final Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
+    static Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
 
     public static void sendBroadcastMessage(Message message) {
         for (Connection connection : connectionMap.values()) {
@@ -38,12 +43,11 @@ public class Server {
         }
     }
 
+    @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+    @AllArgsConstructor(access = AccessLevel.PRIVATE)
     private static class Handler extends Thread {
-        private final Socket socket;
 
-        private Handler(Socket socket) {
-            this.socket = socket;
-        }
+        Socket socket;
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
 
