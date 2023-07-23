@@ -1,12 +1,15 @@
 package com.javarush.task.task30.task3008.client;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ClientGuiController extends Client {
 
     @Getter
-    private final ClientGuiModel model = new ClientGuiModel();
-    private final ClientGuiView view = new ClientGuiView(this);
+    ClientGuiModel model = new ClientGuiModel();
+    ClientGuiView view = new ClientGuiView(this);
 
     @Override
     protected SocketThread getSocketThread() {

@@ -5,6 +5,7 @@ import com.javarush.task.task30.task3008.ConsoleHelper;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 public class BotClient extends Client {
 
@@ -39,9 +40,9 @@ public class BotClient extends Client {
         protected void processIncomingMessage(String message) {
             ConsoleHelper.writeMessage(message);
             if (message.contains(":")) {
-                int index = message.indexOf(": ");
-                String name = message.substring(0, index);
-                String text = message.substring(index + 2);
+                String[] strings = message.split(":");
+                String name = strings[0];
+                String text = strings[1].trim();
 
                 String format = switch (text) {
                     case "дата" -> "d.MM.yyyy";
@@ -55,8 +56,8 @@ public class BotClient extends Client {
                     default -> null;
                 };
 
-                if (format != null) {
-                    sendTextMessage("Информация для " + name + ": " + new SimpleDateFormat(format).format(new GregorianCalendar().getTime()));
+                if (Objects.nonNull(format)) {
+                    sendTextMessage("Информация для %s: %s".formatted(name, new SimpleDateFormat(format).format(new GregorianCalendar().getTime())));
                 }
             }
         }

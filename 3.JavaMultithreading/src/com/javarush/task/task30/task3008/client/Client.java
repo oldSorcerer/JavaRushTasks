@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Client {
+
     protected Connection connection;
     private volatile boolean clientConnected = false;
 
