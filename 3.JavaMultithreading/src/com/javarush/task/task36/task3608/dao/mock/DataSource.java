@@ -1,31 +1,31 @@
 package com.javarush.task.task36.task3608.dao.mock;
 
 import com.javarush.task.task36.task3608.bean.User;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class DataSource {
-    private static final DataSource ourInstance = new DataSource();
 
-    public static DataSource getInstance() {
-        return ourInstance;
-    }
+    private long maxUserId = 126L;
+    static final DataSource ourInstance = new DataSource();
 
-    private DataSource() {
-    }
-
-    private final List<User> users = new LinkedList<User>() {{
+    @Getter
+    private final List<User> users = new LinkedList<>() {{
         add(new User("Ivanov", 123L, 1));
         add(new User("Petrov", 124L, 2));
         add(new User("Petrov", 125L, 1));
         add(new User("Sidorov", 126L, 2));
     }};
 
-    private long maxUserId = 126L;
-
-    public List<User> getUsers() {
-        return users;
+    public static DataSource getInstance() {
+        return ourInstance;
     }
 
     public User createOrUpdate(User newUser) {

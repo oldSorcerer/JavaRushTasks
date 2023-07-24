@@ -26,6 +26,7 @@ public class User implements Cloneable {
         return id == 0;
     }
 
+    @Override
     public User clone() {
         try {
             return (User) super.clone();

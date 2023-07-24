@@ -1,9 +1,13 @@
 package com.javarush.task.task36.task3608;
 
 import com.javarush.task.task36.task3608.bean.User;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
+@FieldDefaults(level = AccessLevel.PUBLIC, makeFinal = true)
 public final class Util {
-    public static final String DELETED_MARKER = " (deleted)";
+
+    static String DELETED_MARKER = " (deleted)";
 
     public static boolean isUserDeleted(User user) {
         return user.getName().endsWith(DELETED_MARKER);

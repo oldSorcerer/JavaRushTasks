@@ -2,12 +2,15 @@ package com.javarush.task.task36.task3608.view;
 
 import com.javarush.task.task36.task3608.controller.Controller;
 import com.javarush.task.task36.task3608.model.ModelData;
+import lombok.AccessLevel;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class EditUserView implements View {
 
-    private Controller controller;
+    Controller controller;
 
     @Override
     public void refresh(ModelData modelData) {

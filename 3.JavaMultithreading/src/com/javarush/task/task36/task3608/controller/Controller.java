@@ -3,14 +3,17 @@ package com.javarush.task.task36.task3608.controller;
 import com.javarush.task.task36.task3608.model.Model;
 import com.javarush.task.task36.task3608.view.EditUserView;
 import com.javarush.task.task36.task3608.view.UsersView;
+import lombok.AccessLevel;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Controller {
 
-    private Model model;
-    private UsersView usersView;
-    private EditUserView editUserView;
+    Model model;
+    UsersView usersView;
+    EditUserView editUserView;
 
     public void onShowAllUsers() {
         model.loadUsers();

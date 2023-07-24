@@ -2,12 +2,16 @@ package com.javarush.task.task36.task3608.dao;
 
 import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.dao.mock.DataSource;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UserDao {
-    private final DataSource dataSource = DataSource.getInstance();
+
+    DataSource dataSource = DataSource.getInstance();
 
     public User getUserById(long id) {
         List<User> users = dataSource.getUsers();
