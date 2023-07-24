@@ -6,24 +6,6 @@ public class CarModel {
     private int speed;
     private int maxSpeed;
 
-    public void increaseSpeed(int seconds) {
-        if (speed < maxSpeed) {
-            speed += (3.5 * seconds);
-        }
-        if (speed > maxSpeed) {
-            speed = maxSpeed;
-        }
-    }
-
-    public void decreaseSpeed(int seconds) {
-        if (speed > 0) {
-            speed -= (12 * seconds);
-        }
-        if (speed < 0) {
-            speed = 0;
-        }
-    }
-
     public String getModel() {
         return model;
     }
