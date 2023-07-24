@@ -14,7 +14,7 @@ public class UsersView implements View {
 
     @Override
     public void refresh(ModelData modelData) {
-        System.out.println("All " + (modelData.isDisplayDeletedUserList() ? "deleted " :"") + "users:");
+        System.out.println("All " + (modelData.isDisplayDeletedUserList() ? "deleted " : "") + "users:");
         modelData.getUsers().stream().map(user -> "\t" + user).forEach(System.out::println);
         System.out.println("===================================================");
     }
