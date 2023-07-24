@@ -37,10 +37,7 @@ public class Game2048 extends Game {
         int y = getRandomNumber(SIDE);
         int number = getRandomNumber(10);
         if (gameField[x][y] == 0) {
-            if (number < 9) {
-                gameField[x][y] = 2;
-            } else
-                gameField[x][y] = 4;
+            gameField[x][y] = number < 9 ? 2 : 4;
         } else
             createNewNumber();
     }
