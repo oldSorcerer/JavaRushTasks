@@ -1,14 +1,16 @@
 package com.javarush.task.task36.task3608.model;
 
 import com.javarush.task.task36.task3608.bean.User;
-import lombok.Getter;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class FakeModel implements Model {
 
-    private final ModelData modelData = new ModelData();
+    ModelData modelData = new ModelData();
 
     @Override
     public ModelData getModelData() {

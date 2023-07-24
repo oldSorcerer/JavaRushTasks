@@ -2,16 +2,19 @@ package com.javarush.task.task36.task3608.view;
 
 import com.javarush.task.task36.task3608.controller.Controller;
 import com.javarush.task.task36.task3608.model.ModelData;
+import lombok.AccessLevel;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 
 @Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class UsersView implements View {
 
-    private Controller controller;
+    Controller controller;
 
     @Override
     public void refresh(ModelData modelData) {
-        System.out.println("All " + (modelData.isDisplayDeletedUserList() ? "deleted " :"") + "users:");
+        System.out.println("All " + (modelData.isDisplayDeletedUserList() ? "deleted " : "") + "users:");
         modelData.getUsers().stream().map(user -> "\t" + user).forEach(System.out::println);
         System.out.println("===================================================");
     }

@@ -3,14 +3,16 @@ package com.javarush.task.task36.task3608.model;
 import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.model.service.UserService;
 import com.javarush.task.task36.task3608.model.service.UserServiceImpl;
-import lombok.Getter;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class MainModel implements Model {
 
-    private final ModelData modelData = new ModelData();
-    private final UserService userService = new UserServiceImpl();
+    ModelData modelData = new ModelData();
+    UserService userService = new UserServiceImpl();
 
     @Override
     public ModelData getModelData() {
