@@ -11,6 +11,6 @@ public class Solution {
     }
 
     public void createExpression(int number) {
-        //напишите тут ваш код
+
     }
 }
