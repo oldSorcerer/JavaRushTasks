@@ -1,2 +1,2 @@
 alter table employee
-drop column position;
+    drop column position;
