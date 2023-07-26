@@ -1,1 +1,4 @@
-select name from part where name like '%Slope%Slope%' or name like '%Clip%Clip%'
+select name
+from part
+where name like '%Slope%Slope%'
+   or name like '%Clip%Clip%'
