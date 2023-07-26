@@ -1,1 +1,3 @@
-select weight from part order by weight asc
+select weight
+from part
+order by weight asc
