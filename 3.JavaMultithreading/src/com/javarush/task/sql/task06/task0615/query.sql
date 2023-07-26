@@ -1,2 +1,3 @@
-delete from task
+delete
+from task
 where id = 5;
