@@ -1,2 +1,2 @@
 alter table cities
-drop column population;
+    drop column population;
