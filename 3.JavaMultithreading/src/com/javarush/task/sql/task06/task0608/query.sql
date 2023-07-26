@@ -1,2 +1,3 @@
 insert into customers
-select * from suppliers;
+select *
+from suppliers;

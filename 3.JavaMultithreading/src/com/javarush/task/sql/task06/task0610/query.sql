@@ -1,1 +1,2 @@
-update cars set euro = 7;
+update cars
+set euro = 7;
