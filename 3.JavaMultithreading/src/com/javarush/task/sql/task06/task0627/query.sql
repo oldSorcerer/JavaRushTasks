@@ -1,2 +1,2 @@
 alter table employee
-drop salary_index;
+    drop salary_index;

@@ -1,2 +1,3 @@
 alter table employee
-alter column salary float;
+alter
+column salary float;
