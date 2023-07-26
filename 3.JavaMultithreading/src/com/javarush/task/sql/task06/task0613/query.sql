@@ -1,3 +1,3 @@
-update employee set
-salary = salary + 500
+update employee
+set salary = salary + 500
 where position = 'manager';
