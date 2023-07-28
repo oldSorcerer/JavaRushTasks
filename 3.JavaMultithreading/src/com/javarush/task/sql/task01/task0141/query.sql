@@ -1,1 +1,3 @@
-SELECT * FROM parts ORDER BY required DESC, id ASC;
+SELECT *
+FROM parts
+ORDER BY required DESC, id ASC;
