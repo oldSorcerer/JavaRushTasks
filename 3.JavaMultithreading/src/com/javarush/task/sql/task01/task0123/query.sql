@@ -1,1 +1,3 @@
-SELECT * FROM car WHERE brand IN ('renault', 'opel', 'seat', 'skoda');
+SELECT *
+FROM car
+WHERE brand IN ('renault', 'opel', 'seat', 'skoda');
