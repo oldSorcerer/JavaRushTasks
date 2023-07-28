@@ -1,1 +1,3 @@
-SELECT * FROM car LIMIT 3;
+SELECT *
+FROM car
+LIMIT 3;

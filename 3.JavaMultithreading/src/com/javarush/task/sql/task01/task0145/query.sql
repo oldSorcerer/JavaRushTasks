@@ -1,1 +1,3 @@
-SELECT * FROM parts WHERE description IS NULL;
+SELECT *
+FROM parts
+WHERE description IS NULL;

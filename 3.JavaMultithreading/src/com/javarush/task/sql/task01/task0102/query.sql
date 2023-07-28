@@ -1,1 +1,2 @@
-SELECT id, name, smth FROM employee;
+SELECT id, name, smth
+FROM employee;
