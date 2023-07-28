@@ -1,1 +1,2 @@
-SELECT * FROM brand;
+SELECT *
+FROM brand;
