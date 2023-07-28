@@ -1,1 +1,2 @@
-SELECT id, name, age FROM employee;
+SELECT id, name, age
+FROM employee;
