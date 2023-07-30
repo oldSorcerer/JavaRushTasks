@@ -1,1 +1,1 @@
-select nullif(2,3)
+select nullif(2, 3)
