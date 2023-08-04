@@ -1,1 +1,2 @@
-select rand(), rand(1), rand(a) from math
+select rand(), rand(1), rand(a)
+from math

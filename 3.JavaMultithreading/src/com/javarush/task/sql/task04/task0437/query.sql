@@ -1,1 +1,2 @@
-select name, lower(name), upper(name) from employee
+select name, lower(name), upper(name)
+from employee

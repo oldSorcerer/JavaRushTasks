@@ -1,1 +1,2 @@
-select length(name), char_length(name) from employee
+select length(name), char_length(name)
+from employee

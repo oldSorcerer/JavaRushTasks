@@ -1,1 +1,2 @@
-select round(a), round(b) from math
+select round(a), round(b)
+from math

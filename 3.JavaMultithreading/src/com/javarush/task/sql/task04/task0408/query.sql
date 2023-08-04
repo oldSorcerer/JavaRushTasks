@@ -1,1 +1,2 @@
-select ~a from logic
+select ~a
+from logic

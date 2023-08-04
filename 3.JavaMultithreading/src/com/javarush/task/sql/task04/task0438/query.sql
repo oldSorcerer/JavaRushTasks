@@ -1,1 +1,2 @@
-select replace(position, 'developer', 'software developer' )  from employee
+select replace(position, 'developer', 'software developer')
+from employee

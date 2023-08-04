@@ -1,1 +1,2 @@
-select bit_count(a) from logic
+select bit_count(a)
+from logic
