@@ -1,1 +1,2 @@
-select floor(a), floor(b) from math
+select floor(a), floor(b)
+from math
