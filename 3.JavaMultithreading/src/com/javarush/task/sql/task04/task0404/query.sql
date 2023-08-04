@@ -1,1 +1,2 @@
-select a div b from math
+select a div b
+from math
