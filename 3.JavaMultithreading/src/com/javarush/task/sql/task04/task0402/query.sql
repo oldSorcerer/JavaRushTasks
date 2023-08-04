@@ -1,1 +1,2 @@
-select a / b, a * b from math
+select a / b, a * b
+from math
