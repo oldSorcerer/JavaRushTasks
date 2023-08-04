@@ -1,1 +1,2 @@
-select a >> b from logic
+select a >> b
+from logic
