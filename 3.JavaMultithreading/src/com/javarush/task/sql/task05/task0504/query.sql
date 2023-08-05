@@ -7,6 +7,3 @@ values ('Joanne', 'Rowling', 'J. K. Rowling'),
        ('Lewis', 'Carroll', 'Lewis Carroll'),
        ('Astrid', 'Lindgren', 'Astrid Lindgren'),
        ('Richard', 'Scarry', 'Richard Scarry');
-
-
-
