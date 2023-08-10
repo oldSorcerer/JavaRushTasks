@@ -2,6 +2,8 @@ package com.javarush.task.task31.task3110;
 
 import com.javarush.task.task31.task3110.exception.PathIsNotFoundException;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -17,9 +19,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ZipFileManager {
 
-    private final Path zipFile;
+    Path zipFile;
 
     public ZipFileManager(Path zipFile) {
         this.zipFile = zipFile;
