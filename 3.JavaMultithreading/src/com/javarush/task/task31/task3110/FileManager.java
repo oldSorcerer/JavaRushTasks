@@ -1,5 +1,9 @@
 package com.javarush.task.task31.task3110;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
+
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
@@ -7,9 +11,11 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class FileManager {
-    private final Path rootPath;
-    private final List<Path> fileList;
+    Path rootPath;
+    List<Path> fileList;
 
     public FileManager(Path rootPath) throws IOException {
         this.rootPath = rootPath;
@@ -27,9 +33,5 @@ public class FileManager {
                 }
             }
         }
-    }
-
-    public List<Path> getFileList() {
-        return fileList;
     }
 }
