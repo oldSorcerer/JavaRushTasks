@@ -23,7 +23,7 @@ public class ConsoleHelper {
         try {
             string = console.readLine();
         } catch (IOException e) {
-            System.out.println("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
+            writeMessage("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
             string = readString();
         }
         return string;
@@ -34,7 +34,7 @@ public class ConsoleHelper {
         try {
             result = Integer.parseInt(readString());
         } catch (NumberFormatException e) {
-            System.out.println("Произошла ошибка при попытке ввода числа. Попробуйте еще раз.");
+            writeMessage("Произошла ошибка при попытке ввода числа. Попробуйте еще раз.");
             result = readInt();
         }
         return result;
