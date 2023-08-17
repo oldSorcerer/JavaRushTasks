@@ -9,17 +9,16 @@ public class Solution {
     public static Human sysadmin = new Human();
 
     public static void main(String[] args) {
-        Class[] music = {
-                new AlternativeMetal().getClass(), new BlackMetal().getClass(),
-                new DeathMetal().getClass(),new DoomMetal().getClass(),
-                new SpeedMetal().getClass(), new FolkMetal().getClass(),
-                new ThrashMetal().getClass(), new GlamMetal().getClass(),
-                new HeavyMetal().getClass(), new PowerMetal().getClass(),
-                new ProgressiveMetal().getClass(), new GothicMetal().getClass(),
-                new SymphonicMetal().getClass(),
-                new IndustrialMetal().getClass(), new Metalcore().getClass(),
+        Class<?>[] music = {
+                AlternativeMetal.class, BlackMetal.class,
+                DeathMetal.class, DoomMetal.class,
+                SpeedMetal.class, FolkMetal.class,
+                ThrashMetal.class, GlamMetal.class,
+                HeavyMetal.class, PowerMetal.class,
+                ProgressiveMetal.class, GothicMetal.class,
+                SymphonicMetal.class,
+                IndustrialMetal.class, Metalcore.class,
         };
         sysadmin.load(music);
-
     }
 }
