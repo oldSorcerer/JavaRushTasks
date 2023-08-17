@@ -101,7 +101,7 @@ public class Server {
                 ConsoleHelper.writeMessage("Произошла ошибка при обмене данными с удаленным адресом " +
                         socket.getRemoteSocketAddress());
             }
-            if (userName != null) {
+            if (Objects.nonNull(userName)) {
                 connectionMap.remove(userName);
                 sendBroadcastMessage(new Message(MessageType.USER_REMOVED, userName));
             }
