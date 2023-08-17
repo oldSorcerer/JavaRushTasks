@@ -29,7 +29,7 @@ public class Solution {
 
         Monkey monkey = new Monkey("Simka");
 
-        //Add reference here
+        SoftReference<Monkey> reference = new SoftReference<>(monkey);
 
         helper.callGC();
 
@@ -37,9 +37,9 @@ public class Solution {
 
         helper.callGC();
         helper.consumeHeap();
-//
-//        if (reference.get() == null)
-//            System.out.println("Finalized");
+
+        if (reference.get() == null)
+            System.out.println("Finalized");
 
         helper.finish();
     }
