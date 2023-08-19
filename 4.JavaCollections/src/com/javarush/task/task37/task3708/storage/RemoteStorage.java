@@ -1,10 +1,12 @@
 package com.javarush.task.task37.task3708.storage;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class RemoteStorage implements Storage {
+
     private long id = 0;
-    private HashMap<Long, Object> storageMap = new HashMap<>();
+    private final Map<Long, Object> storageMap = new HashMap<>();
 
     @Override
     public void add(Object o) {
