@@ -100,10 +100,10 @@ public class Client {
         protected void clientHandshake() throws IOException, ClassNotFoundException {
             while (true) {
                 Message message = connection.receive();
-                if (message.getType() == MessageType.NAME_REQUEST) {
+                if (MessageType.NAME_REQUEST == message.getType()) {
                     String userName = getUserName();
                     connection.send(new Message(MessageType.USER_NAME, userName));
-                } else if (message.getType() == MessageType.NAME_ACCEPTED) {
+                } else if (MessageType.NAME_ACCEPTED == message.getType()) {
                     notifyConnectionStatusChanged(true);
                     return;
                 } else {
@@ -115,14 +115,15 @@ public class Client {
         protected void clientMainLoop() throws IOException, ClassNotFoundException {
             while (true) {
                 Message message = connection.receive();
-                if (message.getType() == MessageType.TEXT) {
+                if (MessageType.TEXT == message.getType()) {
                     processIncomingMessage(message.getData());
-                } else if (message.getType() == MessageType.USER_ADDED) {
+                } else if (MessageType.USER_ADDED == message.getType()) {
                     informAboutAddingNewUser(message.getData());
-                } else if (message.getType() == MessageType.USER_REMOVED) {
+                } else if (MessageType.USER_REMOVED == message.getType()) {
                     informAboutDeletingNewUser(message.getData());
                 } else {
                     throw new IOException("Unexpected MessageType");
+
                 }
             }
         }
