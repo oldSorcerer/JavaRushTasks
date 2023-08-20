@@ -21,8 +21,8 @@ package com.javarush.task.task38.task3810;
 //                        @Author("Игорь"),
 //                        @Author(value = "Витек", position = Position.SENIOR)})
 //})
-public class Solution {
-    public static void main(String[] args) {
-        System.out.println(Solution.class.getAnnotation(Changelog.class).toString());
-    }
-}
+//public class Solution {
+//    public static void main(String[] args) {
+//        System.out.println(Solution.class.getAnnotation(Changelog.class).toString());
+//    }
+//}
