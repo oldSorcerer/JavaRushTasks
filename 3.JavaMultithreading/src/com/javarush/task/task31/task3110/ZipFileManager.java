@@ -15,6 +15,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -71,7 +72,7 @@ public class ZipFileManager {
         List<FileProperties> list = new ArrayList<>();
         try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
             ZipEntry zipEntry;
-            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+            while (Objects.nonNull(zipEntry = zipInputStream.getNextEntry())) {
 
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 copyData(zipInputStream, outputStream);
@@ -97,7 +98,7 @@ public class ZipFileManager {
 
         try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
             ZipEntry zipEntry;
-            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+            while (Objects.nonNull(zipEntry = zipInputStream.getNextEntry())) {
                 Path path = outputFolder.resolve(zipEntry.getName());
                 if (Files.isDirectory(path)) {
                     Files.createDirectories(path);
@@ -122,7 +123,7 @@ public class ZipFileManager {
         try (ZipOutputStream zipOutputStream = new ZipOutputStream(Files.newOutputStream(temp));
              ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
             ZipEntry zipEntry;
-            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+            while (Objects.nonNull(zipEntry = zipInputStream.getNextEntry())) {
                 if (pathList.contains(Paths.get(zipEntry.getName()))) {
                     ConsoleHelper.writeMessage(String.format("Файл '%s' удален из архива.", zipEntry.getName()));
                 } else {
@@ -151,7 +152,7 @@ public class ZipFileManager {
              ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
             ZipEntry zipEntry;
             List<Path> archivePathList = new ArrayList<>();
-            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+            while (Objects.nonNull(zipEntry = zipInputStream.getNextEntry())) {
                 zipOutputStream.putNextEntry(zipEntry);
                 copyData(zipInputStream, zipOutputStream);
                 zipInputStream.closeEntry();
