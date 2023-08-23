@@ -1,4 +1,48 @@
-taskKey="com.javarush.task.task28.task2810.big03"\n\nAggregator (3)
+taskKey="com.javarush.task.task28.task2810.big04"\n\nAggregator (4)
+
+Открой сайт поиска работы - https://grc.ua/ и https://hh.ru/
+В строке поиска набери &quot;java Kiev&quot;, снизу перейди на вторую страницу, т.к. урлы часто отличаются на первой странице и далее.
+У меня получилась такая ссылка:
+https://grc.ua/search/vacancy?text=java+Kiev&amp;page=1 и https://hh.ru/search/vacancy?text=java+Kiev&amp;page=1
+Из этого следует, что
+1) если тебе нужно будет фильтровать по городу, то ты добавишь его после слова java, разделив их знаком &quot;+&quot;,
+2) нумерация страниц начинается с 0.
+
+Итак, ссылка будет примерно такой:
+https://grc.ua/search/vacancy?text=java+ADDITIONAL_VALUE&amp;page=PAGE_VALUE
+
+1. Из полученной ссылки в HHStrategy создай приватную строковую константу URL_FORMAT, которая будет передаваться в String.format().
+В результате подстановки константы URL_FORMAT в String.format(URL_FORMAT, &quot;Kiev&quot;, 3) с такими параметрами, результат должен быть таким:
+&quot;https://grc.ua/search/vacancy?text=java+Kiev&amp;page=3&quot;
+или
+&quot;https://hh.ru/search/vacancy?text=java+Kiev&amp;page=3&quot;
+Для этого скопируй ссылку в код и нажми на ней нужную комбинацию клавиш.
+Ctrl+Alt+C(Constant) - создание констант,
+Ctrl+Alt+M(Method) - создание методов,
+Ctrl+Alt+V(Variable) - создание переменных.
+
+2. Тебе нужно программно получить исходный код страницы. Это HTTP запрос. Тебе понадобится Java HTML Parser.
+Хороший парсер jsoup, будешь использовать его. Мы будем использовать версию 1.9.2.
+
+3. Скачать и подключить новые либы можно так:
+В IDEA открой Project Structure (в меню File).
+Слева выбери Project Settings -&gt; Libraries, в окошке справа сверху нажми &quot;+&quot;.
+Выбери &quot;From Maven...&quot;. В окне поиска введи &quot;org.jsoup:jsoup:1.9.2&quot;. Поставь галочку на &quot;Download to:&quot; и выбери куда скачать либу.
+Также поставь галочки на &quot;Transitive dependencies&quot;, &quot;Sources&quot;.
+В окне Choose Modules выбери модуль 4.JavaCollections.
+
+4. Прочитай дополнительный материал к лекции в Сообществе.
+https://javarush.ru/groups/posts/2007-legkiy-parsing-html-s-pomojshjhju-jsoup
+https://javarush.ru/groups/posts/1086-3-primera-kak-razobratjh-html-fayl-v-java-ispoljhzuja-jsoup
+
+
+Требования:
+1.	В классе HHStrategy создай приватную строковую константу URL_FORMAT.
+2.	Результат команды String.format(URL_FORMAT, String, int) должен генерироваться согласно заданию.
+3.	Для выполнения дальнейших указаний, подключи библиотеку jsoup версии 1.9.2 (проверка этого требования не выполняется).
+
+
+Aggregator (4)
 
 Начиная с этого задания ты начнешь писать логику получения данных с сайта.
 Эта логика будет полностью сосредоточена в классах, реализующих интерфейс Strategy.
@@ -22,15 +66,8 @@ taskKey="com.javarush.task.task28.task2810.big03"\n\nAggregator (3)
 Этот класс будет реализовывать конкретную стратегию работы с сайтом поиска работы (https://grc.ua/ и https://hh.ru/).
 
 
-Требования:
-1.	В корне задачи создай пакет vo, в нем создай класс Vacancy.
-2.	В классе Provider создай пустой публичный метод getJavaVacancies(String searchString), который будет возвращать список вакансий.
-3.	В классе Vacancy создай приватные строковые поля: title, salary, city, companyName, siteName, url.
-4.	К полям в классе Vacancy создай геттеры и сеттеры.
-5.	В пакете model создай класс HHStrategy, который реализует интерфейс Strategy.
 
-
-Aggregator (3)
+Aggregator (4)
 
 1. В корне задачи создай класс Controller, в нем будет содержаться логика работы программы.
 
@@ -51,7 +88,7 @@ Aggregator (3)
 
 
 
-Aggregator (3)
+Aggregator (4)
 
 Пришло время немного поработать с информацией в инете. В этом задании ты будешь писать агрегатор java вакансий.
 Что у нас должно быть?

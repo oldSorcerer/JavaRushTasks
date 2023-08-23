@@ -9,17 +9,16 @@ public class Controller {
     private final Provider[] providers;
 
     public Controller(Provider... providers) {
-        if (providers.length != 0) {
-            this.providers = providers;
-        } else {
+        if (providers.length == 0) {
             throw new IllegalArgumentException();
         }
+        this.providers = providers;
     }
 
     @Override
     public String toString() {
         return "Controller{" +
-                "providers=" + Arrays.toString(providers) +
-                '}';
+               "providers=" + Arrays.toString(providers) +
+               '}';
     }
 }
