@@ -21,12 +21,11 @@ public class Solution {
             binaryNumber = (decimalNumber % 2) + binaryNumber;
             decimalNumber = decimalNumber / 2;
         }
-
         return binaryNumber;
     }
 
     public static int toDecimal(String binaryNumber) {
-        if (binaryNumber == null || binaryNumber.equals("")) {
+        if (binaryNumber == null || binaryNumber.isEmpty()) {
             return 0;
         }
         int decimalNumber = 0;
