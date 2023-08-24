@@ -16,7 +16,7 @@ public class Solution {
     private static final int VALUE_MULTIPLIER = 10;
 
     private static final List<Key> KEYS = new ArrayList<>();
-    private static final Map<Key, Integer> MAP = new HashMap<>();
+    private static final ConcurrentHashMap<Key, Integer> MAP = new ConcurrentHashMap<>();
 
     static {
         for (int i = 0; i < MAP_SIZE; i++) {
@@ -36,10 +36,7 @@ public class Solution {
             int index = i % MAP_SIZE;
             Key key = KEYS.get(index);
 
-            Runnable task = () -> {
-                if (MAP.get(key) == key.getIntField())
-                    MAP.put(key, MAP.get(key) * VALUE_MULTIPLIER);
-            };
+            Runnable task = () -> MAP.replace(key, key.getIntField(), key.getIntField() * VALUE_MULTIPLIER);
 
             executor.submit(task);
         }
