@@ -7,6 +7,7 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.*;
+import java.util.Objects;
 
 public class Controller {
 
@@ -28,7 +29,7 @@ public class Controller {
     }
 
     public void resetDocument() {
-        if (document != null) {
+        if (Objects.nonNull(document)) {
             document.removeUndoableEditListener(view.getUndoListener());
         }
         document = (HTMLDocument) new HTMLEditorKit().createDefaultDocument();

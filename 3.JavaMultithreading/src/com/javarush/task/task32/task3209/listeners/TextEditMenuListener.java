@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import java.awt.*;
+import java.util.Arrays;
 
 public class TextEditMenuListener implements MenuListener {
 
@@ -19,9 +20,7 @@ public class TextEditMenuListener implements MenuListener {
     public void menuSelected(MenuEvent menuEvent) {
         JMenu jMenu = (JMenu) menuEvent.getSource();
         Component[] components = jMenu.getMenuComponents();
-        for (Component component : components) {
-            component.setEnabled(view.isHtmlTabSelected());
-        }
+        Arrays.stream(components).forEach(component -> component.setEnabled(view.isHtmlTabSelected()));
     }
 
     @Override
