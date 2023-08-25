@@ -3,7 +3,7 @@ taskKey="com.javarush.task.jdk13.task43.task4307"\n\nШило на мыло
 Твоя задача - изменить код методов printFirstNonNull, printDefaultValueIfNullObject и printIfAllNotNull класса Solution,
 чтобы в решении вместо методов класса ObjectUtils библиотеки apache commons,
 использовались методы классов Objects и Strings:
-1) Метод printFirstNonNull должен выводить на экран первый не null элемент массива, переданном ему в качестве параметра.
+1) Метод printFirstNonNull должен выводить на экран первый не null элемент массива, переданный ему в качестве параметра.
 Решение должно использовать методы isNull (для проверки входного массива) и nonNull (для поиска не null элемента)
 класса Objects. Старайся максимально сохранить функционал метода.
 2) Метод printDefaultValueIfNullObject должен выводить на экран элементы переданного ему массива,
