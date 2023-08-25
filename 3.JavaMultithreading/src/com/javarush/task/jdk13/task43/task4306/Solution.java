@@ -4,7 +4,7 @@ package com.javarush.task.jdk13.task43.task4306;
 В поиске ботана
 */
 
-//import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.ObjectUtils;
 
 public class Solution {
 
@@ -17,10 +17,9 @@ public class Solution {
     }
 
     public static String compareStudentGrades(Student studentOne, Student studentTwo) {
-        //напишите тут ваш код
+        if (ObjectUtils.allNotNull(studentOne, studentTwo)) {
 
-        return null;
+        }
+        return "Make sure there are no null objects";
     }
 }
-
-

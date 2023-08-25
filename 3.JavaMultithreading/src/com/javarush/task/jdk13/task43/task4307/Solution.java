@@ -1,6 +1,7 @@
 package com.javarush.task.jdk13.task43.task4307;
 
-//import org.apache.commons.lang3.ObjectUtils;
+import java.util.Arrays;
+import java.util.Objects;
 
 /* 
 Шило на мыло
@@ -17,12 +18,15 @@ public class Solution {
     }
 
     public static void printFirstNonNull(final String... values) {
-//        System.out.println(ObjectUtils.firstNonNull(values));
+
+        if (Objects.isNull(values)) {
+            System.out.println((Object) null);
+        }
+
+        Arrays.stream(values).filter(Objects::nonNull).findFirst().ifPresent(System.out::println);
     }
 
     public static void printDefaultValueIfNullObject(final String[] values, final String defaultValue) {
-        for (String o : values) {
-//            System.out.println(ObjectUtils.defaultIfNull(o, defaultValue));
-        }
+        Arrays.stream(values).forEach(value -> System.out.println(Objects.requireNonNullElse(value, defaultValue)));
     }
 }

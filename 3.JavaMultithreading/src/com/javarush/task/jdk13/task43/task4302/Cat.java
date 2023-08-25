@@ -8,10 +8,10 @@ import org.apache.commons.lang3.builder.*;
 
 public class Cat {
 
-    private String name;
-    private int age;
-    private transient int weight;
-    private transient String breed;
+    private final String name;
+    private final int age;
+    private final transient int weight;
+    private final transient String breed;
 
     public Cat(String name, int age, int weight, String breed) {
         this.name = name;
@@ -30,8 +30,6 @@ public class Cat {
 
     @Override
     public int hashCode() {
-        //напишите тут ваш код
-
-        return 0;
+        return new HashCodeBuilder().append(age).append(breed).toHashCode();
     }
 }

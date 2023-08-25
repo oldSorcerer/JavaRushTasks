@@ -4,12 +4,12 @@ package com.javarush.task.jdk13.task43.task4304;
 Нам null-ы не страшны
 */
 
-//import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class Person implements Comparable<Person> {
 
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
 
     public Person(String name, int age) {
         this.name = name;
@@ -27,8 +27,6 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        //напишите тут ваш код
-
-        return 0;
+        return StringUtils.compare(this.name, o.name);
     }
 }
