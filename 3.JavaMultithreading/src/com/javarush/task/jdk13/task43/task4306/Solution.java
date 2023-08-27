@@ -19,7 +19,7 @@ public class Solution {
     public static String compareStudentGrades(Student studentOne, Student studentTwo) {
         int score = 0;
         if (ObjectUtils.allNotNull(studentOne, studentTwo)) {
-            score = score + ObjectUtils.compare(studentOne.getMathScore(), studentTwo.getMathScore());
+            score += ObjectUtils.compare(studentOne.getMathScore(), studentTwo.getMathScore());
             score = score + ObjectUtils.compare(studentOne.getPhysicsScore(), studentTwo.getPhysicsScore());
             score = score + ObjectUtils.compare(studentOne.getChemistryScore(), studentTwo.getChemistryScore());
             score = score + ObjectUtils.compare(studentOne.getBiologyScore(), studentTwo.getBiologyScore());
