@@ -3,14 +3,14 @@ package com.javarush.task.jdk13.task38.task3802;
 /* 
 Тикеты
 */
-//
-//@Ticket(
+
+@Ticket(
 //        priority = Ticket.Priority.HIGH,
 //        createdBy = "Noodles",
 //        tags = {"bug", "fix asap"}
-//)
-//public class Solution {
-//    public static void main(String[] args) {
-//
-//    }
-//}
+)
+public class Solution {
+    public static void main(String[] args) {
+
+    }
+}
