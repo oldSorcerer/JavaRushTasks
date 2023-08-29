@@ -29,6 +29,7 @@ public class Solution {
         } else {
             return "Make sure there are no null objects";
         }
+
         if (score > 0) {
             return studentOne.getName() + " has a higher grades score";
         }else if (score < 0) {

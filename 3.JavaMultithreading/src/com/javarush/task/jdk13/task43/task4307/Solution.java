@@ -10,11 +10,11 @@ import java.util.Objects;
 public class Solution {
 
     public static void main(String[] args) {
-        String[] array1 = {null, "hello", "ok", null, "bye"};
+        String[] array = {null, "hello", "ok", null, "bye"};
 
-        printFirstNonNull(array1);
+        printFirstNonNull(array);
         System.out.println("----------");
-        printDefaultValueIfNullObject(array1, "oops");
+        printDefaultValueIfNullObject(array, "oops");
     }
 
     public static void printFirstNonNull(final String... values) {

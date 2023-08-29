@@ -8,11 +8,11 @@ import org.apache.commons.lang3.builder.StandardToStringStyle;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class Person {
-    private String name;
-    private int age;
-    private int weight;
-    private int height;
-    private transient String sex;
+    private final String name;
+    private final int age;
+    private final int weight;
+    private final int height;
+    private final transient String sex;
 
     public Person(String name, int age, int weight, int height, String sex) {
         this.name = name;
