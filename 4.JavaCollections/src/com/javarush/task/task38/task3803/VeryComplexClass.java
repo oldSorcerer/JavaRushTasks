@@ -10,11 +10,12 @@ Runtime исключения (unchecked exception)
 
 public class VeryComplexClass {
     public void methodThrowsClassCastException() {
-
+        String string = (String) new Object();
     }
 
     public void methodThrowsNullPointerException() {
-
+        Object object = null;
+        int i = object.hashCode();
     }
 
     public static void main(String[] args) {
