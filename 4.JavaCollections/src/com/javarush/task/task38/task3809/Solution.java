@@ -16,14 +16,13 @@ public class Solution {
 
         System.out.println("Проверка №3:");
         ReflectionAnnotationUtil.check(new IncorrectAccount());
-/* Ожидаемый вывод:
-
-Проверка №1:
-Поле amount в классе JavaRushBankAccount имеет аннотацию LongPositive, но его значение не положительное.
-Проверка №2:
-Проверка №3:
-Поле amountString в классе IncorrectAccount имеет аннотацию LongPositive, но его тип String.
-
-*/
     }
 }
+/* Ожидаемый вывод:
+
+    Проверка №1:
+    Поле amount в классе JavaRushBankAccount имеет аннотацию LongPositive, но его значение не положительное.
+    Проверка №2:
+    Проверка №3:
+    Поле amountString в классе IncorrectAccount имеет аннотацию LongPositive, но его тип String.
+*/
