@@ -1,17 +1,17 @@
 package com.javarush.task.task38.task3809;
 
-public class JavaRushBankAccount {
-    private String ownerName;
+import lombok.Getter;
 
+public class JavaRushBankAccount {
+
+    private final String ownerName;
+
+    @Getter
     @LongPositive
     private long amount;
 
     public JavaRushBankAccount(String ownerName) {
         this.ownerName = ownerName;
-    }
-
-    public long getAmount() {
-        return amount;
     }
 
     public void setAmount(long amount) {

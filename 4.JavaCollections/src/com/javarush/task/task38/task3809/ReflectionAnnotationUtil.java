@@ -3,6 +3,7 @@ package com.javarush.task.task38.task3809;
 import java.lang.reflect.Field;
 
 public final class ReflectionAnnotationUtil {
+
     public static void check(Object someObject) throws IllegalAccessException {
         Class<?> testedClass = someObject.getClass();
         for (Field field : testedClass.getDeclaredFields()) {
