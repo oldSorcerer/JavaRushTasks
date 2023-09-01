@@ -21,4 +21,8 @@ public class Controller {
                "providers=" + Arrays.toString(providers) +
                '}';
     }
+
+    public void scan() {
+
+    }
 }
