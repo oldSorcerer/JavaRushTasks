@@ -1,22 +1,21 @@
 package com.javarush.task.task32.task3209.listeners;
 
 import com.javarush.task.task32.task3209.View;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 import javax.swing.*;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class UndoMenuListener implements MenuListener {
 
-    private final View view;
-    private final JMenuItem undoMenuItem;
-    private final JMenuItem redoMenuItem;
-
-    public UndoMenuListener(View view, JMenuItem undoMenuItem, JMenuItem redoMenuItem) {
-        this.view = view;
-        this.undoMenuItem = undoMenuItem;
-        this.redoMenuItem = redoMenuItem;
-    }
+    View view;
+    JMenuItem undoMenuItem;
+    JMenuItem redoMenuItem;
 
     @Override
     public void menuSelected(MenuEvent MenuEvent) {
