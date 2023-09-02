@@ -17,6 +17,7 @@ public class Provider {
     }
 
     public List<Vacancy> getJavaVacancies(String searchString) {
+
         return null;
     }
 }
