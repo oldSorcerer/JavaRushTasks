@@ -22,6 +22,5 @@ public class SubscriptAction extends StyledEditorKit.StyledTextAction {
             StyleConstants.setSubscript(simpleAttributeSet, !StyleConstants.isSubscript(mutableAttributeSet));
             setCharacterAttributes(editor, simpleAttributeSet, false);
         }
-
     }
 }

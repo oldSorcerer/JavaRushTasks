@@ -18,5 +18,4 @@ public class TabbedPaneChangeListener implements ChangeListener {
     public void stateChanged(ChangeEvent e) {
         view.selectedTabChanged();
     }
-
 }
