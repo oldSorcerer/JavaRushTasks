@@ -4,6 +4,7 @@ import javax.swing.filechooser.FileFilter;
 import java.io.File;
 
 public class HTMLFileFilter extends FileFilter {
+
     @Override
     public boolean accept(File file) {
         return file.isDirectory()
