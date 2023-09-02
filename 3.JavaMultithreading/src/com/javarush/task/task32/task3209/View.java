@@ -70,8 +70,8 @@ public class View extends JFrame implements ActionListener {
 
     public void initEditor() {
         htmlTextPane.setContentType("text/html");
-        tabbedPane.add("HTML", new JScrollPane(htmlTextPane));
-        tabbedPane.add("Текст", new JScrollPane(plainTextPane));
+        tabbedPane.add("Текст", new JScrollPane(htmlTextPane));
+        tabbedPane.add("HTML", new JScrollPane(plainTextPane));
         tabbedPane.setPreferredSize(new Dimension(1280, 720));
         tabbedPane.addChangeListener(new TabbedPaneChangeListener(this));
         getContentPane().add(tabbedPane, BorderLayout.CENTER);
@@ -121,7 +121,7 @@ public class View extends JFrame implements ActionListener {
     }
 
     public boolean isHtmlTabSelected() {
-        return tabbedPane.getSelectedIndex() == tabbedPane.indexOfTab("HTML"); //0
+        return tabbedPane.getSelectedIndex() == tabbedPane.indexOfTab("Текст"); //0
     }
 
     public void selectHtmlTab() {
