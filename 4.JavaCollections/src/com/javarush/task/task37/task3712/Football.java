@@ -1,6 +1,7 @@
 package com.javarush.task.task37.task3712;
 
-public class Football {
+public class Football extends Game {
+
     public void prepareForTheGame() {
         System.out.println("Preparing for the Football game...");
     }
