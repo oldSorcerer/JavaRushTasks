@@ -3,7 +3,6 @@ package com.javarush.task.jdk13.task43.task4309;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Set;
 
 /* 
