@@ -1,7 +1,5 @@
 package com.javarush.task.jdk13.task43.task4312;
 
-import org.apache.commons.collections4.CollectionUtils;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
