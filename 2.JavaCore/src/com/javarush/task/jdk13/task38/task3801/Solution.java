@@ -16,6 +16,8 @@ public class Solution {
 
         System.out.println("Проверка №3:");
         ReflectionAnnotationUtil.check(new IncorrectAccount());
+    }
+}
 /* Ожидаемый вывод:
 
 Проверка №1:
@@ -25,5 +27,3 @@ public class Solution {
 Поле amountString в классе IncorrectAccount имеет аннотацию LongPositive, но его тип String.
 
 */
-    }
-}
