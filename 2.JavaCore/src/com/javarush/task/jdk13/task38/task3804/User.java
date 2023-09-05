@@ -3,9 +3,9 @@ package com.javarush.task.jdk13.task38.task3804;
 @Entity(name = "User")
 public class User {
 
-    private int id;
-    private String displayName;
-    private String email;
+    private final int id;
+    private final String displayName;
+    private final String email;
 
     public User(int id, String displayName, String email) {
         this.id = id;
