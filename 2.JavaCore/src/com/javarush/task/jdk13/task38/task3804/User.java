@@ -1,5 +1,6 @@
 package com.javarush.task.jdk13.task38.task3804;
 
+@Entity(name = "User")
 public class User {
 
     private int id;

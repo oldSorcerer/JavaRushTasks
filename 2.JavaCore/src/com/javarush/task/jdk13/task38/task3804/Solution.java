@@ -12,15 +12,15 @@ public class Solution {
     }
 
     public static void printIfAnnotated(Object instance) throws Exception {
-//        Entity entity = instance.getClass().getAnnotation(Entity.class);
-//        if (isNull(entity) || !entity.required()) {
-//            return;
-//        }
-//
-//        System.out.println(entity.name() + ", " + entity.value());
-//        for (Field declaredField : instance.getClass().getDeclaredFields()) {
-//            declaredField.setAccessible(true);
-//            System.out.printf("\t%s: %s\n", declaredField.getName(), declaredField.get(instance));
-//        }
+        Entity entity = instance.getClass().getAnnotation(Entity.class);
+        if (isNull(entity) || !entity.required()) {
+            return;
+        }
+
+        System.out.println(entity.name() + ", " + entity.value());
+        for (Field declaredField : instance.getClass().getDeclaredFields()) {
+            declaredField.setAccessible(true);
+            System.out.printf("\t%s: %s\n", declaredField.getName(), declaredField.get(instance));
+        }
     }
 }
