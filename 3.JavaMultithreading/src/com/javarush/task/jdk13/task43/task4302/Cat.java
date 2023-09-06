@@ -30,6 +30,6 @@ public class Cat {
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(age).append(breed).toHashCode();
+        return new HashCodeBuilder(17, 37).append(age).append(breed).toHashCode();
     }
 }
