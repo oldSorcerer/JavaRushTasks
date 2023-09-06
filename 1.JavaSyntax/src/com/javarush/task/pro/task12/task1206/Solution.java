@@ -4,6 +4,9 @@ package com.javarush.task.pro.task12.task1206;
 Анализ строк
 */
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 public class Solution {
     public static void main(String[] args) {
         String string = "Думаю, это будет новой фичей." +
@@ -23,6 +26,8 @@ public class Solution {
             }
         }
         return count;
+//        char[] charArray = string.toCharArray();
+//        return (int) IntStream.range(0, charArray.length).filter(i -> Character.isDigit(charArray[i])).count();
     }
 
     public static int countLetters(String string) {
