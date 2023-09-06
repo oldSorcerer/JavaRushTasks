@@ -9,12 +9,12 @@ import java.util.Objects;
 
 public class Candidate {
 
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
     private final transient String sex;
-    private transient int weight;
-    private transient int height;
-    private int yearsExperience;
+    private final transient int weight;
+    private final transient int height;
+    private final int yearsExperience;
 
     public Candidate(String name, int age, String sex, int weight, int height, int yearsExperience) {
         this.name = name;
@@ -29,7 +29,9 @@ public class Candidate {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        return EqualsBuilder.reflectionEquals(this, obj, true, null, "name", "age", "height", "weight");
+        return EqualsBuilder
+                .reflectionEquals(this, obj, true, null,
+                        "name", "age", "height", "weight");
     }
 
     @Override
