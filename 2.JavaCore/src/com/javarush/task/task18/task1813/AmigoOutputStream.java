@@ -3,6 +3,7 @@ package com.javarush.task.task18.task1813;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 /* 
 AmigoOutputStream
@@ -20,7 +21,6 @@ public class AmigoOutputStream  extends FileOutputStream  {
 
     public static void main(String[] args) throws FileNotFoundException {
         new AmigoOutputStream(new FileOutputStream(fileName));
-
     }
 
     @Override
