@@ -32,7 +32,7 @@ public class Solution {
 
         if (score > 0) {
             return studentOne.getName() + " has a higher grades score";
-        }else if (score < 0) {
+        } else if (score < 0) {
             return studentTwo.getName() + " has a higher grades score";
         } else {
             return "Student grades scores are equal";
