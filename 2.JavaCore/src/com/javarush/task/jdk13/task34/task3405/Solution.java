@@ -20,9 +20,17 @@ public class Solution {
     }
 
     public static Map<String, Object> getFields(Object object) throws Exception {
-        //напишите тут ваш код
+        Map<String, Object> map = new HashMap<>();
+        Class<?> aClass = object.getClass();
+        Field[] fields = aClass.getDeclaredFields();
+        for (Field field : fields) {
+            field.setAccessible(true);
+            String name = field.getName();
+            Object o = field.get(name);
+            map.put(name, o);
+        }
 
-        return null;
+        return map;
     }
 
     public static void print(Map<?, ?> fields) {

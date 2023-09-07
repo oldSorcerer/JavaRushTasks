@@ -4,6 +4,7 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.TreeSet;
 
 /* 
 Какая операция 1
@@ -18,6 +19,12 @@ public class Solution {
     }
 
     public static Collection<Integer> compute(Set<Integer> setA, Set<Integer> setB) {
+//        Set<Integer> result = new TreeSet<>();
+//        for (Integer i : setA) {
+//            if (setB.contains(i)) {
+//                result.add(i);
+//            }
+//        }
         return CollectionUtils.intersection(setA, setB);
     }
 }
