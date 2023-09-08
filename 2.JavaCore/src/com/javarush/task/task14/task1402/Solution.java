@@ -22,6 +22,5 @@ public class Solution {
     }
 
     static class TomCat extends Cat {
-
     }
 }
