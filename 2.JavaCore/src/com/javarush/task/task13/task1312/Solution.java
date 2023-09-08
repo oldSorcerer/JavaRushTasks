@@ -15,6 +15,4 @@ public class Solution {
             return "Я переводчик с английского";
         }
     }
-
-
 }
