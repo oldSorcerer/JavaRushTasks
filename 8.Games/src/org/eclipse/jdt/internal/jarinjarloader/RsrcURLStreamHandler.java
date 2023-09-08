@@ -31,7 +31,7 @@ import java.net.URL;
  */
 public class RsrcURLStreamHandler extends java.net.URLStreamHandler {
 
-    private ClassLoader classLoader;
+    private final ClassLoader classLoader;
 
     public RsrcURLStreamHandler(ClassLoader classLoader) {
         this.classLoader = classLoader;
