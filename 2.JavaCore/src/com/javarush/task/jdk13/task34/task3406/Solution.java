@@ -15,9 +15,12 @@ public class Solution {
     }
 
     public static Map<Class<?>, Set<String>> getMethods(Set<Class<?>> classes) {
-        //напишите тут ваш код
+        Map<Class<?>, Set<String>> map = new HashMap<>();
 
-        return null;
+
+
+
+        return map;
     }
 
     public static void print(Map<?, ?> map) {
