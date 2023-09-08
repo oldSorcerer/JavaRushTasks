@@ -26,5 +26,4 @@ public class Solution {
 
     static class Tiger extends Cat {
     }
-
 }
