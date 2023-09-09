@@ -17,7 +17,7 @@ public class Solution {
     }
 
     public static void reset(Object object) throws Exception {
-        //напишите тут ваш код
+        Field[] declaredFields = object.getClass().getDeclaredFields();
 
     }
 }
