@@ -21,6 +21,7 @@ public class Solution {
 
         if (Objects.isNull(values)) {
             System.out.println((Object) null);
+            return;
         }
 
         Arrays.stream(values).filter(Objects::nonNull).findFirst().ifPresent(System.out::println);
