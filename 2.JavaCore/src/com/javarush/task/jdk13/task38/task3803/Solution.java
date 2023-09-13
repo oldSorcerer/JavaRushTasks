@@ -24,7 +24,6 @@ public class Solution {
         } else {
             return false;
         }
-
     }
 
     public static <T> boolean printValues(Class<T> c) {
