@@ -18,7 +18,7 @@
             <groupId>org.powermock</groupId>
             <artifactId>powermock-core</artifactId>
             <version>1.7.0</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>
