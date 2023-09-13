@@ -12,8 +12,7 @@ public final class ReflectionAnnotationUtil {
         }
     }
 
-    private static void processLongPositiveAnnotationField(Object someObject, Class<?> testedClass, Field field) throws
-            IllegalAccessException {
+    private static void processLongPositiveAnnotationField(Object someObject, Class<?> testedClass, Field field) throws IllegalAccessException {
         field.setAccessible(true);
         Class<?> fieldType = field.getType();
 
