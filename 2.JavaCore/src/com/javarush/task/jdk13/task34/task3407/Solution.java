@@ -19,8 +19,9 @@ public class Solution {
     }
 
     public static Set<Type> getTypes(Type type) {
-        //напишите тут ваш код
+        Set<Type> set = new HashSet<>();
 
-        return null;
+
+        return set;
     }
 }
