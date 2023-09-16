@@ -14,9 +14,9 @@ import java.util.Scanner;
 public class Solution {
 
     public static void main(String[] args) throws IOException {
-        PersonScannerAdapter personScannerAdapter = new PersonScannerAdapter(new Scanner(new File("")));
-        Person read = personScannerAdapter.read();
-        System.out.println(read);
+        PersonScannerAdapter adapter = new PersonScannerAdapter(new Scanner(new File("")));
+        Person person = adapter.read();
+        System.out.println(person);
     }
 
     public static class PersonScannerAdapter implements PersonScanner {
