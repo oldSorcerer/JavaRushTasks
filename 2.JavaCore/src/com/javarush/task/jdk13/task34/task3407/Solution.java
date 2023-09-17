@@ -21,6 +21,10 @@ public class Solution {
     public static Set<Type> getTypes(Type type) {
         Set<Type> set = new HashSet<>();
 
+        String typeName = type.getTypeName();
+
+
+
 
         return set;
     }
