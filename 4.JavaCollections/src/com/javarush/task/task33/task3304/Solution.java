@@ -7,8 +7,6 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
 
 /* 
 Конвертация из одного класса в другой используя JSON Ӏ 3304
@@ -17,14 +15,19 @@ import java.io.StringWriter;
 public class Solution {
     public static void main(String[] args) throws IOException {
         Second s = (Second) convertOneToAnother(new First(), Second.class);
+        System.out.println(s);
         First f = (First) convertOneToAnother(new Second(), First.class);
+        System.out.println(f);
     }
 
     public static Object convertOneToAnother(Object one, Class<?> resultClassObject) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.disable(MapperFeature.USE_ANNOTATIONS);
-        return mapper.convertValue(one, resultClassObject);
+
+        String string = mapper.writeValueAsString(one);
+
+        return mapper.readValue(string, resultClassObject);
     }
 
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "className")
@@ -32,6 +35,14 @@ public class Solution {
     public static class First {
         public int i;
         public String name;
+
+        @Override
+        public String toString() {
+            return "First{" +
+                   "i=" + i +
+                   ", name='" + name + '\'' +
+                   '}';
+        }
     }
 
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "className")
@@ -39,5 +50,13 @@ public class Solution {
     public static class Second {
         public int i;
         public String name;
+
+        @Override
+        public String toString() {
+            return "Second{" +
+                   "i=" + i +
+                   ", name='" + name + '\'' +
+                   '}';
+        }
     }
 }
