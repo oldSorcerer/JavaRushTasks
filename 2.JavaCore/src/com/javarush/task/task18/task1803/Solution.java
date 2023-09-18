@@ -47,6 +47,6 @@ public class Solution {
 
         byte[] bytes = Files.readAllBytes(Path.of(new BufferedReader(new InputStreamReader(System.in)).readLine()));
         HashMap<Byte, Integer> map = IntStream.range(0, bytes.length).boxed().collect(Collectors.toMap(i -> bytes[i], i -> 1, Integer::sum, HashMap::new));
-        map.entrySet().stream().filter(pair -> Objects.equals(pair.getValue(), map.values().stream().max(Integer::compareTo).get())).forEach(pair -> System.out.print(pair.getKey() + " "));
+        map.entrySet().stream().filter(pair -> Objects.equals(pair.getValue(), map.values().stream().max(Integer::compareTo).orElseThrow())).forEach(pair -> System.out.print(pair.getKey() + " "));
     }
 }
