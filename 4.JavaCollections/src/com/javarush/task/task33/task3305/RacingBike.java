@@ -1,8 +1,8 @@
 package com.javarush.task.task33.task3305;
 
 public class RacingBike extends Motorbike {
-    private String owner;
-    private int age;
+    private final String owner;
+    private final int age;
 
     public RacingBike(String name, String owner, int age) {
         super(name);
