@@ -29,6 +29,6 @@ public class Solution {
         StringWriter writer = new StringWriter();
         ObjectMapper mapper = new ObjectMapper();
         mapper.writerWithDefaultPrettyPrinter().writeValue(writer, parkingLot);
-        System.out.println(writer.toString());
+        System.out.println(writer);
     }
 }
