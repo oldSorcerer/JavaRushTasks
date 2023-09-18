@@ -20,7 +20,7 @@ public class Solution {
         First f = (First) convertOneToAnother(new Second(), First.class);
     }
 
-    public static Object convertOneToAnother(Object one, Class resultClassObject) throws IOException {
+    public static Object convertOneToAnother(Object one, Class<?> resultClassObject) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
         mapper.disable(MapperFeature.USE_ANNOTATIONS);
