@@ -3,9 +3,10 @@ package com.javarush.task.task18.task1803;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /* 
@@ -17,8 +18,7 @@ public class Solution {
         int[] byteCountArray = new int[256];
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-             FileInputStream inputStream = new FileInputStream(reader.readLine())
-        ) {
+             FileInputStream inputStream = new FileInputStream(reader.readLine())) {
             while (inputStream.available() > 0) {
                 byteCountArray[inputStream.read()]++;
             }
@@ -44,5 +44,9 @@ public class Solution {
 //                .boxed()
 //                .toList()
 //                .forEach(integer -> System.out.print(integer + " "));
+
+        byte[] bytes = Files.readAllBytes(Path.of(new BufferedReader(new InputStreamReader(System.in)).readLine()));
+        HashMap<Byte, Integer> map = IntStream.range(0, bytes.length).boxed().collect(Collectors.toMap(i -> bytes[i], i -> 1, Integer::sum, HashMap::new));
+        map.entrySet().stream().filter(pair -> Objects.equals(pair.getValue(), map.values().stream().max(Integer::compareTo).get())).forEach(pair -> System.out.print(pair.getKey() + " "));
     }
 }
