@@ -17,7 +17,27 @@ public class Solution {
     }
 
     public static void reset(Object object) throws Exception {
-        Field[] declaredFields = object.getClass().getDeclaredFields();
-
+        for (Field field : object.getClass().getDeclaredFields()) {
+            if (Modifier.isPrivate(field.getModifiers()) &&
+                !Modifier.isStatic(field.getModifiers()) &&
+                !field.getType().isPrimitive()) {
+                field.setAccessible(true);
+                field.set(object, null);
+            }
+        }
     }
+
+//    @SneakyThrows
+//    private static void fieldSetObjectValue(Field field, Object object, Object value) {
+//        field.set(object, value);
+//    }
+//
+//    public static void reset(Object object) {
+//        Arrays.stream(object.getClass().getDeclaredFields())
+//                .filter(field -> Modifier.isPrivate(field.getModifiers()) &&
+//                                 !Modifier.isStatic(field.getModifiers()) &&
+//                                 !field.getType().isPrimitive())
+//                .peek(field -> field.setAccessible(true))
+//                .forEach(field -> fieldSetObjectValue(field, object, null));
+//    }
 }
