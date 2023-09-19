@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 
 public class Generator<T> {
 
-    private Class<T> aClass;
+    private final Class<T> aClass;
 
     public Generator(Class<T> aClass) {
         this.aClass = aClass;
@@ -12,6 +12,9 @@ public class Generator<T> {
 
     T newInstance() throws Exception {
         Constructor<T> declaredConstructor = (Constructor<T>) aClass.getDeclaredConstructors()[0];
-        return declaredConstructor.newInstance();
+        int parameterCount = declaredConstructor.getParameterCount();
+        Object[] objects = new Object[parameterCount];
+
+        return declaredConstructor.newInstance(objects);
     }
 }
