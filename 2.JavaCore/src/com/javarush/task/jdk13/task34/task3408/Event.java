@@ -4,7 +4,7 @@ public class Event {
 
     private static int nextId = 1;
 
-    private int id;
+    private final int id;
 
     public Event() {
         id = nextId++;
