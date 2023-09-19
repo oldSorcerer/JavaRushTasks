@@ -17,6 +17,6 @@ public class Solution {
         RealBean realBean = objectMapper.readValue(sampleJsonString, RealBean.class);
 
         objectMapper.writeValue(stringWriter, realBean);
-        System.out.println(stringWriter.toString());
+        System.out.println(stringWriter);
     }
 }
