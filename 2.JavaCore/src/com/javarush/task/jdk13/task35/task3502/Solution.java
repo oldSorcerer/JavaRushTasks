@@ -6,7 +6,7 @@ import java.util.List;
 Знакомство с дженериками
 */
 
-public class Solution <T extends List<Solution.SomeClass>> {
+public class Solution <T extends List<Solution.SomeClass<?>>> {
     public static void main(String[] args) {
 
     }

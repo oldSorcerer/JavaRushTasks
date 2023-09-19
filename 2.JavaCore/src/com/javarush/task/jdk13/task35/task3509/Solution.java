@@ -37,9 +37,9 @@ public class Solution {
         return builder.toString();
     }
 
-    public static <T> List<T> combine(List<? extends Collection> list) {
+    public static <T> List<T> combine(List<? extends Collection<T>> list) {
         List<T> result = new ArrayList<>();
-        for (Collection collection : list) {
+        for (Collection<T> collection : list) {
             result.addAll(collection);
         }
         return result;

@@ -18,7 +18,6 @@ public class Solution {
         }
     }
 
-
     public static void main(String[] args) {
         List<B> destination = new ArrayList<>();
         destination.add(new B());
@@ -27,12 +26,6 @@ public class Solution {
         add(destination, source);
         System.out.println(destination);
         System.out.println(source);
-
-
-        /*
-[com.javarush.test.level39.lesson08.task01.Solution$C@203b4f0e, com.javarush.test.level39.lesson08.task01.Solution$B@15c330aa]
-[com.javarush.test.level39.lesson08.task01.Solution$C@203b4f0e]
-         */
     }
 
     static class A {
@@ -44,3 +37,7 @@ public class Solution {
     static class C extends B {
     }
 }
+/*
+[com.javarush.test.level39.lesson08.task01.Solution$C@203b4f0e, com.javarush.test.level39.lesson08.task01.Solution$B@15c330aa]
+[com.javarush.test.level39.lesson08.task01.Solution$C@203b4f0e]
+ */
