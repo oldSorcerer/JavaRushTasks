@@ -16,7 +16,10 @@ public class Solution {
     }
 
     public static void setPrivateParentField(Object childObject, String fieldName, Object value) throws Exception {
-        //напишите тут ваш код
+        Field field = childObject.getClass().getSuperclass().getDeclaredField(fieldName);
+        field.setAccessible(true);
+        field.set(childObject, value);
 
     }
 }
+
