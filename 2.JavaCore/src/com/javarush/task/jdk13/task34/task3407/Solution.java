@@ -19,13 +19,14 @@ public class Solution {
     }
 
     public static Set<Type> getTypes(Type type) {
-        Set<Type> set = new HashSet<>();
+        Set<Type> set = new LinkedHashSet<>();
 
-        String typeName = type.getTypeName();
-
-
-
-
+        if (type instanceof ParameterizedType paramType)  {
+            set.add(paramType.getRawType());
+            Arrays.stream(paramType.getActualTypeArguments()).map(Solution::getTypes).forEach(set::addAll);
+        } else {
+            set.add(type);
+        }
         return set;
     }
 }
