@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface Entity {
+
     String name();
 
     int value() default 45;
