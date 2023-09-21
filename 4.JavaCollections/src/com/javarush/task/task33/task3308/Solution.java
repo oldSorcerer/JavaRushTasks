@@ -38,6 +38,7 @@ public class Solution {
     }
 
     public static Class getClassName() {
-        return null;  //your class name
+
+        return Shop.class;  //your class name
     }
 }
