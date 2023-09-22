@@ -39,6 +39,6 @@ public class Solution {
     }
 
     public static Class<?> getClassName() {
-        return Shop.class;  //your class name
+        return Shop.class;
     }
 }
