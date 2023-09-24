@@ -24,7 +24,7 @@ public class Solution {
         }
     }
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         helper.startTime();
 
         Monkey monkey = new Monkey("Simka");
@@ -64,7 +64,7 @@ public class Solution {
 
         void consumeHeap() {
             try {
-                List<Solution> heap = new ArrayList<Solution>(100000);
+                List<Solution> heap = new ArrayList<>(100000);
                 while (!isFinalized) {
                     heap.add(new Solution());
                 }
