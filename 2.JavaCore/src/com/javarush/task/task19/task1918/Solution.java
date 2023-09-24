@@ -20,8 +20,7 @@ public class Solution {
         StringBuilder builder = new StringBuilder();
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))
-        ) {
+             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
             while (reader.ready()) {
                 builder.append(reader.readLine());
             }
