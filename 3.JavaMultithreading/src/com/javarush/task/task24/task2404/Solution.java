@@ -32,21 +32,11 @@ public class Solution {
         }
 
         public HasHeight castToHasHeight() {
-            return new HasHeight() {
-                @Override
-                public double getHeight() {
-                    return Math.abs(point1.getY() - point2.getY());
-                }
-            };
+            return () -> Math.abs(point1.getY() - point2.getY());
         }
 
         public HasWidth castToHasWidth() {
-            return new HasWidth() {
-                @Override
-                public double getWidth() {
-                    return Math.abs(point1.getX() - point2.getX());
-                }
-            };
+            return () -> Math.abs(point1.getX() - point2.getX());
         }
     }
 }
