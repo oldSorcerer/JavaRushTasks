@@ -6,9 +6,9 @@ public abstract class Character implements Runnable {
     protected abstract int getId();
 
     public void run() {
-        System.out.println(toString() + " вступил в игру");
+        System.out.println(this + " вступил в игру");
         doSomething();
-        System.out.println(toString() + " умер");
+        System.out.println(this + " умер");
     }
 
     private void doSomething() {
@@ -22,5 +22,4 @@ public abstract class Character implements Runnable {
     public String toString() {
         return getClass().getSimpleName() + " #" + getId();
     }
-
 }
