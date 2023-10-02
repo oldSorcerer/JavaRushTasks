@@ -33,7 +33,7 @@ public class Solution {
                 .peek(field -> field.setAccessible(true)).collect(Collectors.toMap(Field::getName, field -> fieldGetObject(field, object), (a, b) -> b));
     }
 
-        public static Map<String, Object> getFields(Object object) throws IllegalAccessException {
+    public static Map<String, Object> getFields(Object object) throws IllegalAccessException {
         Map<String, Object> map = new HashMap<>();
         for (Field field : object.getClass().getDeclaredFields()) {
             if (Modifier.isPrivate(field.getModifiers())) {
