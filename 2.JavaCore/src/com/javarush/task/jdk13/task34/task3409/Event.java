@@ -4,9 +4,9 @@ public class Event {
 
     private static int nextId = 1;
 
-    private Integer id;
-    private String name;
-    private Boolean isActive;
+    private final Integer id;
+    private final String name;
+    private final Boolean isActive;
 
     public Event(String name, Boolean isActive) {
         this.id = nextId++;
