@@ -5,4 +5,4 @@ select
            else 'no'
     end
 from employee
-where department = 'cool devs'
+where department = 'cool devs';
