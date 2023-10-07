@@ -4,4 +4,4 @@ select
         when experience < 3 then 'middle'
         when experience < 5 then 'senior'
     end
-from developers
+from developers;
