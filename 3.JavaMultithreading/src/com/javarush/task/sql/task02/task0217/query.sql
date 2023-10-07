@@ -7,4 +7,4 @@ select
 from cars
 where prod_year > 2020
 order by price
-limit 5
+limit 5;
