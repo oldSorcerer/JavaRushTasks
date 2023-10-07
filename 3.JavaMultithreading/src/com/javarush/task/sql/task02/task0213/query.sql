@@ -3,4 +3,4 @@ select
        when 0 then 'false'
        when 1 then 'true'
     end
-from students
+from students;
