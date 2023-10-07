@@ -1,1 +1,1 @@
-select nullif(5, 5)
+select nullif(5, 5);

@@ -6,4 +6,4 @@ select
         when 4 then 'autumn'
         else 'unknown'
     end
-from months
+from months;

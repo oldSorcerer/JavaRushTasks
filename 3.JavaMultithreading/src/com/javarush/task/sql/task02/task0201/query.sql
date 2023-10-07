@@ -1,1 +1,1 @@
-select if(5 > 3, 1, 0)
+select if(5 > 3, 1, 0);

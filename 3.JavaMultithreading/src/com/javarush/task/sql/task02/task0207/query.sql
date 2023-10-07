@@ -1,1 +1,1 @@
-select ifnull(null, 1)
+select ifnull(null, 1);
