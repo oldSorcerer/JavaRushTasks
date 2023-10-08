@@ -2,6 +2,7 @@ package com.javarush.task.task17.task1715;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /* 
 Аптека
@@ -30,9 +31,7 @@ public class Solution {
         public void run() {
             while (!isStopped) {
                 drugsController.sell(getRandomDrug(), getRandomCount());
-                for (int i = 0; i < 3; i++) {
-                    waitAMoment();
-                }
+                IntStream.range(0, 3).forEach(i -> waitAMoment());
             }
         }
     }
