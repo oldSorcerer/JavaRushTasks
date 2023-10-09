@@ -32,7 +32,7 @@ public class Solution {
             }
         }
 
-        while (listOne.size() > 0  && listTwo.size() > 0) {
+        while (!listOne.isEmpty() && !listTwo.isEmpty()) {
             if (listOne.get(0).equals(listTwo.get(0))) {
                 lines.add(new LineItem(Type.SAME, listOne.get(0)));
                 listOne.remove(0);
