@@ -1,1 +1,1 @@
-select if(3 >= 1, 'yes', 'no')
+select if(3 >= 1, 'yes', 'no');
