@@ -3,4 +3,4 @@ select case
            when euro = 5 then 'good'
            else 'bad'
            end
-from cars
+from cars;
