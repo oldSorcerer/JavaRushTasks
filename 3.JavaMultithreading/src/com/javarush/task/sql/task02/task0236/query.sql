@@ -1,3 +1,3 @@
 select department, position, count(*)
 from employee
-group by department, position
+group by department, position;
