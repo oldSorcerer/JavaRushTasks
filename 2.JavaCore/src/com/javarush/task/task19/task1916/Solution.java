@@ -47,10 +47,10 @@ public class Solution {
         }
 
         if (listOne.isEmpty()) {
-            listTwo.forEach(i -> lines.add(new LineItem(Type.ADDED, i)));
+            listTwo.forEach(str -> lines.add(new LineItem(Type.ADDED, str)));
         }
         if (listTwo.isEmpty()) {
-            listOne.forEach(i -> lines.add(new LineItem(Type.REMOVED, i)));
+            listOne.forEach(str -> lines.add(new LineItem(Type.REMOVED, str)));
         }
 
         for (LineItem line : lines) {
