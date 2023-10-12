@@ -19,7 +19,6 @@ public class Solution {
         Field field = childObject.getClass().getSuperclass().getDeclaredField(fieldName);
         field.setAccessible(true);
         field.set(childObject, value);
-
     }
 }
 
