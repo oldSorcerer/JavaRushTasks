@@ -1,3 +1,2 @@
 select *
-from gyms,
-     customers;
+from gyms, customers;
