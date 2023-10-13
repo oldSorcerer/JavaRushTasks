@@ -1,4 +1,3 @@
 select *
-from gyms,
-     customers
+from gyms, customers
 where gyms.name = customers.name;
