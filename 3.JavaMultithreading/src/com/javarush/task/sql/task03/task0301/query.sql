@@ -1,3 +1,3 @@
 select *
 from gyms,
-     customers
+     customers;

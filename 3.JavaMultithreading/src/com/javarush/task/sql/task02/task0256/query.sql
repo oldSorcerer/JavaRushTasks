@@ -1,3 +1,3 @@
 select name, sum(price), avg(price)
 from cars
-group by name
+group by name;
