@@ -36,11 +36,11 @@ public class Solution {
     }
 
     public static String checkLength(String string, int limit) {
-        StringBuilder builder = new StringBuilder(string);
 
         if (string.length() > limit) {
             return string.substring(0, limit);
         } else {
+            StringBuilder builder = new StringBuilder(string);
             while (builder.length() != limit) {
                 builder.append(" ");
             }
