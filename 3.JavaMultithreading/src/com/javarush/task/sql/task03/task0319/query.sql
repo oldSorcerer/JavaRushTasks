@@ -4,4 +4,4 @@ select r.ret_name,
        s.sup_country
 from top_retailers as r
          join suppliers as s
-              on r.ret_location = s.sup_country
+              on r.ret_location = s.sup_country;
