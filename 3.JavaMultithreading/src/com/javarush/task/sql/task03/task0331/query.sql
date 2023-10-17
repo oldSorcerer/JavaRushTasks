@@ -4,4 +4,4 @@ select a.last_name            as author,
 from authors as a
          right join books as b
                     on a.author_id = b.author_id
-where b.copies_sold_millions > 50
+where b.copies_sold_millions > 50;

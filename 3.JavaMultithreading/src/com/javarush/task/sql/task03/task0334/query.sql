@@ -7,5 +7,4 @@ from authors as author
 where book.genre = 'fantasy'
 group by author.last_name, author.country, book.genre
 order by author.country asc
-limit 5
-
+limit 5;

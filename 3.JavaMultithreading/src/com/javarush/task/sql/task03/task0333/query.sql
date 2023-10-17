@@ -6,4 +6,4 @@ from authors as a
               on a.author_id = b.author_id
 where b.copies_sold_millions > 10
 group by a.sex, a.country, b.copies_sold_millions
-order by b.copies_sold_millions desc
+order by b.copies_sold_millions desc;

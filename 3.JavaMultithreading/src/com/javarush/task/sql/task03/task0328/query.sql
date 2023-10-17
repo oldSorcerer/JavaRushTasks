@@ -6,4 +6,4 @@ from customers
          right join orders
                     on customers.customer_id = orders.customer_id
 where customers.city = 'Dallas'
-  and orders.order_status = 'PROCESSING'
+  and orders.order_status = 'PROCESSING';

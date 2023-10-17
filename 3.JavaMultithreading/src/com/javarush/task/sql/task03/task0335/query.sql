@@ -5,4 +5,4 @@ from authors as author
               on author.id = book.author_id
 where book.genre = 'novel'
 group by author.country
-having count(book.book_id) > 2
+having count(book.book_id) > 2;
