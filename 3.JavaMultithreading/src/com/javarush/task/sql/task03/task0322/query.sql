@@ -6,4 +6,4 @@ from customers as c
          join orders as o
               on c.customer_id = o.customer_id
 where o.order_status = 'PAID'
-   or o.order_status = 'PROCESSING'
+   or o.order_status = 'PROCESSING';
