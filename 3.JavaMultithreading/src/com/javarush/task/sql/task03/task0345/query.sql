@@ -4,4 +4,4 @@ from film_directors
                     from films
                     where grossed > 100) as film
                    on film_directors.id = film.director_id
-where film_directors.country = 'UK'
+where film_directors.country = 'UK';
