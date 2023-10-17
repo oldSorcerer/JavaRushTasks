@@ -6,4 +6,4 @@ from films,
      tempTable2
 where films.grossed > tempTable.averageGrossed
   and films.year_released > tempTable2.averageYearReleased
-group by films.year_released
+group by films.year_released;
