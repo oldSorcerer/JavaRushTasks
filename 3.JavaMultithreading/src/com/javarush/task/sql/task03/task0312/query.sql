@@ -3,4 +3,4 @@ select top_retailers.rank                as company_rank,
        suppliers.annual_revenue_billions as supplier_revenue
 from top_retailers,
      suppliers
-where suppliers.annual_revenue_billions > 25
+where suppliers.annual_revenue_billions > 25;
