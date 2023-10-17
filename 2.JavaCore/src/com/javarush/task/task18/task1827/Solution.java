@@ -12,8 +12,7 @@ public class Solution {
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in))) {
             String fileName = console.readLine();
             try (BufferedReader reader = new BufferedReader(new FileReader(fileName));
-                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))
-            ) {
+                 BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
                 int maxId = 0;
                 while (reader.ready()) {
                     String string = reader.readLine().substring(0, 8).trim();
@@ -35,7 +34,7 @@ public class Solution {
         }
     }
 
-    public static String checkLength(String string, int limit) {
+    private static String checkLength(String string, int limit) {
 
         if (string.length() > limit) {
             return string.substring(0, limit);
