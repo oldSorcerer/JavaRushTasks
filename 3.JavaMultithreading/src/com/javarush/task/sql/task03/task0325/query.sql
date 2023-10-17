@@ -4,4 +4,4 @@ from customers as c
          left join orders as o
                    on c.customer_id = o.customer_id
 where o.shipped_date is not null
-  and o.store_id = 27
+  and o.store_id = 27;
