@@ -4,4 +4,4 @@ from films
      (select last_name, id
       from film_directors
       where film_directors.last_name = 'Spielberg') as director
-     on director.id = films.director_id
+     on director.id = films.director_id;
