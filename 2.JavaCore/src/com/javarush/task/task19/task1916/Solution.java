@@ -53,9 +53,7 @@ public class Solution {
             listOne.forEach(str -> lines.add(new LineItem(Type.REMOVED, str)));
         }
 
-        for (LineItem line : lines) {
-            System.out.println(line);
-        }
+        lines.forEach(System.out::println);
     }
 
     public enum Type {
