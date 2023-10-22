@@ -49,15 +49,16 @@ public class Solution {
         }
     }
 
-    public static String checkLength(String string, int limit) {
+    private static String checkLength(String string, int limit) {
         if (string.length() > limit) {
             return string.substring(0, limit);
         } else {
-            StringBuilder builder = new StringBuilder(string);
-            while (builder.length() != limit) {
-                builder.append(" ");
-            }
-            return builder.toString();
+            return string + " ".repeat(limit - string.length());
+//            StringBuilder builder = new StringBuilder(string);
+//            while (builder.length() != limit) {
+//                builder.append(" ");
+//            }
+//            return builder.toString();
         }
     }
 }
