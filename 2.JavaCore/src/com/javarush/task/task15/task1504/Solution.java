@@ -37,6 +37,7 @@ public class Solution {
             return output;
         }
 
+        @Override
         public String toString() {
             return getOutputByBookType();
         }
