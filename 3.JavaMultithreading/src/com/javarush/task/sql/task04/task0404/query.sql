@@ -1,2 +1,2 @@
 select a div b
-from math
+from math;
