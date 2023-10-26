@@ -4,4 +4,4 @@ where status = 'ERROR'
    or status = 'FAILED'
 group by monthname(date)
 order by count(*) desc
-limit 1
+limit 1;

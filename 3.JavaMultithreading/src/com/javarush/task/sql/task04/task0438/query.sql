@@ -1,2 +1,2 @@
 select replace(position, 'developer', 'software developer')
-from employee
+from employee;

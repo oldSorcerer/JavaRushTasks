@@ -1,2 +1,2 @@
 select concat(name, '-', position)
-from employee
+from employee;
