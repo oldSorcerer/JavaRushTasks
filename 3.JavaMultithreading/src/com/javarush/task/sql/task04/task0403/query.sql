@@ -1,2 +1,2 @@
 select a % b
-from math
+from math;
