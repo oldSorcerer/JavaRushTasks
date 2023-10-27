@@ -1,2 +1,2 @@
 select a | b
-from logic
+from logic;
