@@ -1,2 +1,2 @@
 select bit_count(a)
-from logic
+from logic;
