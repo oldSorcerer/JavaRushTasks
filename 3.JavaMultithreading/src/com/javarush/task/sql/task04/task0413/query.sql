@@ -1,2 +1,2 @@
 select floor(a), floor(b)
-from math
+from math;
