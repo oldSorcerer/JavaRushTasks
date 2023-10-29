@@ -1,2 +1,2 @@
 select round(a), round(b)
-from math
+from math;
