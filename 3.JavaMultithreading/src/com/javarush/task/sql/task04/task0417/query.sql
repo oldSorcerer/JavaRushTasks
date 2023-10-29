@@ -1,1 +1,1 @@
-select curdate(), curtime()
+select curdate(), curtime();
