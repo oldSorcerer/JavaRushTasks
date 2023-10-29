@@ -1,1 +1,1 @@
-select HOUR(now()), MINUTE(now()), SECOND(now())
+select HOUR(now()), MINUTE(now()), SECOND(now());
