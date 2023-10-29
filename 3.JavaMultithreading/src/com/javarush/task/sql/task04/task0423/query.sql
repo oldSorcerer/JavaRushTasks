@@ -1,3 +1,3 @@
 select name, position
 from employee
-where DAYNAME(date_of_birth) = 'Monday'
+where DAYNAME(date_of_birth) = 'Monday';
