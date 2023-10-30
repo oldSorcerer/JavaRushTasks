@@ -1,4 +1,4 @@
 select name
 from part
 where name like '%Slope%Slope%'
-   or name like '%Clip%Clip%'
+   or name like '%Clip%Clip%';
