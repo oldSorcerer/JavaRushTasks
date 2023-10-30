@@ -1,3 +1,3 @@
 select weight
 from part
-order by weight asc
+order by weight asc;

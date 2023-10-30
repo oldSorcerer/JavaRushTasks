@@ -10,11 +10,11 @@ CREATE TABLE `event`
 );
 
 insert into event (id, date_time, user_id, type, status)
-values (1, DATEADD(DAY, -1, CURRENT_DATE()), 3, 'LOGIN', 'OK'),
-       (2, DATEADD(DAY, -20, CURRENT_DATE()), 1, 'REGISTRATION', 'OK'),
-       (3, DATEADD(DAY, -50, CURRENT_DATE()), 4, 'SOLVE_TASK', 'ERROR'),
-       (4, DATEADD(DAY, -8, CURRENT_DATE()), 5, 'REGISTRATION', 'OK'),
-       (5, DATEADD(DAY, -13, CURRENT_DATE()), 1, 'REGISTRATION', 'OK'),
+values (1, DATE_ADD(DAY, -1, CURRENT_DATE()), 3, 'LOGIN', 'OK'),
+       (2, DATE_ADD(DAY, -20, CURRENT_DATE()), 1, 'REGISTRATION', 'OK'),
+       (3, DATE_ADD(DAY, -50, CURRENT_DATE()), 4, 'SOLVE_TASK', 'ERROR'),
+       (4, DATE_ADD(DAY, -8, CURRENT_DATE()), 5, 'REGISTRATION', 'OK'),
+       (5, DATE_ADD(DAY, -13, CURRENT_DATE()), 1, 'REGISTRATION', 'OK'),
        (6, DATEADD(DAY, -23, CURRENT_DATE()), 9, 'LOGIN', 'FAILED'),
        (7, DATEADD(DAY, -32, CURRENT_DATE()), 6, 'REGISTRATION', 'OK'),
        (8, DATEADD(DAY, -8, CURRENT_DATE()), 7, 'REGISTRATION', 'OK'),
