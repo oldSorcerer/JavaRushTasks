@@ -1,3 +1,3 @@
 select *
 from event
-where datediff(curdate(), date_time) < 20
+where datediff(curdate(), date_time) < 20;
