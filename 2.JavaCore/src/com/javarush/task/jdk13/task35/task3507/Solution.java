@@ -27,16 +27,17 @@ public class Solution {
     }
 
     public static <K, V> HashMap<K, V> newHashMap(List<? extends K> keys, List<? extends V> values) {
-
-        HashMap<K, V> map = new HashMap<>();
-
-        if (keys.size() == values.size()) {
-            for (int i = 0; i < keys.size(); i++) {
-                map.put(keys.get(i), values.get(i));
-            }
-        } else {
+        if (keys.size() != values.size()) {
             throw new IllegalArgumentException();
         }
+        HashMap<K, V> map = new HashMap<>();
+
+        for (int i = 0; i < keys.size(); i++) {
+            map.put(keys.get(i), values.get(i));
+        }
+
         return map;
+//        return IntStream.range(0, keys.size()).boxed().collect(Collectors.toMap(keys::get, values::get, (a, b) -> b, HashMap::new));
+
     }
 }
