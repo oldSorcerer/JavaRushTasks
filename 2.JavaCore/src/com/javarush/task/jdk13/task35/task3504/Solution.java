@@ -9,13 +9,13 @@ import java.util.LinkedHashMap;
 
 public class Solution<T extends HashMap<?, ?>> {
 
-    private final HashMap<?, ?> map;
+    private final T map;
 
-    public Solution(HashMap<?, ?> map) {
+    public Solution(T map) {
         this.map = map;
     }
 
-    public HashMap<?, ?> getMap() {
+    public T getMap() {
         return map;
     }
 
@@ -25,7 +25,6 @@ public class Solution<T extends HashMap<?, ?>> {
         Solution<?> solution = new Solution<>(hashMap);
         HashMap<?, ?> mapFromSolution = solution.getMap();
         System.out.println(mapFromSolution.getClass());
-
 
         LinkedHashMap<Solution<?>, Solution<?>> hashMap2 = new LinkedHashMap<>();
         hashMap2.put(solution, solution);
