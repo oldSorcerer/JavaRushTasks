@@ -28,13 +28,10 @@ public class Solution {
             if (args.length != 0) {
                 if (args[0].equals("-u")) {
                     String id = args[1].trim();
-                    for (Map.Entry<String, String> pair : map.entrySet()) {
-                        if (id.equals(pair.getKey())) {
-                            map.put(id, checkLength(args[2], 30) +
-                                    checkLength(args[3], 8) +
-                                    checkLength(args[4], 4));
-                        }
-                    }
+                    map.entrySet().stream().filter(pair -> id.equals(pair.getKey()))
+                            .forEach(pair -> map.put(id, checkLength(args[2], 30) +
+                                                         checkLength(args[3], 8) +
+                                                         checkLength(args[4], 4)));
                 } else if (args[0].equals("-d")) {
                     String id = args[1].trim();
                     map.entrySet().removeIf(pair -> pair.getKey().equals(id));
