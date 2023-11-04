@@ -39,6 +39,7 @@ public class Solution {
         if (string.length() > limit) {
             return string.substring(0, limit);
         } else {
+//            return string + " ".repeat(limit - string.length());
             StringBuilder builder = new StringBuilder(string);
             while (builder.length() != limit) {
                 builder.append(" ");
