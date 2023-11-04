@@ -3,4 +3,3 @@ alter table event
         references users (id)
     on update cascade
     on delete set null;
-
