@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'users';
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users
 (
-    `id`        INT          not null auto_increment,
+    `id`        INT          not null auto_increment primary key,
     `name`      VARCHAR(100) not null,
     `last_name` VARCHAR(100) not null,
     `age`       INT          not null
