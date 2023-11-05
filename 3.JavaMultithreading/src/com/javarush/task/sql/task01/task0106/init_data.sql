@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'user_name';
+DROP TABLE IF EXISTS user_name;
 
 CREATE TABLE user_name
 (
-    `id`         INT          not null auto_increment,
+    `id`         INT          not null auto_increment primary key,
     `first_name` VARCHAR(100) not null,
     `last_name`  VARCHAR(100) not null,
     `nick_name`  VARCHAR(100) not null

@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'brand';
+DROP TABLE IF EXISTS brand;
 
-CREATE TABLE `brand`
+CREATE TABLE brand
 (
-    `id`          INT          not null auto_increment,
+    `id`          INT          not null auto_increment primary key,
     `brand_name`  VARCHAR(100) not null,
     `brand_logo`  VARCHAR(100) not null,
     `create_year` INT          not null
