@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'owner';
+DROP TABLE IF EXISTS owner;
 
 CREATE TABLE owner
 (
-    `id`         INT          not null auto_increment,
+    `id`         INT          not null auto_increment primary key,
     `first_name` VARCHAR(100) not null,
     `last_name`  VARCHAR(100) not null,
     `nick_name`  VARCHAR(100) not null
