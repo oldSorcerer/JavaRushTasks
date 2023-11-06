@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'car';
+DROP TABLE IF EXISTS car;
 
-CREATE TABLE `car`
+CREATE TABLE car
 (
-    `id`              INT          not null auto_increment,
+    `id`              INT          not null auto_increment primary key,
     `brand`           VARCHAR(100) not null,
     `model`           VARCHAR(100) not null,
     `quantity`        INT          not null,
