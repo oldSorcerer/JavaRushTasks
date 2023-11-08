@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'ip2country';
+DROP TABLE IF EXISTS ip2country;
 
-CREATE TABLE `ip2country`
+CREATE TABLE ip2country
 (
-       `id`           INT          not null auto_increment,
+       `id`           INT          not null auto_increment primary key ,
        `country_code` VARCHAR(10)  not null,
        `country_name` VARCHAR(100) not null,
        `ip_from`      BIGINT       not null,
