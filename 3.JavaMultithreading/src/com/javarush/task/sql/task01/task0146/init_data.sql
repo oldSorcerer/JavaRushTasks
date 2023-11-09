@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'parts';
+DROP TABLE IF EXISTS parts;
 
-CREATE TABLE `parts`
+CREATE TABLE parts
 (
-       `id`          INT         not null auto_increment,
+       `id`          INT         not null auto_increment primary key ,
        `identifier`  VARCHAR(50) not null,
        `description` VARCHAR(50) null,
        `required`    BOOLEAN     not null
