@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'customers';
+DROP TABLE IF EXISTS customers;
 
-CREATE TABLE `customers`
+CREATE TABLE customers
 (
-    `id`   INT          not null auto_increment,
+    `id`   INT          not null auto_increment primary key ,
     `name` VARCHAR(100) not null,
     `age`  INT          not null,
     `city` VARCHAR(200) not null

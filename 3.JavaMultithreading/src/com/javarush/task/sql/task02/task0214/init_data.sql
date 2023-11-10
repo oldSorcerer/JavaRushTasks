@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'developers';
+DROP TABLE IF EXISTS developers;
 
-CREATE TABLE `developers`
+CREATE TABLE developers
 (
-    `id`         INT          not null auto_increment,
+    `id`         INT          not null auto_increment primary key ,
     `name`       VARCHAR(100) not null,
     `age`        INT          not null,
     `experience` INT          not null

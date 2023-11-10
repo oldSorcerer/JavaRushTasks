@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'months';
+DROP TABLE IF EXISTS months;
 
-CREATE TABLE `months`
+CREATE TABLE months
 (
-    `id`               INT          not null auto_increment,
+    `id`               INT          not null auto_increment primary key ,
     `title`            VARCHAR(100) not null,
     `days`             INT          not null,
     `number_of_season` INT          not null

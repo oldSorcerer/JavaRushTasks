@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'employee';
+DROP TABLE IF EXISTS employee;
 
-CREATE TABLE `employee`
+CREATE TABLE employee
 (
-    `id`       INT          not null auto_increment,
+    `id`       INT          not null auto_increment primary key ,
     `position` VARCHAR(100) not null,
     `salary`   INT          not null,
     `city`     VARCHAR(200) not null
