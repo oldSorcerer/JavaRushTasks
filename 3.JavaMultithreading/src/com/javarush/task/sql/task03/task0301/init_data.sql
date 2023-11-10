@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS 'gyms';
-DROP TABLE IF EXISTS 'customers';
+DROP TABLE IF EXISTS gyms;
+DROP TABLE IF EXISTS customers;
 
-CREATE TABLE `gyms`
+CREATE TABLE gyms
 (
-    `id`       INT          not null auto_increment,
+    `id`       INT          not null auto_increment primary key ,
     `name`     VARCHAR(100) not null,
     `location` VARCHAR(100) not null
 );
