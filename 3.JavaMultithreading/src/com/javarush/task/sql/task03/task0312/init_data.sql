@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS 'top_retailers';
-DROP TABLE IF EXISTS 'suppliers';
+DROP TABLE IF EXISTS top_retailers;
+DROP TABLE IF EXISTS suppliers;
 
-CREATE TABLE `top_retailers`
+CREATE TABLE top_retailers
 (
     `rank`                    INT          not null,
     `name`                    VARCHAR(100) not null,
@@ -9,7 +9,7 @@ CREATE TABLE `top_retailers`
     `annual_revenue_billions` INT          not null
 );
 
-CREATE TABLE `suppliers`
+CREATE TABLE suppliers
 (
     `rank`                    INT          not null,
     `name`                    VARCHAR(100) not null,
