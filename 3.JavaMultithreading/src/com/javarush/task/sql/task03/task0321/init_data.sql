@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS 'customers';
-DROP TABLE IF EXISTS 'orders';
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS orders;
 
-CREATE TABLE `customers`
+CREATE TABLE customers
 (
     `customer_id` INT          not null,
     `first_name`  VARCHAR(100) not null,
@@ -13,7 +13,7 @@ CREATE TABLE `customers`
     `zip_code`    INT          not null
 );
 
-CREATE TABLE `orders`
+CREATE TABLE orders
 (
     `order_id`     INT            not null,
     `customer_id`  INT            not null,
