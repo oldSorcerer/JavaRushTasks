@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS 'authors';
-DROP TABLE IF EXISTS 'books';
+DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS books;
 
-CREATE TABLE `authors`
+CREATE TABLE authors
 (
     `author_id`  INT          not null,
     `first_name` VARCHAR(100) not null,
@@ -11,7 +11,7 @@ CREATE TABLE `authors`
     `country`    VARCHAR(100) not null
 );
 
-CREATE TABLE `books`
+CREATE TABLE books
 (
     `book_id`              INT          not null,
     `author_id`            INT null,

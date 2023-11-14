@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS 'authors';
+DROP TABLE IF EXISTS authors;
 
-CREATE TABLE `authors`
+CREATE TABLE authors
 (
     `id`         INT          not null,
     `first_name` VARCHAR(255) not null,

@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS 'films';
+DROP TABLE IF EXISTS films;
 
-CREATE TABLE `films`
+CREATE TABLE films
 (
     `film_id`       INT          not null,
     `director_id`   INT null,

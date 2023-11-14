@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS 'film_directors';
-DROP TABLE IF EXISTS 'films';
+DROP TABLE IF EXISTS film_directors;
+DROP TABLE IF EXISTS films;
 
-CREATE TABLE `film_directors`
+CREATE TABLE film_directors
 (
     `id`         INT          not null,
     `first_name` VARCHAR(255) not null,
@@ -12,7 +12,7 @@ CREATE TABLE `film_directors`
     `country`    VARCHAR(100) not null
 );
 
-CREATE TABLE `films`
+CREATE TABLE films
 (
     `film_id`       INT          not null,
     `director_id`   INT null,
