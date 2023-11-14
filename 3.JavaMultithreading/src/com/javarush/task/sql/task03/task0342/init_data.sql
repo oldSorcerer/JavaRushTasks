@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS 'film_directors';
+DROP TABLE IF EXISTS film_directors;
 
-CREATE TABLE `film_directors`
+CREATE TABLE film_directors
 (
     `id`         INT          not null,
     `first_name` VARCHAR(255) not null,
