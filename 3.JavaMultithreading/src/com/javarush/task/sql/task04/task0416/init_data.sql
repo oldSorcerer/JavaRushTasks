@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS 'math';
+DROP TABLE IF EXISTS math;
 
-CREATE TABLE `math`
+CREATE TABLE math
 (
        `a` INT not null
 );
