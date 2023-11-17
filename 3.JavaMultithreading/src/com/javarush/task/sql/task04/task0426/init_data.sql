@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'data';
+DROP TABLE IF EXISTS data;
 
-CREATE TABLE `data`
+CREATE TABLE data
 (
-       `id`    INT     not null    auto_increment,
+       `id`    INT     not null    auto_increment primary key ,
        `date`  DATE    not null,
        `total` INT     not null
 );

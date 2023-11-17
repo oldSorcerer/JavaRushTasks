@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'event';
+DROP TABLE IF EXISTS event;
 
-CREATE TABLE `event`
+CREATE TABLE event
 (
-    `id`      INT         not null auto_increment,
+    `id`      INT         not null auto_increment primary key ,
     `date`    DATE        not null,
     `user_id` INT         not null,
     `type`    VARCHAR(20) not null,
