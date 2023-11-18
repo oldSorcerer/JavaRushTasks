@@ -15,9 +15,10 @@ public class Solution {
 
         String string = scanner.nextLine();
 
-        if (string.equalsIgnoreCase(secret) )
+        if (string.equalsIgnoreCase(secret)) {
             System.out.println("доступ разрешен");
-        else
+        }else {
             System.out.println("доступ запрещен");
+        }
     }
 }
