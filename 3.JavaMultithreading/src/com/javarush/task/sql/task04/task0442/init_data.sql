@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'task';
+DROP TABLE IF EXISTS task;
 
-CREATE TABLE `task`
+CREATE TABLE task
 (
-       `id`            INT             not null    auto_increment,
+       `id`            INT             not null    auto_increment primary key ,
        `title`         VARCHAR(100)    not null,
        `exp_date`      DATE            not null
 );
