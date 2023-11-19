@@ -2,6 +2,9 @@ package com.javarush.task.task18.task1816;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.stream.IntStream;
 
 /* 
 Английские буквы
@@ -20,6 +23,10 @@ public class Solution {
                 }
             }
         }
-        System.out.print(count);
+//        System.out.print(count);
+
+        long cou = Files.readString(Path.of(args[0])).chars().mapToObj(sym -> (char) sym).filter(read -> read >= 65 && read <= 122 && Character.isAlphabetic(read)).count();
+        System.out.println(cou);
+
     }
 }
