@@ -23,10 +23,9 @@ public class Solution {
                 }
             }
         }
-//        System.out.print(count);
+        System.out.print(count);
 
-        long cou = Files.readString(Path.of(args[0])).chars().mapToObj(sym -> (char) sym).filter(read -> read >= 65 && read <= 122 && Character.isAlphabetic(read)).count();
-        System.out.println(cou);
+        System.out.println(Files.readString(Path.of(args[0])).chars().filter(read -> read >= 65 && read <= 122 && Character.isAlphabetic(read)).count());
 
     }
 }
