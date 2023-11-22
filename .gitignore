@@ -7,7 +7,7 @@ target/
 .repository/
 
 *.iws
-
+*.iml
 
 *.class
 *.info
