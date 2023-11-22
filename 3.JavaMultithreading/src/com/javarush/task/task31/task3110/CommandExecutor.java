@@ -3,6 +3,7 @@ package com.javarush.task.task31.task3110;
 import com.javarush.task.task31.task3110.command.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +11,10 @@ import java.util.Map;
 import static com.javarush.task.task31.task3110.Operation.*;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class CommandExecutor {
 
-    private static final Map<Operation, Command> ALL_KNOWN_COMMANDS_MAP = new HashMap<>();
+    static Map<Operation, Command> ALL_KNOWN_COMMANDS_MAP = new HashMap<>();
 
     static {
         ALL_KNOWN_COMMANDS_MAP.put(CREATE, new ZipCreateCommand());
