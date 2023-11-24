@@ -19,7 +19,6 @@ public class View extends JFrame implements ActionListener {
     private final JTabbedPane tabbedPane = new JTabbedPane();
     private final JTextPane htmlTextPane = new JTextPane();
     private final JEditorPane plainTextPane = new JEditorPane();
-
     private final UndoManager undoManager = new UndoManager();
 
     @Getter
