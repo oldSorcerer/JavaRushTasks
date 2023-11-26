@@ -18,9 +18,11 @@ public class Solution {
     public static void reverseArray(int[] array) {
         int[] copyArray = Arrays.copyOfRange(array,0, array.length);
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = copyArray[array.length - 1 - i];
-        }
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = copyArray[array.length - 1 - i];
+//        }
+
+        Arrays.setAll(array, i -> copyArray[array.length - 1 - i]);
     }
 
     public static void printArray(int[] array) {

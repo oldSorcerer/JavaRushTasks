@@ -1,1 +1,1 @@
-select now(), ADDDATE(now() INTERVAL 3 day), SUBDATE(now() INTERVAL 3 day)
+select now(), ADDDATE(now(), 3), SUBDATE(now(), 3)
