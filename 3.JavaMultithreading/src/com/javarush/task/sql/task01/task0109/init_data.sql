@@ -12,7 +12,7 @@ insert into owner (id, first_name, last_name, nick_name)
 values (5, 'Jack', 'Sparrow', 'pirate'),
        (11, 'Jeffrey', 'Lebowski', 'dude'),
        (7, 'James', 'Bond', 'agent'),
-       (1, 'Vito', 'Corleone', 'godfather')
-       (100, 'Arnold', 'Schwarzenegger', 'terminator')
+       (1, 'Vito', 'Corleone', 'godfather'),
+       (100, 'Arnold', 'Schwarzenegger', 'terminator'),
        (111, 'Anakin', 'Skywalker', 'jedi')
 ;
