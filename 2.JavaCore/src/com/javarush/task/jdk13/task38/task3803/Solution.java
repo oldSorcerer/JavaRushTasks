@@ -21,9 +21,8 @@ public class Solution {
             PrepareMyTest annotation = c.getAnnotation(PrepareMyTest.class);
             Arrays.stream(annotation.fullyQualifiedNames()).forEach(System.out::println);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     public static <T> boolean printValues(Class<T> c) {
@@ -32,8 +31,7 @@ public class Solution {
             Arrays.stream(annotation.value())
                     .map(Class::getSimpleName).forEach(System.out::println);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }
