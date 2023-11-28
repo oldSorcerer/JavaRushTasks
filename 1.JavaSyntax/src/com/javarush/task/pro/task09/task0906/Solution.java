@@ -30,8 +30,8 @@ public class Solution {
         }
         int decimalNumber = 0;
         for (int i = 0; i < binaryNumber.length(); i++) {
-            char ch = binaryNumber.charAt(binaryNumber.length() - 1 - i);
-            String str = String.valueOf(ch);
+            char charAt = binaryNumber.charAt(binaryNumber.length() - 1 - i);
+            String str = String.valueOf(charAt);
             //int numericValue = Character.getNumericValue(ch);
             decimalNumber = decimalNumber + Integer.parseInt(str) * (int) Math.pow(2, i);
         }
