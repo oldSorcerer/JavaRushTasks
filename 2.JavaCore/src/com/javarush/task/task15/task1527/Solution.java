@@ -3,6 +3,7 @@ package com.javarush.task.task15.task1527;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 
 /* 
 Парсер реквестов
@@ -13,8 +14,9 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String url = reader.readLine();
 
-        String[] words = url.substring(url.lastIndexOf("?") + 1).split("&");
+//        String[] words = url.substring(url.lastIndexOf("?") + 1).split("&");
 
+        String[] words = new URL(url).getQuery().split("&");
         for (String word : words) {
             System.out.println((word.contains("=") ? word.substring(0, word.indexOf("=")) : word) + " ");
         }
