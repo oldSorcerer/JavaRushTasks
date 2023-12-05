@@ -19,8 +19,8 @@ values (1, 'Ravshan', 199, 'support'),
        (9, 'Kostik', 8765, 'dev'),
        (10, 'Dzhumshut', 201, 'support'),
        (11, 'John', 4500, 'management'),
-       (12, 'Sarah', 5000, 'management')
-       (13, 'Peter', 4999, 'sales')
-       (14, 'John', 5001, 'dev')
+       (12, 'Sarah', 5000, 'management'),
+       (13, 'Peter', 4999, 'sales'),
+       (14, 'John', 5001, 'dev'),
        (15, 'Ema', 4321, 'dev')
 ;
