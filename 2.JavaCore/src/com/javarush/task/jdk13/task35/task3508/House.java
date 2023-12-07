@@ -23,7 +23,7 @@ public class House<T> {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("В доме находятся:\n");
-        for (Object resident : residents) {
+        for (T resident : residents) {
             builder.append(resident.toString()).append("\n");
         }
         return builder.toString();
