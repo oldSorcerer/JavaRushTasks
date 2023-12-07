@@ -50,7 +50,6 @@ public class Util {
                 return size;
             }
 
-
             @Override
             public String toString() {
                 return getClass().getSimpleName() + "{" +
@@ -72,7 +71,6 @@ public class Util {
             public String getTM() {
                 return "Levis";
             }
-
         }
 
         class Denim extends AbstractJeans {
