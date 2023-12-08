@@ -10,6 +10,7 @@ public class Generator<T> {
         this.aClass = aClass;
     }
 
+    @SuppressWarnings("unchecked")
     T newInstance() throws Exception {
         Constructor<T> declaredConstructor = (Constructor<T>) aClass.getDeclaredConstructors()[0];
         int parameterCount = declaredConstructor.getParameterCount();
