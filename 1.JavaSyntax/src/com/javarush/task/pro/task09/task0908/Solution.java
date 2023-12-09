@@ -21,7 +21,7 @@ public class Solution {
             binaryNumber = "0" + binaryNumber;
         }
         String hexNumber = "";
-        while (binaryNumber.length() > 0) {
+        while (!binaryNumber.isEmpty()) {
             String fourBit = binaryNumber.substring(0, 4);
 
             String oneHex  = switch (fourBit) {
