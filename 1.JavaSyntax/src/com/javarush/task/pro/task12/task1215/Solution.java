@@ -43,7 +43,7 @@ public class Solution {
             i--;
         }
 
-        if(glasses.size() == 0) {
+        if(glasses.isEmpty()) {
             System.out.println("Пирамида разобрана!");
         }
     }
