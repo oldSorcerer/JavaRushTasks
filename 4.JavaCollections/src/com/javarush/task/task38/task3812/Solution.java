@@ -32,13 +32,13 @@ public class Solution {
         if (c.isAnnotationPresent(PrepareMyTest.class)) {
             PrepareMyTest annotation = c.getAnnotation(PrepareMyTest.class);
 
-            for (Class aClass : annotation.value()) {
+            for (Class<?> aClass : annotation.value()) {
                 System.out.println(aClass.getSimpleName());
             }
 
             return true;
         } else {
-            return true;
+            return false;
         }
     }
 }
