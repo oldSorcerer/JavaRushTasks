@@ -23,7 +23,7 @@ public class Solution {
 
     @SafeVarargs
     public static <T> HashSet<T> newHashSet(T... elements) {
-        return new HashSet<>(List.of(elements));
+        return new HashSet<>(Set.of(elements));
     }
 
     public static <K, V> HashMap<K, V> newHashMap(List<? extends K> keys, List<? extends V> values) {
