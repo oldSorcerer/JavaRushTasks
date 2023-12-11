@@ -47,6 +47,6 @@ public class Solution {
 //            result.addAll(collection);
 //        }
 //        return result;
-        return list.stream().flatMap(Collection::stream).collect(Collectors.toList());
+        return list.stream().flatMap(Collection::stream).toList();
     }
 }
