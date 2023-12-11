@@ -1,7 +1,7 @@
 package com.javarush.task.task34.task3412;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import java.util.Date;
 */
 
 public class Solution {
-//    private static final Logger logger = LoggerFactory.getLogger(Solution.class);
+    private static final Logger logger = LoggerFactory.getLogger(Solution.class);
 
     private int value1;
     private String value2;
@@ -20,6 +20,7 @@ public class Solution {
         this.value1 = value1;
         this.value2 = value2;
         this.value3 = value3;
+        logger.debug("");
     }
 
     public static void main(String[] args) {
@@ -33,6 +34,7 @@ public class Solution {
         } else {
             value1 = (int) value;
         }
+        logger.debug("");
     }
 
     public void printString() {

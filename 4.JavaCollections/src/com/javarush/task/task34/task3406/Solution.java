@@ -64,7 +64,7 @@ public class Solution {
 
         void consumeHeap() {
             try {
-                List<Solution> heap = new ArrayList<>(100000);
+                List<Solution> heap = new ArrayList<>(100_000);
                 while (!isFinalized) {
                     heap.add(new Solution());
                 }
