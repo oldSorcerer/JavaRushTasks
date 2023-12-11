@@ -1,5 +1,6 @@
 package com.javarush.task.task36.task3602;
 
+import java.util.Arrays;
 import java.util.Collections;
 
 /* 
@@ -11,7 +12,9 @@ public class Solution {
         System.out.println(getExpectedClass());
     }
 
-    public static Class getExpectedClass() {
-        return null;
+    public static Class<?> getExpectedClass() {
+         return Arrays.stream(Collections.class.getDeclaredClasses())
+                 .filter(aClass -> aClass.getSimpleName().equals("EmptyList"))
+                 .findFirst().orElseThrow();
     }
 }
