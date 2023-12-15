@@ -9,7 +9,7 @@ public class Solution {
         System.out.println(getExpectedClass());
     }
 
-    public static Class getExpectedClass() {
+    public static Class<?> getExpectedClass() {
         return null;
     }
 }

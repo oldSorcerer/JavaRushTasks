@@ -15,7 +15,7 @@ public class Solution {
     public static class Monkey {
     }
 
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         helper.startTime();
         List<PhantomReference<Monkey>> list = helper.getPopulatedList();
 
