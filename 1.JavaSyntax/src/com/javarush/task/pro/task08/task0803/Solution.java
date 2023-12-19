@@ -17,8 +17,8 @@ public class Solution {
 
         int min = ints[0];
 
-        for (int i = 1; i < ints.length; i++) {
-            min = Math.min(min, ints[i]);
+        for (int anInt : ints) {
+            min = Math.min(min, anInt);
         }
 
         return min;
