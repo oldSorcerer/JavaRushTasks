@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Scanner;
 
 /* 
 Считаем слово
@@ -26,5 +30,10 @@ public class Solution {
             }
             System.out.println(count);
         }
+
+        String fileName = new Scanner(System.in).nextLine();
+        long number = Arrays.stream(Files.readString(Paths.get(fileName)).replaceAll("\\p{P}", " ").split(" "))
+                        .filter(str -> str.equals("world")).count();
+        System.out.println(number);
     }
 }
