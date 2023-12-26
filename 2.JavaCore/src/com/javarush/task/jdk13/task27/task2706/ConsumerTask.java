@@ -1,7 +1,7 @@
 package com.javarush.task.jdk13.task27.task2706;
 
 public class ConsumerTask implements Runnable {
-    private TransferObject transferObject;
+    private final TransferObject transferObject;
     protected volatile boolean stopped;
 
     public ConsumerTask(TransferObject transferObject) {
