@@ -29,7 +29,7 @@ public class Solution {
     }
 
     public static void ourInterruptMethod() {
-        //add your code here - добавь код тут
+        threads.forEach(Thread::interrupt);
     }
 
     public static class Water implements Runnable {
@@ -39,10 +39,11 @@ public class Solution {
             this.sharedResource = sharedResource;
         }
 
+        @Override
         public void run() {
             //fix 2 variables - исправь 2 переменных
-            boolean isCurrentThreadInterrupted = false;
-            String threadName = "";
+            boolean isCurrentThreadInterrupted = Water.getCurrentThread().isInterrupted();
+            String threadName = Water.getCurrentThread().getName();
 
             try {
                 while (!isCurrentThreadInterrupted) {
