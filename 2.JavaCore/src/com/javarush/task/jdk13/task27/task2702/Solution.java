@@ -15,12 +15,12 @@ public class Solution {
         return field;
     }
 
-    public void sout(Solution solution) {
+    public synchronized void sout(Solution solution) {
         System.out.format("111:  %s: %s %n", this.field, solution.getField());
         solution.sout2(this);
     }
 
-    public void sout2(Solution solution) {
+    public synchronized void sout2(Solution solution) {
         System.out.format("222:  %s: %s %n", this.field, solution.getField());
         solution.sout(this);
     }
@@ -28,6 +28,7 @@ public class Solution {
     public static void main(String[] args) {
         final Solution solution = new Solution("first");
         final Solution solution2 = new Solution("second");
+
         new Thread(new Runnable() {
             public void run() {
                 solution.sout(solution2);
