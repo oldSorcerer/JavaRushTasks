@@ -33,7 +33,7 @@ public class Solution {
     }
 
     public static class Water implements Runnable {
-        private String sharedResource;
+        private final String sharedResource;
 
         public Water(String sharedResource) {
             this.sharedResource = sharedResource;
@@ -47,7 +47,6 @@ public class Solution {
 
             try {
                 while (!isCurrentThreadInterrupted) {
-
                     System.out.println("Объект " + sharedResource + ", нить " + threadName);
                     Thread.sleep(1000);
                 }
