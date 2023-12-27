@@ -9,8 +9,8 @@ public class RealEstate {
     private final Set<Apartment> activeApartments;
 
     public RealEstate() {
-        allApartments = new HashSet();
-        activeApartments = new HashSet();
+        allApartments = new HashSet<>();
+        activeApartments = new HashSet<>();
 
         //add some data
         allApartments.add(new Apartment(this));
@@ -25,15 +25,17 @@ public class RealEstate {
         return allApartments;
     }
 
-    public synchronized void up(Apartment apartment) {
+    public void up(Apartment apartment) {
         activeApartments.add(apartment);
     }
 
-    public synchronized void revalidate() {
+    public void revalidate() {
         activeApartments.clear();
         for (Apartment apartment : allApartments) {
             boolean randomValue = Math.random() * 2 % 2 == 0;
-            apartment.revalidate(randomValue);
+            synchronized (this) {
+                apartment.revalidate(randomValue);
+            }
         }
     }
 }
