@@ -7,6 +7,7 @@ import java.io.*;
 */
 
 public class Solution {
+
     public static void main(String[] args) throws IOException {
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
@@ -21,6 +22,20 @@ public class Solution {
                     } catch (Exception ignore) {
                     }
                 }
+            }
+        }
+    }
+
+    public static void main1(String[] args) throws IOException {
+
+        try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(console.readLine()))) {
+            while (reader.ready()) {
+                String string = reader.readLine();
+                String str = string.replaceAll("[А-яA-Za-z]+\\d*|\\d+[А-яA-Za-z]", "")
+                        .replaceAll("\\s+", " ");
+                writer.write(str);
             }
         }
     }
