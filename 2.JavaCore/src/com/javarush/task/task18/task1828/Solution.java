@@ -25,6 +25,7 @@ public class Solution {
                     }
                 }
             }
+
             if (args.length != 0) {
                 if (args[0].equals("-u")) {
                     String id = args[1].trim();
@@ -37,6 +38,7 @@ public class Solution {
                     map.entrySet().removeIf(pair -> pair.getKey().equals(id));
                 }
             }
+
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
                 for (Map.Entry<String, String> entry : map.entrySet()) {
                     writer.write(checkLength(entry.getKey(), 8) + entry.getValue());
