@@ -1,6 +1,6 @@
 package com.javarush.task.jdk13.task28.task2804;
 
-public class MyThread  extends Thread{
+public class MyThread extends Thread {
 
     public MyThread() {
     }
