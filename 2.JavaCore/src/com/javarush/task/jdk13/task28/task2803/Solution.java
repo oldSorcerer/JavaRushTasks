@@ -11,31 +11,12 @@ Magic class
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
         Solution solution = new Solution();
-        List<String> list = null/* create object of this magic class here*/;
+        List<String> list = new CopyOnWriteArrayList<>();
 
         solution.startUpdatingThread(list);
         solution.copyOnWriteSolution(list);
         solution.stopUpdatingThread();
 
-        /* Example output
-size = 0
-Element: s781859336
-Element: s1453499757
-Element: s911312405
-Element: s-877520242
-Element: s-1636258097
-size = 5
-
-Element2: s781859336
-Element2: s1453499757
-Element2: s911312405
-Element2: s-877520242
-Element2: s-1636258097
-Element2: s-1739827856
-Element2: s-938954654
-Element2: s925086217
-size = 8
-         */
     }
 
     public void copyOnWriteSolution(List<String> list) throws InterruptedException {
@@ -79,3 +60,22 @@ size = 8
         t.start();
     }
 }
+/* Example output
+size = 0
+Element: s781859336
+Element: s1453499757
+Element: s911312405
+Element: s-877520242
+Element: s-1636258097
+size = 5
+
+Element2: s781859336
+Element2: s1453499757
+Element2: s911312405
+Element2: s-877520242
+Element2: s-1636258097
+Element2: s-1739827856
+Element2: s-938954654
+Element2: s925086217
+size = 8
+         */
