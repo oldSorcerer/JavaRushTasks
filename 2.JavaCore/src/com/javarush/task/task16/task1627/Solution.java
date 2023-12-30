@@ -3,6 +3,8 @@ package com.javarush.task.task16.task1627;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.javarush.task.task16.task1627.Solution.OnlineGame.*;
+
 /* 
 Поиграем?
 */
@@ -53,13 +55,12 @@ public class Solution {
         @Override
         public void run() {
             try {
-                List<String> steps = OnlineGame.steps;
                 for (String step : steps) {
                     System.out.println(getName() + ":" + step);
                     Thread.sleep(1000 / rating);
-                    if (step.equals(steps.get(steps.size() - 1)) && !OnlineGame.isWinnerFound) {
+                    if (step.equals(steps.get(steps.size() - 1)) && !isWinnerFound) {
                         System.out.println(getName() + ":победитель!");
-                        OnlineGame.isWinnerFound = true;
+                        isWinnerFound = true;
                     }
                 }
             } catch (InterruptedException e) {
