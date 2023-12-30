@@ -14,7 +14,12 @@ public class Solution {
     public static ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(3);
 
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        scheduledPool.schedule(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        }, 0L, TimeUnit.DAYS);
 
 
         scheduledPool.shutdown();
