@@ -42,6 +42,10 @@ public class Solution {
 
     public static class AmigoThreadFactory implements ThreadFactory {
 
+        public AmigoThreadFactory() {
+
+        }
+
         @Override
         public Thread newThread(Runnable r) {
             return null;
