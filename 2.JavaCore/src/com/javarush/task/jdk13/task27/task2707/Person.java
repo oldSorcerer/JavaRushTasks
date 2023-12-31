@@ -12,11 +12,13 @@ public class Person implements Runnable {
         String name = Thread.currentThread().getName();
         try {
             Thread.sleep(1000);
-            //сделайте что-то тут - do something here
-            mail.setText("Person [" + name + "] wrote an email 'AAA'");
-            //сделайте что-то тут - do something here
+
+            synchronized (mail) {
+                mail.setText("Person [" + name + "] wrote an email 'AAA'");
+                mail.notify();
+            }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
     }
 }
