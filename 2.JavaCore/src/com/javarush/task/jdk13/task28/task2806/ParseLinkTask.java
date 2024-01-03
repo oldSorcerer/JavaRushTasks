@@ -1,20 +1,18 @@
 package com.javarush.task.jdk13.task28.task2806;
 
-public class ParseLinkTask implements Runnable {
+import java.util.concurrent.Callable;
 
-    private String line;
-    private Link link = new Link();
+public class ParseLinkTask implements Callable<Link> {
+
+    private final String line;
 
     public ParseLinkTask(String line) {
         this.line = line;
     }
 
-    public Link getLink() {
-        return link;
-    }
-
     @Override
-    public void run() {
+    public Link call() {
+        Link link = new Link();
         int colonIndex = line.indexOf(":");
         link.protocol = line.substring(0, colonIndex);
 
@@ -30,5 +28,6 @@ public class ParseLinkTask implements Runnable {
         } else {
             link.address = line.substring(colonIndex + 3);
         }
+        return link;
     }
 }
