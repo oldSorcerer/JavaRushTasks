@@ -10,6 +10,8 @@ import java.util.concurrent.*;
 
 public class Solution {
 
+    public static ExecutorService executorService = Executors.newSingleThreadExecutor();
+
     public static void main(String[] args) throws Exception {
         List<Future<String>> futures = new ArrayList<>();
         List<String> instruments = List.of("скрипка", "тромбон", "бубенцы", "контрабас");
@@ -18,12 +20,12 @@ public class Solution {
         }
 
         System.out.println("Успели доиграть: " + completeConcert(futures));
+
+        executorService.shutdown();
     }
 
     public static Future<String> startPlaying(String name) {
-        FutureTask<String> future = new FutureTask<>(new MusicalInstrument(name));
-        new Thread(future).start();
-        return future;
+        return executorService.submit(new MusicalInstrument(name));
     }
 
     public static List<String> completeConcert(List<Future<String>> futures) {
