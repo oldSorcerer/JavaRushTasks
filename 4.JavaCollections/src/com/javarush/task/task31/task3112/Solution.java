@@ -1,5 +1,7 @@
 package com.javarush.task.task31.task3112;
 
+import org.apache.logging.log4j.core.appender.rolling.action.IfAccumulatedFileCount;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -23,7 +25,20 @@ public class Solution {
     }
 
     public static Path downloadFile(String urlString, Path downloadDirectory) throws IOException {
-        // implement this method
-        return null;
+        if (Files.notExists(downloadDirectory)){
+            Files.createDirectory(downloadDirectory);
+        }
+
+        URL url = new URL(urlString);
+        String fileName = Paths.get(url.getPath()).getFileName().toString();
+
+        Path download = downloadDirectory.resolve(fileName);
+
+        InputStream inputStream = url.openStream();
+
+        Path tempFile = Files.createTempFile("temp-", ".temp");
+        Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
+        Files.move(tempFile, download, StandardCopyOption.REPLACE_EXISTING);
+        return download;
     }
 }
