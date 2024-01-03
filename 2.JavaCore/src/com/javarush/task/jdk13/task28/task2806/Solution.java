@@ -1,6 +1,7 @@
 package com.javarush.task.jdk13.task28.task2806;
 
 import java.util.*;
+import java.util.concurrent.FutureTask;
 
 /* 
 Параллельный парсинг
@@ -18,14 +19,14 @@ public class Solution {
         Map<Thread, ParseLinkTask> tasks = new HashMap<>();
         for (String line : lines) {
             ParseLinkTask parseLinkTask = new ParseLinkTask(line);
-            Thread thread = new Thread(parseLinkTask);
+            Thread thread = new Thread(new FutureTask<>(parseLinkTask));
             tasks.put(thread, parseLinkTask);
             thread.start();
         }
 
         for (Map.Entry<Thread, ParseLinkTask> entry : tasks.entrySet()) {
             entry.getKey().join();
-            System.out.println(entry.getValue().getLink());
+            System.out.println(entry.getValue().call());
         }
     }
 }

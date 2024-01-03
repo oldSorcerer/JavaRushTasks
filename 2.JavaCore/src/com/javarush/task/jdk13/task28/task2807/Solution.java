@@ -28,7 +28,8 @@ public class Solution {
     }
 
     public static void completeConcert(List<FutureTask<String>> taskList) {
-        //напишите тут ваш код
-
+        taskList.stream()
+                .filter(task -> !task.isDone())
+                .forEach(task -> task.cancel(true));
     }
 }

@@ -28,8 +28,14 @@ public class Solution {
     }
 
     public static List<String> completeConcert(List<FutureTask<String>> taskList) {
-        //напишите тут ваш код
-
-        return null;
+        List<String> list = new ArrayList<>();
+        for (FutureTask<String> task : taskList) {
+            try {
+                list.add(task.get(800, TimeUnit.MILLISECONDS));
+            } catch (Exception e) {
+                task.cancel(true);
+            }
+        }
+        return list;
     }
 }
