@@ -23,7 +23,9 @@ public class Solution {
     }
 
     public static void completeConcert() throws Exception {
-        //напишите тут ваш код
-
+        executor.shutdown();
+        if (!executor.awaitTermination(2, TimeUnit.SECONDS)) {
+            executor.shutdownNow();
+        }
     }
 }
