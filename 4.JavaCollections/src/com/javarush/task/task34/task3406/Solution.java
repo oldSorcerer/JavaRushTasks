@@ -12,7 +12,7 @@ public class Solution {
     public static Helper helper = new Helper();
 
     public static class Monkey {
-        private String name;
+        private final String name;
 
         public Monkey(String name) {
             this.name = name;
@@ -29,7 +29,7 @@ public class Solution {
 
         Monkey monkey = new Monkey("Simka");
 
-        //Add reference here
+        WeakReference<Monkey> reference = new WeakReference<>(monkey);
 
         helper.callGC();
 
@@ -38,8 +38,8 @@ public class Solution {
         helper.callGC();
         helper.consumeHeap();
 
-//        if (reference.get() == null)
-//            System.out.println("Finalized");
+        if (reference.get() == null)
+            System.out.println("Finalized");
 
         helper.finish();
     }
