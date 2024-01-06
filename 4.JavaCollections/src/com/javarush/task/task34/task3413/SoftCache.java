@@ -5,13 +5,12 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SoftCache {
-    private Map<Long, SoftReference<AnyObject>> cacheMap = new ConcurrentHashMap<>();
+    private final Map<Long, SoftReference<AnyObject>> cacheMap = new ConcurrentHashMap<>();
 
     public AnyObject get(Long key) {
         SoftReference<AnyObject> softReference = cacheMap.get(key);
 
-        //напишите тут ваш код
-        return null;
+        return softReference.get();
     }
 
     public AnyObject put(Long key, AnyObject value) {
