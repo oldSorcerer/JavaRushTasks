@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /* 
 Поиск данных внутри файла
@@ -22,5 +26,11 @@ public class Solution {
                 }
             }
         }
+
+        System.out.println(String.join(" ", Files.readAllLines(Path.of(new BufferedReader(new InputStreamReader(System.in)).readLine()))
+                .stream()
+                .map(str -> str.split(" "))
+                .filter(strings -> strings[0].equals(args[0]))
+                .findFirst().orElseThrow()));
     }
 }
