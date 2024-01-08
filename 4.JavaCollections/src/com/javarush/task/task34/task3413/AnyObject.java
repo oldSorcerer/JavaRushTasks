@@ -3,25 +3,19 @@ package com.javarush.task.task34.task3413;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import static java.util.Objects.*;
+
 public class AnyObject {
 
-    private Long id;
-    private String name;
-    private Calendar creationTime = new GregorianCalendar();
-    private String additionalDescription;
+    private final Long id;
+    private final String name;
+    private final Calendar creationTime = new GregorianCalendar();
+    private final String additionalDescription;
 
     public AnyObject(Long id, String name, String additionalDescription) {
         this.id = id;
-        if (name != null) {
-            this.name = name;
-        } else {
-            this.name = "AnyObject#" + id;
-        }
-        if (additionalDescription != null) {
-            this.additionalDescription = additionalDescription;
-        } else {
-            this.additionalDescription = "This is object #" + id;
-        }
+        this.name = requireNonNullElseGet(name, () -> "AnyObject#" + id);
+        this.additionalDescription = requireNonNullElseGet(additionalDescription, () -> "This is object #" + id);
     }
 
     @Override
@@ -34,7 +28,6 @@ public class AnyObject {
         if (!id.equals(that.id)) return false;
         if (!name.equals(that.name)) return false;
         return creationTime.equals(that.creationTime);
-
     }
 
     @Override
