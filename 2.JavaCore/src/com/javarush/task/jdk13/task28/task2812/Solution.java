@@ -16,7 +16,9 @@ public class Solution {
             executor.submit(() -> doExpensiveOperation(localId));
         }
 
-        executor.shutdownNow();
+        List<Runnable> list = executor.shutdownNow();
+        Thread.sleep(100);
+        list.forEach(run -> System.out.println(run.toString().substring(0, 40) + "... was not completed"));
     }
 
     private static void doExpensiveOperation(int localId) {
