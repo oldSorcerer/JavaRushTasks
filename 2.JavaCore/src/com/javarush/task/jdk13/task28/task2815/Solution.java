@@ -2,6 +2,7 @@ package com.javarush.task.jdk13.task28.task2815;
 
 import java.util.Random;
 import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 /* 
 Пакуем лампочки
@@ -12,7 +13,9 @@ public class Solution {
     private static final BlockingQueue<String> QUEUE = new LinkedBlockingQueue<>();
 
     public static void main(String[] args) {
-        //напишите тут ваш код
+        runProcess(Executors.newSingleThreadExecutor());
+        runProcess(Executors.newCachedThreadPool());
+        runProcess(Executors.newWorkStealingPool());
 
     }
 
@@ -28,7 +31,7 @@ public class Solution {
         System.out.println("Эмулируем работу производителей...");
         System.out.println("Производители произвели " + maxProdBulbs + " лампочек...");
 
-        //напишите тут ваш код
+        IntStream.range(0, maxProdBulbs).forEach(i -> QUEUE.add("лампочка-" + rnd.nextInt(100)));
 
     }
 
@@ -56,9 +59,9 @@ public class Solution {
         @Override
         public void run() {
             String bulb = QUEUE.poll();
-//            if (bulb != null) {
-//                System.out.println("Упакована: " + bulb + " упаковщиком: " + Thread.currentThread().getName());
-//            }
+            if (bulb != null) {
+                System.out.println("Упакована: " + bulb + " упаковщиком: " + Thread.currentThread().getName());
+            }
         }
     }
 }

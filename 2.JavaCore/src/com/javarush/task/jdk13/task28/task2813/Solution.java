@@ -4,6 +4,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.IntStream;
 
 /* 
 Кеширование нитей
@@ -15,7 +16,7 @@ public class Solution {
     public static ExecutorService executorService;
 
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        executorService = Executors.newCachedThreadPool();
 
         submitProducers();
         submitConsumers();
@@ -24,12 +25,11 @@ public class Solution {
     }
 
     public static void submitProducers() {
-        //напишите тут ваш код
-
+       IntStream.range(0, 100).forEach(i -> executorService.submit(new Producer(String.valueOf(i))));
     }
 
     public static void submitConsumers() {
-        //напишите тут ваш код
-
+        Consumer consumer = new Consumer();
+        IntStream.range(0, 100).forEach(i -> executorService.submit(consumer));
     }
 }
