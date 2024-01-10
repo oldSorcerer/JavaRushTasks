@@ -1,7 +1,9 @@
 package com.javarush.task.jdk13.task28.task2814;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.IntStream;
 
 /* 
 Сбор статистики
@@ -25,8 +27,8 @@ public class Solution {
     }
 
     public static void invokeMillionTasks(Callable<String> task) throws Exception {
-        //напишите тут ваш код
-
+        cachedPool.invokeAll(Collections.nCopies(1_000_000, task));
+//        List<Callable<String>> list = IntStream.range(0, 1_000_000).mapToObj(i -> task).toList();
     }
 
     public static void printStatistic() {
