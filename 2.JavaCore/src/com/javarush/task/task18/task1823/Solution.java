@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /* 
 Нити и байты
@@ -18,11 +19,11 @@ public class Solution {
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
-                String string = reader.readLine();
-                if (string.equals("exit")) {
+                String fileName = reader.readLine();
+                if (fileName.equals("exit")) {
                     break;
                 }
-                new ReadThread(string).start();
+                new ReadThread(fileName).start();
             }
         }
     }
@@ -50,6 +51,17 @@ public class Solution {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+
+            Integer max = map.values().stream().max(Comparator.naturalOrder()).orElseThrow();
+
+            map.entrySet().stream()
+                    .filter(entry -> entry.getValue().equals(max)).findFirst()
+                    .ifPresent(entry -> resultMap.put(fileName, entry.getKey()));
+
+
+
+
             List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
             Comparator<Map.Entry<Integer, Integer>> comparator = Map.Entry.comparingByValue();
             list.sort(comparator.reversed());

@@ -14,13 +14,9 @@ public class Solution {
     public static ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(3);
 
     public static void main(String[] args) throws Exception {
-        scheduledPool.schedule(new Runnable() {
-            @Override
-            public void run() {
 
-            }
-        }, 0L, TimeUnit.DAYS);
-
+        ScheduledFuture<Integer> schedule = scheduledPool.schedule(new TheUltimateQuestion(), 365L * 7_500_000L, TimeUnit.DAYS);
+        System.out.println(schedule.get());
 
         scheduledPool.shutdown();
     }
