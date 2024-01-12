@@ -1,4 +1,16 @@
-taskKey="com.javarush.games.ticktacktoe"\n\nИгра Крестики-нолики (1/14)
+taskKey="com.javarush.games.ticktacktoe"\n\nИгра Крестики-нолики (2/14)
+
+Для действий которые нужно выполнить в начале каждой новой игры (например, заполнения массива model нулями), создадим метод public void startGame() и вызовем его в initialize().
+
+В startGame() присвоим currentPlayer значение 1, и заполним model нулями.
+
+Требования:
+•	В классе TicTacToeGame должен существовать метод public void startGame().
+•	В методе initialize() должен быть вызван метод startGame().
+•	В методе startGame() нужно присвоить 1 переменной currentPlayer.
+•	В методе startGame() нужно заполнить все ячейки массива model нулями.
+
+Игра Крестики-нолики (1/14)
 
 Создадим метод public void initialize(). С этого метода будет начинаться выполнение нашей игры.
 Чтобы разбить игровое поле на клетки размером 3х3, в initialize() вызовем метод setScreenSize(3, 3).
