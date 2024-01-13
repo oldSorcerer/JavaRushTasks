@@ -16,4 +16,14 @@ public class TicTacToeGame extends Game {
         currentPlayer = 1;
         model = new int[3][3];
     }
+
+    void updateCellView(int x, int y, int value) {
+        if (value == 0) {
+            setCellValue(x, y, " ");
+        } else if (value == 1) {
+            setCellValue(x, y, "X");
+        } else if (value == 2) {
+            setCellValue(x, y, "O");
+        }
+    }
 }
