@@ -11,8 +11,7 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         String[] strings = null;
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-             FileInputStream inputStream = new FileInputStream(console.readLine());
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+             BufferedReader reader = new BufferedReader(new FileReader(console.readLine()))) {
 
             while (reader.ready()) {
                 strings = reader.readLine().split(" ");
