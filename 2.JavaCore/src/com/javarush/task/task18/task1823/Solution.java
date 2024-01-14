@@ -52,7 +52,6 @@ public class Solution {
                 throw new RuntimeException(e);
             }
 
-
             Integer max = map.values().stream().max(Comparator.naturalOrder()).orElseThrow();
 
             map.entrySet().stream()
