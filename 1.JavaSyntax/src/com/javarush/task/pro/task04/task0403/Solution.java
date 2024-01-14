@@ -18,7 +18,7 @@ public class Solution {
                 sum += number;
             } else if (scanner.hasNextLine()) {
                 String string = scanner.nextLine();
-                if (string.equals("ENTER")) {
+                if ("ENTER".equals(string)) {
                     break;
                 }
             }
