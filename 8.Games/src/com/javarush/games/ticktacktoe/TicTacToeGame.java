@@ -10,6 +10,7 @@ public class TicTacToeGame extends Game {
     public void initialize() {
         setScreenSize(3, 3);
         startGame();
+        updateView();
     }
 
     public void startGame() {
@@ -27,5 +28,11 @@ public class TicTacToeGame extends Game {
         setCellValue(x, y, str);
     }
 
-    
+    public void updateView() {
+        for (int x = 0; x < model.length; x++) {
+            for (int y = 0; y < model[x].length; y++) {
+                updateCellView(x, y, model[x][y]);
+            }
+        }
+    }
 }
