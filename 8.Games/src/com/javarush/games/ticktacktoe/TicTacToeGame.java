@@ -37,6 +37,8 @@ public class TicTacToeGame extends Game {
     }
 
     public void onMouseLeftClick(int x, int y) {
-
+        model[x][y] = currentPlayer;
+        updateView();
+        currentPlayer = 3 - currentPlayer;
     }
 }
