@@ -17,14 +17,15 @@ public class TicTacToeGame extends Game {
         model = new int[3][3];
     }
 
-    void updateCellView(int x, int y, int value) {
-        String str = value == 0 ? " " : "";
-        if (value == 0) {
-            setCellValue(x, y, " ");
-        } else if (value == 1) {
-            setCellValue(x, y, "X");
-        } else if (value == 2) {
-            setCellValue(x, y, "O");
-        }
+    public void updateCellView(int x, int y, int value) {
+        String str = switch (value) {
+            case 0 -> " ";
+            case 1 -> "X";
+            case 2 -> "O";
+            default -> "";
+        };
+        setCellValue(x, y, str);
     }
+
+    
 }
