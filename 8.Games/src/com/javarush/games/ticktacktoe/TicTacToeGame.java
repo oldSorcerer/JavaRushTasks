@@ -35,4 +35,8 @@ public class TicTacToeGame extends Game {
             }
         }
     }
+
+    public void onMouseLeftClick(int x, int y) {
+
+    }
 }
