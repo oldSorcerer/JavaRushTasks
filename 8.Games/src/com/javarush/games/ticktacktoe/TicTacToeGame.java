@@ -10,6 +10,7 @@ public class TicTacToeGame extends Game {
     public void initialize() {
         setScreenSize(3, 3);
         startGame();
+        updateView();
     }
 
     public void startGame() {
@@ -17,14 +18,27 @@ public class TicTacToeGame extends Game {
         model = new int[3][3];
     }
 
-    void updateCellView(int x, int y, int value) {
-        String str = value == 0 ? " " : "";
-        if (value == 0) {
-            setCellValue(x, y, " ");
-        } else if (value == 1) {
-            setCellValue(x, y, "X");
-        } else if (value == 2) {
-            setCellValue(x, y, "O");
+    public void updateCellView(int x, int y, int value) {
+        String str = switch (value) {
+            case 0 -> " ";
+            case 1 -> "X";
+            case 2 -> "O";
+            default -> "";
+        };
+        setCellValue(x, y, str);
+    }
+
+    public void updateView() {
+        for (int x = 0; x < model.length; x++) {
+            for (int y = 0; y < model[x].length; y++) {
+                updateCellView(x, y, model[x][y]);
+            }
         }
+    }
+
+    public void onMouseLeftClick(int x, int y) {
+        model[x][y] = currentPlayer;
+        updateView();
+        currentPlayer = 3 - currentPlayer;
     }
 }

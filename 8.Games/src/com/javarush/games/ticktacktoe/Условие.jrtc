@@ -1,4 +1,31 @@
-taskKey="com.javarush.games.ticktacktoe"\n\nИгра Крестики-нолики (3/14)
+taskKey="com.javarush.games.ticktacktoe"\n\nИгра Крестики-нолики (5/14)
+
+Игра Крестики-нолики (5/14)
+
+Создадим метод public void onMouseLeftClick(int x, int y). Он будет вызывать при клике левой клавишей мышки по игровому полю.
+
+onMouseLeftClick должен записать в ячейку model[x][y] значение currentPlayer.
+После этого он должен вызвать updateView().
+И после этого переключить значение currentPlayer, например так: currentPlayer = 3 - currentPlayer.
+Домашнее задание:
+раскрасить X, 0 в разные цвета. Использовать метод setCellValueEx().
+
+Требования:
+•	В классе TicTacToeGame должен быть метод public void onMouseLeftClick(int, int).
+•	Метод onMouseLeftClick(x, y) должен записывать в ячейку model[x][y] значение currentPlayer.
+•	Метод onMouseLeftClick(x, y) должен вызывать метод updateView().
+•	Метод onMouseLeftClick() должен менять значение currentPlayer с 1 на 2 и наоборот.
+
+Игра Крестики-нолики (4/14)
+
+Создадим метод public void updateView() — для отображения всего массива model на игровом поле. Его можно сразу вызвать в initialize().
+
+Теперь давайте его реализуем: он должен пройтись по массиву model и для каждого его элемента вызвать метод updateCellView().
+
+Требования:
+•	В классе TicTacToeGame должен быть метод public void updateView().
+•	В методе initialize() должен быть вызван метод updateView().
+•	В методе updateView() нужно для каждой ячейки массива model вызвать метод updateCellView() с соответствующими параметрами.
 
 Игра Крестики-нолики (3/14)
 
