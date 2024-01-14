@@ -10,7 +10,7 @@ import java.util.Scanner;
 */
 
 public class Solution {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         byte[] bytes = args[0].getBytes();
         try (Scanner scanner = new Scanner(System.in)) {
             Files.write(Path.of(scanner.nextLine()), bytes);

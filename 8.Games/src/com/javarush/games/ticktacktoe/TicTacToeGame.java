@@ -18,6 +18,7 @@ public class TicTacToeGame extends Game {
     }
 
     void updateCellView(int x, int y, int value) {
+        String str = value == 0 ? " " : "";
         if (value == 0) {
             setCellValue(x, y, " ");
         } else if (value == 1) {
