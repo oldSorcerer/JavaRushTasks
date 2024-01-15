@@ -5,7 +5,7 @@ import java.util.List;
 public class Catzilla {
     private int fusionReactorCores = 5;
     private int fangStrength = 5;
-    private int[] clawsPerPaw = {5, 5, 4, 4};
+    private final int[] clawsPerPaw = {5, 5, 4, 4};
     private List<Exception> exceptionRockets = List.of(new Exception("Take that!"), new Exception("Catzilla power!"), new Exception("You messed with the wrong cat!"),
             new Exception("You better not get up again!"), new Exception("Bang!"), new Exception("Kapaow!"),
             new Exception("Get some! Get some!"), new Exception("Whatcha gonna do now!?"));
