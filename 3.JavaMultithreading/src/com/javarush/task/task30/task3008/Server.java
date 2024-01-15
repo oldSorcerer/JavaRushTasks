@@ -56,7 +56,7 @@ public class Server {
                 Message message = connection.receive();
                 String name = message.getData();
 
-                if (message.getType().equals(MessageType.USER_NAME) && !Objects.isNull(name) &&
+                if (message.getType().equals(MessageType.USER_NAME) && Objects.nonNull(name) &&
                         !name.isEmpty() && !connectionMap.containsKey(name)) {
                     connectionMap.put(name, connection);
                     connection.send(new Message(MessageType.NAME_ACCEPTED, "Добро пожаловать в чат, " + name));

@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Planet {
     public OrbitalStation[] stations;
-    private String name;
+    private final String name;
 
     public Planet(String name) {
         this.name = name;
@@ -12,7 +12,7 @@ public class Planet {
 
     public static class OrbitalStation {
         public ControlSystem controlSystem = new ControlSystem();
-        private String name;
+        private final String name;
 
         public OrbitalStation(String name) {
             this.name = name;
