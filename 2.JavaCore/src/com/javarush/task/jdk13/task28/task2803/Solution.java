@@ -38,14 +38,14 @@ public class Solution {
     }
 
     public void stopUpdatingThread() throws InterruptedException {
-        t.interrupt();
-        t.join();
+        thread.interrupt();
+        thread.join();
     }
 
-    private Thread t;
+    private Thread thread;
 
     private void startUpdatingThread(final List<String> list) {
-        t = new Thread(new Runnable() {
+        thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 for (int i = 0; i < 20; i++) {
@@ -57,7 +57,7 @@ public class Solution {
                 }
             }
         });
-        t.start();
+        thread.start();
     }
 }
 /* Example output
