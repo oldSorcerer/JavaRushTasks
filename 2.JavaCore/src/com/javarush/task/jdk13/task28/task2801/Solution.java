@@ -41,14 +41,25 @@ public class Solution {
     }
 
     public static class AmigoThreadFactory implements ThreadFactory {
+        private static final AtomicInteger FACTORY_NUMBER = new AtomicInteger(1);
+        private final AtomicInteger threadNumber = new AtomicInteger(1);
+        private final ThreadGroup group;
+        private final String format;
 
         public AmigoThreadFactory() {
-
+            group = Thread.currentThread().getThreadGroup();
+            format = String.format("%s-pool-%s-thread-", group.getName(), FACTORY_NUMBER.getAndIncrement());
         }
 
         @Override
-        public Thread newThread(Runnable r) {
-            return null;
+        public Thread newThread(Runnable runnable) {
+
+            Thread thread = new Thread(runnable, format + threadNumber.getAndIncrement());
+
+            thread.setDaemon(false);
+            thread.setPriority(Thread.NORM_PRIORITY);
+
+            return thread;
         }
     }
 }
