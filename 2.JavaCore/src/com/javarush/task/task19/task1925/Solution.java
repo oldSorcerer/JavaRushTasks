@@ -28,8 +28,11 @@ public class Solution {
             }
             writer.write(builder.toString().replaceAll(",$", ""));
         }
+    }
 
-        Files.writeString(Path.of(args[1]), Arrays.stream(Files.readString(Path.of(args[0])).split("[\n\r ]+"))
+    public static void main1(String[] args) throws IOException{
+
+        Files.writeString(Path.of(args[1]), Arrays.stream(Files.readString(Path.of(args[0])).split("[\\n\\r\\s]+"))
                 .filter(string -> string.length() > 6)
                 .collect(Collectors.joining(",")));
     }

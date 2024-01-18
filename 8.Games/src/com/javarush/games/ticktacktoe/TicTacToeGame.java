@@ -3,6 +3,8 @@ package com.javarush.games.ticktacktoe;
 import com.javarush.engine.cell.Game;
 
 public class TicTacToeGame extends Game {
+
+    private boolean isGameStopped;
     private int[][] model = new int[3][3];
     private int currentPlayer;
 
@@ -16,6 +18,7 @@ public class TicTacToeGame extends Game {
     public void startGame() {
         currentPlayer = 1;
         model = new int[3][3];
+        isGameStopped = false;
     }
 
     public void updateCellView(int x, int y, int value) {
@@ -37,6 +40,9 @@ public class TicTacToeGame extends Game {
     }
 
     public void onMouseLeftClick(int x, int y) {
+        if (isGameStopped) {
+            return;
+        }
         model[x][y] = currentPlayer;
         updateView();
         currentPlayer = 3 - currentPlayer;

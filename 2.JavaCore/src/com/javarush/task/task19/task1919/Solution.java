@@ -36,11 +36,11 @@ public class Solution {
         }
     }
 
-//    public static void main1(String[] args) throws IOException {
-//        Files.readAllLines(Paths.get(args[0]))
-//                .stream()
-//                .collect(Collectors
-//                        .toMap(k -> k.split(" ")[0], k -> Double.parseDouble(k.split("")[1]), Double::sum, TreeMap::new))
-//                .forEach((k, v) -> System.out.println(k + " " + v));
-//    }
+    public static void main1(String[] args) throws IOException {
+        Files.readAllLines(Paths.get(args[0]))
+                .stream()
+                .collect(Collectors
+                        .toMap(k -> k.split(" ")[0], k -> Double.parseDouble(k.split("")[1]), Double::sum, TreeMap::new))
+                .forEach((k, v) -> System.out.println(k + " " + v));
+    }
 }
