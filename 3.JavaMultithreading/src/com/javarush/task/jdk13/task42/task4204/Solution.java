@@ -26,7 +26,6 @@ public class Solution {
         }
     }
 
-
     public static void main(String[] args) throws InterruptedException {
         printMap(MAP);
 
@@ -37,7 +36,6 @@ public class Solution {
             Key key = KEYS.get(index);
 
             Runnable task = () -> MAP.replace(key, key.getIntField(), key.getIntField() * VALUE_MULTIPLIER);
-
             executor.submit(task);
         }
 

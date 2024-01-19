@@ -47,4 +47,17 @@ public class TicTacToeGame extends Game {
         updateView();
         currentPlayer = 3 - currentPlayer;
     }
+
+    public boolean checkWin(int x, int y, int n) {
+        for (int i = 0; i < model.length; i++) {
+            for (int j = 0; j < model[i].length; j++) {
+                if (model[i][j] == n) {
+
+                }
+            }
+
+        }
+
+        return false;
+    }
 }
