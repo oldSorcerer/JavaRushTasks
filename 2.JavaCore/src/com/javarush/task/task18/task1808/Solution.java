@@ -1,6 +1,7 @@
 package com.javarush.task.task18.task1808;
 
 import java.io.*;
+import java.util.Arrays;
 
 /* 
 Разделение файла
@@ -19,11 +20,19 @@ public class Solution {
             while (readerFileOne.available() > 0) {
                 if (count < halfFile) {
                     writerFileTwo.write(readerFileOne.read());
-                    count ++;
+                    count++;
                 } else {
                     writerFileThree.write(readerFileOne.read());
                 }
             }
+//            byte[] bytes = readerFileOne.readAllBytes();
+//            if (bytes.length % 2 != 0) {
+//                writerFileTwo.write(Arrays.copyOfRange(bytes, 0, bytes.length / 2 + 1));
+//                writerFileThree.write(Arrays.copyOfRange(bytes, bytes.length / 2 + 1, bytes.length));
+//            } else {
+//                writerFileTwo.write(Arrays.copyOfRange(bytes, 0, bytes.length / 2 ));
+//                writerFileThree.write(Arrays.copyOfRange(bytes, bytes.length / 2, bytes.length));
+//            }
         }
     }
 }

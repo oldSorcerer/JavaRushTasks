@@ -52,19 +52,36 @@ public class Solution {
                 throw new RuntimeException(e);
             }
 
-            Integer max = map.values().stream().max(Comparator.naturalOrder()).orElseThrow();
-
-            map.entrySet().stream()
-                    .filter(entry -> entry.getValue().equals(max)).findFirst()
-                    .ifPresent(entry -> resultMap.put(fileName, entry.getKey()));
-
-
-
-
             List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
             Comparator<Map.Entry<Integer, Integer>> comparator = Map.Entry.comparingByValue();
             list.sort(comparator.reversed());
             resultMap.put(fileName, list.get(0).getKey());
+        }
+
+        public void run1() {
+            Map<Integer, Integer> map = new HashMap<>();
+
+            try (FileInputStream inputStream = new FileInputStream(fileName)) {
+                while (inputStream.available() > 0) {
+                    int read = inputStream.read();
+                    if (!map.containsKey(read)) {
+                        map.put(read, 1);
+                    } else {
+                        map.put(read, map.get(read) + 1);
+                    }
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            Integer max = map.values().stream().max(Comparator.naturalOrder()).orElseThrow();
+
+            map.entrySet().stream()
+                    .filter(entry -> entry.getValue().equals(max)).sorted();
+
+//                    .findFirst()
+//                    .ifPresent(entry -> resultMap.put(fileName, entry.getKey()));
+
         }
     }
 }
