@@ -21,7 +21,6 @@ public class Solution {
         orchestra.add(new Piano());
         orchestra.add(new Piano());
         orchestra.add(new Piano());
-
     }
 
     public static void createStringedOrchestra() {

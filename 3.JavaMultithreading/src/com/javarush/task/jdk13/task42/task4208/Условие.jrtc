@@ -8,9 +8,9 @@ taskKey="com.javarush.task.jdk13.task42.task4208"\n\nПотоки в очере�
 - добавь в MyQueue два приватных поля: writeLock и readLock типа Lock.
 Для их инициализации используй поле lock и методы writeLock, readLock.
 - оберни тела методов size и peek в try-finally. В try вызови метод lock у поля readLock,
-а в finally - метод unlock у поля writeLock;
+а в finally - метод unlock;
 - оберни тела методов offer и poll в try-finally. В try вызови метод lock у поля writeLock,
-а в finally - метод unlock у поля readLock.
+а в finally - метод unlock.
 
 Напоследок, в методе iterator брось UnsupportedOperationException.
 
