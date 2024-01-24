@@ -13,11 +13,11 @@ public class Solution {
 
     public static void main(String[] args) {
 
-        int[] copyArray = Arrays.copyOf(array, array.length);
+        int[] copy = Arrays.copyOf(array, array.length);
 
-        Arrays.sort(copyArray);
+        Arrays.sort(copy);
 
-        int index = Arrays.binarySearch(copyArray, element);
+        int index = Arrays.binarySearch(copy, element);
 
         System.out.println(index >= 0 ? "true" : "false");
 
