@@ -26,7 +26,6 @@ public class StringsLinkedList {
         lastNode.next = node;
         node.prev = lastNode;
         last.prev = node;
-
     }
 
     public static class Node {
