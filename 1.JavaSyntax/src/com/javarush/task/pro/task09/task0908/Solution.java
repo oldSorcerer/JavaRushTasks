@@ -4,7 +4,14 @@ package com.javarush.task.pro.task09.task0908;
 Двоично-шестнадцатеричный конвертер
 */
 
+import java.util.Arrays;
+
 public class Solution {
+
+    private static final String HEX = "0123456789abcdef";
+    private static final String[] BINARY =
+                    {"0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111",
+                     "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"};
 
     public static void main(String[] args) {
         String binaryNumber = "100111010000";
@@ -17,6 +24,44 @@ public class Solution {
         if (binaryNumber == null || binaryNumber.isEmpty() || !binaryNumber.matches("[01]+")) {
             return "";
         }
+
+        while (binaryNumber.length() % 4 != 0) {
+            binaryNumber = "0" + binaryNumber;
+        }
+
+        StringBuilder hexNumber = new StringBuilder();
+        while (!binaryNumber.isEmpty()) {
+            String fourBit = binaryNumber.substring(0, 4);
+            int index = Arrays.binarySearch(BINARY, fourBit);
+            char charAt = HEX.charAt(index);
+            hexNumber.append(charAt);
+            binaryNumber = binaryNumber.substring(4);
+        }
+
+        return hexNumber.toString();
+    }
+
+    public static String toBinary(String hexNumber) {
+        if (hexNumber == null || hexNumber.isEmpty() || !hexNumber.matches("[0-9a-f]+")) {
+            return "";
+        }
+
+        StringBuilder binaryNumber = new StringBuilder();
+
+        for (int i = 0; i < hexNumber.length(); i++) {
+            char charAt = hexNumber.charAt(i);
+            int index = HEX.indexOf(charAt);
+            String fourBit = BINARY[index];
+            binaryNumber.append(fourBit);
+        }
+
+        return binaryNumber.toString();
+    }
+
+    public static String toHex1(String binaryNumber) {
+        if (binaryNumber == null || binaryNumber.isEmpty() || !binaryNumber.matches("[01]+")) {
+            return "";
+        }
         while (binaryNumber.length() % 4 != 0) {
             binaryNumber = "0" + binaryNumber;
         }
@@ -24,7 +69,7 @@ public class Solution {
         while (!binaryNumber.isEmpty()) {
             String fourBit = binaryNumber.substring(0, 4);
 
-            String oneHex  = switch (fourBit) {
+            String oneHex = switch (fourBit) {
                 case "0000" -> "0";
                 case "0001" -> "1";
                 case "0010" -> "2";
@@ -52,7 +97,7 @@ public class Solution {
         return hexNumber;
     }
 
-    public static String toBinary(String hexNumber) {
+    public static String toBinary1(String hexNumber) {
         if (hexNumber == null || hexNumber.isEmpty() || !hexNumber.matches("[0-9a-f]+")) {
             return "";
         }
