@@ -76,7 +76,16 @@ public class Solution {
         }
 
         public List<PhantomReference<Monkey>> getPopulatedList() {
-            return null;
+            List<PhantomReference<Monkey>> list = new ArrayList<>();
+
+            PhantomReference<Monkey> reference = new PhantomReference<>(new Monkey(), helper.getQueue());
+
+            for (int i = 0; i < 200; i++) {
+                list.add(reference);
+            }
+
+
+            return list;
         }
 
         public void finish() throws InterruptedException {
