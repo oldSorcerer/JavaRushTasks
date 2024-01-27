@@ -1,6 +1,6 @@
 package com.javarush.task.task37.task3712;
 
-public class Tennis {
+public class Tennis extends Game {
     public void prepareForTheGame() {
         System.out.println("Preparing for the Tennis game...");
     }
