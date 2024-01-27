@@ -15,19 +15,19 @@ public class Solution {
         printValues(SomeTest.class);
     }
 
-    public static <T> boolean printFullyQualifiedNames(Class<T> c) {
+    public static <T> boolean printFullyQualifiedNames(Class<T> aClass) {
 
-        if (c.isAnnotationPresent(PrepareMyTest.class)) {
-            PrepareMyTest annotation = c.getAnnotation(PrepareMyTest.class);
+        if (aClass.isAnnotationPresent(PrepareMyTest.class)) {
+            PrepareMyTest annotation = aClass.getAnnotation(PrepareMyTest.class);
             Arrays.stream(annotation.fullyQualifiedNames()).forEach(System.out::println);
             return true;
         }
         return false;
     }
 
-    public static <T> boolean printValues(Class<T> c) {
-        if (c.isAnnotationPresent(PrepareMyTest.class)) {
-            PrepareMyTest annotation = c.getAnnotation(PrepareMyTest.class);
+    public static <T> boolean printValues(Class<T> aClass) {
+        if (aClass.isAnnotationPresent(PrepareMyTest.class)) {
+            PrepareMyTest annotation = aClass.getAnnotation(PrepareMyTest.class);
             Arrays.stream(annotation.value())
                     .map(Class::getSimpleName).forEach(System.out::println);
             return true;
