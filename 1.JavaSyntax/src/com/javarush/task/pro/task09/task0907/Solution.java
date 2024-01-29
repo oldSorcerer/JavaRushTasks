@@ -27,7 +27,7 @@ public class Solution {
     }
 
     public static int toDecimal(String hexNumber) {
-        if (hexNumber ==  null || hexNumber.length() == 0) {
+        if (hexNumber ==  null || hexNumber.isEmpty()) {
             return 0;
         }
         int decimalNumber = 0;
