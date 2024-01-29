@@ -89,8 +89,8 @@ public class Server {
 
         @Override
         public void run() {
-            ConsoleHelper.writeMessage("Установлено соединение с удаленным адресом "
-                    + socket.getRemoteSocketAddress());
+            ConsoleHelper.writeMessage("Установлено соединение с удаленным адресом " +
+                                       socket.getRemoteSocketAddress());
             String userName = null;
             try (Connection connection = new Connection(socket)) {
                 userName = serverHandshake(connection);
