@@ -10,26 +10,26 @@ import java.util.Objects;
 public class Solution {
     public static void main(String[] args) {
 
-         try {
+        try {
             File yourFile = File.createTempFile("your_file_name", null);
-            OutputStream outputStream = new FileOutputStream(yourFile);
-            InputStream inputStream = new FileInputStream(yourFile);
+            try (OutputStream outputStream = new FileOutputStream(yourFile);
+                 InputStream inputStream = new FileInputStream(yourFile);) {
 
-            ClassWithStatic classWithStatic = new ClassWithStatic();
-            classWithStatic.i = 3;
-            classWithStatic.j = 4;
-            classWithStatic.save(outputStream);
-            outputStream.flush();
+                ClassWithStatic classWithStatic = new ClassWithStatic();
+                classWithStatic.i = 3;
+                classWithStatic.j = 4;
+                classWithStatic.save(outputStream);
+                outputStream.flush();
 
-            ClassWithStatic loadedObject = new ClassWithStatic();
-            loadedObject.staticString = "something";
-            loadedObject.i = 6;
-            loadedObject.j = 7;
+                ClassWithStatic loadedObject = new ClassWithStatic();
+                loadedObject.staticString = "something";
+                loadedObject.i = 6;
+                loadedObject.j = 7;
 
-            loadedObject.load(inputStream);
+                loadedObject.load(inputStream);
 
-            outputStream.close();
-            inputStream.close();
+                System.out.println(classWithStatic.equals(loadedObject));
+            }
 
         } catch (IOException e) {
             System.out.println("Oops, something is wrong with my file");
