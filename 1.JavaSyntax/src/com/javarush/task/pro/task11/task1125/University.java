@@ -11,10 +11,10 @@ public class University {
         int i = 0;
         for (; i < students.length; i++) {
             if (students[i] == null) {
-                students[i] = student;
                 break;
             }
         }
+        students[i] = student;
     }
 
     public void printStudents() {
