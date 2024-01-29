@@ -28,8 +28,8 @@ public class Solution {
         }
     }
     public static void printRobot(Robot robot){
-        for (int i = 0; i < robot.getCores().size(); i++) {
-            System.out.println(robot.getCores().get(i));
+        for (Core core : robot.getCores()) {
+            System.out.println(core);
         }
     }
 }
