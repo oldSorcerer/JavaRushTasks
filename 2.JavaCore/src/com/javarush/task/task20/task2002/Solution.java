@@ -10,28 +10,31 @@ import java.util.*;
 public class Solution {
     public static void main(String[] args) {
 
-        try (OutputStream outputStream = new FileOutputStream(File.createTempFile("text.txt", null));
-             InputStream inputStream = new FileInputStream(File.createTempFile("text.txt", null))) {
 
-            JavaRush javaRush = new JavaRush();
+        try {
+            File your_file = File.createTempFile("text.txt", null);
+            try (OutputStream outputStream = new FileOutputStream(your_file);
+                 InputStream inputStream = new FileInputStream(your_file)) {
 
-            User user = new User();
-            user.setFirstName ("Ivan");
-            user.setLastName("Ivanov");
-            user.setBirthDate(new Date(1991, Calendar.JUNE, 5));
-            user.setMale(true);
-            user.setCountry(User.Country.RUSSIA);
+                JavaRush javaRush = new JavaRush();
 
-            javaRush.users.add(user);
+                User user = new User();
+                user.setFirstName("Ivan");
+                user.setLastName("Ivanov");
+                user.setBirthDate(new Date(1991, Calendar.JUNE, 5));
+                user.setMale(true);
+                user.setCountry(User.Country.RUSSIA);
 
-            javaRush.save(outputStream);
-            outputStream.flush();
+                javaRush.users.add(user);
 
-            JavaRush loadedObject = new JavaRush();
-            loadedObject.load(inputStream);
+                javaRush.save(outputStream);
+                outputStream.flush();
 
-            System.out.println(loadedObject.equals(javaRush));
+                JavaRush loadedObject = new JavaRush();
+                loadedObject.load(inputStream);
 
+                System.out.println(loadedObject.equals(javaRush));
+            }
         } catch (IOException e) {
             System.out.println("Oops, something is wrong with my file");
         } catch (Exception e) {

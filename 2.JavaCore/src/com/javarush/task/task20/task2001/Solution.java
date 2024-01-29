@@ -12,17 +12,21 @@ import java.util.Objects;
 
 public class Solution {
     public static void main(String[] args) {
-        try (OutputStream outputStream = new FileOutputStream(File.createTempFile("your_file_name", null));
-             InputStream inputStream = new FileInputStream(File.createTempFile("your_file_name", null))) {
+        try {
+            File your_file_name = File.createTempFile("your_file_name", null);
 
-            Human ivanov = new Human("Ivanov", new Asset("home", 999_999.99), new Asset("car", 2999.99));
-            ivanov.save(outputStream);
-            outputStream.flush();
+            try (OutputStream outputStream = new FileOutputStream(your_file_name);
+                 InputStream inputStream = new FileInputStream(your_file_name)) {
 
-            Human somePerson = new Human();
-            somePerson.load(inputStream);
+                Human ivanov = new Human("Ivanov", new Asset("home", 999_999.99), new Asset("car", 2999.99));
+                ivanov.save(outputStream);
+                outputStream.flush();
 
-            System.out.println(somePerson.equals(ivanov));
+                Human somePerson = new Human();
+                somePerson.load(inputStream);
+
+                System.out.println(somePerson.equals(ivanov));
+            }
         } catch (IOException e) {
             System.out.println("Oops, something wrong with my file");
         } catch (Exception e) {
@@ -64,9 +68,11 @@ public class Solution {
 
         public void save(OutputStream outputStream) throws Exception {
             try (PrintWriter writer = new PrintWriter(outputStream)) {
-                writer.println(this.name);
-                if (!assets.isEmpty()) {
-                    for (Asset asset : assets) {
+                if (!this.name.isEmpty()) {
+                    writer.println(this.name);
+                }
+                if (!this.assets.isEmpty()) {
+                    for (Asset asset : this.assets) {
                         writer.println(asset.getName());
                         writer.println(asset.getPrice());
                     }
@@ -76,12 +82,13 @@ public class Solution {
 
         public void load(InputStream inputStream) throws Exception {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            name = reader.readLine();
+            this.name = reader.readLine();
             while (reader.ready()) {
                 String assetsName = reader.readLine();
                 double assetsPrice = Double.parseDouble(reader.readLine());
-                assets.add(new Asset(assetsName, assetsPrice));
+                this.assets.add(new Asset(assetsName, assetsPrice));
             }
+            reader.close();
         }
     }
 }
