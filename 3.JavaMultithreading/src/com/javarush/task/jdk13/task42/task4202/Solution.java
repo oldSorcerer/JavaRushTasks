@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class Solution {
     private static final int COUNT = 5;
     private static final int TIMEOUT = 10;
-    private static AtomicBoolean isHit = new AtomicBoolean(false);
+    private static AtomicBoolean isHit = new AtomicBoolean();
 
     public static void main(final String[] arguments) throws InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(COUNT);
@@ -39,9 +39,8 @@ public class Solution {
         @Override
         public void run() {
             System.out.println("Did someone hit? " + isHit);
-            if (!isHit.get()) {
+            if (isHit.compareAndSet(false, true)) {
                 System.out.println("The shooter #" + id + " hit!");
-                isHit.getAndSet(true);
                 System.out.println("Did someone hit? " + isHit);
             }
         }
