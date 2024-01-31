@@ -13,7 +13,7 @@ public class Solution {
     private static final int TIMEOUT = 10;
 
     private static final Integer[] ARRAY = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    private static final List<Integer> LIST = new ArrayList<>(List.of(ARRAY));
+    private static final CopyOnWriteArrayList<Integer> LIST = new CopyOnWriteArrayList<>(List.of(ARRAY));
 
     public static void main(String[] args) throws InterruptedException {
         System.out.print("List before: ");
@@ -23,18 +23,7 @@ public class Solution {
 
         for (int i = 1; i <= COUNT; i++) {
             final Integer element = i;
-            Runnable task = () -> {
-                boolean isAbsent = true;
-                for (Integer integer : LIST) {
-                    if (integer.equals(element)) {
-                        isAbsent = false;
-                        break;
-                    }
-                }
-                if (isAbsent) {
-                    LIST.add(element);
-                }
-            };
+            Runnable task = () -> LIST.addIfAbsent(element);
             executor.submit(task);
         }
 
