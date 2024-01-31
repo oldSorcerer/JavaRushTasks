@@ -8,7 +8,7 @@ public class Storage {
 
     public void take() {
         try {
-            System.out.println("take - " + deque.poll());
+            System.out.println("take - " + deque.take());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -16,7 +16,7 @@ public class Storage {
 
     public void put(int i) {
         try {
-            deque.add(i);
+            deque.put(i);
             System.out.println("put - " + i);
         } catch (Exception e) {
             e.printStackTrace();
