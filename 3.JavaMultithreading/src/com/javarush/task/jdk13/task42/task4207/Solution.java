@@ -17,12 +17,13 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
         AtomicInteger codeLines = new AtomicInteger();
+        CountDownLatch countDownLatch = new CountDownLatch(100);
         List<Callable<Boolean>> developers = Stream
-                .generate(() -> new Developer(codeLines))
+                .generate(() -> new Developer(codeLines, countDownLatch))
                 .limit(6)
                 .collect(toList());
         executor.invokeAll(developers);
-        executor.awaitTermination(1, TimeUnit.SECONDS);
+        countDownLatch.await();
         executor.shutdownNow();
         System.out.println("Проект готов!");
     }
