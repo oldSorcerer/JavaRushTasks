@@ -123,7 +123,6 @@ public class Client {
                     informAboutDeletingNewUser(message.getData());
                 } else {
                     throw new IOException("Unexpected MessageType");
-
                 }
             }
         }
