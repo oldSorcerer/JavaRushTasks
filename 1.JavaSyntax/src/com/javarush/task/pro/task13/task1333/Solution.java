@@ -26,9 +26,10 @@ public class Solution {
     }
 
     public static void changeZerosToMaximumNumber() {
+        Integer max = Collections.max(ratingsList);
         for (int i = 0; i < ratingsList.size(); i++) {
             if (ratingsList.get(i) == 0){
-                ratingsList.set(i, Collections.max(ratingsList));
+                ratingsList.set(i, max);
             }
         }
     }
