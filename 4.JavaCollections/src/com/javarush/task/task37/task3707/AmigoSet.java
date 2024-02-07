@@ -66,6 +66,7 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
         }
     }
 
+    @Serial
     private void writeObject(ObjectOutputStream output) throws IOException {
 
         output.defaultWriteObject();
@@ -80,6 +81,7 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
     }
 
+    @Serial
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream inputStream) throws IOException, ClassNotFoundException {
 
