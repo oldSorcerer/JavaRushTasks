@@ -1,6 +1,7 @@
 package com.javarush.task.task37.task3713.space.crew;
 
 public class FirstMate extends AbstractCrewMember {
+
     public FirstMate(AbstractCrewMember.CompetencyLevel competencyLevel) {
         this.competencyLevel = competencyLevel;
     }
