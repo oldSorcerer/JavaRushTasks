@@ -1,6 +1,7 @@
 package com.javarush.task.task37.task3713.space.crew;
 
 public class CabinBoy extends AbstractCrewMember {
+
     public CabinBoy(AbstractCrewMember.CompetencyLevel competencyLevel) {
         this.competencyLevel = competencyLevel;
     }

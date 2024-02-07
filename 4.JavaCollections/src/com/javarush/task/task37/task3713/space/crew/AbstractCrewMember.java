@@ -1,6 +1,7 @@
 package com.javarush.task.task37.task3713.space.crew;
 
 public abstract class AbstractCrewMember {
+
     public enum CompetencyLevel {
         NOVICE,
         INTERMEDIATE,
