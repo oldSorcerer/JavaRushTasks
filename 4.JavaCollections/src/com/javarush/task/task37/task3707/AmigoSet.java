@@ -1,6 +1,6 @@
 package com.javarush.task.task37.task3707;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.*;
 
 public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Set<E> {
@@ -10,11 +10,11 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     private transient HashMap<E, Object> map;
 
     public AmigoSet() {
-        map = new HashMap<>();
+        this.map = new HashMap<>();
     }
 
     public AmigoSet(Collection<? extends E> collection) {
-        map = new HashMap<>(Math.max(16, (int)(collection.size()/0.75f) + 1));
+        map = new HashMap<>(Math.max(16, (int) (collection.size() / 0.75f) + 1));
         addAll(collection);
     }
 
@@ -52,5 +52,50 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     @Override
     public boolean remove(Object o) {
         return map.remove(o) == PRESENT;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public Object clone() {
+        try {
+            AmigoSet<E> amigoSet = (AmigoSet<E>) super.clone();
+            amigoSet.map = (HashMap<E, Object>) map.clone();
+            return amigoSet;
+        } catch (Exception e) {
+            throw new InternalError(e);
+        }
+    }
+
+    @Serial
+    private void writeObject(ObjectOutputStream output) throws IOException {
+
+        output.defaultWriteObject();
+
+        output.writeInt(HashMapReflectionHelper.callHiddenMethod(map, "capacity"));
+        output.writeFloat(HashMapReflectionHelper.callHiddenMethod(map, "loadFactor"));
+
+        output.writeInt(map.size());
+        for (E element : map.keySet()) {
+            output.writeObject(element);
+        }
+
+    }
+
+    @Serial
+    @SuppressWarnings("unchecked")
+    private void readObject(ObjectInputStream inputStream) throws IOException, ClassNotFoundException {
+
+        inputStream.defaultReadObject();
+
+        int capacity = inputStream.readInt();
+        float loadFactor = inputStream.readFloat();
+        map = new HashMap<>(capacity, loadFactor);
+
+        int size = inputStream.readInt();
+
+        for (int i = 0; i < size; i++) {
+            E element = (E) inputStream.readObject();
+            map.put(element, PRESENT);
+        }
     }
 }
