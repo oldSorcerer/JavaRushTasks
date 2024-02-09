@@ -13,9 +13,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class LogParser implements IPQuery{
+public class LogParser implements IPQuery {
+
+    private Path logDir;
 
     public LogParser(Path logDir) {
+        this.logDir = logDir;
     }
 
     @Override
