@@ -1,9 +1,9 @@
 package com.javarush.games.ticktacktoe;
 
-import com.javarush.engine.cell.Game;
+import com.javarush.engine.cell.*;
 
 public class TicTacToeGame extends Game {
-    
+
     private boolean isGameStopped;
     private int[][] model = new int[3][3];
     private int currentPlayer;
@@ -28,7 +28,8 @@ public class TicTacToeGame extends Game {
             case 2 -> "O";
             default -> "";
         };
-        setCellValue(x, y, str);
+        Color color = value == 1 ? Color.RED : value == 2 ? Color.BLUE : Color.WHITE;
+        setCellValueEx(x, y, Color.WHITE, str, color);
     }
 
     public void updateView() {
