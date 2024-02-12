@@ -16,8 +16,7 @@ public class Solution {
 
         try (Scanner scanner = new Scanner(System.in);
              InputStream inputStream = Files.newInputStream(Paths.get(scanner.nextLine()));
-             OutputStream outputStream = Files.newOutputStream(Paths.get(scanner.nextLine()))
-        ) {
+             OutputStream outputStream = Files.newOutputStream(Paths.get(scanner.nextLine()))) {
             byte[] bytesIn = inputStream.readAllBytes();
             byte[] bytesOut = new byte[bytesIn.length];
             for (int i = 0; i < bytesIn.length; i += 2 ) {
