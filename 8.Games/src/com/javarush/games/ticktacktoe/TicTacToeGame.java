@@ -50,11 +50,15 @@ public class TicTacToeGame extends Game {
         if (isGameStopped) {
             return;
         }
-        if (model[x][y] == 0) {
+        if (model[x][y] != 0) {
             return;
         }
         model[x][y] = currentPlayer;
         updateView();
+        if (checkWin(x, y, currentPlayer)){
+            isGameStopped = true;
+            showMessageDialog(Color.NONE, " Player #" + currentPlayer + " win!", Color.GREEN, 75);
+        }
         currentPlayer = 3 - currentPlayer;
     }
 
