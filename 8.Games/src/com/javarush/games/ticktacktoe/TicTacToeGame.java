@@ -64,6 +64,8 @@ public class TicTacToeGame extends Game {
 
     public boolean checkWin(int x, int y, int n) {
         return (model[x][0] == n && model[x][1] == n && model[x][2] == n) ||
-                (model[0][y] == n && model[1][y] == n && model[2][y] == n);
+                (model[0][y] == n && model[1][y] == n && model[2][y] == n) ||
+               (model[0][0] == n &&  model[1][1] == n && model[2][2] == n) ||
+               (model[0][2] == n &&  model[1][1] == n && model[2][0] == n);
     }
 }
