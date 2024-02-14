@@ -68,4 +68,8 @@ public class TicTacToeGame extends Game {
                (model[0][0] == n &&  model[1][1] == n && model[2][2] == n) ||
                (model[0][2] == n &&  model[1][1] == n && model[2][0] == n);
     }
+
+    public void setSignAndCheck(int x, int y) {
+
+    }
 }
