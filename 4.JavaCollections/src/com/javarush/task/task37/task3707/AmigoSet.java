@@ -3,6 +3,8 @@ package com.javarush.task.task37.task3707;
 import java.io.*;
 import java.util.*;
 
+import static com.javarush.task.task37.task3707.HashMapReflectionHelper.*;
+
 public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Set<E> {
 
     private static final Object PRESENT = new Object();
@@ -71,8 +73,8 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
         output.defaultWriteObject();
 
-        output.writeInt(HashMapReflectionHelper.callHiddenMethod(map, "capacity"));
-        output.writeFloat(HashMapReflectionHelper.callHiddenMethod(map, "loadFactor"));
+        output.writeInt(callHiddenMethod(map, "capacity"));
+        output.writeFloat(callHiddenMethod(map, "loadFactor"));
 
         output.writeInt(map.size());
         for (E element : map.keySet()) {

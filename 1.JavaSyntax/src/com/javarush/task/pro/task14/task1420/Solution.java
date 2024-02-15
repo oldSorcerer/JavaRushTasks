@@ -40,8 +40,8 @@ public class Solution {
         }
     }
 
-    public static void checkAnswers(int a) throws WrongAnswerException{
-        switch (a) {
+    public static void checkAnswers(int number) throws WrongAnswerException{
+        switch (number) {
             case 1 -> throw new WrongAnswerException("Не совсем...Даём тебе еще один шанс.");
             case 2 -> throw new WrongAnswerException("Я вижу ты любишь играть с огнём!");
             case 3 -> throw new WrongAnswerException("Еще один такой ответ и мы сдадим тебя на металолом!");
