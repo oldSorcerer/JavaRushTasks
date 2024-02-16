@@ -46,6 +46,7 @@ public class TicTacToeGame extends Game {
         setCellValueEx(x, y, Color.WHITE, str, color);
     }
 
+    @Override
     public void onMouseLeftClick(int x, int y) {
         if (isGameStopped) {
             return;
@@ -54,6 +55,7 @@ public class TicTacToeGame extends Game {
             return;
         }
         setSignAndCheck(x, y);
+        currentPlayer = 3 - currentPlayer;
     }
 
     public boolean checkWin(int x, int y, int n) {
@@ -69,8 +71,13 @@ public class TicTacToeGame extends Game {
         if (checkWin(x, y, currentPlayer)){
             isGameStopped = true;
             showMessageDialog(Color.NONE, " Player #" + currentPlayer + " win!", Color.GREEN, 75);
+            return;
         }
-        currentPlayer = 3 - currentPlayer;
+
+        if (!hasEmptyCell()) {
+            isGameStopped = true;
+            showMessageDialog(Color.NONE, " Draw!",  Color.BLUE, 75);
+        }
     }
 
     public boolean hasEmptyCell() {
