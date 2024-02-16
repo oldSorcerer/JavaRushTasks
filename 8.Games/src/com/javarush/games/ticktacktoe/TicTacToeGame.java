@@ -46,6 +46,7 @@ public class TicTacToeGame extends Game {
         setCellValueEx(x, y, Color.WHITE, str, color);
     }
 
+    @Override
     public void onMouseLeftClick(int x, int y) {
         if (isGameStopped) {
             return;
@@ -53,12 +54,7 @@ public class TicTacToeGame extends Game {
         if (model[x][y] != 0) {
             return;
         }
-        model[x][y] = currentPlayer;
-        updateView();
-        if (checkWin(x, y, currentPlayer)){
-            isGameStopped = true;
-            showMessageDialog(Color.NONE, " Player #" + currentPlayer + " win!", Color.GREEN, 75);
-        }
+        setSignAndCheck(x, y);
         currentPlayer = 3 - currentPlayer;
     }
 
@@ -70,6 +66,28 @@ public class TicTacToeGame extends Game {
     }
 
     public void setSignAndCheck(int x, int y) {
+        model[x][y] = currentPlayer;
+        updateView();
+        if (checkWin(x, y, currentPlayer)){
+            isGameStopped = true;
+            showMessageDialog(Color.NONE, " Player #" + currentPlayer + " win!", Color.GREEN, 75);
+            return;
+        }
 
+        if (!hasEmptyCell()) {
+            isGameStopped = true;
+            showMessageDialog(Color.NONE, " Draw!",  Color.BLUE, 75);
+        }
+    }
+
+    public boolean hasEmptyCell() {
+        for (int i = 0; i < model.length; i++) {
+            for (int j = 0; j < model[i].length; j++) {
+                if (model[i][j] == 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
