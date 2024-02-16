@@ -72,4 +72,15 @@ public class TicTacToeGame extends Game {
         }
         currentPlayer = 3 - currentPlayer;
     }
+
+    public boolean hasEmptyCell() {
+        for (int i = 0; i < model.length; i++) {
+            for (int j = 0; j < model[i].length; j++) {
+                if (model[i][j] == 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
