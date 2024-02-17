@@ -90,4 +90,11 @@ public class TicTacToeGame extends Game {
         }
         return false;
     }
+
+    public void onKeyPress(Key key) {
+        if (isGameStopped && Key.SPACE == key) {
+            startGame();
+            updateView();
+        }
+    }
 }
