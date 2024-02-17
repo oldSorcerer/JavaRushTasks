@@ -22,7 +22,7 @@ public class Solution<T extends HashMap<?, ?>> {
     public static void main(String[] args) {
         HashMap<String, Integer> hashMap = new HashMap<>();
         hashMap.put("string", 4);
-        Solution<?> solution = new Solution<>(hashMap);
+        Solution<HashMap<String, Integer>> solution = new Solution<>(hashMap);
         HashMap<?, ?> mapFromSolution = solution.getMap();
         System.out.println(mapFromSolution.getClass());
 
