@@ -2,7 +2,6 @@ package com.javarush.task.pro.task14.task1415;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 /* 
 Стек в домашних условиях
@@ -31,12 +30,11 @@ public class MyStack {
     }
 
     public int search(String s) {
-        int index = -1;
         for (int i = 0; i < storage.size(); i++) {
             if (storage.get(i).equals(s)) {
-                index = i;
+                return i;
             }
         }
-        return index;
+        return -1;
     }
 }
