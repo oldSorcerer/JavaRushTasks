@@ -24,10 +24,11 @@ public class TicTacToeGame extends Game {
     }
 
     public void updateView() {
-        for (int x = 0; x < 3; x++)
+        for (int x = 0; x < 3; x++) {
             for (int y = 0; y < 3; y++) {
                 updateCellView(x, y, model[x][y]);
             }
+        }
     }
 
     public void updateCellView(int x, int y, int value) {
@@ -93,6 +94,9 @@ public class TicTacToeGame extends Game {
 
     public void onKeyPress(Key key) {
         if (isGameStopped && Key.SPACE == key) {
+            startGame();
+            updateView();
+        }else if (Key.ESCAPE == key) {
             startGame();
             updateView();
         }
