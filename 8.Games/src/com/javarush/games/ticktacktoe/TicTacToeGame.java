@@ -73,10 +73,8 @@ public class TicTacToeGame extends Game {
             isGameStopped = true;
             if (currentPlayer == 1) {
                 showMessageDialog(Color.NONE, "You Win!", Color.GREEN, 75);
-                return;
-            } else if (currentPlayer == 0) {
+            } else if (currentPlayer == 2) {
                 showMessageDialog(Color.NONE, "Game Over", Color.RED, 75);
-                return;
             }
         }
 
