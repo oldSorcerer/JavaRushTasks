@@ -57,6 +57,8 @@ public class TicTacToeGame extends Game {
         }
         setSignAndCheck(x, y);
         currentPlayer = 3 - currentPlayer;
+        computerTurn();
+        currentPlayer = 3 - currentPlayer;
     }
 
     public boolean checkWin(int x, int y, int n) {
@@ -103,5 +105,9 @@ public class TicTacToeGame extends Game {
             startGame();
             updateView();
         }
+    }
+
+    public void computerTurn() {
+
     }
 }
