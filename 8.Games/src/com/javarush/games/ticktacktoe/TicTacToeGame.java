@@ -57,27 +57,32 @@ public class TicTacToeGame extends Game {
         }
         setSignAndCheck(x, y);
         currentPlayer = 3 - currentPlayer;
+        computerTurn();
+        currentPlayer = 3 - currentPlayer;
     }
 
     public boolean checkWin(int x, int y, int n) {
         return (model[x][0] == n && model[x][1] == n && model[x][2] == n) ||
-                (model[0][y] == n && model[1][y] == n && model[2][y] == n) ||
-               (model[0][0] == n &&  model[1][1] == n && model[2][2] == n) ||
-               (model[0][2] == n &&  model[1][1] == n && model[2][0] == n);
+               (model[0][y] == n && model[1][y] == n && model[2][y] == n) ||
+               (model[0][0] == n && model[1][1] == n && model[2][2] == n) ||
+               (model[0][2] == n && model[1][1] == n && model[2][0] == n);
     }
 
     public void setSignAndCheck(int x, int y) {
         model[x][y] = currentPlayer;
         updateView();
-        if (checkWin(x, y, currentPlayer)){
+        if (checkWin(x, y, currentPlayer)) {
             isGameStopped = true;
-            showMessageDialog(Color.NONE, " Player #" + currentPlayer + " win!", Color.GREEN, 75);
-            return;
+            if (currentPlayer == 1) {
+                showMessageDialog(Color.NONE, "You Win!", Color.GREEN, 75);
+            } else if (currentPlayer == 2) {
+                showMessageDialog(Color.NONE, "Game Over", Color.RED, 75);
+            }
         }
 
         if (!hasEmptyCell()) {
             isGameStopped = true;
-            showMessageDialog(Color.NONE, " Draw!",  Color.BLUE, 75);
+            showMessageDialog(Color.NONE, " Draw!", Color.BLUE, 75);
         }
     }
 
@@ -96,9 +101,20 @@ public class TicTacToeGame extends Game {
         if (isGameStopped && Key.SPACE == key) {
             startGame();
             updateView();
-        }else if (Key.ESCAPE == key) {
+        } else if (Key.ESCAPE == key) {
             startGame();
             updateView();
+        }
+    }
+
+    public void computerTurn() {
+        for (int i = 0; i < model.length; i++) {
+            for (int j = 0; j < model.length; j++) {
+                if (model[i][j] == 0) {
+                    setSignAndCheck(i, j);
+                    return;
+                }
+            }
         }
     }
 }
