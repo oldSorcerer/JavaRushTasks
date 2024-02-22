@@ -19,10 +19,10 @@ public class Month {
             APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER,
             NOVEMBER, DECEMBER };
 
-    private final int value;
+    private final int number;
 
-    private Month(int value) {
-        this.value = value;
+    private Month(int number) {
+        this.number = number;
     }
 
     public static Month[] values() {
@@ -30,6 +30,6 @@ public class Month {
     }
 
     public int ordinal() {
-        return this.value;
+        return this.number;
     }
 }
