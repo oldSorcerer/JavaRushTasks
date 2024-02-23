@@ -108,6 +108,12 @@ public class TicTacToeGame extends Game {
     }
 
     public void computerTurn() {
+
+        if (model[1][1]==0) {
+            setSignAndCheck(1, 1);
+            return;
+        }
+
         for (int i = 0; i < model.length; i++) {
             for (int j = 0; j < model.length; j++) {
                 if (model[i][j] == 0) {
