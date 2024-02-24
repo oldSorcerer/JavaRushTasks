@@ -123,4 +123,8 @@ public class TicTacToeGame extends Game {
             }
         }
     }
+
+    public boolean  checkFutureWin(int x, int y, int n) {
+        return false;
+    }
 }
