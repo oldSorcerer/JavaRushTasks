@@ -109,7 +109,7 @@ public class TicTacToeGame extends Game {
 
     public void computerTurn() {
 
-        if (model[1][1]==0) {
+        if (model[1][1] == 0) {
             setSignAndCheck(1, 1);
             return;
         }
@@ -124,7 +124,8 @@ public class TicTacToeGame extends Game {
         }
     }
 
-    public boolean  checkFutureWin(int x, int y, int n) {
+    public boolean checkFutureWin(int x, int y, int n) {
+
         return false;
     }
 }
