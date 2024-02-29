@@ -29,12 +29,24 @@ public class Solution {
     }
 
     static class A {
+        @Override
+        public String toString() {
+            return "A";
+        }
     }
 
     static class B extends A {
+        @Override
+        public String toString() {
+            return "B";
+        }
     }
 
     static class C extends B {
+        @Override
+        public String toString() {
+            return "C";
+        }
     }
 }
 /*
