@@ -21,7 +21,7 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
 
-        if (partOfName == null && !file.getFileName().toString().contains(partOfContent)) {
+        if (partOfName != null && !file.getFileName().toString().contains(partOfName)) {
             return FileVisitResult.CONTINUE;
         }
 
@@ -34,8 +34,15 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
             }
         }
 
+        if (maxSize > 0 && content.length > maxSize) {
+            return FileVisitResult.CONTINUE;
+        }
 
+        if (minSize > 0 && content.length < minSize) {
+            return FileVisitResult.CONTINUE;
+        }
 
+        foundFiles.add(file);
         return super.visitFile(file, attrs);
     }
 
