@@ -15,6 +15,13 @@ import java.util.TreeMap;
 
 public class Solution {
     public static void main(String[] args) {
+        File path = new File(args[0]);
+        File resultFileAbsolutePath = new File(args[1]);
+
+        File allFilesContent = new File("allFilesContent.tx");
+
+
+        FileUtils.renameFile(resultFileAbsolutePath, allFilesContent);
 
     }
 }
