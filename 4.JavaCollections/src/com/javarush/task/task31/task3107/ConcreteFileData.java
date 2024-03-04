@@ -2,10 +2,10 @@ package com.javarush.task.task31.task3107;
 
 public class ConcreteFileData implements FileData {
 
-    private boolean hidden;
-    private boolean executable;
-    private boolean directory;
-    private boolean writable;
+    private final boolean hidden;
+    private final boolean executable;
+    private final boolean directory;
+    private final boolean writable;
 
     public ConcreteFileData(boolean hidden, boolean executable, boolean directory, boolean writable) {
         this.hidden = hidden;
