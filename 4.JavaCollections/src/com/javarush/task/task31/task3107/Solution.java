@@ -12,16 +12,18 @@ public class Solution {
     private FileData fileData;
 
     public Solution(String pathToFile) {
+
         try {
+            Path path = Paths.get(pathToFile);
+            boolean hidden = Files.isHidden(path);
+            boolean executable = Files.isExecutable(path);
+            boolean directory = Files.isDirectory(path);
+            boolean writable = Files.isWritable(path);
 
-//            Files.
-
-            fileData = new ConcreteFileData(true, true, true, true);
+            fileData = new ConcreteFileData(hidden, executable, directory,writable);
         } catch (Exception e ) {
             fileData = new NullFileData(e);
         }
-
-
     }
 
     public FileData getFileData() {
