@@ -26,13 +26,12 @@ public class Solution {
             return new StringBuilder();
         }
 
-        StringBuilder builder = new StringBuilder();
-
         List<StringBuilder> builderList = new ArrayList<>();
 
         for (String word : words) {
 
-            builder.append(word);
+            StringBuilder builder = new StringBuilder(word);
+
 
             List<String> list = new ArrayList<>(Arrays.asList(words));
             list.remove(word);
