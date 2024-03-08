@@ -64,11 +64,11 @@ public class Solution {
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    User user = new User();
                     String[] strings = line.split(" ");
                     if (strings.length < 5) {
                         break;
                     }
+                    User user = new User();
                     user.setFirstName(strings[0]);
                     user.setLastName(strings[1]);
                     user.setBirthDate(new Date(Long.parseLong(strings[2])));
