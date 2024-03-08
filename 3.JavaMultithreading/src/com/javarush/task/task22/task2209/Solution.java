@@ -32,7 +32,6 @@ public class Solution {
 
             StringBuilder builder = new StringBuilder(word);
 
-
             List<String> list = new ArrayList<>(Arrays.asList(words));
             list.remove(word);
 
@@ -61,7 +60,6 @@ public class Solution {
                 }
             }
             builderList.add(builder);
-            builder = new StringBuilder();
         }
         return builderList.stream().max(Comparator.comparingInt(StringBuilder::length)).get();
     }
