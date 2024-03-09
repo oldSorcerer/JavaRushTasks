@@ -19,8 +19,8 @@ public class Solution {
         List<String> listTwo = new ArrayList<>();
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-            BufferedReader readerFileOne = new BufferedReader(new FileReader(console.readLine()));
-            BufferedReader readerFileTwo = new BufferedReader(new FileReader(console.readLine()))) {
+             BufferedReader readerFileOne = new BufferedReader(new FileReader(console.readLine()));
+             BufferedReader readerFileTwo = new BufferedReader(new FileReader(console.readLine()))) {
 
             while (readerFileOne.ready()) {
                 String string = readerFileOne.readLine();
@@ -37,10 +37,10 @@ public class Solution {
                 lines.add(new LineItem(Type.SAME, listOne.get(0)));
                 listOne.remove(0);
                 listTwo.remove(0);
-            } else if (listOne.get(1).equals(listTwo.get(0))) {
+            } else if (listOne.size() > 1 && listOne.get(1).equals(listTwo.get(0))) {
                 lines.add(new LineItem(Type.REMOVED, listOne.get(0)));
                 listOne.remove(0);
-            } else if (listOne.get(0).equals(listTwo.get(1))){
+            } else if (listTwo.size() > 1 && listOne.get(0).equals(listTwo.get(1))) {
                 lines.add(new LineItem(Type.ADDED, listTwo.get(0)));
                 listTwo.remove(0);
             }
