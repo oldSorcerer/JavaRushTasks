@@ -34,6 +34,8 @@ public class Solution {
     }
 
     protected void updateLastDate(long delta) {
+        dates.remove(lastDate);
         lastDate.setTime(lastDate.getTime() + delta);
+        dates.add(lastDate);
     }
 }
