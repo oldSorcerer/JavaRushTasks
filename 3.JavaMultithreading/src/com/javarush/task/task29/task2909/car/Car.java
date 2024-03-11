@@ -32,7 +32,7 @@ public abstract class Car {
 
     public void fill(double numberOfLiters) {
         if (numberOfLiters < 0) {
-            throw new IndexOutOfBoundsException();
+            throw new IllegalArgumentException();
         }
         fuel += numberOfLiters;
     }
