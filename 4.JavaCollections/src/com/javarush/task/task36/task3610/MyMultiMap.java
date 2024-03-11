@@ -2,8 +2,10 @@ package com.javarush.task.task36.task3610;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serializable {
+
     static final long serialVersionUID = 123456789L;
     private HashMap<K, List<V>> map;
     private int repeatCount;
@@ -15,44 +17,78 @@ public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serial
 
     @Override
     public int size() {
-        //напишите тут ваш код
-        return 0;
+//        int size = 0;
+//        for (List<V> value : map.values()) {
+//            size += value.size();
+//        }
+//        return size;
+        return map.values().stream().mapToInt(List::size).sum();
     }
 
     @Override
     public V put(K key, V value) {
-        //напишите тут ваш код
-        return null;
+
+        if (map.containsKey(key)) {
+            if (map.get(key).size() < repeatCount) {
+                List<V> list = map.get(key);
+                list.add(value);
+                return list.get(list.size() - 2);
+            } else {
+                List<V> list = map.get(key);
+                list.remove(0);
+                list.add(value);
+                return list.get(list.size() - 2);
+            }
+        } else {
+            map.put(key, new ArrayList<>(Arrays.asList(value)));
+            return null;
+        }
     }
 
     @Override
     public V remove(Object key) {
-        //напишите тут ваш код
-        return null;
+
+        if (map.containsKey(key)) {
+            List<V> list = map.get(key);
+            V remove = list.remove(0);
+            if (list.isEmpty()) {
+                map.remove(key);
+            }
+            return remove;
+        } else {
+            return null;
+        }
     }
 
     @Override
     public Set<K> keySet() {
-        //напишите тут ваш код
-        return null;
+        return map.keySet();
     }
 
     @Override
     public Collection<V> values() {
-        //напишите тут ваш код
-        return null;
+        return map.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
     }
 
     @Override
     public boolean containsKey(Object key) {
-        //напишите тут ваш код
-        return false;
+        return map.containsKey(key);
     }
 
     @Override
     public boolean containsValue(Object value) {
-        //напишите тут ваш код
-        return false;
+//        for (Entry<K, List<V>> entry : map.entrySet()) {
+//            for (V element : entry.getValue()) {
+//                if (element.equals(value)) {
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
+
+        return map.entrySet().stream()
+                .flatMap(entry -> entry.getValue().stream())
+                .anyMatch(element -> element.equals(value));
     }
 
     @Override
