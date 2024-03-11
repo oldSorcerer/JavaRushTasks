@@ -8,7 +8,7 @@ public class MyMultiMap<K, V> extends HashMap<K, V> implements Cloneable, Serial
 
     static final long serialVersionUID = 123456789L;
     private HashMap<K, List<V>> map;
-    private int repeatCount;
+    private final int repeatCount;
 
     public MyMultiMap(int repeatCount) {
         this.repeatCount = repeatCount;
