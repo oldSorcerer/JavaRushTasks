@@ -18,9 +18,8 @@ public class Solution {
 
         try {
             System.out.println(path1.relativize(path2));
-        } catch (Exception ignored) {
+        } catch (IllegalArgumentException ignored) {
         }
 
     }
 }
-
