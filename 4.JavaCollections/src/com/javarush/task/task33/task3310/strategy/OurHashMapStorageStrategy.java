@@ -16,7 +16,6 @@ public class OurHashMapStorageStrategy implements StorageStrategy{
 
     private float loadFactor = DEFAULT_LOAD_FACTOR;
 
-
     public int hash(Long k) {
         int h;
         return (k == null) ? 0 : (h = k.hashCode()) ^ (h >>> 16);
