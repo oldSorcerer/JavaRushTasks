@@ -18,16 +18,14 @@ public class UdpClient {
     }
 
     public String sendReceive(String message) throws IOException {
-        socket.connect(serverAddress, serverPort);
-        DatagramPacket datagramPacket = new DatagramPacket(message.getBytes(), message.length());
-        socket.send(datagramPacket);
 
-        socket.receive(datagramPacket);
+        DatagramPacket packet = new DatagramPacket(message.getBytes(), message.length(), serverAddress, serverPort);
+        socket.send(packet);
 
-        byte[] data = datagramPacket.getData();
+        DatagramPacket pack = new DatagramPacket(new byte[1024], 1024);
+        socket.receive(pack);
 
-        String string = new String(data);
-        return string;
+        return new String(pack.getData(), 0, pack.getLength());
     }
 
     public void close() {
