@@ -1,6 +1,7 @@
 package com.javarush.task.task27.task2712.kitchen;
 
 public enum Dish {
+
     FISH(25),
     STEAK(30),
     SOUP(15),
