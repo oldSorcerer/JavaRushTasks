@@ -19,10 +19,10 @@ public class Solution {
             if (str.isEmpty()) {
                 break;
             }
-
-            if (Files.isRegularFile(Path.of(str))) {
+            Path path = Path.of(str);
+            if (Files.isRegularFile(path)) {
                 System.out.println(str + THIS_IS_FILE);
-            } else if (Files.isDirectory(Path.of(str))) {
+            } else if (Files.isDirectory(path)) {
                 System.out.println(str + THIS_IS_DIR);
             } else {
                 break;
