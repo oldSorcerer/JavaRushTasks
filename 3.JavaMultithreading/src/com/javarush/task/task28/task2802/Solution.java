@@ -41,19 +41,19 @@ public class Solution {
     }
 
     public static class AmigoThreadFactory implements ThreadFactory {
-        private static final AtomicInteger poolNumber = new AtomicInteger(1);
+        private static final AtomicInteger fabricNumber = new AtomicInteger(1);
         private final AtomicInteger threadNumber = new AtomicInteger(1);
         private final ThreadGroup group;
         private final String namePrefix;
 
         public AmigoThreadFactory() {
             group = Thread.currentThread().getThreadGroup();
-            namePrefix = String.format("%s-pool-%s-thread-", group.getName(), poolNumber.getAndIncrement());
+            namePrefix = String.format("%s-pool-%s-thread-", group.getName(), fabricNumber.getAndIncrement());
         }
 
         @Override
-        public Thread newThread(Runnable r) {
-            Thread thread = new Thread(group, r, namePrefix + threadNumber.getAndIncrement());
+        public Thread newThread(Runnable runnable) {
+            Thread thread = new Thread(group, runnable, namePrefix + threadNumber.getAndIncrement());
 
             thread.setDaemon(false);
             thread.setPriority(Thread.NORM_PRIORITY);

@@ -19,7 +19,7 @@ public class Solution {
         System.out.println("Conversion result equals " + romanToInteger(romanString));
     }
 
-    public static int romanToInteger(String s) {
+    public static int romanToInteger(String string) {
 
         return 0;
     }
