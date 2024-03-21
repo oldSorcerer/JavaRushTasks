@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class Solution {
 
-    static Date birthDate = new Date(2022, Calendar.JANUARY, 14);
+    static Date birthDate = new Date(124, Calendar.MARCH, 21);
 
     public static void main(String[] args) {
         System.out.println(getDayOfWeek(birthDate));
