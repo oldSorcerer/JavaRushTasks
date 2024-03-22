@@ -3,6 +3,7 @@ package com.javarush.task.task27.task2712.ad;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AdvertisementManager {
@@ -19,7 +20,7 @@ public class AdvertisementManager {
     public void processVideos() throws NoVideoAvailableException {
         List<Advertisement> list = storage.list().stream()
                 .filter(adv -> adv.getDuration() <= timeSeconds)
-                .filter(adv -> adv.getAmountPerOneDisplaying() > 0).toList();
+                .filter(adv -> adv.getAmountPerOneDisplaying() > 0).collect(Collectors.toList());
 
         if (list.isEmpty()) {
             throw new NoVideoAvailableException();

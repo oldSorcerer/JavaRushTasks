@@ -14,7 +14,7 @@ public class Restaurant {
         cook.addObserver(waiter);
 
         tablet.createOrder();
-//        tablet.createOrder();
+        tablet.createOrder();
 //        tablet.createOrder();
 //        tablet.createOrder();
     }
