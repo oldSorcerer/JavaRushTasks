@@ -16,9 +16,11 @@ public class Game2048 extends Game {
     }
 
     private void drawScene() {
-        for (int y = 0; y < SIDE; y++)
-            for (int x = 0; x < SIDE; x++)
+        for (int y = 0; y < SIDE; y++) {
+            for (int x = 0; x < SIDE; x++) {
                 setCellColoredNumber(x, y, gameField[y][x]);
+            }
+        }
     }
 
     @Override
@@ -38,8 +40,9 @@ public class Game2048 extends Game {
         int number = getRandomNumber(10);
         if (gameField[x][y] == 0) {
             gameField[x][y] = number < 9 ? 2 : 4;
-        } else
+        } else {
             createNewNumber();
+        }
     }
 
     private Color getColorByValue(int value) {
