@@ -27,7 +27,7 @@ public class ConsoleHelper {
 
         while (true) {
             String dishName = readString().trim();
-            if (dishName.equals("exit")) {
+            if ("exit".equals(dishName)) {
                 break;
             }
             try {
