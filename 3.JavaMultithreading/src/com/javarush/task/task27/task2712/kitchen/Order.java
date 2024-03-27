@@ -13,8 +13,8 @@ public class Order {
 
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
-        dishes = ConsoleHelper.getAllDishesForOrder();
-        ConsoleHelper.writeMessage(this.toString());
+        this.dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(toString());
     }
 
     public int getTotalCookingTime() {

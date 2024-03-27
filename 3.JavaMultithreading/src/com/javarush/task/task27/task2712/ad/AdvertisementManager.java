@@ -15,9 +15,9 @@ public class AdvertisementManager {
         this.timeSeconds = timeSeconds;
     }
 
-    List<List<Advertisement>> listList = new ArrayList<>();
+    private List<List<Advertisement>> listList = new ArrayList<>();
 
-    public void processVideos() throws NoVideoAvailableException {
+    public void processVideos() {
         List<Advertisement> list = storage.list().stream()
                 .filter(adv -> adv.getDuration() <= timeSeconds)
                 .filter(adv -> adv.getAmountPerOneDisplaying() > 0).collect(Collectors.toList());
@@ -46,11 +46,12 @@ public class AdvertisementManager {
 
 
     }
-
+    // суммарное время за показ
     private int getSumDuration(List<Advertisement> list) {
         return list.stream().mapToInt(Advertisement::getDuration).sum(); // W
     }
 
+    //суммарная стоимость всех показов
     private long getSumAmount(List<Advertisement> list) {
         return list.stream().mapToLong(Advertisement::getAmountPerOneDisplaying).sum(); // P
     }
