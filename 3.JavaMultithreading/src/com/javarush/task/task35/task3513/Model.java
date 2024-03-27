@@ -46,11 +46,25 @@ public class Model {
     }
 
     private void compressTiles(Tile[] tiles) {
-
+        int insertPosition = 0;
+        for (int i = 0; i < tiles.length; i++) {
+            if (!tiles[i].isEmpty()) {
+                if (i != insertPosition) {
+                    tiles[insertPosition] = tiles[i];
+                    tiles[i] = new Tile();
+                }
+                insertPosition++;
+            }
+        }
     }
 
     private void mergeTiles(Tile[] tiles) {
-
+        for (int i = 0; i < tiles.length - 1; i++) {
+            if (!tiles[i].isEmpty() && tiles[i].value == tiles[i + 1].value) {
+                tiles[i].value += tiles[i + 1].value;
+                tiles[i + 1].value = 0;
+                score += tiles[i].value;
+            }
+        }
     }
-
 }
