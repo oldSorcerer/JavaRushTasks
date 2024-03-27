@@ -29,6 +29,5 @@ public class Solution {
             System.out.println(NOT_INVENTED);
             return false;
         }
-
     }
 }
