@@ -45,12 +45,70 @@ public class Model {
         addTile();
     }
 
-    private void compressTiles(Tile[] tiles) {
-
+    private boolean compressTiles(Tile[] tiles) {
+        boolean result = false;
+        int insertPosition = 0;
+        for (int i = 0; i < tiles.length; i++) {
+            if (!tiles[i].isEmpty()) {
+                if (i != insertPosition) {
+                    tiles[insertPosition] = tiles[i];
+                    tiles[i] = new Tile();
+                    result = true;
+                }
+                insertPosition++;
+            }
+        }
+        return result;
     }
 
-    private void mergeTiles(Tile[] tiles) {
+    private boolean mergeTiles(Tile[] tiles) {
+        boolean result = false;
+        for (int i = 0; i < tiles.length - 1; i++) {
+            if (!tiles[i].isEmpty() && tiles[i].value == tiles[i + 1].value) {
+                tiles[i].value += tiles[i + 1].value;
+                if (tiles[i].value > maxTile) {
+                    maxTile = tiles[i].value;
+                }
+                tiles[i + 1].value = 0;
+                result = true;
+                score += tiles[i].value;
+            }
 
+        }
+        for (int i = 0; i <tiles.length - 1 ; i++) {
+            if (tiles[i].value == 0) {
+                tiles[i].value = tiles[i + 1].value;
+                tiles[i + 1].value = 0;
+            }
+        }
+        return result;
     }
+
+    public void left() {
+        boolean moveFlag = false;
+        for (Tile[] gameTile : gameTiles) {
+            if (compressTiles(gameTile) | mergeTiles(gameTile)) {
+                moveFlag = true;
+            }
+        }
+
+        if (moveFlag) addTile();
+    }
+
+
+//    public static void main(String[] args) {
+//        Model model = new Model();
+//        Tile[] tiles = new Tile[4];
+//
+//        tiles[0] = new Tile(4);
+//        tiles[1] = new Tile(0);
+//        tiles[2] = new Tile(4);
+//        tiles[3] = new Tile(4);
+//
+//        System.out.println(Arrays.toString(tiles));
+//        model.mergeTiles(tiles);
+//        System.out.println(Arrays.toString(tiles));
+//    }
+
 
 }

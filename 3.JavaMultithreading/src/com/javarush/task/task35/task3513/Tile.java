@@ -50,4 +50,11 @@ public class Tile {
                 return Color.decode("0xff0000");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Tile{" +
+               "value=" + value +
+               '}';
+    }
 }
