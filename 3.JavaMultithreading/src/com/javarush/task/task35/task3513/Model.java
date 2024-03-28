@@ -62,9 +62,36 @@ public class Model {
         for (int i = 0; i < tiles.length - 1; i++) {
             if (!tiles[i].isEmpty() && tiles[i].value == tiles[i + 1].value) {
                 tiles[i].value += tiles[i + 1].value;
+                if (tiles[i].value > maxTile) {
+                    maxTile = tiles[i].value;
+                }
                 tiles[i + 1].value = 0;
                 score += tiles[i].value;
             }
+
+        }
+        for (int i = 0; i <tiles.length - 1 ; i++) {
+            if (tiles[i].value == 0) {
+                tiles[i].value = tiles[i + 1].value;
+                tiles[i + 1].value = 0;
+            }
         }
     }
+
+
+//    public static void main(String[] args) {
+//        Model model = new Model();
+//        Tile[] tiles = new Tile[4];
+//
+//        tiles[0] = new Tile(4);
+//        tiles[1] = new Tile(0);
+//        tiles[2] = new Tile(4);
+//        tiles[3] = new Tile(4);
+//
+//        System.out.println(Arrays.toString(tiles));
+//        model.mergeTiles(tiles);
+//        System.out.println(Arrays.toString(tiles));
+//    }
+
+
 }
