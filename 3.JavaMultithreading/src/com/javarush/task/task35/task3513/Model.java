@@ -95,20 +95,37 @@ public class Model {
         if (moveFlag) addTile();
     }
 
+    public void right() {
+        rotateClockwise();
+        rotateClockwise();
+        left();
+        rotateClockwise();
+        rotateClockwise();
+    }
 
-//    public static void main(String[] args) {
-//        Model model = new Model();
-//        Tile[] tiles = new Tile[4];
-//
-//        tiles[0] = new Tile(4);
-//        tiles[1] = new Tile(0);
-//        tiles[2] = new Tile(4);
-//        tiles[3] = new Tile(4);
-//
-//        System.out.println(Arrays.toString(tiles));
-//        model.mergeTiles(tiles);
-//        System.out.println(Arrays.toString(tiles));
-//    }
+    public void up() {
+        rotateClockwise();
+        rotateClockwise();
+        rotateClockwise();
+        left();
+        rotateClockwise();
+    }
 
+    public void down() {
+        rotateClockwise();
+        left();
+        rotateClockwise();
+        rotateClockwise();
+        rotateClockwise();
+    }
 
+    private void rotateClockwise() {
+        Tile[][] newGameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+        for (int i = 0; i < newGameTiles.length; i++) {
+            for (int j = 0; j < newGameTiles[i].length; j++) {
+                newGameTiles[j][FIELD_WIDTH - i - 1] = gameTiles[i][j];
+            }
+        }
+        gameTiles = newGameTiles;
+    }
 }
