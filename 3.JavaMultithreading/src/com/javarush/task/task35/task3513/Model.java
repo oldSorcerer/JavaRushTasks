@@ -75,7 +75,7 @@ public class Model {
             }
 
         }
-        for (int i = 0; i <tiles.length - 1 ; i++) {
+        for (int i = 0; i < tiles.length - 1; i++) {
             if (tiles[i].value == 0) {
                 tiles[i].value = tiles[i + 1].value;
                 tiles[i + 1].value = 0;
@@ -127,5 +127,24 @@ public class Model {
             }
         }
         gameTiles = newGameTiles;
+    }
+
+    public boolean canMove() {
+        if (!getEmptyTiles().isEmpty()) {
+            return true;
+        }
+        for (int i = 0; i < FIELD_WIDTH; i++) {
+            for (int j = 0; j < FIELD_WIDTH; j++) {
+
+            }
+        }
+
+
+
+        return false;
+    }
+
+    public Tile[][] getGameTiles() {
+        return this.gameTiles;
     }
 }
