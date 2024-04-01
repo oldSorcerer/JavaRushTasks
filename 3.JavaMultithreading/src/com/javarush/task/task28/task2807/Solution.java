@@ -13,18 +13,18 @@ import java.util.stream.IntStream;
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
 
-        LinkedBlockingQueue<Runnable> blockingQueue = IntStream
+        LinkedBlockingQueue<Runnable> queue = IntStream
                 .rangeClosed(1, 10)
                 .mapToObj(i ->(Runnable)() -> doExpensiveOperation(i))
                 .collect(Collectors.toCollection(LinkedBlockingQueue::new));
 
-//        LinkedBlockingQueue<Runnable> blockingQueue = new LinkedBlockingQueue<>();
+//        LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
 //        for (int i = 1; i <= 10; i++) {
 //            final int localId = i;
 //            blockingQueue.add(() -> doExpensiveOperation(localId));
 //        }
 
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, blockingQueue);
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 5, 1000, TimeUnit.MILLISECONDS, queue);
         executor.prestartAllCoreThreads();
         executor.shutdown();
         executor.awaitTermination(5, TimeUnit.SECONDS);
