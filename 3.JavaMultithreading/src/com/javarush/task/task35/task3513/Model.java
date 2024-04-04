@@ -92,7 +92,9 @@ public class Model {
             }
         }
 
-        if (moveFlag) addTile();
+        if (moveFlag) {
+            addTile();
+        }
     }
 
     public void right() {
@@ -135,16 +137,17 @@ public class Model {
         }
         for (int i = 0; i < FIELD_WIDTH; i++) {
             for (int j = 0; j < FIELD_WIDTH; j++) {
-
+                Tile tile = gameTiles[i][j];
+                if ((i < FIELD_WIDTH - 1 && tile.value == gameTiles[i + 1][j].value)
+                    || (j < FIELD_WIDTH - 1 && tile.value == gameTiles[i][j + 1].value)) {
+                    return true;
+                }
             }
         }
-
-
-
         return false;
     }
 
     public Tile[][] getGameTiles() {
-        return this.gameTiles;
+        return gameTiles;
     }
 }
