@@ -51,18 +51,18 @@ public enum Column implements Columnable {
      * @return список колонок
      */
     public static List<Column> getVisibleColumns() {
-        List<Column> result = new LinkedList<>();
+        List<Column> list = new LinkedList<>();
 
         for (int i = 0; i < values().length; i++) {
-            result.add(null);
+            list.add(null);
         }
         for (int i = 0; i < values().length; i++) {
             if (realOrder[i] != -1) {
-                result.set(realOrder[i], values()[i]);
+                list.set(realOrder[i], values()[i]);
             }
         }
-        result.removeAll(Collections.singleton(null));
-        return result;
+        list.removeAll(Collections.singleton(null));
+        return list;
     }
 
     @Override
