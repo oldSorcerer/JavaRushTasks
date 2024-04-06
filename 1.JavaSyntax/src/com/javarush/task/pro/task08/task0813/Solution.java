@@ -11,6 +11,6 @@ public class Solution {
     }
 
     public static int getPowerOfTwo(int power) {
-        return 2 << power - 1;
+        return 1 << power;
     }
 }
