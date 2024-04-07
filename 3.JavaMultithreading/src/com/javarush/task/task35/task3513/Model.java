@@ -3,6 +3,7 @@ package com.javarush.task.task35.task3513;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class Model {
     protected int score;
@@ -10,8 +11,29 @@ public class Model {
     private static final int FIELD_WIDTH = 4;
     private Tile[][] gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
 
+    private Stack<Tile[][]> previousStates = new Stack<>();
+    private Stack<Tile[][]> previousScores = new Stack<>();
+
+    private boolean isSaveNeeded = true;
+
     public Model() {
         resetGameTiles();
+    }
+
+    private void saveState(Tile[][] tiles) {
+        previousStates.push(tiles);
+
+
+
+        isSaveNeeded = false;
+    }
+
+    public void rollback() {
+        if (!previousScores.isEmpty()) {
+            Tile[][] tiles = previousScores.pop();
+
+        }
+
     }
 
     private void addTile() {
