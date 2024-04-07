@@ -31,7 +31,7 @@ public class Model {
     public void rollback() {
         if (!previousScores.isEmpty()) {
             Tile[][] tiles = previousScores.pop();
-            tiles
+
         }
 
     }
