@@ -22,7 +22,7 @@ public class Model {
 
     private void saveState(Tile[][] tiles) {
         previousStates.push(tiles);
-
+        previousScores.push(tiles);
 
 
         isSaveNeeded = false;
