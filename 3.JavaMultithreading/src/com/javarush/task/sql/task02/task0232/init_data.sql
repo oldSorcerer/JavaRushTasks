@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'students';
+DROP TABLE IF EXISTS students;
 
-CREATE TABLE `students`
+CREATE TABLE students
 (
-    `id`           INT          not null auto_increment,
+    `id`           INT          not null auto_increment primary key,
     `name`         VARCHAR(100) not null,
     `age`          INT          not null,
     `is_full_time` INT          not null
