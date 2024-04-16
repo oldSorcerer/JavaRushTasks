@@ -8,9 +8,9 @@ CREATE TABLE gyms
     `location` VARCHAR(100) not null
 );
 
-CREATE TABLE `customers`
+CREATE TABLE customers
 (
-    `id`        INT          not null auto_increment,
+    `id`        INT          not null auto_increment primary key,
     `name`      VARCHAR(100) not null,
     `sex`       VARCHAR(100) not null,
     `email`     VARCHAR(200) not null,
