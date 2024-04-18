@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS event;
 
 CREATE TABLE event
 (
-    `id`      INT         not null auto_increment primary key ,
+    `id`      INT         not null auto_increment primary key,
     `date`    DATE        not null,
     `user_id` INT         not null,
     `type`    VARCHAR(20) not null,
