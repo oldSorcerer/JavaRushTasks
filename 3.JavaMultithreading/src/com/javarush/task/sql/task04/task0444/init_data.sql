@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS cities;
 
 CREATE TABLE cities
 (
-    `id`         INT          not null auto_increment primary key ,
+    `id`         INT          not null auto_increment primary key,
     `city`       VARCHAR(100) not null,
     `country`    VARCHAR(100) not null,
     `population` INT          not null

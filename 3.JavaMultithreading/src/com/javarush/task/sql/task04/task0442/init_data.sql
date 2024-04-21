@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS task;
 
 CREATE TABLE task
 (
-       `id`            INT             not null    auto_increment primary key ,
+       `id`            INT             not null    auto_increment primary key,
        `title`         VARCHAR(100)    not null,
        `exp_date`      DATE            not null
 );
