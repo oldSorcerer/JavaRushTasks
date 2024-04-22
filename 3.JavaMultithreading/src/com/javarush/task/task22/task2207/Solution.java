@@ -25,7 +25,7 @@ public class Solution {
             }
 
             for (int i = 0; i < list.size(); i++) {
-                for (int j = i + 1; j < list.size();j++ ) {
+                for (int j = i + 1; j < list.size(); j++) {
                     StringBuilder builder = new StringBuilder(list.get(i));
                     if (builder.reverse().toString().equals(list.get(j))) {
                         Pair pair = new Pair();
@@ -77,7 +77,6 @@ public class Solution {
 
         }
     }
-
 }
 /*
 валидатор дятел
