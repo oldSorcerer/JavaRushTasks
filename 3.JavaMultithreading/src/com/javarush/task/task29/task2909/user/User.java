@@ -49,7 +49,7 @@ public class User {
     }
 
     public String getAddress() {
-        return getCountry() + " " + getCity() + " " + address.getHouse();
+        return address.getCountry() + " " + address.getCity() + " " + address.getHouse();
     }
 
     public String getBoss() {
