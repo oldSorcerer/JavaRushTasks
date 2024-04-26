@@ -9,7 +9,9 @@ Equals and HashCode
 */
 
 public class Solution {
-    private final String first, last;
+    
+    private final String first;
+    private final String last;
 
     public Solution(String first, String last) {
         this.first = first;
