@@ -2,11 +2,11 @@ package com.javarush.task.jdk13.task42.task4205;
 
 import java.util.concurrent.*;
 
-public class Message implements Delayed{
-    private Integer messageId;
-    private String messageText;
-    private long lifetime;
-    private long endTime;
+public class Message implements Delayed {
+    private final Integer messageId;
+    private final String messageText;
+    private final long lifetime;
+    private final long endTime;
 
     public Message(Integer messageId, String messageText, long lifetime) {
         this.messageId = messageId;
