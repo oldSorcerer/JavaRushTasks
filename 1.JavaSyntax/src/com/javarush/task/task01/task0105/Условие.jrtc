@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.task01.task0105"\n\nОбъявляем переменные
+
+### Объявляем переменные
 
 Напиши программу, которая в методе main объявляет такие переменные:
 name типа String, age типа int и city типа String.
