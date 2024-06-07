@@ -13,8 +13,7 @@ import java.util.stream.IntStream;
 public class Solution {
     public static void main(String[] args) throws InterruptedException {
 
-        LinkedBlockingQueue<Runnable> queue = IntStream
-                .rangeClosed(1, 10)
+        LinkedBlockingQueue<Runnable> queue = IntStream.rangeClosed(1, 10)
                 .mapToObj(i ->(Runnable)() -> doExpensiveOperation(i))
                 .collect(Collectors.toCollection(LinkedBlockingQueue::new));
 
