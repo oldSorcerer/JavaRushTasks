@@ -37,4 +37,5 @@ public class MyStack {
         }
         return -1;
     }
+//        storage.indexOf(s);
 }
