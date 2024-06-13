@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task14.task1407"\n\nPlayer and Dancer
+
+### Player and Dancer
 
 Посмотри, что делает эта программа.
 Затем измени метод haveFun так, чтобы он вызывал метод:
