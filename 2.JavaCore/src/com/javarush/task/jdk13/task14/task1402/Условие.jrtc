@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task14.task1402"\n\nBingo-2!
+
+### Bingo-2!
 
 Исправь строчку &#39;Cat cat = new Cat();&#39; так, чтобы программа вывела &quot;Bingo!&quot;.
 
