@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0527"\n\ntask0527
+
+### task0527
 
 Таблицы book связана с таблицей author через колонку author_id, значения в которой являются id авторов.
 Получи названия всех книг автора &#39;Edgar Allan Poe&#39;.
