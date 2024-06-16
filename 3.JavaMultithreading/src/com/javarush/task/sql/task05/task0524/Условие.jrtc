@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0524"\n\ntask0524
+
+### task0524
 
 Таблицы book связана с таблицей author через колонку author_id, которая содержит id авторов.
 Получи все книги, у авторов которых last_name начинается на &#39;S&#39;.
