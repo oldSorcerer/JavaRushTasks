@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task35.task3504"\n\nПростой generics
+
+### Простой generics
 
 Параметризируй класс Solution, чтобы он мог работать со всеми классами, которые наследуются от HashMap.
 Метод getMap должен возвращать тип поля map.
