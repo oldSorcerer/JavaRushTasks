@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task35.task3507"\n\nCollections & Generics
+
+### Collections & Generics
 
 Реализуй вспомогательныe методы в классе Solution, которые должны создавать соответствующую коллекцию и помещать туда переданные объекты.
 Методы newArrayList, newHashSet параметризируй типом T.
