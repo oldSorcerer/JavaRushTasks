@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task12.task1217"\n\nЛетать охота
+
+### Летать охота
 
 Напиши свой public интерфейс CanFly (летать). Добавь в него два метода.
 
