@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0513"\n\ntask0513
+
+### task0513
 
 Получи из таблицы lego_set колонки name, released, inventory.
 Отсортируй данные по годам, сначала более новые.
