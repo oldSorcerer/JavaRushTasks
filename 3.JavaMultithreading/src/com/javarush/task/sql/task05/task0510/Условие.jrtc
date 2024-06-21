@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0510"\n\ntask0510
+
+### task0510
 
 Получи колонку inventory таблицы lego_set отсортированную от большего количества к меньшему.
 
