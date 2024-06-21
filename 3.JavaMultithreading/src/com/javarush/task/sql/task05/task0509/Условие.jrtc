@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0509"\n\ntask0509
+
+### task0509
 
 Получи колонку weight таблицы part отсортированную от меньшего веса к большему.
 
