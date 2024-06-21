@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0504"\n\ntask0504
+
+### task0504
 
 Добавь в таблицу author восемь авторов:
 first_name 	last_name 	full_name
