@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0423"\n\ntask0423
+
+### task0423
 
 Напиши запрос, который из таблицы employee выберет имя (name) и позицию (position) сотрудников, которые родились
 в понедельник. Используй DAYNAME().
