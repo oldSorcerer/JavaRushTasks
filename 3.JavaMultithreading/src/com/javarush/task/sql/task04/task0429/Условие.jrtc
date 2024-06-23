@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0429"\n\ntask0429
+
+### task0429
 
 Напиши запрос, который из таблицы event выберет все поля событий, которые произошли за последние 2 недели.
 Дата и время событий хранится в поле date_time. Используй BETWEEN, DATE_SUB() и CURDATE().
