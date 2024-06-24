@@ -222,6 +222,4 @@ values (1, 'A Coruna', 'Spain', 245468),
        (211, 'Saint-Benoit', 'Reunion', 35310),
        (212, 'Tanki Leendert', 'Aruba', 21495),
        (213, 'Vatican City', 'Vatican City', 825),
-       (214, 'Willemstad', 'Curasao', 150000)
-;
-
+       (214, 'Willemstad', 'Curasao', 150000);
