@@ -28,6 +28,5 @@ values (1, 'Develop a feature', '2023-10-02'),
        (18, 'Fix template', '2022-09-21'),
        (19, 'Develop a feature', '2022-09-23'),
        (20, 'Fix template', '2022-10-19'),
-       (21, 'Update firewall', '2022-12-12')
-;
+       (21, 'Update firewall', '2022-12-12');
 
