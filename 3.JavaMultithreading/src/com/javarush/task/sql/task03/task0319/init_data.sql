@@ -43,5 +43,4 @@ values (2, 'Applecrumble & Fish', 'USA', 100500),
        (6, 'Diagiagio', 'UK', 25),
        (9, 'Danonium', 'France', 35),
        (4, 'XYW InBev SA', 'Belgium', 55),
-       (8, 'Random International', 'USA', 37)
-;
+       (8, 'Random International', 'USA', 37);
