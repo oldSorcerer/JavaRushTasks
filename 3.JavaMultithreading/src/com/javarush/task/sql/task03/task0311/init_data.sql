@@ -44,5 +44,4 @@ values (2, 'Applecrumble & Fish', 'USA', 'af.com', '$100500'),
        (6, 'Diagiagio', 'UK', 'diagiagio.com', '$25'),
        (9, 'Danonium', 'France', 'danonium.com', '$35'),
        (4, 'XYW InBev SA', 'Belgium', 'zyw.com', '$55'),
-       (8, 'Random International', 'USA', 'random.com', '$37')
-;
+       (8, 'Random International', 'USA', 'random.com', '$37');
