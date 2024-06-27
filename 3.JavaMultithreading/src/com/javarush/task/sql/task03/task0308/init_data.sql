@@ -38,5 +38,4 @@ values (10, 'Jack', 'male', 'jackemail@gmail.com', 442345678),
        (45, 'Hulk', 'male', 'hulk@hulk.com', 111111111),
        (66, 'Jane', 'female', 'janeemail@awsd.com', 1987654321),
        (99, 'Adam', 'male', 'adamemail@qwerty.com', 888888888),
-       (111, 'Arnold', 'male', 'arnold@iron.com', 555555555)
-;
+       (111, 'Arnold', 'male', 'arnold@iron.com', 555555555);
