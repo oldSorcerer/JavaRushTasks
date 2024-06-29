@@ -3,5 +3,5 @@ select distinct name,
                     when 2020 then 'new'
                     when 2021 then 'newer'
                     when 2022 then 'even newer'
-                    end
+                    end as pord_year
 from cars;
