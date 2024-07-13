@@ -99,5 +99,4 @@ values (1, 'AR', 'Argentina', 961540096, 961542143),
        (88, 'US', 'United States', 34629632, 34630143),
        (89, 'US', 'United States', 34631168, 34631679),
        (90, 'US', 'United States', 34640384, 34641407),
-       (91, 'US', 'United States', 34641920, 34642175)
-;
+       (91, 'US', 'United States', 34641920, 34642175);
