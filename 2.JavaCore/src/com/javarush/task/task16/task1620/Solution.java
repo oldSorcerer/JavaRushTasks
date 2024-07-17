@@ -42,6 +42,7 @@ public class Solution {
             this.sharedResource = sharedResource;
         }
 
+        @Override
         public void run() {
             boolean isCurrentThreadInterrupted = Thread.currentThread().isInterrupted();
             String threadName = Thread.currentThread().getName();
