@@ -14,5 +14,4 @@ values (5, 'Jack', 'Sparrow', 'pirate'),
        (7, 'James', 'Bond', 'agent'),
        (1, 'Vito', 'Corleone', 'godfather'),
        (100, 'Arnold', 'Schwarzenegger', 'terminator'),
-       (111, 'Anakin', 'Skywalker', 'jedi')
-;
+       (111, 'Anakin', 'Skywalker', 'jedi');
