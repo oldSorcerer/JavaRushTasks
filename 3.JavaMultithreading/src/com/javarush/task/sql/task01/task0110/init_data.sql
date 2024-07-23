@@ -16,5 +16,4 @@ values (1, 'Jack', 'Sparrow', 30),
        (7, 'Hannah', 'Montana', 25),
        (8, 'Vito', 'Corleone', 65),
        (10, 'Bob', 'Smith', 25),
-       (9, 'Arnold', 'Schwarzenegger', 40)
-;
+       (9, 'Arnold', 'Schwarzenegger', 40);
