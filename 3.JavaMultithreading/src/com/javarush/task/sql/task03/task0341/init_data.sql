@@ -34,5 +34,4 @@ values (1000, 1, 'Movie 1', 'comedy', 2013, 400),
        (2010, 11, 'The Terminator', 'sci-fi', 1984, 80),
        (2011, 11, 'Movie 22', 'drama', 1997, 2200),
        (3010, 12, 'Apocalypse Movie 23', 'war', 1979, 150),
-       (3011, 12, 'The Movie 24', 'crime', 1972, 300)
-;
+       (3011, 12, 'The Movie 24', 'crime', 1972, 300);
