@@ -58,5 +58,4 @@ values (1000, 1, 'The Sun Also Rises', 'novel', 1926, 6),
        (1035, 10, 'And Then There Were None', 'novel', 1939, 99),
        (2002, 11, 'The Lord of the Rings', 'fantasy', 1954, 155),
        (2011, 11, 'The Hobbit', 'fantasy', 1937, 101),
-       (1111, null, 'The Bible', 'religion', 1454, 9000)
-;
+       (1111, null, 'The Bible', 'religion', 1454, 9000);
