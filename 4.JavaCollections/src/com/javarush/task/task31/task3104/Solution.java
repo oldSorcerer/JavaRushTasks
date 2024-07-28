@@ -12,7 +12,37 @@ import java.util.List;
 */
 
 public class Solution extends SimpleFileVisitor<Path> {
+
+    private final List<String> archived = new ArrayList<>();
+    private final List<String> failed = new ArrayList<>();
+
+    public List<String> getArchived() {
+        return archived;
+    }
+
+    public List<String> getFailed() {
+        return failed;
+    }
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+
+        if(file.toString().endsWith(".rar") || file.toString().endsWith(".zip"))
+            getArchived().add(file.toString());
+
+        return super.visitFile(file, attrs);
+    }
+
+    @Override
+    public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+
+        getFailed().add(file.toString());
+
+        return FileVisitResult.SKIP_SUBTREE;
+    }
+
     public static void main(String[] args) throws IOException {
+
         EnumSet<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
         final Solution solution = new Solution();
         Files.walkFileTree(Paths.get("D:/"), options, 20, solution);
@@ -30,14 +60,4 @@ public class Solution extends SimpleFileVisitor<Path> {
         }
     }
 
-    private List<String> archived = new ArrayList<>();
-    private List<String> failed = new ArrayList<>();
-
-    public List<String> getArchived() {
-        return archived;
-    }
-
-    public List<String> getFailed() {
-        return failed;
-    }
 }
