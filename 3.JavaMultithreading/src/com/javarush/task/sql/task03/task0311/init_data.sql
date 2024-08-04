@@ -18,7 +18,7 @@ CREATE TABLE suppliers
     `annual_revenue_billions` VARCHAR(20) null
 );
 
-insert into top_retailers (rank, name, hq_location, annual_revenue_billions)
+insert into top_retailers (`rank`, name, hq_location, annual_revenue_billions)
 values (1, 'Big-Mart', 'USA', '$555'),
        (2, 'Forrest.com', 'USA', '$333'),
        (3, 'Braun Group', 'Germany', '$158'),
@@ -31,7 +31,7 @@ values (1, 'Big-Mart', 'USA', '$555'),
        (10, 'The Depot', 'USA', '$152')
 ;
 
-insert into suppliers (rank, name, country, website, annual_revenue_billions)
+insert into suppliers (`rank`, name, country, website, annual_revenue_billions)
 values (2, 'Applecrumble & Fish', 'USA', 'af.com', '$100500'),
        (13, 'Sappos', 'USA', 'sappos.com', '$2'),
        (1, 'Anker', 'China', 'anker.com', '$13'),
