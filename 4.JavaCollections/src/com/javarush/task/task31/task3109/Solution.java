@@ -26,6 +26,7 @@ public class Solution {
     }
 
     public Properties getProperties(String fileName) {
+
         return null;
     }
 }
