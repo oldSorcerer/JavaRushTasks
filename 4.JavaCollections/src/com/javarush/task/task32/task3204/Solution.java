@@ -17,17 +17,17 @@ public class Solution {
     public static ByteArrayOutputStream getPassword() {
 
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        String alphanumeric = "0123456789" + alphabet + alphabet.toUpperCase();
+        String template = "0123456789" + alphabet + alphabet.toUpperCase();
 
         char[] password = new char[8];
         String string = "";
         while (!string.matches(".*\\d.*") || !string.matches(".*[a-z].*") || !string.matches(".*[A-Z].*")) {
             for (int i = 0; i < password.length; i++) {
-                password[i] = alphanumeric.charAt(new Random().nextInt(alphanumeric.length()));
+                password[i] = template.charAt(new Random().nextInt(template.length()));
             }
             string = new String(password);
         }
-        
+
         try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
             byteArrayOutputStream.write(string.getBytes());
             return byteArrayOutputStream;
@@ -49,19 +49,19 @@ class Solution1 {
 
     public static ByteArrayOutputStream getPassword1() {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        String str = "0123456789" + alphabet + alphabet.toUpperCase();
+        String template = "0123456789" + alphabet + alphabet.toUpperCase();
         String password = "";
 
+        Random random = new Random();
         for (int i = 0; i < 8; i++) {
-            Random random = new Random();
-            int index = random.nextInt(str.length());
-            char charAt = str.charAt(index);
+            int index = random.nextInt(template.length());
+            char charAt = template.charAt(index);
             password = password + charAt;
         }
         if (!password.matches(".*\\d.*") ||
             !password.matches(".*[a-z].*") ||
             !password.matches(".*[A-Z].*")) {
-            return getPassword();
+            return getPassword1();
         }
         try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
             byteArrayOutputStream.write(password.getBytes());
@@ -78,7 +78,7 @@ class Solution1 {
         String string = "";
         while (!string.matches(".*\\d.*") ||
                !string.matches(".*[a-z].*") ||
-               !string.matches(".*[A-Z].*")){
+               !string.matches(".*[A-Z].*")) {
             for (int i = 0; i < password.length; i++) {
                 password[i] = str.charAt(new Random().nextInt(str.length()));
             }
