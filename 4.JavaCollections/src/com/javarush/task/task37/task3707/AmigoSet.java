@@ -85,18 +85,18 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
 
     @Serial
     @SuppressWarnings("unchecked")
-    private void readObject(ObjectInputStream inputStream) throws IOException, ClassNotFoundException {
+    private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
 
-        inputStream.defaultReadObject();
+        input.defaultReadObject();
 
-        int capacity = inputStream.readInt();
-        float loadFactor = inputStream.readFloat();
+        int capacity = input.readInt();
+        float loadFactor = input.readFloat();
         map = new HashMap<>(capacity, loadFactor);
 
-        int size = inputStream.readInt();
+        int size = input.readInt();
 
         for (int i = 0; i < size; i++) {
-            E element = (E) inputStream.readObject();
+            E element = (E) input.readObject();
             map.put(element, PRESENT);
         }
     }
