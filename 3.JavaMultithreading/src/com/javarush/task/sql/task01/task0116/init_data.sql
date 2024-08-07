@@ -22,5 +22,4 @@ values (1, 'Ravshan', 199, 'support'),
        (12, 'Sarah', 5000, 'management'),
        (13, 'Peter', 4999, 'sales'),
        (14, 'John', 5001, 'dev'),
-       (15, 'Ema', 4321, 'dev')
-;
+       (15, 'Ema', 4321, 'dev');

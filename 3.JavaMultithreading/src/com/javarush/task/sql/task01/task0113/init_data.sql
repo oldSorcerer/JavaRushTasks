@@ -19,5 +19,4 @@ values (1, 'Ravshan', 199, 'support'),
        (9, 'Kostik', 8765, 'development'),
        (10, 'Dzhumshut', 201, 'support'),
        (11, 'John', 3200, 'management'),
-       (12, 'Sarah', 15000, 'management')
-;
+       (12, 'Sarah', 15000, 'management');
