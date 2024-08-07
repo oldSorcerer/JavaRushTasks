@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS 'car';
+DROP TABLE IF EXISTS car;
 
-CREATE TABLE `car`
+CREATE TABLE car
 (
-    `id`              INT          not null auto_increment,
+    `id`              INT          not null auto_increment primary key ,
     `brand`           VARCHAR(100) not null,
     `model`           VARCHAR(100) not null,
     `quantity`        INT          not null,
@@ -26,5 +26,4 @@ values (1, 'lada', 'kalina', 99999, 0),
        (14, 'suzuki', 'swift', 456, 123),
        (15, 'skoda', 'karoq', 54, 48),
        (16, 'volvo', 'xc90', 10, 7),
-       (17, 'toyota', 'rav4', 20000, 11999)
-;
+       (17, 'toyota', 'rav4', 20000, 11999);
