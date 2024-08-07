@@ -13,5 +13,4 @@ values (1, 'gussi', 'GI', 1850),
        (2, 'kwik e mart', 'KM', 1990),
        (3, 'dunkin chickens', 'DC', 1817),
        (4, 'thai tanic', 'TT', 1999),
-       (5, 'bread pitt', 'BP', 1989)
-;
+       (5, 'bread pitt', 'BP', 1989);
