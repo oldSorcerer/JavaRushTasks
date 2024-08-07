@@ -26,5 +26,4 @@ values (1, '1f76bc86-f76b-44fc-983b-8f3b620332ee', 'wheel', true),
        (15, '6a97cb76-b1ba-42db-b900-7af1b59caa94', 'spare wheel', false),
        (16, 'f48aea34-f849-4375-b02c-f3187b5ed702', 'manual', true),
        (17, '7c00c31f-02a2-431b-a173-ab91b9b03a6b', null, true),
-       (18, '5802e255-3604-4161-bcaa-85ce077a01f4', null, false)
-;
+       (18, '5802e255-3604-4161-bcaa-85ce077a01f4', null, false);

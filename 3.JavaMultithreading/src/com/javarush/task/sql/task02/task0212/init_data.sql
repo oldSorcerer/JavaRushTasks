@@ -18,5 +18,4 @@ values (1, 'developer', 6000, 'London'),
        (15, 'designer', 7100, 'Stockholm'),
        (16, 'courier', 3800, 'Warsaw'),
        (19, 'designer', 6200, 'Berlin'),
-       (20, 'manager', 11000, 'London')
-;
+       (20, 'manager', 11000, 'London');

@@ -18,5 +18,4 @@ values (9, 'Jack', 5, 'New York'),
        (55, 'Joao', 71, 'Portugal'),
        (33, 'Isak', 38, 'Sweden'),
        (99, 'Monika', 62, 'Warsaw'),
-       (111, 'Amelie', 1, 'London')
-;
+       (111, 'Amelie', 1, 'London');

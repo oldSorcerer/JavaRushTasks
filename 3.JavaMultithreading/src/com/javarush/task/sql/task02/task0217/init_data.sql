@@ -17,5 +17,4 @@ values (1, 'New Red Car', 2021, 5, 95000),
        (5, 'Super New Red Car', 2022, 6, 150000),
        (6, 'Old Yellow Car', 1999, 2, 6000),
        (7, 'Old Green Car', 2012, 3, 10000),
-       (8, 'New Grey Car', 2021, 5, 35000)
-;
+       (8, 'New Grey Car', 2021, 5, 35000);
