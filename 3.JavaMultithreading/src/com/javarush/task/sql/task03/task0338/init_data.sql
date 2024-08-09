@@ -22,5 +22,4 @@ values (1, 'Ernest', 'Demingway', 'Ernest Demingway', 'male', 1899, 'USA'),
        (8, 'Stephen', 'Knight', 'Stephen Knight', 'male', 1947, 'USA'),
        (9, 'William', 'Shakespeare', 'William Shakespeare', 'male', 1564, 'UK'),
        (10, 'Agatha', 'Bristie', 'Agatha Bristie', 'female', 1890, 'UK'),
-       (11, 'John', 'Dolkin', 'John Dolkin', 'male', 1892, 'UK')
-;
+       (11, 'John', 'Dolkin', 'John Dolkin', 'male', 1892, 'UK');
