@@ -23,5 +23,4 @@ values (1, 'Martin', 'Borsense', 'Martin Borsense', 'male', 1942, 'USA'),
        (9, 'Clint', 'Westwood', 'Clint Westwood', 'male', 1930, 'USA'),
        (10, 'Ernst', 'Borgman', 'Ernst Borgman', 'male', 1918, 'Sweden'),
        (11, 'James', 'Sameron', 'James Sameron', 'male', 1954, 'Canada'),
-       (12, 'Francis', 'Lincoln Coppola', 'Francis Lincoln Coppola', 'male', 1939, 'USA')
-;
+       (12, 'Francis', 'Lincoln Coppola', 'Francis Lincoln Coppola', 'male', 1939, 'USA');
