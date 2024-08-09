@@ -34,8 +34,7 @@ values (1, 'Martin', 'Borsense', 'Martin Borsense', 'male', 1942, 'USA'),
        (9, 'Clint', 'Westwood', 'Clint Westwood', 'male', 1930, 'USA'),
        (10, 'Ernst', 'Borgman', 'Ernst Borgman', 'male', 1918, 'Sweden'),
        (11, 'James', 'Sameron', 'James Sameron', 'male', 1954, 'Canada'),
-       (12, 'Francis', 'Lincoln Coppola', 'Francis Lincoln Coppola', 'male', 1939, 'USA')
-;
+       (12, 'Francis', 'Lincoln Coppola', 'Francis Lincoln Coppola', 'male', 1939, 'USA');
 
 insert into films (film_id, director_id, title, genre, year_released, grossed)
 values (1000, 1, 'Movie 1', 'comedy', 2013, 500),
@@ -61,5 +60,4 @@ values (1000, 1, 'Movie 1', 'comedy', 2013, 500),
        (2010, 11, 'The Movie 21', 'sci-fi', 1984, 84),
        (2011, 11, 'Movie 22', 'drama', 1997, 2345),
        (3010, 12, 'Apocalypse Movie 23', 'war', 1979, 155),
-       (3011, 12, 'The Movie 24', 'crime', 1972, 333)
-;
+       (3011, 12, 'The Movie 24', 'crime', 1972, 333);
