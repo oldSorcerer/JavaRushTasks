@@ -30,5 +30,4 @@ values (1, 'Tom', '1985-10-05', 'backend developer', 'omega'),
        (18, 'Robert', '1990-08-26', 'backend developer', 'delta'),
        (19, 'Joe', '1993-02-09', 'frontend developer', 'omega'),
        (20, 'Timothy', '1995-03-25', 'manager', 'bravo'),
-       (21, 'Nicholas', '2000-01-05', 'designer', 'omega')
-;
+       (21, 'Nicholas', '2000-01-05', 'designer', 'omega');

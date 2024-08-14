@@ -59,5 +59,4 @@ values (1, DATE_ADD(now(), interval -1 day), 3, 'LOGIN', 'OK'),
        (47, DATE_ADD(now(), interval -19 day), 7, 'LOGIN', 'OK'),
        (48, DATE_ADD(now(), interval 0 day), 2, 'REGISTRATION', 'FAILED'),
        (49, DATE_ADD(now(), interval -9 day), 8, 'SOLVE_TASK', 'OK'),
-       (50, DATE_ADD(now(), interval -11 day), 5, 'LOGIN', 'OK')
-;
+       (50, DATE_ADD(now(), interval -11 day), 5, 'LOGIN', 'OK');

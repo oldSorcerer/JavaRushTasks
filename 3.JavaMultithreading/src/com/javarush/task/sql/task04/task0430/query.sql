@@ -1,4 +1,4 @@
-select year(date), month(date), day(date), count(*)
+select year(date_time), month(date_time), day(date_time), count(*)
 from event
-group by year(date), month(date), day(date)
+group by year(date_time), month(date_time), day(date_time)
 having count(*) > 5;
