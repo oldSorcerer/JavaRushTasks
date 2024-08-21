@@ -11,7 +11,7 @@ taskKey="com.javarush.task.jdk13.task41.task4102"\n\nФирменный реце
 Переопредели методы:
 - у WithChicken метод getCost добавляет к стоимости 20, метод getIngredients добавляет к ингредиентам &quot;, курица&quot;;
 - у WithSausage метод getCost добавляет к стоимости 25, метод getIngredients добавляет к ингредиентам &quot;, колбаса&quot;;
-- у WithChicken метод getCost добавляет к стоимости 15, метод getIngredients добавляет к ингредиентам &quot;, руккола&quot;.
+- у WithArugula метод getCost добавляет к стоимости 15, метод getIngredients добавляет к ингредиентам &quot;, руккола&quot;.
 
 Раскомментируй код в методе main и посмотри что получилось.
 Добавь еще декораторов для любимых ингредиентов и придумай как еще улучшить программу.
