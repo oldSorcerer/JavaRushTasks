@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0213"\n\ntask0213
+
+### task0213
 
 Напиши запрос, который согласно данных из поля is_full_time таблицы students вернет такую информацию:
 - &#39;true&#39;, если значение is_full_time равно 1
