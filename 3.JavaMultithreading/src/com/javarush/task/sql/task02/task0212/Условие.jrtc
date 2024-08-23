@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0212"\n\ntask0212
+
+### task0212
 
 Напиши запрос, который согласно данных из таблицы employee для города (city) &#39;London&#39; вернет такую информацию:
 - &#39;good&#39;, если должность (position) &#39;manager&#39; и зарплата (salary) больше 10000
