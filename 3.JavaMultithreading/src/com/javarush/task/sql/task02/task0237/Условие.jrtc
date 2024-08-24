@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0237"\n\ntask0237
+
+### task0237
 
 Напиши запрос, который согласно данных из таблицы cars выберет поля name и prod_year.
 В итоговой выборке информация должна быть сгрупирована по колонкам name, prod_year и price.
