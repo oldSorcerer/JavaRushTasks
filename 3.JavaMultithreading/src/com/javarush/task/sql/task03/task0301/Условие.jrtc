@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0301"\n\ntask0301
+
+### task0301
 
 Выбрать все колонки (используй *) из таблиц gyms и customers.
 
