@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0317"\n\ntask0317
+
+### task0317
 
 В этой задаче тебе потребуется:
 1. Выбрать все колонки из таблиц top_retailers и suppliers, объединив их при этом оператором JOIN.
