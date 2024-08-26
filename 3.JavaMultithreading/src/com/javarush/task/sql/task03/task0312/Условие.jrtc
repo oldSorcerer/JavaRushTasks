@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0312"\n\ntask0312
+
+### task0312
 
 Требуется выбрать колонки rank и name из таблицы top_retailers, но временно заменив обращение к колонке top_retailers.rank на company_rank,
 а к колонке top_retailers.name на company_name. Также следует выбрать колонку annual_revenue_billions из таблицы suppliers, временно заменив название на supplier_revenue.
