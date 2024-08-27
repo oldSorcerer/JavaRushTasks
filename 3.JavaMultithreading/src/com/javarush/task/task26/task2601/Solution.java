@@ -23,3 +23,5 @@ public class Solution {
         return array;
     }
 }
+
+//Comparator<Integer> comparator = (a, b) -> (Math.abs(median - a) - Math.abs(median - b));
