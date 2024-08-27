@@ -32,9 +32,9 @@ public class Solution {
         try {
             return string.substring(string.indexOf("\t") + 1, string.lastIndexOf("\t"));
         } catch (Exception e) {
-            if (threadName.equals(FIRST_THREAD_NAME)) {
+            if (FIRST_THREAD_NAME.equals(threadName)) {
                 throw new StringForFirstThreadTooShortException(e);
-            } else if (threadName.equals(SECOND_THREAD_NAME)) {
+            } else if (SECOND_THREAD_NAME.equals(threadName)) {
                 throw  new StringForSecondThreadTooShortException(e);
             } else throw new RuntimeException(e);
         }

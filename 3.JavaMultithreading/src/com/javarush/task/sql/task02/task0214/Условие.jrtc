@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0214"\n\ntask0214
+
+### task0214
 
 Напиши запрос, который согласно данных из поля experience таблицы developers вернет такую информацию:
 - &#39;junior&#39;, если значение experience менее 1

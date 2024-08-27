@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0219"\n\ntask0219
+
+### task0219
 
 Напиши запрос, который согласно данных из поля euro таблицы cars вернет такую информацию:
 - &#39;good&#39;, если значение euro равно NULL
