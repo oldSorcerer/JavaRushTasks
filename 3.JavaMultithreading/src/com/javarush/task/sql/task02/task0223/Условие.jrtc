@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0223"\n\ntask0223
+
+### task0223
 
 Напиши запрос, который из таблицы employee выберет информацию о том, сколько в каждом департаменте (department) сотрудников.
 
