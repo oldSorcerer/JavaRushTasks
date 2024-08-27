@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0321"\n\ntask0321
+
+### task0321
 
 В этой задаче тебе потребуется:
 1. Выбрать все колонки таблицы customers и соединить её с таблицей orders используя оператор JOIN.
