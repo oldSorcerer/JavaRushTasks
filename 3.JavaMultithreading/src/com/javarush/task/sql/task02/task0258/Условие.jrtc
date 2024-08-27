@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task02.task0258"\n\ntask0258
+
+### task0258
 
 Напиши запрос, который из таблицы employee выберет позиции (position) и список имен (name) сотрудников на
 каждой позиции. Используй GROUP_CONCAT.
