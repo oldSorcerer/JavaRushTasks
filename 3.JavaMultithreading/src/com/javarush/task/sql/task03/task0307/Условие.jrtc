@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0307"\n\ntask0307
+
+### task0307
 
 Требуется найти колонки id и name из таблицы gyms, и колонку id из таблицы customers,
 но при этом заменив название таблицы gyms на &#39;gym&#39;, а название таблицы customers на &#39;cust&#39;.

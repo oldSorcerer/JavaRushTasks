@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0315"\n\ntask0315
+
+### task0315
 
 В этой задаче тебе потребуется:
 1. Выбрать колонку hq_location из таблицы top_retailers, временно заменив имя колонки на ret_location.

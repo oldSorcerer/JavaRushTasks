@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0318"\n\ntask0318
+
+### task0318
 
 В этой задаче тебе потребуется:
 1. Выбрать колонки ret_name и ret_revenue из таблицы top_retailers, и колонки sup_name и sup_revenue из таблицы suppliers.
