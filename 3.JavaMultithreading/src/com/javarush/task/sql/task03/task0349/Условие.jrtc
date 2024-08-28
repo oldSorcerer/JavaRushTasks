@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0349"\n\ntask0349
+
+### task0349
 
 В данной задаче тебе потребуется:
 1. Используя оператор WITH создать временную таблицу tempTable с колонкой averageDOB.
