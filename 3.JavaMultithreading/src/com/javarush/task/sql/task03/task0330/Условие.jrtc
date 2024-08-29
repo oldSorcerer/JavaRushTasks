@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0330"\n\ntask0330
+
+### task0330
 
 В этой задаче тебе потребуется:
 1. Выбрать колонку zip_code из таблицы customers, переименовав её в cust_zip_code, и колонку order_status из таблицы orders, переименовав её в status.
