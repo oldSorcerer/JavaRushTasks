@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0333"\n\ntask0333
+
+### task0333
 
 В этой задаче тебе потребуется:
 1. Выбрать колонки sex и country из таблицы authors, переименовав их в author_sex и author_country, соответственно.
