@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0328"\n\ntask0328
+
+### task0328
 
 В этой задаче тебе потребуется:
 1. Выбрать колонку phone из таблицы customers и переименовать её в cust_phone (используй оператор AS). Также выбрать колонки order_date, total_cost и store_id из таблицы orders.
