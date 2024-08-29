@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0331"\n\ntask0331
+
+### task0331
 
 В этой задаче тебе потребуется:
 1. Выбрать колонку last_name из таблицы authors, переименовав её в author, и колонки title и copies_sold_millions из таблицы books, переименовав их в book_title и books_sold, соответственно.
