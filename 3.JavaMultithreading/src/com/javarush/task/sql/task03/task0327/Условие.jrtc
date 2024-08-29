@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0327"\n\ntask0327
+
+### task0327
 
 В этой задаче тебе потребуется:
 1. Выбрать колонку city из таблицы customers и колонку store_id из таблицы orders.
