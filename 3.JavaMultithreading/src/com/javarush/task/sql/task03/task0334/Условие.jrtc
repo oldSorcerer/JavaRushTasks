@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0334"\n\ntask0334
+
+### task0334
 
 1. Выбрать колонки last_name и country из таблицы authors, переименовав их в author и author_country, соответственно.
 Также, выбрать колонку genre из таблицы books, переименовав её в book_genre.
