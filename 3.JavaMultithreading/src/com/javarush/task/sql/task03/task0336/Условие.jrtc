@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task03.task0336"\n\ntask0336
+
+### task0336
 
 1. Выбрать колонку year_born из таблицы authors.
 2. Используя оператор WHERE, добавить условие, что year_born таблицы authors должно быть меньше или равно максимальному значению date_released из таблицы books.
