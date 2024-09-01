@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0413"\n\ntask0413
+
+### task0413
 
 Напиши запрос, который из таблицы math выберет значения полей a и b округленных вниз.
 
