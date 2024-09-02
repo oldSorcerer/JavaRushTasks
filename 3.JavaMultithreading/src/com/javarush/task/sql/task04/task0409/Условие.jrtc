@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0409"\n\ntask0409
+
+### task0409
 
 Напиши запрос, который из таблицы logic выберет битовый сдвиг поля a вправо на b.
 

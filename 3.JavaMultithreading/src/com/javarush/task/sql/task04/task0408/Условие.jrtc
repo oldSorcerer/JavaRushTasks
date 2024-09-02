@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0408"\n\ntask0408
+
+### task0408
 
 Напиши запрос, который из таблицы logic выберет побитовую инверсию поля a.
 
