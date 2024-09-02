@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0411"\n\ntask0411
+
+### task0411
 
 Напиши запрос, который из таблицы logic выберет у значения поля a количество бит, равных 1.
 
