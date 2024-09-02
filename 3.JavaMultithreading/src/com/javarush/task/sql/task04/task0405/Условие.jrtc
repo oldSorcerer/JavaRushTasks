@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0405"\n\ntask0405
+
+### task0405
 
 Напиши запрос, который из таблицы logic выберет побитовый AND полей a и b.
 
