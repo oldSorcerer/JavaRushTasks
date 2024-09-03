@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0417"\n\ntask0417
+
+### task0417
 
 Напиши запрос, который вернет текущую дату и текущее время.
 
