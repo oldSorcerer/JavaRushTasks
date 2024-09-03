@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0438"\n\ntask0438
+
+### task0438
 
 Напиши запрос, который из таблицы employee выберет позиции (position) сотрудников, но при этом, если в позиции
 встречается слово &#39;developer&#39;, то замени его на &#39;software developer&#39;.

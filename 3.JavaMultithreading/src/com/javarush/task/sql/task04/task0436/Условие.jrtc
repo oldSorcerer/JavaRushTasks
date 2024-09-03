@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0436"\n\ntask0436
+
+### task0436
 
 Напиши запрос, который из таблицы employee выберет первые 8 символов позиции (position) сотрудников.
 

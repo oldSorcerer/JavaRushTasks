@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task04.task0434"\n\ntask0434
+
+### task0434
 
 Напиши запрос, который из таблицы employee выберет длины имен (name) сотрудников в байтах и символах.
 
