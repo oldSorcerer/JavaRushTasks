@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0522"\n\ntask0522
+
+### task0522
 
 Получи из таблицы part колонки name и weight.
 Значения колонки weight округли вверх.

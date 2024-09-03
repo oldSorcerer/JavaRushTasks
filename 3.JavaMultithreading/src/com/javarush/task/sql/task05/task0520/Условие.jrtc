@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0520"\n\ntask0520
+
+### task0520
 
 Получи из таблицы lego_set все номера и имена в виде одной колонки с именем full_name, по принципу:
 если номер был 71761, а имя &#39;Zane&rsquo;s Power Up Mech EVO&#39;, то в колонке full_name должно получиться:
