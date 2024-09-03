@@ -19,7 +19,8 @@ public class Bowling {
                 .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
 //        IntStream.range(1, tracksNumber + 1).mapToObj(Track::new).forEach(tracks::offer);
         shoesShelf = IntStream.range(0, 50)
-                .mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
+                .mapToObj(i -> ThreadLocalRandom.current().nextInt(38, 46))
+                .map(PairOfShoes::new)
                 .collect(Collectors.toCollection(ConcurrentLinkedQueue::new));
 //        IntStream.range(0, 50).mapToObj(i -> new PairOfShoes(ThreadLocalRandom.current().nextInt(38, 46)))
 //                .forEach(shoesShelf::offer);
