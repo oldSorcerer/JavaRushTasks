@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0508"\n\ntask0508
+
+### task0508
 
 Внеси изменения в таблицу author:
 - у автора с полным именем &#39;C. S. Lewis&#39; измени полное имя на &#39;Clive Staples Lewis&#39;;
