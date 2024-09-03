@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0517"\n\ntask0517
+
+### task0517
 
 Получи из таблицы lego_set количество наборов каждого года.
 Должно получиться две колонки: released и count(*).
