@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0525"\n\ntask0525
+
+### task0525
 
 Таблицы book связана с таблицей author через колонку author_id, которая содержит id авторов.
 Получи всех авторов, у которых в таблице book больше одной книги.

@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0530"\n\ntask0530
+
+### task0530
 
 Получи из таблицы object (схема space) данные про дату открытия.
 Результат должен содержать четыре колонки:

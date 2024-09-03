@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.sql.task05.task0529"\n\ntask0529
+
+### task0529
 
 Таблицы book связана с таблицей author через колонку author_id, значения в которой являются id авторов.
 Таблицы book связана с таблицей publisher через колонку publisher_id, которая содержит id издателей.
