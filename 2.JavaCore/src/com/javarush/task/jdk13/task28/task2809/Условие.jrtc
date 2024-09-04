@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task28.task2809"\n\nМногонитиевость в одной нити
+
+### Многонитиевость в одной нити
 
 Тебе нужно модифицировать программу, используя newSingleThreadExecutor вместо создания new Thread().
 Для этого тебе нужно создать ExecutorService, использовать его метод submit(Callable) вместо new Thread(), а в конце не забыть его остановить.
