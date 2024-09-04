@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task28.task2811"\n\nЗнакомство с Executors
+
+### Знакомство с Executors
 
 1. В методе main создай фиксированный пул из 5 трэдов используя класс Executors.
 2. В цикле отправь на исполнение в пул 20 задач Runnable.
