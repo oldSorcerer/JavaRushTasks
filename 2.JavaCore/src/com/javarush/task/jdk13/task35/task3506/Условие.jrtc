@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task35.task3506"\n\nextends vs super
+
+### extends vs super
 
 Логика всех методов - добавить source в destination.
 !!!Расставь ?, extends и super где необходимо:!!!

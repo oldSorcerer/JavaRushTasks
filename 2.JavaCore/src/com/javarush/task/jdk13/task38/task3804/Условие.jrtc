@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task38.task3804"\n\nОбработка аннотаций
+
+### Обработка аннотаций
 
 - создай аннотацию Entity;
 - добавь ей три параметра: String name без значения по умолчания, int value по умолчанию 45, boolean required по умолчанию true;
