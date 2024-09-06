@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
@@ -27,6 +28,17 @@ public class Solution {
 
     public Properties getProperties(String fileName) {
 
-        return null;
+        Properties properties = new Properties();
+        Path path = Paths.get(fileName);
+
+        try (InputStream inputStream = Files.newInputStream(path)) {
+            if (path.getFileName().toString().endsWith(".xml")) {
+                properties.loadFromXML(inputStream);
+            }else {
+                properties.load(inputStream);
+            }
+        }catch (IOException ignore) {
+        }
+        return properties;
     }
 }
