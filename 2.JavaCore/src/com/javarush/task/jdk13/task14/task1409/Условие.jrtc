@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task14.task1409"\n\nУсложняем switch expression
+
+### Усложняем switch expression
 
 Метод main с помощью метода getLettersCount получает информацию о количестве букв в названиях дней недели, и выводит ее в виде:
 MONDAY: (6)

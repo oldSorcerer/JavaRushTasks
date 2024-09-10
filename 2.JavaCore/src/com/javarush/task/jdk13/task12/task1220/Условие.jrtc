@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task12.task1220"\n\nКласс Human и интерфейсы CanRun, CanSwim
+
+### Класс Human и интерфейсы CanRun, CanSwim
 
 Напиши public класс Human (человек) и  public интерфейсы CanRun (бежать/ездить), CanSwim (плавать).
 Добавь в каждый интерфейс по одному методу.

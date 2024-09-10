@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task13.task1308"\n\nThe weather is fine
+
+### The weather is fine
 
 Реализуй в классе Today интерфейс Weather.
 Подумай, как связан параметр type с методом getWeatherType().
