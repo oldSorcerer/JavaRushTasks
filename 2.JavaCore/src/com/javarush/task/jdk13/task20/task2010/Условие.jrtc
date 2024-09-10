@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task20.task2010"\n\nДата в JSON
+
+### Дата в JSON
 
 Используя аннотацию JsonFormat сделай так, чтобы JSON содержащий дату в формате (dd-MM-yyyy hh:mm:ss) десериализовался в объект типа Event.
 

@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task23.task2305"\n\nПовторяем threads
+
+### Повторяем threads
 
 Сделать так, чтобы в методе someActions вызывались только методы класса Solution.
 Ожидаемый вывод в методе main:

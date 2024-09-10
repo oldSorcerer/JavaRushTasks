@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task17.task1707"\n\nМВФ
+
+### МВФ
 
 Singleton паттерн - синхронизация в методе.
 Класс IMF - это Международный Валютный Фонд.

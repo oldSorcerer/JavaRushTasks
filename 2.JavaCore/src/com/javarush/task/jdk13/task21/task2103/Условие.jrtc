@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task21.task2103"\n\nОшибка в equals/hashCode
+
+### Ошибка в equals/hashCode
 
 Исправьте ошибки реализаций методов equals и hashCode для класса Solution.
 

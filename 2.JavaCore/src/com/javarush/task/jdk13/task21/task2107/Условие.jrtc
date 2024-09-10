@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task21.task2107"\n\nAutoCloseable и try-with-resources
+
+### AutoCloseable и try-with-resources
 
 В классе FakeConnection реализуй интерфейс AutoCloseable, чтобы объекты этого типа можно было использовать в try-with-resources.
 Метод close() должен выводить на экран фразу &quot;Closing database connection...&quot;

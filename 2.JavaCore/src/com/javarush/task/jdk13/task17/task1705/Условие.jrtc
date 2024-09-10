@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task17.task1705"\n\nСад-огород
+
+### Сад-огород
 
 1. Создай метод public void addFruit(int index, String fruit) - который добавляет параметр fruit в лист fruits на позицию index.
 2. Создай метод public void removeFruit(int index) - который удаляет из fruits элемент с индексом index.
