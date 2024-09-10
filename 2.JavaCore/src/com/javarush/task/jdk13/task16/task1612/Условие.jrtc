@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.jdk13.task16.task1612"\n\nMy second thread
+
+### My second thread
 
 1. Создать public static класс TestThread, унаследованный от класса Thread.
 2. Создать статик блок внутри TestThread, который выводит в консоль &quot;it&#39;s a static block inside TestThread&quot;.
