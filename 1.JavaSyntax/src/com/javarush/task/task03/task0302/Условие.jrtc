@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.task03.task0302"\n\nНемедленно в печать
+
+### Немедленно в печать
 
 Добавь метод public static void printString(String s), в нем напиши код, который будет выводить переданную строку на экран.
 
