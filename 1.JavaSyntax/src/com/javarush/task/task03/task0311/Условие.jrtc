@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.task03.task0311"\n\nПечатаем строки
+
+### Печатаем строки
 
 Реализуй метод public static void writeToConsole(String s), который добавляет к началу строки выражение "printing: "
 и выводит измененную строку на экран.
