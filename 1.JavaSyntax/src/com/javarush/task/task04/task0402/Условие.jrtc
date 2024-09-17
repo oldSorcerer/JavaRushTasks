@@ -1,4 +1,5 @@
-taskKey="com.javarush.task.task04.task0402"\n\nЦена яблок
+
+### Цена яблок
 
 Подсчитать суммарную стоимость яблок.
 За суммарную стоимость яблок отвечает переменная public static int applesPrice.
