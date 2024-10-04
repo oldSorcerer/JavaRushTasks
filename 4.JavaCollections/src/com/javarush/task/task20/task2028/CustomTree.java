@@ -13,7 +13,7 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
     int size;
 
     public CustomTree() {
-        this.root = new Entry<>(null);
+        this.root = new Entry<>("null");
         this.size = 0;
     }
 
@@ -76,14 +76,88 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
     }
 
     @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        if (!(o instanceof String)) {
+            throw new UnsupportedOperationException();
+        }
+
+        String elementName = (String) o;
+
+        Entry<String> nodeToRemove = findNode(root, elementName);
+
+        if (nodeToRemove == null) {
+            return false; // Узел не найден
+        }
+
+        removeNode(nodeToRemove);
+
+        updateParentAvailability(nodeToRemove);
+
+        return true;
+    }
+
+    private Entry<String> findNode(Entry<String> node, String elementName) {
+        if (node == null) {
+            return null;
+        }
+
+        if (node.elementName.equals(elementName)) {
+            return node;
+        }
+
+        Entry<String> foundNode = findNode(node.leftChild, elementName);
+        if (foundNode != null) {
+            return foundNode;
+        }
+
+        return findNode(node.rightChild, elementName);
+    }
+
+    private void removeNode(Entry<String> node) {
+        if (node.parent != null) {
+            if (node.parent.leftChild == node) {
+                node.parent.leftChild = null;
+            } else {
+                node.parent.rightChild = null;
+            }
+        }
+//        node.parent = null;
+        // Если нужно удалять всех потомков рекурсивно:
+        if (node.leftChild != null) {
+            removeNode(node.leftChild);
+            size--;
+        }
+        if (node.rightChild != null) {
+            removeNode(node.rightChild);
+            size--;
+        }
+        node.leftChild = null;
+        node.rightChild = null;
+    }
+
+    private void updateParentAvailability(Entry<String> node) {
+        Entry<String> parent = node.parent;
+        while (parent != null) {
+            if (parent.leftChild == null && parent.rightChild == null) {
+                parent.availableToAddLeftChildren = true;
+                parent.availableToAddRightChildren = true;
+            }
+            parent = parent.parent;
+        }
+        node.parent = null;
+        size--;
+    }
+
+    @Override
     public String get(int index) {
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public int size() {
-        return size;
-    }
 
     @Override
     public String set(int index, String element) {

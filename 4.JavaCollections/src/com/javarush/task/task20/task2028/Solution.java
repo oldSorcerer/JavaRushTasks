@@ -11,8 +11,28 @@ public class Solution {
         }
 
         System.out.println("The list size is " + list.size());
-        System.out.println("The expected parent is 2. The actual parent is " + ((CustomTree) list).getParent("5"));
         System.out.println("The expected parent is 3. The actual parent is " + ((CustomTree) list).getParent("8"));
         System.out.println("The expected parent is null. The actual parent is " + ((CustomTree) list).getParent("20"));
+        System.out.println("---");
+
+        list.remove("3");
+        System.out.println("The expected parent is null. The actual parent is " + ((CustomTree) list).getParent("8"));
+        System.out.println("The list size is " + list.size());
+        System.out.println("---");
+
+        list.add("16");
+        System.out.println("The expected parent is 9. The actual parent is " + ((CustomTree) list).getParent("16"));
+        System.out.println("The list size is " + list.size());
+        System.out.println("---");
+
+        list.remove("4");
+        list.remove("5");
+        list.remove("6");
+        System.out.println("The list size is " + list.size());
+        System.out.println("---");
+        System.out.println("Expected: true. Actual: " + list.add("20"));
+        System.out.println("The list size is " + list.size());
+        System.out.println("---");
+        System.out.println("The expected parent is 1. The actual parent is " + ((CustomTree) list).getParent("20"));
     }
 }
