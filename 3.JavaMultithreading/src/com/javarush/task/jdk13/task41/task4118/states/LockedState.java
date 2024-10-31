@@ -2,7 +2,7 @@ package com.javarush.task.jdk13.task41.task4118.states;
 
 import com.javarush.task.jdk13.task41.task4118.ui.Player;
 
-public class LockedState extends State{
+public class LockedState extends State {
 
     public LockedState(Player player) {
         super(player);
