@@ -1,6 +1,6 @@
 select *
 from authors
-where id !=
+where author_id !=
       (select author_id
        from books
        where author_id = 7
