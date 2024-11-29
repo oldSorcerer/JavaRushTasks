@@ -1,7 +1,6 @@
 package com.javarush.task.sql.task10.task1005;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import com.javarush.task.sql.task10.task1005.entities.Book;
 
@@ -17,7 +16,8 @@ public class Solution {
         List<Book> books;
 
         try (Session session = MySessionFactory.getSessionFactory().openSession()) {
-            Query<Book> query = session.createQuery("from Book where author.fullName = 'Mark Twain' and publisher.name ='Фолио'", Book.class);
+            String hql = "from Book where Author.fullName = 'Mark Twain' and Publisher.name ='Фолио'";
+            Query<Book> query = session.createQuery(hql, Book.class);
             books = query.list();
         }
         books.forEach(System.out::println);
