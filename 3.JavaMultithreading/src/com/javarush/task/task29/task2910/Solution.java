@@ -1,6 +1,6 @@
 package com.javarush.task.task29.task2910;
 
-/* 
+/*
 Это архаичное слово "Биатлон"
 */
 
