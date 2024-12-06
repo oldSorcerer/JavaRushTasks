@@ -1,9 +1,7 @@
 package com.javarush.task.task27.task2712.kitchen;
 
-import com.javarush.task.task27.task2712.ConsoleHelper;
 import com.javarush.task.task27.task2712.Tablet;
 
-import java.io.IOException;
 import java.util.List;
 
 public class Order {
@@ -11,25 +9,9 @@ public class Order {
     private final Tablet tablet;
     protected List<Dish> dishes;
 
-    public Order(Tablet tablet) throws IOException {
+    public Order(Tablet tablet) {
         this.tablet = tablet;
-        this.dishes = ConsoleHelper.getAllDishesForOrder();
-        ConsoleHelper.writeMessage(toString());
     }
 
-    public int getTotalCookingTime() {
-        return dishes.stream().mapToInt(Dish::getDuration).sum();
-    }
 
-    public boolean isEmpty() {
-        return dishes.isEmpty();
-    }
-
-    @Override
-    public String toString() {
-        if (dishes.isEmpty()) return "";
-
-        return String.format("Your order: %s of %s, cooking time %s min",
-                dishes, tablet.toString(), getTotalCookingTime());
-    }
 }
