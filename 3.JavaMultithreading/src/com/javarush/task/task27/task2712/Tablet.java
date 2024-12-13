@@ -17,14 +17,21 @@ public class Tablet extends Observable {
         this.number = number;
     }
 
-    public void createOrder() {
+    public Order createOrder() {
+        Order order = null;
         try {
-            Order order = new Order(this);
+            order = new Order(this);
+
+            if (order.isEmpty()) return null;
+
             ConsoleHelper.writeMessage(order.toString());
+            setChanged();
+            notifyObservers(order);
 
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         }
+        return order;
     }
 
     @Override

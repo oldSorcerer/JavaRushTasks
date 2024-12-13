@@ -16,6 +16,9 @@ public class Order {
         dishes = ConsoleHelper.getAllDishesForOrder();
     }
 
+    public boolean isEmpty() {
+        return dishes.isEmpty();
+    }
 
     @Override
     public String toString() {
