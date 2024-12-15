@@ -7,17 +7,18 @@ import java.util.Observer;
 
 public class Cook extends Observable implements Observer {
 
-    private final String name;
+    private String name;
 
     public Cook(String name) {
         this.name = name;
     }
 
     @Override
-    public void update(Observable observable, Object order) {
+    public void update(Observable o, Object order) {
         ConsoleHelper.writeMessage("Start cooking - " + order);
         setChanged();
         notifyObservers(order);
+
     }
 
     @Override

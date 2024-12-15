@@ -16,12 +16,18 @@ public class Order {
         dishes = ConsoleHelper.getAllDishesForOrder();
     }
 
+    public int getTotalCookingTime() {
+        return dishes.stream().mapToInt(Dish::getDuration).sum();
+    }
+
+    public boolean isEmpty() {
+        return dishes.isEmpty();
+    }
 
     @Override
     public String toString() {
-        return dishes.isEmpty() ?
-                "" :
-                String.format("Your order: %s of %s",
-                        dishes, tablet.toString());
+        return dishes.isEmpty() ? "" :
+                String.format("Your order: %s of %s, cooking time %s min",
+                        dishes, tablet.toString(), getTotalCookingTime());
     }
 }

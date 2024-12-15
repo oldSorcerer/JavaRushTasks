@@ -22,9 +22,8 @@ public class ConsoleHelper {
 
     public static List<Dish> getAllDishesForOrder() throws IOException {
         List<Dish> dishes = new ArrayList<>();
-        writeMessage(
-                String.format("Please choose a dish from the list: [ %s ] or type 'exit' to complete the order", Dish.allDishesToString())
-        );
+        String pattern = "Please choose a dish from the list: [ %s ] or type 'exit' to complete the order";
+        writeMessage(String.format(pattern, Dish.allDishesToString()));
 
         while (true) {
             String dishName = readString();
@@ -37,7 +36,6 @@ public class ConsoleHelper {
                 writeMessage(dishName + " hasn't been detected");
             }
         }
-
         return dishes;
     }
 }
