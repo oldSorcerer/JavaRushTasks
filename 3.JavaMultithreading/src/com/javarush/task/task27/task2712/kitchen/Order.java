@@ -27,7 +27,7 @@ public class Order {
     @Override
     public String toString() {
         return dishes.isEmpty() ? "" :
-                String.format("Your order: %s of %s, cooking time %s min",
+                String.format("Your order: %s of %s, cooking time %smin",
                         dishes, tablet.toString(), getTotalCookingTime());
     }
 }
