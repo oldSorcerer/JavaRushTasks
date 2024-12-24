@@ -1,3 +1,3 @@
 select name, released, inventory
 from lego_set
-order by released desc, inventory desc;
+order by released asc , inventory desc;

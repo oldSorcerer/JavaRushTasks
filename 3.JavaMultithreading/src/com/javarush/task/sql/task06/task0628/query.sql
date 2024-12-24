@@ -1,2 +1,3 @@
 alter table employee
-    drop index name_index and salary_index;
+    drop index name_index,
+    drop index salary_index;
