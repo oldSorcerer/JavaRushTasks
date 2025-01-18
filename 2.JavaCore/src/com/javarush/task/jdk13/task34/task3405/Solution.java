@@ -29,8 +29,10 @@ public class Solution {
     }
 
     public Map<String, Object> getField(Object object) {
-        return Arrays.stream(object.getClass().getDeclaredFields()).filter(field -> Modifier.isPrivate(field.getModifiers()))
-                .peek(field -> field.setAccessible(true)).collect(Collectors.toMap(Field::getName, field -> fieldGetObject(field, object), (a, b) -> b));
+        return Arrays.stream(object.getClass().getDeclaredFields())
+                .filter(field -> Modifier.isPrivate(field.getModifiers()))
+                .peek(field -> field.setAccessible(true))
+                .collect(Collectors.toMap(Field::getName, field -> fieldGetObject(field, object), (a, b) -> b));
     }
 
     public static Map<String, Object> getFields(Object object) throws IllegalAccessException {
