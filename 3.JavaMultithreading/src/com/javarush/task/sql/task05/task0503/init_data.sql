@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS lego;
+
+USE lego;
+
 DROP TABLE IF EXISTS lego_set;
 
 CREATE TABLE lego_set
