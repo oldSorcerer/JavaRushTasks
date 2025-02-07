@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS space;
+
+USE space;
+
 DROP TABLE IF EXISTS object;
 
 CREATE TABLE object
