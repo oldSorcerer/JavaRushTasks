@@ -34,4 +34,13 @@ public class Advertisement {
     public long getAmountPerOneDisplaying() {
         return amountPerOneDisplaying;
     }
+
+    public int getHits() {
+        return hits;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s is displaying... %d, %d", name, amountPerOneDisplaying, amountPerOneDisplaying * 1000 / duration);
+    }
 }
