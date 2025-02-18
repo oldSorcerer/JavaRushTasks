@@ -1,9 +1,12 @@
 package com.javarush.task.task18.task1809;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.stream.IntStream;
 
 /* 
 Реверс файла
@@ -26,5 +29,26 @@ public class Solution {
                 outputStream.write(integer);
             }
         }
+    }
+
+    public static void main1(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        byte[] buffer = Files.readAllBytes(Path.of(scanner.nextLine()));
+
+        Files.write(Path.of(scanner.nextLine()),
+                ArrayUtils.toPrimitive(
+                        IntStream.range(0, buffer.length)
+                                .boxed()
+                                .map(i -> buffer[i])
+                                .sorted(Comparator.reverseOrder())
+                                .toArray(Byte[]::new)));
+    }
+
+    public static void main2(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        byte[] buffer = Files.readAllBytes(Path.of(scanner.nextLine()));
+
+        ArrayUtils.reverse(buffer);
+        Files.write(Path.of(scanner.nextLine()), buffer);
     }
 }

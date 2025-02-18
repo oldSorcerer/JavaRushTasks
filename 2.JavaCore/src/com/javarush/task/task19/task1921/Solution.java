@@ -42,9 +42,11 @@ public class Solution {
                 .map(string -> new Person(
                         string.replaceAll("\\d", "").trim(), //neme
                         Date.from(
-                                LocalDate.parse(string.replaceAll("\\D", " ").trim(), DateTimeFormatter.ofPattern("dd MM yyyy")).atStartOfDay(ZoneId.systemDefault()).toInstant()
+                                LocalDate.parse(string.replaceAll("\\D", " ").trim(), DateTimeFormatter.ofPattern("dd M yyyy"))
+                                        .atStartOfDay(ZoneId.systemDefault()).toInstant()
                         ) //date
                 ))
-                .peek(PEOPLE::add).forEach(person -> System.out.println(person.getName() + " " + person.getBirthDate()));
+                .peek(PEOPLE::add)
+                .forEach(person -> System.out.println(person.getName() + " " + person.getBirthDate()));
     }
 }

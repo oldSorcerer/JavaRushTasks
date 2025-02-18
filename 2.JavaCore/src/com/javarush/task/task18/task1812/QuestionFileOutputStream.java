@@ -16,7 +16,6 @@ public class QuestionFileOutputStream implements AmigoOutputStream {
         this.amigoOutputStream = amigoOutputStream;
     }
 
-
     @Override
     public void flush() throws IOException {
         amigoOutputStream.flush();
