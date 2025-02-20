@@ -7,11 +7,11 @@ import java.util.List;
 
 public class CookedOrderEventDataRow implements EventDataRow {
 
-    private String tabletName;
-    private String cookName;
-    private int cookingTimeSeconds;
-    private List<Dish> cookingDishes;
-    private Date currentDate;
+    private final String tabletName;
+    private final String cookName;
+    private final int cookingTimeSeconds;
+    private final List<Dish> cookingDishes;
+    private final Date currentDate;
 
     public CookedOrderEventDataRow(String tabletName, String cookName, int cookingTimeSeconds, List<Dish> cookingDishes) {
         this.tabletName = tabletName;
@@ -19,5 +19,10 @@ public class CookedOrderEventDataRow implements EventDataRow {
         this.cookingTimeSeconds = cookingTimeSeconds;
         this.cookingDishes = cookingDishes;
         this.currentDate = new Date();
+    }
+
+    @Override
+    public EventType getType() {
+        return EventType.COOKED_ORDER;
     }
 }

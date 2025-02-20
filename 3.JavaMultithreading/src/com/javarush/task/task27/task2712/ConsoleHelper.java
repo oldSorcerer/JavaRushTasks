@@ -26,7 +26,7 @@ public class ConsoleHelper {
         writeMessage(String.format(pattern, Dish.allDishesToString()));
 
         while (true) {
-            String dishName = readString();
+            String dishName = readString().trim();
             if ("exit".equals(dishName)) break;
             try {
                 Dish dish = Dish.valueOf(dishName);
