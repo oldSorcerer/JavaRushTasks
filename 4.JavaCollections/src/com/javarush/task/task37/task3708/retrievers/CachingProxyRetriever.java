@@ -15,14 +15,14 @@ public class CachingProxyRetriever implements Retriever {
 
     @Override
     public Object retrieve(long id) {
-        Object result = lruCache.find(id);
-        if (result == null) {
+
+        if (lruCache.find(id) == null) {
             Object retrieve = originalRetriever.retrieve(id);
             lruCache.set(id, retrieve);
             return retrieve;
+        } else {
+            return lruCache.find(id);
         }
-        System.out.println("Returning cached object!");
-        return result;
     }
 
 }
