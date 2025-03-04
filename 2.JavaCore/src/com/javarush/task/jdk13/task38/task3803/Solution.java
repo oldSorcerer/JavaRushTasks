@@ -29,7 +29,8 @@ public class Solution {
         if (aClass.isAnnotationPresent(PrepareMyTest.class)) {
             PrepareMyTest annotation = aClass.getAnnotation(PrepareMyTest.class);
             Arrays.stream(annotation.value())
-                    .map(Class::getSimpleName).forEach(System.out::println);
+                    .map(Class::getSimpleName)
+                    .forEach(System.out::println);
             return true;
         }
         return false;

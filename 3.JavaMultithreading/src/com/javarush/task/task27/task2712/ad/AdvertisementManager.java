@@ -1,6 +1,8 @@
 package com.javarush.task.task27.task2712.ad;
 
 import com.javarush.task.task27.task2712.ConsoleHelper;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -13,8 +15,8 @@ public class AdvertisementManager {
     private final AdvertisementStorage storage = AdvertisementStorage.getInstance();
 
     private List<Advertisement> bestAdvertisements;
-    private int bestDuration = Integer.MAX_VALUE;
     private long bestAmount;
+    private int bestDuration = Integer.MAX_VALUE;
 
 
     public AdvertisementManager(int timeSeconds) {
@@ -28,7 +30,6 @@ public class AdvertisementManager {
         List<Advertisement> advertisements = storage.list().stream()
                 .filter(adv -> adv.getDuration() <= timeSeconds)
                 .filter(adv -> adv.getAmountPerOneDisplaying() > 0)
-//                .filter(advertisement -> advertisement.getHits() >0)
                 .collect(Collectors.toList());
 
         makeAllAdvertisements(advertisements);
@@ -38,11 +39,16 @@ public class AdvertisementManager {
                         .thenComparingInt(Advertisement::getDuration)
                         .reversed());
 
+        VideoSelectedEventDataRow eventDataRow = new VideoSelectedEventDataRow(
+                bestAdvertisements,
+                bestAmount,
+                bestDuration);
+        StatisticManager.getInstance().register(eventDataRow);
+
         for (Advertisement advertisement : bestAdvertisements) {
             ConsoleHelper.writeMessage(advertisement.toString());
             advertisement.revalidate();
         }
-
     }
 
     private int calcDuration(List<Advertisement> advertisements) {
@@ -53,14 +59,12 @@ public class AdvertisementManager {
         return advertisements.stream().mapToLong(Advertisement::getAmountPerOneDisplaying).sum();
     }
 
-    private void checkSet(List<Advertisement> advertisements) {
+    private void updateBestAdvertisments(List<Advertisement> advertisements) {
         int newDuration = calcDuration(advertisements);
         long newAmount = calcAmount(advertisements);
 
         if (bestAdvertisements == null && newDuration <= timeSeconds) {
-            bestAdvertisements = advertisements;
-            bestAmount = newAmount;
-            bestDuration = newDuration;
+            extracted(advertisements, newAmount, newDuration);
 
         } else {
             if (newDuration <= timeSeconds) {
@@ -90,8 +94,9 @@ public class AdvertisementManager {
 
     private void makeAllAdvertisements(List<Advertisement> advertisements) {
         if (!advertisements.isEmpty()) {
-            checkSet(advertisements);
+            updateBestAdvertisments(advertisements);
         }
+
         for (int i = 0; i < advertisements.size(); i++) {
             List<Advertisement> newAdvertisements = new ArrayList<>(advertisements);
             newAdvertisements.remove(i);

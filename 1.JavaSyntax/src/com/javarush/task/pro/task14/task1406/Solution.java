@@ -6,7 +6,7 @@ import java.util.Scanner;
 Купи слона
 */
 
-class Solution {
+public class Solution {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
