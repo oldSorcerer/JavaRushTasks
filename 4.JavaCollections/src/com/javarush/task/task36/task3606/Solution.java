@@ -11,7 +11,6 @@ import java.util.List;
 */
 
 public class Solution {
-
     private List<Class> hiddenClasses = new ArrayList<>();
     private String packageName;
 
