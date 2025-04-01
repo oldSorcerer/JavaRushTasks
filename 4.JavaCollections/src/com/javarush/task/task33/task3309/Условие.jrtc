@@ -1,0 +1,29 @@
+taskKey="com.javarush.task.task33.task3309"\n\nКомментарий внутри xml
+
+Реализовать метод toXmlWithComment, который должен возвращать строку - xml представление объекта obj.
+В строке перед каждым тегом tagName должен быть вставлен комментарий comment.
+Сериализация obj в xml может содержать CDATA с искомым тегом. Перед ним вставлять комментарий не нужно.
+
+Пример вызова:  toXmlWithComment(firstSecondObject, &quot;second&quot;, &quot;it&#39;s a comment&quot;)
+Пример результата:
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;first&gt;
+&lt;!--it&#39;s a comment--&gt;
+&lt;second&gt;some string&lt;/second&gt;
+&lt;!--it&#39;s a comment--&gt;
+&lt;second&gt;some string&lt;/second&gt;
+&lt;!--it&#39;s a comment--&gt;
+&lt;second&gt;&lt;![CDATA[need CDATA because of &lt; and &gt;]]&gt;&lt;/second&gt;
+&lt;!--it&#39;s a comment--&gt;
+&lt;second/&gt;
+&lt;/first&gt;
+
+
+Требования:
+1.	Метод toXmlWithComment должен быть статическим.
+2.	Метод toXmlWithComment должен быть публичным.
+3.	Если во входящем xml отсутствует искомый тег, то добавлять комментарии не нужно.
+4.	Количество комментариев вставленных в xml должно быть равно количеству тегов tagName.
+5.	Метод toXmlWithComment должен возвращать xml в виде строки преобразованной в соответствии с условием задачи.
+
+
