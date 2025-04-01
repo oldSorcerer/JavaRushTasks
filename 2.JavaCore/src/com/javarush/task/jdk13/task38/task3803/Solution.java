@@ -19,7 +19,8 @@ public class Solution {
 
         if (aClass.isAnnotationPresent(PrepareMyTest.class)) {
             PrepareMyTest annotation = aClass.getAnnotation(PrepareMyTest.class);
-            Arrays.stream(annotation.fullyQualifiedNames()).forEach(System.out::println);
+            Arrays.stream(annotation.fullyQualifiedNames())
+                    .forEach(System.out::println);
             return true;
         }
         return false;

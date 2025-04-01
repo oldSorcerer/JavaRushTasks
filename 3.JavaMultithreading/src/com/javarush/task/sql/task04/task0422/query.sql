@@ -1,2 +1,1 @@
-select now(), ADDTIME(now(), null), SUBTIME(now(), '33')
-проверить
+select now(), ADDTIME(now(), 0), ADDTIME(now(), '33')

@@ -33,8 +33,8 @@ public class Solution {
              BufferedWriter writer = new BufferedWriter(new FileWriter(console.readLine()))) {
             while (reader.ready()) {
                 String string = reader.readLine();
-                String str = string.replaceAll("[А-яA-Za-z]+\\d*|\\d+[А-яA-Za-z]", "")
-                        .replaceAll("\\s+", " ");
+                String str = string.replaceAll("[А-яA-Za-z]+\\d*|\\d+[А-яA-Za-z]|[А-яA-Za-z]", "")
+                        .replaceAll("\\s+", " ").trim();
                 writer.write(str);
             }
         }

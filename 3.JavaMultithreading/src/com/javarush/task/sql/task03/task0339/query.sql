@@ -1,6 +1,4 @@
 select *
 from authors
-where id in
-      (select author_id
-       from books
-       where genre = 'fantasy');
+where author_id in
+      (select author_id from books where genre = 'fantasy');
