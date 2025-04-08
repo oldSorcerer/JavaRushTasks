@@ -26,6 +26,9 @@ public class Solution {
                 set.add(LocalDateTime.of(entry.getKey(), localTime));
             }
         }
+
+//        sourceMap.forEach((key, value) -> value.stream().map(localTime -> LocalDateTime.of(key, localTime)).forEach(set::add));
+
         return set;
     }
 
