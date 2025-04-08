@@ -39,6 +39,7 @@ public class AdvertisementManager {
                         .thenComparingInt(Advertisement::getDuration)
                         .reversed());
 
+
         VideoSelectedEventDataRow eventDataRow = new VideoSelectedEventDataRow(
                 bestAdvertisements,
                 bestAmount,
@@ -93,7 +94,7 @@ public class AdvertisementManager {
     }
 
     private void makeAllAdvertisements(List<Advertisement> advertisements) {
-        if (!advertisements.isEmpty()) {
+        if (advertisements.size() > 0) {
             updateBestAdvertisments(advertisements);
         }
 
@@ -103,5 +104,4 @@ public class AdvertisementManager {
             makeAllAdvertisements(newAdvertisements);
         }
     }
-
 }

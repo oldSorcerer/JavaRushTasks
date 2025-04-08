@@ -14,7 +14,7 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        this.amountPerOneDisplaying = hits > 0 ? initialAmount / hits : 0;
+        this.amountPerOneDisplaying = getHits() > 0 ? initialAmount / hits : 0;
     }
 
     public void revalidate() {

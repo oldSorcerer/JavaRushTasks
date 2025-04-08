@@ -11,7 +11,7 @@ public class CookedOrderEventDataRow implements EventDataRow {
     private final String cookName;
     private final int cookingTimeSeconds;
     private final List<Dish> cookingDishes;
-    private final Date currentDate;
+    private Date currentDate;
 
     public CookedOrderEventDataRow(String tabletName, String cookName, int cookingTimeSeconds, List<Dish> cookingDishes) {
         this.tabletName = tabletName;
@@ -34,5 +34,13 @@ public class CookedOrderEventDataRow implements EventDataRow {
     @Override
     public int getTime() {
         return cookingTimeSeconds;
+    }
+
+    public String getCookName() {
+        return cookName;
+    }
+
+    public void setCurrentDate(Date currentDate) {
+        this.currentDate = currentDate;
     }
 }

@@ -29,6 +29,7 @@ public class Cook extends Observable implements Observer {
 
         setChanged();
         notifyObservers(order);
+
     }
 
     @Override
