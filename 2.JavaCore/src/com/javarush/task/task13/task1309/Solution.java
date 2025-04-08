@@ -9,7 +9,7 @@ public class Solution {
     }
 
 
-    interface CanMove {
+    public interface CanMove {
         public Double speed();
     }
 
