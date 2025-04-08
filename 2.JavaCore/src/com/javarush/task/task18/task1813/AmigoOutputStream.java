@@ -10,8 +10,8 @@ AmigoOutputStream
 */
 
 public class AmigoOutputStream  extends FileOutputStream  {
-    public static String fileName = "C:/tmp/result.txt";
 
+    public static String fileName = "C:/tmp/result.txt";
     private final FileOutputStream original;
 
     public AmigoOutputStream(FileOutputStream fileOutputStream) throws FileNotFoundException {
