@@ -25,4 +25,8 @@ public class CurrencyManipulator {
         return denominations.entrySet().stream()
                 .mapToInt(entry -> (entry.getKey() * entry.getValue())).sum();
     }
+
+    public boolean hasMoney() {
+        return !denominations.isEmpty();
+    }
 }

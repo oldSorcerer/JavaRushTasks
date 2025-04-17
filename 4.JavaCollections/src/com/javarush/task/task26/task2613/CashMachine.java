@@ -1,19 +1,21 @@
 package com.javarush.task.task26.task2613;
 
+import com.javarush.task.task26.task2613.command.CommandExecutor;
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
+
 import java.util.Locale;
 
 public class CashMachine {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ENGLISH);
-        String currencyCode = ConsoleHelper.askCurrencyCode();
-        String[] digits = ConsoleHelper.getValidTwoDigits(currencyCode);
-        int denomination = Integer.parseInt(digits[0]);
-        int count = Integer.parseInt(digits[1]);
-
-        CurrencyManipulator manipulator = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(currencyCode);
-        manipulator.addAmount(denomination, count);
-
-        int totalAmount = manipulator.getTotalAmount();
-
+        try {
+            Operation operation;
+            do {
+                operation = ConsoleHelper.askOperation();
+                CommandExecutor.execute(operation);
+            } while (operation != Operation.EXIT);
+        } catch (InterruptOperationException e) {
+            ConsoleHelper.writeMessage("Terminated. Спасибо что воспользовались нашим банкоматом. Удачного вам дня!");
+        }
     }
 }
