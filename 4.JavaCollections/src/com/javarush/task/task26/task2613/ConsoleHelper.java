@@ -64,5 +64,4 @@ public class ConsoleHelper {
             return askOperation();
         }
     }
-
 }
