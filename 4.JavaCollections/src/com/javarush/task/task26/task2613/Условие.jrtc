@@ -1,4 +1,23 @@
-taskKey="com.javarush.task.task26.task2613.big04"\n\nCashMachine (4)
+taskKey="com.javarush.task.task26.task2613.big05"\n\nCashMachine (5)
+
+1.В предыдущем таске мы реализовали основную логику операции DEPOSIT.
+Но посмотреть результат так и не удалось.
+Поэтому создай в манипуляторе метод int getTotalAmount(), который посчитает общую сумму денег для выбранной валюты.
+
+2. Добавь вызов метода getTotalAmount() в метод main.
+Всё работает верно? Тогда движемся дальше.
+Видно, что метод getTotalAmount() считает то, что нам необходимо для операции INFO.
+Поэтому пришло время небольшого рефакторинга.
+!!Читайте паттерн Command.
+Однако, перед рефакторингом нужно еще разобраться в одном вопросе. Но об этом не сейчас.
+
+
+Требования:
+1.	Класс CurrencyManipulator должен иметь метод int getTotalAmount().
+2.	Метод main класса CashMachine должен вызывать метод getTotalAmount() у объекта класса CurrencyManipulator.
+
+
+CashMachine (5)
 
 1. Выберем операцию, с которой мы сможем начать.
 Подумаем. В банкомате еще денег нет, поэтому INFO и WITHDRAW протестить не получится.
@@ -27,14 +46,8 @@ taskKey="com.javarush.task.task26.task2613.big04"\n\nCashMachine (4)
 Запускаем, дебажим, смотрим.
 
 
-Требования:
-1.	Класс ConsoleHelper должен иметь статический метод String askCurrencyCode().
-2.	Класс ConsoleHelper должен иметь статический метод String[] getValidTwoDigits(String currencyCode).
-3.	Класс CurrencyManipulator должен иметь метод void addAmount(int denomination, int count).
-4.	Метод main класса CashMachine должен считывать с консоли код валюты, потом считывать номинал и количество банкнот, а потом добавлять их в манипулятор.
 
-
-CashMachine (4)
+CashMachine (5)
 
 1. Создай класс CurrencyManipulator, который будет хранить всю информацию про выбранную валюту.
 Класс должен содержать:
@@ -54,7 +67,7 @@ CashMachine (4)
 
 
 
-CashMachine (4)
+CashMachine (5)
 
 1. Создай в ConsoleHelper два статических метода:
 1.1 writeMessage(String message), который будет писать в консоль наше сообщение.
@@ -68,7 +81,7 @@ CashMachine (4)
 
 
 
-CashMachine (4)
+CashMachine (5)
 
 Давай напишем эмулятор работы банкомата.
 Операции, которые будем поддерживать, следующие:

@@ -10,8 +10,10 @@ public class CashMachine {
         int denomination = Integer.parseInt(digits[0]);
         int count = Integer.parseInt(digits[1]);
 
-        CurrencyManipulator manipulatorByCurrencyCode = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(currencyCode);
-        manipulatorByCurrencyCode.addAmount(denomination, count);
+        CurrencyManipulator manipulator = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(currencyCode);
+        manipulator.addAmount(denomination, count);
+
+        int totalAmount = manipulator.getTotalAmount();
 
     }
 }

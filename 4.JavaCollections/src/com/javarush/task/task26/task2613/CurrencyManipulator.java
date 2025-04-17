@@ -1,6 +1,5 @@
 package com.javarush.task.task26.task2613;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -20,5 +19,10 @@ public class CurrencyManipulator {
 
     public void addAmount(int denomination, int count) {
         denominations.merge(denomination, count, Integer::sum);
+    }
+
+    public int getTotalAmount() {
+        return denominations.entrySet().stream()
+                .mapToInt(entry -> (entry.getKey() * entry.getValue())).sum();
     }
 }
