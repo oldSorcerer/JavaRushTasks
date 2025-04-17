@@ -1,6 +1,7 @@
 package com.javarush.task.task26.task2613.command;
 
 import com.javarush.task.task26.task2613.CurrencyManipulator;
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
 import static com.javarush.task.task26.task2613.ConsoleHelper.*;
 import static com.javarush.task.task26.task2613.CurrencyManipulatorFactory.*;
@@ -8,7 +9,7 @@ import static com.javarush.task.task26.task2613.CurrencyManipulatorFactory.*;
 class DepositCommand implements Command {
 
     @Override
-    public void execute() {
+    public void execute() throws InterruptOperationException {
         writeMessage("Depositing...");
         String currencyCode = askCurrencyCode();
         CurrencyManipulator manipulator = getManipulatorByCurrencyCode(currencyCode);
