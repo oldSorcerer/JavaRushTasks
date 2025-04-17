@@ -1,4 +1,40 @@
-taskKey="com.javarush.task.task26.task2613.big03"\n\nCashMachine (3)
+taskKey="com.javarush.task.task26.task2613.big04"\n\nCashMachine (4)
+
+1. Выберем операцию, с которой мы сможем начать.
+Подумаем. В банкомате еще денег нет, поэтому INFO и WITHDRAW протестить не получится.
+Начнем с операции DEPOSIT - поместить деньги.
+Считаем с консоли код валюты, потом считаем номинал и количество банкнот, а потом добавим их в манипулятор.
+
+2. Чтобы считать код валюты, добавим статический метод String askCurrencyCode() в ConsoleHelper.
+Этот метод должен предлагать пользователю ввести код валюты, проверять, что код содержит 3 символа.
+Если данные некорректны, то сообщить об этом пользователю и повторить.
+Если данные валидны, то перевести код в верхний регистр и вернуть.
+
+3. Чтобы считать номинал и количество банкнот, добавим статический метод String[] getValidTwoDigits(String currencyCode) в ConsoleHelper.
+Этот метод должен предлагать пользователю ввести два целых положительных числа.
+Первое число - номинал, второе - количество банкнот.
+Никаких валидаторов на номинал нет. Т.е. 1200 - это нормальный номинал.
+Если данные некорректны, то сообщить об этом пользователю и повторить.
+Пример вводимых данных:
+200 5
+
+4. В классе CurrencyManipulator создай метод void addAmount(int denomination, int count),
+который добавит введенные номинал и количество банкнот.
+
+5. Пора уже увидеть приложение в действии.
+В методе main захардкодь логику пункта 1.
+Кстати, чтобы не было проблем с тестами на стороне сервера, добавь в метод main первой строчкой Locale.setDefault(Locale.ENGLISH);
+Запускаем, дебажим, смотрим.
+
+
+Требования:
+1.	Класс ConsoleHelper должен иметь статический метод String askCurrencyCode().
+2.	Класс ConsoleHelper должен иметь статический метод String[] getValidTwoDigits(String currencyCode).
+3.	Класс CurrencyManipulator должен иметь метод void addAmount(int denomination, int count).
+4.	Метод main класса CashMachine должен считывать с консоли код валюты, потом считывать номинал и количество банкнот, а потом добавлять их в манипулятор.
+
+
+CashMachine (4)
 
 1. Создай класс CurrencyManipulator, который будет хранить всю информацию про выбранную валюту.
 Класс должен содержать:
@@ -17,19 +53,8 @@ taskKey="com.javarush.task.task26.task2613.big03"\n\nCashMachine (3)
 Сделайте так, чтобы невозможно было создавать объекты CurrencyManipulatorFactory класса.
 
 
-Требования:
-1.	Класс CurrencyManipulator должен быть создан в отдельном файле.
-2.	Класс CurrencyManipulator должен содержать приватное поле String currencyCode.
-3.	Класс CurrencyManipulator должен содержать приватное поле Map&lt;Integer, Integer&gt; denominations.
-4.	Класс CurrencyManipulator должен содержать геттер для поля currencyCode.
-5.	Класс CurrencyManipulator должен содержать конструктор с одним параметром, инициализирующий поле currencyCode.
-6.	Класс CurrencyManipulatorFactory должен быть создан в отдельном файле.
-7.	Класс CurrencyManipulatorFactory должен иметь приватный дефолтный конструктор.
-8.	Класс CurrencyManipulatorFactory должен содержать приватное статическое поле Map&lt;String, CurrencyManipulator&gt; map.
-9.	Класс CurrencyManipulatorFactory должен иметь статический метод getManipulatorByCurrencyCode(String currencyCode).
 
-
-CashMachine (3)
+CashMachine (4)
 
 1. Создай в ConsoleHelper два статических метода:
 1.1 writeMessage(String message), который будет писать в консоль наше сообщение.
@@ -43,7 +68,7 @@ CashMachine (3)
 
 
 
-CashMachine (3)
+CashMachine (4)
 
 Давай напишем эмулятор работы банкомата.
 Операции, которые будем поддерживать, следующие:
