@@ -22,6 +22,4 @@ public class CurrencyManipulatorFactory {
     public static Collection<CurrencyManipulator> getAllCurrencyManipulators() {
         return map.values();
     }
-
-
 }
