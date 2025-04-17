@@ -50,4 +50,19 @@ public class ConsoleHelper {
         return split;
     }
 
+    public static Operation askOperation() {
+        writeMessage("Введите номер операции:");
+        writeMessage("\t 1 - INFO");
+        writeMessage("\t 2 - DEPOSIT");
+        writeMessage("\t 3 - WITHDRAW");
+        writeMessage("\t 4 - EXIT");
+        try {
+            int number = Integer.parseInt(readString().trim());
+            return Operation.getAllowableOperationByOrdinal(number);
+        } catch (Exception e) {
+            writeMessage("Не корректный номер операции");
+            return askOperation();
+        }
+    }
+
 }

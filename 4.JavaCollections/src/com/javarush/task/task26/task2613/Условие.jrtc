@@ -1,4 +1,27 @@
-taskKey="com.javarush.task.task26.task2613.big05"\n\nCashMachine (5)
+taskKey="com.javarush.task.task26.task2613.big06"\n\nCashMachine (6)
+
+Чтобы отрефакторить код в соответствии с паттерном Command, нужно выделить в коде несколько логических блоков кода.
+У нас пока два таких блока: 1) код операции DEPOSIT, 2) код операции INFO.
+Они захардкожены в методе main. Нужно от этого избавиться.
+Нужно сделать так, чтобы пользователь сам выбирал, какую операцию на данный момент нужно выполнять.
+
+1. В энум Operation добавь статический метод Operation getAllowableOperationByOrdinal(Integer i)
+Должен возвращать элемент энума: для 1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT;
+На некорректные данные бросать IllegalArgumentException.
+
+2. В классе ConsoleHelper реализуй логику статического метода Operation askOperation().
+Спросить у пользователя операцию.
+Если пользователь вводит 1, то выбирается команда INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT;
+Используй метод, описанный в п.1.
+Обработай исключение - запроси данные об операции повторно.
+
+
+Требования:
+1.	Энум Operation должен иметь статический метод Operation getAllowableOperationByOrdinal(Integer i).
+2.	Класс ConsoleHelper должен иметь метод Operation askOperation().
+
+
+CashMachine (6)
 
 1.В предыдущем таске мы реализовали основную логику операции DEPOSIT.
 Но посмотреть результат так и не удалось.
@@ -12,12 +35,8 @@ taskKey="com.javarush.task.task26.task2613.big05"\n\nCashMachine (5)
 Однако, перед рефакторингом нужно еще разобраться в одном вопросе. Но об этом не сейчас.
 
 
-Требования:
-1.	Класс CurrencyManipulator должен иметь метод int getTotalAmount().
-2.	Метод main класса CashMachine должен вызывать метод getTotalAmount() у объекта класса CurrencyManipulator.
 
-
-CashMachine (5)
+CashMachine (6)
 
 1. Выберем операцию, с которой мы сможем начать.
 Подумаем. В банкомате еще денег нет, поэтому INFO и WITHDRAW протестить не получится.
@@ -47,7 +66,7 @@ CashMachine (5)
 
 
 
-CashMachine (5)
+CashMachine (6)
 
 1. Создай класс CurrencyManipulator, который будет хранить всю информацию про выбранную валюту.
 Класс должен содержать:
@@ -67,7 +86,7 @@ CashMachine (5)
 
 
 
-CashMachine (5)
+CashMachine (6)
 
 1. Создай в ConsoleHelper два статических метода:
 1.1 writeMessage(String message), который будет писать в консоль наше сообщение.
@@ -81,7 +100,7 @@ CashMachine (5)
 
 
 
-CashMachine (5)
+CashMachine (6)
 
 Давай напишем эмулятор работы банкомата.
 Операции, которые будем поддерживать, следующие:
