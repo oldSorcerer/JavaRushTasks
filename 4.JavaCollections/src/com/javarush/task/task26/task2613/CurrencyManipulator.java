@@ -1,7 +1,7 @@
 package com.javarush.task.task26.task2613;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class CurrencyManipulator {
 
@@ -10,7 +10,7 @@ public class CurrencyManipulator {
 
     public CurrencyManipulator(String currencyCode) {
         this.currencyCode = currencyCode;
-        denominations = new HashMap<>();
+        this.denominations = new TreeMap<>();
     }
 
     public String getCurrencyCode() {
@@ -21,4 +21,8 @@ public class CurrencyManipulator {
         denominations.merge(denomination, count, Integer::sum);
     }
 
+    public int getTotalAmount() {
+        return denominations.entrySet().stream()
+                .mapToInt(entry -> (entry.getKey() * entry.getValue())).sum();
+    }
 }
