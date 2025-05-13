@@ -13,13 +13,12 @@ task1005
 public class Solution {
 
     public static void main(String[] args) throws Exception {
-        List<Book> books;
 
         try (Session session = MySessionFactory.getSessionFactory().openSession()) {
-            String hql = "from Book where Author.fullName = 'Mark Twain' and Publisher.name ='Фолио'";
+            String hql = "from Book b where author.fullName = 'Mark Twain' and publisher.name ='Фолио'";
             Query<Book> query = session.createQuery(hql, Book.class);
-            books = query.list();
+            List<Book> books = query.list();
+            books.forEach(System.out::println);
         }
-        books.forEach(System.out::println);
     }
 }
