@@ -4,6 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
+import java.util.List;
+
 /* 
 task1001
 */
@@ -11,11 +13,12 @@ task1001
 public class Solution {
 
     public static void main(String[] args) throws Exception {
-        try(SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
-            Session session = sessionFactory.openSession()) {
-            String hql = "select distinct smth from Employee where age > 18";
+        try (SessionFactory sessionFactory = MySessionFactory.getSessionFactory();
+             Session session = sessionFactory.openSession()) {
+            String hql = "select distinct smth from Employee where age > 18 order by smth";
             Query<String> query = session.createQuery(hql, String.class);
-            query.list().forEach(System.out::println);
+            List<String> list = query.list();
+            list.forEach(System.out::println);
         }
     }
 }
