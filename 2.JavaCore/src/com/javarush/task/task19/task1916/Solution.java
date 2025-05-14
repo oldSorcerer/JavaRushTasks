@@ -46,10 +46,10 @@ public class Solution {
             }
         }
 
-        if (listOne.isEmpty()) {
+        if (listOne.isEmpty() && !listTwo.isEmpty()) {
             listTwo.forEach(str -> lines.add(new LineItem(Type.ADDED, str)));
         }
-        if (listTwo.isEmpty()) {
+        if (listTwo.isEmpty() && !listOne.isEmpty()) {
             listOne.forEach(str -> lines.add(new LineItem(Type.REMOVED, str)));
         }
 

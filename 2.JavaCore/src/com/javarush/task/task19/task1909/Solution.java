@@ -10,17 +10,14 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        List<String> list = new ArrayList<>();
 
         try (BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
              BufferedReader reader = new BufferedReader(new FileReader(console.readLine()));
              BufferedWriter writer = new BufferedWriter(new FileWriter(console.readLine()))) {
             while (reader.ready()) {
                 String string = reader.readLine().replaceAll("\\.", "!");
-                list.add(string);
-            }
-            for (String string : list) {
                 writer.write(string);
+                writer.newLine();
             }
         }
     }

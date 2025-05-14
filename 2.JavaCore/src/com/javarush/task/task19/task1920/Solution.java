@@ -55,7 +55,10 @@ public class Solution {
         TreeMap<String, Double> map = Files.readAllLines(Paths.get(args[0]))
                 .stream()
                 .collect(Collectors
-                        .toMap(k -> k.split("\\s")[0], k -> Double.parseDouble(k.split("\\s")[1]), Double::sum, TreeMap::new));
+                        .toMap(k -> k.split("\\s")[0],
+                               k -> Double.parseDouble(k.split("\\s")[1]),
+                                Double::sum,
+                                TreeMap::new));
 
         map.entrySet().stream()
                 .filter(entry -> Objects.equals(entry.getValue(), map.values().stream().max(Double::compare).orElseThrow()))
