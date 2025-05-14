@@ -1,8 +1,11 @@
 package com.javarush.task.task18.task1817;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /* 
 Пробелы
@@ -30,5 +33,11 @@ public class Solution {
         if (countAll != 0) {
             System.out.printf("%.2f", (double) countSpace / countAll * 100);
         }
+    }
+
+    public static void main1(String[] args) throws IOException {
+        String string = Files.readString(Path.of(args[0]));
+        System.out.printf("%.2f",
+                (double) string.replaceAll("[^ ]", "").length() / string.length() * 100);
     }
 }
