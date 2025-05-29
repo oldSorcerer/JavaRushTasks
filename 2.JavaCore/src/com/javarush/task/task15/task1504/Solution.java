@@ -15,7 +15,7 @@ public class Solution {
         System.out.println(books);
     }
 
-    abstract static class Book {
+    static abstract class Book {
         private final String author;
 
         public Book(String author) {
