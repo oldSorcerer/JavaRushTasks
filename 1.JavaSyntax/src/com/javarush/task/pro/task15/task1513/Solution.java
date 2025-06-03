@@ -16,4 +16,3 @@ public class Solution {
         System.out.println(path.getRoot());
     }
 }
-
