@@ -33,14 +33,11 @@ public class FileConsoleWriter {
         fileWriter = new FileWriter(fd);
     }
 
-    public static void main(String[] args) {
-
-    }
-
     public void write(char[] cbuf, int off, int len) throws IOException {
         fileWriter.write(cbuf, off, len);
         System.out.println(new String(cbuf, off, len));
     }
+
     public void write(int c) throws IOException {
         fileWriter.write(c);
         System.out.println((char) c);
@@ -61,5 +58,7 @@ public class FileConsoleWriter {
         fileWriter.close();
     }
 
+    public static void main(String[] args) {
 
+    }
 }
