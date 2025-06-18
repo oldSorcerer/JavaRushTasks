@@ -37,7 +37,7 @@ public class Solution {
     }
 
     public static Optional<Car> getCheaperCar(Stream<Car> cars, Car cheapestCar) {
-        return cars.filter(x -> x.getPrice() < cheapestCar.getPrice()).findFirst();
+        return cars.filter(car -> car.getPrice() < cheapestCar.getPrice()).findFirst();
     }
 }
 

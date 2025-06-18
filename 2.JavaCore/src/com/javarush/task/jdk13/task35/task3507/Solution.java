@@ -38,6 +38,5 @@ public class Solution {
 
         return map;
 //        return IntStream.range(0, keys.size()).boxed().collect(Collectors.toMap(keys::get, values::get, (a, b) -> b, HashMap::new));
-
     }
 }
