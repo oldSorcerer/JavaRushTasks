@@ -9,9 +9,9 @@ import java.util.Scanner;
 public class Solution {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        String string = sc.nextLine();
-        int number = sc.nextInt();
+        Scanner console = new Scanner(System.in);
+        String string = console.nextLine();
+        int number = console.nextInt();
 
         if (number > 0 && number < 5 ) {
             int i = 0;
@@ -19,7 +19,8 @@ public class Solution {
                 System.out.println(string);
                 i++;
             } while (i < number);
-        } else
+        } else {
             System.out.println(string);
+        }
     }
 }
