@@ -7,7 +7,6 @@ import static com.javarush.task.jdk13.task41.task4105.alchemy_library.Type.STAMI
 
 public class PotionConversionFacade {
 
-
     public String convertPotion(String potionName, String convertTo) {
         System.out.println("PotionConversionFacade: conversion started.");
         Potion potion = new Potion(potionName);
@@ -28,5 +27,4 @@ public class PotionConversionFacade {
 
        return result.getName();
     }
-
 }
