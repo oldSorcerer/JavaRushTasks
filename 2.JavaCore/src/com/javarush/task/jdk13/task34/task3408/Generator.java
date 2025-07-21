@@ -1,5 +1,7 @@
 package com.javarush.task.jdk13.task34.task3408;
 
+import lombok.SneakyThrows;
+
 public class Generator<T> {
 
     private final Class<T> aClass;
@@ -8,7 +10,8 @@ public class Generator<T> {
         this.aClass = aClass;
     }
 
-    T newInstance() throws Exception {
+    @SneakyThrows
+    T newInstance() {
         return aClass.getDeclaredConstructor().newInstance();
     }
 }

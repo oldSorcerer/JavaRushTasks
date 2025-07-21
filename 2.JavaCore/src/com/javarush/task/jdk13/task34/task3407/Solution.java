@@ -23,7 +23,9 @@ public class Solution {
 
         if (type instanceof ParameterizedType paramType)  {
             set.add(paramType.getRawType());
-            Arrays.stream(paramType.getActualTypeArguments()).map(Solution::getTypes).forEach(set::addAll);
+            Arrays.stream(paramType.getActualTypeArguments())
+                    .map(Solution::getTypes)
+                    .forEach(set::addAll);
         } else {
             set.add(type);
         }

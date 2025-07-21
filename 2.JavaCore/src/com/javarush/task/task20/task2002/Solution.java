@@ -18,12 +18,9 @@ public class Solution {
 
                 JavaRush javaRush = new JavaRush();
 
-                User user = new User();
-                user.setFirstName("Ivan");
-                user.setLastName("Ivanov");
-                user.setBirthDate(new Date(1991, Calendar.JUNE, 5));
-                user.setMale(true);
-                user.setCountry(User.Country.RUSSIA);
+                Date date = new Date(1991, Calendar.JUNE, 5);
+                Date date1 = new Date(new Random().nextLong());
+                User user = new User("Ivan", "Ivanov", date, true, User.Country.RUSSIA);
 
                 javaRush.users.add(user);
 

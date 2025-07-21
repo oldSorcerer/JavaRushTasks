@@ -81,14 +81,14 @@ public class Solution {
         }
 
         public void load(InputStream inputStream) throws Exception {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            this.name = reader.readLine();
-            while (reader.ready()) {
-                String assetsName = reader.readLine();
-                double assetsPrice = Double.parseDouble(reader.readLine());
-                this.assets.add(new Asset(assetsName, assetsPrice));
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                this.name = reader.readLine();
+                while (reader.ready()) {
+                    String assetsName = reader.readLine();
+                    double assetsPrice = Double.parseDouble(reader.readLine());
+                    this.assets.add(new Asset(assetsName, assetsPrice));
+                }
             }
-            reader.close();
         }
     }
 }
