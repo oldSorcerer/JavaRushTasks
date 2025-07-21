@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class Solution {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         print(getMethods(Set.of(Object.class, Math.class, Arrays.class)));
     }
 
