@@ -17,6 +17,5 @@ public class Lion {
         } finally {
             System.out.println("лег спать" + (food == null ? " голодным" : ""));
         }
-
     }
 }
