@@ -17,7 +17,7 @@ public class Solution {
     }
 
     public static List<Iterator<?>> getIterators() {
-        List<Iterator<?>> list = new ArrayList<>();
+        List<Iterator<?>> list = new LinkedList<>();
 
         list.add(new ArrayList<>(List.of()).iterator());
         list.add(new LinkedList<>(List.of()).iterator());
@@ -30,6 +30,8 @@ public class Solution {
         list.add(new LinkedHashSet<>(List.of()).iterator());
         list.add(new TreeSet<>(List.of()).iterator());
 
+        list.add(new Hashtable<>(Map.of()).keySet().iterator());
+        list.add(new Hashtable<>(Map.of()).values().iterator());
         list.add(new HashMap<>(Map.of()).keySet().iterator());
         list.add(new HashMap<>(Map.of()).values().iterator());
         list.add(new LinkedHashMap<>(Map.of()).keySet().iterator());
