@@ -51,7 +51,7 @@ public class Client {
                 wait();
             }
         } catch (InterruptedException e) {
-            ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
+            ConsoleHelper.writeMessage("Произошла ошибка во время ожидания клиента.");
             return;
         }
 
@@ -131,7 +131,7 @@ public class Client {
         public void run() {
             String serverAddress = getServerAddress();
             int serverPort = getServerPort();
-            try(Socket socket = new Socket(serverAddress, serverPort)) {
+            try (Socket socket = new Socket(serverAddress, serverPort)) {
                 connection = new Connection(socket);
                 clientHandshake();
                 clientMainLoop();
