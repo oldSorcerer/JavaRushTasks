@@ -21,7 +21,9 @@ public class Solution {
 
         char[] password = new char[8];
         String string = "";
-        while (!string.matches(".*\\d.*") || !string.matches(".*[a-z].*") || !string.matches(".*[A-Z].*")) {
+        while (!string.matches(".*\\d.*") ||
+                !string.matches(".*\\p{Ll}.*") ||
+                !string.matches(".*\\p{Lu}.*")) {
             for (int i = 0; i < password.length; i++) {
                 password[i] = template.charAt(new Random().nextInt(template.length()));
             }
