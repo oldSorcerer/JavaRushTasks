@@ -27,6 +27,13 @@ public class Solution {
 
             int numberTwo = Integer.parseInt(strings[2]);
 
+            int a = switch (strings[1]) {
+                case "+" -> numberOne + numberTwo;
+                case "-" -> numberOne - numberTwo;
+                case "*" -> numberOne * numberTwo;
+                default -> 0;
+            };
+
             String result = switch (strings[1]) {
                 case "+" -> numberOne + " + " + numberTwo + " = " + (numberOne + numberTwo);
                 case "-" -> numberOne + " - " + numberTwo + " = " + (numberOne - numberTwo);
