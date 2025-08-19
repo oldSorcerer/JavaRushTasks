@@ -7,9 +7,8 @@ import static com.javarush.task.task37.task3707.HashMapReflectionHelper.*;
 
 public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Set<E> {
 
-    private static final Object PRESENT = new Object();
-
     private transient HashMap<E, Object> map;
+    private static final Object PRESENT = new Object();
 
     public AmigoSet() {
         this.map = new HashMap<>();
@@ -34,7 +33,6 @@ public class AmigoSet<E> extends AbstractSet<E> implements Serializable, Cloneab
     public int size() {
         return map.size();
     }
-
 
     @Override
     public boolean isEmpty() {
