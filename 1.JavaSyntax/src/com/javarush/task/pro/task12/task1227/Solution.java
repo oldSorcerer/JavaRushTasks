@@ -18,6 +18,7 @@ public class Solution {
 
     public static void main(String[] args) {
         rescueRobots();
+        printList(cableContents);
         emptyGarbageBin();
         printList(rescuedRobots);
     }
@@ -25,16 +26,17 @@ public class Solution {
     public static void rescueRobots() {
         for (int i = 0; i < cableContents.size(); i++) {
             Robot robot = cableContents.get(i);
-            if (robot.getName().equals("Amigo")) {
-                rescuedRobots.add(robot);
-                cableContents.remove(robot);
-                i--;
-            } else if (robot.getName().equals("Diego")) {
+            if (robot.getName().equals("Amigo") || robot.getName().equals("Diego")) {
                 rescuedRobots.add(robot);
                 cableContents.remove(robot);
                 i--;
             }
         }
+//        List<Robot> list = cableContents.stream()
+//                .filter(robot -> robot.getName().equals("Amigo") || robot.getName().equals("Diego"))
+//                .toList();
+//        cableContents.removeAll(list);
+//        rescuedRobots.addAll(list);
     }
 
     private static void emptyGarbageBin() {
@@ -43,8 +45,8 @@ public class Solution {
     }
 
     public static void printList(List<Robot> list) {
-        for (Robot o : list) {
-            System.out.print(o + " ");
+        for (Robot robot : list) {
+            System.out.print(robot + " ");
         }
         System.out.println();
     }
