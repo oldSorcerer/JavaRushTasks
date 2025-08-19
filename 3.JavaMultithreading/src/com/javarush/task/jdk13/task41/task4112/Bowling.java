@@ -31,6 +31,7 @@ public class Bowling {
 
         Track track = tracks.poll();
         if (nonNull(track)) track.setPrice(100 - tracks.size() * 10);
+
         return track;
     }
 
