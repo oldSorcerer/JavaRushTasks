@@ -1,6 +1,7 @@
 package com.javarush.task.task22.task2201;
 
 public class OurUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+
     @Override
     public void uncaughtException(Thread t, Throwable e) {
         final String string = "%s : %s : %s";
