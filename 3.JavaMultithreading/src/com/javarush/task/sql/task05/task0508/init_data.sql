@@ -40,4 +40,3 @@ VALUES (1, 'Robert', 'Stevenson', 'Robert Louis Stevenson'),
        (25, 'Lewis', 'Carroll', 'Lewis Carroll'),
        (26, 'Astrid', 'Lindgren', 'Astrid Lindgren'),
        (27, 'Richard', 'Scarry', 'Richard Scarry');
-
