@@ -11,4 +11,3 @@ from author
          left join publisher on book.publisher_id = publisher.id
 group by author.id;
 
-
