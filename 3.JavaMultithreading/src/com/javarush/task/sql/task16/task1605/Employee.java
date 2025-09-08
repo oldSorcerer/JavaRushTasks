@@ -50,4 +50,3 @@ public class Employee {
         this.smth = smth;
     }
 }
-
