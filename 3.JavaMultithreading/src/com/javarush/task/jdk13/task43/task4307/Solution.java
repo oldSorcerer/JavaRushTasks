@@ -24,7 +24,10 @@ public class Solution {
             return;
         }
 
-        Arrays.stream(values).filter(Objects::nonNull).findFirst().ifPresent(System.out::println);
+        Arrays.stream(values)
+                .filter(Objects::nonNull)
+                .findFirst()
+                .ifPresent(System.out::println);
     }
 
     public static void printDefaultValueIfNullObject(final String[] values, final String defaultValue) {
