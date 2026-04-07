@@ -51,9 +51,7 @@ public class Solution {
         time = endTimestamp.getTime() - startTimestamp.getTime();
         Helper.printMessage("Время получения строк для " + elementsNumber + " идентификаторов: " + time);
 
-
         Helper.printMessage(set.containsAll(strings) ? "Тест пройден." : "Тест не пройден.");
-
 
     }
 }
