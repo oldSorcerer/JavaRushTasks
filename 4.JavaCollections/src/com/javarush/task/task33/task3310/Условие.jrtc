@@ -1,41 +1,4 @@
-
-### Shortener (8)
-
-Добавь и реализуй класс OurHashMapStorageStrategy, используя класс Entry из
-предыдущей подзадачи. Класс OurHashMapStorageStrategy должен реализовывать
-интерфейс StorageStrategy.
-8.1. Добавь в класс следующие поля:
-8.1.1. static final int DEFAULT_INITIAL_CAPACITY = 16;
-8.1.2. static final float DEFAULT_LOAD_FACTOR = 0.75f;
-8.1.3. Entry[] table = new Entry[DEFAULT_INITIAL_CAPACITY];
-8.1.4. int size;
-8.1.5. int threshold = (int) (DEFAULT_INITIAL_CAPACITY * DEFAULT_LOAD_FACTOR);
-8.1.6. float loadFactor = DEFAULT_LOAD_FACTOR;
-8.2. Реализуй в классе следующие вспомогательные методы:
-8.2.1. int hash(Long k)
-8.2.2. int indexFor(int hash, int length)
-8.2.3. Entry getEntry(Long key)
-8.2.4. void resize(int newCapacity)
-8.2.5. void transfer(Entry[] newTable)
-8.2.6. void addEntry(int hash, Long key, String value, int bucketIndex)
-8.2.7. void createEntry(int hash, Long key, String value, int bucketIndex)
-8.3. Добавь в класс публичные методы, которые требует интерфейс StorageStrategy.
-Какие-либо дополнительные поля класса не использовать. Методы, не описанные в
-задании, реализовывать не нужно. Если возникнут вопросы как реализовать какой-то
-метод или что он должен делать, то ты всегда можешь посмотреть, как работает
-похожий метод в HashMap.
-Можешь добавить в метод main класса Solution тестирование новой стратегии. Запусти
-и сравни время работы двух стратегий на одинаковом количестве элементов.
-
-
-Требования:
-1.	Класс OurHashMapStorageStrategy должен поддерживать интерфейс StorageStrategy.
-2.	В классе OurHashMapStorageStrategy должны быть созданы все необходимые поля (согласно условию задачи).
-3.	Методы интерфейса StorageStrategy должны быть реализованы в OurHashMapStorageStrategy таким образом, чтобы обеспечивать корректную работу Shortener созданного на его основе.
-4.	В классе OurHashMapStorageStrategy должны присутствовать все вспомогательные методы перечисленные в условии задачи.
-
-
-Shortener (8)
+taskKey="com.javarush.task.task33.task3310.big07"\n\nShortener (7)
 
 Приступим к реализации второй стратегии OurHashMapStorageStrategy. Она не будет
 использовать готовый HashMap из стандартной библиотеки, а будет сама являться
@@ -57,8 +20,16 @@ toString(). Реализовывать остальные методы ориг�
 пишем упрощенную версию.
 
 
+Требования:
+1.	В классе Entry должны быть созданы поля перечисленные в условии задачи.
+2.	В классе Entry должен быть реализован публичный конструктор с четырьмя параметрами (int, Long, String, Entry) инициализирующий соответствующие поля класса.
+3.	Метод getKey должен возвращать значение поля key.
+4.	Метод getValue должен возвращать значение поля value.
+5.	Метод toString должен возвращать строку формата key + &quot;=&quot; + value.
+6.	Методы hashCode и equals должны быть корректно реализованы используя для сравнения поля key и value.
 
-Shortener (8)
+
+Shortener (7)
 
 Первая стратегия готова, пришло время ее протестить. Для этого:
 6.1.	Создай класс Solution, если ты не сделал это раньше.
@@ -97,7 +68,7 @@ HashMapStorageStrategy с помощью 10000 элементов.
 
 
 
-Shortener (8)
+Shortener (7)
 
 Давай напишем наше первое хранилище (стратегию хранилища). Внутри оно будет
 содержать обычный HashMap. Все стратегии будем хранить в пакете strategy.
@@ -108,7 +79,7 @@ Shortener (8)
 
 
 
-Shortener (8)
+Shortener (7)
 
 Нам потребуется несколько вспомогательных классов:
 4.1.	Создай класс Helper.
@@ -125,7 +96,7 @@ SecureRandom и BigInteger. Подсказка: гугли запрос &quot;ra
 
 
 
-Shortener (8)
+Shortener (7)
 
 Вернемся к классу Shortener:
 3.1.	Добавь в него поле Long lastId. Проинициализируй его нулем. Это поле будет
@@ -147,6 +118,27 @@ lastId и переданную строку);
 (ключу).
 3.6.	Предусмотреть возможность вызова методов getId и getString из разных потоков
 добавив соответствующий модификатор к заголовкам методов.
+
+
+
+Shortener (7)
+
+Укорачиватель Shortener будет поддерживать разные стратегии хранения данных
+(строк и их идентификаторов). Все эти стратегии будут наследоваться от интерфейса
+StorageStrategy. Почитай подробнее про паттерн Стратегия на Вики.
+Наше хранилище будет оперировать двумя понятиями: ключ и значение. Ключом будет
+идентификатор строки, а значением сама строка.
+
+2.1.	Добавь интерфейс StorageStrategy в пакет strategy.
+2.2.	Добавь в интерфейс следующие методы:
+2.2.1.	boolean containsKey(Long key) &ndash; должен вернуть true, если хранилище
+содержит переданный ключ.
+2.2.2.	boolean containsValue(String value) - должен вернуть true, если хранилище
+содержит переданное значение.
+2.2.3.	void put(Long key, String value) &ndash; добавить в хранилище новую пару ключ &ndash;
+значение.
+2.2.4.	Long getKey(String value) &ndash; вернуть ключ для переданного значения.
+2.2.5.	String getValue(Long key) &ndash; вернуть значение для переданного ключа.
 
 
 

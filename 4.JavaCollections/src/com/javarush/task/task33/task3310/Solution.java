@@ -9,38 +9,49 @@ import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 public class Solution {
+    public static void main(String[] args) {
+        long elementsNumber = 10_000;
+        testStrategy(new HashMapStorageStrategy(), elementsNumber);
+
+    }
 
     public static Set<Long> getIds(Shortener shortener, Set<String> strings) {
-        return strings.stream().map(shortener::getId).collect(Collectors.toSet());
+        return strings.stream()
+                .map(shortener::getId)
+                .collect(Collectors.toSet());
     }
 
     public static Set<String> getStrings(Shortener shortener, Set<Long> keys) {
-        return keys.stream().map(shortener::getString).collect(Collectors.toSet());
+        return keys.stream()
+                .map(shortener::getString)
+                .collect(Collectors.toSet());
     }
 
     public static void testStrategy(StorageStrategy strategy, long elementsNumber) {
         Helper.printMessage(strategy.getClass().getSimpleName());
 
-        Set<String> set = LongStream.range(0, elementsNumber).mapToObj(e -> Helper.generateRandomString()).collect(Collectors.toSet());
+        Set<String> set = LongStream.range(0, elementsNumber)
+                .mapToObj(i -> Helper.generateRandomString())
+                .collect(Collectors.toSet());
+
         Shortener shortener = new Shortener(strategy);
 
-        long timeStart = new Date().getTime();
+        Date startTimestamp = new Date();
         Set<Long> ids = getIds(shortener, set);
-        long timeEnd = new Date().getTime();
-        long time = timeEnd - timeStart;
-        Helper.printMessage("Время получения идентификаторов для " + elementsNumber + " строк: " + time + " мс.");
+        Date endTimestamp = new Date();
 
-        timeStart = new Date().getTime();
+        long time = endTimestamp.getTime() - startTimestamp.getTime();
+        Helper.printMessage("Время получения идентификаторов для " + elementsNumber + " строк: " + time);
+
+
+        startTimestamp = new Date();
         Set<String> strings = getStrings(shortener, ids);
-        timeEnd = new Date().getTime();
-        time = timeEnd - timeStart;
-        Helper.printMessage("Время получения идентификаторов для " + elementsNumber + " строк: " + time + " мс.");
+        endTimestamp = new Date();
 
-        Helper.printMessage( "Тест " + (set.containsAll(strings) ? "" : "не ") + "пройден.");
+        time = endTimestamp.getTime() - startTimestamp.getTime();
+        Helper.printMessage("Время получения строк для " + elementsNumber + " идентификаторов: " + time);
 
-    }
+        Helper.printMessage(set.containsAll(strings) ? "Тест пройден." : "Тест не пройден.");
 
-    public static void main(String[] args) {
-        testStrategy(new HashMapStorageStrategy(), 10_000L);
     }
 }

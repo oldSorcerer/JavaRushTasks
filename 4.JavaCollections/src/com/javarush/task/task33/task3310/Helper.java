@@ -5,10 +5,16 @@ import java.security.SecureRandom;
 
 public class Helper {
     public static String generateRandomString() {
-        SecureRandom random = new SecureRandom();
-        BigInteger integer = new BigInteger(130, random);
+        // создаем специальный класс рандом который ведет себя не предсказуемо
+        SecureRandom secureRandom = new SecureRandom();
 
-        return integer.toString(32);
+        // создаем случайное число длиной 130 бит и указываем источник случайности
+        BigInteger bigInteger = new BigInteger(130, secureRandom);
+
+        // преобразуем число в строку в системе Base32 длиной в 26 символов
+        // Base32 = 0-9A-V
+        // почему 26 130 / 5 (количество бит на 1 символ) = 26
+        return bigInteger.toString(32);
     }
 
     public static void printMessage(String message) {

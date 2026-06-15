@@ -40,6 +40,6 @@ public class Entry implements Serializable {
 
     @Override
     public String toString() {
-        return getKey() + "=" + getValue();
+        return key + "=" + value;
     }
 }

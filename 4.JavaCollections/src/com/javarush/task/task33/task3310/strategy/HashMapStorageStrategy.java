@@ -23,8 +23,10 @@ public class HashMapStorageStrategy implements StorageStrategy {
 
     @Override
     public Long getKey(String value) {
-//        return data.keySet().stream().filter(key -> data.get(key).equals(value)).findFirst().get();
-        return data.entrySet().stream().filter(entry -> entry.getValue().equals(value)).findFirst().get().getKey();
+        return data.entrySet().stream()
+                .filter(entry -> entry.getValue().equals(value))
+                .findFirst()
+                .get().getKey();
     }
 
     @Override
